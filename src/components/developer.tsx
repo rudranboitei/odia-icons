@@ -3,6 +3,7 @@ import { siteConfig } from "@/lib/site-config"
 import { iconsByName, toSvg } from "@/lib/icons"
 import { Eyebrow } from "./eyebrow"
 import { InstallBox } from "./install-box"
+import { ShikiCode } from "./shiki-code"
 
 export function DeveloperSection() {
   const { developer } = siteConfig
@@ -55,7 +56,7 @@ export function DeveloperSection() {
             </span>
           </div>
           <pre className="overflow-x-auto bg-muted p-5 font-mono text-[11px] leading-relaxed text-foreground">
-            <code>{snippet}</code>
+            <ShikiCode code={snippet} lang="xml" />
           </pre>
           <div className="flex items-center justify-between border-t border-border px-5 py-3 text-[11px] text-muted-foreground">
             <span>MIT licensed</span>
