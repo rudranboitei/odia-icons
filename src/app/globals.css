@@ -185,3 +185,23 @@
     mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
   }
 }
+/* Infinite icon marquee used in the hero and final CTA. */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.icon-marquee {
+  width: max-content;
+  animation: marquee-x var(--marquee-duration, 44s) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-marquee {
+    animation: none;
+  }
+}

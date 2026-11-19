@@ -7,32 +7,10 @@ import { DialogDescription, DialogTitle } from "@/components/ui/dialog"
 import { Slider } from "@/components/ui/slider"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { toast } from "@/components/ui/toast"
+import { copyText } from "@/lib/clipboard"
 import { formats, Icon, type IconDef } from "@/lib/icons"
 
 type FormatId = (typeof formats)[number]["id"]
-
-// Clipboard API needs HTTPS/localhost, so fall back to a hidden textarea.
-async function writeClipboard(text: string) {
-  try {
-    await navigator.clipboard.writeText(text)
-    return true
-  } catch {
-    try {
-      const textarea = document.createElement("textarea")
-      textarea.value = text
-      textarea.setAttribute("readonly", "")
-      textarea.style.position = "fixed"
-      textarea.style.opacity = "0"
-      document.body.appendChild(textarea)
-      textarea.select()
-      const ok = document.execCommand("copy")
-      textarea.remove()
-      return ok
-    } catch {
-      return false
-    }
-  }
-}
 
 const extensions: Record<FormatId, string> = {
   svg: "svg",
@@ -55,7 +33,7 @@ export function IconPlayground({ def }: { def: IconDef }) {
       : `${def.name}.${extensions[format.id]}`
 
   async function copy() {
-    const copied = await writeClipboard(code)
+    const copied = await copyText(code)
     if (copied) {
       toast.add({
         type: "success",

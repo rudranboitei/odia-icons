@@ -1,10 +1,13 @@
-import { Cta } from "@/components/cta"
+import { DeveloperSection } from "@/components/developer"
+import { Faq } from "@/components/faq"
 import { Features } from "@/components/feature"
+import { FinalCta } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 import { Hero } from "@/components/hero"
-import { IconDock } from "@/components/icondock"
 import { IconShowcase } from "@/components/iconshowcase"
-import { Mission } from "@/components/mission"
+import { Quote } from "@/components/quote"
+import { SiteNav } from "@/components/site-nav"
+import { Steps } from "@/components/steps"
 
 // Reorder, remove or add sections right here.
 export default function Home() {
@@ -13,12 +16,15 @@ export default function Home() {
       id="top"
       className="relative min-h-screen overflow-x-hidden bg-background text-foreground"
     >
-      <IconDock />
+      <SiteNav />
       <Hero />
-      <IconShowcase />
-      <Mission />
       <Features />
-      <Cta />
+      <IconShowcase />
+      <Quote />
+      <Steps />
+      <DeveloperSection />
+      <Faq />
+      <FinalCta />
       <Footer />
     </main>
   )

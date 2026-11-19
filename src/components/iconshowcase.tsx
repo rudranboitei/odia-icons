@@ -5,50 +5,50 @@ import { siteConfig } from "@/lib/site-config"
 import { Icon, icons, type IconDef } from "@/lib/icons"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { IconPlayground } from "./icon-playground"
+import { SectionHeader } from "./section-header"
 
 export function IconShowcase() {
   const [active, setActive] = useState<IconDef | null>(null)
 
   return (
-    <section id="icons" className="scroll-mt-10 px-6 pt-20">
+    <section id="icons" className="scroll-mt-20 px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-5xl">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-xs font-medium tracking-[0.2em] text-muted-foreground uppercase">
-              The set
-            </p>
-            <h2 className="mt-2 text-2xl font-medium tracking-[-0.03em] text-[#171717] sm:text-3xl">
-              {icons.length} icons, one shared grid.
-            </h2>
-          </div>
-          <span className="rounded-full border px-3 py-1 text-xs text-muted-foreground">
-            32 × 32 · stroke
-          </span>
-        </div>
+        <SectionHeader
+          eyebrow="The set"
+          title="Six motifs. One shared grid."
+          description="Every icon is free to use, ready to export. Open any tile to make it yours."
+        />
 
-        <div className="mt-6 grid grid-cols-3 gap-px overflow-hidden rounded-3xl border bg-border sm:grid-cols-6">
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {icons.map((icon) => (
             <button
               key={icon.name}
               type="button"
               onClick={() => setActive(icon)}
               aria-label={`Open ${icon.name} icon`}
-              className="group flex aspect-square flex-col items-center justify-center gap-3 bg-background transition-colors hover:bg-muted/70 focus-visible:bg-muted focus-visible:outline-none"
+              className="group flex aspect-[4/3] flex-col items-center justify-center gap-4 rounded-3xl border bg-card p-6 shadow-xs transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
             >
               <Icon
                 def={icon}
-                size={40}
-                stroke={1.4}
-                className="text-[#171717] transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:scale-110"
+                size={52}
+                stroke={1.35}
+                className="text-[#171717] transition-transform duration-300 group-hover:scale-110"
               />
-              <span className="text-xs text-muted-foreground">{icon.name}</span>
+              <span className="flex flex-col items-center gap-1">
+                <span className="text-sm font-medium capitalize text-[#171717]">
+                  {icon.name}
+                </span>
+                <span className="text-[11px] text-muted-foreground">
+                  {icon.tags.slice(0, 2).join(" · ")}
+                </span>
+              </span>
             </button>
           ))}
         </div>
 
-        <p className="mt-3 text-xs text-muted-foreground">
+        <p className="mt-5 text-center text-xs text-muted-foreground">
           Click any icon to resize it, change the stroke and copy the code. All
-          icons are free under the {""}
+          icons are free under the{" "}
           <a
             href={siteConfig.links.license}
             target="_blank"
