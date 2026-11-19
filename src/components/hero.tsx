@@ -10,7 +10,7 @@ export function Hero() {
     <section className="relative overflow-hidden px-6 pt-16 pb-6 text-center sm:pt-24">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(60%_60%_at_50%_0%,var(--muted),transparent)]"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-130 bg-[radial-gradient(60%_60%_at_50%_0%,var(--muted),transparent)]"
       />
 
       <div className="flex flex-col items-center">

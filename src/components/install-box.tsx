@@ -54,7 +54,7 @@ export function InstallBox({
         <Button
           size="lg"
           onClick={copy}
-          className="h-10 rounded-xl px-4 text-[13px]"
+          className="h-10 rounded-xl px-4 text-[13px] cursor-pointer"
         >
           {copied ? (
             <IconCheck data-icon="inline-start" />
