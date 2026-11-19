@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "konark-wheel",
+  "type": "registry:ui",
+  "title": "Konark Wheel",
+  "description": "କୋଣାର୍କ ଚକ — konark, chakra, sun temple.",
+  "categories": [
+    "architecture"
+  ],
+  "meta": {
+    "odia": "କୋଣାର୍କ ଚକ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/konark-wheel.svg",
+      "type": "registry:file",
+      "target": "components/icons/konark-wheel.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"2.75\"/><path d=\"M12 3v6.25M12 14.75V21M3 12h6.25M14.75 12H21M5.64 5.64l4.42 4.42M13.94 13.94l4.42 4.42M18.36 5.64l-4.42 4.42M10.06 13.94l-4.42 4.42\"/></svg>"
+    }
+  ]
+}

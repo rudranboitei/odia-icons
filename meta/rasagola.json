@@ -1,0 +1,11 @@
+{
+  "name": "rasagola",
+  "odia": "ରସଗୋଲା",
+  "category": "food",
+  "tags": ["rasagola", "sweet", "dessert", "odia food", "ରସଗୋଲା"],
+  "aliases": ["rasgulla"],
+  "variants": ["outline"],
+  "contributors": ["rudranboitei"],
+  "since": "0.1.0",
+  "note": ""
+}

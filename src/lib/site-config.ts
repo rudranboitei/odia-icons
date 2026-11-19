@@ -45,11 +45,11 @@ export const siteConfig = {
     eyebrow: "Open source · MIT licensed",
     title: "Icons shaped by Odisha.",
     subtitle:
-      "A free icon set drawn from Odisha's temples, textiles and living traditions — six motifs on one shared grid, ready to export.",
+      "A free icon set drawn from Odisha's temples, textiles and living traditions — five motifs on one shared grid, ready to export.",
     stats: [
-      "6 hand-drawn motifs",
-      "32 × 32 grid",
-      "4 export formats",
+      "5 hand-drawn motifs",
+      "24 × 24 grid",
+      "5 export formats",
       "No attribution needed",
     ],
   },
@@ -75,7 +75,7 @@ export const siteConfig = {
     {
       title: "One shared grid",
       description:
-        "Every icon is built on a 32 × 32 grid with rounded caps, so they sit together in any row.",
+        "Every icon is built on a 24 × 24 grid with 1.75px strokes and rounded caps, so they sit together in any row.",
       media: { type: "animation", name: "grid" },
     },
     {
@@ -98,7 +98,7 @@ export const siteConfig = {
     author: "The odiaicons project",
     meta: "Independent · open source · made in Odisha",
     stats: [
-      { value: "6", label: "motifs" },
+      { value: "5", label: "motifs" },
       { value: "4", label: "formats" },
       { value: "0", label: "dependencies" },
     ],
@@ -136,7 +136,7 @@ export const siteConfig = {
       "Everything is a real file you can read, edit and version. No runtime, no wrapper components, no lock-in.",
     bullets: [
       "SVG, JSX, TSX and data URI exports",
-      "32 × 32 grid with round caps",
+      "24 × 24 grid with 1.75px strokes",
       "currentColor inherits your theme",
       "Stroke width you can change in one click",
       "Typed React components included",
@@ -168,7 +168,7 @@ export const siteConfig = {
       },
       {
         q: "Do the icons match other sets?",
-        a: "They are drawn on a 32 × 32 grid with 1.5px strokes and round caps, so they sit comfortably next to most line icon sets.",
+        a: "They are drawn on a 24 × 24 grid with 1.75px strokes and round caps, so they sit comfortably next to most line icon sets.",
       },
       {
         q: "Can I contribute an icon?",
@@ -181,7 +181,7 @@ export const siteConfig = {
     eyebrow: "Free to copy, remix and ship",
     title: "It's time to use them.",
     description:
-      "Six motifs from Odisha, ready for whatever you're building next.",
+      "Five motifs from Odisha, ready for whatever you're building next.",
     helper: "No credit card. No sign-up. Just icons.",
   },
 

@@ -114,7 +114,7 @@ export function GridVisual() {
             </motion.div>
           ))}
         </div>
-        <span className={label}>32 × 32 · 1.5 stroke · round caps</span>
+        <span className={label}>24 × 24 · 1.75 stroke · round caps</span>
       </div>
     </div>
   )

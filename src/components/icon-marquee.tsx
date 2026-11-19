@@ -37,7 +37,7 @@ function MarqueeRow({
             <div key={half} className="flex gap-4 pr-4">
               {sequence.map((icon, i) => (
                 <div
-                  key={`${half}-${icon.name}-${i}`}
+                  key={`${half}-${icon.name.replaceAll("-", " ")}-${i}`}
                   className="flex h-32 w-44 shrink-0 flex-col items-center justify-center gap-3 rounded-3xl border bg-card shadow-xs"
                 >
                   <Icon
@@ -46,8 +46,8 @@ function MarqueeRow({
                     stroke={1.4}
                     className="text-[#171717]"
                   />
-                  <span className="text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
-                    {icon.name}
+                  <span className="text-[13px] leading-[1.2] font-medium capitalize tracking-[-0.03em] text-[#1d1d1f] opacity-55">
+                    {icon.name.replaceAll("-", " ")}
                   </span>
                 </div>
               ))}

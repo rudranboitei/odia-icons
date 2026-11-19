@@ -1,6 +1,6 @@
 import { IconArrowUpRight } from "@tabler/icons-react"
 import { siteConfig } from "@/lib/site-config"
-import { Icon, icons } from "@/lib/icons"
+import { Icon, iconsByName } from "@/lib/icons"
 import { Eyebrow } from "./eyebrow"
 
 export function Quote() {
@@ -20,7 +20,7 @@ export function Quote() {
           <div className="flex flex-col justify-between gap-8 border-t pt-8 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-10">
             <div className="flex items-center gap-3">
               <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl border bg-background">
-                <Icon def={icons[0]} size={26} stroke={1.4} />
+                <Icon def={iconsByName["konark-wheel"]} size={26} stroke={1.4} />
               </span>
               <div>
                 <p className="text-[15px] leading-[1.3] font-medium tracking-[-0.03em] text-[#1d1d1f]">

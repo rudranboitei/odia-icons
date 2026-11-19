@@ -1,13 +1,13 @@
 import { IconCheck } from "@tabler/icons-react"
 import { siteConfig } from "@/lib/site-config"
-import { icons, toSvg } from "@/lib/icons"
+import { iconsByName, toSvg } from "@/lib/icons"
 import { Eyebrow } from "./eyebrow"
 import { InstallBox } from "./install-box"
 
 export function DeveloperSection() {
   const { developer } = siteConfig
   const [lead, trail] = developer.title.split(developer.highlight)
-  const snippet = toSvg(icons[0], { size: 32, stroke: 1.5 })
+  const snippet = toSvg(iconsByName["konark-wheel"], { size: 32, stroke: 1.75 })
 
   return (
     <section id="developers" className="scroll-mt-20 px-6 py-20 sm:py-28">
@@ -48,10 +48,10 @@ export function DeveloperSection() {
             <span className="size-2.5 rounded-full bg-border" />
             <span className="size-2.5 rounded-full bg-border" />
             <span className="ml-2 font-mono text-[11px] text-muted-foreground">
-              chakra.svg
+              konark-wheel.svg
             </span>
             <span className="ml-auto rounded-full border px-2 py-0.5 font-mono text-[10px] text-muted-foreground">
-              32 × 32
+              24 × 24
             </span>
           </div>
           <pre className="overflow-x-auto p-5 font-mono text-[11px] leading-relaxed text-foreground/80">
@@ -59,7 +59,7 @@ export function DeveloperSection() {
           </pre>
           <div className="flex items-center justify-between border-t px-5 py-3 text-[11px] text-muted-foreground">
             <span>MIT licensed</span>
-            <span className="font-mono">1.5 stroke · round caps</span>
+            <span className="font-mono">1.75 stroke · round caps</span>
           </div>
         </div>
       </div>

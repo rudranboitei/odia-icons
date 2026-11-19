@@ -1,0 +1,11 @@
+{
+  "name": "konark-wheel",
+  "odia": "କୋଣାର୍କ ଚକ",
+  "category": "architecture",
+  "tags": ["konark", "chakra", "sun temple", "wheel", "ଚକ"],
+  "aliases": ["sun-wheel", "konark-chakra"],
+  "variants": ["outline"],
+  "contributors": ["rudranboitei"],
+  "since": "0.1.0",
+  "note": ""
+}

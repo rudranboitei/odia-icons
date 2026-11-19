@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { siteConfig } from "@/lib/site-config"
-import { Icon, icons } from "@/lib/icons"
+import { Icon, iconsByName } from "@/lib/icons"
 
 export function Footer() {
   const { name, footer } = siteConfig
@@ -14,7 +14,7 @@ export function Footer() {
             href="#top"
             className="inline-flex items-center gap-2 text-[#1d1d1f]"
           >
-            <Icon def={icons[0]} size={22} stroke={1.5} />
+            <Icon def={iconsByName["konark-wheel"]} size={22} stroke={1.5} />
             <span className="text-[17px] font-medium tracking-[-0.03em]">
               {name}
             </span>

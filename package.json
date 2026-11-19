@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/icons/build.mjs && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "icons:validate": "node scripts/icons/validate.mjs",
+    "icons:build": "node scripts/icons/build.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

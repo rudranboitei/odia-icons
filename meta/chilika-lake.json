@@ -1,0 +1,11 @@
+{
+  "name": "chilika-lake",
+  "odia": "ଚିଲିକା ହ୍ରଦ",
+  "category": "nature",
+  "tags": ["chilika", "lake", "lagoon", "fish", "ଚିଲିକା"],
+  "aliases": ["chilika", "chilika-lagoon"],
+  "variants": ["outline"],
+  "contributors": ["rudranboitei"],
+  "since": "0.1.0",
+  "note": ""
+}
