@@ -1,26 +1,36 @@
 "use client"
 
-import { useState } from "react"
-import { IconCopy, IconDownload } from "@tabler/icons-react"
-import { Button } from "@/components/ui/button"
-import { SheetDescription, SheetTitle } from "@/components/ui/sheet"
-import { Slider } from "@/components/ui/slider"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { toast } from "@/components/ui/toast"
+import { useMemo, useState, type ReactNode } from "react"
+import { IconCheck, IconCopy, IconDownload, IconX } from "@tabler/icons-react"
+import { siteConfig } from "@/lib/site-config"
 import { copyText } from "@/lib/clipboard"
-import { formats, Icon, toSvg, type IconDef } from "@/lib/icons"
+import { toast } from "@/components/ui/toast"
+import { Icon, toJsx, toSvg, type IconDef } from "@/lib/icons"
 
-type FormatId = (typeof formats)[number]["id"]
+const SIZES = [16, 20, 24, 32, 48, 64, 96]
+const STROKES = [1, 1.5, 1.75, 2, 2.5]
+const COLORS = [
+  { label: "Inherit text color", value: "currentColor" },
+  { label: "Gray", value: "#71717a" },
+  { label: "Blue", value: "#2563eb" },
+  { label: "Red", value: "#dc2626" },
+  { label: "Green", value: "#16a34a" },
+]
+const TABS = ["SVG", "JSX", "CLI"] as const
+type Tab = (typeof TABS)[number]
 
-const extensions: Record<FormatId, string> = {
-  svg: "svg",
-  jsx: "jsx",
-  tsx: "tsx",
-  import: "tsx",
-  uri: "txt",
+const PNG_PX = 512
+
+function tint(source: string, color: string) {
+  return color === "currentColor" ? source : source.replace(/currentColor/g, color)
 }
 
-const previewSizes = [16, 24, 32, 48]
+function pascal(name: string) {
+  return name
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join("")
+}
 
 function saveBlob(blob: Blob, fileName: string) {
   const url = URL.createObjectURL(blob)
@@ -33,206 +43,277 @@ function saveBlob(blob: Blob, fileName: string) {
   URL.revokeObjectURL(url)
 }
 
-export function IconPlayground({ def }: { def: IconDef }) {
-  const [size, setSize] = useState(112)
+async function svgToPng(svg: string, px: number): Promise<Blob> {
+  const sized = svg
+    .replace(/(<svg[^>]*?\s)width="[^"]*"/, `$1width="${px}"`)
+    .replace(/(<svg[^>]*?\s)height="[^"]*"/, `$1height="${px}"`)
+  const url = URL.createObjectURL(
+    new Blob([sized], { type: "image/svg+xml;charset=utf-8" })
+  )
+  try {
+    const img = new Image()
+    await new Promise<void>((resolve, reject) => {
+      img.onload = () => resolve()
+      img.onerror = () => reject(new Error("Could not load SVG"))
+      img.src = url
+    })
+    const canvas = document.createElement("canvas")
+    canvas.width = px
+    canvas.height = px
+    const ctx = canvas.getContext("2d")
+    if (!ctx) throw new Error("Canvas unavailable")
+    ctx.drawImage(img, 0, 0, px, px)
+    const blob = await new Promise<Blob | null>((resolve) =>
+      canvas.toBlob(resolve, "image/png")
+    )
+    if (!blob) throw new Error("Could not create PNG")
+    return blob
+  } finally {
+    URL.revokeObjectURL(url)
+  }
+}
+
+function Row({ label, value, children }: { label: string; value?: string; children: ReactNode }) {
+  return (
+    <div>
+      <div className="mb-2 flex items-center justify-between text-[12px]">
+        <span className="text-foreground/45">{label}</span>
+        {value && <span className="font-mono text-foreground/65">{value}</span>}
+      </div>
+      {children}
+    </div>
+  )
+}
+
+function Pill({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean
+  onClick: () => void
+  children: ReactNode
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      className={
+        active
+          ? "rounded-full bg-foreground px-3 py-1.5 font-mono text-[12px] text-background"
+          : "rounded-full bg-muted px-3 py-1.5 font-mono text-[12px] text-foreground/60 transition-colors hover:text-foreground"
+      }
+    >
+      {children}
+    </button>
+  )
+}
+
+export function IconPlayground({
+  def,
+  onClose,
+}: {
+  def: IconDef
+  onClose?: () => void
+}) {
+  const [size, setSize] = useState(48)
   const [stroke, setStroke] = useState(1.75)
-  const [formatId, setFormatId] = useState<FormatId>("svg")
+  const [color, setColor] = useState("currentColor")
+  const [tab, setTab] = useState<Tab>("SVG")
+  const [copied, setCopied] = useState(false)
 
-  const opts = { size, stroke }
-  const format = formats.find((f) => f.id === formatId) ?? formats[0]
-  const code = format.run(def, opts)
-  const fileName =
-    "file" in format && format.file
-      ? format.file(def)
-      : `${def.name}.${extensions[format.id]}`
+  const svg = useMemo(
+    () => tint(toSvg(def, { size, stroke }), color),
+    [def, size, stroke, color]
+  )
+  const jsx = useMemo(
+    () => tint(toJsx(def, { size, stroke }), color),
+    [def, size, stroke, color]
+  )
 
-  async function copy() {
-    const copied = await copyText(code)
-    if (copied) {
-      toast.add({
-        type: "success",
-        title: "Copied to clipboard",
-        description: `${def.name} · ${format.label}`,
-        timeout: 2500,
-      })
-    } else {
+  const code = tab === "SVG" ? svg : tab === "JSX" ? jsx : siteConfig.install.command
+  const copyLabel = tab === "CLI" ? "Copy command" : `Copy ${tab}`
+
+  async function onCopy() {
+    const ok = await copyText(code)
+    if (!ok) {
       toast.add({
         type: "error",
         title: "Could not copy",
         description: "Your browser blocked clipboard access.",
-        timeout: 3000,
+        timeout: 2000,
       })
+      return
     }
+    setCopied(true)
+    setTimeout(() => setCopied(false), 1500)
   }
 
-  function download() {
-    const type = format.id === "svg" ? "image/svg+xml" : "text/plain"
-    saveBlob(new Blob([code], { type: `${type};charset=utf-8` }), fileName)
-    toast.add({
-      type: "success",
-      title: "Download started",
-      description: fileName,
-      timeout: 2500,
-    })
+  function onDownloadSvg() {
+    saveBlob(
+      new Blob([`${svg}\n`], { type: "image/svg+xml;charset=utf-8" }),
+      `${def.name}.svg`
+    )
   }
 
-  function downloadPng() {
-    const svg = toSvg(def, { size, stroke })
-    const url = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }))
-    const image = new Image()
-
-    image.onload = () => {
-      const canvas = document.createElement("canvas")
-      canvas.width = size
-      canvas.height = size
-      const context = canvas.getContext("2d")
-      if (context) context.drawImage(image, 0, 0, size, size)
-      URL.revokeObjectURL(url)
-      canvas.toBlob((blob) => {
-        if (!blob) return
-        const pngName = `${def.name}-${size}px.png`
-        saveBlob(blob, pngName)
-        toast.add({
-          type: "success",
-          title: "Download started",
-          description: pngName,
-          timeout: 2500,
-        })
-      }, "image/png")
-    }
-
-    image.onerror = () => {
-      URL.revokeObjectURL(url)
+  async function onDownloadPng() {
+    try {
+      saveBlob(await svgToPng(svg, PNG_PX), `${def.name}-${PNG_PX}.png`)
+    } catch {
       toast.add({
         type: "error",
-        title: "Could not export PNG",
-        description: "Try the SVG export instead.",
-        timeout: 3000,
+        title: "Could not create PNG",
+        description: "Try downloading the SVG instead.",
+        timeout: 2500,
       })
     }
-
-    image.src = url
   }
 
   return (
-    <div className="flex min-w-0 flex-col gap-5">
-      <SheetTitle className="sr-only">{def.name} icon</SheetTitle>
-
-      <div className="grid gap-5 sm:grid-cols-[1.1fr_1fr]">
-        <div className="flex min-h-44 items-center justify-center rounded-2xl border border-dashed bg-muted/40 p-6">
-          <Icon def={def} size={size} stroke={stroke} className="text-foreground" />
+    <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
+      {/* Preview */}
+      <div className="relative flex min-h-[240px] items-center justify-center overflow-hidden rounded-xl border bg-muted/40 text-foreground md:min-h-[360px]">
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, color-mix(in srgb, currentColor 7%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, currentColor 7%, transparent) 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+            backgroundPosition: "center",
+            maskImage: "radial-gradient(circle at center, black 35%, transparent 85%)",
+            WebkitMaskImage: "radial-gradient(circle at center, black 35%, transparent 85%)",
+          }}
+        />
+        <div style={color === "currentColor" ? undefined : { color }} className="relative">
+          <Icon def={def} size={size} stroke={stroke} />
         </div>
+        <span className="absolute bottom-3 left-4 font-mono text-[11px] text-foreground/45">
+          {size}px · stroke {stroke}
+        </span>
+      </div>
 
-        <div className="flex flex-col justify-center gap-5">
-          <div>
-            <h3 className="text-[21px] leading-[1.4] font-medium capitalize tracking-[-0.03em] text-foreground">
-              {def.name.replaceAll("-", " ")}
-            </h3>
-            <p className="mt-0.5 text-[13px] leading-[1.2] tracking-[-0.03em] text-foreground opacity-55">
-              {def.odia} · {def.category} · {def.variants.join(", ")} · since{" "}
-              {def.since}
+      {/* Controls */}
+      <div className="flex min-w-0 flex-col gap-5">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <p className="truncate font-mono text-[15px] font-medium text-foreground">
+              {def.name}
             </p>
-            <SheetDescription className="mt-2 text-[15px] leading-[1.3] font-medium tracking-[-0.03em] text-foreground opacity-80">
-              {def.tags.join(" · ")} — tweak it, then copy or download.
-            </SheetDescription>
+            <p className="mt-1 text-[12px] text-foreground/45">
+              {pascal(def.name)} · {def.category}
+            </p>
           </div>
-
-          <label className="flex flex-col gap-2">
-            <span className="flex items-baseline justify-between text-[13px] leading-[1.2] tracking-[-0.03em] text-foreground opacity-55">
-              Size
-              <span className="tabular-nums">{size}px</span>
-            </span>
-            <Slider
-              value={[size]}
-              onValueChange={(v) => setSize(Array.isArray(v) ? v[0] : v)}
-              min={12}
-              max={128}
-              step={2}
-              aria-label="Icon size"
-            />
-          </label>
-
-          <label className="flex flex-col gap-2">
-            <span className="flex items-baseline justify-between text-[13px] leading-[1.2] tracking-[-0.03em] text-foreground opacity-55">
-              Stroke
-              <span className="tabular-nums">{stroke.toFixed(2)}</span>
-            </span>
-            <Slider
-              value={[stroke]}
-              onValueChange={(v) => setStroke(Array.isArray(v) ? v[0] : v)}
-              min={0.5}
-              max={3}
-              step={0.05}
-              aria-label="Icon stroke width"
-            />
-          </label>
+          {onClose && (
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close"
+              className="flex size-8 shrink-0 items-center justify-center rounded-full border text-foreground/55 transition-colors hover:text-foreground"
+            >
+              <IconX className="size-4" stroke={1.75} />
+            </button>
+          )}
         </div>
-      </div>
 
-      <div className="grid gap-3 sm:grid-cols-2">
-        <div className="rounded-2xl border-black/10 bg-white p-4 text-[#171717]">
-          <p className="text-[13px] leading-[1.2] tracking-[-0.03em] text-[#171717]/55">
-            On light
-          </p>
-          <div className="mt-3 flex items-end justify-between px-1">
-            {previewSizes.map((previewSize) => (
-              <Icon key={previewSize} def={def} size={previewSize} stroke={1.75} />
+        <Row label="Size" value={`${size}px`}>
+          <div className="flex flex-wrap gap-1.5">
+            {SIZES.map((s) => (
+              <Pill key={s} active={size === s} onClick={() => setSize(s)}>
+                {s}
+              </Pill>
             ))}
           </div>
-        </div>
-        <div className="rounded-2xl border bg-[#111111] p-4">
-          <p className="text-[13px] leading-[1.2] tracking-[-0.03em] text-white/55">
-            On dark
-          </p>
-          <div className="mt-3 flex items-end justify-between px-1 text-white">
-            {previewSizes.map((previewSize) => (
-              <Icon key={previewSize} def={def} size={previewSize} stroke={1.75} />
+        </Row>
+
+        <Row label="Stroke" value={`${stroke}px`}>
+          <div className="flex flex-wrap gap-1.5">
+            {STROKES.map((s) => (
+              <Pill key={s} active={stroke === s} onClick={() => setStroke(s)}>
+                {s}
+              </Pill>
             ))}
           </div>
+        </Row>
+
+        <Row label="Color" value={color === "currentColor" ? "currentColor" : color}>
+          <div className="flex items-center gap-2">
+            {COLORS.map((c) => (
+              <button
+                key={c.value}
+                type="button"
+                onClick={() => setColor(c.value)}
+                aria-label={c.label}
+                aria-pressed={color === c.value}
+                className={`size-6 rounded-full border transition-transform hover:scale-110 ${color === c.value ? "ring-2 ring-foreground ring-offset-2 ring-offset-background" : ""
+                  }`}
+                style={{ background: c.value === "currentColor" ? "var(--foreground)" : c.value }}
+              />
+            ))}
+            <label
+              className="relative size-6 cursor-pointer overflow-hidden rounded-full border"
+              title="Custom color"
+              style={{
+                background:
+                  "conic-gradient(from 0deg, #ef4444, #eab308, #22c55e, #06b6d4, #6366f1, #ec4899, #ef4444)",
+              }}
+            >
+              <input
+                type="color"
+                aria-label="Custom color"
+                onChange={(event) => setColor(event.target.value)}
+                className="absolute inset-0 size-full cursor-pointer opacity-0"
+              />
+            </label>
+          </div>
+        </Row>
+
+        {/* Code */}
+        <div>
+          <div className="mb-2 flex gap-1.5">
+            {TABS.map((t) => (
+              <Pill key={t} active={tab === t} onClick={() => setTab(t)}>
+                {t}
+              </Pill>
+            ))}
+          </div>
+          <pre className="max-h-32 overflow-auto rounded-xl border bg-muted/40 p-3 font-mono text-[11.5px] leading-relaxed whitespace-pre-wrap break-all text-foreground/80 [scrollbar-width:thin]">
+            {code}
+          </pre>
         </div>
-      </div>
 
-      {def.note && (
-        <p className="rounded-2xl border bg-muted/40 px-4 py-3 text-[13px] leading-[1.4] tracking-[-0.03em] text-foreground opacity-80">
-          {def.note}
-        </p>
-      )}
-
-      <Tabs
-        value={formatId}
-        onValueChange={(value) => setFormatId(value as FormatId)}
-        className="min-w-0"
-      >
-        <TabsList className="w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {formats.map((f) => (
-            <TabsTrigger key={f.id} value={f.id} className="min-w-fit flex-none px-2 text-[13px]">
-              {f.label}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-
-        {formats.map((f) => (
-          <TabsContent key={f.id} value={f.id}>
-            <pre className="mt-2 max-h-52 w-full min-w-0 overflow-auto rounded-2xl bg-muted p-4 text-xs leading-relaxed whitespace-pre [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              <code>{f.run(def, opts)}</code>
-            </pre>
-          </TabsContent>
-        ))}
-      </Tabs>
-
-      <div className="flex flex-wrap justify-end gap-2">
-        <Button variant="outline" onClick={copy}>
-          <IconCopy data-icon="inline-start" />
-          Copy
-        </Button>
-        <Button variant="outline" onClick={downloadPng}>
-          <IconDownload data-icon="inline-start" />
-          PNG
-        </Button>
-        <Button onClick={download}>
-          <IconDownload data-icon="inline-start" />
-          Download
-        </Button>
+        {/* Actions */}
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={onCopy}
+            className="inline-flex h-9 items-center gap-2 rounded-full bg-foreground px-4 text-[13px] font-medium text-background transition-opacity hover:opacity-85"
+          >
+            {copied ? (
+              <IconCheck className="size-3.5" stroke={2.25} />
+            ) : (
+              <IconCopy className="size-3.5" stroke={2} />
+            )}
+            {copied ? "Copied" : copyLabel}
+          </button>
+          <button
+            type="button"
+            onClick={onDownloadSvg}
+            className="inline-flex h-9 items-center gap-2 rounded-full border px-4 text-[13px] font-medium text-foreground/75 transition-colors hover:text-foreground"
+          >
+            <IconDownload className="size-3.5" stroke={2} />
+            SVG
+          </button>
+          <button
+            type="button"
+            onClick={onDownloadPng}
+            className="inline-flex h-9 items-center gap-2 rounded-full border px-4 text-[13px] font-medium text-foreground/75 transition-colors hover:text-foreground"
+          >
+            <IconDownload className="size-3.5" stroke={2} />
+            PNG {PNG_PX}
+          </button>
+        </div>
       </div>
     </div>
   )
