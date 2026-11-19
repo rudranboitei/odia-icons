@@ -120,25 +120,25 @@ export function IconPlayground({ def }: { def: IconDef }) {
 
       <div className="grid gap-5 sm:grid-cols-[1.1fr_1fr]">
         <div className="flex min-h-44 items-center justify-center rounded-2xl border border-dashed bg-muted/40 p-6">
-          <Icon def={def} size={size} stroke={stroke} className="text-[#171717]" />
+          <Icon def={def} size={size} stroke={stroke} className="text-foreground" />
         </div>
 
         <div className="flex flex-col justify-center gap-5">
           <div>
-            <h3 className="text-[21px] leading-[1.4] font-medium capitalize tracking-[-0.03em] text-[#1d1d1f]">
+            <h3 className="text-[21px] leading-[1.4] font-medium capitalize tracking-[-0.03em] text-foreground">
               {def.name.replaceAll("-", " ")}
             </h3>
-            <p className="mt-0.5 text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
+            <p className="mt-0.5 text-[13px] leading-[1.2] tracking-[-0.03em] text-foreground opacity-55">
               {def.odia} · {def.category} · {def.variants.join(", ")} · since{" "}
               {def.since}
             </p>
-            <SheetDescription className="mt-2 text-[15px] leading-[1.3] font-medium tracking-[-0.03em] text-[#1d1d1f] opacity-80">
+            <SheetDescription className="mt-2 text-[15px] leading-[1.3] font-medium tracking-[-0.03em] text-foreground opacity-80">
               {def.tags.join(" · ")} — tweak it, then copy or download.
             </SheetDescription>
           </div>
 
           <label className="flex flex-col gap-2">
-            <span className="flex items-baseline justify-between text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
+            <span className="flex items-baseline justify-between text-[13px] leading-[1.2] tracking-[-0.03em] text-foreground opacity-55">
               Size
               <span className="tabular-nums">{size}px</span>
             </span>
@@ -153,7 +153,7 @@ export function IconPlayground({ def }: { def: IconDef }) {
           </label>
 
           <label className="flex flex-col gap-2">
-            <span className="flex items-baseline justify-between text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
+            <span className="flex items-baseline justify-between text-[13px] leading-[1.2] tracking-[-0.03em] text-foreground opacity-55">
               Stroke
               <span className="tabular-nums">{stroke.toFixed(2)}</span>
             </span>
@@ -170,11 +170,11 @@ export function IconPlayground({ def }: { def: IconDef }) {
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2">
-        <div className="rounded-2xl border p-4">
-          <p className="text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
+        <div className="rounded-2xl border-black/10 bg-white p-4 text-[#171717]">
+          <p className="text-[13px] leading-[1.2] tracking-[-0.03em] text-[#171717]/55">
             On light
           </p>
-          <div className="mt-3 flex items-end justify-between px-1 text-[#171717]">
+          <div className="mt-3 flex items-end justify-between px-1">
             {previewSizes.map((previewSize) => (
               <Icon key={previewSize} def={def} size={previewSize} stroke={1.75} />
             ))}
@@ -193,7 +193,7 @@ export function IconPlayground({ def }: { def: IconDef }) {
       </div>
 
       {def.note && (
-        <p className="rounded-2xl border bg-muted/40 px-4 py-3 text-[13px] leading-[1.4] tracking-[-0.03em] text-[#1d1d1f] opacity-80">
+        <p className="rounded-2xl border bg-muted/40 px-4 py-3 text-[13px] leading-[1.4] tracking-[-0.03em] text-foreground opacity-80">
           {def.note}
         </p>
       )}
@@ -203,7 +203,7 @@ export function IconPlayground({ def }: { def: IconDef }) {
         onValueChange={(value) => setFormatId(value as FormatId)}
         className="min-w-0"
       >
-        <TabsList className="w-full overflow-x-auto [scrollbar-width:none]">
+        <TabsList className="w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {formats.map((f) => (
             <TabsTrigger key={f.id} value={f.id} className="min-w-fit flex-none px-2 text-[13px]">
               {f.label}
@@ -213,7 +213,7 @@ export function IconPlayground({ def }: { def: IconDef }) {
 
         {formats.map((f) => (
           <TabsContent key={f.id} value={f.id}>
-            <pre className="mt-2 max-h-52 w-full min-w-0 overflow-auto rounded-2xl bg-muted p-4 text-xs leading-relaxed whitespace-pre">
+            <pre className="mt-2 max-h-52 w-full min-w-0 overflow-auto rounded-2xl bg-muted p-4 text-xs leading-relaxed whitespace-pre [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               <code>{f.run(def, opts)}</code>
             </pre>
           </TabsContent>
