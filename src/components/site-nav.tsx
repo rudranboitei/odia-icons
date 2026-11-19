@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { IconArrowUpRight, IconMenu2, IconX } from "@tabler/icons-react"
 import { siteConfig } from "@/lib/site-config"
 import { buttonVariants } from "@/components/ui/button"
@@ -14,8 +15,8 @@ export function SiteNav() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
-        <a
-          href="#top"
+        <Link
+          href="/"
           className="flex items-center"
           onClick={() => setOpen(false)}
         >
@@ -28,17 +29,17 @@ export function SiteNav() {
             unoptimized
             className="h-[26px] w-auto"
           />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
           {nav.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               className="rounded-full px-3.5 py-2 text-[15px] font-medium tracking-[-0.03em] text-[#1d1d1f]/60 transition-colors hover:bg-muted hover:text-[#1d1d1f]"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -55,15 +56,15 @@ export function SiteNav() {
             GitHub
             <IconArrowUpRight data-icon="inline-end" />
           </a>
-          <a
-            href="#icons"
+          <Link
+            href={links.icons}
             className={cn(
               buttonVariants({ size: "lg" }),
               "h-10 rounded-full px-4 text-[15px]"
             )}
           >
             Get the icons
-          </a>
+          </Link>
 
           <button
             type="button"
@@ -85,14 +86,14 @@ export function SiteNav() {
         <div id="mobile-menu" className="border-t md:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col px-6 py-3" aria-label="Mobile">
             {nav.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-2 py-3 text-[15px] font-medium tracking-[-0.03em] text-[#1d1d1f]/60 transition-colors hover:bg-muted hover:text-[#1d1d1f]"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <a
               href={links.github}

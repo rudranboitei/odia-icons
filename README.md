@@ -6,7 +6,7 @@ visual traditions. Built with Next.js, Tailwind CSS and Motion.
 ## Features
 
 - Five hand-drawn Odia motifs on a shared 24 × 24 grid with 1.75px strokes
-- Searchable, filterable icon browser with a detail drawer
+- Searchable, filterable icon browser at `/icons` with a detail drawer
 - Playground: resize, change stroke, preview at 16/24/32/48, copy SVG / JSX /
   React / import / data URI, download SVG or PNG
 - Animated feature cards explaining the set

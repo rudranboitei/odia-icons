@@ -24,15 +24,15 @@ export const siteConfig = {
     github,
     license,
     email,
-    icons: "#icons",
+    icons: "/icons",
     contribute: issues,
   },
 
   nav: [
-    { label: "Icons", href: "#icons" },
-    { label: "Features", href: "#features" },
-    { label: "Developers", href: "#developers" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Icons", href: "/icons" },
+    { label: "Features", href: "/#features" },
+    { label: "Developers", href: "/#developers" },
+    { label: "FAQ", href: "/#faq" },
   ],
 
   // The main conversion component — repeated in the hero, developer and final sections.
@@ -192,9 +192,9 @@ export const siteConfig = {
     note: "Made in Odisha, India.",
     year: 2026,
     links: [
-      { label: "The set", href: "#icons" },
-      { label: "Features", href: "#features" },
-      { label: "FAQ", href: "#faq" },
+      { label: "The set", href: "/icons" },
+      { label: "Features", href: "/#features" },
+      { label: "FAQ", href: "/#faq" },
       { label: "GitHub", href: github, external: true },
       { label: "MIT License", href: license, external: true },
       { label: "Contribute", href: issues, external: true },

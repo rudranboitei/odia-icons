@@ -22,7 +22,15 @@ const categories: Array<{ id: "all" | IconCategory; label: string }> = [
   })),
 ]
 
-export function IconShowcase() {
+export function IconShowcase({
+  eyebrow = "The set",
+  title = `${icons.length} motifs. One shared grid.`,
+  description = "Every icon is drawn on a 24 × 24 grid with 1.75px strokes. Search, filter, then open any tile to make it yours.",
+}: {
+  eyebrow?: string
+  title?: string
+  description?: string
+} = {}) {
   const [active, setActive] = useState<IconDef | null>(null)
   const [query, setQuery] = useState("")
   const [category, setCategory] = useState<"all" | IconCategory>("all")
@@ -62,9 +70,9 @@ export function IconShowcase() {
     <section id="icons" className="scroll-mt-20 px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-5xl">
         <SectionHeader
-          eyebrow="The set"
-          title={`${icons.length} motifs. One shared grid.`}
-          description="Every icon is drawn on a 24 × 24 grid with 1.75px strokes. Search, filter, then open any tile to make it yours."
+          eyebrow={eyebrow}
+          title={title}
+          description={description}
         />
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

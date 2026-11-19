@@ -4,7 +4,6 @@ import { Features } from "@/components/feature"
 import { FinalCta } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 import { Hero } from "@/components/hero"
-import { IconShowcase } from "@/components/iconshowcase"
 import { Quote } from "@/components/quote"
 import { SiteNav } from "@/components/site-nav"
 import { Steps } from "@/components/steps"
@@ -19,7 +18,6 @@ export default function Home() {
       <SiteNav />
       <Hero />
       <Features />
-      <IconShowcase />
       <Quote />
       <Steps />
       <DeveloperSection />
