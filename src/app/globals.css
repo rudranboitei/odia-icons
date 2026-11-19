@@ -178,11 +178,11 @@
   .text-footer-mark {
     font-family: Satoshi, "Satoshi Placeholder", sans-serif;
     font-weight: 500;
-    font-size: clamp(3.25rem, 25.5vw, 32rem);
-    line-height: 0.75;
-    letter-spacing: -0.065em;
+    font-size: clamp(3.5rem, 24vw, 30rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
     color: #1d1d1f;
-    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
   }
 }
 /* Infinite icon marquee used in the hero and final CTA. */

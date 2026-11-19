@@ -69,7 +69,7 @@ export function Footer() {
 
       <div
         aria-hidden
-        className="relative mt-2 overflow-hidden px-2 select-none"
+        className="relative mt-4 overflow-x-clip px-2 select-none"
       >
         <div className="text-footer-mark w-full text-center whitespace-nowrap">
           {footer.wordmark}
