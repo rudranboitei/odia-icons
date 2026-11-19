@@ -450,7 +450,7 @@ function BundleDemo({ active }: { active: boolean }) {
         </div>
         <div className="h-2.5 rounded-full bg-border">
           <motion.div
-            className="h-full rounded-full bg-[image:var(--of-gradient)]"
+            className="h-full rounded-full bg-(image:--of-gradient)"
             initial={{ width: 0 }}
             whileInView={{ width: "3%" }}
             viewport={{ once: true }}
@@ -478,7 +478,7 @@ function ShipDemo({ active }: { active: boolean }) {
             key={c}
             animate={active ? { y: [0, -6, 0] } : { y: 0 }}
             transition={{ duration: 3, repeat: Infinity, delay: i * 0.25, ease: "easeInOut" }}
-            className="rounded-full border border-[var(--of-line)] bg-card px-4 py-1.5 text-xs font-medium text-[var(--of-text)] transition-colors hover:border-brand-blue/50"
+            className="rounded-full border border-(--of-line) bg-card px-4 py-1.5 text-xs font-medium text-(--of-text) transition-colors hover:border-brand-blue/50"
           >
             {c}
           </motion.span>

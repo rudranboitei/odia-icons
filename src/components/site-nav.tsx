@@ -1,6 +1,7 @@
+
 import Image from "next/image"
 import Link from "next/link"
-import { IconBrandGithub } from "@tabler/icons-react"
+
 import { siteConfig } from "@/lib/site-config"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -27,22 +28,24 @@ export function SiteNav() {
           <Link
             href={links.github}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             aria-label="GitHub"
-            title="GitHub"
-            className={cn(
-              buttonVariants({ variant: "outline", size: "icon" }),
-              "size-10 rounded-full"
-            )}
+            className="flex items-center"
           >
-            <IconBrandGithub />
+            <Image
+              src="/github-icon.svg"
+              alt="GitHub"
+              width={24}
+              height={24}
+              priority
+              unoptimized
+              className="size-6 dark:invert"
+            />
           </Link>
+
           <Link
             href={links.icons}
-            className={cn(
-              buttonVariants({ size: "sm" }),
-              "h-10 rounded-full px-4 text-[15px]"
-            )}
+            className={cn(buttonVariants({ size: "sm" }))}
           >
             Get the icons
           </Link>
