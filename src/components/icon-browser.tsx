@@ -374,7 +374,7 @@ export function IconBrowser() {
                           type="button"
                           onClick={() => setActive(icon)}
                           aria-label={`Open ${icon.name} icon`}
-                          className="flex h-[156px] cursor-pointer w-full flex-col items-center justify-center gap-4 rounded-xl border border-border bg-card px-3 transition-colors hover:border-border-strong focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
+                          className="flex h-[156px] cursor-pointer w-full flex-col items-center justify-center gap-4 rounded-none border border-border bg-card px-3 transition-colors hover:border-border-strong focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
                         >
                           <Icon
                             def={icon}
@@ -425,7 +425,7 @@ export function IconBrowser() {
                     ))}
                   </div>
                 ) : (
-                  <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed px-6 py-20 text-center">
+                  <div className="flex flex-col items-center gap-3 rounded-none border border-dashed px-6 py-20 text-center">
                     <p className="text-[20px] leading-[1.4] font-medium text-foreground">
                       No icons match that search.
                     </p>
