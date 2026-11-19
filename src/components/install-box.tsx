@@ -5,7 +5,7 @@ import { IconCheck, IconCopy } from "@tabler/icons-react"
 import { Button } from "@/components/ui/button"
 import { toast } from "@/components/ui/toast"
 import { copyText } from "@/lib/clipboard"
-import { ShellCode } from "@/components/syntax-code"
+import { ShikiCode } from "@/components/shiki-code"
 import { siteConfig } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
 
@@ -49,8 +49,9 @@ export function InstallBox({
     >
       <div className="flex w-full items-center gap-2 rounded-xl border border-border bg-muted p-1.5 pl-4">
         <span className="text-sm text-muted-foreground select-none">$</span>
-        <ShellCode
-          command={command}
+        <ShikiCode
+          code={command}
+          lang="bash"
           className="min-w-0 flex-1 truncate text-left font-mono text-sm text-foreground"
         />
         <Button
