@@ -13,8 +13,8 @@ export function SiteNav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
+    <header className="sticky top-0 z-50 border-b border-border bg-background">
+      <div className="flex h-16 w-full items-center justify-between gap-4 px-5 lg:px-6">
         <Link
           href="/"
           className="flex items-center"
@@ -36,7 +36,7 @@ export function SiteNav() {
             <Link
               key={link.label}
               href={link.href}
-              className="rounded-full px-3.5 py-2 text-[15px] font-medium tracking-[-0.03em] text-[#1d1d1f]/60 transition-colors hover:bg-muted hover:text-[#1d1d1f]"
+              className="rounded-full px-3.5 py-2 text-[15px] font-medium tracking-[-0.03em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {link.label}
             </Link>
@@ -84,13 +84,13 @@ export function SiteNav() {
 
       {open && (
         <div id="mobile-menu" className="border-t md:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col px-6 py-3" aria-label="Mobile">
+          <nav className="flex w-full flex-col px-5 py-3 lg:px-6" aria-label="Mobile">
             {nav.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-2 py-3 text-[15px] font-medium tracking-[-0.03em] text-[#1d1d1f]/60 transition-colors hover:bg-muted hover:text-[#1d1d1f]"
+                className="rounded-xl px-2 py-3 text-[15px] font-medium tracking-[-0.03em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
               >
                 {link.label}
               </Link>
@@ -100,7 +100,7 @@ export function SiteNav() {
               target="_blank"
               rel="noopener"
               onClick={() => setOpen(false)}
-              className="rounded-xl px-2 py-3 text-[15px] font-medium tracking-[-0.03em] text-[#1d1d1f]/60 transition-colors hover:bg-muted hover:text-[#1d1d1f]"
+              className="rounded-xl px-2 py-3 text-[15px] font-medium tracking-[-0.03em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               GitHub ↗
             </a>

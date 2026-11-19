@@ -44,9 +44,9 @@ export function RootedVisual() {
         <motion.div
           key={s.name}
           className="absolute inset-0"
-          initial={{ opacity: 0, filter: "blur(6px)", scale: 0.97 }}
-          animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
-          exit={{ opacity: 0, filter: "blur(6px)", scale: 1.02 }}
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.02 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
         >
           <div className="absolute inset-x-0 top-0 bottom-12 flex items-center justify-center">
@@ -87,7 +87,7 @@ export function GridVisual() {
   const D = 7 // loop duration (s)
   return (
     <div className="flex size-full flex-col items-center justify-center gap-4">
-      <div className="relative size-[96px] rounded-xl border bg-background shadow-sm">
+      <div className="relative size-[96px] rounded-xl border bg-background">
         <svg viewBox="0 0 32 32" className="absolute inset-0 size-full" fill="none" aria-hidden>
           {Array.from({ length: 7 }).map((_, i) => (
             <g key={i} className="stroke-border" strokeWidth="0.15">
@@ -102,7 +102,7 @@ export function GridVisual() {
       </div>
 
       <div className="flex flex-col items-center gap-2">
-        <div className="flex divide-x overflow-hidden rounded-lg border bg-background shadow-sm">
+        <div className="flex divide-x overflow-hidden rounded-lg border bg-background">
           {row.map((name, i) => (
             <motion.div
               key={name}
@@ -146,7 +146,7 @@ export function CopyCodeVisual() {
 
   return (
     <div className="flex size-full items-center justify-center p-5">
-      <div className="w-full max-w-[250px] overflow-hidden rounded-xl border bg-background shadow-sm">
+      <div className="w-full max-w-[250px] overflow-hidden rounded-xl border bg-background">
         <div className="flex items-center justify-between border-b px-2.5 py-2">
           <div className="flex items-center gap-2">
             <MotifIcon name="deula" className="size-4" strokeWidth={1.5} />
@@ -156,7 +156,7 @@ export function CopyCodeVisual() {
                   {i === t && (
                     <motion.span
                       layoutId="odia-tab"
-                      className="absolute inset-0 rounded bg-background shadow-sm"
+                      className="absolute inset-0 rounded bg-background"
                       transition={{ type: "spring", stiffness: 500, damping: 36 }}
                     />
                   )}
@@ -207,7 +207,7 @@ export function FreeVisual() {
     <div className="relative flex size-full items-center justify-center">
       {/* poster (behind, left) */}
       <motion.div
-        className="absolute left-[14%] flex h-28 w-[76px] -rotate-6 flex-col items-center gap-1.5 rounded-lg border bg-background pt-3 shadow-sm"
+        className="absolute left-[14%] flex h-28 w-[76px] -rotate-6 flex-col items-center gap-1.5 rounded-lg border bg-background pt-3"
         animate={{ y: [0, -4, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -219,7 +219,7 @@ export function FreeVisual() {
 
       {/* app tile (behind, right) */}
       <motion.div
-        className="absolute right-[14%] flex size-[68px] rotate-6 items-center justify-center rounded-2xl bg-foreground text-background shadow-sm"
+        className="absolute right-[14%] flex size-[68px] rotate-6 items-center justify-center rounded-2xl bg-foreground text-background"
         animate={{ y: [0, 4, 0] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -227,7 +227,7 @@ export function FreeVisual() {
       </motion.div>
 
       {/* license (front) */}
-      <div className="relative z-10 w-[150px] rounded-xl border bg-background p-3 shadow-md">
+      <div className="relative z-10 w-[150px] rounded-xl border bg-background p-3">
         <div className="flex items-center justify-between">
           <span className="text-[11px] font-semibold tracking-tight">MIT License</span>
           <span className="flex size-4 items-center justify-center rounded-full bg-primary text-primary-foreground">

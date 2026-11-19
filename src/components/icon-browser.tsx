@@ -17,6 +17,7 @@ import {
 import { siteConfig } from "@/lib/site-config"
 import { copyText } from "@/lib/clipboard"
 import { toast } from "@/components/ui/toast"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -165,7 +166,7 @@ export function IconBrowser() {
   return (
     <div className="min-h-dvh bg-background text-foreground">
       {/* Framed page: space on both sides + vertical hairlines */}
-      <div className="mx-auto flex min-h-dvh w-full max-w-[1480px] border-x">
+      <div className="mx-auto flex min-h-dvh w-full max-w-[1480px] border-x border-border">
         {/* Sidebar */}
         <aside className="sticky top-0 hidden h-dvh w-[232px] shrink-0 flex-col px-6 py-6 lg:flex">
           <Link href="/" className="inline-flex w-fit items-center">
@@ -181,7 +182,7 @@ export function IconBrowser() {
           </Link>
 
           <nav className="mt-12" aria-label="Browse">
-            <p className="text-[13px] text-foreground/35">Browse</p>
+            <p className="text-[13px] text-muted-foreground">Browse</p>
             <ul className="mt-3 flex flex-col gap-3.5">
               {browseItems.map((item) => (
                 <li key={item.label}>
@@ -190,12 +191,12 @@ export function IconBrowser() {
                     className={
                       item.active
                         ? "inline-flex items-center gap-2 text-[14px] font-medium text-foreground"
-                        : "text-[14px] text-foreground/65 transition-colors hover:text-foreground"
+                        : "text-[14px] text-muted-foreground transition-colors hover:text-foreground"
                     }
                   >
                     {item.label}
                     {item.active && (
-                      <span aria-hidden className="size-1.5 rounded-full bg-foreground" />
+                      <span aria-hidden className="size-1.5 rounded-full bg-brand" />
                     )}
                   </Link>
                 </li>
@@ -204,7 +205,7 @@ export function IconBrowser() {
           </nav>
 
           <nav className="mt-9" aria-label="Resources">
-            <p className="text-[13px] text-foreground/35">Resources</p>
+            <p className="text-[13px] text-muted-foreground">Resources</p>
             <ul className="mt-3 flex flex-col gap-3.5">
               {resourceItems.map((item) => (
                 <li key={item.label}>
@@ -212,7 +213,7 @@ export function IconBrowser() {
                     href={item.href}
                     target="_blank"
                     rel="noopener"
-                    className="text-[14px] text-foreground/65 transition-colors hover:text-foreground"
+                    className="text-[14px] text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {item.label}
                   </a>
@@ -222,14 +223,14 @@ export function IconBrowser() {
           </nav>
 
           <div className="mt-auto">
-            <div className="h-px w-10 bg-foreground" />
+            <div className="h-px w-10 bg-border-strong" />
             <p className="mt-4 text-[14px] leading-[1.45] font-medium text-foreground">
               Open-source icons from Odisha, drawn on one shared grid.
             </p>
-            <button
+            <Button
               type="button"
               onClick={copyInstall}
-              className="mt-4 inline-flex h-9 items-center gap-2 rounded-full bg-foreground px-4 text-[13px] font-medium text-background transition-opacity hover:opacity-85"
+              className="mt-4 h-9 px-4"
             >
               {copiedInstall ? "Copied" : "Copy install"}
               {copiedInstall ? (
@@ -237,8 +238,8 @@ export function IconBrowser() {
               ) : (
                 <IconCopy className="size-3.5" stroke={2} />
               )}
-            </button>
-            <p className="mt-4 text-[13px] leading-[1.5] text-foreground/45">
+            </Button>
+            <p className="mt-4 text-[13px] leading-[1.5] text-muted-foreground">
               MIT licensed · v0.1.0
               <br />
               Made in Odisha, India.
@@ -248,7 +249,7 @@ export function IconBrowser() {
 
         {/* Main column */}
         <div className="flex min-w-0 flex-1 flex-col">
-          <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur-xl">
+          <header className="sticky top-0 z-40 border-b border-border bg-background">
             <div className="flex h-16 items-center gap-4 px-5 lg:px-6">
               <Link href="/" className="shrink-0 lg:hidden">
                 <Image
@@ -264,7 +265,7 @@ export function IconBrowser() {
 
               <div className="hidden min-w-0 items-baseline gap-3 lg:flex">
                 <span className="text-[16px] font-medium">Icons</span>
-                <span className="truncate text-[13px] text-foreground/45">
+                <span className="truncate text-[13px] text-muted-foreground">
                   Odia motifs drawn on a 24 × 24 grid.
                 </span>
               </div>
@@ -273,7 +274,7 @@ export function IconBrowser() {
                 <div className="relative w-full min-w-0 sm:w-64">
                   <IconSearch
                     aria-hidden
-                    className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-foreground/40"
+                    className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground"
                   />
                   <input
                     ref={searchRef}
@@ -282,7 +283,7 @@ export function IconBrowser() {
                     onChange={(event) => setQuery(event.target.value)}
                     placeholder={`Search ${icons.length} icons…`}
                     aria-label="Search icons"
-                    className="h-9 w-full appearance-none rounded-full border bg-card pr-14 pl-9 text-[13px] text-foreground outline-none placeholder:text-foreground/40 focus-visible:ring-3 focus-visible:ring-ring/30 [&::-webkit-search-cancel-button]:hidden"
+                    className="h-9 w-full appearance-none rounded-full border border-border bg-card pr-14 pl-9 text-[13px] text-foreground outline-none placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background [&::-webkit-search-cancel-button]:hidden"
                   />
                   {query ? (
                     <button
@@ -292,12 +293,12 @@ export function IconBrowser() {
                         searchRef.current?.focus()
                       }}
                       aria-label="Clear search"
-                      className="absolute top-1/2 right-2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full text-foreground/50 hover:bg-muted hover:text-foreground"
+                      className="absolute top-1/2 right-2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground"
                     >
                       <IconX className="size-3.5" />
                     </button>
                   ) : (
-                    <kbd className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 font-mono text-[10px] text-foreground/40">
+                    <kbd className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 font-mono text-[10px] text-muted-foreground">
                       ⌘K
                     </kbd>
                   )}
@@ -341,7 +342,7 @@ export function IconBrowser() {
                     className={
                       category === item.id
                         ? "shrink-0 rounded-full bg-foreground px-3.5 py-1.5 text-[13px] font-medium text-background"
-                        : "shrink-0 rounded-full bg-muted px-3.5 py-1.5 text-[13px] text-foreground/60 transition-colors hover:text-foreground"
+                        : "shrink-0 rounded-full bg-muted px-3.5 py-1.5 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
                     }
                   >
                     {item.label}
@@ -351,7 +352,7 @@ export function IconBrowser() {
                   </button>
                 ))}
               </div>
-              <span className="ml-auto hidden shrink-0 text-[12px] text-foreground/45 sm:block">
+              <span className="ml-auto hidden shrink-0 text-[12px] text-muted-foreground sm:block">
                 {filtered.length} icons
               </span>
             </div>
@@ -370,7 +371,7 @@ export function IconBrowser() {
                           type="button"
                           onClick={() => setActive(icon)}
                           aria-label={`Open ${icon.name} icon`}
-                          className="flex h-[156px] w-full flex-col items-center justify-center gap-4 rounded-xl border bg-card px-3 transition-colors hover:border-foreground/25 focus-visible:ring-3 focus-visible:ring-ring/30 focus-visible:outline-none"
+                          className="flex h-[156px] w-full flex-col items-center justify-center gap-4 rounded-xl border border-border bg-card px-3 transition-colors hover:border-border-strong focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
                         >
                           <Icon
                             def={icon}
@@ -379,14 +380,14 @@ export function IconBrowser() {
                             absoluteStrokeWidth
                             className="text-foreground"
                           />
-                          <span className="max-w-full truncate font-mono text-[11px] text-foreground/50 transition-colors group-hover:text-foreground/80">
+                          <span className="max-w-full truncate font-mono text-[11px] text-muted-foreground transition-colors group-hover:text-foreground">
                             {icon.name}
                           </span>
                         </button>
 
                         <span
                           aria-hidden
-                          className="pointer-events-none absolute right-2.5 bottom-2.5 flex size-6 items-center justify-center rounded-full bg-muted text-foreground/55 opacity-0 transition-opacity group-hover:opacity-100"
+                          className="pointer-events-none absolute right-2.5 bottom-2.5 flex size-6 items-center justify-center rounded-full bg-muted text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100"
                         >
                           <IconArrowUpRight className="size-3.5" stroke={2} />
                         </span>
@@ -396,7 +397,7 @@ export function IconBrowser() {
                             type="button"
                             onClick={() => copy(toSvg(icon, { size: 24, stroke: 1.75 }), "SVG")}
                             aria-label={`Copy ${icon.name} SVG`}
-                            className="flex size-6 items-center justify-center rounded-full border bg-background text-foreground/60 transition-colors hover:text-foreground"
+                            className="flex size-6 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-foreground"
                           >
                             <IconCopy className="size-3" stroke={2} />
                           </button>
@@ -404,7 +405,7 @@ export function IconBrowser() {
                             type="button"
                             onClick={() => copy(toJsx(icon, { size: 24, stroke: 1.75 }), "JSX")}
                             aria-label={`Copy ${icon.name} JSX`}
-                            className="flex size-6 items-center justify-center rounded-full border bg-background text-foreground/60 transition-colors hover:text-foreground"
+                            className="flex size-6 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-foreground"
                           >
                             <IconFileCode className="size-3" stroke={2} />
                           </button>
@@ -412,7 +413,7 @@ export function IconBrowser() {
                             type="button"
                             onClick={() => download(icon)}
                             aria-label={`Download ${icon.name} SVG`}
-                            className="flex size-6 items-center justify-center rounded-full border bg-background text-foreground/60 transition-colors hover:text-foreground"
+                            className="flex size-6 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-foreground"
                           >
                             <IconDownload className="size-3" stroke={2} />
                           </button>
@@ -425,7 +426,7 @@ export function IconBrowser() {
                     <p className="text-[20px] leading-[1.4] font-medium text-foreground">
                       No icons match that search.
                     </p>
-                    <p className="max-w-sm text-[14px] leading-[1.4] text-foreground/60">
+                    <p className="max-w-sm text-[14px] leading-[1.4] text-muted-foreground">
                       Try another word, or request the motif you need.
                     </p>
                     <a
@@ -442,9 +443,9 @@ export function IconBrowser() {
 
               {/* Right panel */}
               <aside className="sticky top-[8.25rem] hidden w-[290px] shrink-0 xl:block">
-                <div className="rounded-xl border bg-card">
+                <div className="rounded-xl border border-border bg-card">
                   <div className="flex items-center justify-between px-4 pt-4 pb-3">
-                    <p className="text-[13px] text-foreground/55">Contribute</p>
+                    <p className="text-[13px] text-muted-foreground">Contribute</p>
                     <a
                       href={siteConfig.links.contribute}
                       target="_blank"
@@ -462,13 +463,13 @@ export function IconBrowser() {
                           href={row.href}
                           target="_blank"
                           rel="noopener"
-                          className="flex items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-muted/60"
+                          className="flex items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-muted"
                         >
                           <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground/70">
                             <row.icon className="size-4" stroke={1.75} />
                           </span>
                           <span className="min-w-0">
-                            <span className="block text-[12px] text-foreground/45">
+                            <span className="block text-[12px] text-muted-foreground">
                               {row.eyebrow}
                             </span>
                             <span className="block truncate text-[13px] font-medium text-foreground">
@@ -484,7 +485,7 @@ export function IconBrowser() {
                     href={siteConfig.links.github}
                     target="_blank"
                     rel="noopener"
-                    className="flex items-center justify-between border-t px-4 py-3 text-[13px] text-foreground/55 transition-colors hover:text-foreground"
+                    className="flex items-center justify-between border-t px-4 py-3 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
                   >
                     See all on GitHub
                     <IconArrowUpRight className="size-4" stroke={1.75} />
@@ -494,7 +495,7 @@ export function IconBrowser() {
             </div>
           </main>
 
-          <footer className="flex flex-wrap items-center justify-between gap-2 border-t px-5 py-4 text-[12px] text-foreground/45 lg:px-6">
+          <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border px-5 py-4 text-[12px] text-muted-foreground lg:px-6">
             <span>odiaicons · open source under the MIT licence</span>
             <span>24 × 24 grid · 1.75px stroke</span>
           </footer>

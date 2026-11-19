@@ -24,7 +24,7 @@ function MarqueeRow({
   duration?: string
 }) {
   return (
-    <div className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">
+    <div className="group relative overflow-hidden">
       <div
         className={cn(
           "icon-marquee group-hover:[animation-play-state:paused]",
@@ -38,15 +38,15 @@ function MarqueeRow({
               {sequence.map((icon, i) => (
                 <div
                   key={`${half}-${icon.name.replaceAll("-", " ")}-${i}`}
-                  className="flex h-32 w-44 shrink-0 flex-col items-center justify-center gap-3 rounded-3xl border bg-card shadow-xs"
+                  className="flex h-32 w-44 shrink-0 flex-col items-center justify-center gap-3 rounded-xl border border-border bg-card"
                 >
                   <Icon
                     def={icon}
                     size={44}
                     stroke={1.4}
-                    className="text-[#171717]"
+                    className="text-foreground"
                   />
-                  <span className="text-[13px] leading-[1.2] font-medium capitalize tracking-[-0.03em] text-[#1d1d1f] opacity-55">
+                  <span className="text-[13px] leading-[1.2] font-medium capitalize tracking-[-0.03em] text-muted-foreground">
                     {icon.name.replaceAll("-", " ")}
                   </span>
                 </div>

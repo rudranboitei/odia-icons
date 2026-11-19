@@ -7,26 +7,26 @@ export function Footer() {
   const year = footer.year
 
   return (
-    <footer className="relative mt-12 border-t">
-      <div className="mx-auto max-w-6xl px-6">
+    <footer className="relative mt-12 border-t border-border">
+      <div className="mx-auto w-full max-w-6xl px-5 lg:px-6">
         <div className="flex flex-col items-center gap-4 py-14 text-center">
           <a
             href="#top"
-            className="inline-flex items-center gap-2 text-[#1d1d1f]"
+            className="inline-flex items-center gap-2 text-foreground underline-offset-4 hover:text-brand hover:underline"
           >
             <Icon def={iconsByName["konark-wheel"]} size={22} stroke={1.5} />
             <span className="text-[17px] font-medium tracking-[-0.03em]">
               {name}
             </span>
           </a>
-          <p className="max-w-sm text-[15px] font-medium leading-[1.3] tracking-[-0.03em] text-[#1d1d1f] opacity-80">
+          <p className="max-w-sm text-[15px] leading-relaxed text-muted-foreground">
             {footer.tagline}
           </p>
         </div>
 
         <nav
           aria-label="Footer"
-          className="flex flex-wrap justify-center gap-x-6 gap-y-2 pb-14 text-sm text-muted-foreground"
+          className="flex flex-wrap justify-center gap-x-6 gap-y-2 pb-14 text-sm text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-brand"
         >
           {footer.links.map((l) =>
             l.external ? (
@@ -59,7 +59,7 @@ export function Footer() {
           )}
         </nav>
 
-        <div className="flex flex-col gap-2 border-t py-5 text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-2 border-t border-border py-5 text-[13px] leading-[1.2] tracking-[-0.03em] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {year} {name}. Free under the MIT licence.
           </span>
@@ -69,7 +69,7 @@ export function Footer() {
 
       <div
         aria-hidden
-        className="relative mt-2 overflow-hidden px-2 select-none mask-[linear-gradient(to_bottom,#000_55%,transparent_100%)]"
+        className="relative mt-2 overflow-hidden px-2 select-none"
       >
         <div className="text-footer-mark w-full text-center whitespace-nowrap">
           {footer.wordmark}

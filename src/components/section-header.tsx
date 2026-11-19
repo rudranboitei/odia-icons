@@ -30,11 +30,11 @@ export function SectionHeader({
       )}
     >
       <Eyebrow icon={icon}>{eyebrow}</Eyebrow>
-      <h2 className="mt-6 text-3xl leading-[1.05] font-medium tracking-[-0.03em] text-balance text-[#1d1d1f] sm:text-5xl">
+      <h2 className="mt-6 text-3xl leading-[1.05] font-semibold tracking-tight text-balance text-foreground sm:text-5xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-6 max-w-2xl text-[21px] leading-[1.4] font-medium tracking-[-0.03em] text-balance text-[#545454]">
+        <p className="mt-6 max-w-2xl text-[21px] leading-relaxed font-medium tracking-[-0.03em] text-balance text-muted-foreground">
           {description}
         </p>
       )}

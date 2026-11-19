@@ -33,14 +33,14 @@ import {
 /* ------------------------------------------------------------------ */
 
 const theme = {
-  "--of-bg": "#ffffff",
-  "--of-card": "#ffffff",
-  "--of-inset": "#f6f6f6",
-  "--of-line": "#ececec",
-  "--of-ink": "#0a0a0a",
-  "--of-text": "#0a0a0a",
-  "--of-muted": "#7c7c7c",
-  "--of-faint": "#c9c9c9",
+  "--of-bg": "var(--background)",
+  "--of-card": "var(--card)",
+  "--of-inset": "var(--muted)",
+  "--of-line": "var(--border)",
+  "--of-ink": "var(--foreground)",
+  "--of-text": "var(--foreground)",
+  "--of-muted": "var(--muted-foreground)",
+  "--of-faint": "var(--border-strong)",
 } as CSSProperties;
 
 /* ------------------------------------------------------------------ */
@@ -66,14 +66,17 @@ function Typed({
   speed?: number;
   run?: boolean;
 }) {
-  const [n, setN] = useState(run ? 0 : Array.from(text).length);
+  const len = Array.from(text).length;
+  const [n, setN] = useState(run ? 0 : len);
+  const [config, setConfig] = useState({ text, speed, run });
+
+  if (config.text !== text || config.speed !== speed || config.run !== run) {
+    setConfig({ text, speed, run });
+    setN(run ? 0 : len);
+  }
+
   useEffect(() => {
-    const len = Array.from(text).length;
-    if (!run) {
-      setN(len);
-      return;
-    }
-    setN(0);
+    if (!run) return;
     const t = setInterval(
       () =>
         setN((v) => {
@@ -86,7 +89,7 @@ function Typed({
       speed,
     );
     return () => clearInterval(t);
-  }, [text, speed, run]);
+  }, [len, speed, run]);
   return <>{Array.from(text).slice(0, n).join("")}</>;
 }
 
@@ -94,7 +97,7 @@ function Cursor({ light = false }: { light?: boolean }) {
   return (
     <motion.span
       aria-hidden
-      className={`ml-0.5 inline-block h-4 w-px translate-y-0.5 ${light ? "bg-white" : "bg-[var(--of-ink)]"
+      className={`ml-0.5 inline-block h-4 w-px translate-y-0.5 ${light ? "bg-primary-foreground" : "bg-[var(--of-ink)]"
         }`}
       animate={{ opacity: [1, 0, 1] }}
       transition={{ duration: 1, repeat: Infinity }}
@@ -158,7 +161,7 @@ function Card({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] as const }}
-      className={`flex flex-col rounded-2xl border border-[var(--of-line)] bg-[var(--of-card)] p-3 transition-colors duration-300 hover:border-black/20 ${className}`}
+      className={`flex flex-col rounded-2xl border border-[var(--of-line)] bg-[var(--of-card)] p-3 transition-colors duration-300 hover:border-border-strong ${className}`}
     >
       <div
         className={`relative w-full overflow-hidden rounded-xl bg-[var(--of-inset)] p-4 ${visualClass}`}
@@ -198,7 +201,7 @@ function DrawDemo({ active }: { active: boolean }) {
       <div className="relative aspect-square h-full">
         <svg viewBox="0 0 24 24" className="h-full w-full" fill="none">
           {lines.map((p) => (
-            <g key={p} stroke="rgba(0,0,0,0.07)" strokeWidth="0.05">
+            <g key={p} stroke="var(--hairline)" strokeWidth="0.05">
               <line x1={p} y1="0" x2={p} y2="24" />
               <line x1="0" y1={p} x2="24" y2={p} />
             </g>
@@ -260,7 +263,7 @@ function SearchDemo({ active }: { active: boolean }) {
 
   return (
     <div className="mx-auto flex h-full w-full max-w-xs flex-col gap-3">
-      <div className="flex items-center gap-2 rounded-full border border-[var(--of-line)] bg-white px-4 py-2.5">
+      <div className="flex items-center gap-2 rounded-full border border-[var(--of-line)] bg-card px-4 py-2.5">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--of-muted)" strokeWidth="2" strokeLinecap="round">
           <circle cx="11" cy="11" r="7" />
           <path d="m20 20-3.5-3.5" />
@@ -277,9 +280,9 @@ function SearchDemo({ active }: { active: boolean }) {
             initial={{ opacity: 0, x: -14 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 + k * 0.12, duration: 0.4 }}
-            className="flex items-center gap-3 rounded-xl border border-[var(--of-line)] bg-white px-3 py-2"
+            className="flex items-center gap-3 rounded-xl border border-[var(--of-line)] bg-card px-3 py-2"
           >
-            <span className="grid h-6 w-6 place-items-center rounded-md bg-black/[0.05]">
+            <span className="grid h-6 w-6 place-items-center rounded-md bg-muted">
               <span className="h-2 w-2 rounded-full bg-[var(--of-ink)]" />
             </span>
             <span className="font-mono text-xs text-[var(--of-muted)]">{h}</span>
@@ -309,7 +312,7 @@ function CopyDemo({ active }: { active: boolean }) {
         {TABS.map((t, k) => (
           <div
             key={t.label}
-            className={`relative rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors duration-300 ${i === k ? "text-white" : "bg-white text-[var(--of-muted)]"
+            className={`relative rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors duration-300 ${i === k ? "text-primary-foreground" : "bg-card text-[var(--of-muted)]"
               }`}
           >
             {i === k && (
@@ -324,7 +327,7 @@ function CopyDemo({ active }: { active: boolean }) {
         ))}
       </div>
 
-      <div className="relative rounded-xl border border-[var(--of-line)] bg-white p-3.5">
+      <div className="relative rounded-xl border border-[var(--of-line)] bg-card p-3.5">
         <motion.p
           key={i}
           initial={{ opacity: 0, y: 6 }}
@@ -387,13 +390,13 @@ function StrokeDemo({ active }: { active: boolean }) {
           <span>stroke-width</span>
           <motion.span className="text-[var(--of-ink)]">{label}</motion.span>
         </div>
-        <div className="relative h-1.5 rounded-full bg-black/10">
+        <div className="relative h-1.5 rounded-full bg-border">
           <motion.div
             className="absolute inset-y-0 left-0 rounded-full bg-[var(--of-ink)]"
             style={{ width: pos }}
           />
           <motion.div
-            className="absolute top-1/2 -ml-2 -mt-2 h-4 w-4 rounded-full border-2 border-[var(--of-ink)] bg-white"
+            className="absolute top-1/2 -ml-2 -mt-2 h-4 w-4 rounded-full border-2 border-[var(--of-ink)] bg-card"
             style={{ left: pos }}
           />
         </div>
@@ -427,7 +430,7 @@ function BundleDemo({ active }: { active: boolean }) {
           <span>Icon font</span>
           <span>48 KB</span>
         </div>
-        <div className="h-2.5 rounded-full bg-black/[0.06]">
+        <div className="h-2.5 rounded-full bg-border">
           <motion.div
             className="h-full rounded-full bg-[var(--of-faint)]"
             initial={{ width: 0 }}
@@ -442,7 +445,7 @@ function BundleDemo({ active }: { active: boolean }) {
           <span>OdiaIcons · 1 icon</span>
           <motion.span>{txt}</motion.span>
         </div>
-        <div className="h-2.5 rounded-full bg-black/[0.06]">
+        <div className="h-2.5 rounded-full bg-border">
           <motion.div
             className="h-full rounded-full bg-[var(--of-ink)]"
             initial={{ width: 0 }}
@@ -472,15 +475,15 @@ function ShipDemo({ active }: { active: boolean }) {
             key={c}
             animate={active ? { y: [0, -6, 0] } : { y: 0 }}
             transition={{ duration: 3, repeat: Infinity, delay: i * 0.25, ease: "easeInOut" }}
-            className="rounded-full border border-[var(--of-line)] bg-white px-4 py-1.5 text-xs font-medium text-[var(--of-text)]"
+            className="rounded-full border border-[var(--of-line)] bg-card px-4 py-1.5 text-xs font-medium text-[var(--of-text)]"
           >
             {c}
           </motion.span>
         ))}
       </div>
-      <div className="w-full rounded-xl bg-[var(--of-ink)] px-4 py-3 font-mono text-[11px] text-white/60 sm:text-xs">
-        <span className="text-white/40">$ </span>
-        <span className="break-all text-white">
+      <div className="w-full rounded-xl bg-foreground px-4 py-3 font-mono text-[11px] text-background/60 sm:text-xs">
+        <span className="text-background/40">$ </span>
+        <span className="break-all text-background">
           <Typed text={CMD} speed={28} run={active} />
         </span>
         <Cursor light />
@@ -536,7 +539,7 @@ export default function FeaturesSection() {
       <section
         id="features"
         style={theme}
-        className="bg-[var(--of-bg)] px-4 py-24 text-[var(--of-text)] sm:px-6 md:py-32"
+        className="bg-[var(--of-bg)] px-5 py-24 text-[var(--of-text)] lg:px-6 md:py-32"
       >
         <div className="mx-auto max-w-6xl">
           {/* header */}
@@ -639,7 +642,7 @@ export default function FeaturesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="rounded-2xl border border-[var(--of-line)] bg-[var(--of-card)] p-4 transition-colors duration-300 hover:border-black/20"
+                className="rounded-2xl border border-[var(--of-line)] bg-[var(--of-card)] p-4 transition-colors duration-300 hover:border-border-strong"
               >
                 <svg
                   width="20"

@@ -7,12 +7,12 @@ export function Quote() {
   const { quote, links } = siteConfig
 
   return (
-    <section className="px-6 py-20 sm:py-24">
-      <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] border bg-card shadow-xs">
+    <section className="px-5 py-20 lg:px-6 sm:py-24">
+      <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-border bg-card">
         <div className="grid gap-8 p-8 sm:grid-cols-[1.5fr_1fr] sm:gap-0 sm:p-12">
           <div className="sm:pr-10">
             <Eyebrow>{quote.eyebrow}</Eyebrow>
-            <blockquote className="mt-6 text-2xl leading-[1.2] font-medium tracking-[-0.03em] text-balance text-[#1d1d1f] sm:text-3xl">
+            <blockquote className="mt-6 text-2xl leading-[1.2] font-semibold tracking-tight text-balance text-foreground sm:text-3xl">
               “{quote.text}”
             </blockquote>
           </div>
@@ -23,10 +23,10 @@ export function Quote() {
                 <Icon def={iconsByName["konark-wheel"]} size={26} stroke={1.4} />
               </span>
               <div>
-                <p className="text-[15px] leading-[1.3] font-medium tracking-[-0.03em] text-[#1d1d1f]">
+                <p className="text-[15px] leading-relaxed font-medium tracking-[-0.03em] text-foreground">
                   {quote.author}
                 </p>
-                <p className="mt-0.5 text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
+                <p className="mt-0.5 text-[13px] leading-[1.2] tracking-[-0.03em] text-muted-foreground">
                   {quote.meta}
                 </p>
               </div>
@@ -36,10 +36,10 @@ export function Quote() {
               {quote.stats.map((stat) => (
                 <div key={stat.label}>
                   <dt className="sr-only">{stat.label}</dt>
-                  <dd className="text-2xl font-medium tracking-[-0.03em] text-[#1d1d1f]">
+                  <dd className="text-2xl font-semibold tracking-tight text-foreground">
                     {stat.value}
                   </dd>
-                  <dd className="text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
+                  <dd className="text-[13px] leading-[1.2] tracking-[-0.03em] text-muted-foreground">
                     {stat.label}
                   </dd>
                 </div>
@@ -50,7 +50,7 @@ export function Quote() {
               href={links.github}
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-1 text-[15px] font-medium tracking-[-0.03em] text-[#1d1d1f] underline-offset-4 hover:underline"
+              className="inline-flex items-center gap-1 text-[15px] font-medium tracking-[-0.03em] text-foreground underline underline-offset-4 hover:text-brand"
             >
               Star on GitHub
               <IconArrowUpRight className="size-4" />

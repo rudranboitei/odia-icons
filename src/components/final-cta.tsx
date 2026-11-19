@@ -9,7 +9,7 @@ export function FinalCta() {
   return (
     <section
       id="get-icons"
-      className="relative overflow-hidden px-6 pt-20 pb-6 text-center sm:pt-28"
+      className="relative overflow-hidden px-5 pt-20 pb-6 text-center lg:px-6 sm:pt-28"
     >
       <SectionHeader
         eyebrow={finalCta.eyebrow}
@@ -21,7 +21,7 @@ export function FinalCta() {
         <InstallBox />
       </div>
 
-      <p className="mt-6 text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">{finalCta.helper}</p>
+      <p className="mt-6 text-[13px] leading-[1.2] tracking-[-0.03em] text-muted-foreground">{finalCta.helper}</p>
 
       <IconMarquee className="mt-16" />
     </section>

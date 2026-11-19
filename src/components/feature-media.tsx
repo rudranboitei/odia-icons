@@ -30,7 +30,7 @@ export function FeatureMedia({
   className?: string
 }) {
   return (
-    <div className={cn("h-[210px] w-full overflow-hidden rounded-lg border border-[#2222221a] bg-white", className)}>
+    <div className={cn("h-[210px] w-full overflow-hidden rounded-xl border border-border bg-card", className)}>
       <MotionConfig reducedMotion="user">
         {media.type === "animation" &&
           (() => {

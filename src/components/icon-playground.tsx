@@ -5,6 +5,7 @@ import { IconCheck, IconCopy, IconDownload, IconX } from "@tabler/icons-react"
 import { siteConfig } from "@/lib/site-config"
 import { copyText } from "@/lib/clipboard"
 import { toast } from "@/components/ui/toast"
+import { Button } from "@/components/ui/button"
 import { Icon, toJsx, toSvg, type IconDef } from "@/lib/icons"
 
 const SIZES = [16, 20, 24, 32, 48, 64, 96]
@@ -77,8 +78,8 @@ function Row({ label, value, children }: { label: string; value?: string; childr
   return (
     <div>
       <div className="mb-2 flex items-center justify-between text-[12px]">
-        <span className="text-foreground/45">{label}</span>
-        {value && <span className="font-mono text-foreground/65">{value}</span>}
+        <span className="text-muted-foreground">{label}</span>
+        {value && <span className="font-mono text-muted-foreground">{value}</span>}
       </div>
       {children}
     </div>
@@ -102,7 +103,7 @@ function Pill({
       className={
         active
           ? "rounded-full bg-foreground px-3 py-1.5 font-mono text-[12px] text-background"
-          : "rounded-full bg-muted px-3 py-1.5 font-mono text-[12px] text-foreground/60 transition-colors hover:text-foreground"
+          : "rounded-full bg-muted px-3 py-1.5 font-mono text-[12px] text-muted-foreground transition-colors hover:text-foreground"
       }
     >
       {children}
@@ -173,23 +174,11 @@ export function IconPlayground({
   return (
     <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
       {/* Preview */}
-      <div className="relative flex min-h-[240px] items-center justify-center overflow-hidden rounded-xl border bg-muted/40 text-foreground md:min-h-[360px]">
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, color-mix(in srgb, currentColor 7%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, currentColor 7%, transparent) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-            backgroundPosition: "center",
-            maskImage: "radial-gradient(circle at center, black 35%, transparent 85%)",
-            WebkitMaskImage: "radial-gradient(circle at center, black 35%, transparent 85%)",
-          }}
-        />
+      <div className="relative flex min-h-[240px] items-center justify-center overflow-hidden rounded-xl border border-border bg-muted text-foreground md:min-h-[360px]">
         <div style={color === "currentColor" ? undefined : { color }} className="relative">
           <Icon def={def} size={size} stroke={stroke} />
         </div>
-        <span className="absolute bottom-3 left-4 font-mono text-[11px] text-foreground/45">
+        <span className="absolute bottom-3 left-4 font-mono text-[11px] text-muted-foreground">
           {size}px · stroke {stroke}
         </span>
       </div>
@@ -201,7 +190,7 @@ export function IconPlayground({
             <p className="truncate font-mono text-[15px] font-medium text-foreground">
               {def.name}
             </p>
-            <p className="mt-1 text-[12px] text-foreground/45">
+            <p className="mt-1 text-[12px] text-muted-foreground">
               {pascal(def.name)} · {def.category}
             </p>
           </div>
@@ -210,7 +199,7 @@ export function IconPlayground({
               type="button"
               onClick={onClose}
               aria-label="Close"
-              className="flex size-8 shrink-0 items-center justify-center rounded-full border text-foreground/55 transition-colors hover:text-foreground"
+              className="flex size-8 shrink-0 items-center justify-center rounded-full border text-muted-foreground transition-colors hover:text-foreground"
             >
               <IconX className="size-4" stroke={1.75} />
             </button>
@@ -246,13 +235,13 @@ export function IconPlayground({
                 onClick={() => setColor(c.value)}
                 aria-label={c.label}
                 aria-pressed={color === c.value}
-                className={`size-6 rounded-full border transition-transform hover:scale-110 ${color === c.value ? "ring-2 ring-foreground ring-offset-2 ring-offset-background" : ""
+                className={`size-6 rounded-full border border-border transition-transform hover:scale-110 ${color === c.value ? "ring-2 ring-ring ring-offset-2 ring-offset-background" : ""
                   }`}
                 style={{ background: c.value === "currentColor" ? "var(--foreground)" : c.value }}
               />
             ))}
             <label
-              className="relative size-6 cursor-pointer overflow-hidden rounded-full border"
+              className="relative size-6 cursor-pointer overflow-hidden rounded-full border border-border"
               title="Custom color"
               style={{
                 background:
@@ -278,17 +267,17 @@ export function IconPlayground({
               </Pill>
             ))}
           </div>
-          <pre className="max-h-32 overflow-auto rounded-xl border bg-muted/40 p-3 font-mono text-[11.5px] leading-relaxed whitespace-pre-wrap break-all text-foreground/80 [scrollbar-width:thin]">
+          <pre className="max-h-32 overflow-auto rounded-xl border border-border bg-muted p-3 font-mono text-[11.5px] leading-relaxed whitespace-pre-wrap break-all text-foreground [scrollbar-width:thin]">
             {code}
           </pre>
         </div>
 
         {/* Actions */}
         <div className="flex flex-wrap items-center gap-2">
-          <button
+          <Button
             type="button"
             onClick={onCopy}
-            className="inline-flex h-9 items-center gap-2 rounded-full bg-foreground px-4 text-[13px] font-medium text-background transition-opacity hover:opacity-85"
+            className="h-9 px-4"
           >
             {copied ? (
               <IconCheck className="size-3.5" stroke={2.25} />
@@ -296,11 +285,11 @@ export function IconPlayground({
               <IconCopy className="size-3.5" stroke={2} />
             )}
             {copied ? "Copied" : copyLabel}
-          </button>
+          </Button>
           <button
             type="button"
             onClick={onDownloadSvg}
-            className="inline-flex h-9 items-center gap-2 rounded-full border px-4 text-[13px] font-medium text-foreground/75 transition-colors hover:text-foreground"
+            className="inline-flex h-9 items-center gap-2 rounded-full border border-border bg-card px-4 text-[13px] font-medium text-foreground transition-colors hover:bg-muted"
           >
             <IconDownload className="size-3.5" stroke={2} />
             SVG
@@ -308,7 +297,7 @@ export function IconPlayground({
           <button
             type="button"
             onClick={onDownloadPng}
-            className="inline-flex h-9 items-center gap-2 rounded-full border px-4 text-[13px] font-medium text-foreground/75 transition-colors hover:text-foreground"
+            className="inline-flex h-9 items-center gap-2 rounded-full border border-border bg-card px-4 text-[13px] font-medium text-foreground transition-colors hover:bg-muted"
           >
             <IconDownload className="size-3.5" stroke={2} />
             PNG {PNG_PX}

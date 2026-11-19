@@ -23,7 +23,10 @@ function Block({
   children: ReactNode
 }) {
   return (
-    <div id={id} className={last ? "scroll-mt-20" : "scroll-mt-20 border-b"}>
+    <div
+      id={id}
+      className={last ? "scroll-mt-20" : "scroll-mt-20 border-b border-border"}
+    >
       {children}
     </div>
   )
@@ -34,12 +37,11 @@ export default function Home() {
   return (
     <main
       id="top"
-      className="relative min-h-screen overflow-x-hidden bg-background text-foreground"
+      className="relative min-h-screen overflow-x-clip bg-background text-foreground"
     >
-      <SiteNav />
-
       {/* Framed column: space on both sides + vertical hairlines */}
-      <div className="mx-auto w-full max-w-[1480px] border-x">
+      <div className="mx-auto w-full max-w-[1480px] border-x border-border">
+        <SiteNav />
         <Block>
           <Hero />
         </Block>
