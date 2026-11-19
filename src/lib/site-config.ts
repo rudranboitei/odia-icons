@@ -12,13 +12,13 @@ export type FeatureItem = {
   media?: FeatureMedia
 }
 
-const github = "https://github.com/odia-icon/odia-icon"
+const github = "https://github.com/rudranboitei/odia-icons"
 const license = `${github}/blob/main/LICENSE`
 const issues = `${github}/issues/new`
-const email = "mailto:hello@odiaicon.com"
+const email = "mailto:hello@odiaicons.com"
 
 export const siteConfig = {
-  name: "odiaicon",
+  name: "odiaicons",
 
   links: {
     github,
@@ -37,7 +37,7 @@ export const siteConfig = {
 
   // The main conversion component — repeated in the hero, developer and final sections.
   install: {
-    command: "bun add odiaicon",
+    command: "bun add odiaicons",
     helper: "Free and open source — works with npm, pnpm and yarn too.",
   },
 
@@ -55,7 +55,7 @@ export const siteConfig = {
   },
 
   featuresIntro: {
-    eyebrow: "Why odiaicon",
+    eyebrow: "Why odiaicons",
     title: "Heritage you can drop into any product.",
     description:
       "A small, consistent icon set built from Odisha's temples, textiles and traditions.",
@@ -94,8 +94,8 @@ export const siteConfig = {
 
   quote: {
     eyebrow: "Made in the open",
-    text: "Odisha's visual language lives on temple walls, in woven cloth and on painted palm leaf. odiaicon turns those motifs into crisp, consistent icons that anyone can use.",
-    author: "The odiaicon project",
+    text: "Odisha's visual language lives on temple walls, in woven cloth and on painted palm leaf. odiaicons turns those motifs into crisp, consistent icons that anyone can use.",
+    author: "The odiaicons project",
     meta: "Independent · open source · made in Odisha",
     stats: [
       { value: "6", label: "motifs" },
@@ -151,7 +151,7 @@ export const siteConfig = {
       "Licensing, installation and how to get your own motif into the set.",
     items: [
       {
-        q: "Is odiaicon really free?",
+        q: "Is odiaicons really free?",
         a: "Yes. The whole set is MIT licensed, so you can use it in personal, commercial and client work without paying or crediting anyone.",
       },
       {
@@ -191,31 +191,16 @@ export const siteConfig = {
       "An open-source icon set shaped by Odisha's temples, textiles and living traditions.",
     note: "Made in Odisha, India.",
     year: 2026,
-    columns: [
-      {
-        title: "Icons",
-        links: [
-          { label: "The set", href: "#icons", external: false },
-          { label: "Features", href: "#features", external: false },
-          { label: "FAQ", href: "#faq", external: false },
-        ],
-      },
-      {
-        title: "Project",
-        links: [
-          { label: "GitHub", href: github, external: true },
-          { label: "MIT License", href: license, external: true },
-          { label: "Contribute", href: issues, external: true },
-        ],
-      },
-      {
-        title: "More",
-        links: [
-          { label: "Email", href: email, external: false },
-          { label: "Request an icon", href: issues, external: true },
-          { label: "Back to top", href: "#top", external: false },
-        ],
-      },
+    links: [
+      { label: "The set", href: "#icons" },
+      { label: "Features", href: "#features" },
+      { label: "FAQ", href: "#faq" },
+      { label: "GitHub", href: github, external: true },
+      { label: "MIT License", href: license, external: true },
+      { label: "Contribute", href: issues, external: true },
+      { label: "Email", href: email },
+      { label: "Request an icon", href: issues, external: true },
+      { label: "Back to top", href: "#top" },
     ],
   },
 }

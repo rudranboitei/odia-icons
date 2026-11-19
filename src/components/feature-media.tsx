@@ -30,7 +30,7 @@ export function FeatureMedia({
   className?: string
 }) {
   return (
-    <div className={cn("aspect-[4/3] w-full overflow-hidden rounded-2xl border bg-muted/40 bg-[radial-gradient(var(--border)_1px,transparent_1px)] [background-size:14px_14px]", className)}>
+    <div className={cn("h-[210px] w-full overflow-hidden rounded-lg border border-[#2222221a] bg-white", className)}>
       <MotionConfig reducedMotion="user">
         {media.type === "animation" &&
           (() => {

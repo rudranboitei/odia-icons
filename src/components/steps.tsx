@@ -37,13 +37,13 @@ export function Steps() {
           <ol className="grid divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {steps.items.map((item, i) => (
               <li key={item.title} className="p-6 sm:p-8">
-                <span className="font-mono text-xs text-muted-foreground">
+                <span className="font-mono text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-3 text-lg font-medium tracking-tight text-[#171717]">
+                <h3 className="mt-3 text-[21px] leading-[1.4] font-medium tracking-[-0.03em] text-[#1d1d1f]">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-[15px] leading-[1.3] font-medium tracking-[-0.03em] text-[#1d1d1f] opacity-80">
                   {item.description}
                 </p>
               </li>

@@ -80,16 +80,16 @@ export function IconPlayground({ def }: { def: IconDef }) {
 
         <div className="flex flex-col justify-center gap-5">
           <div>
-            <h3 className="text-base font-medium capitalize text-[#171717]">
+            <h3 className="text-[21px] leading-[1.4] font-medium capitalize tracking-[-0.03em] text-[#1d1d1f]">
               {def.name}
             </h3>
-            <DialogDescription>
+            <DialogDescription className="text-[15px] leading-[1.3] font-medium tracking-[-0.03em] text-[#1d1d1f] opacity-80">
               {def.tags.join(" · ")} — tweak it, then copy or download.
             </DialogDescription>
           </div>
 
           <label className="flex flex-col gap-2">
-            <span className="flex items-baseline justify-between text-xs text-muted-foreground">
+            <span className="flex items-baseline justify-between text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
               Size
               <span className="tabular-nums">{size}px</span>
             </span>
@@ -104,7 +104,7 @@ export function IconPlayground({ def }: { def: IconDef }) {
           </label>
 
           <label className="flex flex-col gap-2">
-            <span className="flex items-baseline justify-between text-xs text-muted-foreground">
+            <span className="flex items-baseline justify-between text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
               Stroke
               <span className="tabular-nums">{stroke.toFixed(1)}</span>
             </span>

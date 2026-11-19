@@ -35,10 +35,10 @@ export function IconShowcase() {
                 className="text-[#171717] transition-transform duration-300 group-hover:scale-110"
               />
               <span className="flex flex-col items-center gap-1">
-                <span className="text-sm font-medium capitalize text-[#171717]">
+                <span className="text-[21px] leading-[1.4] font-medium capitalize tracking-[-0.03em] text-[#1d1d1f]">
                   {icon.name}
                 </span>
-                <span className="text-[11px] text-muted-foreground">
+                <span className="text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
                   {icon.tags.slice(0, 2).join(" · ")}
                 </span>
               </span>
@@ -46,14 +46,14 @@ export function IconShowcase() {
           ))}
         </div>
 
-        <p className="mt-5 text-center text-xs text-muted-foreground">
+        <p className="mt-5 text-center text-[13px] leading-[1.4] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
           Click any icon to resize it, change the stroke and copy the code. All
           icons are free under the{" "}
           <a
             href={siteConfig.links.license}
             target="_blank"
             rel="noopener"
-            className="underline underline-offset-2 hover:text-foreground"
+            className="underline underline-offset-2 hover:text-[#1d1d1f]"
           >
             MIT licence
           </a>

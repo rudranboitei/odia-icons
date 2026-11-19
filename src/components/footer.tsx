@@ -1,5 +1,6 @@
+import Link from "next/link"
+import Image from "next/image"
 import { siteConfig } from "@/lib/site-config"
-import { Icon, icons } from "@/lib/icons"
 
 export function Footer() {
   const { name, footer } = siteConfig
@@ -8,47 +9,58 @@ export function Footer() {
   return (
     <footer className="relative mt-12 border-t">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
-          <div className="max-w-xs">
-            <a
-              href="#top"
-              className="inline-flex items-center gap-2 text-[#171717]"
-            >
-              <Icon def={icons[0]} size={22} stroke={1.5} />
-              <span className="text-base font-medium tracking-tight">
-                {name}
-              </span>
-            </a>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              {footer.tagline}
-            </p>
-          </div>
-
-          {footer.columns.map((column) => (
-            <div key={column.title}>
-              <h3 className="font-mono text-[11px] tracking-[0.16em] text-muted-foreground uppercase">
-                {column.title}
-              </h3>
-              <ul className="mt-4 flex flex-col gap-2.5 text-sm">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      {...(link.external
-                        ? { target: "_blank", rel: "noopener" }
-                        : {})}
-                      className="text-muted-foreground transition-colors hover:text-[#171717]"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="flex flex-col items-center gap-4 py-14 text-center">
+          <a href="#top" className="inline-flex items-center">
+            <Image
+              src="/brand/logo-wordmark.svg"
+              alt={name}
+              width={112}
+              height={28}
+              unoptimized
+              className="h-7 w-auto"
+            />
+          </a>
+          <p className="max-w-sm text-[15px] font-medium leading-[1.3] tracking-[-0.03em] text-[#1d1d1f] opacity-80">
+            {footer.tagline}
+          </p>
         </div>
 
-        <div className="flex flex-col gap-2 border-t py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <nav
+          aria-label="Footer"
+          className="flex flex-wrap justify-center gap-x-6 gap-y-2 pb-14 text-sm text-muted-foreground"
+        >
+          {footer.links.map((l) =>
+            l.external ? (
+              <a
+                key={l.label}
+                href={l.href}
+                target="_blank"
+                rel="noopener"
+                className="transition-colors hover:text-foreground"
+              >
+                {l.label}
+              </a>
+            ) : l.href.startsWith("mailto:") ? (
+              <a
+                key={l.label}
+                href={l.href}
+                className="transition-colors hover:text-foreground"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.label}
+                href={l.href}
+                className="transition-colors hover:text-foreground"
+              >
+                {l.label}
+              </Link>
+            )
+          )}
+        </nav>
+
+        <div className="flex flex-col gap-2 border-t py-5 text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55 sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {year} {name}. Free under the MIT licence.
           </span>
@@ -58,11 +70,16 @@ export function Footer() {
 
       <div
         aria-hidden
-        className="relative mt-2 overflow-hidden px-2 select-none"
+        className="relative mt-2 overflow-hidden px-2 select-none [mask-image:linear-gradient(to_bottom,#000_55%,transparent_100%)]"
       >
-        <div className="text-footer-mark w-full text-center whitespace-nowrap">
-          {footer.wordmark}
-        </div>
+        <Image
+          src="/brand/logo-wordmark.svg"
+          alt=""
+          width={2400}
+          height={609}
+          unoptimized
+          className="w-full"
+        />
       </div>
     </footer>
   )

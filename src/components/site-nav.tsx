@@ -1,9 +1,9 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { IconArrowUpRight, IconMenu2, IconX } from "@tabler/icons-react"
 import { siteConfig } from "@/lib/site-config"
-import { Icon, icons } from "@/lib/icons"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -16,11 +16,18 @@ export function SiteNav() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
         <a
           href="#top"
-          className="flex items-center gap-2 text-[#171717]"
+          className="flex items-center"
           onClick={() => setOpen(false)}
         >
-          <Icon def={icons[0]} size={24} stroke={1.5} />
-          <span className="text-base font-medium tracking-tight">{name}</span>
+          <Image
+            src="/brand/logo-wordmark.svg"
+            alt={name}
+            width={104}
+            height={26}
+            priority
+            unoptimized
+            className="h-[26px] w-auto"
+          />
         </a>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
@@ -28,7 +35,7 @@ export function SiteNav() {
             <a
               key={link.label}
               href={link.href}
-              className="rounded-full px-3.5 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-[#171717]"
+              className="rounded-full px-3.5 py-2 text-[15px] font-medium tracking-[-0.03em] text-[#1d1d1f]/60 transition-colors hover:bg-muted hover:text-[#1d1d1f]"
             >
               {link.label}
             </a>
@@ -42,7 +49,7 @@ export function SiteNav() {
             rel="noopener"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
-              "hidden h-10 rounded-full px-4 text-sm sm:inline-flex"
+              "hidden h-10 rounded-full px-4 text-[15px] sm:inline-flex"
             )}
           >
             GitHub
@@ -52,7 +59,7 @@ export function SiteNav() {
             href="#icons"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "h-10 rounded-full px-4 text-sm"
+              "h-10 rounded-full px-4 text-[15px]"
             )}
           >
             Get the icons
@@ -82,7 +89,7 @@ export function SiteNav() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-2 py-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-[#171717]"
+                className="rounded-xl px-2 py-3 text-[15px] font-medium tracking-[-0.03em] text-[#1d1d1f]/60 transition-colors hover:bg-muted hover:text-[#1d1d1f]"
               >
                 {link.label}
               </a>
@@ -92,7 +99,7 @@ export function SiteNav() {
               target="_blank"
               rel="noopener"
               onClick={() => setOpen(false)}
-              className="rounded-xl px-2 py-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-[#171717]"
+              className="rounded-xl px-2 py-3 text-[15px] font-medium tracking-[-0.03em] text-[#1d1d1f]/60 transition-colors hover:bg-muted hover:text-[#1d1d1f]"
             >
               GitHub ↗
             </a>

@@ -14,14 +14,14 @@ export function DeveloperSection() {
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <Eyebrow>{developer.eyebrow}</Eyebrow>
-          <h2 className="mt-5 text-3xl font-medium tracking-[-0.035em] text-balance text-[#171717] sm:text-5xl">
+          <h2 className="mt-5 text-3xl leading-[1.05] font-medium tracking-[-0.03em] text-balance text-[#1d1d1f] sm:text-5xl">
             {lead}
-            <span className="rounded-lg bg-muted px-2 text-[#171717]">
+            <span className="rounded-lg bg-muted px-2 text-[#1d1d1f]">
               {developer.highlight}
             </span>
             {trail}
           </h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-6 max-w-xl text-[21px] leading-[1.4] font-medium tracking-[-0.03em] text-[#545454]">
             {developer.description}
           </p>
 
@@ -29,7 +29,7 @@ export function DeveloperSection() {
             {developer.bullets.map((bullet) => (
               <li
                 key={bullet}
-                className="flex items-start gap-2.5 text-sm text-muted-foreground"
+                className="flex items-start gap-2.5 text-[15px] leading-[1.3] font-medium tracking-[-0.03em] text-[#1d1d1f] opacity-80"
               >
                 <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-foreground text-background">
                   <IconCheck className="size-2.5" stroke={3} />

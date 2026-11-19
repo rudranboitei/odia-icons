@@ -48,7 +48,7 @@ export function InstallBox({
     >
       <div className="flex w-full items-center gap-2 rounded-2xl border bg-background p-1.5 pl-4 shadow-sm">
         <span className="text-sm text-muted-foreground select-none">$</span>
-        <code className="min-w-0 flex-1 truncate text-left font-mono text-sm text-[#171717]">
+        <code className="min-w-0 flex-1 truncate text-left font-mono text-sm text-[#1d1d1f]">
           {command}
         </code>
         <Button
@@ -64,7 +64,7 @@ export function InstallBox({
           {copied ? "Copied" : "Copy"}
         </Button>
       </div>
-      <p className="mt-2 text-xs text-muted-foreground">{helper}</p>
+      <p className="mt-2 text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">{helper}</p>
     </div>
   )
 }

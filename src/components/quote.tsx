@@ -12,7 +12,7 @@ export function Quote() {
         <div className="grid gap-8 p-8 sm:grid-cols-[1.5fr_1fr] sm:gap-0 sm:p-12">
           <div className="sm:pr-10">
             <Eyebrow>{quote.eyebrow}</Eyebrow>
-            <blockquote className="mt-6 text-2xl font-medium tracking-[-0.03em] text-balance text-[#171717] sm:text-3xl">
+            <blockquote className="mt-6 text-2xl leading-[1.2] font-medium tracking-[-0.03em] text-balance text-[#1d1d1f] sm:text-3xl">
               “{quote.text}”
             </blockquote>
           </div>
@@ -23,10 +23,10 @@ export function Quote() {
                 <Icon def={icons[0]} size={26} stroke={1.4} />
               </span>
               <div>
-                <p className="text-sm font-medium text-[#171717]">
+                <p className="text-[15px] leading-[1.3] font-medium tracking-[-0.03em] text-[#1d1d1f]">
                   {quote.author}
                 </p>
-                <p className="mt-0.5 text-xs text-muted-foreground">
+                <p className="mt-0.5 text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
                   {quote.meta}
                 </p>
               </div>
@@ -36,10 +36,10 @@ export function Quote() {
               {quote.stats.map((stat) => (
                 <div key={stat.label}>
                   <dt className="sr-only">{stat.label}</dt>
-                  <dd className="text-2xl font-medium tracking-tight text-[#171717]">
+                  <dd className="text-2xl font-medium tracking-[-0.03em] text-[#1d1d1f]">
                     {stat.value}
                   </dd>
-                  <dd className="text-xs text-muted-foreground">
+                  <dd className="text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
                     {stat.label}
                   </dd>
                 </div>
@@ -50,7 +50,7 @@ export function Quote() {
               href={links.github}
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-1 text-sm text-[#171717] underline-offset-4 hover:underline"
+              className="inline-flex items-center gap-1 text-[15px] font-medium tracking-[-0.03em] text-[#1d1d1f] underline-offset-4 hover:underline"
             >
               Star on GitHub
               <IconArrowUpRight className="size-4" />

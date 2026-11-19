@@ -21,7 +21,7 @@ export function FinalCta() {
         <InstallBox />
       </div>
 
-      <p className="mt-6 text-xs text-muted-foreground">{finalCta.helper}</p>
+      <p className="mt-6 text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">{finalCta.helper}</p>
 
       <IconMarquee className="mt-16" />
     </section>

@@ -20,13 +20,13 @@ export function Hero() {
           {hero.title}
         </h1>
 
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-balance text-muted-foreground sm:text-lg">
+        <p className="mt-6 max-w-2xl text-[21px] leading-[1.4] font-medium tracking-[-0.03em] text-balance text-[#545454]">
           {hero.subtitle}
         </p>
 
         <InstallBox id="install" className="mt-8" />
 
-        <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
+        <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
           {hero.stats.map((stat) => (
             <li key={stat} className="flex items-center gap-2">
               <span aria-hidden className="size-1 rounded-full bg-border" />

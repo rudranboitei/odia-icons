@@ -46,7 +46,7 @@ function MarqueeRow({
                     stroke={1.4}
                     className="text-[#171717]"
                   />
-                  <span className="text-xs text-muted-foreground">
+                  <span className="text-[13px] leading-[1.2] tracking-[-0.03em] text-[#1d1d1f] opacity-55">
                     {icon.name}
                   </span>
                 </div>
