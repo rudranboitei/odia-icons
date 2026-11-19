@@ -18,6 +18,7 @@ import { siteConfig } from "@/lib/site-config"
 import { copyText } from "@/lib/clipboard"
 import { toast } from "@/components/ui/toast"
 import { Button } from "@/components/ui/button"
+import { ShellCode } from "@/components/syntax-code"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import {
   Dialog,
@@ -305,7 +306,7 @@ export function IconBrowser() {
                   className="hidden h-9 items-center gap-2 rounded-full border bg-card px-3.5 font-mono text-[12px] whitespace-nowrap text-foreground/70 transition-colors hover:text-foreground xl:inline-flex"
                 >
                   <IconTerminal2 className="size-3.5" stroke={1.75} />
-                  {siteConfig.install.command}
+                  <ShellCode command={siteConfig.install.command} />
                   {copiedInstall ? (
                     <IconCheck className="size-3.5" />
                   ) : (

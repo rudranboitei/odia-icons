@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/site-config"
 import { copyText } from "@/lib/clipboard"
 import { toast } from "@/components/ui/toast"
 import { Button } from "@/components/ui/button"
+import { MarkupCode, ShellCode } from "@/components/syntax-code"
 import { Icon, toJsx, toSvg, type IconDef } from "@/lib/icons"
 
 const SIZES = [16, 20, 24, 32, 48, 64, 96]
@@ -268,7 +269,11 @@ export function IconPlayground({
             ))}
           </div>
           <pre className="max-h-32 overflow-auto rounded-xl border border-border bg-muted p-3 font-mono text-[11.5px] leading-relaxed whitespace-pre-wrap break-all text-foreground [scrollbar-width:thin]">
-            {code}
+            {tab === "CLI" ? (
+              <ShellCode command={code} />
+            ) : (
+              <MarkupCode code={code} />
+            )}
           </pre>
         </div>
 

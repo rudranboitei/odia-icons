@@ -37,7 +37,7 @@ export const siteConfig = {
 
   // The main conversion component — repeated in the hero, developer and final sections.
   install: {
-    command: "bun add odiaicons",
+    command: "npm install odiaicons",
     helper: "Free and open source — works with npm, pnpm and yarn too.",
   },
 
