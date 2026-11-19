@@ -1,6 +1,6 @@
 import Link from "next/link"
-import Image from "next/image"
 import { siteConfig } from "@/lib/site-config"
+import { Icon, icons } from "@/lib/icons"
 
 export function Footer() {
   const { name, footer } = siteConfig
@@ -10,15 +10,14 @@ export function Footer() {
     <footer className="relative mt-12 border-t">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center gap-4 py-14 text-center">
-          <a href="#top" className="inline-flex items-center">
-            <Image
-              src="/brand/logo-wordmark.svg"
-              alt={name}
-              width={112}
-              height={28}
-              unoptimized
-              className="h-7 w-auto"
-            />
+          <a
+            href="#top"
+            className="inline-flex items-center gap-2 text-[#1d1d1f]"
+          >
+            <Icon def={icons[0]} size={22} stroke={1.5} />
+            <span className="text-[17px] font-medium tracking-[-0.03em]">
+              {name}
+            </span>
           </a>
           <p className="max-w-sm text-[15px] font-medium leading-[1.3] tracking-[-0.03em] text-[#1d1d1f] opacity-80">
             {footer.tagline}
@@ -70,16 +69,11 @@ export function Footer() {
 
       <div
         aria-hidden
-        className="relative mt-2 overflow-hidden px-2 select-none [mask-image:linear-gradient(to_bottom,#000_55%,transparent_100%)]"
+        className="relative mt-2 overflow-hidden px-2 select-none"
       >
-        <Image
-          src="/brand/logo-wordmark.svg"
-          alt=""
-          width={2400}
-          height={609}
-          unoptimized
-          className="w-full"
-        />
+        <div className="text-footer-mark w-full text-center whitespace-nowrap">
+          {footer.wordmark}
+        </div>
       </div>
     </footer>
   )
