@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { IconCopy, IconDownload } from "@tabler/icons-react"
 import { Button } from "@/components/ui/button"
-import { DialogDescription, DialogTitle } from "@/components/ui/dialog"
+import { SheetDescription, SheetTitle } from "@/components/ui/sheet"
 import { Slider } from "@/components/ui/slider"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { toast } from "@/components/ui/toast"
@@ -116,7 +116,7 @@ export function IconPlayground({ def }: { def: IconDef }) {
 
   return (
     <div className="flex min-w-0 flex-col gap-5">
-      <DialogTitle className="sr-only">{def.name} icon</DialogTitle>
+      <SheetTitle className="sr-only">{def.name} icon</SheetTitle>
 
       <div className="grid gap-5 sm:grid-cols-[1.1fr_1fr]">
         <div className="flex min-h-44 items-center justify-center rounded-2xl border border-dashed bg-muted/40 p-6">
@@ -132,9 +132,9 @@ export function IconPlayground({ def }: { def: IconDef }) {
               {def.odia} · {def.category} · {def.variants.join(", ")} · since{" "}
               {def.since}
             </p>
-            <DialogDescription className="mt-2 text-[15px] leading-[1.3] font-medium tracking-[-0.03em] text-[#1d1d1f] opacity-80">
+            <SheetDescription className="mt-2 text-[15px] leading-[1.3] font-medium tracking-[-0.03em] text-[#1d1d1f] opacity-80">
               {def.tags.join(" · ")} — tweak it, then copy or download.
-            </DialogDescription>
+            </SheetDescription>
           </div>
 
           <label className="flex flex-col gap-2">

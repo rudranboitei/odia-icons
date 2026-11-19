@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
-import { Footer } from "@/components/footer"
-import { IconShowcase } from "@/components/iconshowcase"
-import { SiteNav } from "@/components/site-nav"
+import { IconBrowser } from "@/components/icon-browser"
 
 export const metadata: Metadata = {
   title: "Icons — odiaicons",
@@ -17,18 +15,5 @@ export const metadata: Metadata = {
 }
 
 export default function IconsPage() {
-  return (
-    <main
-      id="top"
-      className="relative min-h-screen overflow-x-hidden bg-background text-foreground"
-    >
-      <SiteNav />
-      <IconShowcase
-        eyebrow="The icon set"
-        title="Browse the icons."
-        description="Five motifs from Odisha, drawn on a 24 × 24 grid. Search in English or Odia, filter by category, then open any tile to copy or download."
-      />
-      <Footer />
-    </main>
-  )
+  return <IconBrowser />
 }
