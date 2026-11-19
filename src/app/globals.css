@@ -4,27 +4,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Satoshi — self-hosted from Fontshare (free for commercial use). */
+/* GeistSans — the only typeface used across the site (variable, self-hosted). */
 @font-face {
-  font-family: "Satoshi";
-  src: url("/fonts/Satoshi-400.woff2") format("woff2");
-  font-weight: 400;
+  font-family: "GeistSans";
+  src: url("/fonts/GeistSans-Variable.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Satoshi";
-  src: url("/fonts/Satoshi-500.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Satoshi";
-  src: url("/fonts/Satoshi-700.woff2") format("woff2");
-  font-weight: 700;
+  font-family: "GeistSans Fallback";
+  src: local("Arial");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -73,8 +65,8 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
 
-  --font-sans: Satoshi, "Satoshi Placeholder", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-sans: GeistSans, "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: GeistSans, "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-sans);
   --color-border-strong: var(--border-strong);
   --color-hairline: var(--hairline);
@@ -110,11 +102,11 @@
   --popover: oklch(0.99 0 0);
   --primary: oklch(0 0 0);
   --sidebar: oklch(0.99 0 0);
-  --font-mono: Geist Mono, monospace;
-  --font-sans: Geist, sans-serif;
+  --font-mono: GeistSans, "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: GeistSans, "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif;
   --secondary: oklch(0.94 0 0);
   --background: oklch(0.99 0 0);
-  --font-serif: Georgia, serif;
+  --font-serif: GeistSans, "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif;
   --foreground: oklch(0 0 0);
   --destructive: oklch(0.63 0.19 23.03);
   --shadow-blur: 2px;
@@ -158,11 +150,11 @@
   --popover: oklch(0.18 0 0);
   --primary: oklch(1.00 0 0);
   --sidebar: oklch(0.18 0 0);
-  --font-mono: Geist Mono, monospace;
-  --font-sans: Geist, sans-serif;
+  --font-mono: GeistSans, "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: GeistSans, "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif;
   --secondary: oklch(0.25 0 0);
   --background: oklch(0 0 0);
-  --font-serif: Georgia, serif;
+  --font-serif: GeistSans, "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif;
   --foreground: oklch(1.00 0 0);
   --destructive: oklch(0.69 0.20 23.91);
   --sidebar-ring: oklch(0.72 0 0);
@@ -201,11 +193,19 @@
   ) {
     cursor: pointer;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
   html {
     @apply font-sans;
+  }
+  body {
+    @apply bg-background;
+    font-size: 32px;
+    font-weight: 450;
+    line-height: 40px;
+    letter-spacing: -1.28px;
+    color: #171717;
+  }
+  .dark body {
+    color: var(--foreground);
   }
   @media (prefers-reduced-motion: no-preference) {
     html {
@@ -233,7 +233,7 @@
 @layer components {
   /* Hero display type — exact spec on desktop, scales down on small screens. */
   .text-hero-title {
-    font-family: Satoshi, "Satoshi Placeholder", sans-serif;
+    font-family: GeistSans, "GeistSans Fallback", sans-serif;
     font-weight: 500;
     font-size: clamp(2.5rem, 8.6vw, 69px);
     line-height: clamp(2.25rem, 7.74vw, 62px);
@@ -243,7 +243,7 @@
 
   /* Oversized wordmark that closes the page. */
   .text-footer-mark {
-    font-family: Satoshi, "Satoshi Placeholder", sans-serif;
+    font-family: GeistSans, "GeistSans Fallback", sans-serif;
     font-weight: 500;
     font-size: clamp(2.5rem, 17vw, 15rem);
     line-height: 1;
