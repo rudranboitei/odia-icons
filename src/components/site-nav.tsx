@@ -6,6 +6,7 @@ import Link from "next/link"
 import { IconArrowUpRight, IconMenu2, IconX } from "@tabler/icons-react"
 import { siteConfig } from "@/lib/site-config"
 import { buttonVariants } from "@/components/ui/button"
+import { ModeToggle } from "@/components/ui/mode-toggle"
 import { cn } from "@/lib/utils"
 
 export function SiteNav() {
@@ -27,7 +28,7 @@ export function SiteNav() {
             height={26}
             priority
             unoptimized
-            className="h-[26px] w-auto"
+            className="h-[26px] w-auto dark:invert"
           />
         </Link>
 
@@ -44,6 +45,7 @@ export function SiteNav() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ModeToggle />
           <a
             href={links.github}
             target="_blank"

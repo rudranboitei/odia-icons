@@ -342,7 +342,7 @@ function CopyDemo({ active }: { active: boolean }) {
           initial={{ opacity: 0, scale: 0.85, y: 4 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 1, type: "spring", stiffness: 400, damping: 22 }}
-          className="absolute -top-3 right-3 flex items-center gap-1 rounded-full bg-[var(--of-ink)] px-2.5 py-0.5 text-[10px] font-medium text-white"
+          className="absolute -top-3 right-3 flex items-center gap-1 rounded-full bg-[var(--of-ink)] px-2.5 py-0.5 text-[10px] font-medium text-background"
         >
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="m5 12 5 5L20 7" />

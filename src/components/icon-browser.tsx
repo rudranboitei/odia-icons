@@ -18,6 +18,7 @@ import { siteConfig } from "@/lib/site-config"
 import { copyText } from "@/lib/clipboard"
 import { toast } from "@/components/ui/toast"
 import { Button } from "@/components/ui/button"
+import { ModeToggle } from "@/components/ui/mode-toggle"
 import {
   Dialog,
   DialogContent,
@@ -177,7 +178,7 @@ export function IconBrowser() {
               height={28}
               priority
               unoptimized
-              className="h-7 w-auto invert"
+              className="h-7 w-auto invert dark:invert-0"
             />
           </Link>
 
@@ -259,7 +260,7 @@ export function IconBrowser() {
                   height={23}
                   priority
                   unoptimized
-                  className="h-[23px] w-auto invert"
+                  className="h-[23px] w-auto invert dark:invert-0"
                 />
               </Link>
 
@@ -317,6 +318,8 @@ export function IconBrowser() {
                     <IconCopy className="size-3.5 opacity-50" />
                   )}
                 </button>
+
+                <ModeToggle />
 
                 <a
                   href={siteConfig.links.github}
