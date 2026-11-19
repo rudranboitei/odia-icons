@@ -79,6 +79,8 @@
   --color-border-strong: var(--border-strong);
   --color-hairline: var(--hairline);
   --color-brand: var(--primary);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-cyan: var(--brand-cyan);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -97,6 +99,9 @@
   --accent: oklch(0.94 0 0);
   --border: oklch(0.92 0 0);
   --radius: 0.5rem;
+  --brand-cyan: #00a8f5;
+  --brand-blue: #3b82f6;
+  --brand-gradient: linear-gradient(110deg, var(--brand-cyan) 0%, var(--brand-blue) 100%);
   --chart-1: oklch(0.81 0.17 75.35);
   --chart-2: oklch(0.55 0.22 264.53);
   --chart-3: oklch(0.72 0 0);

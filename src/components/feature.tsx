@@ -2,13 +2,7 @@
 
 /**
  * OdiaIcons: animated features section (bento grid, looping micro-demos)
- * Style: clean neutral (white, near-black, gray, hairline borders, black pills)
- *
- * Needs:  pnpm add motion        (React 18+, Tailwind CSS)
- * Usage:  import FeaturesSection from "@/components/features-section";
- *         <FeaturesSection />
- *
- * Colors live in the `theme` object below.
+ * Surfaces and type follow the site theme; accents use its blue brand gradient.
  */
 
 import {
@@ -41,6 +35,8 @@ const theme = {
   "--of-text": "var(--foreground)",
   "--of-muted": "var(--muted-foreground)",
   "--of-faint": "var(--border-strong)",
+  "--of-brand": "var(--brand-blue)",
+  "--of-gradient": "var(--brand-gradient)",
 } as CSSProperties;
 
 /* ------------------------------------------------------------------ */
@@ -161,7 +157,7 @@ function Card({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] as const }}
-      className={`flex flex-col rounded-2xl border border-[var(--of-line)] bg-[var(--of-card)] p-3 transition-colors duration-300 hover:border-border-strong ${className}`}
+      className={`flex flex-col rounded-2xl border border-[var(--of-line)] bg-[var(--of-card)] p-3 transition-colors duration-300 hover:border-brand-blue/40 ${className}`}
     >
       <div
         className={`relative w-full overflow-hidden rounded-xl bg-[var(--of-inset)] p-4 ${visualClass}`}
@@ -212,7 +208,8 @@ function DrawDemo({ active }: { active: boolean }) {
             width="20"
             height="20"
             rx="1"
-            stroke="var(--of-faint)"
+            stroke="var(--of-brand)"
+            strokeOpacity="0.5"
             strokeWidth="0.12"
             strokeDasharray="0.5 0.5"
           />
@@ -227,7 +224,7 @@ function DrawDemo({ active }: { active: boolean }) {
 
         <motion.div
           aria-hidden
-          className="absolute bottom-0 top-0 w-px bg-[var(--of-ink)]/30"
+          className="absolute bottom-0 top-0 w-0.5 bg-[image:var(--of-gradient)] [box-shadow:0_0_12px_rgba(59,130,246,0.45)]"
           initial={{ left: "0%" }}
           animate={active ? { left: ["0%", "100%"] } : { left: "50%" }}
           transition={{ duration: D / 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
@@ -264,7 +261,7 @@ function SearchDemo({ active }: { active: boolean }) {
   return (
     <div className="mx-auto flex h-full w-full max-w-xs flex-col gap-3">
       <div className="flex items-center gap-2 rounded-full border border-[var(--of-line)] bg-card px-4 py-2.5">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--of-muted)" strokeWidth="2" strokeLinecap="round">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--of-brand)" strokeWidth="2" strokeLinecap="round">
           <circle cx="11" cy="11" r="7" />
           <path d="m20 20-3.5-3.5" />
         </svg>
@@ -280,10 +277,10 @@ function SearchDemo({ active }: { active: boolean }) {
             initial={{ opacity: 0, x: -14 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 + k * 0.12, duration: 0.4 }}
-            className="flex items-center gap-3 rounded-xl border border-[var(--of-line)] bg-card px-3 py-2"
+            className={`flex items-center gap-3 rounded-xl border bg-card px-3 py-2 ${k === 0 ? "border-brand-blue/40" : "border-[var(--of-line)]"}`}
           >
             <span className="grid h-6 w-6 place-items-center rounded-md bg-muted">
-              <span className="h-2 w-2 rounded-full bg-[var(--of-ink)]" />
+              <span className="h-2 w-2 rounded-full bg-[image:var(--of-gradient)]" />
             </span>
             <span className="font-mono text-xs text-[var(--of-muted)]">{h}</span>
           </motion.li>
@@ -300,7 +297,7 @@ function SearchDemo({ active }: { active: boolean }) {
 const TABS = [
   { label: "SVG", code: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor">…</svg>' },
   { label: "JSX", code: "<KonarkWheel size={24} />" },
-  { label: "Import", code: 'import { KonarkWheel } from "@odiaui/icons-react"' },
+  { label: "Import", code: 'import { KonarkWheel } from "odiaicons"' },
 ];
 
 function CopyDemo({ active }: { active: boolean }) {
@@ -312,13 +309,13 @@ function CopyDemo({ active }: { active: boolean }) {
         {TABS.map((t, k) => (
           <div
             key={t.label}
-            className={`relative rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors duration-300 ${i === k ? "text-primary-foreground" : "bg-card text-[var(--of-muted)]"
+            className={`relative rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors duration-300 ${i === k ? "text-white" : "bg-card text-[var(--of-muted)]"
               }`}
           >
             {i === k && (
               <motion.span
                 layoutId="odia-copy-tab"
-                className="absolute inset-0 rounded-full bg-[var(--of-ink)]"
+                className="absolute inset-0 rounded-full bg-[image:var(--of-gradient)]"
                 transition={{ type: "spring", stiffness: 380, damping: 32 }}
               />
             )}
@@ -342,7 +339,7 @@ function CopyDemo({ active }: { active: boolean }) {
           initial={{ opacity: 0, scale: 0.85, y: 4 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 1, type: "spring", stiffness: 400, damping: 22 }}
-          className="absolute -top-3 right-3 flex items-center gap-1 rounded-full bg-[var(--of-ink)] px-2.5 py-0.5 text-[10px] font-medium text-background"
+          className="absolute -top-3 right-3 flex items-center gap-1 rounded-full bg-[image:var(--of-gradient)] px-2.5 py-0.5 text-[10px] font-semibold text-white"
         >
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="m5 12 5 5L20 7" />
@@ -378,25 +375,31 @@ function StrokeDemo({ active }: { active: boolean }) {
         viewBox="0 0 24 24"
         className="h-24 w-24"
         fill="none"
-        stroke="var(--of-ink)"
+        stroke="url(#stroke-demo-gradient)"
         strokeLinecap="round"
         style={{ strokeWidth: sw }}
       >
+        <defs>
+          <linearGradient id="stroke-demo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="var(--brand-cyan)" />
+            <stop offset="100%" stopColor="var(--brand-blue)" />
+          </linearGradient>
+        </defs>
         <WheelPaths />
       </motion.svg>
 
       <div className="w-full max-w-[14rem]">
         <div className="mb-2 flex justify-between font-mono text-[10px] text-[var(--of-muted)]">
           <span>stroke-width</span>
-          <motion.span className="text-[var(--of-ink)]">{label}</motion.span>
+          <motion.span className="text-brand-blue">{label}</motion.span>
         </div>
         <div className="relative h-1.5 rounded-full bg-border">
           <motion.div
-            className="absolute inset-y-0 left-0 rounded-full bg-[var(--of-ink)]"
+            className="absolute inset-y-0 left-0 rounded-full bg-[image:var(--of-gradient)]"
             style={{ width: pos }}
           />
           <motion.div
-            className="absolute top-1/2 -ml-2 -mt-2 h-4 w-4 rounded-full border-2 border-[var(--of-ink)] bg-card"
+            className="absolute top-1/2 -ml-2 -mt-2 h-4 w-4 rounded-full border-2 border-brand-blue bg-card"
             style={{ left: pos }}
           />
         </div>
@@ -441,13 +444,13 @@ function BundleDemo({ active }: { active: boolean }) {
         </div>
       </div>
       <div>
-        <div className="mb-1.5 flex justify-between font-mono text-[11px] text-[var(--of-ink)]">
+        <div className="mb-1.5 flex justify-between font-mono text-[11px] text-brand-blue">
           <span>OdiaIcons · 1 icon</span>
           <motion.span>{txt}</motion.span>
         </div>
         <div className="h-2.5 rounded-full bg-border">
           <motion.div
-            className="h-full rounded-full bg-[var(--of-ink)]"
+            className="h-full rounded-full bg-[image:var(--of-gradient)]"
             initial={{ width: 0 }}
             whileInView={{ width: "3%" }}
             viewport={{ once: true }}
@@ -464,7 +467,7 @@ function BundleDemo({ active }: { active: boolean }) {
 /* ------------------------------------------------------------------ */
 
 const CHIPS = ["React", "SVG", "Sprite", "Icon font", "shadcn CLI", "npm"];
-const CMD = "npx shadcn@latest add https://icons.odiaui.xyz/r/konark-wheel.json";
+const CMD = "npm install odiaicons";
 
 function ShipDemo({ active }: { active: boolean }) {
   return (
@@ -475,14 +478,14 @@ function ShipDemo({ active }: { active: boolean }) {
             key={c}
             animate={active ? { y: [0, -6, 0] } : { y: 0 }}
             transition={{ duration: 3, repeat: Infinity, delay: i * 0.25, ease: "easeInOut" }}
-            className="rounded-full border border-[var(--of-line)] bg-card px-4 py-1.5 text-xs font-medium text-[var(--of-text)]"
+            className="rounded-full border border-[var(--of-line)] bg-card px-4 py-1.5 text-xs font-medium text-[var(--of-text)] transition-colors hover:border-brand-blue/50"
           >
             {c}
           </motion.span>
         ))}
       </div>
-      <div className="w-full rounded-xl bg-foreground px-4 py-3 font-mono text-[11px] text-background/60 sm:text-xs">
-        <span className="text-background/40">$ </span>
+      <div className="w-full rounded-xl bg-foreground px-4 py-3 font-mono text-[11px] text-background/80 sm:text-xs">
+        <span className="text-brand-blue">$ </span>
         <span className="break-all text-background">
           <Typed text={CMD} speed={28} run={active} />
         </span>
@@ -548,8 +551,9 @@ export default function FeaturesSection() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex rounded-full bg-[var(--of-inset)] px-3.5 py-1 text-xs font-medium text-[var(--of-muted)]"
+              className="inline-flex items-center gap-2 rounded-full bg-[image:var(--of-gradient)] px-3.5 py-1 text-xs font-semibold text-white"
             >
+              <span aria-hidden className="size-1.5 rounded-full bg-white/90" />
               Features
             </motion.span>
             <motion.h2
@@ -559,7 +563,7 @@ export default function FeaturesSection() {
               transition={{ duration: 0.6, delay: 0.05 }}
               className="mt-5 text-4xl font-semibold tracking-tight text-[var(--of-ink)] md:text-5xl"
             >
-              The Odisha icon stack
+              The <span className="bg-[image:var(--of-gradient)] bg-clip-text text-transparent">Odisha</span> icon stack
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -642,14 +646,15 @@ export default function FeaturesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="rounded-2xl border border-[var(--of-line)] bg-[var(--of-card)] p-4 transition-colors duration-300 hover:border-border-strong"
+                className="rounded-2xl border border-[var(--of-line)] bg-[var(--of-card)] p-4 transition-colors duration-300 hover:border-brand-blue/40"
               >
                 <svg
                   width="20"
                   height="20"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="var(--of-ink)"
+                  stroke="currentColor"
+                  className="text-brand-blue"
                   strokeWidth="1.75"
                   strokeLinecap="round"
                   strokeLinejoin="round"
