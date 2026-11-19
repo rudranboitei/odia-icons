@@ -62,25 +62,19 @@ const contributeRows = [
     eyebrow: "Open source",
     title: "Submit an icon",
     href: siteConfig.links.contribute,
-    icon: IconFileCode,
-  },
-  {
-    eyebrow: "Request",
-    title: "A new Odia motif",
-    href: siteConfig.links.contribute,
-    icon: IconSearch,
+    image: "/contribute/glass-folder.jpeg",
   },
   {
     eyebrow: "GitHub",
     title: "Star the repository",
     href: siteConfig.links.github,
-    icon: IconBrandGithub,
+    image: "/contribute/github.jpeg",
   },
   {
     eyebrow: "Licence",
     title: "MIT, free to use",
     href: siteConfig.links.license,
-    icon: IconCheck,
+    image: "/contribute/duna.jpeg",
   },
 ]
 
@@ -468,8 +462,14 @@ export function IconBrowser() {
                           rel="noopener"
                           className="flex items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-muted"
                         >
-                          <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground/70">
-                            <row.icon className="size-4" stroke={1.75} />
+                          <span className="relative size-9 shrink-0 overflow-hidden rounded-lg bg-muted">
+                            <Image
+                              src={row.image}
+                              alt=""
+                              fill
+                              sizes="36px"
+                              className="object-cover"
+                            />
                           </span>
                           <span className="min-w-0">
                             <span className="block text-[12px] text-muted-foreground">
