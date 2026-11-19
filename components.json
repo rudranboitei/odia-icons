@@ -21,5 +21,7 @@
   },
   "menuColor": "default",
   "menuAccent": "subtle",
-  "registries": {}
+  "registries": {
+    "@odiaui": "https://odiaui.xyz/r/{name}.json"
+  }
 }

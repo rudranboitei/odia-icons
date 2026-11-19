@@ -43,11 +43,11 @@ export default function Home() {
       <div className="relative mx-auto w-full max-w-340 border-x border-border">
         <div
           aria-hidden
-          className="pointer-events-none absolute top-0 -left-4 h-full w-4 bg-[length:10px_10px] text-foreground/10 [background-image:repeating-linear-gradient(315deg,currentColor_0_1px,#0000_0_50%)] md:-left-10 md:w-10 2xl:-left-14 2xl:w-14"
+          className="pointer-events-none absolute top-0 -left-4 h-full w-4 bg-size-[10px_10px] text-foreground/10 bg-[repeating-linear-gradient(315deg,currentColor_0_1px,#0000_0_50%)] md:-left-10 md:w-10 2xl:-left-14 2xl:w-14"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute top-0 -right-4 h-full w-4 bg-[length:10px_10px] text-foreground/10 [background-image:repeating-linear-gradient(315deg,currentColor_0_1px,#0000_0_50%)] md:-right-10 md:w-10 2xl:-right-14 2xl:w-14"
+          className="pointer-events-none absolute top-0 -right-4 h-full w-4 bg-size-[10px_10px] text-foreground/10 bg-[repeating-linear-gradient(315deg,currentColor_0_1px,#0000_0_50%)] md:-right-10 md:w-10 2xl:-right-14 2xl:w-14"
         />
         <SiteNav />
         <Block>

@@ -1,33 +1,32 @@
-import { Button as ButtonPrimitive } from "@base-ui/react/button"
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-import { cn } from "cn"
+import { Loader2 } from "lucide-react"
+
+import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-full border border-transparent text-sm font-medium whitespace-nowrap transition-colors outline-none select-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium tracking-[0.02em] transition-opacity duration-200 select-none outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-60 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "border-[rgba(0,0,0,0.07)] bg-[image:var(--brand-gradient)] text-[15px] font-semibold text-white hover:brightness-105",
-        outline:
-          "border-border bg-card text-foreground hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
-        secondary:
-          "border-border bg-card text-foreground hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
-        ghost: "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
+          "bg-primary text-primary-foreground hover:opacity-90",
         destructive:
-          "bg-destructive text-primary-foreground hover:brightness-105",
-        link: "text-foreground underline-offset-4 hover:text-brand hover:underline",
+          "bg-destructive text-destructive-foreground hover:opacity-90 focus-visible:outline-destructive",
+        outline:
+          "border border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:opacity-90",
+        ghost:
+          "text-foreground hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default:
-          "h-8 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5",
-        xs: "h-6 gap-1 px-2.5 text-xs has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-3",
-        sm: "h-7 gap-1 px-3 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-        lg: "h-9 gap-1.5 px-4 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3",
-        icon: "size-8",
-        "icon-xs": "size-6 [&_svg:not([class*='size-'])]:size-3",
-        "icon-sm": "size-7",
-        "icon-lg": "size-9",
+        default: "h-10 px-5 text-sm [&_svg:not([class*='size-'])]:size-4",
+        sm: "h-9 px-4 text-xs [&_svg:not([class*='size-'])]:size-4",
+        lg: "h-12 px-7 text-base [&_svg:not([class*='size-'])]:size-5",
+        icon: "size-10 p-0 [&_svg:not([class*='size-'])]:size-5",
       },
     },
     defaultVariants: {
@@ -37,18 +36,52 @@ const buttonVariants = cva(
   }
 )
 
+export interface ButtonProps
+  extends React.ComponentProps<"button">,
+  VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+  isLoading?: boolean
+  loadingText?: string
+}
+
 function Button({
   className,
   variant = "default",
   size = "default",
+  asChild = false,
+  isLoading = false,
+  loadingText,
+  disabled,
+  children,
   ...props
-}: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
+}: ButtonProps) {
+  const Comp = asChild ? Slot : "button"
+  const isDisabled = isLoading || disabled
+
   return (
-    <ButtonPrimitive
+    <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      data-variant={variant}
+      data-size={size}
+      aria-disabled={asChild && isDisabled ? true : undefined}
+      className={cn(
+        buttonVariants({ variant, size, className }),
+        asChild && isDisabled && "pointer-events-none opacity-60"
+      )}
+      disabled={asChild ? undefined : isDisabled}
       {...props}
-    />
+    >
+      {asChild ? (
+        children
+      ) : isLoading ? (
+        <>
+          <Loader2 className="animate-spin" />
+          {loadingText ? <span>{loadingText}</span> : children}
+        </>
+      ) : (
+        children
+      )}
+    </Comp>
   )
 }
 

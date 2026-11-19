@@ -1,16 +1,16 @@
 import type { MetadataRoute } from "next"
+import { siteUrl } from "@/lib/site-url"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://odiaicons.com"
   return [
     {
-      url: `${base}/`,
+      url: `${siteUrl}/`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: `${base}/icons`,
+      url: `${siteUrl}/icons`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,

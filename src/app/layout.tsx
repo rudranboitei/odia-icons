@@ -2,8 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toast";
-
-const siteUrl = "https://odiaicons.com";
+import { siteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "odiaicons — Odia icons, free to use",
@@ -26,15 +25,15 @@ export const metadata: Metadata = {
       "Konark chakras, Kalinga deulas, pattachitra fish and more — as clean, consistent line icons.",
     url: siteUrl,
     siteName: "odiaicons",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     type: "website",
+    // The image is supplied by app/opengraph-image.png so every route inherits it.
   },
   twitter: {
     card: "summary_large_image",
     title: "odiaicons",
     description:
       "Konark chakras, Kalinga deulas, pattachitra fish and more — as clean, consistent line icons.",
-    images: ["/og-image.png"],
+    // The image is supplied by app/twitter-image.png.
   },
 };
 

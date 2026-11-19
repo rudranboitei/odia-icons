@@ -19,28 +19,28 @@ export function SiteNav() {
             height={26}
             priority
             unoptimized
-            className="h-[26px] w-auto dark:invert"
+            className="h-6.5 w-auto dark:invert"
           />
         </Link>
 
         <div className="flex items-center gap-2">
-          <a
+          <Link
             href={links.github}
             target="_blank"
             rel="noopener"
             aria-label="GitHub"
             title="GitHub"
             className={cn(
-              buttonVariants({ variant: "outline", size: "icon-lg" }),
+              buttonVariants({ variant: "outline", size: "icon" }),
               "size-10 rounded-full"
             )}
           >
             <IconBrandGithub />
-          </a>
+          </Link>
           <Link
             href={links.icons}
             className={cn(
-              buttonVariants({ size: "lg" }),
+              buttonVariants({ size: "sm" }),
               "h-10 rounded-full px-4 text-[15px]"
             )}
           >
