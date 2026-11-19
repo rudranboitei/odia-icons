@@ -161,7 +161,7 @@ export function IconBrowser() {
   return (
     <div className="min-h-dvh bg-background text-foreground">
       {/* Framed page: space on both sides + vertical hairlines */}
-      <div className="mx-auto flex min-h-dvh w-full max-w-[1480px] border-x border-border">
+      <div className="mx-auto flex min-h-dvh w-full max-w-[1360px] border-x border-border">
         {/* Sidebar */}
         <aside className="sticky top-0 hidden h-dvh w-[232px] shrink-0 flex-col px-6 py-6 lg:flex">
           <Link href="/" className="inline-flex w-fit items-center">
@@ -368,7 +368,7 @@ export function IconBrowser() {
                           type="button"
                           onClick={() => setActive(icon)}
                           aria-label={`Open ${icon.name} icon`}
-                          className="flex h-[156px] cursor-pointer w-full flex-col items-center justify-center gap-4 rounded-xl border border-border bg-card px-3 transition-colors hover:border-border-strong focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
+                          className="flex h-[156px] w-full cursor-pointer flex-col items-center justify-center gap-4 rounded-sm border border-border px-3 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition-[background-color,border-color,box-shadow,transform] duration-200 hover:-translate-y-px hover:border-border-strong hover:bg-muted/60 hover:shadow-[0_6px_16px_-6px_rgba(0,0,0,0.18)] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
                         >
                           <Icon
                             def={icon}
@@ -394,7 +394,7 @@ export function IconBrowser() {
                             type="button"
                             onClick={() => copy(toSvg(icon, { size: 24, stroke: 1.75 }), "SVG")}
                             aria-label={`Copy ${icon.name} SVG`}
-                            className="flex size-6 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-foreground"
+                            className="flex size-6 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground"
                           >
                             <IconCopy className="size-3" stroke={2} />
                           </button>
@@ -402,7 +402,7 @@ export function IconBrowser() {
                             type="button"
                             onClick={() => copy(toJsx(icon, { size: 24, stroke: 1.75 }), "JSX")}
                             aria-label={`Copy ${icon.name} JSX`}
-                            className="flex size-6 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-foreground"
+                            className="flex size-6 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground"
                           >
                             <IconFileCode className="size-3" stroke={2} />
                           </button>
@@ -410,7 +410,7 @@ export function IconBrowser() {
                             type="button"
                             onClick={() => download(icon)}
                             aria-label={`Download ${icon.name} SVG`}
-                            className="flex size-6 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-foreground"
+                            className="flex size-6 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground"
                           >
                             <IconDownload className="size-3" stroke={2} />
                           </button>
@@ -439,15 +439,15 @@ export function IconBrowser() {
               </div>
 
               {/* Right panel */}
-              <aside className="sticky top-[8.25rem] hidden w-[290px] shrink-0 xl:block">
-                <div className="rounded-xl border border-border bg-card">
+              <aside className="sticky top-33 hidden w-59 shrink-0 xl:block">
+                <div className="rounded-sm bg-muted/30">
                   <div className="flex items-center justify-between px-4 pt-4 pb-3">
                     <p className="text-[13px] text-muted-foreground">Contribute</p>
                     <a
                       href={siteConfig.links.contribute}
                       target="_blank"
                       rel="noopener"
-                      className="rounded-full bg-muted px-3 py-1.5 text-[12px] font-medium text-foreground/70 transition-colors hover:text-foreground"
+                      className="rounded-full bg-background px-3 py-1.5 text-[12px] font-medium text-foreground/70 transition-colors hover:text-foreground"
                     >
                       Submit an icon
                     </a>
@@ -460,9 +460,9 @@ export function IconBrowser() {
                           href={row.href}
                           target="_blank"
                           rel="noopener"
-                          className="flex items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-muted"
+                          className="flex items-center gap-3 rounded-sm px-2 py-2 transition-colors hover:bg-background"
                         >
-                          <span className="relative size-9 shrink-0 overflow-hidden rounded-lg bg-muted">
+                          <span className="relative size-9 shrink-0 overflow-hidden bg-background">
                             <Image
                               src={row.image}
                               alt=""
