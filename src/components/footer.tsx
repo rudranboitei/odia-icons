@@ -1,10 +1,14 @@
 import Link from "next/link"
+import { IconArrowUpRight } from "@tabler/icons-react"
 import { siteConfig } from "@/lib/site-config"
 import { Icon, iconsByName } from "@/lib/icons"
 
 export function Footer() {
   const { name, footer } = siteConfig
   const year = footer.year
+
+  const linkClass =
+    "inline-flex items-center gap-1 transition-colors hover:text-foreground"
 
   return (
     <footer className="relative mt-12 border-t border-border">
@@ -35,25 +39,20 @@ export function Footer() {
                 href={l.href}
                 target="_blank"
                 rel="noopener"
-                className="transition-colors hover:text-foreground"
+                className={linkClass}
               >
                 {l.label}
+                <IconArrowUpRight aria-hidden className="size-3" stroke={1.75} />
               </a>
             ) : l.href.startsWith("mailto:") ? (
-              <a
-                key={l.label}
-                href={l.href}
-                className="transition-colors hover:text-foreground"
-              >
+              <a key={l.label} href={l.href} className={linkClass}>
                 {l.label}
+                <IconArrowUpRight aria-hidden className="size-3" stroke={1.75} />
               </a>
             ) : (
-              <Link
-                key={l.label}
-                href={l.href}
-                className="transition-colors hover:text-foreground"
-              >
+              <Link key={l.label} href={l.href} className={linkClass}>
                 {l.label}
+                <IconArrowUpRight aria-hidden className="size-3" stroke={1.75} />
               </Link>
             )
           )}

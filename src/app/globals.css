@@ -195,7 +195,7 @@
   .text-footer-mark {
     font-family: Satoshi, "Satoshi Placeholder", sans-serif;
     font-weight: 500;
-    font-size: clamp(3.5rem, 24vw, 30rem);
+    font-size: clamp(2.5rem, 17vw, 15rem);
     line-height: 1;
     letter-spacing: -0.06em;
     color: var(--foreground);
