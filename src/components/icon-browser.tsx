@@ -344,7 +344,7 @@ export function IconBrowser() {
                     aria-pressed={category === item.id}
                     className={
                       category === item.id
-                        ? "shrink-0 rounded-full bg-foreground px-3.5 py-1.5 text-[13px] font-medium text-background"
+                        ? "shrink-0 rounded-full cursor-pointer bg-foreground px-3.5 py-1.5 text-[13px] font-medium text-background"
                         : "shrink-0 rounded-full bg-muted px-3.5 py-1.5 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
                     }
                   >
