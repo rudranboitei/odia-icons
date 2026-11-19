@@ -8,14 +8,14 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "border-[rgba(0,0,0,0.07)] bg-[linear-gradient(110deg,var(--brand-cyan)_0%,var(--primary)_100%)] text-[15px] font-semibold text-primary-foreground hover:brightness-105",
+          "border-[rgba(0,0,0,0.07)] bg-[linear-gradient(110deg,var(--brand-cyan)_0%,var(--brand-blue)_100%)] text-[15px] font-semibold text-brand-foreground hover:brightness-105 dark:border-border",
         outline:
           "border-border bg-card text-foreground hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
         secondary:
           "border-border bg-card text-foreground hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
         ghost: "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
         destructive:
-          "bg-destructive text-primary-foreground hover:brightness-105",
+          "bg-destructive text-brand-foreground hover:brightness-105",
         link: "text-foreground underline-offset-4 hover:text-brand hover:underline",
       },
       size: {

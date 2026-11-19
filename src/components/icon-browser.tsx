@@ -374,7 +374,7 @@ export function IconBrowser() {
                           type="button"
                           onClick={() => setActive(icon)}
                           aria-label={`Open ${icon.name} icon`}
-                          className="flex h-[156px] w-full flex-col items-center justify-center gap-4 rounded-xl border border-border bg-card px-3 transition-colors hover:border-border-strong focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
+                          className="flex h-[156px] cursor-pointer w-full flex-col items-center justify-center gap-4 rounded-xl border border-border bg-card px-3 transition-colors hover:border-border-strong focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
                         >
                           <Icon
                             def={icon}
