@@ -40,7 +40,7 @@ export default function Home() {
       className="relative min-h-screen overflow-x-clip bg-background text-foreground"
     >
       {/* Framed column: space on both sides + vertical hairlines */}
-      <div className="relative mx-auto w-full max-w-[1360px] border-x border-border">
+      <div className="relative mx-auto w-full max-w-340 border-x border-border">
         <div
           aria-hidden
           className="pointer-events-none absolute top-0 -left-4 h-full w-4 bg-[length:10px_10px] text-foreground/10 [background-image:repeating-linear-gradient(315deg,currentColor_0_1px,#0000_0_50%)] md:-left-10 md:w-10 2xl:-left-14 2xl:w-14"

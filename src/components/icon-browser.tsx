@@ -161,7 +161,7 @@ export function IconBrowser() {
   return (
     <div className="min-h-dvh bg-background text-foreground">
       {/* Framed page: space on both sides + vertical hairlines */}
-      <div className="mx-auto flex min-h-dvh w-full max-w-[1360px] border-x border-border">
+      <div className="mx-auto flex min-h-dvh w-full max-w-[1600px] border-x border-border">
         {/* Sidebar */}
         <aside className="sticky top-0 hidden h-dvh w-[232px] shrink-0 flex-col px-6 py-6 lg:flex">
           <Link href="/" className="inline-flex w-fit items-center">
