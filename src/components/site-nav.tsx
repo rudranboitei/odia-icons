@@ -1,26 +1,17 @@
-"use client"
-
-import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { IconArrowUpRight, IconMenu2, IconX } from "@tabler/icons-react"
+import { IconBrandGithub } from "@tabler/icons-react"
 import { siteConfig } from "@/lib/site-config"
 import { buttonVariants } from "@/components/ui/button"
-import { ModeToggle } from "@/components/ui/mode-toggle"
 import { cn } from "@/lib/utils"
 
 export function SiteNav() {
-  const { name, nav, links } = siteConfig
-  const [open, setOpen] = useState(false)
+  const { name, links } = siteConfig
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background">
       <div className="flex h-16 w-full items-center justify-between gap-4 px-5 lg:px-6">
-        <Link
-          href="/"
-          className="flex items-center"
-          onClick={() => setOpen(false)}
-        >
+        <Link href="/" className="flex items-center" aria-label={name}>
           <Image
             src="/brand/logo-wordmark.svg"
             alt={name}
@@ -32,31 +23,19 @@ export function SiteNav() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
-          {nav.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="rounded-full px-3.5 py-2 text-[15px] font-medium tracking-[-0.03em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
         <div className="flex items-center gap-2">
-          <ModeToggle />
           <a
             href={links.github}
             target="_blank"
             rel="noopener"
+            aria-label="GitHub"
+            title="GitHub"
             className={cn(
-              buttonVariants({ variant: "outline", size: "lg" }),
-              "hidden h-10 rounded-full px-4 text-[15px] sm:inline-flex"
+              buttonVariants({ variant: "outline", size: "icon-lg" }),
+              "size-10 rounded-full"
             )}
           >
-            GitHub
-            <IconArrowUpRight data-icon="inline-end" />
+            <IconBrandGithub />
           </a>
           <Link
             href={links.icons}
@@ -67,48 +46,8 @@ export function SiteNav() {
           >
             Get the icons
           </Link>
-
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            onClick={() => setOpen((v) => !v)}
-            className={cn(
-              buttonVariants({ variant: "ghost", size: "icon-lg" }),
-              "md:hidden"
-            )}
-          >
-            {open ? <IconX /> : <IconMenu2 />}
-          </button>
         </div>
       </div>
-
-      {open && (
-        <div id="mobile-menu" className="border-t md:hidden">
-          <nav className="flex w-full flex-col px-5 py-3 lg:px-6" aria-label="Mobile">
-            {nav.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="rounded-xl px-2 py-3 text-[15px] font-medium tracking-[-0.03em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <a
-              href={links.github}
-              target="_blank"
-              rel="noopener"
-              onClick={() => setOpen(false)}
-              className="rounded-xl px-2 py-3 text-[15px] font-medium tracking-[-0.03em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-            >
-              GitHub ↗
-            </a>
-          </nav>
-        </div>
-      )}
     </header>
   )
 }
