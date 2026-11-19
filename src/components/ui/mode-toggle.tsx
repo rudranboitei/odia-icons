@@ -5,8 +5,7 @@ import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 
 export function ModeToggle() {
-  const { resolvedTheme, setTheme } = useTheme()
-  const isDark = resolvedTheme === "dark"
+  const { setTheme } = useTheme()
 
   return (
     <Button
@@ -14,7 +13,11 @@ export function ModeToggle() {
       variant="outline"
       size="icon-lg"
       className="relative"
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={() =>
+        setTheme(
+          document.documentElement.classList.contains("dark") ? "light" : "dark"
+        )
+      }
       aria-label="Toggle theme"
       title="Toggle theme"
     >

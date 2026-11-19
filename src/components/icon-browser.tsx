@@ -446,7 +446,7 @@ export function IconBrowser() {
 
               {/* Right panel */}
               <aside className="sticky top-[8.25rem] hidden w-[290px] shrink-0 xl:block">
-                <div className="rounded-xl border border-border bg-card">
+                <div className="rounded-none border border-border bg-card">
                   <div className="flex items-center justify-between px-4 pt-4 pb-3">
                     <p className="text-[13px] text-muted-foreground">Contribute</p>
                     <a
