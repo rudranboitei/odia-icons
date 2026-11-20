@@ -33,7 +33,7 @@ export function FeatureMedia({
   return (
     <div
       className={cn(
-        "h-[220px] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]",
+        "h-[180px] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] sm:h-[220px]",
         className,
       )}
     >

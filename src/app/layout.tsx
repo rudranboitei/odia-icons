@@ -1,20 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Inter_Tight, Pixelify_Sans } from "next/font/google";
+import { Geist, JetBrains_Mono } from "next/font/google";
 
-import { SITE } from "@/data/site";
 import { MotionProvider } from "@/components/motion-provider";
+import { SITE } from "@/data/site";
 import "./globals.css";
-
-const interTight = Inter_Tight({
-  subsets: ["latin"],
-  variable: "--font-inter-tight",
-});
-
-const pixelify = Pixelify_Sans({
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  variable: "--font-pixelify",
-});
 
 export const metadata: Metadata = {
   title: `${SITE.name} – ${SITE.tagline}`,
@@ -44,6 +33,17 @@ export const metadata: Metadata = {
   },
 };
 
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+
+// Code blocks, inline code, and install commands.
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+});
+
 export const viewport: Viewport = {
   themeColor: "#141414",
 };
@@ -53,7 +53,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${interTight.variable} ${pixelify.variable}`}>
+      <body
+        className={`h-full antialiased ${geistSans.variable} ${jetbrainsMono.variable}`}
+        suppressHydrationWarning
+      >
         <MotionProvider>{children}</MotionProvider>
       </body>
     </html>

@@ -12,8 +12,8 @@ export function DeveloperSection() {
   const snippet = toSvg(iconsByName["konark-wheel"], { size: 32, stroke: 1.75 });
 
   return (
-    <section id="developers" className="scroll-mt-20 px-6 py-28">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
+    <section id="developers" className="scroll-mt-20 px-5 py-14 sm:px-6 sm:py-16 lg:py-20">
+      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
         <Reveal>
           <SectionHeader
             align="left"
@@ -24,7 +24,7 @@ export function DeveloperSection() {
             className="max-w-xl"
           />
 
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          <ul className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2">
             {developer.bullets.map((bullet) => (
               <li
                 key={bullet}
@@ -38,7 +38,7 @@ export function DeveloperSection() {
             ))}
           </ul>
 
-          <InstallBox className="mt-9 items-start" />
+          <InstallBox className="mt-7 items-start sm:mt-9" />
         </Reveal>
 
         <Reveal delay={0.1}>
@@ -56,7 +56,7 @@ export function DeveloperSection() {
             </div>
 
             <div className="p-3">
-              <pre className="overflow-x-auto rounded-2xl bg-black/30 p-5 font-mono text-[11px] leading-relaxed text-foreground">
+              <pre className="overflow-x-auto rounded-2xl bg-black/30 p-4 font-mono text-[11px] leading-relaxed text-foreground sm:p-5">
                 <ShikiCode code={snippet} lang="xml" />
               </pre>
             </div>

@@ -7,7 +7,7 @@ export function Steps() {
   const { steps } = SITE;
 
   return (
-    <section className="px-6 py-28">
+    <section className="px-5 py-14 sm:px-6 sm:py-16 lg:py-20">
       <Reveal className="mx-auto max-w-6xl">
         <SectionHeader
           eyebrow={steps.eyebrow}
@@ -16,19 +16,19 @@ export function Steps() {
           description={steps.description}
         />
 
-        <div className="mt-12 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
+        <div className="mt-8 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] sm:mt-10">
           <div
             aria-hidden
-            className="flex h-40 items-center justify-center gap-4 overflow-hidden border-b border-white/10 bg-white/[0.02]"
+            className="flex h-28 items-center justify-center gap-3 overflow-hidden border-b border-white/10 bg-white/[0.02] sm:h-32 sm:gap-4 lg:h-40"
           >
             {[...icons, ...icons].map((icon, i) => (
               <span
                 key={`${icon.name}-${i}`}
-                className="flex size-16 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-card/40 sm:size-20"
+                className="flex size-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-card/40 sm:size-16 lg:size-20"
               >
                 <Icon
                   def={icon}
-                  size={30}
+                  size={24}
                   stroke={1.3}
                   className="text-foreground"
                 />
@@ -38,11 +38,11 @@ export function Steps() {
 
           <ol className="grid divide-y divide-white/10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {steps.items.map((item, i) => (
-              <li key={item.title} className="p-6 sm:p-8">
+              <li key={item.title} className="p-5 sm:p-6 lg:p-8">
                 <span className="font-mono text-[13px] leading-[1.2] tracking-[-0.03em] text-muted-foreground">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-3 text-[21px] leading-[1.4] font-semibold tracking-tight text-foreground">
+                <h3 className="mt-3 text-lg leading-[1.4] font-semibold tracking-tight text-foreground sm:text-[21px]">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">

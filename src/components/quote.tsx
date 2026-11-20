@@ -9,18 +9,18 @@ export function Quote() {
   const { quote, links } = SITE;
 
   return (
-    <section className="px-6 py-28">
+    <section className="px-5 py-14 sm:px-6 sm:py-16 lg:py-20">
       <Reveal className="mx-auto max-w-4xl">
         <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
-          <div className="grid gap-8 p-8 sm:grid-cols-[1.5fr_1fr] sm:gap-0 sm:p-12">
-            <div className="sm:pr-10">
+          <div className="grid gap-6 p-6 sm:grid-cols-[1.5fr_1fr] sm:gap-0 sm:p-8 lg:p-10">
+            <div className="sm:pr-8 lg:pr-10">
               <Eyebrow>{quote.eyebrow}</Eyebrow>
-              <blockquote className="mt-6 text-2xl leading-[1.2] font-semibold tracking-tight text-balance text-foreground sm:text-3xl">
+              <blockquote className="mt-5 text-xl leading-[1.2] font-semibold tracking-tight text-balance text-foreground sm:text-2xl lg:text-3xl">
                 “{quote.text}”
               </blockquote>
             </div>
 
-            <div className="flex flex-col justify-between gap-8 border-t border-white/10 pt-8 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-10">
+            <div className="flex flex-col justify-between gap-6 border-t border-white/10 pt-6 sm:gap-8 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-8 lg:pl-10">
               <div className="flex items-center gap-3">
                 <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-background">
                   <Icon def={iconsByName["konark-wheel"]} size={26} stroke={1.4} />

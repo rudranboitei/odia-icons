@@ -17,10 +17,15 @@ import {
 } from "@tabler/icons-react"
 import { SITE } from "../data/site"
 import { copyText } from "@/lib/clipboard"
-// import { toast } from "@/components/ui/toast"
 import { Button } from "@/components/ui/button"
 import { ShikiCode } from "@/components/shiki-code"
-// import { ModeToggle } from "@/components/ui/mode-toggle"
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command"
 import {
   Dialog,
   DialogContent,
@@ -97,7 +102,7 @@ function IconCard({ icon, index, onOpen, onCopy, onDownload }: {
   icon: IconDef
   index: number
   onOpen: () => void
-  onCopy: (value: string, label: string) => void
+  onCopy: (value: string) => void
   onDownload: () => void
 }) {
   const actionBtn =
@@ -142,7 +147,7 @@ function IconCard({ icon, index, onOpen, onCopy, onDownload }: {
       <div className="absolute top-2.5 right-2.5 hidden gap-1 transition-opacity sm:flex sm:opacity-100 sm:[@media(hover:hover)]:opacity-0 sm:[@media(hover:hover)]:group-hover:opacity-100 sm:[@media(hover:hover)]:focus-within:opacity-100">
         <button
           type="button"
-          onClick={() => onCopy(toSvg(icon, { size: 24, stroke: 1.75 }), "SVG")}
+          onClick={() => onCopy(toSvg(icon, { size: 24, stroke: 1.75 }))}
           aria-label={`Copy ${icon.name} SVG`}
           className={actionBtn}
         >
@@ -150,7 +155,7 @@ function IconCard({ icon, index, onOpen, onCopy, onDownload }: {
         </button>
         <button
           type="button"
-          onClick={() => onCopy(toJsx(icon, { size: 24, stroke: 1.75 }), "JSX")}
+          onClick={() => onCopy(toJsx(icon, { size: 24, stroke: 1.75 }))}
           aria-label={`Copy ${icon.name} JSX`}
           className={actionBtn}
         >
@@ -174,7 +179,9 @@ export function IconBrowser() {
   const [query, setQuery] = useState("")
   const [category, setCategory] = useState<"all" | IconCategory>("all")
   const [copiedInstall, setCopiedInstall] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
+  const searchWrapRef = useRef<HTMLDivElement>(null)
 
   const filtered = useMemo(
     () =>
@@ -194,11 +201,8 @@ export function IconBrowser() {
 
       if ((event.key === "k" && (event.metaKey || event.ctrlKey)) || (event.key === "/" && !typing)) {
         event.preventDefault()
+        setSearchOpen(true)
         searchRef.current?.focus()
-      }
-      if (event.key === "Escape" && document.activeElement === searchRef.current) {
-        setQuery("")
-        searchRef.current?.blur()
       }
     }
 
@@ -206,26 +210,26 @@ export function IconBrowser() {
     return () => window.removeEventListener("keydown", onKeyDown)
   }, [])
 
-  async function copy(value: string, label: string) {
-    const copied = await copyText(value)
-    // toast.add({
-    //   type: copied ? "success" : "error",
-    //   title: copied ? `Copied ${label}` : "Could not copy",
-    //   description: copied ? undefined : "Your browser blocked clipboard access.",
-    //   timeout: 2000,
-    // })
+  // Close the command results when clicking anywhere else on the page.
+  useEffect(() => {
+    function onPointerDown(event: PointerEvent) {
+      if (!searchWrapRef.current?.contains(event.target as Node)) {
+        setSearchOpen(false)
+      }
+    }
+
+    document.addEventListener("pointerdown", onPointerDown)
+    return () => document.removeEventListener("pointerdown", onPointerDown)
+  }, [])
+
+  async function copy(value: string) {
+    await copyText(value)
   }
 
   async function copyInstall() {
     const copied = await copyText(SITE.install.command)
     if (!copied) return
     setCopiedInstall(true)
-    // toast.add({
-    //   type: "success",
-    //   title: "Install command copied",
-    //   description: SITE.install.command,
-    //   timeout: 2000,
-    // })
     setTimeout(() => setCopiedInstall(false), 1600)
   }
 
@@ -355,44 +359,108 @@ export function IconBrowser() {
               </Link>
 
               <div className="hidden min-w-0 items-baseline gap-3 lg:flex">
-                <span className="font-pixel text-[18px] font-bold">Icons</span>
+                <span className="font-sans text-[18px] font-bold">Icons</span>
                 <span className="truncate text-[13px] text-muted-foreground">
                   Odia motifs drawn on a 24 × 24 grid.
                 </span>
               </div>
 
               <div className="ml-auto flex items-center gap-2">
-                <div className="relative w-full min-w-0 sm:w-72">
-                  <IconSearch
-                    aria-hidden
-                    className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted-foreground"
-                  />
-                  <input
-                    ref={searchRef}
-                    type="search"
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
-                    placeholder={`Search ${icons.length} icons…`}
-                    aria-label="Search icons"
-                    className="h-10 w-full appearance-none rounded-full border border-border bg-foreground/[0.04] pr-14 pl-10 text-[13px] text-foreground outline-none transition-[border-color,box-shadow] placeholder:text-muted-foreground focus-visible:border-primary/60 focus-visible:ring-[3px] focus-visible:ring-primary/25 [&::-webkit-search-cancel-button]:hidden"
-                  />
-                  {query ? (
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setQuery("")
-                        searchRef.current?.focus()
-                      }}
-                      aria-label="Clear search"
-                      className="absolute top-1/2 right-2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground"
-                    >
-                      <IconX className="size-3.5" />
-                    </button>
-                  ) : (
-                    <kbd className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 rounded-md border border-border px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground">
-                      ⌘K
-                    </kbd>
-                  )}
+                <div ref={searchWrapRef} className="relative w-full min-w-0 sm:w-72">
+                  <Command
+                    shouldFilter={false}
+                    className="relative overflow-visible rounded-full bg-transparent p-0"
+                  >
+                    <div className="relative">
+                      <IconSearch
+                        aria-hidden
+                        className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted-foreground"
+                      />
+                      <input
+                        ref={searchRef}
+                        type="search"
+                        value={query}
+                        onChange={(event) => {
+                          setQuery(event.target.value)
+                          setSearchOpen(true)
+                        }}
+                        onFocus={() => setSearchOpen(true)}
+                        onKeyDown={(event) => {
+                          if (event.key !== "Escape") return
+                          event.preventDefault()
+                          if (query) {
+                            setQuery("")
+                          } else {
+                            setSearchOpen(false)
+                            searchRef.current?.blur()
+                          }
+                        }}
+                        placeholder={`Search ${icons.length} icons…`}
+                        aria-label="Search icons"
+                        role="combobox"
+                        aria-expanded={searchOpen}
+                        aria-controls={searchOpen ? "icon-search-results" : undefined}
+                        aria-autocomplete="list"
+                        className="h-10 w-full appearance-none rounded-full border border-border bg-foreground/[0.04] pr-14 pl-10 text-[13px] text-foreground outline-none transition-[border-color,box-shadow] placeholder:text-muted-foreground focus-visible:border-primary/60 focus-visible:ring-[3px] focus-visible:ring-primary/25 [&::-webkit-search-cancel-button]:hidden"
+                      />
+                      {query ? (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setQuery("")
+                            setSearchOpen(true)
+                            searchRef.current?.focus()
+                          }}
+                          aria-label="Clear search"
+                          className="absolute top-1/2 right-2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground"
+                        >
+                          <IconX className="size-3.5" />
+                        </button>
+                      ) : (
+                        <kbd className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 rounded-md border border-border px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground">
+                          ⌘K
+                        </kbd>
+                      )}
+                    </div>
+
+                    {searchOpen && (
+                      <div
+                        id="icon-search-results"
+                        className="absolute top-full right-0 z-50 mt-2 w-[min(17rem,calc(100vw-4.5rem))] overflow-hidden rounded-2xl border border-border bg-popover p-1 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.85)] sm:left-0 sm:w-auto"
+                      >
+                        <CommandList className="max-h-[320px] p-0">
+                          {filtered.length > 0 ? (
+                            <CommandGroup heading={query ? "Icons" : "All icons"}>
+                              {filtered.map((icon) => (
+                                <CommandItem
+                                  key={icon.name}
+                                  value={icon.name}
+                                  onSelect={() => {
+                                    setQuery(icon.name)
+                                    setSearchOpen(false)
+                                    setActive(icon)
+                                  }}
+                                  className="gap-2.5 px-2.5 py-2"
+                                >
+                                  <Icon def={icon} size={18} stroke={1.75} />
+                                  <span className="truncate font-mono text-[13px] whitespace-nowrap">
+                                    {icon.name}
+                                  </span>
+                                  <span className="ml-auto mr-1 text-[11px] whitespace-nowrap text-muted-foreground">
+                                    {icon.category}
+                                  </span>
+                                </CommandItem>
+                              ))}
+                            </CommandGroup>
+                          ) : (
+                            <CommandEmpty className="py-8">
+                              No icons match “{query}”.
+                            </CommandEmpty>
+                          )}
+                        </CommandList>
+                      </div>
+                    )}
+                  </Command>
                 </div>
 
                 <motion.button
@@ -410,8 +478,6 @@ export function IconBrowser() {
                     <IconCopy className="size-3.5 opacity-50" />
                   )}
                 </motion.button>
-
-                {/* <ModeToggle /> */}
 
                 <motion.a
                   href={SITE.links.github}
@@ -494,7 +560,7 @@ export function IconBrowser() {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex flex-col items-center gap-3 rounded-3xl border border-dashed border-border px-6 py-20 text-center"
                   >
-                    <p className="font-pixel text-[24px] leading-[1.3] font-bold text-foreground">
+                    <p className="font-sans text-[24px] leading-[1.3] font-bold text-foreground">
                       No icons match that search.
                     </p>
                     <p className="max-w-sm text-[14px] leading-[1.4] text-muted-foreground">

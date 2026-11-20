@@ -17,7 +17,7 @@ export function Features() {
   const { features, featuresIntro } = SITE;
 
   return (
-    <section id="features" className="scroll-mt-20 px-6 py-28">
+    <section id="features" className="scroll-mt-20 px-5 py-14 sm:px-6 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-5xl">
         <SectionHeader
           eyebrow={featuresIntro.eyebrow}
@@ -26,7 +26,7 @@ export function Features() {
           description={featuresIntro.description}
         />
 
-        <div className="mt-14 grid gap-4 md:grid-cols-2">
+        <div className="mt-8 grid gap-3 sm:mt-10 sm:gap-4 md:grid-cols-2 lg:mt-12">
           {features.map((feature, index) => (
             <motion.article
               key={feature.title}
@@ -40,7 +40,7 @@ export function Features() {
               }}
               whileHover={{ y: -4 }}
               whileTap={{ scale: 0.99 }}
-              className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-2 transition-colors duration-300 hover:border-primary/40"
+              className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-1.5 transition-colors duration-300 hover:border-primary/40 sm:p-2"
             >
               {feature.media && (
                 <FeatureMedia
@@ -50,7 +50,7 @@ export function Features() {
                 />
               )}
 
-              <div className="px-4 pt-5 pb-4">
+              <div className="px-4 pt-4 pb-4 sm:pt-5">
                 <div className="flex items-center gap-2.5">
                   <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-primary/15 text-primary">
                     <Icon

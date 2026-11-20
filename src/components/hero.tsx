@@ -75,7 +75,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-28"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-5 py-20 sm:px-6 sm:py-24 md:py-28"
     >
       <IconWall />
 
@@ -88,7 +88,7 @@ export function Hero() {
         {/* Line 1: pixel wordmark with keycap */}
         <motion.h1
           variants={rise}
-          className="flex flex-wrap items-center justify-center gap-3 font-pixel text-5xl leading-none font-bold text-foreground md:gap-5 md:text-7xl"
+          className="flex flex-wrap items-center justify-center gap-3 font-sans text-4xl leading-none font-bold text-foreground sm:text-5xl md:gap-5 md:text-7xl"
         >
           <span>{hero.wordmark.lead}</span>
           <KeyTile />
@@ -98,7 +98,7 @@ export function Hero() {
         {/* Line 2: large display line with the accent phrase in cream */}
         <motion.p
           variants={rise}
-          className="mt-8 flex flex-wrap items-center justify-center gap-3 text-5xl leading-[1.05] font-semibold tracking-tight text-foreground md:gap-5 md:text-8xl"
+          className="mt-6 flex flex-wrap items-center justify-center gap-3 text-4xl leading-[1.05] font-semibold tracking-tight text-foreground sm:mt-8 sm:text-5xl md:gap-5 md:text-7xl lg:text-8xl"
         >
           <span>{hero.display.lead}</span>
           <SpinningWheel />
@@ -107,14 +107,14 @@ export function Hero() {
 
         <motion.p
           variants={rise}
-          className="mt-8 max-w-md text-lg leading-relaxed text-muted-foreground md:text-xl"
+          className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg md:text-xl"
         >
           {hero.lead}
         </motion.p>
 
         <motion.div
           variants={rise}
-          className="mt-10 flex flex-wrap justify-center gap-3"
+          className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-10"
         >
           <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>
             <Button size="lg" asChild>
@@ -133,7 +133,7 @@ export function Hero() {
 
         <motion.div
           variants={container}
-          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+          className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:mt-10"
         >
           <motion.div
             variants={rise}

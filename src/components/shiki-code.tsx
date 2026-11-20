@@ -10,7 +10,7 @@ function getHighlighter() {
   if (!highlighterPromise) {
     highlighterPromise = import("shiki").then(({ createHighlighter }) =>
       createHighlighter({
-        themes: ["github-light", "github-dark"],
+        themes: ["dracula"],
         langs: ["bash", "xml", "jsx"],
       })
     )
@@ -18,7 +18,7 @@ function getHighlighter() {
   return highlighterPromise
 }
 
-/** Syntax highlighting powered by Shiki, with light and dark token colors. */
+/** Syntax highlighting powered by Shiki, using the Dracula theme. */
 export function ShikiCode({
   code,
   lang,
@@ -39,8 +39,7 @@ export function ShikiCode({
         setHtml(
           highlighter.codeToHtml(code, {
             lang,
-            themes: { light: "github-light", dark: "github-dark" },
-            defaultColor: false,
+            theme: "dracula",
             structure: "inline",
           })
         )

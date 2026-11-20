@@ -33,7 +33,7 @@ export function InstallBox({
       id={id}
       className={cn("flex w-full max-w-lg flex-col items-center", className)}
     >
-      <div className="flex w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] p-1.5 pr-1.5 pl-5 backdrop-blur">
+      <div className="flex w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] p-1.5 pr-1.5 pl-4 backdrop-blur sm:pl-5">
         <span className="text-sm text-muted-foreground select-none">$</span>
         <ShikiCode
           code={command}

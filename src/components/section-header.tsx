@@ -56,16 +56,16 @@ export function SectionHeader({
       <Eyebrow icon={icon}>{eyebrow}</Eyebrow>
       <h2
         className={cn(
-          "mt-6 font-semibold tracking-tight text-balance text-foreground",
+          "mt-5 font-semibold tracking-tight text-balance text-foreground sm:mt-6",
           size === "cta"
-            ? "text-5xl leading-[1.05] md:text-7xl"
-            : "text-4xl leading-[1.05] md:text-6xl",
+            ? "text-4xl leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl"
+            : "text-3xl leading-[1.08] sm:text-4xl md:text-5xl lg:text-6xl",
         )}
       >
         <AccentHeading title={title} accent={accent} />
       </h2>
       {description && (
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-balance text-muted-foreground md:text-xl">
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-balance text-muted-foreground sm:mt-5 sm:text-lg md:text-xl">
           {description}
         </p>
       )}

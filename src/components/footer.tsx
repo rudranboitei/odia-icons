@@ -12,9 +12,9 @@ export function Footer() {
     "inline-flex items-center gap-1 transition-colors hover:text-primary";
 
   return (
-    <footer className="relative mt-12 border-t border-white/10">
-      <div className="mx-auto w-full max-w-6xl px-6">
-        <div className="flex flex-col items-center gap-4 py-14 text-center">
+    <footer className="relative mt-8 border-t border-white/10 sm:mt-10">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
+        <div className="flex flex-col items-center gap-3 py-10 text-center sm:gap-4 sm:py-12">
           <a
             href="#top"
             className="inline-flex items-center gap-2 text-foreground underline-offset-4 transition-colors hover:text-primary"
@@ -31,7 +31,7 @@ export function Footer() {
 
         <nav
           aria-label="Footer"
-          className="flex flex-wrap justify-center gap-x-6 gap-y-2 pb-14 text-sm text-muted-foreground"
+          className="flex flex-wrap justify-center gap-x-6 gap-y-2 pb-10 text-sm text-muted-foreground sm:pb-12"
         >
           {footer.links.map((link) =>
             link.external ? (
@@ -71,7 +71,7 @@ export function Footer() {
         aria-hidden
         className="relative mt-2 overflow-hidden px-2 select-none"
       >
-        <div className="w-full text-center font-pixel text-[18vw] leading-none whitespace-nowrap text-white/[0.035]">
+        <div className="w-full text-center font-sans text-[18vw] leading-none whitespace-nowrap text-white/[0.035]">
           {footer.wordmark}
         </div>
       </div>

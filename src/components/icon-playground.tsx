@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "motion/react"
 import { IconCheck, IconCopy, IconDownload, IconX } from "@tabler/icons-react"
 import { SITE } from "../data/site"
 import { copyText } from "@/lib/clipboard"
-// import { toast } from "@/components/ui/toast"
 import { Button } from "@/components/ui/button"
 import { ShikiCode } from "@/components/shiki-code"
 import { Icon, toJsx, toSvg, type IconDef } from "@/lib/icons"
@@ -158,15 +157,7 @@ export function IconPlayground({
 
   async function onCopy() {
     const ok = await copyText(code)
-    if (!ok) {
-      // toast.add({
-      //   type: "error",
-      //   title: "Could not copy",
-      //   description: "Your browser blocked clipboard access.",
-      //   timeout: 2000,
-      // })
-      return
-    }
+    if (!ok) return
     setCopied(true)
     setTimeout(() => setCopied(false), 1500)
   }
@@ -182,12 +173,7 @@ export function IconPlayground({
     try {
       saveBlob(await svgToPng(svg, PNG_PX), `${def.name}-${PNG_PX}.png`)
     } catch {
-      // toast.add({
-      //   type: "error",
-      //   title: "Could not create PNG",
-      //   description: "Try downloading the SVG instead.",
-      //   timeout: 2500,
-      // })
+      /* the browser blocked the download; the SVG remains available */
     }
   }
 
@@ -222,7 +208,7 @@ export function IconPlayground({
       <div className="flex min-w-0 flex-col gap-5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <p className="font-pixel truncate text-[24px] leading-none font-bold text-foreground">
+            <p className="font-sans truncate text-[24px] leading-none font-bold text-foreground">
               {def.name}
             </p>
             <p className="mt-2 text-[12px] text-muted-foreground">
