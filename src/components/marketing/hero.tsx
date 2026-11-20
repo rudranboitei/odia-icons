@@ -11,6 +11,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 /* Palette taken from the "Why odiaicons" section */
 const CREAM = "#f6dfc4";
+const INK = "#1a1210";
 
 /* ------------------------------------------------------------------ */
 /* Mountains: faceted, sun-lit ranges (deterministic, SSR-safe)        */
@@ -194,55 +195,106 @@ function Scene() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Headline keycap with a custom Deula (Kalinga temple) icon           */
+/* Headline mascots (replace a letter, Jitter-style)                   */
 /* ------------------------------------------------------------------ */
 
-function DeulaIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.75}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="3.6" r="1.1" />
-      <path d="M12 4.7V6" />
-      {/* Tower */}
-      <path d="M8.8 20V16C8.8 12.5 10 8.5 12 6C14 8.5 15.2 12.5 15.2 16V20" />
-      {/* Tiers */}
-      <path d="M10.5 9.8H13.5M9.8 12.6H14.2" />
-      {/* Door */}
-      <path d="M10.6 20V18.2a1.4 1.4 0 0 1 2.8 0V20" />
-      {/* Base */}
-      <path d="M6 20H18" />
-    </svg>
-  );
-}
-
-function KeyTile() {
+/** Little Deula (Kalinga temple) character: stands in for the "i" in "Odisha's". */
+function DeulaMascot({ reduce }: { reduce: boolean }) {
   return (
     <motion.span
       aria-hidden="true"
-      variants={{
-        hidden: { opacity: 0, scale: 0.6, rotate: -14, y: 16 },
-        show: {
-          opacity: 1,
-          scale: 1,
-          rotate: -6,
-          y: 0,
-          transition: { type: "spring", stiffness: 220, damping: 15, mass: 0.9 },
-        },
-      }}
-      whileHover={{ rotate: 0, scale: 1.05 }}
-      whileTap={{ y: 4, scale: 0.97 }}
-      className="relative grid size-[1.3em] shrink-0 place-items-center rounded-[0.32em] bg-gradient-to-b from-[#fbeedb] to-[#e3c39a] shadow-[0_0.08em_0_#a8825a,0_0.22em_0.4em_-0.06em_rgba(0,0,0,0.7),inset_0_0.03em_0_rgba(255,255,255,0.8)]"
+      initial={reduce ? false : { opacity: 0, y: 24, rotate: -10, scale: 0.8 }}
+      animate={
+        reduce
+          ? { opacity: 1 }
+          : { opacity: 1, y: [0, -6, 0], rotate: [-3, 3, -3], scale: 1 }
+      }
+      transition={
+        reduce
+          ? undefined
+          : {
+            opacity: { duration: 0.5, delay: 0.5 },
+            scale: { type: "spring", stiffness: 220, damping: 14, delay: 0.5 },
+            y: { duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 1.2 },
+            rotate: { duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 1.2 },
+          }
+      }
+      className="relative -mx-[0.04em] inline-block h-[1.02em] w-[0.78em] origin-bottom translate-y-[0.07em] align-baseline"
     >
-      <span className="absolute inset-[0.07em] rounded-[0.25em] bg-gradient-to-b from-[#f7e3c6] to-[#efd2aa] shadow-[inset_0_0.03em_0.08em_rgba(120,80,40,0.3)]" />
-      <DeulaIcon className="relative size-[0.78em] text-[#3a2417]" />
+      <svg viewBox="0 0 80 104" className="size-full overflow-visible" fill="none">
+        <g stroke={INK} strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round">
+          {/* legs */}
+          <path d="M32 84v14M48 84v14M26 99h10M44 99h10" />
+          {/* arms up */}
+          <path d="M22 62 8 44M58 62 72 44" />
+          <circle cx="6.5" cy="41" r="4" fill={CREAM} />
+          <circle cx="73.5" cy="41" r="4" fill={CREAM} />
+          {/* tower */}
+          <path d="M40 9C53 24 59 46 59 84H21C21 46 27 24 40 9Z" fill={CREAM} />
+          <circle cx="40" cy="5.5" r="3.2" fill={CREAM} />
+          <path d="M32 32h16M29 42h22" />
+        </g>
+        {/* face */}
+        <circle cx="33.5" cy="58" r="2.6" fill={INK} />
+        <circle cx="46.5" cy="58" r="2.6" fill={INK} />
+        <path d="M33 68q7 6 14 0" stroke={INK} strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    </motion.span>
+  );
+}
+
+/** Little Konark wheel character: stands in for the "o" in "icons". */
+function WheelMascot({ reduce }: { reduce: boolean }) {
+  return (
+    <motion.span
+      aria-hidden="true"
+      initial={reduce ? false : { opacity: 0, y: 24, rotate: 10, scale: 0.8 }}
+      animate={
+        reduce
+          ? { opacity: 1 }
+          : { opacity: 1, y: [0, -5, 0], rotate: [3, -3, 3], scale: 1 }
+      }
+      transition={
+        reduce
+          ? undefined
+          : {
+            opacity: { duration: 0.5, delay: 0.7 },
+            scale: { type: "spring", stiffness: 220, damping: 14, delay: 0.7 },
+            y: { duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 1.4 },
+            rotate: { duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 1.4 },
+          }
+      }
+      className="relative -mx-[0.02em] inline-block h-[0.98em] w-[0.88em] origin-bottom translate-y-[0.07em] align-baseline"
+    >
+      <svg viewBox="0 0 96 104" className="size-full overflow-visible" fill="none">
+        <g stroke={INK} strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round">
+          {/* legs */}
+          <path d="M38 80v16M58 80v16M32 97h10M54 97h10" />
+          {/* arms */}
+          <path d="M14 50 3 34M82 50 93 34" />
+          <circle cx="2" cy="31" r="4" fill={CREAM} />
+          <circle cx="94" cy="31" r="4" fill={CREAM} />
+          {/* wheel */}
+          <circle cx="48" cy="48" r="33" fill={CREAM} />
+        </g>
+        {/* spokes */}
+        <g stroke={INK} strokeWidth="2" strokeLinecap="round" opacity="0.35">
+          {[0, 45, 90, 135, 180, 225, 270, 315].map((a) => (
+            <line
+              key={a}
+              x1="48"
+              y1="48"
+              x2={48 + 31 * Math.cos((a * Math.PI) / 180)}
+              y2={48 + 31 * Math.sin((a * Math.PI) / 180)}
+            />
+          ))}
+        </g>
+        {/* hub + face */}
+        <circle cx="48" cy="48" r="17" fill={CREAM} stroke={INK} strokeWidth="3" />
+        <circle cx="42" cy="44" r="2.4" fill={INK} />
+        <circle cx="54" cy="44" r="2.4" fill={INK} />
+        <path d="M41.5 53q6.5 6 13 0" stroke={INK} strokeWidth="3" strokeLinecap="round" />
+      </svg>
     </motion.span>
   );
 }
@@ -255,7 +307,7 @@ function PreviewWindow() {
   const tiles = ICONS.slice(0, 32);
 
   return (
-    <div className="h-[250px] overflow-hidden rounded-t-[1.1rem] border border-b-0 border-white/15 bg-white/5 p-2 shadow-[0_-10px_80px_-10px_rgba(240,168,116,0.35)] backdrop-blur-xl sm:h-[330px] sm:rounded-t-[1.5rem] sm:p-3 md:h-[400px]">
+    <div className="relative h-[250px] overflow-hidden rounded-t-[1.1rem] border border-b-0 border-white/15 bg-white/5 p-2 shadow-[0_-10px_80px_-10px_rgba(240,168,116,0.35)] backdrop-blur-xl sm:h-[330px] sm:rounded-t-[1.5rem] sm:p-3 md:h-[400px]">
       <div className="h-full overflow-hidden rounded-t-[0.8rem] bg-[#1f1f1f] ring-1 ring-white/10 sm:rounded-t-[1.1rem]">
         {/* Toolbar */}
         <div className="flex items-center gap-3 border-b border-white/10 px-3 py-2.5 sm:px-4">
@@ -302,6 +354,16 @@ function PreviewWindow() {
           </div>
         </div>
       </div>
+
+      {/* Bottom blend: progressive blur (mobile only) + dark fade (all sizes) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5 backdrop-blur-[6px] [mask-image:linear-gradient(to_top,black_10%,transparent)] sm:hidden"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/75 to-transparent sm:h-2/5 sm:via-[#1a1a1a]/50"
+      />
     </div>
   );
 }
@@ -369,20 +431,29 @@ export function Hero() {
           </Link>
         </motion.div>
 
-        <h1 className="mt-5 sm:mt-6">
+        {/* Jitter-style headline: heavy, tight, two lines, mascots replace letters */}
+        <h1 className="mt-6 sm:mt-8" aria-label="Odisha's culture, in 24px icons.">
           <motion.span
             variants={rise}
-            className="flex flex-wrap items-center justify-center gap-x-[0.18em] gap-y-1 text-[clamp(2.4rem,10vw,7rem)] leading-[1.05] font-bold tracking-[-0.03em] text-[#f5f1ea]"
+            aria-hidden="true"
+            className="block text-[clamp(2.35rem,9.4vw,7.6rem)] leading-[0.98] font-black tracking-[-0.065em] text-balance text-[#f5f1ea]"
           >
-            <span>{hero.wordmark.lead}</span>
-            <KeyTile />
-            <span className="text-[#f6dfc4]">{hero.wordmark.trail}</span>
+            <span className="block whitespace-nowrap">
+              Od
+              <DeulaMascot reduce={reduce} />
+              sha&apos;s culture,
+            </span>
+            <span className="block whitespace-nowrap text-[#f6dfc4]">
+              in 24px ic
+              <WheelMascot reduce={reduce} />
+              ns.
+            </span>
           </motion.span>
         </h1>
 
         <motion.p
           variants={rise}
-          className="mt-4 max-w-xl text-base leading-relaxed text-balance text-neutral-300/80 sm:mt-6 sm:text-xl"
+          className="mt-5 max-w-xl text-base leading-relaxed text-balance text-neutral-300/80 sm:mt-7 sm:text-xl"
         >
           {hero.lead}
         </motion.p>
@@ -450,7 +521,7 @@ export function Hero() {
       {/* Blend into the dark page below */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-28 bg-gradient-to-t from-background to-transparent sm:h-40"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-36 bg-gradient-to-t from-background via-background/80 to-transparent sm:h-40"
       />
     </section>
   );

@@ -9,7 +9,7 @@ import { iconsByName, toSvg } from "@/lib/icons";
 import { InstallBox } from "./install-box";
 import { Reveal } from "./reveal";
 import { SectionHeader } from "./section-header";
-import { ShikiCode } from "./shiki-code";
+import { ShikiCode } from "@/components/shiki-code";
 
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);

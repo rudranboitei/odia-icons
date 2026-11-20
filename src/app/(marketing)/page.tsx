@@ -1,12 +1,11 @@
-import { DeveloperSection } from "@/components/developer";
-import { Faq } from "@/components/faq";
-import { Features } from "@/components/features";
-import { FinalCta } from "@/components/final-cta";
-import { Footer } from "@/components/footer";
-import { Hero } from "@/components/hero";
-import { Quote } from "@/components/quote";
-import { Navbar } from "@/components/SiteHeader";
-import { Steps } from "@/components/steps";
+import { DeveloperSection } from "@/components/marketing/developer";
+import { Faq } from "@/components/marketing/faq";
+import { Features } from "@/components/marketing/features";
+import { FinalCta } from "@/components/marketing/final-cta";
+import { Footer } from "@/components/marketing/footer";
+import { Hero } from "@/components/marketing/hero";
+import { Navbar } from "@/components/marketing/SiteHeader";
+import { Steps } from "@/components/marketing/steps";
 
 export default function Page() {
   return (
@@ -14,7 +13,6 @@ export default function Page() {
       <Navbar />
       <Hero />
       <Features />
-      <Quote />
       <Steps />
       <DeveloperSection />
       <Faq />
