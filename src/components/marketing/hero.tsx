@@ -521,7 +521,7 @@ export function Hero() {
       {/* Blend into the dark page below */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-36 bg-gradient-to-t from-background via-background/80 to-transparent sm:h-40"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-36 bg-gradient-to-t from-background via-background/80 to-transparent sm:h-30"
       />
     </section>
   );
