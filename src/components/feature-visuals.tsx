@@ -37,7 +37,7 @@ export function RootedVisual() {
     <div className="relative size-full">
       {/* corner ticks */}
       {["top-4 left-4 border-t border-l", "top-4 right-4 border-t border-r", "bottom-12 left-4 border-b border-l", "bottom-12 right-4 border-b border-r"].map((c) => (
-        <span key={c} className={`absolute size-2 border-foreground/30 ${c}`} />
+        <span key={c} className={`absolute size-2 border-white/20 ${c}`} />
       ))}
 
       <AnimatePresence mode="popLayout">
@@ -50,7 +50,7 @@ export function RootedVisual() {
           transition={{ duration: 0.45, ease: "easeOut" }}
         >
           <div className="absolute inset-x-0 top-0 bottom-12 flex items-center justify-center">
-            <MotifIcon name={s.name} draw="once" strokeWidth={1.1} className="size-24 text-foreground" />
+            <MotifIcon name={s.name} draw="once" strokeWidth={1.1} className="size-24 text-primary" />
           </div>
           <div className="absolute inset-x-5 bottom-[52px] flex items-baseline justify-between">
             <span className="text-sm font-medium">{s.odia}</span>
@@ -62,12 +62,12 @@ export function RootedVisual() {
       {/* progress */}
       <div className="absolute inset-x-5 bottom-5 flex gap-1.5">
         {specimens.map((_, i) => (
-          <span key={i} className="relative h-[2px] flex-1 overflow-hidden rounded-full bg-border">
-            {i < idx && <span className="absolute inset-0 bg-foreground" />}
+          <span key={i} className="relative h-[2px] flex-1 overflow-hidden rounded-full bg-white/10">
+            {i < idx && <span className="absolute inset-0 bg-primary" />}
             {i === idx && (
               <motion.span
                 key={`p-${idx}`}
-                className="absolute inset-0 origin-left bg-foreground"
+                className="absolute inset-0 origin-left bg-primary"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: INTERVAL / 1000, ease: "linear" }}
@@ -87,7 +87,7 @@ export function GridVisual() {
   const D = 7 // loop duration (s)
   return (
     <div className="flex size-full flex-col items-center justify-center gap-4">
-      <div className="relative size-[96px] rounded-xl border bg-background">
+      <div className="relative size-[96px] rounded-2xl border border-white/10 bg-white/[0.02]">
         <svg viewBox="0 0 32 32" className="absolute inset-0 size-full" fill="none" aria-hidden>
           {Array.from({ length: 7 }).map((_, i) => (
             <g key={i} className="stroke-border" strokeWidth="0.15">
@@ -98,11 +98,11 @@ export function GridVisual() {
           <rect x="3" y="3" width="26" height="26" rx="1.5" strokeWidth="0.25" strokeDasharray="1 1" className="stroke-primary/50" />
           <circle cx="16" cy="16" r="13" strokeWidth="0.25" strokeDasharray="1 1" className="stroke-primary/50" />
         </svg>
-        <MotifIcon name="deula" draw="loop" duration={D} strokeWidth={1.1} className="absolute inset-0 size-full text-foreground" />
+        <MotifIcon name="deula" draw="loop" duration={D} strokeWidth={1.1} className="absolute inset-0 size-full text-primary" />
       </div>
 
       <div className="flex flex-col items-center gap-2">
-        <div className="flex divide-x overflow-hidden rounded-lg border bg-background">
+        <div className="flex divide-x divide-white/10 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02]">
           {row.map((name, i) => (
             <motion.div
               key={name}
@@ -146,27 +146,27 @@ export function CopyCodeVisual() {
 
   return (
     <div className="flex size-full items-center justify-center p-5">
-      <div className="w-full max-w-[250px] overflow-hidden rounded-xl border bg-background">
-        <div className="flex items-center justify-between border-b px-2.5 py-2">
+      <div className="w-full max-w-[250px] overflow-hidden rounded-2xl border border-white/10 bg-card">
+        <div className="flex items-center justify-between border-b border-white/10 px-2.5 py-2">
           <div className="flex items-center gap-2">
-            <MotifIcon name="deula" className="size-4" strokeWidth={1.5} />
-            <div className="flex rounded-md bg-muted p-0.5">
+            <MotifIcon name="deula" className="size-4 text-primary" strokeWidth={1.5} />
+            <div className="flex rounded-full bg-muted p-0.5">
               {tabs.map((x, i) => (
-                <span key={x.id} className="relative px-2 py-0.5 text-[10px] font-medium">
+                <span key={x.id} className="relative rounded-full px-2.5 py-1 text-[10px] font-medium">
                   {i === t && (
                     <motion.span
                       layoutId="odia-tab"
-                      className="absolute inset-0 rounded bg-background"
+                      className="absolute inset-0 rounded-full bg-primary"
                       transition={{ type: "spring", stiffness: 500, damping: 36 }}
                     />
                   )}
-                  <span className={`relative ${i === t ? "text-foreground" : "text-muted-foreground"}`}>{x.id}</span>
+                  <span className={`relative ${i === t ? "text-primary-foreground" : "text-muted-foreground"}`}>{x.id}</span>
                 </span>
               ))}
             </div>
           </div>
 
-          <span className="flex h-5 items-center gap-1 rounded-md border px-1.5 text-[10px] text-muted-foreground">
+          <span className="flex h-5 items-center gap-1 rounded-full border border-white/10 px-2 text-[10px] text-muted-foreground">
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
                 key={copied ? "c" : "n"}
@@ -182,7 +182,7 @@ export function CopyCodeVisual() {
           </span>
         </div>
 
-        <div key={tabs[t].id} className="h-[84px] overflow-hidden px-3 py-2.5 font-mono text-[9.5px] leading-[1.65]">
+        <div key={tabs[t].id} className="h-[84px] overflow-hidden border-t border-white/10 px-3 py-2.5 font-mono text-[9.5px] leading-[1.65]">
           {tabs[t].lines.map((line, i) => (
             <motion.div
               key={i}
@@ -207,7 +207,7 @@ export function FreeVisual() {
     <div className="relative flex size-full items-center justify-center">
       {/* poster (behind, left) */}
       <motion.div
-        className="absolute left-[14%] flex h-28 w-[76px] -rotate-6 flex-col items-center gap-1.5 rounded-lg border bg-background pt-3"
+        className="absolute left-[14%] flex h-28 w-[76px] -rotate-6 flex-col items-center gap-1.5 rounded-2xl border border-white/10 bg-card pt-3"
         animate={{ y: [0, -4, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -219,7 +219,7 @@ export function FreeVisual() {
 
       {/* app tile (behind, right) */}
       <motion.div
-        className="absolute right-[14%] flex size-[68px] rotate-6 items-center justify-center rounded-2xl bg-foreground text-background"
+        className="absolute right-[14%] flex size-[68px] rotate-6 items-center justify-center rounded-2xl bg-primary text-primary-foreground"
         animate={{ y: [0, 4, 0] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -227,7 +227,7 @@ export function FreeVisual() {
       </motion.div>
 
       {/* license (front) */}
-      <div className="relative z-10 w-[150px] rounded-xl border bg-background p-3">
+      <div className="relative z-10 w-[150px] rounded-2xl border border-white/10 bg-card p-3">
         <div className="flex items-center justify-between">
           <span className="text-[11px] font-semibold tracking-tight">MIT License</span>
           <span className="flex size-4 items-center justify-center rounded-full bg-primary text-primary-foreground">
@@ -242,12 +242,12 @@ export function FreeVisual() {
           </span>
         </div>
         <div className="mt-2.5 flex flex-col gap-1.5">
-          <span className="h-1 w-full rounded-full bg-muted" />
-          <span className="h-1 w-5/6 rounded-full bg-muted" />
-          <span className="h-1 w-full rounded-full bg-muted" />
-          <span className="h-1 w-2/3 rounded-full bg-muted" />
+          <span className="h-1 w-full rounded-full bg-white/10" />
+          <span className="h-1 w-5/6 rounded-full bg-white/10" />
+          <span className="h-1 w-full rounded-full bg-white/10" />
+          <span className="h-1 w-2/3 rounded-full bg-white/10" />
         </div>
-        <p className={`${label} mt-3 border-t pt-2`}>No attribution needed</p>
+        <p className={`${label} mt-3 border-t border-white/10 pt-2`}>No attribution needed</p>
       </div>
     </div>
   )

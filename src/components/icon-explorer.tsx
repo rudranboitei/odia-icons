@@ -1,22 +1,23 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, MotionConfig, motion } from "motion/react";
 import { Check, Search } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { CATEGORIES, ICONS, IconGlyph, type IconEntry } from "@/data/icons";
+import { SITE } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 function pascal(name: string) {
   return name
     .split("-")
-    .map((p) => p[0].toUpperCase() + p.slice(1))
+    .map((part) => part[0].toUpperCase() + part.slice(1))
     .join("");
 }
 
-function IconCard({ icon }: { icon: IconEntry }) {
+function IconCard({ icon, index }: { icon: IconEntry; index: number }) {
   const [copied, setCopied] = useState(false);
 
   async function copy() {
@@ -31,23 +32,28 @@ function IconCard({ icon }: { icon: IconEntry }) {
 
   return (
     <motion.button
-      layout
       type="button"
       onClick={copy}
-      initial={{ opacity: 0, scale: 0.92, y: 12 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.92 }}
+      aria-label={`Copy ${icon.name} JSX`}
+      initial={{ opacity: 0, scale: 0.97, y: 14 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.97 }}
+      viewport={{ once: true, margin: "-40px" }}
       whileHover={{ y: -4 }}
-      whileTap={{ scale: 0.96 }}
-      transition={{ type: "spring", stiffness: 380, damping: 28 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{
+        duration: 0.45,
+        delay: Math.min(index % 12, 11) * 0.025,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       className="group relative flex aspect-[4/5] flex-col items-center justify-center gap-4 rounded-3xl border border-white/10 bg-white/[0.03] p-4 outline-none transition-colors hover:border-primary/40 hover:bg-white/[0.06] focus-visible:ring-[3px] focus-visible:ring-ring/50"
     >
       <IconGlyph
         icon={icon}
-        className="size-10 text-white/85 transition-colors group-hover:text-primary"
+        className="size-10 text-foreground/85 transition-colors group-hover:text-primary"
       />
       <div className="text-center">
-        <div className="text-sm font-medium text-white">{icon.odia}</div>
+        <div className="text-sm font-medium text-foreground">{icon.odia}</div>
         <div className="mt-0.5 font-mono text-[11px] text-muted-foreground">
           {icon.name}
         </div>
@@ -56,6 +62,7 @@ function IconCard({ icon }: { icon: IconEntry }) {
       <AnimatePresence>
         {copied && (
           <motion.span
+            aria-hidden
             initial={{ opacity: 0, scale: 0.6 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
@@ -71,7 +78,9 @@ function IconCard({ icon }: { icon: IconEntry }) {
 
 export function IconExplorer() {
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState<(typeof CATEGORIES)[number]["id"]>("all");
+  const [category, setCategory] =
+    useState<(typeof CATEGORIES)[number]["id"]>("all");
+  const { explorer } = SITE;
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -81,75 +90,88 @@ export function IconExplorer() {
       return (
         icon.name.includes(q) ||
         icon.odia.includes(query.trim()) ||
-        icon.tags.some((t) => t.toLowerCase().includes(q))
+        icon.tags.some((tag) => tag.toLowerCase().includes(q))
       );
     });
   }, [query, category]);
 
+  const [titleBefore, titleAfter] = explorer.title.includes(explorer.accent)
+    ? explorer.title.split(explorer.accent)
+    : [explorer.title, ""];
+
   return (
-    <section id="icons" className="relative mx-auto max-w-6xl px-6 py-28">
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto max-w-2xl text-center"
-      >
-        <h2 className="text-4xl font-semibold tracking-tight text-white md:text-6xl">
-          The culture of Odisha, glyph by glyph.
-        </h2>
-        <p className="mt-5 text-lg text-muted-foreground">
-          Search by English name, tag, or Odia script. Click any icon to copy its JSX.
-        </p>
-      </motion.div>
-
-      <div className="mx-auto mt-12 max-w-xl">
-        <div className="relative">
-          <Search className="pointer-events-none absolute top-1/2 left-5 size-4 -translate-y-1/2 text-muted-foreground" />
-          <Input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search temple, ରଥ, lotus…"
-            className="pl-12"
-            aria-label="Search icons"
-          />
-        </div>
-      </div>
-
-      <div className="mt-6 flex flex-wrap justify-center gap-2">
-        {CATEGORIES.map((c) => (
-          <button
-            key={c.id}
-            type="button"
-            onClick={() => setCategory(c.id)}
-            className="rounded-lg outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    <MotionConfig reducedMotion="user">
+      <section id="icons" className="relative scroll-mt-20 px-6 py-28">
+        <div className="mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="mx-auto max-w-2xl text-center"
           >
-            <Badge
-              variant={category === c.id ? "active" : "outline"}
-              className={cn("cursor-pointer px-4", category !== c.id && "hover:text-foreground")}
-            >
-              {c.label}
-            </Badge>
-          </button>
-        ))}
-      </div>
+            <h2 className="text-4xl font-semibold tracking-tight text-balance text-foreground md:text-6xl">
+              {titleBefore}
+              {explorer.title.includes(explorer.accent) && (
+                <span className="text-primary">{explorer.accent}</span>
+              )}
+              {titleAfter}
+            </h2>
+            <p className="mt-5 text-lg text-muted-foreground">
+              {explorer.description}
+            </p>
+          </motion.div>
 
-      <motion.div
-        layout
-        className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
-      >
-        <AnimatePresence mode="popLayout">
-          {results.map((icon) => (
-            <IconCard key={icon.name} icon={icon} />
-          ))}
-        </AnimatePresence>
-      </motion.div>
+          <div className="mx-auto mt-12 max-w-xl">
+            <div className="relative">
+              <Search className="pointer-events-none absolute top-1/2 left-5 size-4 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder={explorer.searchPlaceholder}
+                className="pl-12"
+                aria-label="Search icons"
+              />
+            </div>
+          </div>
 
-      {results.length === 0 && (
-        <p className="mt-16 text-center text-muted-foreground">
-          No icons match “{query}”.
-        </p>
-      )}
-    </section>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            {CATEGORIES.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setCategory(item.id)}
+                aria-pressed={category === item.id}
+                className="rounded-full outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+              >
+                <Badge
+                  variant={category === item.id ? "active" : "outline"}
+                  className={cn(
+                    "cursor-pointer rounded-full px-4 py-2",
+                    category !== item.id && "hover:text-foreground",
+                  )}
+                >
+                  {item.label}
+                </Badge>
+              </button>
+            ))}
+          </div>
+
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            <AnimatePresence>
+              {results.map((icon, index) => (
+                <IconCard key={icon.name} icon={icon} index={index} />
+              ))}
+            </AnimatePresence>
+          </div>
+
+          {results.length === 0 && (
+            <p className="mt-16 text-center font-pixel text-2xl font-bold text-foreground">
+              {explorer.emptyPrefix} “{query}”.
+            </p>
+          )}
+        </div>
+      </section>
+    </MotionConfig>
   );
 }

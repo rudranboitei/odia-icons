@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { AnimatePresence, motion, useReducedMotion } from "motion/react"
+import { AnimatePresence, motion } from "motion/react"
 import {
   IconArrowUpRight,
   IconBrandGithub,
@@ -228,7 +228,6 @@ export function IconBrowser() {
   const [category, setCategory] = useState<"all" | IconCategory>("all")
   const [copiedInstall, setCopiedInstall] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
-  const reduceMotion = useReducedMotion()
 
   const filtered = useMemo(
     () =>
@@ -298,7 +297,7 @@ export function IconBrowser() {
       <div className="mx-auto flex min-h-dvh w-full max-w-[1600px] border-x border-border">
         {/* Sidebar */}
         <motion.aside
-          initial={reduceMotion ? false : { opacity: 0, x: -16 }}
+          initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: EASE }}
           className="sticky top-0 hidden h-dvh w-[232px] shrink-0 flex-col px-6 py-6 lg:flex"
@@ -311,7 +310,7 @@ export function IconBrowser() {
               height={28}
               priority
               unoptimized
-              className="h-7 w-auto invert dark:invert-0"
+              className="invert dark:invert-0"
             />
           </Link>
 
@@ -332,7 +331,7 @@ export function IconBrowser() {
                     {item.active && (
                       <motion.span
                         aria-hidden
-                        animate={reduceMotion ? undefined : { scale: [1, 1.5, 1], opacity: [1, 0.6, 1] }}
+                        animate={{ scale: [1, 1.5, 1] }}
                         transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
                         className="size-1.5 rounded-full bg-primary"
                       />
@@ -404,7 +403,7 @@ export function IconBrowser() {
                   height={23}
                   priority
                   unoptimized
-                  className="h-[23px] w-auto invert dark:invert-0"
+                  className="invert dark:invert-0"
                 />
               </Link>
 
@@ -569,7 +568,7 @@ export function IconBrowser() {
 
               {/* Right panel */}
               <motion.aside
-                initial={reduceMotion ? false : { opacity: 0, x: 16 }}
+                initial={{ opacity: 0, x: 16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
                 className="sticky top-33 hidden w-59 shrink-0 xl:block"

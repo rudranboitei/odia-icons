@@ -1,22 +1,23 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { cn } from "@/lib/utils"
-import { MotionConfig } from "motion/react"
-import type { FeatureMedia as Media } from "@/lib/site-config"
+import Image from "next/image";
+import { MotionConfig } from "motion/react";
+
+import { cn } from "@/lib/utils";
+import type { FeatureMedia as Media } from "@/data/site";
 import {
   RootedVisual,
   GridVisual,
   CopyCodeVisual,
   FreeVisual,
-} from "./feature-visuals"
+} from "./feature-visuals";
 
 const animations = {
   rooted: RootedVisual,
   grid: GridVisual,
   "copy-code": CopyCodeVisual,
   free: FreeVisual,
-}
+};
 
 // Renders an animation, a looping video or a GIF depending on config.
 // Animations respect the user's "reduce motion" setting.
@@ -25,17 +26,22 @@ export function FeatureMedia({
   label,
   className,
 }: {
-  media: Media
-  label: string
-  className?: string
+  media: Media;
+  label: string;
+  className?: string;
 }) {
   return (
-    <div className={cn("h-[210px] w-full overflow-hidden rounded-xl border border-border bg-card", className)}>
+    <div
+      className={cn(
+        "h-[220px] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]",
+        className,
+      )}
+    >
       <MotionConfig reducedMotion="user">
         {media.type === "animation" &&
           (() => {
-            const Visual = animations[media.name]
-            return <Visual />
+            const Visual = animations[media.name];
+            return <Visual />;
           })()}
 
         {media.type === "video" && (
@@ -63,5 +69,5 @@ export function FeatureMedia({
         )}
       </MotionConfig>
     </div>
-  )
+  );
 }

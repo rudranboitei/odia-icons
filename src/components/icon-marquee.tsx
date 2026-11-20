@@ -1,7 +1,7 @@
-import { Icon, icons } from "@/lib/icons"
-import { cn } from "@/lib/utils"
+import { Icon, icons } from "@/lib/icons";
+import { cn } from "@/lib/utils";
 
-// Two infinite rows of icon cards — the hero visual.
+// Two infinite rows of icon cards — the footer flourish of the final CTA.
 export function IconMarquee({ className }: { className?: string }) {
   return (
     <div
@@ -11,24 +11,24 @@ export function IconMarquee({ className }: { className?: string }) {
       <MarqueeRow />
       <MarqueeRow reverse duration="52s" />
     </div>
-  )
+  );
 }
 
-const sequence = [...icons, ...icons, ...icons]
+const sequence = [...icons, ...icons, ...icons];
 
 function MarqueeRow({
   reverse = false,
   duration = "44s",
 }: {
-  reverse?: boolean
-  duration?: string
+  reverse?: boolean;
+  duration?: string;
 }) {
   return (
     <div className="group relative overflow-hidden">
       <div
         className={cn(
           "icon-marquee group-hover:[animation-play-state:paused]",
-          reverse && "[animation-direction:reverse]"
+          reverse && "[animation-direction:reverse]",
         )}
         style={{ "--marquee-duration": duration } as React.CSSProperties}
       >
@@ -37,8 +37,8 @@ function MarqueeRow({
             <div key={half} className="flex gap-4 pr-4">
               {sequence.map((icon, i) => (
                 <div
-                  key={`${half}-${icon.name.replaceAll("-", " ")}-${i}`}
-                  className="flex h-32 w-44 shrink-0 flex-col items-center justify-center gap-3 rounded-xl border border-border bg-card"
+                  key={`${half}-${icon.name}-${i}`}
+                  className="flex h-32 w-44 shrink-0 flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] transition-colors hover:border-primary/40"
                 >
                   <Icon
                     def={icon}
@@ -56,5 +56,5 @@ function MarqueeRow({
         </div>
       </div>
     </div>
-  )
+  );
 }

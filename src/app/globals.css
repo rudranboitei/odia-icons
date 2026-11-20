@@ -61,4 +61,37 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+
+  /* Shiki emits both themes as CSS variables; pick one per colour scheme. */
+  .shiki span {
+    color: var(--shiki-light);
+  }
+
+  .dark .shiki span {
+    color: var(--shiki-dark);
+  }
+}
+
+/* Footer marquee: one transform-only loop, paused for reduced motion. */
+@keyframes odia-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.icon-marquee {
+  animation: odia-marquee var(--marquee-duration, 44s) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .icon-marquee {
+    animation: none;
+  }
 }

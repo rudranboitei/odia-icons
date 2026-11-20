@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 
 import { ICONS, IconGlyph, type IconEntry } from "@/data/icons";
 
@@ -31,7 +31,6 @@ function WallCard({ icon, tall }: { icon: IconEntry; tall: boolean }) {
 }
 
 function Column({ col }: { col: number }) {
-  const reduce = useReducedMotion();
   const items = columnIcons(col);
   const goingUp = col % 2 === 0;
   const duration = 38 + (col % 4) * 9;
@@ -47,7 +46,7 @@ function Column({ col }: { col: number }) {
       <motion.div
         className="flex flex-col gap-4"
         initial={{ y: goingUp ? "0%" : "-50%" }}
-        animate={reduce ? undefined : { y: goingUp ? "-50%" : "0%" }}
+        animate={{ y: goingUp ? "-50%" : "0%" }}
         transition={{ duration, ease: "linear", repeat: Infinity }}
       >
         {loop.map((icon, i) => (

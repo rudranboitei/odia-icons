@@ -1,45 +1,31 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { IconCheck, IconCopy } from "@tabler/icons-react"
-import { Button } from "@/components/ui/button"
-import { toast } from "@/components/ui/toast"
-import { copyText } from "@/lib/clipboard"
-import { ShikiCode } from "@/components/shiki-code"
-import { siteConfig } from "@/lib/site-config"
-import { cn } from "@/lib/utils"
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { IconCheck, IconCopy } from "@tabler/icons-react";
+
+import { SITE } from "@/data/site";
+import { copyText } from "@/lib/clipboard";
+import { Button } from "@/components/ui/button";
+import { ShikiCode } from "@/components/shiki-code";
+import { cn } from "@/lib/utils";
 
 // The core conversion component: a copyable install command.
 export function InstallBox({
   className,
   id,
 }: {
-  className?: string
-  id?: string
+  className?: string;
+  id?: string;
 }) {
-  const { command, helper } = siteConfig.install
-  const [copied, setCopied] = useState(false)
+  const { command, helper } = SITE.install;
+  const [copied, setCopied] = useState(false);
 
   async function copy() {
-    const ok = await copyText(command)
-    if (!ok) {
-      toast.add({
-        type: "error",
-        title: "Could not copy",
-        description: "Your browser blocked clipboard access.",
-        timeout: 3000,
-      })
-      return
-    }
-
-    setCopied(true)
-    toast.add({
-      type: "success",
-      title: "Command copied",
-      description: command,
-      timeout: 2500,
-    })
-    window.setTimeout(() => setCopied(false), 2000)
+    const ok = await copyText(command);
+    if (!ok) return;
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1800);
   }
 
   return (
@@ -47,27 +33,37 @@ export function InstallBox({
       id={id}
       className={cn("flex w-full max-w-lg flex-col items-center", className)}
     >
-      <div className="flex w-full items-center gap-2 rounded-xl border border-border bg-muted p-1.5 pl-4">
+      <div className="flex w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] p-1.5 pr-1.5 pl-5 backdrop-blur">
         <span className="text-sm text-muted-foreground select-none">$</span>
         <ShikiCode
           code={command}
           lang="bash"
           className="min-w-0 flex-1 truncate text-left font-mono text-sm text-foreground"
         />
-        <Button
-          size="sm"
-          onClick={copy}
-          className="cursor-pointer"
-        >
-          {copied ? (
-            <IconCheck data-icon="inline-start" />
-          ) : (
-            <IconCopy data-icon="inline-start" />
-          )}
-          {copied ? "Copied" : "Copy"}
-        </Button>
+        <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>
+          <Button size="sm" onClick={copy} className="cursor-pointer">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={copied ? "copied" : "copy"}
+                initial={{ opacity: 0, scale: 0.5, rotate: -30 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                exit={{ opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.15 }}
+              >
+                {copied ? (
+                  <IconCheck aria-hidden className="size-3.5" />
+                ) : (
+                  <IconCopy aria-hidden className="size-3.5" />
+                )}
+              </motion.span>
+            </AnimatePresence>
+            {copied ? "Copied" : "Copy"}
+          </Button>
+        </motion.div>
       </div>
-      <p className="mt-2 text-[13px] leading-[1.2] tracking-[-0.03em] text-muted-foreground">{helper}</p>
+      <p className="mt-3 text-[13px] leading-[1.2] tracking-[-0.03em] text-muted-foreground">
+        {helper}
+      </p>
     </div>
-  )
+  );
 }

@@ -1,28 +1,30 @@
-import { siteConfig } from "@/lib/site-config"
-import { Icon, icons } from "@/lib/icons"
-import { SectionHeader } from "./section-header"
+import { SITE } from "@/data/site";
+import { Icon, icons } from "@/lib/icons";
+import { Reveal } from "./reveal";
+import { SectionHeader } from "./section-header";
 
 export function Steps() {
-  const { steps } = siteConfig
+  const { steps } = SITE;
 
   return (
-    <section className="px-5 py-20 lg:px-6 sm:py-28">
-      <div className="mx-auto max-w-6xl">
+    <section className="px-6 py-28">
+      <Reveal className="mx-auto max-w-6xl">
         <SectionHeader
           eyebrow={steps.eyebrow}
           title={steps.title}
+          accent={steps.accent}
           description={steps.description}
         />
 
-        <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-muted">
+        <div className="mt-12 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
           <div
             aria-hidden
-            className="flex h-40 items-center justify-center gap-4 overflow-hidden border-b border-border bg-muted"
+            className="flex h-40 items-center justify-center gap-4 overflow-hidden border-b border-white/10 bg-white/[0.02]"
           >
             {[...icons, ...icons].map((icon, i) => (
               <span
                 key={`${icon.name}-${i}`}
-                className="flex size-16 shrink-0 items-center justify-center rounded-xl border border-border bg-card sm:size-20"
+                className="flex size-16 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-card/40 sm:size-20"
               >
                 <Icon
                   def={icon}
@@ -34,7 +36,7 @@ export function Steps() {
             ))}
           </div>
 
-          <ol className="grid divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <ol className="grid divide-y divide-white/10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {steps.items.map((item, i) => (
               <li key={item.title} className="p-6 sm:p-8">
                 <span className="font-mono text-[13px] leading-[1.2] tracking-[-0.03em] text-muted-foreground">
@@ -50,7 +52,7 @@ export function Steps() {
             ))}
           </ol>
         </div>
-      </div>
+      </Reveal>
     </section>
-  )
+  );
 }

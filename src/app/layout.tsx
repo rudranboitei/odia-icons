@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter_Tight, Pixelify_Sans } from "next/font/google";
 
+import { SITE } from "@/data/site";
+import { MotionProvider } from "@/components/motion-provider";
 import "./globals.css";
 
 const interTight = Inter_Tight({
@@ -15,15 +17,30 @@ const pixelify = Pixelify_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "OdiaIcons – Icons with Odia soul",
-  description:
-    "Open-source icon library rooted in Odisha. React components, raw SVG and a shadcn-style registry.",
-  metadataBase: new URL("https://icons.odiaui.xyz"),
+  title: `${SITE.name} – ${SITE.tagline}`,
+  description: SITE.description,
+  metadataBase: new URL(SITE.siteUrl),
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
-    title: "OdiaIcons – Icons with Odia soul",
-    description:
-      "Temples, Pattachitra, Odissi, festivals and food as clean 24px outline icons.",
+    title: `${SITE.name} – ${SITE.tagline}`,
+    description: SITE.description,
+    url: SITE.siteUrl,
+    siteName: SITE.name,
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE.name} – ${SITE.tagline}`,
+    description: SITE.description,
   },
 };
 
@@ -37,8 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${interTight.variable} ${pixelify.variable}`}>
-        {children}
-        {/* <Toaster /> */}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );
