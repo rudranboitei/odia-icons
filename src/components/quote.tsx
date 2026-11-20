@@ -1,7 +1,6 @@
 import { IconArrowUpRight } from "@tabler/icons-react";
 
 import { SITE } from "@/data/site";
-import { Icon, iconsByName } from "@/lib/icons";
 import { Eyebrow } from "./eyebrow";
 import { Reveal } from "./reveal";
 
@@ -9,57 +8,55 @@ export function Quote() {
   const { quote, links } = SITE;
 
   return (
-    <section className="px-5 py-14 sm:px-6 sm:py-16 lg:py-20">
-      <Reveal className="mx-auto max-w-4xl">
-        <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
-          <div className="grid gap-6 p-6 sm:grid-cols-[1.5fr_1fr] sm:gap-0 sm:p-8 lg:p-10">
-            <div className="sm:pr-8 lg:pr-10">
-              <Eyebrow>{quote.eyebrow}</Eyebrow>
-              <blockquote className="mt-5 text-xl leading-[1.2] font-semibold tracking-tight text-balance text-foreground sm:text-2xl lg:text-3xl">
-                “{quote.text}”
-              </blockquote>
-            </div>
+    <section className="relative overflow-hidden bg-foreground px-5 py-24 text-background sm:px-6 sm:py-32 lg:py-40">
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -top-12 right-4 select-none font-serif text-[20rem] leading-none text-background/10 sm:right-10 lg:text-[28rem]"
+      >
+        “
+      </span>
 
-            <div className="flex flex-col justify-between gap-6 border-t border-white/10 pt-6 sm:gap-8 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-8 lg:pl-10">
-              <div className="flex items-center gap-3">
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-background">
-                  <Icon def={iconsByName["konark-wheel"]} size={26} stroke={1.4} />
-                </span>
-                <div>
-                  <p className="text-[15px] leading-relaxed font-medium tracking-[-0.03em] text-foreground">
-                    {quote.author}
-                  </p>
-                  <p className="mt-0.5 text-[13px] leading-[1.2] tracking-[-0.03em] text-muted-foreground">
-                    {quote.meta}
-                  </p>
-                </div>
-              </div>
+      <Reveal className="relative mx-auto max-w-6xl">
+        <Eyebrow>{quote.eyebrow}</Eyebrow>
 
-              <dl className="grid grid-cols-3 gap-3">
-                {quote.stats.map((stat) => (
-                  <div key={stat.label}>
-                    <dt className="sr-only">{stat.label}</dt>
-                    <dd className="text-2xl font-semibold tracking-tight text-foreground">
-                      {stat.value}
-                    </dd>
-                    <dd className="text-[13px] leading-[1.2] tracking-[-0.03em] text-muted-foreground">
-                      {stat.label}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+        <blockquote className="mt-10 max-w-5xl text-5xl leading-[0.95] font-semibold tracking-[-0.04em] text-balance sm:text-7xl lg:text-8xl">
+          {quote.text}
+        </blockquote>
 
-              <a
-                href={links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[15px] font-medium tracking-[-0.03em] text-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
-              >
-                {quote.linkLabel}
-                <IconArrowUpRight aria-hidden className="size-4" stroke={1.75} />
-              </a>
-            </div>
+        <div className="mt-16 grid gap-10 border-t border-background/20 pt-10 lg:grid-cols-[1fr_auto_auto] lg:items-end lg:gap-20">
+          <div>
+            <p className="text-lg font-medium tracking-[-0.02em]">
+              {quote.author}
+            </p>
+            <p className="mt-1 text-sm text-background/60">{quote.meta}</p>
           </div>
+
+          <dl className="flex gap-12">
+            {quote.stats.map((stat) => (
+              <div key={stat.label}>
+                <dd className="text-4xl font-semibold tracking-[-0.04em]">
+                  {stat.value}
+                </dd>
+                <dt className="mt-1 text-sm text-background/60">
+                  {stat.label}
+                </dt>
+              </div>
+            ))}
+          </dl>
+
+          <a
+            href={links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 text-lg font-medium underline underline-offset-8 decoration-background/40 transition-colors hover:decoration-background"
+          >
+            {quote.linkLabel}
+            <IconArrowUpRight
+              aria-hidden
+              className="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              stroke={1.75}
+            />
+          </a>
         </div>
       </Reveal>
     </section>
