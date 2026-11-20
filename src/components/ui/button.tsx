@@ -1,91 +1,50 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
-import { Loader2 } from "lucide-react"
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium tracking-[0.02em] transition-opacity duration-200 select-none outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-60 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground hover:opacity-90",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:opacity-90 focus-visible:outline-destructive",
-        outline:
-          "border border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground",
+          "bg-primary text-primary-foreground shadow-[0_0_40px_-8px_rgba(243,224,201,0.55)] hover:bg-primary/90",
         secondary:
-          "bg-secondary text-secondary-foreground hover:opacity-90",
-        ghost:
-          "text-foreground hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-secondary/80 text-secondary-foreground border border-white/10 backdrop-blur hover:bg-secondary",
+        ghost: "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
+        outline: "border border-border bg-transparent hover:bg-accent",
       },
       size: {
-        default: "h-10 px-5 text-sm [&_svg:not([class*='size-'])]:size-4",
-        sm: "h-9 px-4 text-xs [&_svg:not([class*='size-'])]:size-4",
-        lg: "h-12 px-7 text-base [&_svg:not([class*='size-'])]:size-5",
-        icon: "size-10 p-0 [&_svg:not([class*='size-'])]:size-5",
-        "icon-xs": "size-6 p-0 [&_svg:not([class*='size-'])]:size-3",
-        "icon-sm": "size-7 p-0 [&_svg:not([class*='size-'])]:size-4",
-        "icon-lg": "size-9 p-0 [&_svg:not([class*='size-'])]:size-5",
+        default: "h-11 px-6",
+        sm: "h-9 px-4 text-[13px]",
+        lg: "h-14 px-8 text-base",
+        icon: "size-9",
+        "icon-sm": "size-8",
+        "icon-lg": "size-10",
       },
     },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-)
-
-export interface ButtonProps
-  extends React.ComponentProps<"button">,
-  VariantProps<typeof buttonVariants> {
-  asChild?: boolean
-  isLoading?: boolean
-  loadingText?: string
-}
+    defaultVariants: { variant: "default", size: "default" },
+  },
+);
 
 function Button({
   className,
-  variant = "default",
-  size = "default",
+  variant,
+  size,
   asChild = false,
-  isLoading = false,
-  loadingText,
-  disabled,
-  children,
   ...props
-}: ButtonProps) {
-  const Comp = asChild ? Slot : "button"
-  const isDisabled = isLoading || disabled
-
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & { asChild?: boolean }) {
+  const Comp = asChild ? Slot : "button";
   return (
     <Comp
       data-slot="button"
-      data-variant={variant}
-      data-size={size}
-      aria-disabled={asChild && isDisabled ? true : undefined}
-      className={cn(
-        buttonVariants({ variant, size, className }),
-        asChild && isDisabled && "pointer-events-none opacity-60"
-      )}
-      disabled={asChild ? undefined : isDisabled}
+      className={cn(buttonVariants({ variant, size, className }))}
       {...props}
-    >
-      {asChild ? (
-        children
-      ) : isLoading ? (
-        <>
-          <Loader2 className="animate-spin" />
-          {loadingText ? <span>{loadingText}</span> : children}
-        </>
-      ) : (
-        children
-      )}
-    </Comp>
-  )
+    />
+  );
 }
 
-export { Button, buttonVariants }
+export { Button, buttonVariants };

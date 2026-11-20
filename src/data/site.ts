@@ -1,45 +1,41 @@
-// ✏️ EDIT ALL TEXT, LINKS AND COPY HERE.
-// Every section reads from this file, so you rarely need to touch the components.
+/**
+ * Edit these to match the real project. Badges only render values that are set.
+ * This is the single source of copy, links and numbers for the whole site.
+ */
+export const SITE = {
+  name: "OdiaIcons",
+  tagline: "Icons with Odia soul.",
+  description:
+    "An open-source icon library rooted in Odisha: temples, Pattachitra, Odissi, festivals and food, plus a general UI set. Ships as React components, raw SVG and a shadcn-style registry.",
+  github: "https://github.com/odiaui/odiaicons", // TODO: confirm repo URL
+  siteUrl: "https://icons.odiaui.xyz",
+  npmPackage: "@odiaui/icons",
+  registryUrl: "https://icons.odiaui.xyz/r", // TODO: confirm registry path
+  // Fill these with real numbers, or leave null to hide the badge.
+  stars: null as number | null,
+  installs: null as string | null,
 
-export type FeatureMedia =
-  | { type: "animation"; name: "rooted" | "grid" | "copy-code" | "free" }
-  | { type: "video"; src: string }
-  | { type: "gif"; src: string }
-
-export type FeatureItem = {
-  title: string
-  description: string
-  media?: FeatureMedia
-}
-
-const github = "https://github.com/rudranboitei/odia-icons"
-const license = `${github}/blob/main/LICENSE`
-const issues = `${github}/issues/new`
-const email = "mailto:hello@odiaicons.com"
-
-export const siteConfig = {
-  name: "odiaicons",
-
+  // ---- Added for the icon browser + playground ----------------------
+  // Keep these URLs in sync with `github` above.
   links: {
-    github,
-    license,
-    email,
+    github: "https://github.com/odiaui/odiaicons", // TODO: confirm repo URL
+    license: "https://github.com/odiaui/odiaicons/blob/main/LICENSE",
+    contribute: "https://github.com/odiaui/odiaicons/issues/new",
+    email: "mailto:hello@odiaicons.com",
     icons: "/icons",
-    contribute: issues,
+  },
+  install: {
+    command: "npm install @odiaui/icons",
+    helper: "Free and open source — works with npm, pnpm and yarn too.",
   },
 
+  // ---- Landing page -------------------------------------------------
   nav: [
     { label: "Icons", href: "/icons" },
     { label: "Features", href: "/#features" },
     { label: "Developers", href: "/#developers" },
     { label: "FAQ", href: "/#faq" },
   ],
-
-  // The main conversion component — repeated in the hero, developer and final sections.
-  install: {
-    command: "npm install odiaicons",
-    helper: "Free and open source — works with npm, pnpm and yarn too.",
-  },
 
   hero: {
     eyebrow: "Open source · MIT licensed",
@@ -52,11 +48,31 @@ export const siteConfig = {
       "5 export formats",
       "No attribution needed",
     ],
+    wordmark: { lead: "Meet", trail: "Odia" },
+    display: { lead: "Icons", accent: "with soul." },
+    lead: "Temples, Pattachitra, Odissi and festivals as clean 24px outline icons. Search them in English or ଓଡ଼ିଆ.",
+    ctas: { install: "Install icons", browse: "Browse icons" },
+    badges: {
+      github: "Open source on GitHub",
+      stars: "stars",
+      installs: "installs",
+      icons: "icons in this preview",
+    },
+  },
+
+  explorer: {
+    title: "The culture of Odisha, glyph by glyph.",
+    accent: "glyph by glyph.",
+    description:
+      "Search by English name, tag, or Odia script. Click any icon to copy its JSX.",
+    searchPlaceholder: "Search temple, ରଥ, lotus…",
+    emptyPrefix: "No icons match",
   },
 
   featuresIntro: {
     eyebrow: "Why odiaicons",
     title: "Heritage you can drop into any product.",
+    accent: "drop into",
     description:
       "A small, consistent icon set built from Odisha's temples, textiles and traditions.",
   },
@@ -97,6 +113,7 @@ export const siteConfig = {
     text: "Odisha's visual language lives on temple walls, in woven cloth and on painted palm leaf. odiaicons turns those motifs into crisp, consistent icons that anyone can use.",
     author: "The odiaicons project",
     meta: "Independent · open source · made in Odisha",
+    linkLabel: "Star on GitHub",
     stats: [
       { value: "5", label: "motifs" },
       { value: "4", label: "formats" },
@@ -107,8 +124,8 @@ export const siteConfig = {
   steps: {
     eyebrow: "From grid to production",
     title: "Drop Odisha into your next build.",
-    description:
-      "Three steps between the idea and the shipped interface.",
+    accent: "Odisha",
+    description: "Three steps between the idea and the shipped interface.",
     items: [
       {
         title: "Pick your motif",
@@ -117,8 +134,7 @@ export const siteConfig = {
       },
       {
         title: "Copy the code",
-        description:
-          "Take clean SVG, JSX, a typed React component or a data URI.",
+        description: "Take clean SVG, JSX, a typed React component or a data URI.",
       },
       {
         title: "Ship it anywhere",
@@ -142,11 +158,18 @@ export const siteConfig = {
       "Typed React components included",
       "MIT licensed — commercial use allowed",
     ],
+    code: {
+      fileName: "konark-wheel.svg",
+      grid: "24 × 24",
+      license: "MIT licensed",
+      spec: "1.75 stroke · round caps",
+    },
   },
 
   faq: {
     eyebrow: "Questions, answered",
     title: "Everything you need to know.",
+    accent: "need to know.",
     description:
       "Licensing, installation and how to get your own motif into the set.",
     items: [
@@ -175,11 +198,16 @@ export const siteConfig = {
         a: "Absolutely. Fork the repo, add your SVG to the set and open a pull request. Keep the grid, the stroke and the source notes.",
       },
     ],
+    more: {
+      label: "Still curious?",
+      linkLabel: "Ask on GitHub",
+    },
   },
 
   finalCta: {
     eyebrow: "Free to copy, remix and ship",
     title: "It's time to use them.",
+    accent: "use them.",
     description:
       "Five motifs from Odisha, ready for whatever you're building next.",
     helper: "No credit card. No sign-up. Just icons.",
@@ -190,19 +218,47 @@ export const siteConfig = {
     tagline:
       "An open-source icon set shaped by Odisha's temples, textiles and living traditions.",
     note: "Made in Odisha, India.",
+    licenseNote: "Free under the MIT licence.",
     year: 2026,
     links: [
       { label: "The set", href: "/icons" },
       { label: "Features", href: "/#features" },
       { label: "FAQ", href: "/#faq" },
-      { label: "GitHub", href: github, external: true },
-      { label: "MIT License", href: license, external: true },
-      { label: "Contribute", href: issues, external: true },
-      { label: "Email", href: email },
-      { label: "Request an icon", href: issues, external: true },
+      { label: "GitHub", href: "https://github.com/odiaui/odiaicons", external: true },
+      {
+        label: "MIT License",
+        href: "https://github.com/odiaui/odiaicons/blob/main/LICENSE",
+        external: true,
+      },
+      {
+        label: "Contribute",
+        href: "https://github.com/odiaui/odiaicons/issues/new",
+        external: true,
+      },
+      { label: "Email", href: "mailto:hello@odiaicons.com" },
+      {
+        label: "Request an icon",
+        href: "https://github.com/odiaui/odiaicons/issues/new",
+        external: true,
+      },
       { label: "Back to top", href: "#top" },
     ],
   },
-}
+};
 
-export type SiteConfig = typeof siteConfig
+export type FeatureMedia =
+  | { type: "animation"; name: "rooted" | "grid" | "copy-code" | "free" }
+  | { type: "video"; src: string }
+  | { type: "gif"; src: string };
+
+export type FeatureItem = {
+  title: string;
+  description: string;
+  media?: FeatureMedia;
+};
+
+/**
+ * Alias so the icon page files (`siteConfig.links.github`,
+ * `siteConfig.install.command`, `siteConfig.name`) work unchanged.
+ */
+export const siteConfig = SITE;

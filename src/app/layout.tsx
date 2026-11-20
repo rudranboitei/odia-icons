@@ -1,14 +1,25 @@
 import type { Metadata, Viewport } from "next";
+import { Inter_Tight, Pixelify_Sans } from "next/font/google";
+
+import { SITE } from "@/data/site";
+import { MotionProvider } from "@/components/motion-provider";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Toaster } from "@/components/ui/toast";
-import { siteUrl } from "@/lib/site-url";
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  variable: "--font-inter-tight",
+});
+
+const pixelify = Pixelify_Sans({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-pixelify",
+});
 
 export const metadata: Metadata = {
-  title: "odiaicons — Odia icons, free to use",
-  description:
-    "A free, open-source icon set drawn from Odisha's temples, textiles and living visual traditions. Copy any icon as SVG, JSX or React.",
-  metadataBase: new URL(siteUrl),
+  title: `${SITE.name} – ${SITE.tagline}`,
+  description: SITE.description,
+  metadataBase: new URL(SITE.siteUrl),
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -20,40 +31,30 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "odiaicons",
-    description:
-      "Konark chakras, Kalinga deulas, pattachitra fish and more — as clean, consistent line icons.",
-    url: siteUrl,
-    siteName: "odiaicons",
+    title: `${SITE.name} – ${SITE.tagline}`,
+    description: SITE.description,
+    url: SITE.siteUrl,
+    siteName: SITE.name,
     type: "website",
-    // The image is supplied by app/opengraph-image.png so every route inherits it.
   },
   twitter: {
     card: "summary_large_image",
-    title: "odiaicons",
-    description:
-      "Konark chakras, Kalinga deulas, pattachitra fish and more — as clean, consistent line icons.",
-    // The image is supplied by app/twitter-image.png.
+    title: `${SITE.name} – ${SITE.tagline}`,
+    description: SITE.description,
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#141414",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className="flex min-h-full flex-col">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster />
-        </ThemeProvider>
+    <html lang="en" className="dark">
+      <body className={`${interTight.variable} ${pixelify.variable}`}>
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

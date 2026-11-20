@@ -1,29 +1,38 @@
-import { siteConfig } from "@/lib/site-config"
-import { SectionHeader } from "./section-header"
-import { InstallBox } from "./install-box"
-import { IconMarquee } from "./icon-marquee"
+import { SITE } from "@/data/site";
+import { IconMarquee } from "./icon-marquee";
+import { InstallBox } from "./install-box";
+import { Reveal } from "./reveal";
+import { SectionHeader } from "./section-header";
 
 export function FinalCta() {
-  const { finalCta } = siteConfig
+  const { finalCta } = SITE;
 
   return (
     <section
-      id="get-icons"
-      className="relative overflow-hidden px-5 pt-20 pb-6 text-center lg:px-6 sm:pt-28"
+      id="install"
+      className="relative scroll-mt-20 overflow-hidden px-6 pt-28 pb-6 text-center"
     >
-      <SectionHeader
-        eyebrow={finalCta.eyebrow}
-        title={finalCta.title}
-        description={finalCta.description}
-      />
+      <Reveal className="mx-auto max-w-4xl">
+        <SectionHeader
+          eyebrow={finalCta.eyebrow}
+          title={finalCta.title}
+          accent={finalCta.accent}
+          description={finalCta.description}
+          size="cta"
+        />
 
-      <div className="mt-8 flex justify-center">
-        <InstallBox />
+        <div className="mt-10 flex justify-center">
+          <InstallBox />
+        </div>
+
+        <p className="mt-6 text-[13px] leading-[1.2] tracking-[-0.03em] text-muted-foreground">
+          {finalCta.helper}
+        </p>
+      </Reveal>
+
+      <div className="mx-auto mt-16 max-w-6xl">
+        <IconMarquee />
       </div>
-
-      <p className="mt-6 text-[13px] leading-[1.2] tracking-[-0.03em] text-muted-foreground">{finalCta.helper}</p>
-
-      <IconMarquee className="mt-16" />
     </section>
-  )
+  );
 }
