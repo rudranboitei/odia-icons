@@ -93,59 +93,6 @@ function saveBlob(blob: Blob, fileName: string) {
   URL.revokeObjectURL(url)
 }
 
-/** Cream keycap, same one as the landing hero. Presses down on click. */
-function KeyTile({ def }: { def: IconDef }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.6, rotate: -14, y: 16 }}
-      animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
-      transition={{ type: "spring", stiffness: 220, damping: 15, mass: 0.9, delay: 0.15 }}
-      whileHover={{ rotate: -4, scale: 1.04 }}
-      whileTap={{ y: 5, scale: 0.97 }}
-      className="relative grid size-14 shrink-0 cursor-pointer place-items-center rounded-2xl bg-gradient-to-b from-[#f7e8d4] to-[#e6c9a6] shadow-[0_6px_0_#b8946b,0_14px_26px_-6px_rgba(0,0,0,0.5),inset_0_2px_0_rgba(255,255,255,0.65)] md:size-20 md:rounded-3xl md:shadow-[0_8px_0_#b8946b,0_18px_34px_-6px_rgba(0,0,0,0.55),inset_0_2px_0_rgba(255,255,255,0.65)]"
-    >
-      <div className="absolute inset-[5px] rounded-xl bg-gradient-to-b from-[#f3dec4] to-[#ecd2b0] shadow-[inset_0_2px_6px_rgba(120,80,40,0.25)] md:inset-[7px] md:rounded-[1.25rem]" />
-      <Icon
-        def={def}
-        size={32}
-        stroke={1.5}
-        className="relative size-7 text-[#3b2a1a] md:size-10"
-      />
-    </motion.div>
-  )
-}
-
-/** Compact version of the landing hero, shown above the grid. */
-function PageHero({ count }: { count: number }) {
-  const mark = icons.find((i) => i.name === "konark-wheel") ?? icons[0]
-
-  return (
-    <motion.section
-      initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      transition={{ duration: 0.8, ease: EASE }}
-      className="relative mb-5 overflow-hidden rounded-3xl border border-border px-6 py-8 md:px-10 md:py-10"
-    >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_90%_at_15%_0%,color-mix(in_oklab,var(--primary)_14%,transparent),transparent_70%)]"
-      />
-      <div className="relative flex flex-col gap-4">
-        <h1 className="font-pixel flex flex-wrap items-center gap-3 text-4xl leading-none font-bold text-foreground md:gap-5 md:text-6xl">
-          <span>Odia</span>
-          <KeyTile def={mark} />
-          <span>Icons</span>
-        </h1>
-        <p className="max-w-lg text-[15px] leading-relaxed text-muted-foreground md:text-[17px]">
-          <span className="font-medium text-foreground">{count} icons</span> drawn on one
-          24 × 24 grid. Click any icon to tune size, stroke and colour, then copy or
-          download it.
-        </p>
-      </div>
-    </motion.section>
-  )
-}
-
 function IconCard({ icon, index, onOpen, onCopy, onDownload }: {
   icon: IconDef
   index: number
@@ -171,11 +118,11 @@ function IconCard({ icon, index, onOpen, onCopy, onDownload }: {
         whileHover={{ y: -4 }}
         whileTap={{ scale: 0.97 }}
         transition={{ type: "spring", stiffness: 400, damping: 28 }}
-        className="flex h-[164px] w-full cursor-pointer flex-col items-center justify-center gap-4 rounded-3xl border border-border bg-card/40 px-3 transition-[background-color,border-color,box-shadow] duration-200 hover:border-primary/40 hover:bg-card hover:shadow-[0_18px_36px_-18px_color-mix(in_oklab,var(--primary)_35%,transparent)] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none"
+        className="flex h-32 w-full cursor-pointer flex-col items-center justify-center gap-3 rounded-3xl border border-border bg-card/40 px-3 transition-[background-color,border-color,box-shadow] duration-200 hover:border-primary/40 hover:bg-card hover:shadow-[0_18px_36px_-18px_color-mix(in_oklab,var(--primary)_35%,transparent)] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none"
       >
         <Icon
           def={icon}
-          size={34}
+          size={30}
           stroke={1.75}
           absoluteStrokeWidth
           className="text-foreground transition-colors duration-200 group-hover:text-primary"
@@ -300,7 +247,7 @@ export function IconBrowser() {
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: EASE }}
-          className="sticky top-0 hidden h-dvh w-[232px] shrink-0 flex-col px-6 py-6 lg:flex"
+          className="sticky top-0 hidden h-dvh w-[216px] shrink-0 flex-col px-5 py-5 lg:flex"
         >
           <Link href="/" className="inline-flex w-fit items-center">
             <Image
@@ -314,9 +261,9 @@ export function IconBrowser() {
             />
           </Link>
 
-          <nav className="mt-12" aria-label="Browse">
+          <nav className="mt-10" aria-label="Browse">
             <p className="text-[13px] text-muted-foreground">Browse</p>
-            <ul className="mt-3 flex flex-col gap-3.5">
+            <ul className="mt-3 flex flex-col gap-3">
               {browseItems.map((item) => (
                 <li key={item.label}>
                   <Link
@@ -342,9 +289,9 @@ export function IconBrowser() {
             </ul>
           </nav>
 
-          <nav className="mt-9" aria-label="Resources">
+          <nav className="mt-8" aria-label="Resources">
             <p className="text-[13px] text-muted-foreground">Resources</p>
-            <ul className="mt-3 flex flex-col gap-3.5">
+            <ul className="mt-3 flex flex-col gap-3">
               {resourceItems.map((item) => (
                 <li key={item.label}>
                   <a
@@ -394,7 +341,7 @@ export function IconBrowser() {
         {/* Main column */}
         <div className="flex min-w-0 flex-1 flex-col">
           <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-xl">
-            <div className="flex h-16 items-center gap-4 px-5 lg:px-6">
+            <div className="flex h-14 items-center gap-4 px-5 lg:px-6">
               <Link href="/" className="shrink-0 lg:hidden">
                 <Image
                   src="/brand/logo-wordmark-white.svg"
@@ -481,7 +428,7 @@ export function IconBrowser() {
             </div>
 
             {/* Category pills: the active pill slides between options */}
-            <div className="flex items-center gap-3 px-5 pb-3 lg:px-6">
+            <div className="flex items-center gap-3 px-5 pb-2 lg:px-6">
               <div className="flex min-w-0 gap-1.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {categoryCounts.map((item) => {
                   const isActive = category === item.id
@@ -524,13 +471,12 @@ export function IconBrowser() {
             </div>
           </header>
 
-          <main className="flex-1 px-5 py-5 lg:px-6">
-            <PageHero count={icons.length} />
-
-            <div className="flex items-start gap-4">
+          <main className="flex-1 px-5 py-4 lg:px-6">
+            <h1 className="sr-only">Icons</h1>
+            <div className="flex items-start gap-3">
               <div className="min-w-0 flex-1">
                 {filtered.length > 0 ? (
-                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                  <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                     {filtered.map((icon, index) => (
                       <IconCard
                         key={icon.name}
@@ -632,7 +578,7 @@ export function IconBrowser() {
             </div>
           </main>
 
-          <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border px-5 py-4 text-[12px] text-muted-foreground lg:px-6">
+          <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border px-5 py-3 text-[12px] text-muted-foreground lg:px-6">
             <span>odiaicons · open source under the MIT licence</span>
             <span>24 × 24 grid · 1.75px stroke</span>
           </footer>
