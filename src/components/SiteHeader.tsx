@@ -216,7 +216,7 @@ export function Navbar() {
                 asChild
                 className="h-10 rounded-full  px-4 text-[15px] font-medium text-[#141414]  sm:px-5 md:h-11"
               >
-                <Link href="/#install">
+                <Link href="/icons">
                   <span className="hidden sm:inline">Get started</span>
                   <span className="sm:hidden">Install</span>
                 </Link>

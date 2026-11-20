@@ -4,144 +4,226 @@ import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import { ArrowRight, Download, GitBranchPlus, LayoutGrid, Search, Star } from "lucide-react";
 
-import { byName, ICONS, IconGlyph } from "@/data/icons";
+import { ICONS, IconGlyph } from "@/data/icons";
 import { SITE } from "@/data/site";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+/* Palette taken from the "Why odiaicons" section */
+const CREAM = "#f6dfc4";
+
 /* ------------------------------------------------------------------ */
-/* Scene: sky, clouds, hills                                          */
+/* Mountains: faceted, sun-lit ranges (deterministic, SSR-safe)        */
 /* ------------------------------------------------------------------ */
 
-/** A soft cloud made from overlapping blurred blobs. Size it with className. */
-function Cloud({
-  className,
-  drift = 24,
-  duration = 40,
-  reduce,
-}: {
-  className?: string;
-  drift?: number;
-  duration?: number;
-  reduce: boolean;
-}) {
-  const blobs = [
-    { l: "0%", t: "38%", w: "42%", h: "52%", o: 0.9 },
-    { l: "18%", t: "6%", w: "44%", h: "70%", o: 1 },
-    { l: "42%", t: "20%", w: "40%", h: "62%", o: 0.95 },
-    { l: "58%", t: "42%", w: "42%", h: "50%", o: 0.9 },
-    { l: "12%", t: "52%", w: "76%", h: "42%", o: 0.85 },
-  ];
-  return (
-    <motion.div
-      aria-hidden="true"
-      animate={reduce ? undefined : { x: [0, drift, 0] }}
-      transition={{ duration, ease: "easeInOut", repeat: Infinity }}
-      className={`pointer-events-none absolute ${className ?? ""}`}
-    >
-      <div className="relative size-full">
-        {blobs.map((b, i) => (
-          <span
-            key={i}
-            className="absolute rounded-full bg-white blur-[14px] sm:blur-[22px]"
-            style={{ left: b.l, top: b.t, width: b.w, height: b.h, opacity: b.o }}
-          />
-        ))}
-      </div>
-    </motion.div>
-  );
+type Pt = [number, number];
+const W = 1440;
+const H = 520;
+const SUN_X = W / 2;
+
+function rng(seed: number) {
+  let s = seed;
+  return () => (s = (s * 16807) % 2147483647) / 2147483647;
 }
 
-const HILL_LEFT =
-  "M0 520 V250 C120 170 300 150 430 215 C520 260 600 360 700 520 Z";
-const HILL_RIGHT =
-  "M1440 520 V230 C1320 150 1120 140 980 230 C880 295 820 400 740 520 Z";
+/** Midpoint displacement for a jagged, natural ridgeline. */
+function subdivide(a: Pt, b: Pt, rnd: () => number, depth: number, rough: number): Pt[] {
+  if (depth === 0) return [a, b];
+  const m: Pt = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2 + (rnd() - 0.5) * rough * Math.abs(b[0] - a[0])];
+  const l = subdivide(a, m, rnd, depth - 1, rough);
+  const r = subdivide(m, b, rnd, depth - 1, rough);
+  return [...l, ...r.slice(1)];
+}
 
-/** Deterministic wildflowers (same output on server and client). */
-const FLOWERS = (() => {
-  let s = 7;
-  const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
-  const colors = ["#ffd93b", "#ffffff", "#ff8fb1", "#b48cff", "#ffb347"];
-  const out: { x: number; y: number; r: number; c: string }[] = [];
-  for (let i = 0; i < 40; i++) {
-    out.push({
-      x: 10 + rnd() * 420,
-      y: 275 + Math.pow(rnd(), 0.7) * 225,
-      r: 1.6 + rnd() * 1.8,
-      c: colors[Math.floor(rnd() * colors.length)],
-    });
-    out.push({
-      x: 1010 + rnd() * 420,
-      y: 265 + Math.pow(rnd(), 0.7) * 235,
-      r: 1.6 + rnd() * 1.8,
-      c: colors[Math.floor(rnd() * colors.length)],
-    });
-  }
-  return out;
+const fmt = (pts: Pt[]) => pts.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
+
+function makeRange(o: {
+  seed: number;
+  count: number;
+  top: number;
+  spread: number;
+  valley: number;
+  vSpread: number;
+}) {
+  const rnd = rng(o.seed);
+  const step = W / o.count;
+
+  const peaks: Pt[] = Array.from({ length: o.count }, (_, i) => [
+    (i + 0.5) * step + (rnd() - 0.5) * step * 0.45,
+    o.top + rnd() * o.spread,
+  ]);
+  const valleys: Pt[] = Array.from({ length: o.count + 1 }, (_, i) => [
+    i === 0 ? -40 : i === o.count ? W + 40 : i * step + (rnd() - 0.5) * step * 0.3,
+    o.valley + rnd() * o.vSpread,
+  ]);
+
+  const ridge: Pt[] = [];
+  const faces: { lit: string; shade: string }[] = [];
+
+  peaks.forEach((p, i) => {
+    const left = subdivide(valleys[i], p, rnd, 3, 0.35);
+    const right = subdivide(p, valleys[i + 1], rnd, 3, 0.35);
+    const litSide = p[0] < SUN_X; // sun sits in the middle: lit face points toward it
+    const spine: Pt = [p[0] + (litSide ? 30 : -30), H];
+
+    ridge.push(...(i === 0 ? left : left.slice(1)), ...right.slice(1));
+    faces.push(
+      litSide
+        ? { lit: fmt([...right, spine]), shade: fmt([...left, spine]) }
+        : { lit: fmt([...left, spine]), shade: fmt([...right, spine]) },
+    );
+  });
+
+  const line = ridge.map(([x, y]) => `${x.toFixed(1)} ${y.toFixed(1)}`).join(" L");
+  return {
+    ridge: `M${line}`,
+    path: `M${line} L${W + 40} ${H} L-40 ${H} Z`,
+    faces,
+  };
+}
+
+const LAYERS = [
+  {
+    id: "far",
+    range: makeRange({ seed: 3, count: 6, top: 175, spread: 70, valley: 300, vSpread: 40 }),
+    fill: ["#7a5f58", "#4a3a36"],
+    lit: "rgba(255,206,160,0.30)",
+    shade: "rgba(20,14,14,0.32)",
+    rim: "rgba(255,226,190,0.55)",
+    haze: 0.38,
+  },
+  {
+    id: "mid",
+    range: makeRange({ seed: 9, count: 5, top: 245, spread: 70, valley: 360, vSpread: 40 }),
+    fill: ["#46362f", "#261d1a"],
+    lit: "rgba(246,190,140,0.24)",
+    shade: "rgba(10,8,8,0.38)",
+    rim: "rgba(255,214,170,0.4)",
+    haze: 0.22,
+  },
+  {
+    id: "near",
+    range: makeRange({ seed: 21, count: 4, top: 335, spread: 50, valley: 435, vSpread: 30 }),
+    fill: ["#211a17", "#0e0c0b"],
+    lit: "rgba(240,180,130,0.16)",
+    shade: "rgba(0,0,0,0.45)",
+    rim: "rgba(255,206,160,0.28)",
+    haze: 0.08,
+  },
+] as const;
+
+const STARS = (() => {
+  const rnd = rng(11);
+  return Array.from({ length: 40 }, () => ({
+    x: rnd() * 100,
+    y: rnd() * 40,
+    r: 0.6 + rnd() * 1,
+    o: 0.2 + rnd() * 0.45,
+  }));
 })();
 
-function Hills() {
+function Mountains() {
   return (
     <svg
       aria-hidden="true"
-      viewBox="0 0 1440 520"
+      viewBox={`0 0 ${W} ${H}`}
       preserveAspectRatio="xMidYMax slice"
       className="pointer-events-none absolute inset-x-0 bottom-0 h-[340px] w-full sm:h-[440px] md:h-[540px]"
     >
       <defs>
-        <linearGradient id="grass-back" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#8fd95a" />
-          <stop offset="1" stopColor="#4aa22e" />
-        </linearGradient>
-        <linearGradient id="grass-front" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#6fd13f" />
-          <stop offset="0.5" stopColor="#35901f" />
-          <stop offset="1" stopColor="#1d5d16" />
-        </linearGradient>
-        <radialGradient id="grass-light" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="0" stopColor="#c9f56f" stopOpacity="0.55" />
-          <stop offset="1" stopColor="#c9f56f" stopOpacity="0" />
-        </radialGradient>
-        <clipPath id="clip-left">
-          <path d={HILL_LEFT} />
-        </clipPath>
-        <clipPath id="clip-right">
-          <path d={HILL_RIGHT} />
-        </clipPath>
+        {LAYERS.map((l) => (
+          <g key={l.id}>
+            <linearGradient id={`fill-${l.id}`} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor={l.fill[0]} />
+              <stop offset="1" stopColor={l.fill[1]} />
+            </linearGradient>
+            <linearGradient id={`haze-${l.id}`} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#f0a874" stopOpacity="0" />
+              <stop offset="1" stopColor="#f0a874" stopOpacity={l.haze} />
+            </linearGradient>
+            <clipPath id={`clip-${l.id}`}>
+              <path d={l.range.path} />
+            </clipPath>
+          </g>
+        ))}
       </defs>
 
-      {/* Back valley */}
-      <path
-        d="M0 420 C250 340 520 380 720 400 C920 380 1200 330 1440 410 V520 H0 Z"
-        fill="url(#grass-back)"
-      />
-
-      {/* Front hills */}
-      <path d={HILL_LEFT} fill="url(#grass-front)" />
-      <path d={HILL_RIGHT} fill="url(#grass-front)" />
-
-      {/* Sunlit highlights */}
-      <g clipPath="url(#clip-left)">
-        <ellipse cx="190" cy="235" rx="260" ry="90" fill="url(#grass-light)" />
-      </g>
-      <g clipPath="url(#clip-right)">
-        <ellipse cx="1240" cy="225" rx="260" ry="90" fill="url(#grass-light)" />
-      </g>
-
-      {/* Wildflowers */}
-      {FLOWERS.map((f, i) => (
-        <circle key={i} cx={f.x} cy={f.y} r={f.r} fill={f.c} opacity={0.9} />
+      {LAYERS.map((l) => (
+        <g key={l.id}>
+          <path d={l.range.path} fill={`url(#fill-${l.id})`} />
+          <g clipPath={`url(#clip-${l.id})`}>
+            {l.range.faces.map((f, i) => (
+              <g key={i}>
+                <polygon points={f.shade} fill={l.shade} />
+                <polygon points={f.lit} fill={l.lit} />
+              </g>
+            ))}
+            {/* Atmospheric haze for depth */}
+            <rect x="0" y="0" width={W} height={H} fill={`url(#haze-${l.id})`} />
+          </g>
+          {/* Rim light along the ridge */}
+          <path d={l.range.ridge} fill="none" stroke={l.rim} strokeWidth="1.1" strokeLinejoin="round" />
+        </g>
       ))}
     </svg>
   );
 }
 
+function Scene() {
+  return (
+    <>
+      {/* Dusk sky: charcoal into warm amber at the horizon */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#151413_0%,#1c1917_38%,#33251f_66%,#7a4a33_88%,#c98a5e_100%)]"
+      />
+      {/* Sun glow behind the peaks */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(55%_40%_at_50%_78%,rgba(255,200,150,0.55),rgba(214,128,84,0.22)_45%,transparent_72%)]"
+      />
+      {/* Stars */}
+      <svg aria-hidden="true" className="pointer-events-none absolute inset-0 size-full">
+        {STARS.map((s, i) => (
+          <circle key={i} cx={`${s.x}%`} cy={`${s.y}%`} r={s.r} fill="#fff4e3" opacity={s.o} />
+        ))}
+      </svg>
+      <Mountains />
+    </>
+  );
+}
+
 /* ------------------------------------------------------------------ */
-/* Headline keycap (sized in em so it matches the text)               */
+/* Headline keycap with a custom Deula (Kalinga temple) icon           */
 /* ------------------------------------------------------------------ */
 
+function DeulaIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="3.6" r="1.1" />
+      <path d="M12 4.7V6" />
+      {/* Tower */}
+      <path d="M8.8 20V16C8.8 12.5 10 8.5 12 6C14 8.5 15.2 12.5 15.2 16V20" />
+      {/* Tiers */}
+      <path d="M10.5 9.8H13.5M9.8 12.6H14.2" />
+      {/* Door */}
+      <path d="M10.6 20V18.2a1.4 1.4 0 0 1 2.8 0V20" />
+      {/* Base */}
+      <path d="M6 20H18" />
+    </svg>
+  );
+}
+
 function KeyTile() {
-  const wheel = byName("konark-wheel");
   return (
     <motion.span
       aria-hidden="true"
@@ -157,14 +239,10 @@ function KeyTile() {
       }}
       whileHover={{ rotate: 0, scale: 1.05 }}
       whileTap={{ y: 4, scale: 0.97 }}
-      className="relative grid size-[1.3em] shrink-0 place-items-center rounded-[0.32em] bg-gradient-to-b from-[#f7e8d4] to-[#e6c9a6] shadow-[0_0.08em_0_#b8946b,0_0.22em_0.4em_-0.06em_rgba(10,30,70,0.45),inset_0_0.03em_0_rgba(255,255,255,0.7)]"
+      className="relative grid size-[1.3em] shrink-0 place-items-center rounded-[0.32em] bg-gradient-to-b from-[#fbeedb] to-[#e3c39a] shadow-[0_0.08em_0_#a8825a,0_0.22em_0.4em_-0.06em_rgba(0,0,0,0.7),inset_0_0.03em_0_rgba(255,255,255,0.8)]"
     >
-      <span className="absolute inset-[0.07em] rounded-[0.25em] bg-gradient-to-b from-[#f3dec4] to-[#ecd2b0] shadow-[inset_0_0.03em_0.08em_rgba(120,80,40,0.25)]" />
-      <IconGlyph
-        icon={wheel}
-        strokeWidth={1.5}
-        className="relative size-[0.72em] text-[#3b2a1a]"
-      />
+      <span className="absolute inset-[0.07em] rounded-[0.25em] bg-gradient-to-b from-[#f7e3c6] to-[#efd2aa] shadow-[inset_0_0.03em_0.08em_rgba(120,80,40,0.3)]" />
+      <DeulaIcon className="relative size-[0.78em] text-[#3a2417]" />
     </motion.span>
   );
 }
@@ -177,20 +255,20 @@ function PreviewWindow() {
   const tiles = ICONS.slice(0, 32);
 
   return (
-    <div className="h-[250px] overflow-hidden rounded-t-[1.1rem] border border-b-0 border-white/70 bg-white/55 p-2 shadow-[0_-10px_60px_-10px_rgba(10,30,70,0.35)] backdrop-blur-xl sm:h-[330px] sm:rounded-t-[1.5rem] sm:p-3 md:h-[400px]">
-      <div className="h-full overflow-hidden rounded-t-[0.8rem] bg-white ring-1 ring-black/5 sm:rounded-t-[1.1rem]">
+    <div className="h-[250px] overflow-hidden rounded-t-[1.1rem] border border-b-0 border-white/15 bg-white/5 p-2 shadow-[0_-10px_80px_-10px_rgba(240,168,116,0.35)] backdrop-blur-xl sm:h-[330px] sm:rounded-t-[1.5rem] sm:p-3 md:h-[400px]">
+      <div className="h-full overflow-hidden rounded-t-[0.8rem] bg-[#1f1f1f] ring-1 ring-white/10 sm:rounded-t-[1.1rem]">
         {/* Toolbar */}
-        <div className="flex items-center gap-3 border-b border-slate-100 px-3 py-2.5 sm:px-4">
+        <div className="flex items-center gap-3 border-b border-white/10 px-3 py-2.5 sm:px-4">
           <div className="flex gap-1.5">
-            <span className="size-2.5 rounded-full bg-slate-200" />
-            <span className="size-2.5 rounded-full bg-slate-200" />
-            <span className="size-2.5 rounded-full bg-slate-200" />
+            <span className="size-2.5 rounded-full bg-white/15" />
+            <span className="size-2.5 rounded-full bg-white/15" />
+            <span className="size-2.5 rounded-full bg-white/15" />
           </div>
-          <div className="flex h-8 min-w-0 max-w-sm flex-1 items-center gap-2 rounded-lg bg-slate-100 px-3 text-xs text-slate-400">
+          <div className="flex h-8 min-w-0 max-w-sm flex-1 items-center gap-2 rounded-lg bg-white/5 px-3 text-xs text-neutral-500">
             <Search aria-hidden className="size-3.5 shrink-0" />
             <span className="truncate">Search icons</span>
           </div>
-          <span className="ml-auto hidden shrink-0 text-xs text-slate-400 sm:block">
+          <span className="ml-auto hidden shrink-0 text-xs text-neutral-500 sm:block">
             {ICONS.length} icons
           </span>
         </div>
@@ -198,8 +276,8 @@ function PreviewWindow() {
         {/* Grid */}
         <div className="p-3 sm:p-5">
           <div className="mb-3 flex items-center justify-between sm:mb-4">
-            <span className="text-sm font-semibold text-slate-900">All icons</span>
-            <span className="text-xs text-slate-400 sm:hidden">{ICONS.length}</span>
+            <span className="text-sm font-semibold text-neutral-100">All icons</span>
+            <span className="text-xs text-neutral-500 sm:hidden">{ICONS.length}</span>
           </div>
 
           <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 sm:gap-3 md:grid-cols-8">
@@ -207,16 +285,16 @@ function PreviewWindow() {
               <div
                 key={icon.name}
                 className={`flex aspect-[1/0.9] min-w-0 flex-col items-center justify-center gap-1.5 rounded-xl border px-1 ${i === 1
-                  ? "border-slate-900 bg-slate-50"
-                  : "border-slate-200/70 bg-white"
+                  ? "border-[#f6dfc4]/70 bg-[#2e2a26]"
+                  : "border-white/10 bg-[#262626]"
                   }`}
               >
                 <IconGlyph
                   icon={icon}
                   strokeWidth={1.5}
-                  className="size-6 text-slate-800 sm:size-7"
+                  className="size-6 text-[#f6dfc4] sm:size-7"
                 />
-                <span className="w-full truncate text-center text-[10px] text-slate-500 capitalize sm:text-[11px]">
+                <span className="w-full truncate text-center text-[10px] text-neutral-400 capitalize sm:text-[11px]">
                   {icon.name.replaceAll("-", " ")}
                 </span>
               </div>
@@ -267,28 +345,9 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-svh flex-col items-center overflow-hidden bg-[linear-gradient(to_bottom,#4f8fe0_0%,#7fb2ee_35%,#b9d7f6_68%,#e8f2fc_100%)] px-5 pt-28 sm:px-6 sm:pt-36"
+      className="relative isolate flex min-h-svh flex-col items-center overflow-hidden bg-[#1a1a1a] px-5 pt-28 sm:px-6 sm:pt-36"
     >
-      {/* Scene */}
-      <Cloud
-        reduce={reduce}
-        className="-top-6 -left-16 h-36 w-72 sm:-left-10 sm:h-56 sm:w-[30rem]"
-        drift={30}
-        duration={46}
-      />
-      <Cloud
-        reduce={reduce}
-        className="top-24 -right-20 h-28 w-60 sm:top-16 sm:-right-10 sm:h-48 sm:w-[26rem]"
-        drift={-26}
-        duration={54}
-      />
-      <Cloud
-        reduce={reduce}
-        className="top-[46%] -left-24 hidden h-24 w-56 opacity-80 md:block"
-        drift={20}
-        duration={60}
-      />
-      <Hills />
+      <Scene />
 
       {/* Content */}
       <motion.div
@@ -302,9 +361,9 @@ export function Hero() {
             href={SITE.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-8 items-center gap-1.5 rounded-full border border-white/70 bg-white/55 px-3.5 text-[13px] font-medium text-[#0b1b33] backdrop-blur transition-colors hover:bg-white/80 focus-visible:ring-2 focus-visible:ring-[#0b1b33]/50 focus-visible:outline-none"
+            className="inline-flex h-8 items-center gap-1.5 rounded-full border border-white/10 bg-[#262626]/80 px-3.5 text-[13px] font-medium text-neutral-300 backdrop-blur transition-colors hover:bg-[#2e2e2e] focus-visible:ring-2 focus-visible:ring-[#f6dfc4]/60 focus-visible:outline-none"
           >
-            <GitBranchPlus aria-hidden className="size-3.5" />
+            <GitBranchPlus aria-hidden className="size-3.5 text-[#f6dfc4]" />
             {hero.badges.github}
             <ArrowRight aria-hidden className="size-3.5 opacity-60" />
           </Link>
@@ -313,17 +372,17 @@ export function Hero() {
         <h1 className="mt-5 sm:mt-6">
           <motion.span
             variants={rise}
-            className="flex flex-wrap items-center justify-center gap-x-[0.18em] gap-y-1 text-[clamp(2.4rem,10vw,7rem)] leading-[1.05] font-bold tracking-[-0.03em] text-[#0b1b33]"
+            className="flex flex-wrap items-center justify-center gap-x-[0.18em] gap-y-1 text-[clamp(2.4rem,10vw,7rem)] leading-[1.05] font-bold tracking-[-0.03em] text-[#f5f1ea]"
           >
             <span>{hero.wordmark.lead}</span>
             <KeyTile />
-            <span>{hero.wordmark.trail}</span>
+            <span className="text-[#f6dfc4]">{hero.wordmark.trail}</span>
           </motion.span>
         </h1>
 
         <motion.p
           variants={rise}
-          className="mt-4 max-w-xl text-base leading-relaxed text-balance text-[#12315a]/80 sm:mt-6 sm:text-xl"
+          className="mt-4 max-w-xl text-base leading-relaxed text-balance text-neutral-300/80 sm:mt-6 sm:text-xl"
         >
           {hero.lead}
         </motion.p>
@@ -336,11 +395,11 @@ export function Hero() {
           <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>
             <Link
               href="#install"
-              className="group flex rounded-full bg-white/40 p-1 ring-1 ring-white/70 backdrop-blur focus-visible:ring-2 focus-visible:ring-[#0b1b33] focus-visible:outline-none sm:inline-flex"
+              className="group flex rounded-full bg-white/10 p-1 ring-1 ring-white/20 backdrop-blur focus-visible:ring-2 focus-visible:ring-[#f6dfc4] focus-visible:outline-none sm:inline-flex"
             >
-              <span className="flex h-12 flex-1 items-center justify-between gap-4 rounded-full bg-gradient-to-b from-[#1f3a6b] to-[#0b1b33] pr-1.5 pl-6 text-base font-medium text-white shadow-[0_10px_24px_-8px_rgba(11,27,51,0.7),inset_0_1px_0_rgba(255,255,255,0.25)] sm:flex-none sm:justify-start">
+              <span className="flex h-12 flex-1 items-center justify-between gap-4 rounded-full bg-gradient-to-b from-[#fbeedb] to-[#e8c89f] pr-1.5 pl-6 text-base font-medium text-[#2a1a10] shadow-[0_10px_28px_-8px_rgba(240,168,116,0.6),inset_0_1px_0_rgba(255,255,255,0.7)] sm:flex-none sm:justify-start">
                 {hero.ctas.install}
-                <span className="grid size-9 place-items-center rounded-full bg-white text-[#0b1b33] transition-transform duration-300 group-hover:translate-x-0.5">
+                <span className="grid size-9 place-items-center rounded-full bg-[#1a1a1a] text-[#f6dfc4] transition-transform duration-300 group-hover:translate-x-0.5">
                   <ArrowRight aria-hidden className="size-4" />
                 </span>
               </span>
@@ -350,7 +409,7 @@ export function Hero() {
           <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>
             <Link
               href="/icons"
-              className="flex h-14 items-center justify-center rounded-full bg-white px-8 text-base font-medium text-[#0b1b33] shadow-[0_10px_24px_-12px_rgba(11,27,51,0.45)] transition-colors hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-[#0b1b33] focus-visible:outline-none"
+              className="flex h-14 items-center justify-center rounded-full border border-white/10 bg-[#262626]/90 px-8 text-base font-medium text-neutral-100 shadow-[0_10px_24px_-12px_rgba(0,0,0,0.7)] backdrop-blur transition-colors hover:bg-[#2e2e2e] focus-visible:ring-2 focus-visible:ring-[#f6dfc4] focus-visible:outline-none"
             >
               {hero.ctas.browse}
             </Link>
@@ -360,17 +419,17 @@ export function Hero() {
         {/* Trust row */}
         <motion.ul
           variants={rise}
-          className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[#12315a]/85 sm:mt-9 sm:gap-x-0 sm:text-[15px]"
+          className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-300/90 sm:mt-9 sm:gap-x-0 sm:text-[15px]"
         >
           {trust.map((t, i) => (
             <li
               key={t.text}
-              className={`flex items-center gap-2 sm:px-5 ${i > 0 ? "sm:border-l sm:border-[#12315a]/20" : ""
+              className={`flex items-center gap-2 sm:px-5 ${i > 0 ? "sm:border-l sm:border-white/15" : ""
                 }`}
             >
               <t.icon
                 aria-hidden
-                className={`size-4 ${t.fill ? "fill-[#f5b301] text-[#f5b301]" : "text-[#12315a]"}`}
+                className={`size-4 text-[#f6dfc4] ${t.fill ? "fill-[#f6dfc4]" : ""}`}
               />
               {t.text}
             </li>
