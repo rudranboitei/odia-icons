@@ -72,8 +72,8 @@ export function IconWall() {
         ))}
       </div>
       {/* darken everything, then carve a darker pool behind the headline */}
-      <div className="absolute inset-0 bg-[#141414]/70" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_48%,#141414_35%,transparent_100%)]" />
+      <div className="absolute inset-0 bg-[#141210]/70" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_48%,#141210_35%,transparent_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
     </motion.div>
   );

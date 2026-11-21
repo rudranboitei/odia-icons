@@ -4,19 +4,9 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-// import { ArrowUpRight, Menu } from "lucide-react"
-import { motion, useScroll, useSpring } from "motion/react"
+import { AnimatePresence, motion, useReducedMotion, useScroll, useSpring } from "motion/react"
+import { ArrowRight, Menu, X } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-// import {
-//   Sheet,
-//   SheetClose,
-//   SheetContent,
-//   SheetDescription,
-//   SheetHeader,
-//   SheetTitle,
-//   SheetTrigger,
-// } from "@/components/ui/sheet"
 import { SITE } from "@/data/site"
 import { cn } from "@/lib/utils"
 
@@ -69,6 +59,25 @@ function KeyLogo() {
   )
 }
 
+/** Same primary button as the hero: glass ring, cream gradient, dark arrow disc. Hidden on phones (<640px). */
+function PrimaryCta({ href }: { href: string }) {
+  return (
+    <motion.div whileHover={{ y: -1 }} whileTap={{ scale: 0.96 }} className="hidden sm:block">
+      <Link
+        href={href}
+        className="group inline-flex rounded-full bg-white/10 p-0.5 ring-1 ring-white/20 focus-visible:ring-2 focus-visible:ring-[#f6dfc4] focus-visible:outline-none"
+      >
+        <span className="flex h-9 items-center gap-2.5 rounded-full bg-gradient-to-b from-[#fbeedb] to-[#e8c89f] pr-[3px] pl-5 text-[15px] font-medium whitespace-nowrap text-[#2a1a10] shadow-[0_6px_18px_-6px_rgba(240,168,116,0.55),inset_0_1px_0_rgba(255,255,255,0.7)] md:h-10">
+          Get started
+          <span className="grid size-[30px] place-items-center rounded-full bg-[#1a1a1a] text-[#f6dfc4] transition-transform duration-300 group-hover:translate-x-0.5 md:size-8">
+            <ArrowRight aria-hidden className="size-3.5" />
+          </span>
+        </span>
+      </Link>
+    </motion.div>
+  )
+}
+
 /** Highlights the section currently in view (landing page only). */
 function useActiveSection(enabled: boolean) {
   const [activeId, setActiveId] = useState<string | null>(null)
@@ -107,8 +116,9 @@ function useActiveSection(enabled: boolean) {
 
 export function Navbar() {
   const pathname = usePathname()
+  const reduce = useReducedMotion() ?? false
   const [scrolled, setScrolled] = useState(false)
-  const [_open, _setOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const [hovered, setHovered] = useState<string | null>(null)
 
   const activeId = useActiveSection(pathname === "/")
@@ -130,199 +140,169 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
+  // Close the mobile menu with Escape
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false)
+    window.addEventListener("keydown", onKey)
+    return () => window.removeEventListener("keydown", onKey)
+  }, [open])
+
   return (
     <motion.header
-      initial={{ y: -28, opacity: 0 }}
+      initial={reduce ? false : { y: -28, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: EASE }}
       className="pointer-events-none fixed inset-x-0 top-[var(--notice-h,0px)] z-[90] px-3 pt-3 sm:pt-4"
     >
-      <nav
-        aria-label="Main"
+      {/* Width wrapper so the mobile panel always matches the pill */}
+      <div
         className={cn(
-          "pointer-events-auto relative mx-auto w-full overflow-hidden rounded-full text-white ring-1 ring-white/10 transition-[max-width,background-color,box-shadow] duration-500 ease-out",
-          scrolled
-            ? "max-w-[680px] bg-[#141414]/85 shadow-[0_14px_40px_-10px_rgba(0,0,0,0.55)] backdrop-blur-xl"
-            : "max-w-[760px] bg-[#141414] shadow-[0_8px_24px_-12px_rgba(0,0,0,0.4)]"
+          "relative mx-auto w-full transition-[max-width] duration-500 ease-out",
+          scrolled ? "max-w-[680px]" : "max-w-[760px]"
         )}
       >
-        <div
+        <nav
+          aria-label="Main"
           className={cn(
-            "flex items-center justify-between gap-2 px-2 transition-[height] duration-500 md:grid md:grid-cols-[1fr_auto_1fr]",
-            scrolled ? "h-[52px] sm:h-14" : "h-14 sm:h-16"
+            "pointer-events-auto relative w-full overflow-hidden rounded-full text-white ring-1 ring-white/10 transition-[background-color,box-shadow] duration-500 ease-out",
+            scrolled || open
+              ? "bg-[#141210]/90 shadow-[0_14px_40px_-10px_rgba(0,0,0,0.55)] backdrop-blur-xl"
+              : "bg-[#141210] shadow-[0_8px_24px_-12px_rgba(0,0,0,0.4)]"
           )}
         >
-          {/* Logo: keycap on mobile, wordmark on md+ */}
-          <Link
-            href="/"
-            aria-label={`${SITE.name} home`}
-            className="flex shrink-0 items-center justify-self-start rounded-full focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:outline-none md:pl-4"
-          >
-            <Image
-              src="/brand/logo-wordmark-white.svg"
-              alt={SITE.name}
-              width={112}
-              height={28}
-              priority
-              unoptimized
-              className="hidden h-6 w-auto object-contain object-left md:block"
-            />
-            <KeyLogo />
-          </Link>
-
-          {/* Centre links (md+) with sliding pill */}
           <div
-            className="hidden items-center gap-0.5 md:flex"
-            onMouseLeave={() => setHovered(null)}
+            className={cn(
+              "flex items-center justify-between gap-2 px-2 transition-[height] duration-500 md:grid md:grid-cols-[1fr_auto_1fr]",
+              scrolled ? "h-[52px] sm:h-14" : "h-14 sm:h-16"
+            )}
           >
-            {LINKS.map((l) => {
-              const isPill = pillTarget === l.href
-              const isActive = activeHref === l.href
-              return (
-                <span
-                  key={l.href}
-                  className="relative"
-                  onMouseEnter={() => setHovered(l.href)}
-                  onFocus={() => setHovered(l.href)}
-                  onBlur={() => setHovered(null)}
-                >
-                  {isPill && (
-                    <motion.span
-                      layoutId="nav-pill"
-                      aria-hidden="true"
-                      transition={{ type: "spring", stiffness: 420, damping: 34 }}
-                      className="absolute inset-0 rounded-full bg-white/12"
-                    />
-                  )}
-                  <Link
-                    href={l.href}
-                    aria-current={isActive ? "location" : undefined}
-                    className={cn(
-                      "relative z-10 block rounded-full px-3.5 py-2 text-[15px] font-medium tracking-[-0.01em] transition-colors focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:outline-none",
-                      isActive || hovered === l.href ? "text-white" : "text-white/65"
+            {/* Logo: keycap on mobile, wordmark on md+ */}
+            <Link
+              href="/"
+              aria-label={`${SITE.name} home`}
+              onClick={() => setOpen(false)}
+              className="flex shrink-0 items-center justify-self-start rounded-full focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:outline-none md:pl-4"
+            >
+              <Image
+                src="/brand/wordmark-cream.svg"
+                alt={SITE.name}
+                width={112}
+                height={28}
+                priority
+                unoptimized
+                className="hidden h-6 w-auto object-contain object-left md:block"
+              />
+              <KeyLogo />
+            </Link>
+
+            {/* Centre links (md+) with sliding pill */}
+            <div
+              className="hidden items-center gap-0.5 md:flex"
+              onMouseLeave={() => setHovered(null)}
+            >
+              {LINKS.map((l) => {
+                const isPill = pillTarget === l.href
+                const isActive = activeHref === l.href
+                return (
+                  <span
+                    key={l.href}
+                    className="relative"
+                    onMouseEnter={() => setHovered(l.href)}
+                    onFocus={() => setHovered(l.href)}
+                    onBlur={() => setHovered(null)}
+                  >
+                    {isPill && (
+                      <motion.span
+                        layoutId="nav-pill"
+                        aria-hidden="true"
+                        transition={{ type: "spring", stiffness: 420, damping: 34 }}
+                        className="absolute inset-0 rounded-full bg-white/12"
+                      />
                     )}
-                  >
-                    {l.label}
-                  </Link>
-                </span>
-              )
-            })}
+                    <Link
+                      href={l.href}
+                      aria-current={isActive ? "location" : undefined}
+                      className={cn(
+                        "relative z-10 block rounded-full px-3.5 py-2 text-[15px] font-medium tracking-[-0.01em] transition-colors focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:outline-none",
+                        isActive || hovered === l.href ? "text-white" : "text-white/65"
+                      )}
+                    >
+                      {l.label}
+                    </Link>
+                  </span>
+                )
+              })}
+            </div>
+
+            {/* Right: CTA + mobile menu button */}
+            <div className="flex items-center justify-end gap-1 justify-self-end">
+              <PrimaryCta href="/icons" />
+
+              <button
+                type="button"
+                aria-label={open ? "Close menu" : "Open menu"}
+                aria-expanded={open}
+                aria-controls="mobile-nav"
+                onClick={() => setOpen((v) => !v)}
+                className="grid size-10 shrink-0 place-items-center rounded-full text-white/85 transition-colors hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:outline-none md:hidden"
+              >
+                {open ? <X aria-hidden className="size-5" /> : <Menu aria-hidden className="size-5" />}
+              </button>
+            </div>
           </div>
 
-          {/* Right: CTA + mobile menu */}
-          <div className="flex items-center justify-end gap-1.5 justify-self-end">
-            <motion.div whileTap={{ scale: 0.96 }}>
-              <Button
-                asChild
-                className="h-10 rounded-full  px-4 text-[15px] font-medium text-[#141414]  sm:px-5 md:h-11"
-              >
-                <Link href="/icons">
-                  <span className="hidden sm:inline">Get started</span>
-                  <span className="sm:hidden">Install</span>
-                </Link>
-              </Button>
-            </motion.div>
+          {/* Scroll progress line */}
+          <motion.div
+            aria-hidden="true"
+            style={{ scaleX: progress }}
+            className="absolute inset-x-6 bottom-0 h-px origin-left bg-gradient-to-r from-white/0 via-white/70 to-white"
+          />
+        </nav>
 
-            {/* Mobile menu: shadcn Sheet */}
-            {/* <Sheet open={open} onOpenChange={setOpen}>
-              <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  aria-label="Open menu"
-                  className="size-10 shrink-0 rounded-full text-white hover:bg-white/10 hover:text-white md:hidden"
-                >
-                  <Menu className="size-5" />
-                </Button>
-              </SheetTrigger>
-
-              <SheetContent
-                side="right"
-                className="z-[100] flex w-[88vw] max-w-sm flex-col gap-0 overflow-hidden border-l p-0"
-              >
-                <motion.div
-                  aria-hidden="true"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 80, ease: "linear", repeat: Infinity }}
-                  className="pointer-events-none absolute -right-24 -bottom-24 text-foreground/[0.06]"
-                >
-                  <Wheel className="size-[22rem]" />
-                </motion.div>
-
-                <SheetHeader className="relative border-b px-6 py-5">
-                  <SheetTitle className="flex items-center gap-2.5">
-                    <span className="grid size-8 place-items-center rounded-full bg-gradient-to-b from-[#f7e8d4] to-[#e6c9a6]">
-                      <Wheel className="size-4 text-[#3b2a1a]" />
-                    </span>
-                    {SITE.name}
-                  </SheetTitle>
-                  <SheetDescription className="sr-only">Site navigation</SheetDescription>
-                </SheetHeader>
-
-                <nav
-                  aria-label="Mobile"
-                  className="relative flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-4"
-                >
-                  {LINKS.map((l, i) => {
-                    const isActive = activeHref === l.href
-                    return (
-                      <motion.div
-                        key={l.href}
-                        initial={{ opacity: 0, x: 24 }}
-                        animate={open ? { opacity: 1, x: 0 } : { opacity: 0, x: 24 }}
-                        transition={{ duration: 0.4, ease: EASE, delay: open ? 0.08 + i * 0.06 : 0 }}
+        {/* Mobile menu panel (no extra dependency) */}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              id="mobile-nav"
+              key="mobile-nav"
+              initial={reduce ? { opacity: 0 } : { opacity: 0, y: -8, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={reduce ? { opacity: 0 } : { opacity: 0, y: -8, scale: 0.98 }}
+              transition={{ duration: 0.25, ease: EASE }}
+              className="pointer-events-auto absolute inset-x-0 top-full mt-2 origin-top overflow-hidden rounded-3xl bg-[#141210]/95 p-2 text-white shadow-[0_24px_60px_-12px_rgba(0,0,0,0.7)] ring-1 ring-white/10 backdrop-blur-xl md:hidden"
+            >
+              <ul className="flex flex-col">
+                {LINKS.map((l, i) => {
+                  const isActive = activeHref === l.href
+                  return (
+                    <li key={l.href}>
+                      <Link
+                        href={l.href}
+                        onClick={() => setOpen(false)}
+                        aria-current={isActive ? "location" : undefined}
+                        className={cn(
+                          "group flex items-center gap-4 rounded-2xl px-4 py-3.5 text-lg font-medium tracking-[-0.01em] transition-colors hover:bg-white/8 focus-visible:ring-2 focus-visible:ring-[#f6dfc4]/60 focus-visible:outline-none",
+                          isActive ? "bg-white/8 text-white" : "text-white/70"
+                        )}
                       >
-                        <SheetClose asChild>
-                          <Link
-                            href={l.href}
-                            aria-current={isActive ? "location" : undefined}
-                            className={cn(
-                              "group flex items-center gap-4 rounded-full px-5 py-3.5 text-xl font-medium tracking-[-0.02em] transition-colors hover:bg-foreground/[0.06] focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:outline-none",
-                              isActive ? "bg-foreground/[0.06] text-foreground" : "text-muted-foreground"
-                            )}
-                          >
-                            <span className="w-6 font-mono text-xs tabular-nums text-muted-foreground/70">
-                              {String(i + 1).padStart(2, "0")}
-                            </span>
-                            <span className="flex-1 group-hover:text-foreground">{l.label}</span>
-                            <ArrowUpRight className="size-4 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
-                          </Link>
-                        </SheetClose>
-                      </motion.div>
-                    )
-                  })}
-                </nav>
-
-                <div className="relative flex flex-col gap-2.5 border-t px-6 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
-                  <SheetClose asChild>
-                    <Button asChild size="lg" className="h-12 rounded-full text-base font-medium">
-                      <Link href="/#install">Get started</Link>
-                    </Button>
-                  </SheetClose>
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="h-12 rounded-full text-base font-medium"
-                  >
-                    <a href={SITE.github} target="_blank" rel="noopener noreferrer">
-                      GitHub
-                      <ArrowUpRight className="size-4" />
-                    </a>
-                  </Button>
-                </div>
-              </SheetContent>
-            </Sheet> */}
-          </div>
-        </div>
-
-        {/* Scroll progress line */}
-        <motion.div
-          aria-hidden="true"
-          style={{ scaleX: progress }}
-          className="absolute inset-x-6 bottom-0 h-px origin-left bg-gradient-to-r from-white/0 via-white/70 to-white"
-        />
-      </nav>
+                        <span className="w-6 font-mono text-xs text-[#f6dfc4]/60 tabular-nums">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <span className="flex-1 group-hover:text-white">{l.label}</span>
+                        <ArrowRight
+                          aria-hidden
+                          className="size-4 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-70"
+                        />
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.header>
   )
 }

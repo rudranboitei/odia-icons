@@ -86,15 +86,12 @@ imported by currently-unused legacy sections.
 | `src/lib/site-config.ts` | DUPLICATE | Old copy source; consolidate into `data/site.ts`, then remove. |
 | `src/data/site.ts` | USED | Single copy/links source. Extend only. |
 | `src/data/icons.tsx` | USED | Landing icon data. Do not change. |
-| `public/brand/logo-wordmark-white.svg` | USED | Icon page logo. |
+| `public/brand/wordmark-cream.svg` | USED | Header/icon-browser logo. |
 | `public/contribute/*.jpeg` (3) | USED | Icon page contribute cards. |
 | `public/icons.json`, `public/svg/outline/*`, `public/r/*`, `public/odiaicons-sprite.svg` | USED | Generated distribution artifacts from `scripts/icons/build.mjs`. |
-| `public/favicon.svg`, `favicon-16/32/48.png`, `apple-touch-icon.png` | USED (after metadata restore) | Wire into root metadata. |
-| `public/icon-192.png`, `icon-512.png`, `icon-maskable-512.png`, `site.webmanifest` | USED (after metadata restore) | Wire manifest in root metadata. |
-| `public/brand/icon-rounded.svg` | UNUSED | Brand alternate, not referenced. Decision. |
-| `public/brand/logo-wordmark.svg` | UNUSED | Only old site-nav used it. Decision. |
-| `public/brand/monogram-black.svg`, `monogram-white.svg` | UNUSED | Brand alternates. Decision. |
-| `public/og-image.png` | UNUSED | Superseded by `app/opengraph-image.png`. Decision. |
+| `public/favicon.svg`, `favicon-16x16.png`, `favicon-32x32.png`, `favicon.ico`, `apple-touch-icon.png` | USED | Wired in root metadata/brand assets. |
+| `public/android-chrome-192x192.png`, `android-chrome-512x512.png`, `maskable-icon-512x512.png`, `site.webmanifest` | USED | PWA/manifest icons. |
+| `public/og-image.png`, `public/twitter-card.png` | USED | Root metadata OG/Twitter images. |
 | `public/fonts/GeistSans-Variable.woff2`, `Satoshi-{400,500,700}.woff2` | UNUSED | Fonts now come from `next/font/google`. Delete. |
 | `public/file.svg`, `globe.svg`, `next.svg`, `vercel.svg`, `window.svg` | UNUSED | Create-Next-App leftovers. Delete. |
 | `public/github-icon.svg` | UNUSED | Only old site-nav used it. Delete. |

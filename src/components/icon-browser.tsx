@@ -254,7 +254,7 @@ export function IconBrowser() {
         >
           <Link href="/" className="inline-flex w-fit items-center">
             <Image
-              src="/brand/logo-wordmark-white.svg"
+              src="/brand/wordmark-cream.svg"
               alt={SITE.name}
               width={112}
               height={28}
@@ -347,7 +347,7 @@ export function IconBrowser() {
             <div className="flex h-14 items-center gap-4 px-5 lg:px-6">
               <Link href="/" className="shrink-0 lg:hidden">
                 <Image
-                  src="/brand/logo-wordmark-white.svg"
+                  src="/brand/wordmark-cream.svg"
                   alt={SITE.name}
                   width={92}
                   height={23}

@@ -25,11 +25,20 @@ export const metadata: Metadata = {
     url: SITE.siteUrl,
     siteName: SITE.name,
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: `${SITE.name} – ${SITE.tagline}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name} – ${SITE.tagline}`,
     description: SITE.description,
+    images: ["/twitter-card.png"],
   },
 };
 
@@ -45,7 +54,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#141414",
+  themeColor: "#141210",
 };
 
 export default function RootLayout({
