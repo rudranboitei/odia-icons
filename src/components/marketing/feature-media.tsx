@@ -20,7 +20,8 @@ const animations = {
 };
 
 // Renders an animation, a looping video or a GIF depending on config.
-// Animations respect the user's "reduce motion" setting.
+// Animations respect the user's "reduce motion" setting, and only loop while
+// they are on screen (see feature-visuals.tsx).
 export function FeatureMedia({
   media,
   label,
@@ -30,19 +31,19 @@ export function FeatureMedia({
   label: string;
   className?: string;
 }) {
+  const Visual = media.type === "animation" ? animations[media.name] : null;
+
   return (
     <div
+      // The animated scenes are decorative: give them one text description.
+      {...(Visual ? { role: "img", "aria-label": `${label}: illustration` } : {})}
       className={cn(
-        "h-[180px] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] sm:h-[220px]",
+        "h-56 w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] sm:h-64",
         className,
       )}
     >
       <MotionConfig reducedMotion="user">
-        {media.type === "animation" &&
-          (() => {
-            const Visual = animations[media.name];
-            return <Visual />;
-          })()}
+        {Visual && <Visual />}
 
         {media.type === "video" && (
           <video

@@ -1,254 +1,355 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { AnimatePresence, motion } from "motion/react"
-import { MotifIcon, type MotifName } from "./odia-motifs"
+import { useEffect, useRef, useState, type JSX, type ReactNode } from "react";
+import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react";
+import { Check, Copy } from "lucide-react";
 
-// ✏️ Colors come ONLY from your shadcn theme tokens
-// (background, foreground, muted, border, primary), so changing your
-// palette in globals.css restyles every visual automatically.
+import { cn } from "@/lib/utils";
+import { Boita, Deula, KonarkWheel, Machha, Padma, Rath } from "./odia-motifs";
 
-const label = "font-mono text-[10px] tracking-wider text-muted-foreground uppercase"
+/**
+ * Animated visuals for the four feature cards, built from the custom Odisha
+ * motifs. Every loop runs only while the card is on screen, and none run
+ * when the visitor prefers reduced motion.
+ */
 
-function useCycle(length: number, ms: number) {
-  const [i, setI] = React.useState(0)
-  React.useEffect(() => {
-    const t = setInterval(() => setI((v) => (v + 1) % length), ms)
-    return () => clearInterval(t)
-  }, [length, ms])
-  return i
+type SceneProps = { active: boolean; reduce: boolean };
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+/* ------------------------------------------------------------------ */
+/* 1. Rooted: the deula at the centre, motifs floating around it       */
+/* ------------------------------------------------------------------ */
+
+function FloatTile({
+  children,
+  className,
+  delay,
+  loop,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay: number;
+  loop: boolean;
+}) {
+  return (
+    <motion.span
+      animate={loop ? { y: [0, -7, 0] } : { y: 0 }}
+      transition={{ duration: 4.5, delay, repeat: Infinity, ease: "easeInOut" }}
+      className={cn(
+        "absolute grid size-14 place-items-center rounded-2xl border border-white/10 bg-[#1d1a18] shadow-[0_18px_40px_-18px_rgba(0,0,0,0.9)] sm:size-16",
+        className
+      )}
+    >
+      {children}
+    </motion.span>
+  );
 }
 
-/* ───────────────────────── 1. Rooted in Odisha ─────────────────────────
-   A specimen frame: one motif at a time, Odia + English label, progress bar. */
-const specimens: { name: MotifName; odia: string; en: string }[] = [
-  { name: "chakra", odia: "କୋଣାର୍କ", en: "Konark chakra" },
-  { name: "deula", odia: "ଦେଉଳ", en: "Kalinga deula" },
-  { name: "fish", odia: "ମାଛ", en: "Pattachitra fish" },
-  { name: "jagannath", odia: "ଜଗନ୍ନାଥ", en: "Jagannath" },
-]
+function RootedScene({ active, reduce }: SceneProps) {
+  const loop = active && !reduce;
 
-const INTERVAL = 3600
-
-export function RootedVisual() {
-  const idx = useCycle(specimens.length, INTERVAL)
-  const s = specimens[idx]
   return (
     <div className="relative size-full">
-      {/* corner ticks */}
-      {["top-4 left-4 border-t border-l", "top-4 right-4 border-t border-r", "bottom-12 left-4 border-b border-l", "bottom-12 right-4 border-b border-r"].map((c) => (
-        <span key={c} className={`absolute size-2 border-white/20 ${c}`} />
+      {/* Oversized, faint Konark wheel turning slowly behind everything */}
+      <motion.div
+        aria-hidden
+        animate={{ rotate: loop ? 360 : 0 }}
+        transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+        className="absolute -top-14 -right-14 opacity-[0.12]"
+      >
+        <KonarkWheel className="size-56 text-foreground sm:size-64" />
+      </motion.div>
+
+      <div className="absolute inset-0 bg-[radial-gradient(38%_50%_at_50%_58%,rgba(246,200,150,0.20),transparent)]" />
+
+      <motion.div
+        initial={reduce ? false : { opacity: 0, y: 16, scale: 0.94 }}
+        animate={active || reduce ? { opacity: 1, y: 0, scale: 1 } : {}}
+        transition={{ duration: 0.7, ease: EASE }}
+        className="absolute inset-0 grid place-items-center"
+      >
+        <Deula className="size-32 text-foreground sm:size-40" />
+      </motion.div>
+
+      <FloatTile loop={loop} delay={0} className="bottom-[16%] left-[9%]">
+        <Machha className="size-9 text-foreground sm:size-10" />
+      </FloatTile>
+      <FloatTile loop={loop} delay={1.2} className="top-[14%] left-[14%] hidden sm:grid">
+        <Padma className="size-9 text-foreground sm:size-10" />
+      </FloatTile>
+      <FloatTile loop={loop} delay={0.6} className="right-[10%] bottom-[14%]">
+        <Rath className="size-9 text-foreground sm:size-10" />
+      </FloatTile>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 2. Grid: a motif sitting on its 24 x 24 grid with keylines          */
+/* ------------------------------------------------------------------ */
+
+function GridScene({ active, reduce }: SceneProps) {
+  const loop = active && !reduce;
+  const ticks = Array.from({ length: 25 }, (_, i) => i * 2);
+
+  return (
+    <div className="relative grid size-full place-items-center">
+      <div className="relative size-40 sm:size-48">
+        <svg viewBox="0 0 48 48" className="absolute inset-0 size-full" aria-hidden>
+          <motion.g
+            initial={reduce ? false : { opacity: 0 }}
+            animate={{ opacity: active || reduce ? 1 : 0 }}
+            transition={{ duration: 0.8 }}
+            stroke="rgba(255,255,255,0.13)"
+            strokeWidth="0.14"
+          >
+            {ticks.map((v) => (
+              <g key={v}>
+                <line x1={v} y1="0" x2={v} y2="48" />
+                <line x1="0" y1={v} x2="48" y2={v} />
+              </g>
+            ))}
+          </motion.g>
+
+          {/* Live-area box, marching dashes */}
+          <motion.rect
+            x="2"
+            y="2"
+            width="44"
+            height="44"
+            rx="1.5"
+            fill="none"
+            strokeWidth="0.3"
+            strokeDasharray="1.2 1.2"
+            className="stroke-primary"
+            animate={loop ? { strokeDashoffset: [0, -2.4] } : { strokeDashoffset: 0 }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: "linear" }}
+          />
+          {/* Circular keyline */}
+          <circle
+            cx="24"
+            cy="24"
+            r="21"
+            fill="none"
+            strokeWidth="0.25"
+            strokeDasharray="0.8 1.4"
+            className="stroke-primary opacity-60"
+          />
+          {/* Scan line */}
+          {loop && (
+            <motion.rect
+              x="0"
+              width="48"
+              height="0.5"
+              className="fill-primary"
+              initial={{ y: 0, opacity: 0 }}
+              animate={{ y: [0, 47.5], opacity: [0, 0.7, 0.7, 0] }}
+              transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut", repeatDelay: 0.8 }}
+            />
+          )}
+        </svg>
+
+        <motion.div
+          initial={reduce ? false : { opacity: 0, scale: 0.92 }}
+          animate={active || reduce ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.6, ease: EASE, delay: 0.15 }}
+          className="absolute inset-0"
+        >
+          <Boita className="size-full text-foreground" />
+        </motion.div>
+      </div>
+
+      <span className="absolute top-3 left-3 rounded-full border border-white/10 bg-background/70 px-2.5 py-1 font-mono text-[10px] text-foreground/85 backdrop-blur sm:top-4 sm:left-4 sm:text-[11px]">
+        24 × 24
+      </span>
+      <span className="absolute right-3 bottom-3 rounded-full border border-white/10 bg-background/70 px-2.5 py-1 font-mono text-[10px] text-foreground/85 backdrop-blur sm:right-4 sm:bottom-4 sm:text-[11px]">
+        1.75 stroke · round caps
+      </span>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 3. Copy as code: the four export formats, cycling                   */
+/* ------------------------------------------------------------------ */
+
+const FORMATS = [
+  { id: "SVG", file: "rath.svg", code: ['<svg viewBox="0 0 24 24"', '  stroke="currentColor">', '  <path d="M2 21h20…" />'] },
+  { id: "JSX", file: "rath.jsx", code: ['<svg viewBox="0 0 24 24"', "  strokeWidth={1.75}>", '  <path d="M2 21h20…" />'] },
+  { id: "TSX", file: "Rath.tsx", code: ["export function Rath(", "  p: SVGProps<SVGSVGElement>", ") { return <svg {...p}>…"] },
+  { id: "Data URI", file: "rath.txt", code: ['url("data:image/svg+xml,', "  %3Csvg viewBox='0 0 24 24'", '  %3E%3Cpath d=…")'] },
+] as const;
+
+function CopyScene({ active, reduce }: SceneProps) {
+  const [i, setI] = useState(0);
+  const [copied, setCopied] = useState(false);
+  const loop = active && !reduce;
+
+  useEffect(() => {
+    if (!loop) return;
+    const t = setInterval(() => setI((n) => (n + 1) % FORMATS.length), 2600);
+    return () => clearInterval(t);
+  }, [loop]);
+
+  // Each time the format changes, the button "copies" shortly after
+  useEffect(() => {
+    setCopied(false);
+    if (!active) return;
+    const t = setTimeout(() => setCopied(true), 1000);
+    return () => clearTimeout(t);
+  }, [i, active]);
+
+  const f = FORMATS[i];
+
+  return (
+    <div className="grid size-full place-items-center p-4 sm:p-6">
+      <div className="w-full max-w-[19rem] rounded-2xl border border-white/10 bg-[#1d1a18] p-3 shadow-[0_28px_60px_-24px_rgba(0,0,0,0.85)] sm:max-w-xs">
+        <div className="flex items-center gap-1 text-[11px] font-medium">
+          {FORMATS.map((t, n) => (
+            <span
+              key={t.id}
+              className={cn(
+                "relative rounded-md px-2 py-1 transition-colors duration-300",
+                n === i ? "text-foreground" : "text-muted-foreground"
+              )}
+            >
+              {n === i && (
+                <motion.span
+                  layoutId="format-pill"
+                  transition={{ type: "spring", stiffness: 420, damping: 34 }}
+                  className="absolute inset-0 rounded-md bg-white/10"
+                />
+              )}
+              <span className="relative">{t.id}</span>
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-2.5 h-[4.75rem] overflow-hidden rounded-lg bg-black/30 p-2.5 font-mono text-[10.5px] leading-[1.6] text-foreground/85 sm:text-[11px]">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.pre
+              key={f.id}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.22 }}
+              className="whitespace-pre"
+            >
+              {f.code.join("\n")}
+            </motion.pre>
+          </AnimatePresence>
+        </div>
+
+        <div className="mt-2.5 flex items-center gap-2">
+          <span className="grid size-8 place-items-center rounded-lg border border-white/10 bg-white/[0.04]">
+            <Rath className="size-6 text-foreground" />
+          </span>
+          <span className="font-mono text-[11px] text-muted-foreground">{f.file}</span>
+          <span
+            className={cn(
+              "ml-auto inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-[11px] font-medium transition-colors duration-300",
+              copied ? "border-primary/60 bg-primary/10 text-primary" : "border-white/10 text-foreground/80"
+            )}
+          >
+            {copied ? <Check aria-hidden className="size-3" /> : <Copy aria-hidden className="size-3" />}
+            {copied ? "Copied" : "Copy"}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 4. Free for anything: one motif, three kinds of use                 */
+/* ------------------------------------------------------------------ */
+
+const CARDS = [
+  {
+    label: "Poster",
+    x: -58,
+    rotate: -9,
+    className: "bg-gradient-to-b from-[#fbeedb] to-[#e8c89f] text-[#2a1a10] [&_.stroke-primary]:stroke-[#b4693b]",
+    sub: "text-[#2a1a10]/70",
+  },
+  {
+    label: "App",
+    x: 0,
+    rotate: 0,
+    className: "border border-white/15 bg-[#1d1a18] text-foreground",
+    sub: "text-muted-foreground",
+  },
+  {
+    label: "Packaging",
+    x: 58,
+    rotate: 9,
+    className: "border border-primary/40 bg-primary/15 text-foreground",
+    sub: "text-foreground/70",
+  },
+] as const;
+
+function FreeScene({ active, reduce }: SceneProps) {
+  const open = active || reduce;
+
+  return (
+    <div className="relative grid size-full place-items-center">
+      {CARDS.map((c, n) => (
+        <motion.div
+          key={c.label}
+          initial={reduce ? false : { x: 0, rotate: 0, opacity: 0, y: 14 }}
+          animate={open ? { x: c.x, rotate: c.rotate, opacity: 1, y: n === 1 ? -6 : 0 } : {}}
+          transition={{ type: "spring", stiffness: 160, damping: 17, delay: 0.1 + n * 0.08 }}
+          className={cn(
+            "absolute flex aspect-[3/4] w-[6.25rem] flex-col items-center justify-between rounded-2xl p-3 shadow-[0_24px_50px_-20px_rgba(0,0,0,0.85)] sm:w-28",
+            n === 1 && "z-10",
+            c.className
+          )}
+        >
+          <Padma className="mt-1 size-14 sm:size-16" />
+          <span className={cn("text-[10px] font-medium tracking-[0.14em] uppercase", c.sub)}>{c.label}</span>
+        </motion.div>
       ))}
 
-      <AnimatePresence mode="popLayout">
-        <motion.div
-          key={s.name}
-          className="absolute inset-0"
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 1.02 }}
-          transition={{ duration: 0.45, ease: "easeOut" }}
-        >
-          <div className="absolute inset-x-0 top-0 bottom-12 flex items-center justify-center">
-            <MotifIcon name={s.name} draw="once" strokeWidth={1.1} className="size-24 text-primary" />
-          </div>
-          <div className="absolute inset-x-5 bottom-[52px] flex items-baseline justify-between">
-            <span className="text-sm font-medium">{s.odia}</span>
-            <span className={label}>{s.en}</span>
-          </div>
-        </motion.div>
-      </AnimatePresence>
-
-      {/* progress */}
-      <div className="absolute inset-x-5 bottom-5 flex gap-1.5">
-        {specimens.map((_, i) => (
-          <span key={i} className="relative h-[2px] flex-1 overflow-hidden rounded-full bg-white/10">
-            {i < idx && <span className="absolute inset-0 bg-primary" />}
-            {i === idx && (
-              <motion.span
-                key={`p-${idx}`}
-                className="absolute inset-0 origin-left bg-primary"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: INTERVAL / 1000, ease: "linear" }}
-              />
-            )}
-          </span>
-        ))}
-      </div>
+      <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-background/70 px-2.5 py-1 text-[10px] font-medium text-foreground/85 backdrop-blur sm:top-4 sm:left-4 sm:text-[11px]">
+        MIT licensed
+      </span>
+      <span className="absolute bottom-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-white/10 bg-background/80 px-3 py-1 text-[11px] whitespace-nowrap text-foreground/85 backdrop-blur sm:bottom-4">
+        <Check aria-hidden className="size-3 text-primary" strokeWidth={3} />
+        No attribution needed
+      </span>
     </div>
-  )
+  );
 }
 
-/* ───────────────────────── 2. One shared grid ─────────────────────────
-   Construction sheet + a row of icons that sit together. */
-export function GridVisual() {
-  const row: MotifName[] = ["chakra", "deula", "fish", "jagannath"]
-  const D = 7 // loop duration (s)
-  return (
-    <div className="flex size-full flex-col items-center justify-center gap-4">
-      <div className="relative size-[96px] rounded-2xl border border-white/10 bg-white/[0.02]">
-        <svg viewBox="0 0 32 32" className="absolute inset-0 size-full" fill="none" aria-hidden>
-          {Array.from({ length: 7 }).map((_, i) => (
-            <g key={i} className="stroke-border" strokeWidth="0.15">
-              <line x1={(i + 1) * 4} y1="0" x2={(i + 1) * 4} y2="32" />
-              <line x1="0" y1={(i + 1) * 4} x2="32" y2={(i + 1) * 4} />
-            </g>
-          ))}
-          <rect x="3" y="3" width="26" height="26" rx="1.5" strokeWidth="0.25" strokeDasharray="1 1" className="stroke-primary/50" />
-          <circle cx="16" cy="16" r="13" strokeWidth="0.25" strokeDasharray="1 1" className="stroke-primary/50" />
-        </svg>
-        <MotifIcon name="deula" draw="loop" duration={D} strokeWidth={1.1} className="absolute inset-0 size-full text-primary" />
-      </div>
+/* ------------------------------------------------------------------ */
+/* Exports: same names feature-media.tsx already imports               */
+/* ------------------------------------------------------------------ */
 
-      <div className="flex flex-col items-center gap-2">
-        <div className="flex divide-x divide-white/10 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02]">
-          {row.map((name, i) => (
-            <motion.div
-              key={name}
-              className="flex size-10 items-center justify-center"
-              animate={{ opacity: [0, 1, 1, 0] }}
-              transition={{ duration: D, times: [0, 0.2, 0.85, 1], delay: 0.8 + i * 0.15, repeat: Infinity }}
-            >
-              <MotifIcon name={name} className="size-5" strokeWidth={1.5} />
-            </motion.div>
-          ))}
-        </div>
-        <span className={label}>24 × 24 · 1.75 stroke · round caps</span>
-      </div>
-    </div>
-  )
-}
-
-/* ───────────────────────── 3. Copy as code ─────────────────────────
-   Tabs (SVG / JSX / URI) with a sliding pill, code reveal, Copy → Copied. */
-const tabs = [
-  { id: "SVG", lines: ['<svg viewBox="0 0 32 32"', '  fill="none" stroke="currentColor">', '  <path d="M10 28.5C9.5 21…" />', "</svg>"] },
-  { id: "JSX", lines: ["export const Deula = (p) => (", '  <svg viewBox="0 0 32 32" {...p}>', '    <path d="M10 28.5C9.5 21…" />', "  </svg>\n)"] },
-  { id: "URI", lines: ["data:image/svg+xml,", "%3Csvg%20viewBox=%270%200", "%2032%2032%27%3E%3Cpath", "%20d=%27M10%2028.5C9.5…"] },
-]
-
-export function CopyCodeVisual() {
-  const t = useCycle(tabs.length, 3400)
-  const [copied, setCopied] = React.useState(false)
-  const [shownTab, setShownTab] = React.useState(t)
-
-  // Reset while rendering when the tab changes (avoids a setState-in-effect).
-  if (t !== shownTab) {
-    setShownTab(t)
-    setCopied(false)
-  }
-
-  React.useEffect(() => {
-    const id = setTimeout(() => setCopied(true), 2000)
-    return () => clearTimeout(id)
-  }, [t])
+/**
+ * Adds the shared backdrop (soft light + dot grid) and tells the scene when it
+ * is on screen, so loops only run while visible. The border, radius and size
+ * come from the parent (`FeatureMedia`).
+ */
+function Frame({ Scene }: { Scene: (p: SceneProps) => JSX.Element }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const active = useInView(ref, { amount: 0.4 });
+  const reduce = useReducedMotion() ?? false;
 
   return (
-    <div className="flex size-full items-center justify-center p-5">
-      <div className="w-full max-w-[250px] overflow-hidden rounded-2xl border border-white/10 bg-card">
-        <div className="flex items-center justify-between border-b border-white/10 px-2.5 py-2">
-          <div className="flex items-center gap-2">
-            <MotifIcon name="deula" className="size-4 text-primary" strokeWidth={1.5} />
-            <div className="flex rounded-full bg-muted p-0.5">
-              {tabs.map((x, i) => (
-                <span key={x.id} className="relative rounded-full px-2.5 py-1 text-[10px] font-medium">
-                  {i === t && (
-                    <motion.span
-                      layoutId="odia-tab"
-                      className="absolute inset-0 rounded-full bg-primary"
-                      transition={{ type: "spring", stiffness: 500, damping: 36 }}
-                    />
-                  )}
-                  <span className={`relative ${i === t ? "text-primary-foreground" : "text-muted-foreground"}`}>{x.id}</span>
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <span className="flex h-5 items-center gap-1 rounded-full border border-white/10 px-2 text-[10px] text-muted-foreground">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.span
-                key={copied ? "c" : "n"}
-                initial={{ opacity: 0, y: 3 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -3 }}
-                transition={{ duration: 0.15 }}
-                className={copied ? "text-foreground" : ""}
-              >
-                {copied ? "✓ Copied" : "Copy"}
-              </motion.span>
-            </AnimatePresence>
-          </span>
-        </div>
-
-        <div key={tabs[t].id} className="h-[84px] overflow-hidden border-t border-white/10 px-3 py-2.5 font-mono text-[9.5px] leading-[1.65]">
-          {tabs[t].lines.map((line, i) => (
-            <motion.div
-              key={i}
-              className="whitespace-pre text-foreground/80"
-              initial={{ opacity: 0, x: -4 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: i * 0.12 }}
-            >
-              {line}
-            </motion.div>
-          ))}
-        </div>
+    <div
+      ref={ref}
+      className="relative size-full bg-[radial-gradient(70%_60%_at_30%_10%,rgba(246,223,196,0.10),transparent_70%)]"
+    >
+      <div className="absolute inset-0 [background-image:radial-gradient(rgba(255,255,255,0.07)_1px,transparent_1px)] [background-size:18px_18px] [mask-image:radial-gradient(75%_75%_at_50%_50%,black,transparent)]" />
+      <div className="relative size-full">
+        <Scene active={active} reduce={reduce} />
       </div>
     </div>
-  )
+  );
 }
 
-/* ───────────────────────── 4. Free for anything ─────────────────────────
-   MIT license card in front, a poster and an app tile peeking behind. */
-export function FreeVisual() {
-  return (
-    <div className="relative flex size-full items-center justify-center">
-      {/* poster (behind, left) */}
-      <motion.div
-        className="absolute left-[14%] flex h-28 w-[76px] -rotate-6 flex-col items-center gap-1.5 rounded-2xl border border-white/10 bg-card pt-3"
-        animate={{ y: [0, -4, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <MotifIcon name="deula" className="size-9" strokeWidth={1.2} />
-        <span className="h-1 w-10 rounded-full bg-foreground/80" />
-        <span className="h-1 w-7 rounded-full bg-muted" />
-        <span className="h-1 w-9 rounded-full bg-muted" />
-      </motion.div>
-
-      {/* app tile (behind, right) */}
-      <motion.div
-        className="absolute right-[14%] flex size-[68px] rotate-6 items-center justify-center rounded-2xl bg-primary text-primary-foreground"
-        animate={{ y: [0, 4, 0] }}
-        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <MotifIcon name="chakra" className="size-9" strokeWidth={1.3} />
-      </motion.div>
-
-      {/* license (front) */}
-      <div className="relative z-10 w-[150px] rounded-2xl border border-white/10 bg-card p-3">
-        <div className="flex items-center justify-between">
-          <span className="text-[11px] font-semibold tracking-tight">MIT License</span>
-          <span className="flex size-4 items-center justify-center rounded-full bg-primary text-primary-foreground">
-            <svg viewBox="0 0 16 16" className="size-2.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <motion.path
-                d="M3.5 8.5L6.5 11.5L12.5 5"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: [0, 1, 1, 0] }}
-                transition={{ duration: 4, times: [0, 0.25, 0.85, 1], repeat: Infinity, ease: "easeOut" }}
-              />
-            </svg>
-          </span>
-        </div>
-        <div className="mt-2.5 flex flex-col gap-1.5">
-          <span className="h-1 w-full rounded-full bg-white/10" />
-          <span className="h-1 w-5/6 rounded-full bg-white/10" />
-          <span className="h-1 w-full rounded-full bg-white/10" />
-          <span className="h-1 w-2/3 rounded-full bg-white/10" />
-        </div>
-        <p className={`${label} mt-3 border-t border-white/10 pt-2`}>No attribution needed</p>
-      </div>
-    </div>
-  )
-}
+export const RootedVisual = () => <Frame Scene={RootedScene} />;
+export const GridVisual = () => <Frame Scene={GridScene} />;
+export const CopyCodeVisual = () => <Frame Scene={CopyScene} />;
+export const FreeVisual = () => <Frame Scene={FreeScene} />;
