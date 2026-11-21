@@ -26,39 +26,6 @@ const SECTION_IDS = LINKS.map((l) => l.href.split("#")[1])
 /* Small pieces                                                       */
 /* ------------------------------------------------------------------ */
 
-/** Konark wheel (self-contained SVG). */
-function Wheel({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.6}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      className={className}
-    >
-      <circle cx="12" cy="12" r="9" />
-      <circle cx="12" cy="12" r="2" />
-      <path d="M12 3v7M12 14v7M3 12h7M14 12h7M5.6 5.6l4.9 4.9M13.5 13.5l4.9 4.9M18.4 5.6l-4.9 4.9M10.5 13.5l-4.9 4.9" />
-    </svg>
-  )
-}
-
-/** Small cream keycap logo for mobile. */
-function KeyLogo() {
-  return (
-    <motion.span
-      whileHover={{ rotate: -6 }}
-      whileTap={{ scale: 0.94 }}
-      className="relative grid size-10 place-items-center rounded-full bg-gradient-to-b from-[#f7e8d4] to-[#e6c9a6] shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_2px_8px_rgba(0,0,0,0.4)] md:hidden"
-    >
-      <Wheel className="size-5 text-[#3b2a1a]" />
-    </motion.span>
-  )
-}
-
 /** Same primary button as the hero: glass ring, cream gradient, dark arrow disc. Hidden on phones (<640px). */
 function PrimaryCta({ href }: { href: string }) {
   return (
@@ -193,7 +160,14 @@ export function Navbar() {
                 unoptimized
                 className="hidden h-6 w-auto object-contain object-left md:block"
               />
-              <KeyLogo />
+              <Image
+                src="/brand/wordmark-cream.svg"
+                alt=""
+                aria-hidden
+                width={112}
+                height={28}
+                className="h-5 w-auto md:hidden"
+              />
             </Link>
 
             {/* Centre links (md+) with sliding pill */}
