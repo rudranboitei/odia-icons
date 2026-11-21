@@ -1,0 +1,24 @@
+{
+  "name": "rath",
+  "odia": "ରଥ",
+  "category": "festival",
+  "tags": [
+    "rath",
+    "chariot",
+    "rath yatra",
+    "puri",
+    "odisha"
+  ],
+  "aliases": [
+    "chariot",
+    "ratha"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "note": ""
+}

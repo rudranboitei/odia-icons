@@ -1,0 +1,24 @@
+{
+  "name": "deepa",
+  "odia": "ଦୀପ",
+  "category": "festival",
+  "tags": [
+    "deepa",
+    "diya",
+    "lamp",
+    "light",
+    "odisha"
+  ],
+  "aliases": [
+    "diya",
+    "lamp"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "note": ""
+}

@@ -1,0 +1,24 @@
+{
+  "name": "machha",
+  "odia": "ମାଛ",
+  "category": "nature",
+  "tags": [
+    "machha",
+    "fish",
+    "pattachitra",
+    "nature",
+    "odisha"
+  ],
+  "aliases": [
+    "fish",
+    "macha"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "note": ""
+}
