@@ -1,8 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { IconArrowUpRight } from "@tabler/icons-react";
 
 import { SITE } from "@/data/site";
-import { Icon, iconsByName } from "@/lib/icons";
 
 export function Footer() {
   const { name, footer } = SITE;
@@ -15,15 +15,19 @@ export function Footer() {
     <footer className="relative mt-8 border-t border-white/10 sm:mt-10">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
         <div className="flex flex-col items-center gap-3 py-10 text-center sm:gap-4 sm:py-12">
-          <a
+          <Link
             href="#top"
-            className="inline-flex items-center gap-2 text-foreground underline-offset-4 transition-colors hover:text-primary"
+            className="inline-flex items-center transition-opacity hover:opacity-80"
+            aria-label={`${name} home`}
           >
-            <Icon def={iconsByName["konark-wheel"]} size={22} stroke={1.5} />
-            <span className="text-[17px] font-medium tracking-[-0.03em]">
-              {name}
-            </span>
-          </a>
+            <Image
+              src="/brand/wordmark-cream.svg"
+              alt={name}
+              width={112}
+              height={28}
+              className="h-7 w-auto"
+            />
+          </Link>
           <p className="max-w-sm text-[15px] leading-relaxed text-muted-foreground">
             {footer.tagline}
           </p>

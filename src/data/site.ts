@@ -2,12 +2,15 @@
  * Edit these to match the real project. Badges only render values that are set.
  * This is the single source of copy, links and numbers for the whole site.
  */
+const REPO = "https://github.com/rudranboitei/odia-icons"; // TODO: confirm repo URL
+
 export const SITE = {
   name: "OdiaIcons",
-  tagline: "Icons with Odia soul.",
+  tagline: "Free Odisha icons, open source.",
+  /** Meta description: keep it around 150-160 characters. */
   description:
-    "An open-source icon library rooted in Odisha: temples, Pattachitra, Odissi, festivals and food, plus a general UI set. Ships as React components, raw SVG and a shadcn-style registry.",
-  github: "https://github.com/odiaui/odiaicons", // TODO: confirm repo URL
+    "Free, open-source Odisha icons: temples, Pattachitra, Odissi, festivals and food as 24px SVG outline icons. React components, raw SVG and a shadcn registry.",
+  github: REPO,
   siteUrl: "https://icons.odiaui.xyz",
   npmPackage: "@odiaui/icons",
   registryUrl: "https://icons.odiaui.xyz/r", // TODO: confirm registry path
@@ -15,18 +18,39 @@ export const SITE = {
   stars: null as number | null,
   installs: null as string | null,
 
+  // ---- SEO: feed these into generateMetadata / metadata ---------------
+  seo: {
+    /** ~50 characters, keyword first. */
+    title: "Odisha Icons: Free Open-Source SVG & React Icon Set",
+    titleTemplate: "%s | OdiaIcons",
+    keywords: [
+      "Odisha icons",
+      "Odia icons",
+      "Odisha SVG icons",
+      "Konark wheel icon",
+      "Pattachitra icons",
+      "Odissi icons",
+      "Indian icon set",
+      "open source icon library",
+      "React icons",
+      "SVG icons",
+    ],
+    locale: "en_IN",
+    ogImage: "/og-image.png", // 1200 x 630
+    twitterCard: "summary_large_image" as const,
+  },
+
   // ---- Added for the icon browser + playground ----------------------
-  // Keep these URLs in sync with `github` above.
   links: {
-    github: "https://github.com/odiaui/odiaicons", // TODO: confirm repo URL
-    license: "https://github.com/odiaui/odiaicons/blob/main/LICENSE",
-    contribute: "https://github.com/odiaui/odiaicons/issues/new",
-    email: "mailto:hello@odiaicons.com",
+    github: REPO,
+    license: `${REPO}/blob/main/LICENSE`,
+    contribute: `${REPO}/issues/new`,
+    email: "mailto:hello@odiaicons.com", // TODO: domain differs from odiaui.xyz, confirm
     icons: "/icons",
   },
   install: {
     command: "npm install @odiaui/icons",
-    helper: "Free and open source — works with npm, pnpm and yarn too.",
+    helper: "Free and open source. Works with npm, pnpm and yarn too.",
   },
 
   // ---- Landing page -------------------------------------------------
@@ -39,18 +63,19 @@ export const SITE = {
 
   hero: {
     eyebrow: "Open source · MIT licensed",
-    title: "Icons shaped by Odisha.",
+    // Keep in sync with the <h1> in hero.tsx
+    title: "Free Odisha icons, open-source SVG set.",
     subtitle:
-      "A free icon set drawn from Odisha's temples, textiles and living traditions — five motifs on one shared grid, ready to export.",
+      "Free, MIT-licensed Odisha icons: temples, Pattachitra, Odissi and festivals drawn as 24 × 24 SVG and React icons. Search in English or Odia (ଓଡ଼ିଆ).",
     stats: [
       "5 hand-drawn motifs",
       "24 × 24 grid",
-      "5 export formats",
+      "4 export formats",
       "No attribution needed",
     ],
     wordmark: { lead: "Meet", trail: "Odia" },
     display: { lead: "Icons", accent: "with soul." },
-    lead: "Temples, Pattachitra, Odissi and festivals as clean 24px outline icons. Search them in English or ଓଡ଼ିଆ.",
+    lead: "Odisha-inspired 24px outline icons for temples, Pattachitra, Odissi and festivals. Free, open source and searchable in English or ଓଡ଼ିଆ.",
     ctas: { install: "Install icons", browse: "Browse icons" },
     badges: {
       github: "Open source on GitHub",
@@ -61,20 +86,20 @@ export const SITE = {
   },
 
   explorer: {
-    title: "The culture of Odisha, glyph by glyph.",
+    title: "Browse Odisha icons, glyph by glyph.",
     accent: "glyph by glyph.",
     description:
-      "Search by English name, tag, or Odia script. Click any icon to copy its JSX.",
+      "Search Odisha icons by English name, tag or Odia script. Click any icon to copy its SVG or JSX.",
     searchPlaceholder: "Search temple, ରଥ, lotus…",
     emptyPrefix: "No icons match",
   },
 
   featuresIntro: {
-    eyebrow: "Why odiaicons",
-    title: "Heritage you can drop into any product.",
+    eyebrow: "Why OdiaIcons",
+    title: "Odisha heritage you can drop into any product.",
     accent: "drop into",
     description:
-      "A small, consistent icon set built from Odisha's temples, textiles and traditions.",
+      "A small, consistent set of Odisha icons built from temples, textiles and living traditions.",
   },
 
   // media options per feature (optional):
@@ -85,7 +110,7 @@ export const SITE = {
     {
       title: "Rooted in Odisha",
       description:
-        "Konark's chakra, Kalinga deulas, pattachitra fish and Sambalpuri weave — redrawn as clean line icons.",
+        "Konark's chakra, Kalinga deulas, Pattachitra fish and Sambalpuri weave, redrawn as clean line icons.",
       media: { type: "animation", name: "rooted" },
     },
     {
@@ -103,15 +128,15 @@ export const SITE = {
     {
       title: "Free for anything",
       description:
-        "MIT licensed. Use them in apps, posters, zines and side projects — no attribution needed.",
+        "MIT licensed. Use them in apps, websites, posters and side projects with no attribution needed.",
       media: { type: "animation", name: "free" },
     },
   ] as FeatureItem[],
 
   quote: {
     eyebrow: "Made in the open",
-    text: "Odisha's visual language lives on temple walls, in woven cloth and on painted palm leaf. odiaicons turns those motifs into crisp, consistent icons that anyone can use.",
-    author: "The odiaicons project",
+    text: "Odisha's visual language lives on temple walls, in woven cloth and on painted palm leaf. OdiaIcons turns those motifs into crisp, consistent icons that anyone can use.",
+    author: "The OdiaIcons project",
     meta: "Independent · open source · made in Odisha",
     linkLabel: "Star on GitHub",
     stats: [
@@ -123,8 +148,8 @@ export const SITE = {
 
   steps: {
     eyebrow: "From grid to production",
-    title: "Drop Odisha into your next build.",
-    accent: "Odisha",
+    title: "Add Odisha icons to your next build",
+    accent: "Odisha icons",
     description: "Three steps between the idea and the shipped interface.",
     items: [
       {
@@ -139,24 +164,24 @@ export const SITE = {
       {
         title: "Ship it anywhere",
         description:
-          "Drop it into an app, a poster or a zine. No attribution required.",
+          "Drop it into an app, a website or a poster. No attribution required.",
       },
     ],
   },
 
   developer: {
     eyebrow: "Developer-first",
-    title: "Built for developers, not just decks.",
+    title: "Odisha icons built for developers.",
     highlight: "developers",
     description:
-      "Everything is a real file you can read, edit and version. No runtime, no wrapper components, no lock-in.",
+      "Real SVG and React files you can read, edit and version. No runtime, no wrapper components, no lock-in.",
     bullets: [
       "SVG, JSX, TSX and data URI exports",
       "24 × 24 grid with 1.75px strokes",
       "currentColor inherits your theme",
       "Stroke width you can change in one click",
       "Typed React components included",
-      "MIT licensed — commercial use allowed",
+      "MIT licensed, commercial use allowed",
     ],
     code: {
       fileName: "konark-wheel.svg",
@@ -168,22 +193,30 @@ export const SITE = {
 
   faq: {
     eyebrow: "Questions, answered",
-    title: "Everything you need to know.",
-    accent: "need to know.",
+    title: "Odisha icons, questions answered.",
+    accent: "questions answered.",
     description:
-      "Licensing, installation and how to get your own motif into the set.",
+      "Licensing, installation, Odia search and how to get your own motif into the set.",
     items: [
       {
-        q: "Is odiaicons really free?",
+        q: "What is OdiaIcons?",
+        a: "OdiaIcons is a free, open-source set of Odisha-inspired icons: temples, Pattachitra, Odissi, festivals and food, drawn as 24 × 24 outline icons.",
+      },
+      {
+        q: "Are the Odisha icons really free?",
         a: "Yes. The whole set is MIT licensed, so you can use it in personal, commercial and client work without paying or crediting anyone.",
       },
       {
         q: "Can I use the icons in a product?",
-        a: "Yes. Apps, websites, packaging, posters — anything. Just don't resell the icons as your own icon set.",
+        a: "Yes. Apps, websites, packaging, posters, anything. Just don't resell the icons as your own icon set.",
       },
       {
-        q: "How do I add an icon to my project?",
-        a: "Install the package, or click any icon to copy it as SVG, JSX, a React component or a data URI. There is no runtime to configure.",
+        q: "How do I use the icons in React?",
+        a: "Run npm install @odiaui/icons and import any icon as a React component. You can also click any icon to copy it as SVG, JSX or a data URI. There is no runtime to configure.",
+      },
+      {
+        q: "Can I search the icons in Odia?",
+        a: "Yes. Search by English name, tag or Odia script, for example ରଥ for Rath.",
       },
       {
         q: "Can I request a motif?",
@@ -206,42 +239,26 @@ export const SITE = {
 
   finalCta: {
     eyebrow: "Free to copy, remix and ship",
-    title: "It's time to use them.",
-    accent: "use them.",
+    title: "Start using Odisha icons today.",
+    accent: "Odisha icons",
     description:
-      "Five motifs from Odisha, ready for whatever you're building next.",
+      "Five Odisha motifs, free under MIT and ready for whatever you're building next.",
     helper: "No credit card. No sign-up. Just icons.",
   },
 
   footer: {
     wordmark: "odiaicons",
     tagline:
-      "An open-source icon set shaped by Odisha's temples, textiles and living traditions.",
+      "An open-source Odisha icon set shaped by the state's temples, textiles and living traditions.",
     note: "Made in Odisha, India.",
     licenseNote: "Free under the MIT licence.",
     year: 2026,
     links: [
-      { label: "The set", href: "/icons" },
-      { label: "Features", href: "/#features" },
-      { label: "FAQ", href: "/#faq" },
-      { label: "GitHub", href: "https://github.com/odiaui/odiaicons", external: true },
-      {
-        label: "MIT License",
-        href: "https://github.com/odiaui/odiaicons/blob/main/LICENSE",
-        external: true,
-      },
-      {
-        label: "Contribute",
-        href: "https://github.com/odiaui/odiaicons/issues/new",
-        external: true,
-      },
-      { label: "Email", href: "mailto:hello@odiaicons.com" },
-      {
-        label: "Request an icon",
-        href: "https://github.com/odiaui/odiaicons/issues/new",
-        external: true,
-      },
-      { label: "Back to top", href: "#top" },
+      { label: "GitHub", href: REPO, external: true },
+      { label: "MIT License", href: `${REPO}/blob/main/LICENSE`, external: true },
+      { label: "Contribute", href: `${REPO}/issues/new`, external: true },
+      { label: "Email", href: "mailto:rdrudra99.work@gmail.com" },
+      { label: "Request an icon", href: `${REPO}/issues/new`, external: true },
     ],
   },
 };
