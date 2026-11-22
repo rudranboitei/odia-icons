@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "search",
+  "type": "registry:ui",
+  "title": "Search",
+  "description": "ଖୋଜ — search, find, lookup.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଖୋଜ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/search.svg",
+      "type": "registry:file",
+      "target": "components/icons/search.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"10\" cy=\"10\" r=\"6.75\"/><path d=\"M15 15l5 5\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pakhala",
+  "type": "registry:ui",
+  "title": "Pakhala",
+  "description": "ପଖାଳ — pakhala, rice, water-rice.",
+  "categories": [
+    "food"
+  ],
+  "meta": {
+    "odia": "ପଖାଳ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/pakhala.svg",
+      "type": "registry:file",
+      "target": "components/icons/pakhala.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 4.5h17c0 7.2-3.8 11.5-8.5 11.5S3.5 11.7 3.5 4.5z\"/><path d=\"M8.5 19.2h7\"/><path d=\"M3.7 9.5q2.075-2 4.15 0t4.15 0 4.15 0 4.15 0\"/></svg>"
+    }
+  ]
+}

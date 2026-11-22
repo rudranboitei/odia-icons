@@ -1,0 +1,27 @@
+{
+  "name": "user",
+  "odia": "ବ୍ୟବହାରକାରୀ",
+  "category": "ui",
+  "tags": [
+    "user",
+    "person",
+    "profile",
+    "account",
+    "avatar",
+    "dashboard",
+    "ବ୍ୟବହାରକାରୀ"
+  ],
+  "aliases": [
+    "person",
+    "profile"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text is a guess (or a transliteration) and needs a native check."
+}

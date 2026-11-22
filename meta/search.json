@@ -1,0 +1,26 @@
+{
+  "name": "search",
+  "odia": "ଖୋଜ",
+  "category": "ui",
+  "tags": [
+    "search",
+    "find",
+    "lookup",
+    "magnifier",
+    "khoja",
+    "dashboard",
+    "ଖୋଜ"
+  ],
+  "aliases": [
+    "find"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text is a guess (or a transliteration) and needs a native check."
+}

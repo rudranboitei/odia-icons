@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar",
+  "type": "registry:ui",
+  "title": "Calendar",
+  "description": "ପଞ୍ଜିକା — calendar, date, schedule.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ପଞ୍ଜିକା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/calendar.svg",
+      "type": "registry:file",
+      "target": "components/icons/calendar.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3.5\" y=\"6\" width=\"17\" height=\"14.5\" rx=\"2.5\"/><path d=\"M8 3.5v4M16 3.5v4\"/><path d=\"M3.5 11h17\"/></svg>"
+    }
+  ]
+}

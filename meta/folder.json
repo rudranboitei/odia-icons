@@ -1,0 +1,26 @@
+{
+  "name": "folder",
+  "odia": "ଫୋଲ୍ଡର",
+  "category": "ui",
+  "tags": [
+    "folder",
+    "directory",
+    "files",
+    "documents",
+    "storage",
+    "dashboard",
+    "ଫୋଲ୍ଡର"
+  ],
+  "aliases": [
+    "directory"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text is a guess (or a transliteration) and needs a native check."
+}

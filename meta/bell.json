@@ -1,0 +1,26 @@
+{
+  "name": "bell",
+  "odia": "ଘଣ୍ଟି",
+  "category": "ui",
+  "tags": [
+    "bell",
+    "notification",
+    "alert",
+    "ghanti",
+    "reminder",
+    "dashboard",
+    "ଘଣ୍ଟି"
+  ],
+  "aliases": [
+    "notification"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text is a guess (or a transliteration) and needs a native check."
+}
