@@ -1,0 +1,24 @@
+{
+  "name": "kite",
+  "odia": "ଗୁଡ଼ି",
+  "category": "culture",
+  "tags": [
+    "kite",
+    "gudi",
+    "sky",
+    "flying",
+    "play",
+    "odisha",
+    "ଗୁଡ଼ି"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia spelling needs a native check."
+}

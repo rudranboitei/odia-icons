@@ -1,0 +1,27 @@
+{
+  "name": "trash",
+  "odia": "ଅଳିଆ",
+  "category": "ui",
+  "tags": [
+    "trash",
+    "bin",
+    "delete",
+    "remove",
+    "garbage",
+    "dashboard",
+    "ଅଳିଆ"
+  ],
+  "aliases": [
+    "bin",
+    "delete"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text is a guess and needs a native check."
+}

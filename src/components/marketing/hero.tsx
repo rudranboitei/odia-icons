@@ -16,7 +16,7 @@ import { SITE } from "@/data/site";
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400" });
 
 /* TODO: replace with your own hero image, e.g. "/images/hero-bg.jpg" */
-const HERO_IMAGE = "/heroimage.png";
+const HERO_IMAGE = "/heroimage4.jpeg";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 

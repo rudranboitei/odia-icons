@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "download",
+  "type": "registry:ui",
+  "title": "Download",
+  "description": "ଡାଉନଲୋଡ୍ — download, save, arrow.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଡାଉନଲୋଡ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/download.svg",
+      "type": "registry:file",
+      "target": "components/icons/download.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3.5v11M7.5 10.5l4.5 4.5 4.5-4.5\"/><path d=\"M4.5 15.5v2a2.5 2.5 0 0 0 2.5 2.5h10a2.5 2.5 0 0 0 2.5-2.5v-2\"/></svg>"
+    }
+  ]
+}

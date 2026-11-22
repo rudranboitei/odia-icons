@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "trash",
+  "type": "registry:ui",
+  "title": "Trash",
+  "description": "ଅଳିଆ — trash, bin, delete.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଅଳିଆ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/trash.svg",
+      "type": "registry:file",
+      "target": "components/icons/trash.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 6.5h17\"/><path d=\"M9.5 6.5V5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v1.5\"/><path d=\"M5.5 9.5h13l-.9 8.5a2.5 2.5 0 0 1-2.5 2.5H8.9A2.5 2.5 0 0 1 6.4 18z\"/></svg>"
+    }
+  ]
+}

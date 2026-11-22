@@ -1,0 +1,24 @@
+{
+  "name": "download",
+  "odia": "ଡାଉନଲୋଡ୍",
+  "category": "ui",
+  "tags": [
+    "download",
+    "save",
+    "arrow",
+    "import",
+    "tray",
+    "dashboard",
+    "ଡାଉନଲୋଡ୍"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text is a transliteration of the English word; needs a native check."
+}
