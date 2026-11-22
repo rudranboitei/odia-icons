@@ -1,0 +1,26 @@
+{
+  "name": "boita",
+  "odia": "ବୋଇତ",
+  "category": "travel",
+  "tags": [
+    "boita",
+    "boat",
+    "ship",
+    "sailing",
+    "travel",
+    "odisha",
+    "ବୋଇତ"
+  ],
+  "aliases": [
+    "boat"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Generic sailing boat; does not show boita-specific details. Odia spelling needs a native check."
+}

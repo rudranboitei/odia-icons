@@ -32,6 +32,33 @@
       }
     },
     {
+      "name": "boita",
+      "odia": "ବୋଇତ",
+      "category": "travel",
+      "tags": [
+        "boita",
+        "boat",
+        "ship",
+        "sailing",
+        "travel",
+        "odisha",
+        "ବୋଇତ"
+      ],
+      "aliases": [
+        "boat"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.1.0",
+      "note": "Generic sailing boat; does not show boita-specific details. Odia spelling needs a native check.",
+      "strokeWidth": 1.5,
+      "body": "<path d=\"M3.5 15.5h17c-.8 3-3.2 5-6 5h-5c-2.8 0-5.2-2-6-5z\"/><path d=\"M12 15.5V3.5\"/><path d=\"M12 4.5l5.5 9.5H12\"/>",
+      "files": {
+        "outline": "/svg/outline/boita.svg"
+      }
+    },
+    {
       "name": "calendar",
       "odia": "ପଞ୍ଜିକା",
       "category": "ui",
@@ -135,6 +162,33 @@
       "body": "<path d=\"M12 3.5v11M7.5 10.5l4.5 4.5 4.5-4.5\"/><path d=\"M4.5 15.5v2a2.5 2.5 0 0 0 2.5 2.5h10a2.5 2.5 0 0 0 2.5-2.5v-2\"/>",
       "files": {
         "outline": "/svg/outline/download.svg"
+      }
+    },
+    {
+      "name": "elephant",
+      "odia": "ହାତୀ",
+      "category": "nature",
+      "tags": [
+        "elephant",
+        "hati",
+        "wildlife",
+        "animal",
+        "nature",
+        "odisha",
+        "ହାତୀ"
+      ],
+      "aliases": [
+        "hati"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.1.0",
+      "note": "Odia spelling needs a native check.",
+      "strokeWidth": 1.5,
+      "body": "<path d=\"M3.5 19.5v-4c0-1.5.8-2.7 2-3.2V10a4.5 4.5 0 0 1 4.5-4.5h5.5A4.5 4.5 0 0 1 20.5 10v9.5h-3.5v-3.5H9.5v3.5z\"/><path d=\"M8.5 10.5v2\"/>",
+      "files": {
+        "outline": "/svg/outline/elephant.svg"
       }
     },
     {
@@ -269,6 +323,34 @@
       "body": "<rect x=\"3.5\" y=\"5\" width=\"17\" height=\"14\" rx=\"2.5\"/><path d=\"M7 9.5l5 3.5 5-3.5\"/>",
       "files": {
         "outline": "/svg/outline/mail.svg"
+      }
+    },
+    {
+      "name": "olive-ridley-turtle",
+      "odia": "ସାମୁଦ୍ରିକ କଇଁଛ",
+      "category": "nature",
+      "tags": [
+        "olive-ridley",
+        "turtle",
+        "sea-turtle",
+        "wildlife",
+        "nature",
+        "odisha",
+        "କଇଁଛ"
+      ],
+      "aliases": [
+        "turtle",
+        "sea-turtle"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.1.0",
+      "note": "Top view of a sea turtle. Odia text is a guess and needs a native check.",
+      "strokeWidth": 1.5,
+      "body": "<ellipse cx=\"12\" cy=\"13.2\" rx=\"5\" ry=\"6.3\"/><circle cx=\"12\" cy=\"4.5\" r=\"1.5\"/><path d=\"M7.5 10 3.6 8.2M16.5 10l3.9-1.8M8 18l-2.6 2.2M16 18l2.6 2.2\"/>",
+      "files": {
+        "outline": "/svg/outline/olive-ridley-turtle.svg"
       }
     },
     {

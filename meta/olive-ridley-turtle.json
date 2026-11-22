@@ -1,0 +1,27 @@
+{
+  "name": "olive-ridley-turtle",
+  "odia": "ସାମୁଦ୍ରିକ କଇଁଛ",
+  "category": "nature",
+  "tags": [
+    "olive-ridley",
+    "turtle",
+    "sea-turtle",
+    "wildlife",
+    "nature",
+    "odisha",
+    "କଇଁଛ"
+  ],
+  "aliases": [
+    "turtle",
+    "sea-turtle"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Top view of a sea turtle. Odia text is a guess and needs a native check."
+}
