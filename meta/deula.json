@@ -1,0 +1,24 @@
+{
+  "name": "deula",
+  "odia": "ଦେଉଳ",
+  "category": "architecture",
+  "tags": [
+    "deula",
+    "temple",
+    "kalinga",
+    "tower",
+    "odisha"
+  ],
+  "aliases": [
+    "temple",
+    "kalinga-temple"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "note": ""
+}
