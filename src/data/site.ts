@@ -110,7 +110,7 @@ export const SITE = {
     {
       title: "Rooted in Odisha",
       description:
-        "Konark's chakra, Kalinga deulas, Pattachitra fish and Sambalpuri weave, redrawn as clean line icons.",
+        "Odisha-inspired motifs, redrawn as clean line icons with a consistent stroke and grid.",
       media: { type: "animation", name: "rooted" },
     },
     {
@@ -184,7 +184,7 @@ export const SITE = {
       "MIT licensed, commercial use allowed",
     ],
     code: {
-      fileName: "konark-wheel.svg",
+      fileName: "deepa.svg",
       grid: "24 × 24",
       license: "MIT licensed",
       spec: "1.75 stroke · round caps",
@@ -216,7 +216,7 @@ export const SITE = {
       },
       {
         q: "Can I search the icons in Odia?",
-        a: "Yes. Search by English name, tag or Odia script, for example ରଥ for Rath.",
+        a: "Yes. Search by English name, tag or Odia script, for example ଦୀପ for Deepa.",
       },
       {
         q: "Can I request a motif?",

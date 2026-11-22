@@ -5,7 +5,7 @@ import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/rea
 import { Check, Copy } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Boita, Deula, KonarkWheel, Machha, Padma, Rath } from "./odia-motifs";
+import { Deepa } from "./odia-motifs";
 
 /**
  * Animated visuals for the four feature cards, built from the custom Odisha
@@ -18,7 +18,7 @@ type SceneProps = { active: boolean; reduce: boolean };
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 /* ------------------------------------------------------------------ */
-/* 1. Rooted: the deula at the centre, motifs floating around it       */
+/* 1. Rooted: Deepa at the centre, motifs floating around it           */
 /* ------------------------------------------------------------------ */
 
 function FloatTile({
@@ -51,14 +51,14 @@ function RootedScene({ active, reduce }: SceneProps) {
 
   return (
     <div className="relative size-full">
-      {/* Oversized, faint Konark wheel turning slowly behind everything */}
+      {/* Oversized, faint Deepa turning slowly behind everything */}
       <motion.div
         aria-hidden
         animate={{ rotate: loop ? 360 : 0 }}
         transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
         className="absolute -top-14 -right-14 opacity-[0.12]"
       >
-        <KonarkWheel className="size-56 text-foreground sm:size-64" />
+        <Deepa className="size-56 text-foreground sm:size-64" />
       </motion.div>
 
       <div className="absolute inset-0 bg-[radial-gradient(38%_50%_at_50%_58%,rgba(246,200,150,0.20),transparent)]" />
@@ -69,17 +69,17 @@ function RootedScene({ active, reduce }: SceneProps) {
         transition={{ duration: 0.7, ease: EASE }}
         className="absolute inset-0 grid place-items-center"
       >
-        <Deula className="size-32 text-foreground sm:size-40" />
+        <Deepa className="size-32 text-foreground sm:size-40" />
       </motion.div>
 
       <FloatTile loop={loop} delay={0} className="bottom-[16%] left-[9%]">
-        <Machha className="size-9 text-foreground sm:size-10" />
+        <Deepa className="size-9 text-foreground sm:size-10" />
       </FloatTile>
       <FloatTile loop={loop} delay={1.2} className="top-[14%] left-[14%] hidden sm:grid">
-        <Padma className="size-9 text-foreground sm:size-10" />
+        <Deepa className="size-9 text-foreground sm:size-10" />
       </FloatTile>
       <FloatTile loop={loop} delay={0.6} className="right-[10%] bottom-[14%]">
-        <Rath className="size-9 text-foreground sm:size-10" />
+        <Deepa className="size-9 text-foreground sm:size-10" />
       </FloatTile>
     </div>
   );
@@ -156,7 +156,7 @@ function GridScene({ active, reduce }: SceneProps) {
           transition={{ duration: 0.6, ease: EASE, delay: 0.15 }}
           className="absolute inset-0"
         >
-          <Boita className="size-full text-foreground" />
+          <Deepa className="size-full text-foreground" />
         </motion.div>
       </div>
 
@@ -175,10 +175,10 @@ function GridScene({ active, reduce }: SceneProps) {
 /* ------------------------------------------------------------------ */
 
 const FORMATS = [
-  { id: "SVG", file: "rath.svg", code: ['<svg viewBox="0 0 24 24"', '  stroke="currentColor">', '  <path d="M2 21h20…" />'] },
-  { id: "JSX", file: "rath.jsx", code: ['<svg viewBox="0 0 24 24"', "  strokeWidth={1.75}>", '  <path d="M2 21h20…" />'] },
-  { id: "TSX", file: "Rath.tsx", code: ["export function Rath(", "  p: SVGProps<SVGSVGElement>", ") { return <svg {...p}>…"] },
-  { id: "Data URI", file: "rath.txt", code: ['url("data:image/svg+xml,', "  %3Csvg viewBox='0 0 24 24'", '  %3E%3Cpath d=…")'] },
+  { id: "SVG", file: "deepa.svg", code: ['<svg viewBox="0 0 24 24"', '  stroke="currentColor">', '  <path d="M3.5 13h17…" />'] },
+  { id: "JSX", file: "deepa.jsx", code: ['<svg viewBox="0 0 24 24"', "  strokeWidth={1.75}>", '  <path d="M3.5 13h17…" />'] },
+  { id: "TSX", file: "Deepa.tsx", code: ["export function Deepa(", "  p: SVGProps<SVGSVGElement>", ") { return <svg {...p}>…"] },
+  { id: "Data URI", file: "deepa.txt", code: ['url("data:image/svg+xml,', "  %3Csvg viewBox='0 0 24 24'", '  %3E%3Cpath d=…")'] },
 ] as const;
 
 function CopyScene({ active, reduce }: SceneProps) {
@@ -243,7 +243,7 @@ function CopyScene({ active, reduce }: SceneProps) {
 
         <div className="mt-2.5 flex items-center gap-2">
           <span className="grid size-8 place-items-center rounded-lg border border-white/10 bg-white/[0.04]">
-            <Rath className="size-6 text-foreground" />
+            <Deepa className="size-6 text-foreground" />
           </span>
           <span className="font-mono text-[11px] text-muted-foreground">{f.file}</span>
           <span
@@ -306,7 +306,7 @@ function FreeScene({ active, reduce }: SceneProps) {
             c.className
           )}
         >
-          <Padma className="mt-1 size-14 sm:size-16" />
+          <Deepa className="mt-1 size-14 sm:size-16" />
           <span className={cn("text-[10px] font-medium tracking-[0.14em] uppercase", c.sub)}>{c.label}</span>
         </motion.div>
       ))}

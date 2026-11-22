@@ -39,7 +39,7 @@ function CopyButton({ text }: { text: string }) {
 
 export function DeveloperSection() {
   const { developer } = SITE;
-  const snippet = toSvg(iconsByName["konark-wheel"], { size: 32, stroke: 1.75 });
+  const snippet = toSvg(iconsByName["deepa"], { size: 32, stroke: 1.75 });
 
   return (
     <section id="developers" className="scroll-mt-20 px-5 py-14 sm:px-6 sm:py-16 lg:py-20">

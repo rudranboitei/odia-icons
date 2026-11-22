@@ -6,21 +6,18 @@ import { SITE } from "@/data/site";
 import { FeatureMedia } from "./feature-media";
 import { EASE } from "./reveal";
 import { SectionHeader } from "./section-header";
-import { Boita, Deula, KonarkWheel, Machha, Padma, Rath, type Motif } from "./odia-motifs";
+import { Deepa, type Motif } from "./odia-motifs";
 
 /**
- * Each feature gets a custom Odisha motif chosen for what it says:
- * the deula for "rooted", the Konark wheel (all symmetry and geometry) for
- * the grid, the Rath (carries things out) for copy-as-code, and the lotus
- * (open, unrestricted) for "free". Anything else falls back by position.
+ * Each feature gets a Deepa motif placeholder until more icons land.
  */
 const BY_MEDIA: Record<string, Motif> = {
-  rooted: Deula,
-  grid: KonarkWheel,
-  "copy-code": Rath,
-  free: Padma,
+  rooted: Deepa,
+  grid: Deepa,
+  "copy-code": Deepa,
+  free: Deepa,
 };
-const FALLBACK: Motif[] = [Boita, Machha, Deula, KonarkWheel];
+const FALLBACK: Motif[] = [Deepa];
 
 /**
  * Features built on the existing "rooted / grid / copy-code / free" visuals.

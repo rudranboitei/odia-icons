@@ -199,7 +199,7 @@ function Scene() {
 /* ------------------------------------------------------------------ */
 
 function GlyphKey({ reduce }: { reduce: boolean }) {
-  const icon = ICONS.find((i) => /konark|wheel|chakra/i.test(i.name)) ?? ICONS[0];
+  const icon = ICONS.find((i) => i.name === "deepa") ?? ICONS[0];
 
   return (
     <>

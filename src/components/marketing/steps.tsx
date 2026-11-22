@@ -9,7 +9,7 @@ import { SITE } from "@/data/site";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./reveal";
 import { SectionHeader } from "./section-header";
-import { Boita, Deepa, Deula, KonarkWheel, Padma, Rath, type Motif } from "./odia-motifs";
+import { Deepa, type Motif } from "./odia-motifs";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 /** Time each step stays on screen while the section autoplays. */
@@ -69,15 +69,15 @@ function SceneBrowse() {
         <span className="truncate">{SITE.explorer.searchPlaceholder}</span>
       </div>
       <div className="mt-3 grid grid-cols-3 gap-2">
-        <Tile Icon={Deula} label="Deula" />
-        <Tile Icon={KonarkWheel} label="Konark Wheel" selected />
-        <Tile Icon={Padma} label="Padma" />
-        <Tile Icon={Rath} label="Rath" />
+        <Tile Icon={Deepa} label="Deepa" selected />
         <Tile Icon={Deepa} label="Deepa" />
-        <Tile Icon={Boita} label="Boita" />
+        <Tile Icon={Deepa} label="Deepa" />
+        <Tile Icon={Deepa} label="Deepa" />
+        <Tile Icon={Deepa} label="Deepa" />
+        <Tile Icon={Deepa} label="Deepa" />
       </div>
       <div className="mt-3 flex items-center justify-between text-[11px] text-muted-foreground">
-        <span className="font-medium text-foreground/80">Konark Wheel</span>
+        <span className="font-medium text-foreground/80">Deepa</span>
         <span className="font-mono">24 × 24 · 1.5 stroke</span>
       </div>
     </Window>
@@ -127,13 +127,13 @@ function SceneCopy() {
         <code>
           <span className="text-muted-foreground">$ npm install {SITE.npmPackage}</span>
           {"\n\n"}
-          <span className="text-primary">import</span> {"{ KonarkWheel }"}{" "}
+          <span className="text-primary">import</span> {"{ Deepa }"}{" "}
           <span className="text-primary">from</span>
           {"\n  "}
           <span className="text-[#e9b98a]">{pkg}</span>
           {"\n\n"}
           {"<"}
-          <span className="text-primary">KonarkWheel</span>
+          <span className="text-primary">Deepa</span>
           {" className="}
           <span className="text-[#e9b98a]">{'"size-6"'}</span>
           {" />"}
@@ -146,15 +146,15 @@ function SceneCopy() {
 /** 3. Ship: the same motifs, in a phone UI and on a poster. */
 function SceneShip() {
   const apps: { Icon: Motif; label: string }[] = [
-    { Icon: Rath, label: "Rath" },
-    { Icon: Boita, label: "Boita" },
-    { Icon: Padma, label: "Padma" },
+    { Icon: Deepa, label: "Deepa" },
+    { Icon: Deepa, label: "Deepa" },
+    { Icon: Deepa, label: "Deepa" },
     { Icon: Deepa, label: "Deepa" },
   ];
   const tabs: { Icon: Motif; on?: boolean }[] = [
-    { Icon: Deula, on: true },
-    { Icon: KonarkWheel },
-    { Icon: Padma },
+    { Icon: Deepa, on: true },
+    { Icon: Deepa },
+    { Icon: Deepa },
   ];
 
   return (
@@ -166,10 +166,10 @@ function SceneShip() {
         transition={{ duration: 0.55, ease: EASE, delay: 0.05 }}
         className="w-[7.25rem] rounded-xl bg-gradient-to-b from-[#fbeedb] to-[#e8c89f] p-3 text-[#2a1a10] shadow-[0_24px_50px_-20px_rgba(0,0,0,0.8)] sm:w-40 sm:p-4 [&_.stroke-primary]:stroke-[#b4693b]"
       >
-        <KonarkWheel className="mx-auto size-[4.25rem] sm:size-24" />
+        <Deepa className="mx-auto size-[4.25rem] sm:size-24" />
         <p className="mt-2 text-center text-lg font-black tracking-tight sm:text-2xl">Odisha</p>
         <p className="mt-0.5 text-center text-[9px] font-medium tracking-[0.18em] uppercase opacity-70 sm:text-[10px]">
-          Konark · Puri
+          Deepa · Home
         </p>
       </motion.div>
 
