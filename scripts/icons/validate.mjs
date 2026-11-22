@@ -1,7 +1,7 @@
 // Validate every icon source and its metadata before the build can pass.
 // Run with: bun run icons:validate
 import { readdir, readFile } from "node:fs/promises"
-import { existsSync } from "node:fs"
+import { existsSync, readFileSync } from "node:fs"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 
@@ -19,9 +19,21 @@ export const CATEGORIES = [
   "ui",
 ]
 export const VARIANTS = ["outline", "solid", "duotone"]
-const VIEWBOX = "0 0 24 24"
-const STROKE = "1.75"
-const MAX_BYTES = 2 * 1024
+
+// Limits come from style-spec.json (repo root) when it exists.
+const DEFAULT_SPEC = { viewBox: "0 0 24 24", stroke: 1.5, maxBytes: 2048 }
+
+function loadSpec() {
+  const file = path.join(ROOT, "style-spec.json")
+  if (!existsSync(file)) return DEFAULT_SPEC
+  return { ...DEFAULT_SPEC, ...JSON.parse(readFileSync(file, "utf8")) }
+}
+
+const SPEC = loadSpec()
+const VIEWBOX = SPEC.viewBox
+const STROKE = String(SPEC.stroke) // "1.5"
+const LEGACY_STROKE = "1.75" // old icons, allowed until they are redone
+const MAX_BYTES = SPEC.maxBytes
 const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 
 function fail(errors, message) {
@@ -42,6 +54,7 @@ function innerBody(svg) {
 
 export async function loadIcons() {
   const errors = []
+  const legacy = []
   const metaDir = path.join(ROOT, "meta")
   const iconsDir = path.join(ROOT, "icons")
 
@@ -128,13 +141,22 @@ export async function loadIcons() {
       const svg = await readFile(svgPath, "utf8")
       const bytes = Buffer.byteLength(svg)
 
-      if (bytes > MAX_BYTES) fail(errors, `${label}: ${bytes}B exceeds the 2KB limit`)
+      if (bytes > MAX_BYTES) {
+        fail(errors, `${label}: ${bytes}B exceeds the ${MAX_BYTES / 1024}KB limit`)
+      }
       if (!svg.includes(`viewBox="${VIEWBOX}"`)) {
         fail(errors, `${label}: viewBox must be "${VIEWBOX}"`)
       }
-      if (attr(svg, "stroke-width") !== STROKE) {
-        fail(errors, `${label}: stroke-width must be "${STROKE}"`)
+
+      const stroke = attr(svg, "stroke-width")
+      if (stroke !== STROKE && stroke !== LEGACY_STROKE) {
+        fail(
+          errors,
+          `${label}: stroke-width must be "${STROKE}" (old icons may still use "${LEGACY_STROKE}")`
+        )
       }
+      if (stroke === LEGACY_STROKE) legacy.push(name)
+
       if (attr(svg, "stroke") !== "currentColor") {
         fail(errors, `${label}: stroke must be "currentColor"`)
       }
@@ -151,7 +173,7 @@ export async function loadIcons() {
         fail(errors, `${label}: masks, filters, gradients and inline styles are not allowed`)
       }
 
-      variants[variant] = { svg, body: innerBody(svg), bytes }
+      variants[variant] = { svg, body: innerBody(svg), bytes, stroke }
     }
 
     icons.push({
@@ -180,6 +202,12 @@ export async function loadIcons() {
     throw error
   }
 
+  if (legacy.length) {
+    console.warn(
+      `⚠ ${legacy.length} icon(s) still at stroke ${LEGACY_STROKE}, redo at ${STROKE}: ${legacy.join(", ")}`
+    )
+  }
+
   return icons.sort((a, b) => a.name.localeCompare(b.name))
 }
 
@@ -189,7 +217,7 @@ if (invokedDirectly) {
   try {
     const icons = await loadIcons()
     const count = icons.reduce((n, icon) => n + Object.keys(icon.variants).length, 0)
-    console.log(`✓ Validated ${icons.length} icons (${count} files) — 24×24, 1.75 stroke, round caps.`)
+    console.log(`✓ Validated ${icons.length} icons (${count} files) — 24×24, ${STROKE} stroke, round caps.`)
   } catch (error) {
     console.error(error.message)
     process.exit(1)
