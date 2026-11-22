@@ -105,7 +105,7 @@ function IconCard({ icon, index, onOpen, onCopy, onDownload }: {
   onDownload: () => void
 }) {
   const actionBtn =
-    "flex size-7 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+    "flex size-7 items-center justify-center rounded-full border border-black/10 bg-white text-neutral-500 transition-colors hover:border-black/30 hover:text-neutral-900"
 
   return (
     <motion.div
@@ -122,23 +122,23 @@ function IconCard({ icon, index, onOpen, onCopy, onDownload }: {
         whileHover={{ y: -4 }}
         whileTap={{ scale: 0.97 }}
         transition={{ type: "spring", stiffness: 400, damping: 28 }}
-        className="flex h-32 w-full cursor-pointer flex-col items-center justify-center gap-3 rounded-3xl border border-border bg-card/40 px-3 transition-[background-color,border-color,box-shadow] duration-200 hover:border-primary/40 hover:bg-card hover:shadow-[0_18px_36px_-18px_color-mix(in_oklab,var(--primary)_35%,transparent)] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none"
+        className="flex h-32 w-full cursor-pointer flex-col items-center justify-center gap-3 rounded-3xl border border-black/10 bg-white/60 px-3 transition-[background-color,border-color,box-shadow] duration-200 hover:border-black/30 hover:bg-white hover:shadow-[0_18px_36px_-18px_rgba(0,0,0,0.18)] focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f6f4f0] focus-visible:outline-none"
       >
         <Icon
           def={icon}
           size={30}
           stroke={1.75}
           absoluteStrokeWidth
-          className="text-foreground transition-colors duration-200 group-hover:text-primary"
+          className="text-neutral-800"
         />
-        <span className="max-w-full truncate font-mono text-[11px] text-muted-foreground transition-colors group-hover:text-foreground">
+        <span className="max-w-full truncate font-mono text-[11px] text-neutral-500 transition-colors group-hover:text-neutral-900">
           {icon.name}
         </span>
       </motion.button>
 
       <span
         aria-hidden
-        className="pointer-events-none absolute right-3 bottom-3 flex size-6 items-center justify-center rounded-full bg-primary text-primary-foreground opacity-0 transition-opacity group-hover:opacity-100"
+        className="pointer-events-none absolute right-3 bottom-3 flex size-6 items-center justify-center rounded-full bg-neutral-900 text-white opacity-0 transition-opacity group-hover:opacity-100"
       >
         <IconArrowUpRight className="size-3.5" stroke={2} />
       </span>
@@ -242,9 +242,9 @@ export function IconBrowser() {
   }
 
   return (
-    <div className="min-h-dvh bg-background text-foreground">
+    <div className="min-h-dvh bg-[#f6f4f0] text-neutral-900">
       {/* Framed page: space on both sides + vertical hairlines */}
-      <div className="mx-auto flex min-h-dvh w-full max-w-[1600px] border-x border-border">
+      <div className="mx-auto flex min-h-dvh w-full max-w-[1600px] border-x border-black/10">
         {/* Sidebar */}
         <motion.aside
           initial={{ opacity: 0, x: -16 }}
@@ -253,6 +253,7 @@ export function IconBrowser() {
           className="sticky top-0 hidden h-dvh w-[216px] shrink-0 flex-col px-5 py-5 lg:flex"
         >
           <Link href="/" className="inline-flex w-fit items-center">
+            {/* The cream wordmark is made for dark pages; brightness-0 turns it solid black */}
             <Image
               src="/brand/wordmark-cream.svg"
               alt={SITE.name}
@@ -260,12 +261,12 @@ export function IconBrowser() {
               height={28}
               priority
               unoptimized
-              className="invert dark:invert-0"
+              className="brightness-0"
             />
           </Link>
 
           <nav className="mt-10" aria-label="Browse">
-            <p className="text-[13px] text-muted-foreground">Browse</p>
+            <p className="text-[13px] text-neutral-500">Browse</p>
             <ul className="mt-3 flex flex-col gap-3">
               {browseItems.map((item) => (
                 <li key={item.label}>
@@ -273,8 +274,8 @@ export function IconBrowser() {
                     href={item.href}
                     className={
                       item.active
-                        ? "inline-flex items-center gap-2 text-[14px] font-medium text-foreground"
-                        : "text-[14px] text-muted-foreground transition-colors hover:text-foreground"
+                        ? "inline-flex items-center gap-2 text-[14px] font-medium text-neutral-900"
+                        : "text-[14px] text-neutral-500 transition-colors hover:text-neutral-900"
                     }
                   >
                     {item.label}
@@ -283,7 +284,7 @@ export function IconBrowser() {
                         aria-hidden
                         animate={{ scale: [1, 1.5, 1] }}
                         transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-                        className="size-1.5 rounded-full bg-primary"
+                        className="size-1.5 rounded-full bg-neutral-900"
                       />
                     )}
                   </Link>
@@ -293,7 +294,7 @@ export function IconBrowser() {
           </nav>
 
           <nav className="mt-8" aria-label="Resources">
-            <p className="text-[13px] text-muted-foreground">Resources</p>
+            <p className="text-[13px] text-neutral-500">Resources</p>
             <ul className="mt-3 flex flex-col gap-3">
               {resourceItems.map((item) => (
                 <li key={item.label}>
@@ -301,7 +302,7 @@ export function IconBrowser() {
                     href={item.href}
                     target="_blank"
                     rel="noopener"
-                    className="text-[14px] text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-[14px] text-neutral-500 transition-colors hover:text-neutral-900"
                   >
                     {item.label}
                   </a>
@@ -311,8 +312,8 @@ export function IconBrowser() {
           </nav>
 
           <div className="mt-auto">
-            <div className="h-px w-10 bg-primary/50" />
-            <p className="mt-4 text-[14px] leading-[1.45] font-medium text-foreground">
+            <div className="h-px w-10 bg-black/30" />
+            <p className="mt-4 text-[14px] leading-[1.45] font-medium text-neutral-900">
               Open-source icons from Odisha, drawn on one shared grid.
             </p>
             <motion.div
@@ -323,7 +324,7 @@ export function IconBrowser() {
               <Button
                 type="button"
                 onClick={copyInstall}
-                className="h-9 rounded-full px-4"
+                className="h-9 rounded-full bg-neutral-900 px-4 text-white hover:bg-neutral-700"
               >
                 {copiedInstall ? "Copied" : "Copy install"}
                 {copiedInstall ? (
@@ -333,7 +334,7 @@ export function IconBrowser() {
                 )}
               </Button>
             </motion.div>
-            <p className="mt-4 text-[13px] leading-[1.5] text-muted-foreground">
+            <p className="mt-4 text-[13px] leading-[1.5] text-neutral-500">
               MIT licensed · v0.1.0
               <br />
               Made in Odisha, India.
@@ -343,7 +344,7 @@ export function IconBrowser() {
 
         {/* Main column */}
         <div className="flex min-w-0 flex-1 flex-col">
-          <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-xl">
+          <header className="sticky top-0 z-40 border-b border-black/10 bg-[#f6f4f0]/80 backdrop-blur-xl">
             <div className="flex h-14 items-center gap-4 px-5 lg:px-6">
               <Link href="/" className="shrink-0 lg:hidden">
                 <Image
@@ -353,13 +354,13 @@ export function IconBrowser() {
                   height={23}
                   priority
                   unoptimized
-                  className="invert dark:invert-0"
+                  className="brightness-0"
                 />
               </Link>
 
               <div className="hidden min-w-0 items-baseline gap-3 lg:flex">
                 <span className="font-sans text-[18px] font-bold">Icons</span>
-                <span className="truncate text-[13px] text-muted-foreground">
+                <span className="truncate text-[13px] text-neutral-500">
                   Odia motifs drawn on a 24 × 24 grid.
                 </span>
               </div>
@@ -373,7 +374,7 @@ export function IconBrowser() {
                     <div className="relative">
                       <IconSearch
                         aria-hidden
-                        className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted-foreground"
+                        className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-neutral-500"
                       />
                       <input
                         ref={searchRef}
@@ -400,7 +401,7 @@ export function IconBrowser() {
                         aria-expanded={searchOpen}
                         aria-controls={searchOpen ? "icon-search-results" : undefined}
                         aria-autocomplete="list"
-                        className="h-10 w-full appearance-none rounded-full border border-border bg-foreground/[0.04] pr-14 pl-10 text-[13px] text-foreground outline-none transition-[border-color,box-shadow] placeholder:text-muted-foreground focus-visible:border-primary/60 focus-visible:ring-[3px] focus-visible:ring-primary/25 [&::-webkit-search-cancel-button]:hidden"
+                        className="h-10 w-full appearance-none rounded-full border border-black/10 bg-white pr-14 pl-10 text-[13px] text-neutral-900 outline-none transition-[border-color,box-shadow] placeholder:text-neutral-500 focus-visible:border-black/30 focus-visible:ring-[3px] focus-visible:ring-black/10 [&::-webkit-search-cancel-button]:hidden"
                       />
                       {query ? (
                         <button
@@ -411,12 +412,12 @@ export function IconBrowser() {
                             searchRef.current?.focus()
                           }}
                           aria-label="Clear search"
-                          className="absolute top-1/2 right-2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground"
+                          className="absolute top-1/2 right-2 flex size-6 -translate-y-1/2 items-center justify-center rounded-full text-neutral-500 hover:bg-black/5 hover:text-neutral-900"
                         >
                           <IconX className="size-3.5" />
                         </button>
                       ) : (
-                        <kbd className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 rounded-md border border-border px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground">
+                        <kbd className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 rounded-md border border-black/10 px-1.5 py-0.5 font-mono text-[10px] text-neutral-500">
                           ⌘K
                         </kbd>
                       )}
@@ -425,7 +426,7 @@ export function IconBrowser() {
                     {searchOpen && (
                       <div
                         id="icon-search-results"
-                        className="absolute top-full right-0 z-50 mt-2 w-[min(17rem,calc(100vw-4.5rem))] overflow-hidden rounded-2xl border border-border bg-popover p-1 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.85)] sm:left-0 sm:w-auto"
+                        className="absolute top-full right-0 z-50 mt-2 w-[min(17rem,calc(100vw-4.5rem))] overflow-hidden rounded-2xl border border-black/10 bg-white p-1 text-neutral-900 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.25)] sm:left-0 sm:w-auto"
                       >
                         <CommandList className="max-h-[320px] p-0">
                           {filtered.length > 0 ? (
@@ -445,7 +446,7 @@ export function IconBrowser() {
                                   <span className="truncate font-mono text-[13px] whitespace-nowrap">
                                     {icon.name}
                                   </span>
-                                  <span className="ml-auto mr-1 text-[11px] whitespace-nowrap text-muted-foreground">
+                                  <span className="ml-auto mr-1 text-[11px] whitespace-nowrap text-neutral-500">
                                     {icon.category}
                                   </span>
                                 </CommandItem>
@@ -467,12 +468,12 @@ export function IconBrowser() {
                   onClick={copyInstall}
                   whileHover={{ y: -1 }}
                   whileTap={{ scale: 0.97 }}
-                  className="hidden h-10 items-center gap-2 rounded-full border border-border bg-foreground/[0.04] px-4 font-mono text-[12px] whitespace-nowrap text-foreground/70 transition-colors hover:border-primary/40 hover:text-foreground xl:inline-flex"
+                  className="hidden h-10 items-center gap-2 rounded-full border border-black/10 bg-white px-4 font-mono text-[12px] whitespace-nowrap text-neutral-700 transition-colors hover:border-black/30 hover:text-neutral-900 xl:inline-flex"
                 >
                   <IconTerminal2 className="size-3.5" stroke={1.75} />
                   <ShikiCode code={SITE.install.command} lang="bash" />
                   {copiedInstall ? (
-                    <IconCheck className="size-3.5 text-primary" />
+                    <IconCheck className="size-3.5 text-neutral-900" />
                   ) : (
                     <IconCopy className="size-3.5 opacity-50" />
                   )}
@@ -485,7 +486,7 @@ export function IconBrowser() {
                   aria-label="GitHub"
                   whileHover={{ y: -1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-border bg-foreground/[0.04] text-foreground/70 transition-colors hover:border-primary/40 hover:text-foreground"
+                  className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-black/10 bg-white text-neutral-700 transition-colors hover:border-black/30 hover:text-neutral-900"
                 >
                   <svg
                     aria-hidden="true"
@@ -509,22 +510,22 @@ export function IconBrowser() {
                       type="button"
                       onClick={() => setCategory(item.id)}
                       aria-pressed={isActive}
-                      className="relative shrink-0 cursor-pointer rounded-full px-3.5 py-1.5 text-[13px] outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      className="relative shrink-0 cursor-pointer rounded-full px-3.5 py-1.5 text-[13px] outline-none focus-visible:ring-2 focus-visible:ring-black/40"
                     >
                       {isActive && (
                         <motion.span
                           layoutId="category-pill"
                           transition={{ type: "spring", stiffness: 500, damping: 36 }}
-                          className="absolute inset-0 rounded-full bg-primary"
+                          className="absolute inset-0 rounded-full bg-neutral-900"
                         />
                       )}
                       {!isActive && (
-                        <span className="absolute inset-0 rounded-full bg-muted" />
+                        <span className="absolute inset-0 rounded-full bg-black/[0.05]" />
                       )}
                       <span
                         className={`relative transition-colors ${isActive
-                          ? "font-medium text-primary-foreground"
-                          : "text-muted-foreground hover:text-foreground"
+                          ? "font-medium text-white"
+                          : "text-neutral-500 hover:text-neutral-900"
                           }`}
                       >
                         {item.label}
@@ -536,7 +537,7 @@ export function IconBrowser() {
                   )
                 })}
               </div>
-              <span className="ml-auto hidden shrink-0 text-[12px] text-muted-foreground sm:block">
+              <span className="ml-auto hidden shrink-0 text-[12px] text-neutral-500 sm:block">
                 {filtered.length} icons
               </span>
             </div>
@@ -563,19 +564,19 @@ export function IconBrowser() {
                   <motion.div
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex flex-col items-center gap-3 rounded-3xl border border-dashed border-border px-6 py-20 text-center"
+                    className="flex flex-col items-center gap-3 rounded-3xl border border-dashed border-black/15 px-6 py-20 text-center"
                   >
-                    <p className="font-sans text-[24px] leading-[1.3] font-bold text-foreground">
+                    <p className="font-sans text-[24px] leading-[1.3] font-bold text-neutral-900">
                       No icons match that search.
                     </p>
-                    <p className="max-w-sm text-[14px] leading-[1.4] text-muted-foreground">
+                    <p className="max-w-sm text-[14px] leading-[1.4] text-neutral-500">
                       Try another word, or request the motif you need.
                     </p>
                     <a
                       href={SITE.links.contribute}
                       target="_blank"
                       rel="noopener"
-                      className="mt-1 text-[14px] font-medium text-primary underline underline-offset-4 hover:opacity-70"
+                      className="mt-1 text-[14px] font-medium text-neutral-900 underline underline-offset-4 hover:opacity-70"
                     >
                       Request an icon →
                     </a>
@@ -590,14 +591,14 @@ export function IconBrowser() {
                 transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
                 className="sticky top-33 hidden w-59 shrink-0 xl:block"
               >
-                <div className="rounded-3xl border border-border bg-card/40">
+                <div className="rounded-3xl border border-black/10 bg-white/60">
                   <div className="flex items-center justify-between px-4 pt-4 pb-3">
-                    <p className="text-[13px] text-muted-foreground">Contribute</p>
+                    <p className="text-[13px] text-neutral-500">Contribute</p>
                     <a
                       href={SITE.links.contribute}
                       target="_blank"
                       rel="noopener"
-                      className="rounded-full bg-primary px-3 py-1.5 text-[12px] font-semibold text-primary-foreground transition-opacity hover:opacity-85"
+                      className="rounded-full bg-neutral-900 px-3 py-1.5 text-[12px] font-semibold text-white transition-opacity hover:opacity-85"
                     >
                       Submit an icon
                     </a>
@@ -611,9 +612,9 @@ export function IconBrowser() {
                           target="_blank"
                           rel="noopener"
                           whileHover={{ x: 3 }}
-                          className="flex items-center gap-3 rounded-2xl px-2 py-2 transition-colors hover:bg-foreground/[0.05]"
+                          className="flex items-center gap-3 rounded-2xl px-2 py-2 transition-colors hover:bg-black/5"
                         >
-                          <span className="relative size-9 shrink-0 overflow-hidden rounded-lg bg-background">
+                          <span className="relative size-9 shrink-0 overflow-hidden rounded-lg bg-white">
                             <Image
                               src={row.image}
                               alt=""
@@ -623,10 +624,10 @@ export function IconBrowser() {
                             />
                           </span>
                           <span className="min-w-0">
-                            <span className="block text-[12px] text-muted-foreground">
+                            <span className="block text-[12px] text-neutral-500">
                               {row.eyebrow}
                             </span>
-                            <span className="block truncate text-[13px] font-medium text-foreground">
+                            <span className="block truncate text-[13px] font-medium text-neutral-900">
                               {row.title}
                             </span>
                           </span>
@@ -639,7 +640,7 @@ export function IconBrowser() {
                     href={SITE.links.github}
                     target="_blank"
                     rel="noopener"
-                    className="flex items-center justify-between border-t border-border px-4 py-3 text-[13px] text-muted-foreground transition-colors hover:text-primary"
+                    className="flex items-center justify-between border-t border-black/10 px-4 py-3 text-[13px] text-neutral-500 transition-colors hover:text-neutral-900"
                   >
                     See all on GitHub
                     <IconArrowUpRight className="size-4" stroke={1.75} />
@@ -649,7 +650,7 @@ export function IconBrowser() {
             </div>
           </main>
 
-          <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border px-5 py-3 text-[12px] text-muted-foreground lg:px-6">
+          <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-black/10 px-5 py-3 text-[12px] text-neutral-500 lg:px-6">
             <span>odiaicons · open source under the MIT licence</span>
             <span>24 × 24 grid · 1.75px stroke</span>
           </footer>
@@ -662,7 +663,7 @@ export function IconBrowser() {
           if (!open) setActive(null)
         }}
       >
-        <DialogContent className="max-h-[90dvh] w-[calc(100%-2rem)] gap-0 overflow-hidden rounded-3xl border-border bg-background p-0 sm:max-w-4xl">
+        <DialogContent className="max-h-[90dvh] w-[calc(100%-2rem)] gap-0 overflow-hidden rounded-3xl border-black/10 bg-[#f6f4f0] p-0 text-neutral-900 sm:max-w-4xl">
           <DialogTitle className="sr-only">{active?.name ?? "Icon"}</DialogTitle>
           <DialogDescription className="sr-only">
             Customize size, stroke and color, then copy or download the icon.
