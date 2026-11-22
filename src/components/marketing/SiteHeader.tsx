@@ -49,11 +49,11 @@ export function Header() {
           className={cn(
             "pointer-events-auto flex h-16 items-center justify-between rounded-full transition-all duration-300 md:h-[70px]",
             /* mobile: always a glass pill */
-            "bg-white/40 pr-2 pl-5 ring-1 ring-white/50 backdrop-blur-xl",
-            open && "bg-white/60",
+            " pr-2 pl-5 ring-1 ring-white/50 backdrop-blur-xl",
+            open && "",
             /* desktop: transparent at top, pill after scroll */
             scrolled
-              ? "md:bg-white/85 md:pr-2 md:pl-6 md:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.2)] md:ring-black/5"
+              ? " md:pr-2 md:pl-6 md:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.2)] md:ring-black/5"
               : "md:bg-transparent md:px-0 md:shadow-none md:ring-transparent md:backdrop-blur-none",
           )}
         >

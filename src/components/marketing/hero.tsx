@@ -15,13 +15,16 @@ import { SITE } from "@/data/site";
 /* Serif display face */
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400" });
 
-/* TODO: replace with your own hero image, e.g. "/images/hero-bg.jpg" */
-const HERO_IMAGE = "/hero5.png";
+/* Save hero-bg.webp to /public/images/ */
+const HERO_IMAGE = "/hero-bg.webp";
+
+/* Must match the background of the section that follows the hero */
+const PAGE_BG = "#f7f5f1";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 /* ------------------------------------------------------------------ */
-/* Product preview (cropped + dark fade at the bottom)                 */
+/* Product preview (cropped + light fade at the bottom)                */
 /* ------------------------------------------------------------------ */
 
 function PreviewWindow() {
@@ -30,7 +33,7 @@ function PreviewWindow() {
   return (
     <Card
       aria-hidden="true"
-      className="relative h-[260px] gap-0 overflow-hidden rounded-b-none border-b-0 bg-white p-0 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.45)] select-none sm:h-[320px] md:h-[380px]"
+      className="relative h-[260px] gap-0 overflow-hidden rounded-b-none border-b-0 border-black/5 bg-white p-0 shadow-[0_30px_80px_-24px_rgba(90,60,30,0.35)] select-none sm:h-[320px] md:h-[380px]"
     >
       {/* Toolbar */}
       <div className="flex items-center gap-3 border-b border-neutral-200 px-4 py-3">
@@ -74,8 +77,13 @@ function PreviewWindow() {
         </div>
       </div>
 
-      {/* Dark fade at the bottom of the dashboard */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-neutral-950/90 via-neutral-900/50 to-transparent sm:h-36" />
+      {/* Light fade: dashboard dissolves into the next section */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 sm:h-32"
+        style={{
+          background: `linear-gradient(to top, ${PAGE_BG} 0%, ${PAGE_BG}b3 45%, transparent 100%)`,
+        }}
+      />
     </Card>
   );
 }
@@ -120,9 +128,9 @@ export function Hero() {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className="relative isolate flex min-h-svh flex-col items-center overflow-hidden bg-linear-to-b from-[#8cc7e6] via-[#b9dcec] to-[#e4f0f3] px-4 pt-28 sm:px-6 sm:pt-36"
+      className="relative isolate flex min-h-svh flex-col items-center overflow-hidden bg-linear-to-b from-[#f1dfcc] via-[#f5e9db] to-[#f7f5f1] px-4 pt-28 sm:px-6 sm:pt-36"
     >
-      {/* Background image (placeholder) */}
+      {/* Background image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={HERO_IMAGE}
@@ -131,11 +139,16 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 -z-20 size-full object-cover object-bottom"
       />
 
-      {/* Soft top scrim so the floating header stays readable */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-black/25 to-transparent" />
+      {/* Soft light wash so the headline stays readable on the image */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-white/45 via-white/15 to-transparent" />
 
-      {/* Dark bottom fade: hides the seam between hero and the next section */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-40 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-[2px] sm:h-56" />
+      {/* Light bottom fade: blends the hero into the next (light) section */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-32 sm:h-48"
+        style={{
+          background: `linear-gradient(to top, ${PAGE_BG} 0%, ${PAGE_BG}99 40%, transparent 100%)`,
+        }}
+      />
 
       <motion.div
         variants={container}
@@ -148,7 +161,7 @@ export function Hero() {
           <Badge
             asChild
             variant="outline"
-            className="h-8 gap-2 rounded-full border-white/60 bg-white/90 py-1 pr-3.5 pl-1 text-[13px] font-medium text-neutral-800 shadow-sm backdrop-blur hover:bg-white"
+            className="h-8 gap-2 rounded-full border-black/5 bg-white/85 py-1 pr-3.5 pl-1 text-[13px] font-medium text-neutral-800 shadow-sm backdrop-blur hover:bg-white"
           >
             <Link href={SITE.links.github} target="_blank" rel="noopener noreferrer">
               <Badge className="rounded-full bg-black px-2.5 text-[11px] text-white hover:bg-black">
@@ -174,7 +187,7 @@ export function Hero() {
         {/* Description */}
         <motion.p
           variants={rise}
-          className="mt-5 max-w-xl text-base leading-relaxed text-balance text-neutral-800 sm:mt-6 sm:text-lg"
+          className="mt-5 max-w-xl text-base leading-relaxed text-balance text-neutral-700 sm:mt-6 sm:text-lg"
         >
           {hero.lead}
         </motion.p>
@@ -199,27 +212,30 @@ export function Hero() {
             asChild
             size="lg"
             variant="secondary"
-            className="h-12 rounded-full bg-white/90 px-6 text-base font-normal text-neutral-900 shadow-sm backdrop-blur hover:bg-white"
+            className="h-12 rounded-full bg-white/90 px-6 text-base font-normal text-neutral-900 shadow-sm ring-1 ring-black/5 backdrop-blur hover:bg-white"
           >
             <Link href="/icons">{hero.ctas.browse}</Link>
           </Button>
         </motion.div>
 
-        {/* Trust row (moved above the preview so the preview can touch the bottom) */}
+        {/* Trust row */}
         <motion.ul
           variants={rise}
-          className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 rounded-full bg-black/30 px-5 py-2 text-[13px] text-white backdrop-blur-md sm:mt-8 sm:text-sm"
+          className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 rounded-full bg-white/60 px-5 py-2 text-[13px] text-neutral-800 ring-1 ring-black/5 backdrop-blur-md sm:mt-8 sm:text-sm"
         >
           {trust.map((t, i) => (
             <li key={t.text} className="flex items-center gap-4">
               {i > 0 && (
                 <Separator
                   orientation="vertical"
-                  className="hidden h-4 bg-white/50 sm:block"
+                  className="hidden h-4 bg-neutral-400/50 sm:block"
                 />
               )}
               <span className="flex items-center gap-1.5">
-                <t.icon aria-hidden className={`size-4 ${t.fill ? "fill-white" : ""}`} />
+                <t.icon
+                  aria-hidden
+                  className={`size-4 ${t.fill ? "fill-amber-400 text-amber-400" : ""}`}
+                />
                 {t.text}
               </span>
             </li>
