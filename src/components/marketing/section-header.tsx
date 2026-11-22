@@ -1,96 +1,147 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { IconBrandGithub, IconMenu, IconX } from "@tabler/icons-react";
+
+import { SITE } from "@/data/site";
 import { cn } from "@/lib/utils";
-import type { IconDef } from "@/lib/icons";
 
-/**
- * Paints one phrase of the heading in the accent colour.
- * Splits on the FIRST match only, so a phrase that appears twice can no
- * longer swallow text (the old `split()` dropped everything after a 2nd match).
- */
-function AccentHeading({ title, accent }: { title: string; accent?: string }) {
-  const at = accent ? title.indexOf(accent) : -1;
-  if (!accent || at === -1) return <>{title}</>;
+const GITHUB_URL = "https://github.com/rudranboitei/odia-icons";
 
+/* Edit the links here. Each href needs a matching id on its section. */
+const NAV = [
+  { label: "Features", href: "#features" },
+  { label: "How it works", href: "#steps" },
+  { label: "Playground", href: "#playground" },
+  { label: "FAQ", href: "#faq" },
+];
+
+function GithubLink({ className }: { className?: string }) {
   return (
-    <>
-      {title.slice(0, at)}
-      <span className="text-primary">{accent}</span>
-      {title.slice(at + accent.length)}
-    </>
+    <a
+      href={GITHUB_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub repository"
+      className={cn(
+        "inline-flex size-9 items-center justify-center rounded-full text-neutral-900 outline-none hover:bg-black/5 focus-visible:ring-2 focus-visible:ring-black/40",
+        className
+      )}
+    >
+      <IconBrandGithub aria-hidden className="size-5" stroke={1.5} />
+    </a>
   );
 }
 
-/**
- * Shared section header: small label, headline, short subhead.
- *
- * The label is plain text (with a short rule when left-aligned) rather than
- * a pill with an icon, which was the most "template" part of the old header.
- * Props are unchanged so existing callers keep working; `icon` is accepted
- * but no longer drawn.
- */
-export function SectionHeader({
-  eyebrow,
-  title,
-  accent,
-  description,
-  align = "center",
-  size = "section",
-  titleId,
-  className,
-  children,
-}: {
-  eyebrow: string;
-  title: string;
-  accent?: string;
-  description?: ReactNode;
-  align?: "center" | "left";
-  /** @deprecated No longer rendered. Kept so existing call sites still type-check. */
-  icon?: IconDef;
-  size?: "section" | "cta";
-  /** Put on the <h2> so a parent <section aria-labelledby> can point at it. */
-  titleId?: string;
-  className?: string;
-  children?: ReactNode;
-}) {
-  const centered = align === "center";
+export function Header() {
+  const { name } = SITE;
+  const [open, setOpen] = useState(false);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  // Lock page scroll, close on Escape, and move focus to the close button while the menu is open
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeRef.current?.focus();
+
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
 
   return (
     <header
-      className={cn(
-        "flex max-w-3xl flex-col",
-        centered ? "mx-auto items-center text-center" : "items-start text-left",
-        className,
-      )}
+      id="top"
+      className="sticky top-0 z-40 border-b border-black/10 bg-[#f6f4f0]/90 backdrop-blur-md"
     >
-      <p className="flex items-center gap-3 text-[13px] font-medium tracking-[0.12em] text-primary uppercase">
-        {!centered && <span aria-hidden className="h-px w-6 bg-primary/60" />}
-        {eyebrow}
-      </p>
-
-      <h2
-        id={titleId}
-        className={cn(
-          "mt-4 font-semibold tracking-[-0.035em] text-balance text-foreground sm:mt-5",
-          size === "cta"
-            ? "text-[2.5rem] leading-[1.03] sm:text-5xl md:text-6xl lg:text-7xl"
-            : "text-[2rem] leading-[1.08] sm:text-4xl md:text-5xl lg:text-[3.25rem]",
-        )}
-      >
-        <AccentHeading title={title} accent={accent} />
-      </h2>
-
-      {description && (
-        <p
-          className={cn(
-            "mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg",
-            centered ? "text-balance" : "text-pretty",
-          )}
+      {/* Mobile: logo left, menu right. Desktop: one centred group. */}
+      <div className="mx-auto flex h-14 w-full max-w-[1080px] items-center justify-between px-4 sm:px-6 md:justify-center md:gap-10">
+        <Link
+          href="#top"
+          aria-label={`${name} home`}
+          className="inline-flex items-center hover:opacity-80"
         >
-          {description}
-        </p>
-      )}
+          {/* The cream wordmark is made for dark pages; brightness-0 turns it solid black */}
+          <Image
+            src="/brand/wordmark-cream.svg"
+            alt={name}
+            width={112}
+            height={28}
+            priority
+            className="h-6 w-auto brightness-0"
+          />
+        </Link>
 
-      {children}
+        {/* Desktop nav */}
+        <nav aria-label="Primary" className="hidden items-center gap-6 md:flex">
+          {NAV.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-sm text-neutral-600 hover:text-neutral-900"
+            >
+              {l.label}
+            </a>
+          ))}
+        </nav>
+
+        <GithubLink className="hidden md:inline-flex" />
+
+        {/* Mobile menu button */}
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          aria-label="Open menu"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          className="inline-flex size-10 cursor-pointer items-center justify-center rounded-lg text-neutral-900 outline-none hover:bg-black/5 focus-visible:ring-2 focus-visible:ring-black/40 md:hidden"
+        >
+          <IconMenu aria-hidden className="size-6" stroke={1.5} />
+        </button>
+      </div>
+
+      {/* Full-screen mobile menu (no animation) */}
+      {open && (
+        <div
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#f6f4f0] md:hidden"
+        >
+          <nav aria-label="Mobile" className="flex flex-col items-center gap-1">
+            {NAV.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="py-1.5 text-[clamp(2rem,9vw,2.75rem)] leading-tight font-medium tracking-tight text-neutral-900 outline-none hover:text-neutral-500 focus-visible:text-neutral-500"
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+
+          <GithubLink className="mt-6" />
+
+          <button
+            ref={closeRef}
+            type="button"
+            onClick={() => setOpen(false)}
+            aria-label="Close menu"
+            className="absolute bottom-8 inline-flex size-11 cursor-pointer items-center justify-center rounded-full border border-black/10 bg-white text-neutral-900 shadow-sm outline-none hover:bg-neutral-50 focus-visible:ring-2 focus-visible:ring-black/40"
+          >
+            <IconX aria-hidden className="size-5" stroke={1.5} />
+          </button>
+        </div>
+      )}
     </header>
   );
 }

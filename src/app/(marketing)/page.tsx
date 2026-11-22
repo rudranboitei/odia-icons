@@ -4,6 +4,7 @@ import { Features } from "@/components/marketing/features";
 import { FinalCta } from "@/components/marketing/final-cta";
 import { Footer } from "@/components/marketing/footer";
 import { Hero } from "@/components/marketing/hero";
+import { PlaygroundSection } from "@/components/marketing/playground-section";
 import { Header } from "@/components/marketing/SiteHeader";
 import { Steps } from "@/components/marketing/steps";
 
@@ -14,7 +15,7 @@ export default function Page() {
       <Hero />
       <Features />
       <Steps />
-      <DeveloperSection />
+      <PlaygroundSection />
       <Faq />
       <FinalCta />
       <Footer />

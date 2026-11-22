@@ -12,18 +12,15 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 type FaqItem = { q: string; a: string };
 
 /**
- * One row. The panel opens with a CSS grid-rows transition (0fr -> 1fr):
- * it is compositor-friendly, needs no JS height measuring, and stays smooth
- * on low-end phones. Only transform/opacity/grid-rows change, no shadows.
+ * One boxed question. The answer opens inside the box with a CSS
+ * grid-rows transition (0fr -> 1fr): no JS height measuring, smooth on phones.
  */
-function FaqRow({
+function FaqBox({
   item,
-  index,
   open,
   onToggle,
 }: {
   item: FaqItem;
-  index: number;
   open: boolean;
   onToggle: () => void;
 }) {
@@ -32,7 +29,12 @@ function FaqRow({
   const panelId = `${uid}-panel`;
 
   return (
-    <div className="group">
+    <div
+      className={cn(
+        "rounded-sm border bg-white transition-colors duration-300",
+        open ? "border-black/30" : "border-black/10 hover:border-black/20"
+      )}
+    >
       <h3>
         <button
           id={buttonId}
@@ -40,32 +42,15 @@ function FaqRow({
           aria-expanded={open}
           aria-controls={panelId}
           onClick={onToggle}
-          className="flex min-h-14 w-full cursor-pointer items-start gap-4 rounded-lg py-5 text-left outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:py-6"
+          className="flex min-h-12 w-full cursor-pointer items-center justify-between gap-4 px-4 py-3.5 text-left outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f6f4f0]"
         >
-          <span
-            className={cn(
-              "w-7 shrink-0 pt-[3px] font-mono text-xs tabular-nums tracking-wider transition-colors duration-300",
-              open ? "text-primary" : "text-muted-foreground/60"
-            )}
-          >
-            {String(index + 1).padStart(2, "0")}
-          </span>
-
-          <span
-            className={cn(
-              "flex-1 text-[17px] leading-snug font-semibold tracking-tight transition-colors duration-300 sm:text-lg",
-              open ? "text-foreground" : "text-foreground/80 group-hover:text-foreground"
-            )}
-          >
-            {item.q}
-          </span>
-
+          <span className="text-[15px] leading-snug text-neutral-900">{item.q}</span>
           <IconPlus
             aria-hidden
-            stroke={1.75}
+            stroke={1.5}
             className={cn(
-              "mt-0.5 size-5 shrink-0 transition-[transform,color] duration-300 ease-out motion-reduce:transition-none",
-              open ? "rotate-45 text-primary" : "text-muted-foreground group-hover:text-foreground"
+              "size-[18px] shrink-0 text-neutral-700 transition-transform duration-300 ease-out motion-reduce:transition-none",
+              open && "rotate-45"
             )}
           />
         </button>
@@ -83,7 +68,7 @@ function FaqRow({
         )}
       >
         <div className="min-h-0 overflow-hidden">
-          <p className="max-w-xl pr-8 pb-6 pl-11 text-[15px] leading-relaxed text-muted-foreground sm:pb-7 sm:text-base">
+          <p className="max-w-[26rem] px-4 pb-4 text-[15px] leading-relaxed text-neutral-500">
             {item.a}
           </p>
         </div>
@@ -92,93 +77,76 @@ function FaqRow({
   );
 }
 
-function MoreLink({ className }: { className?: string }) {
-  const { faq, links } = SITE;
-
-  return (
-    <div
-      className={cn(
-        "flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-muted-foreground",
-        className
-      )}
-    >
-      <span>{faq.more.label}</span>
-      <a
-        href={links.contribute}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group/link inline-flex min-h-10 items-center gap-1 rounded-full border border-white/10 px-4 font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-      >
-        {faq.more.linkLabel}
-        <IconArrowUpRight
-          aria-hidden
-          className="size-3.5 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-          stroke={1.75}
-        />
-      </a>
-    </div>
-  );
-}
-
 export function Faq() {
-  const { faq } = SITE;
+  const { faq, links } = SITE;
   const reduce = useReducedMotion() ?? false;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-  // One calm entrance for each column instead of per-row staggers
-  const enter = (delay = 0) => ({
-    initial: reduce ? false : { opacity: 0, y: 16 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-40px" },
-    transition: { duration: 0.5, ease: EASE, delay },
-  });
 
   return (
     <section
       id="faq"
       aria-labelledby="faq-title"
-      className="relative scroll-mt-20 px-5 py-14 sm:px-6 sm:py-16 lg:py-24"
+      className="relative scroll-mt-20 bg-[#f6f4f0] px-4 py-16 text-neutral-900 sm:px-6 sm:py-24"
     >
-      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
-        {/* Left: heading (sticky on desktop) */}
-        <motion.div {...enter()} className="lg:sticky lg:top-28 lg:self-start">
-          {faq.eyebrow && (
-            <p className="mb-3 text-xs font-medium tracking-[0.14em] text-primary uppercase">
-              {faq.eyebrow}
-            </p>
+      <motion.div
+        initial={reduce ? false : { opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.5, ease: EASE }}
+        className="mx-auto w-full max-w-[1080px]"
+      >
+        {/* Eyebrow + two-tone heading */}
+        <p className="flex items-center gap-2 text-sm text-neutral-500">
+          <span aria-hidden className="size-2 rounded-full bg-neutral-400" />
+          {faq.eyebrow ?? "FAQ"}
+        </p>
+        <h2
+          id="faq-title"
+          className="mt-3 max-w-[640px] text-[clamp(1.75rem,4.2vw,2.5rem)] leading-[1.15] font-medium tracking-tight text-balance"
+        >
+          <span className="text-neutral-900">{faq.title}</span>
+          {faq.accent && (
+            <>
+              {" "}
+              <span className="text-neutral-400">{faq.accent}</span>
+            </>
           )}
-          <h2
-            id="faq-title"
-            className="text-3xl leading-[1.08] font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+        </h2>
+        {faq.description && (
+          <p className="mt-4 max-w-md text-base leading-relaxed text-neutral-500">
+            {faq.description}
+          </p>
+        )}
+
+        {/* Two columns of boxes; items-start so an open box doesn't stretch its neighbour */}
+        <div className="mt-10 grid items-start gap-3 sm:mt-14 md:grid-cols-2 md:gap-4">
+          {faq.items.map((item: FaqItem, i: number) => (
+            <FaqBox
+              key={item.q}
+              item={item}
+              open={openIndex === i}
+              onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+            />
+          ))}
+        </div>
+
+        <div className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-neutral-500">
+          <span>{faq.more.label}</span>
+          <a
+            href={links.contribute}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/link inline-flex h-10 items-center gap-1 rounded-full border border-black/10 bg-white px-5 text-sm font-medium text-neutral-900 shadow-sm transition-colors hover:bg-neutral-50 focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:outline-none"
           >
-            {faq.title}
-            {faq.accent && <> <span className="text-primary">{faq.accent}</span></>}
-          </h2>
-          {faq.description && (
-            <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {faq.description}
-            </p>
-          )}
-          <MoreLink className="mt-8 hidden lg:flex" />
-        </motion.div>
-
-        {/* Right: flat list with hairline dividers */}
-        <motion.div {...enter(0.08)}>
-          <div className="divide-y divide-white/10 border-y border-white/10">
-            {faq.items.map((item: FaqItem, i: number) => (
-              <FaqRow
-                key={item.q}
-                item={item}
-                index={i}
-                open={openIndex === i}
-                onToggle={() => setOpenIndex(openIndex === i ? null : i)}
-              />
-            ))}
-          </div>
-
-          <MoreLink className="mt-8 lg:hidden" />
-        </motion.div>
-      </div>
+            {faq.more.linkLabel}
+            <IconArrowUpRight
+              aria-hidden
+              className="size-3.5 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+              stroke={1.75}
+            />
+          </a>
+        </div>
+      </motion.div>
     </section>
   );
 }
