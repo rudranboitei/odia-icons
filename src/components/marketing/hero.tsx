@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ICONS, IconGlyph } from "@/data/icons";
 import { SITE } from "@/data/site";
+import { Icon, icons, iconsByName } from "@/lib/icons";
 
 /* Serif display face */
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400" });
@@ -27,8 +28,52 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 /* Product preview (cropped + light fade at the bottom)                */
 /* ------------------------------------------------------------------ */
 
+/*
+ * Replaces PreviewWindow in your file. Everything else in that file stays.
+ *
+ * Imports it needs (from your lib, the file you just sent):
+ *
+ *   import { Icon, icons, iconsByName } from "@/lib/icons";
+ *
+ * It no longer uses ICONS or IconGlyph, which have a different type (IconEntry,
+ * with `paths`). `Icon` takes the same IconDef that iconsByName returns.
+ */
+
+/** The 16 icons shown in the preview, by name (the files in ./icons/outline). */
+const PREVIEW_NAMES = [
+  "bell",
+  "boita",
+  "calendar",
+  "chart-bar",
+  "check-circle",
+  "close-circle",
+  "deepa",
+  "download",
+  "edit",
+  "elephant",
+  "folder",
+  "home",
+  "kite",
+  "lotus",
+  "mail",
+  "mango",
+] as const;
+
+/** Which tile shows the dark "selected" border. */
+const SELECTED = "deepa";
+
 function PreviewWindow() {
-  const tiles = ICONS.slice(0, 24);
+  // Look each name up; a name that isn't in the registry is skipped, and logged so it isn't silent
+  const tiles = PREVIEW_NAMES.flatMap((name) => {
+    const icon = iconsByName[name];
+    if (!icon) {
+      console.warn(
+        `PreviewWindow: no icon named "${name}" in the registry. Run "bun run icons:build" and restart the dev server.`
+      );
+      return [];
+    }
+    return [icon];
+  });
 
   return (
     <Card
@@ -48,24 +93,26 @@ function PreviewWindow() {
           <span className="truncate">Search icons</span>
         </div>
         <span className="ml-auto hidden text-xs text-neutral-500 sm:block">
-          {ICONS.length} icons
+          {icons.length} icons
         </span>
       </div>
 
-      {/* Grid */}
+      {/* Grid: 16 tiles divide evenly into 4 or 8 columns, so no ragged last row */}
       <div className="p-4 sm:p-5">
         <p className="mb-3 text-left text-sm font-semibold text-neutral-900">
           All icons
         </p>
-        <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 sm:gap-3 md:grid-cols-8">
-          {tiles.map((icon, i) => (
+        <div className="grid grid-cols-4 gap-2 sm:grid-cols-8 sm:gap-3">
+          {tiles.map((icon) => (
             <div
               key={icon.name}
-              className={`flex aspect-[1/0.85] min-w-0 flex-col items-center justify-center gap-1.5 rounded-xl border px-1 ${i === 1 ? "border-black bg-neutral-50" : "border-neutral-200"
+              className={`flex aspect-[1/0.85] min-w-0 flex-col items-center justify-center gap-1.5 rounded-xl border px-1 ${icon.name === SELECTED
+                ? "border-black bg-neutral-50"
+                : "border-neutral-200"
                 }`}
             >
-              <IconGlyph
-                icon={icon}
+              <Icon
+                def={icon}
                 strokeWidth={1.5}
                 className="size-6 text-neutral-900 sm:size-7"
               />
