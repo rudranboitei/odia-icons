@@ -54,7 +54,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#141210",
+  themeColor: "#E3C6B0",
 };
 
 export default function RootLayout({
