@@ -1,0 +1,26 @@
+{
+  "name": "edit",
+  "odia": "ସମ୍ପାଦନ",
+  "category": "ui",
+  "tags": [
+    "edit",
+    "pencil",
+    "write",
+    "modify",
+    "update",
+    "dashboard",
+    "ସମ୍ପାଦନ"
+  ],
+  "aliases": [
+    "pencil"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text is a guess and needs a native check."
+}

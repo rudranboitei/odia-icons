@@ -1,0 +1,27 @@
+{
+  "name": "check-circle",
+  "odia": "ଠିକ୍",
+  "category": "ui",
+  "tags": [
+    "check",
+    "success",
+    "done",
+    "tick",
+    "circle",
+    "dashboard",
+    "ଠିକ୍"
+  ],
+  "aliases": [
+    "success",
+    "done"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text is a guess and needs a native check."
+}

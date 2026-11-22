@@ -1,0 +1,26 @@
+{
+  "name": "sal-leaf",
+  "odia": "ଶାଳପତ୍ର",
+  "category": "nature",
+  "tags": [
+    "sal",
+    "leaf",
+    "shorea",
+    "tree",
+    "nature",
+    "odisha",
+    "ଶାଳପତ୍ର"
+  ],
+  "aliases": [
+    "leaf"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "A generic broad leaf; it does not show anything specific to the sal tree. Odia text needs a native check."
+}

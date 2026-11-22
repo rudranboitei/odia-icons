@@ -1,0 +1,27 @@
+{
+  "name": "close-circle",
+  "odia": "ବନ୍ଦ",
+  "category": "ui",
+  "tags": [
+    "close",
+    "cancel",
+    "error",
+    "dismiss",
+    "x",
+    "dashboard",
+    "ବନ୍ଦ"
+  ],
+  "aliases": [
+    "cancel",
+    "dismiss"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text is a guess and needs a native check."
+}

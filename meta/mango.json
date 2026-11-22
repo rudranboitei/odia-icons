@@ -1,0 +1,26 @@
+{
+  "name": "mango",
+  "odia": "ଆମ୍ବ",
+  "category": "food",
+  "tags": [
+    "mango",
+    "amba",
+    "fruit",
+    "food",
+    "summer",
+    "odisha",
+    "ଆମ୍ବ"
+  ],
+  "aliases": [
+    "amba"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "A tilted fruit with a leaf; it could also be read as another fruit. Odia spelling needs a native check."
+}
