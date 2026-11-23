@@ -1,8 +1,8 @@
 import * as React from "react"
 
 /**
- * Shared bits for the icons page so every button, tag and bracket
- * comes from one place and matches the dashboard reference.
+ * Shared bits for the /icons page. Visual style matches the landing page:
+ * rounded-full controls, neutral palette, warm surfaces.
  */
 
 /** Orange corner brackets, like the avatar tiles in the reference. */
@@ -29,10 +29,11 @@ export function Tag({
 }) {
   return (
     <span
-      className={`rounded-md px-2 py-1 text-[11px] leading-none tracking-wide whitespace-nowrap uppercase ${tone === "orange"
-        ? "bg-orange-100 text-orange-700"
-        : "bg-black/[0.06] text-neutral-600"
-        } ${className}`}
+      className={`inline-flex items-center rounded-full px-2.5 py-1 text-[11px] leading-none font-medium whitespace-nowrap ${
+        tone === "orange"
+          ? "bg-orange-100 text-orange-700"
+          : "bg-black/[0.05] text-neutral-600"
+      } ${className}`}
     >
       {children}
     </span>
@@ -41,7 +42,7 @@ export function Tag({
 
 export function Kbd({ children }: { children: React.ReactNode }) {
   return (
-    <kbd className="rounded bg-black/[0.06] px-1.5 py-0.5 font-mono text-[10px] text-neutral-500">
+    <kbd className="rounded-md border border-black/10 bg-white px-1.5 py-0.5 text-[10px] font-medium text-neutral-500">
       {children}
     </kbd>
   )
@@ -51,25 +52,24 @@ type Variant = "solid" | "outline" | "soft" | "accent"
 type Size = "sm" | "md" | "lg" | "icon" | "iconSm"
 
 const BASE =
-  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md font-mono text-[12px] tracking-wide whitespace-nowrap uppercase outline-none transition-[background-color,border-color,color,transform] select-none active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f5f5] disabled:pointer-events-none disabled:opacity-50"
+  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-medium whitespace-nowrap outline-none transition-[background-color,border-color,color,box-shadow,transform] select-none active:scale-[0.98] focus-visible:ring-[3px] focus-visible:ring-black/10 disabled:pointer-events-none disabled:opacity-50"
 
 const VARIANTS: Record<Variant, string> = {
-  solid: "bg-neutral-900 text-white hover:bg-neutral-700",
+  solid: "bg-neutral-950 text-white hover:bg-neutral-800",
   outline:
-    "border border-black/10 bg-white text-neutral-700 hover:border-black/30 hover:text-neutral-900",
-  soft: "bg-black/[0.06] text-neutral-700 hover:bg-black/[0.09] hover:text-neutral-900",
+    "border border-black/10 bg-white text-neutral-700 hover:bg-black/[0.03] hover:text-neutral-950",
+  soft: "bg-black/[0.05] text-neutral-700 hover:bg-black/[0.08] hover:text-neutral-950",
   accent: "bg-orange-100 text-orange-700 hover:bg-orange-200",
 }
 
 const SIZES: Record<Size, string> = {
-  sm: "h-8 px-2.5",
-  md: "h-9 px-3",
-  lg: "h-10 px-3.5",
+  sm: "h-8 px-3 text-[13px]",
+  md: "h-9 px-3.5 text-[13px]",
+  lg: "h-10 px-4",
   icon: "size-9",
-  iconSm: "size-7",
+  iconSm: "size-8",
 }
 
-/** Class string, so anchors and motion elements can wear the same button style. */
 export function btn(variant: Variant = "solid", size: Size = "md", extra = "") {
   return `${BASE} ${VARIANTS[variant]} ${SIZES[size]} ${extra}`
 }

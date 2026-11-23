@@ -193,7 +193,7 @@ function SidebarContent({
                 <Link
                   href={item.href}
                   onClick={onClose}
-                  className={`flex items-center gap-2 rounded-sm px-2 py-2 text-[13px] transition-colors lg:py-1.5 ${item.active
+                  className={`flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] transition-colors lg:py-1.5 ${item.active
                     ? "bg-black/[0.07] text-neutral-900"
                     : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
                     }`}
@@ -233,7 +233,7 @@ function SidebarContent({
                     onClose?.()
                   }}
                   aria-pressed={isActive}
-                  className={`flex w-full cursor-pointer items-center gap-2 rounded-sm px-2 py-2 text-left text-[13px] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-black/40 lg:py-1.5 ${isActive
+                  className={`flex w-full cursor-pointer items-center gap-2 rounded-lg px-2.5 py-2 text-left text-[13px] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-black/40 lg:py-1.5 ${isActive
                     ? "bg-black/[0.07] text-neutral-900"
                     : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
                     }`}
@@ -261,7 +261,7 @@ function SidebarContent({
           {sidebarStats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-none border border-black/10 bg-white/70 px-2 py-1.5"
+              className="rounded-xl border border-black/10 bg-white/70 px-2.5 py-2"
             >
               <p className="text-[10px] tracking-wide text-neutral-400 uppercase">
                 {stat.label}
@@ -273,7 +273,7 @@ function SidebarContent({
           ))}
         </div>
 
-        <div className="relative mt-2.5 rounded-none border border-black/10 bg-white p-2.5">
+        <div className="relative mt-2.5 rounded-xl border border-black/10 bg-white p-3">
           <Corners className="m-1.5 size-2" />
           <div className="flex items-center justify-between">
             <p className="flex items-center gap-1.5 text-[11px] tracking-wide text-neutral-500 uppercase">
@@ -282,7 +282,7 @@ function SidebarContent({
             </p>
             <Tag tone="orange">v0.1.0</Tag>
           </div>
-          <div className="mt-2 rounded-md border border-black/10 bg-[#f5f5f5] px-2 py-1.5 text-[11px] leading-relaxed break-all text-neutral-800">
+          <div className="mt-2 rounded-xl border border-black/10 bg-[#f5f5f5] px-2.5 py-2 text-[11px] leading-relaxed break-all text-neutral-800">
             <ShikiCode code={SITE.install.command} lang="bash" />
           </div>
           <MonoButton variant="solid" size="sm" onClick={onCopyInstall} className="mt-2 w-full">
@@ -514,7 +514,7 @@ export function IconBrowser() {
 
               <div className="hidden min-w-0 items-center gap-2.5 lg:flex">
                 <IconLayoutGrid className="size-4 text-neutral-500" stroke={1.75} />
-                <span className="text-[15px] tracking-wide uppercase">Icons</span>
+                <span className="text-[15px] font-medium text-neutral-900">Icons</span>
                 <Tag tone="orange">{filtered.length} shown</Tag>
               </div>
 
@@ -525,13 +525,13 @@ export function IconBrowser() {
                     type="button"
                     onClick={openSearch}
                     aria-label="Search icons"
-                    className={`flex h-10 w-full cursor-pointer items-center gap-2 rounded-md border border-black/10 bg-white pl-3 text-left text-[12px] tracking-wide uppercase outline-none transition-[border-color,box-shadow] hover:border-black/25 focus-visible:border-black/30 focus-visible:ring-[3px] focus-visible:ring-black/10 ${query ? "pr-11" : "pr-3 sm:pr-20"}`}
+                    className={`flex h-10 w-full cursor-pointer items-center gap-2.5 rounded-full border border-black/10 bg-white pl-4 text-left text-sm outline-none transition-[border-color,box-shadow,background-color] hover:border-black/20 hover:bg-black/[0.01] focus-visible:border-black/20 focus-visible:ring-[3px] focus-visible:ring-black/10 ${query ? "pr-11" : "pr-4 sm:pr-20"}`}
                   >
                     <IconSearch className="size-4 shrink-0 text-neutral-400" />
                     <span
-                      className={`truncate ${query ? "text-neutral-900" : "text-neutral-400"}`}
+                      className={`truncate ${query ? "text-neutral-900" : "text-neutral-500"}`}
                     >
-                      {query || `Search ${icons.length} icons`}
+                      {query || `Search ${icons.length} icons...`}
                     </span>
                   </button>
                   {query ? (
@@ -572,7 +572,7 @@ export function IconBrowser() {
                   target="_blank"
                   rel="noopener"
                   aria-label="GitHub"
-                  className={btn("soft", "lg", "size-10 px-0 max-sm:hidden")}
+                  className={btn("soft", "icon", "max-sm:hidden")}
                 >
                   <IconBrandGithub className="size-4" stroke={1.75} />
                 </a>
@@ -658,7 +658,7 @@ export function IconBrowser() {
         >
           <div className="flex h-14 shrink-0 items-center gap-2.5 border-b border-black/10 px-4">
             <IconCode className="size-4 text-neutral-500" stroke={1.75} />
-            <span className="text-[15px] tracking-wide uppercase">Playground</span>
+            <span className="text-[15px] font-medium text-neutral-900">Playground</span>
             {panelIcon && <Tag tone="orange">{panelIcon.category}</Tag>}
           </div>
 
@@ -688,8 +688,9 @@ export function IconBrowser() {
                   href={SITE.links.contribute}
                   target="_blank"
                   rel="noopener"
-                  className={btn("accent", "sm", "h-7 text-[11px]")}
+                  className={btn("accent", "sm", "h-8 text-[12px]")}
                 >
+                  <IconPlus className="size-3.5" stroke={2} />
                   Submit an icon
                 </a>
               </div>
@@ -772,7 +773,7 @@ export function IconBrowser() {
         }}
         title="Search icons"
         description="Search icons, jump to a category, or run an action."
-        className="w-[calc(100%-1.5rem)] max-w-xl rounded-xl border-black/10 bg-[#f5f5f5] text-neutral-900 max-sm:top-[6%] max-sm:translate-y-0 [--background:#f5f5f5] [--foreground:#171717] [--popover:#f5f5f5] [--popover-foreground:#171717] [--muted:#e5e5e5] [--muted-foreground:#737373] [--input:#e5e5e5] [--border:rgba(0,0,0,0.1)]"
+        className="w-[calc(100%-1.5rem)] max-w-xl rounded-2xl border-black/10 bg-[#f5f5f5] text-neutral-900 max-sm:top-[6%] max-sm:translate-y-0 [--background:#f5f5f5] [--foreground:#171717] [--popover:#f5f5f5] [--popover-foreground:#171717] [--muted:#e5e5e5] [--muted-foreground:#737373] [--input:#e5e5e5] [--border:rgba(0,0,0,0.1)]"
       >
         <Command shouldFilter={false} className="bg-transparent text-neutral-900">
           {/* text-base on phones stops iOS from zooming the page on focus */}
@@ -904,7 +905,7 @@ export function IconBrowser() {
           if (!open) setActive(null)
         }}
       >
-        <DialogContent className="max-h-[88dvh] w-[calc(100%-1.5rem)] gap-0 overflow-hidden rounded-xl border-black/10 bg-[#f5f5f5] p-0  text-neutral-900 sm:max-w-md">
+        <DialogContent className="max-h-[88dvh] w-[calc(100%-1.5rem)] gap-0 overflow-hidden rounded-2xl border-black/10 bg-[#f5f5f5] p-0 text-neutral-900 sm:max-w-md">
           <DialogTitle className="sr-only">{active?.name ?? "Icon"}</DialogTitle>
           <DialogDescription className="sr-only">
             Preview the icon, then copy or download it.

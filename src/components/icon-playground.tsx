@@ -49,7 +49,7 @@ export function IconPlayground({
   }
 
   return (
-    <div className="flex w-full min-w-0 flex-col font-mono text-neutral-900">
+    <div className="flex w-full min-w-0 flex-col text-neutral-900">
       {/* Header row: tile + title, like an inbox item */}
       <div className="flex items-start gap-3 px-4 pt-4 pb-3">
         <span className="relative flex size-9 shrink-0 items-center justify-center rounded-md bg-black/[0.05] text-neutral-800">
