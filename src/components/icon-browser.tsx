@@ -152,14 +152,14 @@ function SidebarContent({
 }) {
   return (
     <>
-      <div className="mb-4 flex items-center justify-between px-2">
+      <div className="mb-3 flex items-center justify-between px-2">
         <Link href="/" onClick={onClose} className="inline-flex w-fit items-center">
           {/* The cream wordmark is made for dark pages; brightness-0 turns it solid black */}
           <Image
             src="/brand/wordmark-cream.svg"
             alt={SITE.name}
-            width={104}
-            height={26}
+            width={96}
+            height={24}
             priority
             unoptimized
             className="brightness-0"
@@ -175,7 +175,7 @@ function SidebarContent({
       <button
         type="button"
         onClick={onSearch}
-        className={btn("outline", "lg", "w-full text-neutral-900")}
+        className={btn("outline", "md", "w-full text-neutral-900")}
       >
         New search
         <span className="flex gap-1 [@media(hover:none)]:hidden">
@@ -184,7 +184,7 @@ function SidebarContent({
         </span>
       </button>
 
-      <nav className="mt-4" aria-label="Browse">
+      <nav className="mt-3" aria-label="Browse">
         <ul className="flex flex-col gap-0.5">
           {browseItems.map((item) => {
             const NavIcon = item.icon
@@ -193,7 +193,7 @@ function SidebarContent({
                 <Link
                   href={item.href}
                   onClick={onClose}
-                  className={`flex items-center gap-2.5 rounded-sm px-2.5 py-2.5 text-[13px] transition-colors lg:py-2 ${item.active
+                  className={`flex items-center gap-2 rounded-sm px-2 py-2 text-[13px] transition-colors lg:py-1.5 ${item.active
                     ? "bg-black/[0.07] text-neutral-900"
                     : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
                     }`}
@@ -215,12 +215,12 @@ function SidebarContent({
         </ul>
       </nav>
 
-      <div className="my-4 h-px bg-black/10" />
+      <div className="my-3 h-px bg-black/10" />
 
       {/* Categories, like the Portfolio folders in the reference */}
       <nav aria-label="Categories">
-        <p className="px-2.5 text-[12px] text-neutral-400">Categories</p>
-        <ul className="mt-2 flex flex-col gap-0.5">
+        <p className="px-2 text-[11px] tracking-wide text-neutral-400 uppercase">Categories</p>
+        <ul className="mt-1.5 flex flex-col gap-0.5">
           {categoryCounts.map((item) => {
             const isActive = category === item.id
             const FolderIcon = isActive ? IconFolderOpen : IconFolder
@@ -233,7 +233,7 @@ function SidebarContent({
                     onClose?.()
                   }}
                   aria-pressed={isActive}
-                  className={`flex w-full cursor-pointer items-center gap-2.5 rounded-sm px-2.5 py-2.5 text-left text-[13px] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-black/40 lg:py-2 ${isActive
+                  className={`flex w-full cursor-pointer items-center gap-2 rounded-sm px-2 py-2 text-left text-[13px] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-black/40 lg:py-1.5 ${isActive
                     ? "bg-black/[0.07] text-neutral-900"
                     : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
                     }`}
@@ -252,47 +252,28 @@ function SidebarContent({
         </ul>
       </nav>
 
-      <div className="my-4 h-px bg-black/10" />
-
-      {/* <nav aria-label="Resources">
-        <p className="px-2.5 text-[12px] text-neutral-400">Resources</p>
-        <ul className="mt-2 flex flex-col gap-0.5">
-          {resourceItems.map((item) => (
-            <li key={item.label}>
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener"
-                className="flex items-center justify-between rounded-md px-2.5 py-2.5 text-[13px] text-neutral-600 transition-colors hover:bg-black/[0.04] hover:text-neutral-900 lg:py-2"
-              >
-                {item.label}
-                <IconArrowUpRight className="size-3.5 opacity-50" stroke={1.75} />
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav> */}
+      <div className="my-3 h-px bg-black/10" />
 
       {/* Bottom: stats, install card, shortcuts */}
-      <div className="mt-auto pt-6">
-        <p className="px-2.5 text-[12px] text-neutral-400">Library</p>
-        <div className="mt-2 grid grid-cols-2 gap-1.5">
+      <div className="mt-auto pt-4">
+        <p className="px-2 text-[11px] tracking-wide text-neutral-400 uppercase">Library</p>
+        <div className="mt-1.5 grid grid-cols-2 gap-1.5">
           {sidebarStats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-none border border-black/10 bg-white/70 px-2.5 py-2"
+              className="rounded-none border border-black/10 bg-white/70 px-2 py-1.5"
             >
               <p className="text-[10px] tracking-wide text-neutral-400 uppercase">
                 {stat.label}
               </p>
-              <p className="mt-1 text-[15px] leading-none font-bold text-neutral-900">
+              <p className="mt-0.5 text-[14px] leading-none font-bold text-neutral-900">
                 {stat.value}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="relative mt-3 rounded-none border border-black/10 bg-white p-3">
+        <div className="relative mt-2.5 rounded-none border border-black/10 bg-white p-2.5">
           <Corners className="m-1.5 size-2" />
           <div className="flex items-center justify-between">
             <p className="flex items-center gap-1.5 text-[11px] tracking-wide text-neutral-500 uppercase">
@@ -301,10 +282,10 @@ function SidebarContent({
             </p>
             <Tag tone="orange">v0.1.0</Tag>
           </div>
-          <div className="mt-2.5 rounded-md border border-black/10 bg-[#f5f5f5] px-2.5 py-2 text-[11px] leading-relaxed break-all text-neutral-800">
+          <div className="mt-2 rounded-md border border-black/10 bg-[#f5f5f5] px-2 py-1.5 text-[11px] leading-relaxed break-all text-neutral-800">
             <ShikiCode code={SITE.install.command} lang="bash" />
           </div>
-          <MonoButton variant="solid" onClick={onCopyInstall} className="mt-2.5 w-full">
+          <MonoButton variant="solid" size="sm" onClick={onCopyInstall} className="mt-2 w-full">
             {copiedInstall ? "Copied" : "Copy command"}
             {copiedInstall ? (
               <IconCheck className="size-3.5" stroke={2.25} />
@@ -316,7 +297,7 @@ function SidebarContent({
             href={SITE.links.github}
             target="_blank"
             rel="noopener"
-            className={btn("outline", "md", "mt-1.5 w-full")}
+            className={btn("outline", "sm", "mt-1.5 w-full")}
           >
             <IconBrandGithub className="size-3.5" stroke={1.75} />
             Star on GitHub
@@ -324,7 +305,7 @@ function SidebarContent({
         </div>
 
         {/* Keyboard hints make no sense on touch devices */}
-        <ul className="mt-3 flex flex-col gap-1.5 px-2.5 [@media(hover:none)]:hidden">
+        <ul className="mt-2.5 flex flex-col gap-1 px-2 [@media(hover:none)]:hidden">
           {shortcuts.map((item) => (
             <li
               key={item.label}
@@ -340,8 +321,8 @@ function SidebarContent({
           ))}
         </ul>
 
-        <div className="mt-4 h-px bg-black/10" />
-        <p className="mt-3 flex items-center gap-2 px-2.5 text-[11px] leading-[1.6] text-neutral-400">
+        <div className="mt-3 h-px bg-black/10" />
+        <p className="mt-2.5 flex items-center gap-2 px-2 text-[11px] leading-[1.6] text-neutral-400">
           <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-orange-600" />
           MIT licensed · Made in Odisha, India.
         </p>
@@ -511,7 +492,7 @@ export function IconBrowser() {
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: EASE }}
-          className={`sticky top-0 hidden h-dvh w-[248px] shrink-0 flex-col overflow-y-auto border-r border-black/10 px-3 py-4 [scrollbar-width:none] lg:flex [&::-webkit-scrollbar]:hidden ${SIDEBAR_BG}`}
+          className={`sticky top-0 hidden h-dvh w-[240px] shrink-0 flex-col overflow-y-auto border-r border-black/10 px-2.5 py-3 [scrollbar-width:none] lg:flex [&::-webkit-scrollbar]:hidden ${SIDEBAR_BG}`}
         >
           <SidebarContent {...sidebarProps} />
         </motion.aside>

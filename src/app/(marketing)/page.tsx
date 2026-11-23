@@ -6,11 +6,13 @@ import { Footer } from "@/components/marketing/footer";
 import { Hero } from "@/components/marketing/hero";
 import { PlaygroundSection } from "@/components/marketing/playground-section";
 import { Header } from "@/components/marketing/SiteHeader";
+import { SmoothScroll } from "@/components/marketing/smooth-scroll";
 import { Steps } from "@/components/marketing/steps";
 
 export default function Page() {
   return (
     <main className="relative min-h-screen overflow-x-clip">
+      <SmoothScroll />
       <Header />
       <Hero />
       <Features />
