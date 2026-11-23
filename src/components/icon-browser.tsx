@@ -10,12 +10,11 @@ import {
   IconCheck,
   IconCode,
   IconCopy,
-  IconDownload,
-  IconFileCode,
   IconFilter,
   IconFolder,
   IconFolderOpen,
   IconLayoutGrid,
+  IconMenu2,
   IconPlus,
   IconScale,
   IconSearch,
@@ -46,8 +45,6 @@ import {
   Icon,
   icons,
   searchIcons,
-  toJsx,
-  toSvg,
   type IconCategory,
   type IconDef,
 } from "@/lib/icons"
@@ -62,6 +59,8 @@ const PANEL_BG = "bg-[#f5f5f5]"
 const SIDEBAR_BG = "bg-[#efefef]"
 const HATCH =
   "repeating-linear-gradient(135deg, rgba(0,0,0,0.035) 0 1px, transparent 1px 7px)"
+
+type CategoryFilter = "all" | IconCategory
 
 const categoryCounts = [
   { id: "all" as const, label: "All", count: icons.length },
@@ -119,17 +118,6 @@ const shortcuts = [
   { label: "Close", keys: ["Esc"] },
 ]
 
-function saveBlob(blob: Blob, fileName: string) {
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement("a")
-  a.href = url
-  a.download = fileName
-  document.body.appendChild(a)
-  a.click()
-  a.remove()
-  URL.revokeObjectURL(url)
-}
-
 /** True when the right-hand playground column is visible (Tailwind `xl`). */
 function useIsXl() {
   const [isXl, setIsXl] = useState(false)
@@ -143,13 +131,230 @@ function useIsXl() {
   return isXl
 }
 
-function IconCard({ icon, index, selected, onOpen, onCopy, onDownload }: {
+/**
+ * Sidebar body, shared by the desktop rail and the mobile drawer.
+ * `onClose` is only passed by the drawer.
+ */
+function SidebarContent({
+  category,
+  onCategory,
+  onSearch,
+  copiedInstall,
+  onCopyInstall,
+  onClose,
+}: {
+  category: CategoryFilter
+  onCategory: (id: CategoryFilter) => void
+  onSearch: () => void
+  copiedInstall: boolean
+  onCopyInstall: () => void
+  onClose?: () => void
+}) {
+  return (
+    <>
+      <div className="mb-4 flex items-center justify-between px-2">
+        <Link href="/" onClick={onClose} className="inline-flex w-fit items-center">
+          {/* The cream wordmark is made for dark pages; brightness-0 turns it solid black */}
+          <Image
+            src="/brand/wordmark-cream.svg"
+            alt={SITE.name}
+            width={104}
+            height={26}
+            priority
+            unoptimized
+            className="brightness-0"
+          />
+        </Link>
+        {onClose && (
+          <MonoButton variant="soft" size="icon" onClick={onClose} aria-label="Close menu">
+            <IconX className="size-4" stroke={1.75} />
+          </MonoButton>
+        )}
+      </div>
+
+      <button
+        type="button"
+        onClick={onSearch}
+        className={btn("outline", "lg", "w-full text-neutral-900")}
+      >
+        New search
+        <span className="flex gap-1 [@media(hover:none)]:hidden">
+          <Kbd>⌘</Kbd>
+          <Kbd>K</Kbd>
+        </span>
+      </button>
+
+      <nav className="mt-4" aria-label="Browse">
+        <ul className="flex flex-col gap-0.5">
+          {browseItems.map((item) => {
+            const NavIcon = item.icon
+            return (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  onClick={onClose}
+                  className={`flex items-center gap-2.5 rounded-sm px-2.5 py-2.5 text-[13px] transition-colors lg:py-2 ${item.active
+                    ? "bg-black/[0.07] text-neutral-900"
+                    : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
+                    }`}
+                >
+                  <span className="relative flex">
+                    <NavIcon className="size-4" stroke={1.75} />
+                    {item.active && (
+                      <span
+                        aria-hidden
+                        className="absolute -top-1 -right-1 size-1.5 rounded-full bg-orange-600"
+                      />
+                    )}
+                  </span>
+                  {item.label}
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
+
+      <div className="my-4 h-px bg-black/10" />
+
+      {/* Categories, like the Portfolio folders in the reference */}
+      <nav aria-label="Categories">
+        <p className="px-2.5 text-[12px] text-neutral-400">Categories</p>
+        <ul className="mt-2 flex flex-col gap-0.5">
+          {categoryCounts.map((item) => {
+            const isActive = category === item.id
+            const FolderIcon = isActive ? IconFolderOpen : IconFolder
+            return (
+              <li key={item.id}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onCategory(item.id)
+                    onClose?.()
+                  }}
+                  aria-pressed={isActive}
+                  className={`flex w-full cursor-pointer items-center gap-2.5 rounded-sm px-2.5 py-2.5 text-left text-[13px] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-black/40 lg:py-2 ${isActive
+                    ? "bg-black/[0.07] text-neutral-900"
+                    : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
+                    }`}
+                >
+                  <FolderIcon className="size-4 shrink-0" stroke={1.75} />
+                  <span className="truncate">{item.label}</span>
+                  <span
+                    className={`ml-auto text-[11px] ${isActive ? "text-orange-600" : "text-neutral-400"}`}
+                  >
+                    {item.count}
+                  </span>
+                </button>
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
+
+      <div className="my-4 h-px bg-black/10" />
+
+      {/* <nav aria-label="Resources">
+        <p className="px-2.5 text-[12px] text-neutral-400">Resources</p>
+        <ul className="mt-2 flex flex-col gap-0.5">
+          {resourceItems.map((item) => (
+            <li key={item.label}>
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener"
+                className="flex items-center justify-between rounded-md px-2.5 py-2.5 text-[13px] text-neutral-600 transition-colors hover:bg-black/[0.04] hover:text-neutral-900 lg:py-2"
+              >
+                {item.label}
+                <IconArrowUpRight className="size-3.5 opacity-50" stroke={1.75} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav> */}
+
+      {/* Bottom: stats, install card, shortcuts */}
+      <div className="mt-auto pt-6">
+        <p className="px-2.5 text-[12px] text-neutral-400">Library</p>
+        <div className="mt-2 grid grid-cols-2 gap-1.5">
+          {sidebarStats.map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-none border border-black/10 bg-white/70 px-2.5 py-2"
+            >
+              <p className="text-[10px] tracking-wide text-neutral-400 uppercase">
+                {stat.label}
+              </p>
+              <p className="mt-1 text-[15px] leading-none font-bold text-neutral-900">
+                {stat.value}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="relative mt-3 rounded-none border border-black/10 bg-white p-3">
+          <Corners className="m-1.5 size-2" />
+          <div className="flex items-center justify-between">
+            <p className="flex items-center gap-1.5 text-[11px] tracking-wide text-neutral-500 uppercase">
+              <IconTerminal2 className="size-3.5" stroke={1.75} />
+              Install
+            </p>
+            <Tag tone="orange">v0.1.0</Tag>
+          </div>
+          <div className="mt-2.5 rounded-md border border-black/10 bg-[#f5f5f5] px-2.5 py-2 text-[11px] leading-relaxed break-all text-neutral-800">
+            <ShikiCode code={SITE.install.command} lang="bash" />
+          </div>
+          <MonoButton variant="solid" onClick={onCopyInstall} className="mt-2.5 w-full">
+            {copiedInstall ? "Copied" : "Copy command"}
+            {copiedInstall ? (
+              <IconCheck className="size-3.5" stroke={2.25} />
+            ) : (
+              <IconCopy className="size-3.5" stroke={2} />
+            )}
+          </MonoButton>
+          <a
+            href={SITE.links.github}
+            target="_blank"
+            rel="noopener"
+            className={btn("outline", "md", "mt-1.5 w-full")}
+          >
+            <IconBrandGithub className="size-3.5" stroke={1.75} />
+            Star on GitHub
+          </a>
+        </div>
+
+        {/* Keyboard hints make no sense on touch devices */}
+        <ul className="mt-3 flex flex-col gap-1.5 px-2.5 [@media(hover:none)]:hidden">
+          {shortcuts.map((item) => (
+            <li
+              key={item.label}
+              className="flex items-center justify-between text-[11px] text-neutral-500"
+            >
+              {item.label}
+              <span className="flex gap-1">
+                {item.keys.map((key) => (
+                  <Kbd key={key}>{key}</Kbd>
+                ))}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-4 h-px bg-black/10" />
+        <p className="mt-3 flex items-center gap-2 px-2.5 text-[11px] leading-[1.6] text-neutral-400">
+          <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-orange-600" />
+          MIT licensed · Made in Odisha, India.
+        </p>
+      </div>
+    </>
+  )
+}
+
+function IconCard({ icon, index, selected, onOpen }: {
   icon: IconDef
   index: number
   selected: boolean
   onOpen: () => void
-  onCopy: (value: string) => void
-  onDownload: () => void
 }) {
   return (
     <motion.div
@@ -157,7 +362,7 @@ function IconCard({ icon, index, selected, onOpen, onCopy, onDownload }: {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "60px" }}
       transition={{ duration: 0.4, ease: EASE, delay: Math.min(index % 12, 11) * 0.02 }}
-      className="group relative"
+      className="group relative min-w-0"
     >
       <motion.button
         type="button"
@@ -165,7 +370,7 @@ function IconCard({ icon, index, selected, onOpen, onCopy, onDownload }: {
         aria-label={`Open ${icon.name} icon`}
         aria-pressed={selected}
         whileTap={{ scale: 0.98 }}
-        className={`relative flex h-28 w-full cursor-pointer flex-col items-center justify-center gap-3 rounded-xl border px-3 transition-[background-color,border-color] duration-150 focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f5f5] focus-visible:outline-none ${selected
+        className={`relative flex h-24 w-full cursor-pointer flex-col items-center justify-center gap-2.5 rounded-xl border px-2 transition-[background-color,border-color] duration-150 focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f5f5] focus-visible:outline-none sm:h-28 sm:gap-3 sm:px-3 ${selected
           ? "border-orange-600/50 bg-white"
           : "border-black/10 bg-white/70 hover:border-black/25 hover:bg-white"
           }`}
@@ -191,33 +396,6 @@ function IconCard({ icon, index, selected, onOpen, onCopy, onDownload }: {
           {icon.name}
         </span>
       </motion.button>
-
-      <div className="absolute top-2.5 right-2.5 hidden gap-1 sm:flex sm:[@media(hover:hover)]:opacity-0 sm:[@media(hover:hover)]:transition-opacity sm:[@media(hover:hover)]:group-hover:opacity-100 sm:[@media(hover:hover)]:focus-within:opacity-100">
-        <MonoButton
-          variant="outline"
-          size="iconSm"
-          onClick={() => onCopy(toSvg(icon, { size: 24, stroke: 1.75 }))}
-          aria-label={`Copy ${icon.name} SVG`}
-        >
-          <IconCopy className="size-3" stroke={2} />
-        </MonoButton>
-        <MonoButton
-          variant="outline"
-          size="iconSm"
-          onClick={() => onCopy(toJsx(icon, { size: 24, stroke: 1.75 }))}
-          aria-label={`Copy ${icon.name} JSX`}
-        >
-          <IconFileCode className="size-3" stroke={2} />
-        </MonoButton>
-        <MonoButton
-          variant="outline"
-          size="iconSm"
-          onClick={onDownload}
-          aria-label={`Download ${icon.name} SVG`}
-        >
-          <IconDownload className="size-3" stroke={2} />
-        </MonoButton>
-      </div>
     </motion.div>
   )
 }
@@ -225,9 +403,10 @@ function IconCard({ icon, index, selected, onOpen, onCopy, onDownload }: {
 export function IconBrowser() {
   const [active, setActive] = useState<IconDef | null>(null)
   const [query, setQuery] = useState("")
-  const [category, setCategory] = useState<"all" | IconCategory>("all")
+  const [category, setCategory] = useState<CategoryFilter>("all")
   const [copiedInstall, setCopiedInstall] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [dialogQuery, setDialogQuery] = useState("")
   const isXl = useIsXl()
 
@@ -271,11 +450,27 @@ export function IconBrowser() {
         event.preventDefault()
         setSearchOpen(true)
       }
+      if (event.key === "Escape") setMenuOpen(false)
     }
 
     window.addEventListener("keydown", onKeyDown)
     return () => window.removeEventListener("keydown", onKeyDown)
   }, [])
+
+  // Lock page scroll while the mobile drawer is open.
+  useEffect(() => {
+    if (!menuOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [menuOpen])
+
+  function openSearch() {
+    setMenuOpen(false)
+    setSearchOpen(true)
+  }
 
   function closeSearch() {
     setSearchOpen(false)
@@ -287,239 +482,54 @@ export function IconBrowser() {
     window.open(href, "_blank", "noopener")
   }
 
-  async function copy(value: string) {
-    await copyText(value)
-  }
-
-  async function copyInstall() {
+   async function copyInstall() {
     const copied = await copyText(SITE.install.command)
     if (!copied) return
     setCopiedInstall(true)
     setTimeout(() => setCopiedInstall(false), 1600)
   }
 
-  function download(icon: IconDef) {
-    saveBlob(
-      new Blob([`${toSvg(icon, { size: 24, stroke: 1.75 })}\n`], {
-        type: "image/svg+xml;charset=utf-8",
-      }),
-      `${icon.name}.svg`
-    )
+   const sidebarProps = {
+    category,
+    onCategory: setCategory,
+    onSearch: openSearch,
+    copiedInstall,
+    onCopyInstall: copyInstall,
   }
 
   return (
     <div
-      className={`min-h-dvh font-mono text-neutral-900 ${PAGE_BG}`}
+      className={`min-h-dvh overflow-x-clip  text-neutral-900 ${PAGE_BG}`}
       style={{ backgroundImage: HATCH }}
     >
       {/* Framed app: grey hatch on both sides + hairlines */}
       <div
         className={`mx-auto flex min-h-dvh w-full max-w-[1600px] border-x border-black/10 ${PANEL_BG}`}
       >
-        {/* Sidebar */}
+        {/* Sidebar (desktop) */}
         <motion.aside
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: EASE }}
           className={`sticky top-0 hidden h-dvh w-[248px] shrink-0 flex-col overflow-y-auto border-r border-black/10 px-3 py-4 [scrollbar-width:none] lg:flex [&::-webkit-scrollbar]:hidden ${SIDEBAR_BG}`}
         >
-          <Link href="/" className="mb-4 inline-flex w-fit items-center px-2">
-            {/* The cream wordmark is made for dark pages; brightness-0 turns it solid black */}
-            <Image
-              src="/brand/wordmark-cream.svg"
-              alt={SITE.name}
-              width={104}
-              height={26}
-              priority
-              unoptimized
-              className="brightness-0"
-            />
-          </Link>
-
-          <button
-            type="button"
-            onClick={() => setSearchOpen(true)}
-            className={btn("outline", "lg", "w-full text-neutral-900")}
-          >
-            New search
-            <Kbd>⌘</Kbd>
-            <Kbd>K</Kbd>
-          </button>
-
-          <nav className="mt-4" aria-label="Browse">
-            <ul className="flex flex-col gap-0.5">
-              {browseItems.map((item) => {
-                const NavIcon = item.icon
-                return (
-                  <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className={`flex items-center gap-2.5 rounded-md px-2.5 py-2 text-[13px] transition-colors ${item.active
-                        ? "bg-black/[0.07] text-neutral-900"
-                        : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
-                        }`}
-                    >
-                      <span className="relative flex">
-                        <NavIcon className="size-4" stroke={1.75} />
-                        {item.active && (
-                          <span
-                            aria-hidden
-                            className="absolute -top-1 -right-1 size-1.5 rounded-full bg-orange-600"
-                          />
-                        )}
-                      </span>
-                      {item.label}
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </nav>
-
-          <div className="my-4 h-px bg-black/10" />
-
-          {/* Categories, like the Portfolio folders in the reference */}
-          <nav aria-label="Categories">
-            <p className="px-2.5 text-[12px] text-neutral-400">Categories</p>
-            <ul className="mt-2 flex flex-col gap-0.5">
-              {categoryCounts.map((item) => {
-                const isActive = category === item.id
-                const FolderIcon = isActive ? IconFolderOpen : IconFolder
-                return (
-                  <li key={item.id}>
-                    <button
-                      type="button"
-                      onClick={() => setCategory(item.id)}
-                      aria-pressed={isActive}
-                      className={`flex w-full cursor-pointer items-center gap-2.5 rounded-md px-2.5 py-2 text-left text-[13px] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-black/40 ${isActive
-                        ? "bg-black/[0.07] text-neutral-900"
-                        : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
-                        }`}
-                    >
-                      <FolderIcon className="size-4 shrink-0" stroke={1.75} />
-                      <span className="truncate">{item.label}</span>
-                      <span
-                        className={`ml-auto text-[11px] ${isActive ? "text-orange-600" : "text-neutral-400"}`}
-                      >
-                        {item.count}
-                      </span>
-                    </button>
-                  </li>
-                )
-              })}
-            </ul>
-          </nav>
-
-          <div className="my-4 h-px bg-black/10" />
-
-          <nav aria-label="Resources">
-            <p className="px-2.5 text-[12px] text-neutral-400">Resources</p>
-            <ul className="mt-2 flex flex-col gap-0.5">
-              {resourceItems.map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener"
-                    className="flex items-center justify-between rounded-md px-2.5 py-2 text-[13px] text-neutral-600 transition-colors hover:bg-black/[0.04] hover:text-neutral-900"
-                  >
-                    {item.label}
-                    <IconArrowUpRight className="size-3.5 opacity-50" stroke={1.75} />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Bottom: stats, install card, shortcuts */}
-          <div className="mt-auto pt-6">
-            <p className="px-2.5 text-[12px] text-neutral-400">Library</p>
-            <div className="mt-2 grid grid-cols-2 gap-1.5">
-              {sidebarStats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-lg border border-black/10 bg-white/70 px-2.5 py-2"
-                >
-                  <p className="text-[10px] tracking-wide text-neutral-400 uppercase">
-                    {stat.label}
-                  </p>
-                  <p className="mt-1 text-[15px] leading-none font-bold text-neutral-900">
-                    {stat.value}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="relative mt-3 rounded-xl border border-black/10 bg-white p-3">
-              <Corners className="m-1.5 size-2" />
-              <div className="flex items-center justify-between">
-                <p className="flex items-center gap-1.5 text-[11px] tracking-wide text-neutral-500 uppercase">
-                  <IconTerminal2 className="size-3.5" stroke={1.75} />
-                  Install
-                </p>
-                <Tag tone="orange">v0.1.0</Tag>
-              </div>
-              <div className="mt-2.5 rounded-md border border-black/10 bg-[#f5f5f5] px-2.5 py-2 text-[11px] leading-relaxed break-all text-neutral-800">
-                <ShikiCode code={SITE.install.command} lang="bash" />
-              </div>
-              <MonoButton variant="solid" onClick={copyInstall} className="mt-2.5 w-full">
-                {copiedInstall ? "Copied" : "Copy command"}
-                {copiedInstall ? (
-                  <IconCheck className="size-3.5" stroke={2.25} />
-                ) : (
-                  <IconCopy className="size-3.5" stroke={2} />
-                )}
-              </MonoButton>
-              <a
-                href={SITE.links.github}
-                target="_blank"
-                rel="noopener"
-                className={btn("outline", "md", "mt-1.5 w-full")}
-              >
-                <IconBrandGithub className="size-3.5" stroke={1.75} />
-                Star on GitHub
-              </a>
-            </div>
-
-            <ul className="mt-3 flex flex-col gap-1.5 px-2.5">
-              {shortcuts.map((item) => (
-                <li
-                  key={item.label}
-                  className="flex items-center justify-between text-[11px] text-neutral-500"
-                >
-                  {item.label}
-                  <span className="flex gap-1">
-                    {item.keys.map((key) => (
-                      <Kbd key={key}>{key}</Kbd>
-                    ))}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-4 h-px bg-black/10" />
-            <p className="mt-3 flex items-center gap-2 px-2.5 text-[11px] leading-[1.6] text-neutral-400">
-              <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-orange-600" />
-              MIT licensed · Made in Odisha, India.
-            </p>
-          </div>
+          <SidebarContent {...sidebarProps} />
         </motion.aside>
 
         {/* Main column */}
         <div className="flex min-w-0 flex-1 flex-col">
-          <header className="sticky top-0 z-40 border-b border-black/10 bg-[#f5f5f5]/85 backdrop-blur-xl">
-            <div className="flex h-14 items-center gap-3 px-4 lg:px-5">
-              <Link href="/" className="shrink-0 lg:hidden">
-                <Image
-                  src="/brand/wordmark-cream.svg"
-                  alt={SITE.name}
-                  width={88}
-                  height={22}
-                  priority
-                  unoptimized
-                  className="brightness-0"
-                />
-              </Link>
+          <header className="sticky top-0 z-40 border-b border-black/10 bg-[#f5f5f5]/90 backdrop-blur-xl">
+            <div className="flex h-14 items-center gap-2 px-3 sm:gap-3 sm:px-4 lg:px-5">
+              {/* Mobile: menu button opens the drawer */}
+              <MonoButton
+                variant="soft"
+                size="icon"
+                onClick={() => setMenuOpen(true)}
+                aria-label="Open menu"
+                className="size-10 lg:hidden"
+              >
+                <IconMenu2 className="size-4" stroke={1.75} />
+              </MonoButton>
 
               <div className="hidden min-w-0 items-center gap-2.5 lg:flex">
                 <IconLayoutGrid className="size-4 text-neutral-500" stroke={1.75} />
@@ -527,14 +537,14 @@ export function IconBrowser() {
                 <Tag tone="orange">{filtered.length} shown</Tag>
               </div>
 
-              <div className="ml-auto flex items-center gap-2">
+              <div className="flex min-w-0 flex-1 items-center gap-2 lg:ml-auto lg:flex-none">
                 {/* Search trigger: opens the centered command dialog */}
-                <div className="relative w-full min-w-0 sm:w-72">
+                <div className="relative min-w-0 flex-1 sm:w-72 sm:flex-none">
                   <button
                     type="button"
-                    onClick={() => setSearchOpen(true)}
+                    onClick={openSearch}
                     aria-label="Search icons"
-                    className="flex h-10 w-full cursor-pointer items-center gap-2 rounded-md border border-black/10 bg-white pr-20 pl-3 text-left text-[12px] tracking-wide uppercase outline-none transition-[border-color,box-shadow] hover:border-black/25 focus-visible:border-black/30 focus-visible:ring-[3px] focus-visible:ring-black/10"
+                    className={`flex h-10 w-full cursor-pointer items-center gap-2 rounded-md border border-black/10 bg-white pl-3 text-left text-[12px] tracking-wide uppercase outline-none transition-[border-color,box-shadow] hover:border-black/25 focus-visible:border-black/30 focus-visible:ring-[3px] focus-visible:ring-black/10 ${query ? "pr-11" : "pr-3 sm:pr-20"}`}
                   >
                     <IconSearch className="size-4 shrink-0 text-neutral-400" />
                     <span
@@ -554,7 +564,7 @@ export function IconBrowser() {
                       <IconX className="size-3.5" />
                     </MonoButton>
                   ) : (
-                    <span className="pointer-events-none absolute top-1/2 right-2.5 flex -translate-y-1/2 gap-1">
+                    <span className="pointer-events-none absolute top-1/2 right-2.5 hidden -translate-y-1/2 gap-1 sm:flex [@media(hover:none)]:hidden">
                       <Kbd>⌘</Kbd>
                       <Kbd>K</Kbd>
                     </span>
@@ -565,7 +575,7 @@ export function IconBrowser() {
                   variant="soft"
                   size="lg"
                   onClick={copyInstall}
-                  className="hidden normal-case 2xl:inline-flex"
+                  className="max-2xl:hidden normal-case"
                 >
                   <IconTerminal2 className="size-3.5" stroke={1.75} />
                   <ShikiCode code={SITE.install.command} lang="bash" />
@@ -581,16 +591,16 @@ export function IconBrowser() {
                   target="_blank"
                   rel="noopener"
                   aria-label="GitHub"
-                  className={btn("soft", "lg", "size-10 px-0")}
+                  className={btn("soft", "lg", "size-10 px-0 max-sm:hidden")}
                 >
                   <IconBrandGithub className="size-4" stroke={1.75} />
                 </a>
               </div>
             </div>
 
-            {/* Category tags (below lg; on lg+ they live in the sidebar) */}
-            <div className="flex items-center gap-3 px-4 pb-2.5 lg:hidden">
-              <div className="flex min-w-0 gap-1.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {/* Category chips (below lg; on lg+ they live in the sidebar) */}
+            <div className="flex items-center gap-2 px-3 pb-2.5 sm:px-4 lg:hidden">
+              <div className="-mx-1 flex min-w-0 flex-1 gap-1.5 overflow-x-auto px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {categoryCounts.map((item) => {
                   const isActive = category === item.id
                   return (
@@ -600,7 +610,7 @@ export function IconBrowser() {
                       size="sm"
                       onClick={() => setCategory(item.id)}
                       aria-pressed={isActive}
-                      className="h-7 text-[11px]"
+                      className="h-8 text-[11px]"
                     >
                       {item.label}
                       <span className="opacity-60">{item.count}</span>
@@ -608,13 +618,16 @@ export function IconBrowser() {
                   )
                 })}
               </div>
+              <Tag tone="orange" className="shrink-0">
+                {filtered.length} shown
+              </Tag>
             </div>
           </header>
 
-          <main className="flex-1 px-4 py-4 lg:px-5">
+          <main className="flex-1 px-3 py-3 sm:px-4 sm:py-4 lg:px-5">
             <h1 className="sr-only">Icons</h1>
             {filtered.length > 0 ? (
-              <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-2.5 lg:grid-cols-4 2xl:grid-cols-5">
                 {filtered.map((icon, index) => (
                   <IconCard
                     key={icon.name}
@@ -622,8 +635,6 @@ export function IconBrowser() {
                     index={index}
                     selected={isXl && panelIcon?.name === icon.name}
                     onOpen={() => setActive(icon)}
-                    onCopy={copy}
-                    onDownload={() => download(icon)}
                   />
                 ))}
               </div>
@@ -631,9 +642,9 @@ export function IconBrowser() {
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-black/15 px-6 py-20 text-center"
+                className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-black/15 px-5 py-16 text-center sm:px-6 sm:py-20"
               >
-                <p className="text-[18px] leading-[1.3] font-bold text-neutral-900">
+                <p className="text-[16px] leading-[1.3] font-bold text-neutral-900 sm:text-[18px]">
                   No icons match that search.
                 </p>
                 <p className="max-w-sm text-[13px] leading-[1.5] text-neutral-500">
@@ -651,7 +662,7 @@ export function IconBrowser() {
             )}
           </main>
 
-          <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-black/10 px-4 py-3 text-[11px] text-neutral-400 lg:px-5">
+          <footer className="flex flex-col gap-1 border-t border-black/10 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] text-[11px] text-neutral-400 sm:flex-row sm:items-center sm:justify-between sm:px-4 lg:px-5">
             <span>odiaicons · open source under the MIT licence</span>
             <span>24 × 24 grid · 1.75px stroke</span>
           </footer>
@@ -741,7 +752,37 @@ export function IconBrowser() {
         </motion.aside>
       </div>
 
-      {/* Search: the default shadcn command dialog, centered */}
+      {/* Mobile drawer: the sidebar, slid in from the left */}
+      <AnimatePresence>
+        {menuOpen && (
+          <div className="fixed inset-0 z-50 lg:hidden">
+            <motion.button
+              type="button"
+              aria-label="Close menu"
+              onClick={() => setMenuOpen(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"
+            />
+            <motion.aside
+              role="dialog"
+              aria-modal="true"
+              aria-label="Menu"
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.3, ease: EASE }}
+              className={`absolute inset-y-0 left-0 flex w-[min(86vw,320px)] flex-col overflow-y-auto overscroll-contain border-r border-black/10 px-3 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]  text-neutral-900 shadow-2xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${SIDEBAR_BG}`}
+            >
+              <SidebarContent {...sidebarProps} onClose={() => setMenuOpen(false)} />
+            </motion.aside>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* Search: the default shadcn command dialog, centered (top-aligned on phones for the keyboard) */}
       <CommandDialog
         open={searchOpen}
         onOpenChange={(open) => {
@@ -750,15 +791,17 @@ export function IconBrowser() {
         }}
         title="Search icons"
         description="Search icons, jump to a category, or run an action."
-        className="max-w-xl rounded-xl border-black/10 bg-[#f5f5f5] font-mono text-neutral-900"
+        className="w-[calc(100%-1.5rem)] max-w-xl rounded-xl border-black/10 bg-[#f5f5f5] text-neutral-900 max-sm:top-[6%] max-sm:translate-y-0 [--background:#f5f5f5] [--foreground:#171717] [--popover:#f5f5f5] [--popover-foreground:#171717] [--muted:#e5e5e5] [--muted-foreground:#737373] [--input:#e5e5e5] [--border:rgba(0,0,0,0.1)]"
       >
-        <Command shouldFilter={false} className="bg-transparent font-mono">
+        <Command shouldFilter={false} className="bg-transparent text-neutral-900">
+          {/* text-base on phones stops iOS from zooming the page on focus */}
           <CommandInput
             value={dialogQuery}
             onValueChange={setDialogQuery}
             placeholder="Type an icon, category or command..."
+            className="text-base sm:text-sm"
           />
-          <CommandList className="max-h-[420px]">
+          <CommandList className="max-h-[min(420px,60dvh)]">
             <CommandEmpty>No results found.</CommandEmpty>
 
             {dialogQuery.trim() && dialogResults.length > 0 && (
@@ -771,6 +814,7 @@ export function IconBrowser() {
                       setCategory("all")
                       closeSearch()
                     }}
+                    className="py-2.5 sm:py-1.5"
                   >
                     <IconFilter />
                     <span>
@@ -795,6 +839,7 @@ export function IconBrowser() {
                         setQuery("")
                         closeSearch()
                       }}
+                      className="py-2.5 sm:py-1.5"
                     >
                       <IconFolder />
                       <span>{item.label}</span>
@@ -810,6 +855,7 @@ export function IconBrowser() {
                       void copyInstall()
                       closeSearch()
                     }}
+                    className="py-2.5 sm:py-1.5"
                   >
                     <IconTerminal2 />
                     <span>Copy install command</span>
@@ -817,6 +863,7 @@ export function IconBrowser() {
                   <CommandItem
                     value="action-submit"
                     onSelect={() => openExternal(SITE.links.contribute)}
+                    className="py-2.5 sm:py-1.5"
                   >
                     <IconPlus />
                     <span>Submit an icon</span>
@@ -824,6 +871,7 @@ export function IconBrowser() {
                   <CommandItem
                     value="action-github"
                     onSelect={() => openExternal(SITE.links.github)}
+                    className="py-2.5 sm:py-1.5"
                   >
                     <IconBrandGithub />
                     <span>Open GitHub</span>
@@ -831,6 +879,7 @@ export function IconBrowser() {
                   <CommandItem
                     value="action-licence"
                     onSelect={() => openExternal(SITE.links.license)}
+                    className="py-2.5 sm:py-1.5"
                   >
                     <IconScale />
                     <span>View licence</span>
@@ -854,9 +903,10 @@ export function IconBrowser() {
                         setActive(icon)
                         closeSearch()
                       }}
+                      className="py-2.5 sm:py-1.5"
                     >
                       <Icon def={icon} size={16} stroke={1.75} />
-                      <span>{icon.name}</span>
+                      <span className="truncate">{icon.name}</span>
                     </CommandItem>
                   ))}
                 </CommandGroup>
@@ -873,12 +923,12 @@ export function IconBrowser() {
           if (!open) setActive(null)
         }}
       >
-        <DialogContent className="max-h-[90dvh] w-[calc(100%-2rem)] gap-0 overflow-hidden rounded-xl border-black/10 bg-[#f5f5f5] p-0 font-mono text-neutral-900 sm:max-w-md">
+        <DialogContent className="max-h-[88dvh] w-[calc(100%-1.5rem)] gap-0 overflow-hidden rounded-xl border-black/10 bg-[#f5f5f5] p-0  text-neutral-900 sm:max-w-md">
           <DialogTitle className="sr-only">{active?.name ?? "Icon"}</DialogTitle>
           <DialogDescription className="sr-only">
             Preview the icon, then copy or download it.
           </DialogDescription>
-          <div className="max-h-[90dvh] min-h-0 overflow-y-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="max-h-[88dvh] min-h-0 overflow-y-auto overscroll-contain pb-[env(safe-area-inset-bottom)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <AnimatePresence mode="wait">
               {active && (
                 <motion.div
