@@ -257,6 +257,8 @@ export const SITE = {
       { label: "GitHub", href: REPO, external: true },
       { label: "MIT License", href: `${REPO}/blob/main/LICENSE`, external: true },
       { label: "Contribute", href: `${REPO}/issues/new`, external: true },
+      { label: "Privacy", href: "/privacy" },
+      { label: "Terms", href: "/terms" },
       { label: "Email", href: "mailto:rdrudra99.work@gmail.com" },
       { label: "Request an icon", href: `${REPO}/issues/new`, external: true },
     ],

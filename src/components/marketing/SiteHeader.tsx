@@ -12,7 +12,6 @@ import { cn } from "@/lib/utils";
 const NAV = [
   { label: "Docs", href: "/docs" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
 ] as const;
 
 export function Header() {
@@ -90,7 +89,7 @@ export function Header() {
           {/* Desktop CTA */}
           <Button
             asChild
-            className="hidden h-[54px] rounded-full bg-neutral-950 px-6 text-base font-medium text-white hover:bg-neutral-800 md:inline-flex"
+            className="hidden h-11 rounded-full bg-neutral-950 px-5 text-sm font-medium text-white hover:bg-neutral-800 md:inline-flex"
           >
             <Link href="/icons">
               Browse icons
@@ -137,7 +136,7 @@ export function Header() {
 
               <Button
                 asChild
-                className="mt-2 h-14 w-full rounded-full bg-neutral-950 text-base font-medium text-white hover:bg-neutral-800"
+                className="mt-2 h-12 w-full rounded-full bg-neutral-950 text-sm font-medium text-white hover:bg-neutral-800"
               >
                 <Link href="/icons" onClick={() => setOpen(false)}>
                   Browse icons
