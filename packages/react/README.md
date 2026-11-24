@@ -1,4 +1,4 @@
-# @rdrudra99/odia-icons
+# @odiaui/icons-react
 
 Free, open-source Odisha icons as typed React components. Every icon is drawn
 on a **24 × 24 grid**, uses `currentColor`, and ships as a tree-shakeable named
@@ -13,25 +13,25 @@ export. MIT licensed.
 ## Install
 
 ```bash
-npm install @rdrudra99/odia-icons
+npm install @odiaui/icons-react
 ```
 
 ```bash
-pnpm add @rdrudra99/odia-icons
+pnpm add @odiaui/icons-react
 ```
 
 ```bash
-yarn add @rdrudra99/odia-icons
+yarn add @odiaui/icons-react
 ```
 
 ```bash
-bun add @rdrudra99/odia-icons
+bun add @odiaui/icons-react
 ```
 
 ## Usage
 
 ```tsx
-import { Deepa } from "@rdrudra99/odia-icons";
+import { Deepa } from "@odiaui/icons-react";
 
 export function Example() {
   return <Deepa size={32} className="text-orange-600" />;
@@ -49,7 +49,7 @@ Every component forwards its ref to the underlying `<svg>`:
 
 ```tsx
 import { useRef } from "react";
-import { Lotus } from "@rdrudra99/odia-icons";
+import { Lotus } from "@odiaui/icons-react";
 
 const ref = useRef<SVGSVGElement>(null);
 <Lotus ref={ref} size={40} aria-label="Lotus" />;
@@ -69,7 +69,7 @@ Component names are the PascalCase form of the SVG filename. For example,
 `olive-ridley-turtle.svg` becomes `OliveRidleyTurtle`:
 
 ```tsx
-import { OliveRidleyTurtle } from "@rdrudra99/odia-icons";
+import { OliveRidleyTurtle } from "@odiaui/icons-react";
 ```
 
 Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons).

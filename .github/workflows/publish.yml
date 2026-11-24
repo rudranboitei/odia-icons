@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   publish:
-    name: Build and publish @rdrudra99/odia-icons
+    name: Build and publish @odiaui/icons-react
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -31,6 +31,9 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org
 
+      - name: Update npm (trusted publishing needs a recent npm)
+        run: npm install -g npm@latest
+
       - name: Verify the tag matches package.json
         run: |
           PKG_VERSION="$(node -p "require('./package.json').version")"
@@ -47,5 +50,3 @@ jobs:
 
       - name: Publish
         run: npm publish --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

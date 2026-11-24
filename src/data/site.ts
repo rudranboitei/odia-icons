@@ -12,7 +12,7 @@ export const SITE = {
     "Free, open-source Odisha icons: temples, Pattachitra, Odissi, festivals and food as 24px SVG outline icons. React components, raw SVG and a shadcn registry.",
   github: REPO,
   siteUrl: "https://icons.odiaui.xyz",
-  npmPackage: "@odiaui/icons",
+  npmPackage: "@odiaui/icons-react",
   registryUrl: "https://icons.odiaui.xyz/r", // TODO: confirm registry path
   // Fill these with real numbers, or leave null to hide the badge.
   stars: null as number | null,
@@ -49,7 +49,7 @@ export const SITE = {
     icons: "/icons",
   },
   install: {
-    command: "npm install @odiaui/icons",
+    command: "npm install @odiaui/icons-react",
     helper: "Free and open source. Works with npm, pnpm and yarn too.",
   },
 
@@ -212,7 +212,7 @@ export const SITE = {
       },
       {
         q: "How do I use the icons in React?",
-        a: "Run npm install @odiaui/icons and import any icon as a React component. You can also click any icon to copy it as SVG, JSX or a data URI. There is no runtime to configure.",
+        a: "Run npm install @odiaui/icons-react and import any icon as a React component. You can also click any icon to copy it as SVG, JSX or a data URI. There is no runtime to configure.",
       },
       {
         q: "Can I search the icons in Odia?",

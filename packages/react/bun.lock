@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "@rdrudra99/odia-icons",
+      "name": "@odiaui/icons-react",
       "devDependencies": {
         "@types/react": "^19.0.0",
         "tsup": "^8.5.0",

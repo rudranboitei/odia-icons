@@ -161,7 +161,7 @@ Icon "slop" to avoid (the icon version of generic AI output):
 ## G7. Release
 
 - `pnpm changeset`. New icons = minor, fixed paths = patch, rename/remove = major (keep an alias for one major version).
-- Update `CHANGELOG.md`, tag, publish `@odiaui/icons`, deploy the site.
+- Update `CHANGELOG.md`, tag, publish `@odiaui/icons-react`, deploy the site.
 - Post-release smoke test: install the package in a fresh Next.js app, import one icon, confirm it renders and tree-shakes.
 
 ## Definition of done

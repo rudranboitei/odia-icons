@@ -8,7 +8,7 @@ You are a senior frontend engineer. Build **OdiaIcons**, an open-source, Odisha-
 
 ## Stack
 - Monorepo (pnpm workspaces + Turborepo)
-- `packages/icons`: source SVGs, metadata, build scripts, published as `@odiaui/icons`
+- `packages/icons`: source SVGs, metadata and build scripts consumed by `@odiaui/icons-react`
 - `packages/react`: generated React components (TypeScript, tree-shakeable, ESM + CJS, `.d.ts`)
 - `apps/web`: Next.js (App Router) + TypeScript + Tailwind, the existing landing page. Keep the existing design exactly; only add functionality and the icon browser.
 - Tooling: SVGO, Vitest, Playwright (visual snapshots), Changesets, GitHub Actions
@@ -54,7 +54,7 @@ Keep the current visual design. Add:
 13. **Analytics**: privacy-friendly (Plausible or Umami) for copy and download events.
 
 ## 5. Distribution
-- npm: `@odiaui/icons` (SVGs, sprite, font, manifest) and `@odiaui/icons-react`.
+- npm: `@odiaui/icons-react` (React components, types, ESM + CJS).
 - shadcn-style registry JSON per icon at `/r/<name>.json`.
 - CDN-friendly: `https://icons.odiaui.xyz/svg/<variant>/<name>.svg`.
 - Figma: export a `.fig`-friendly SVG bundle (plugin later).

@@ -34,7 +34,7 @@ If the user wants a generic UI icon and no Odisha theme, the library's `ui` cate
 ## 1. Install
 
 ```bash
-npm install @odiaui/icons        # or: pnpm add / yarn add / bun add
+npm install @odiaui/icons-react    # or: pnpm add / yarn add / bun add
 ```
 
 Single icon, no package, via the shadcn-style registry:
@@ -52,7 +52,7 @@ There is no runtime to configure and no provider to wrap your app in.
 Each icon is a component named in PascalCase from its kebab-case name (`konark-wheel` becomes `KonarkWheel`).
 
 ```tsx
-import { KonarkWheel, Deula } from "@odiaui/icons"
+import { KonarkWheel, Deula } from "@odiaui/icons-react"
 
 export function Example() {
   return (
