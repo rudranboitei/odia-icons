@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./public/construction.svg" alt="odiaicons logo construction sheet" width="100%" />
+</p>
+
 # OdiaIcons
 
 <p align="center">

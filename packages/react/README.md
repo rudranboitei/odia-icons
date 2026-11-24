@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/rudranboitei/odia-icons/main/public/construction.svg" alt="odiaicons logo construction sheet" width="100%" />
+</p>
+
 # @odiaui/icons-react
 
 Free, open-source Odisha icons as typed React components. Every icon is drawn
