@@ -1,0 +1,26 @@
+{
+  "name": "paddy",
+  "odia": "ଧାନ",
+  "category": "nature",
+  "tags": [
+    "paddy",
+    "rice",
+    "dhana",
+    "grain",
+    "crop",
+    "farm",
+    "ଧାନ"
+  ],
+  "aliases": [
+    "dhana"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Reads as a grain stalk and could be taken for wheat; a real paddy stalk droops. Odia spelling needs a native check."
+}

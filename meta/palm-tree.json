@@ -1,0 +1,26 @@
+{
+  "name": "palm-tree",
+  "odia": "ତାଳଗଛ",
+  "category": "nature",
+  "tags": [
+    "palm-tree",
+    "palm",
+    "tala",
+    "coconut",
+    "coast",
+    "odisha",
+    "ତାଳଗଛ"
+  ],
+  "aliases": [
+    "palm"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia spelling needs a native check."
+}

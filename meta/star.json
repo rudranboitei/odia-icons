@@ -1,0 +1,26 @@
+{
+  "name": "star",
+  "odia": "ତାରା",
+  "category": "ui",
+  "tags": [
+    "star",
+    "rating",
+    "featured",
+    "bookmark",
+    "highlight",
+    "dashboard",
+    "ତାରା"
+  ],
+  "aliases": [
+    "rating"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text is a guess and needs a native check."
+}

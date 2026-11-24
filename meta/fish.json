@@ -1,0 +1,26 @@
+{
+  "name": "fish",
+  "odia": "ମାଛ",
+  "category": "nature",
+  "tags": [
+    "fish",
+    "machha",
+    "food",
+    "river",
+    "sea",
+    "odisha",
+    "ମାଛ"
+  ],
+  "aliases": [
+    "machha"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia spelling needs a native check."
+}

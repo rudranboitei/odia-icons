@@ -1,0 +1,27 @@
+{
+  "name": "mridanga",
+  "odia": "ମୃଦଙ୍ଗ",
+  "category": "art",
+  "tags": [
+    "mridanga",
+    "mardala",
+    "drum",
+    "odissi",
+    "music",
+    "percussion",
+    "ମୃଦଙ୍ଗ"
+  ],
+  "aliases": [
+    "mardala",
+    "drum"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "A barrel drum. It does not show the heads or lacing of the real instrument. Odia spelling needs a native check."
+}
