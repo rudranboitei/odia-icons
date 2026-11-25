@@ -1,0 +1,26 @@
+{
+  "name": "odisha-map",
+  "odia": "ଓଡ଼ିଶା ମାନଚିତ୍ର",
+  "category": "travel",
+  "tags": [
+    "odisha",
+    "map",
+    "state",
+    "outline",
+    "location",
+    "region",
+    "ଓଡ଼ିଶା"
+  ],
+  "aliases": [
+    "odisha-outline"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Simplified from 2011 district boundaries (udit-001/india-maps-data). Shape check by an Odia reviewer recommended."
+}

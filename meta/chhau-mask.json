@@ -1,0 +1,26 @@
+{
+  "name": "chhau-mask",
+  "odia": "ଛଉ ମୁଖା",
+  "category": "art",
+  "tags": [
+    "chhau",
+    "mask",
+    "mayurbhanj",
+    "folk dance",
+    "mukha",
+    "odisha",
+    "ଛଉ"
+  ],
+  "aliases": [
+    "chhau"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Mayurbhanj Chhau dance mask; culture review recommended."
+}

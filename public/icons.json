@@ -140,6 +140,33 @@
       }
     },
     {
+      "name": "chhau-mask",
+      "odia": "ଛଉ ମୁଖା",
+      "category": "art",
+      "tags": [
+        "chhau",
+        "mask",
+        "mayurbhanj",
+        "folk dance",
+        "mukha",
+        "odisha",
+        "ଛଉ"
+      ],
+      "aliases": [
+        "chhau"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.2.0",
+      "note": "Mayurbhanj Chhau dance mask; culture review recommended.",
+      "strokeWidth": 1.5,
+      "body": "<path d=\"M12 21.5c-4.3-2.2-7-5.5-7-9.5V9h14v3c0 4-2.7 7.3-7 9.5z\"/><path d=\"M5 9L6 4.5l3 2.5 3-3.5 3 3.5 3-2.5 1 4.5\"/><path d=\"M8 12.5h2.5M13.5 12.5H16M10 17h4\"/>",
+      "files": {
+        "outline": "/svg/outline/chhau-mask.svg"
+      }
+    },
+    {
       "name": "close-circle",
       "odia": "ବନ୍ଦ",
       "category": "ui",
@@ -221,6 +248,34 @@
       "body": "<path d=\"M6.5 17.5v-3h2v-3H10v-3h4v3h1.5v3h2v3\"/><path d=\"M10.5 5.5h3M12 5.5V3.2\"/><rect x=\"4.5\" y=\"17.5\" width=\"15\" height=\"3.2\" rx=\"1.6\"/>",
       "files": {
         "outline": "/svg/outline/deul-temple.svg"
+      }
+    },
+    {
+      "name": "dhauli-stupa",
+      "odia": "ଧଉଳି ଶାନ୍ତି ସ୍ତୂପ",
+      "category": "architecture",
+      "tags": [
+        "dhauli",
+        "stupa",
+        "shanti stupa",
+        "peace pagoda",
+        "buddhist",
+        "bhubaneswar",
+        "odisha",
+        "ଧଉଳି"
+      ],
+      "aliases": [
+        "shanti-stupa"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.2.0",
+      "note": "Religious monument; kept as a plain dome and tiered spire (no cross-like mast). Odia spelling needs a native check.",
+      "strokeWidth": 1.5,
+      "body": "<path d=\"M3.5 20.5h17\"/><path d=\"M5.5 20.5a6.5 6.5 0 0 1 13 0\"/><path d=\"M10 14v-3h4v3\"/><path d=\"M12 11V8M9.5 8h5M10.5 5.5h3\"/>",
+      "files": {
+        "outline": "/svg/outline/dhauli-stupa.svg"
       }
     },
     {
@@ -438,6 +493,34 @@
       }
     },
     {
+      "name": "kalash",
+      "odia": "କଳସ",
+      "category": "culture",
+      "tags": [
+        "kalash",
+        "kalasa",
+        "pot",
+        "coconut",
+        "mango leaves",
+        "puja",
+        "odisha",
+        "କଳସ"
+      ],
+      "aliases": [
+        "kalasa"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.2.0",
+      "note": "Auspicious ritual pot; culture review recommended. Silhouette is the weakest of batch 2 (reads as a pot with leaves).",
+      "strokeWidth": 1.5,
+      "body": "<path d=\"M10 10c-2.6 1.2-3.5 3.2-3.5 5.5 0 2.8 2.4 5 5.5 5s5.5-2.2 5.5-5c0-2.3-.9-4.3-3.5-5.5\"/><path d=\"M9 10h6\"/><circle cx=\"12\" cy=\"5.5\" r=\"2\"/><path d=\"M8.5 9c-2.5 0-4-1.5-4.5-4 2.5 0 4.2 1.3 4.5 4zM15.5 9c2.5 0 4-1.5 4.5-4-2.5 0-4.2 1.3-4.5 4z\"/>",
+      "files": {
+        "outline": "/svg/outline/kalash.svg"
+      }
+    },
+    {
       "name": "kite",
       "odia": "ଗୁଡ଼ି",
       "category": "culture",
@@ -626,6 +709,90 @@
       }
     },
     {
+      "name": "namaskar",
+      "odia": "ନମସ୍କାର",
+      "category": "culture",
+      "tags": [
+        "namaskar",
+        "namaste",
+        "pranam",
+        "greeting",
+        "hands",
+        "prayer",
+        "odisha",
+        "ନମସ୍କାର"
+      ],
+      "aliases": [
+        "namaste",
+        "pranam"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.2.0",
+      "note": "Odia spelling needs a native check.",
+      "strokeWidth": 1.5,
+      "body": "<path d=\"M12 3.5C8.8 7 7.5 10.5 8 14.5\"/><path d=\"M12 3.5c3.2 3.5 4.5 7 4 11\"/><path d=\"M12 3.5V16\"/><path d=\"M8 14.5C6 15 5 16.5 5.5 18.5c.6 1.7 2.6 2 4 1.5M16 14.5c2 .5 3 2 2.5 4-.6 1.7-2.6 2-4 1.5\"/>",
+      "files": {
+        "outline": "/svg/outline/namaskar.svg"
+      }
+    },
+    {
+      "name": "nila-chakra",
+      "odia": "ନୀଳଚକ୍ର",
+      "category": "architecture",
+      "tags": [
+        "nila chakra",
+        "neela chakra",
+        "jagannath",
+        "puri",
+        "chakra",
+        "flag",
+        "odisha",
+        "ନୀଳଚକ୍ର"
+      ],
+      "aliases": [
+        "neela-chakra"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.2.0",
+      "note": "Sacred symbol on the Puri Jagannath temple: culture review required before release. Differs from konark-wheel (single wheel on a stand with a flag).",
+      "strokeWidth": 1.5,
+      "body": "<circle cx=\"12\" cy=\"11\" r=\"4.5\"/><path d=\"M12 6.5v9M7.5 11h9\"/><path d=\"M12 6.5V2.5l4 1.5-4 1.5\"/><path d=\"M12 15.5v5M9.5 20.5h5\"/>",
+      "files": {
+        "outline": "/svg/outline/nila-chakra.svg"
+      }
+    },
+    {
+      "name": "odisha-map",
+      "odia": "ଓଡ଼ିଶା ମାନଚିତ୍ର",
+      "category": "travel",
+      "tags": [
+        "odisha",
+        "map",
+        "state",
+        "outline",
+        "location",
+        "region",
+        "ଓଡ଼ିଶା"
+      ],
+      "aliases": [
+        "odisha-outline"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.2.0",
+      "note": "Simplified from 2011 district boundaries (udit-001/india-maps-data). Shape check by an Odia reviewer recommended.",
+      "strokeWidth": 1.5,
+      "body": "<path d=\"M2 20L5 16.5L3.5 12.5L5 9.5L8 8.5L10.5 4L17 6L17.5 3.5L22 7L20.5 10L18.5 13L11.5 17L9.5 15.5L7.5 18.5L5 19.5z\"/>",
+      "files": {
+        "outline": "/svg/outline/odisha-map.svg"
+      }
+    },
+    {
       "name": "olive-ridley-turtle",
       "odia": "ସାମୁଦ୍ରିକ କଇଁଛ",
       "category": "nature",
@@ -708,6 +875,33 @@
       }
     },
     {
+      "name": "palm-leaf-manuscript",
+      "odia": "ତାଳପତ୍ର ପୋଥି",
+      "category": "culture",
+      "tags": [
+        "palm leaf",
+        "tala patra",
+        "manuscript",
+        "pothi",
+        "literature",
+        "odisha",
+        "ତାଳପତ୍ର"
+      ],
+      "aliases": [
+        "tala-patra"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.2.0",
+      "note": "Odia spelling needs a native check.",
+      "strokeWidth": 1.5,
+      "body": "<rect x=\"2.5\" y=\"6.5\" width=\"19\" height=\"11\" rx=\"2\"/><path d=\"M7 4v16M11 12h7\"/>",
+      "files": {
+        "outline": "/svg/outline/palm-leaf-manuscript.svg"
+      }
+    },
+    {
       "name": "palm-tree",
       "odia": "ତାଳଗଛ",
       "category": "nature",
@@ -732,6 +926,33 @@
       "body": "<path d=\"M12.5 21.2C12.8 16 12.6 12 12 8.5\"/><path d=\"M12 8.5C9.5 5.5 6.5 5.6 3.8 7.8M12 8.5C14.5 5.5 17.5 5.6 20.2 7.8M12 8.5C11 5.8 9 4.2 6 4M12 8.5c1-2.7 3-4.3 6-4.5\"/><path d=\"M7 21.2h10\"/>",
       "files": {
         "outline": "/svg/outline/palm-tree.svg"
+      }
+    },
+    {
+      "name": "pattachitra",
+      "odia": "ପଟ୍ଟଚିତ୍ର",
+      "category": "art",
+      "tags": [
+        "pattachitra",
+        "patta chitra",
+        "scroll",
+        "painting",
+        "raghurajpur",
+        "odisha",
+        "ପଟ୍ଟଚିତ୍ର"
+      ],
+      "aliases": [
+        "pata-chitra"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.2.0",
+      "note": "Painted scroll with the tailed almond (fish) eye typical of Pattachitra faces. Culture review recommended.",
+      "strokeWidth": 1.5,
+      "body": "<rect x=\"2.5\" y=\"3.5\" width=\"19\" height=\"3.5\" rx=\"1.75\"/><rect x=\"2.5\" y=\"17\" width=\"19\" height=\"3.5\" rx=\"1.75\"/><path d=\"M4.5 7v10M19.5 7v10\"/><path d=\"M8.5 12.5c1.3-2 4.5-2 6.5-.5l1.5 1.3-1.5.2c-2 1.5-5.2 1.3-6.5-1z\"/>",
+      "files": {
+        "outline": "/svg/outline/pattachitra.svg"
       }
     },
     {
@@ -789,6 +1010,33 @@
       }
     },
     {
+      "name": "rath-chariot",
+      "odia": "ରଥ",
+      "category": "festival",
+      "tags": [
+        "rath",
+        "ratha yatra",
+        "chariot",
+        "puri",
+        "festival",
+        "odisha",
+        "ରଥ"
+      ],
+      "aliases": [
+        "rath-yatra"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.2.0",
+      "note": "Festival chariot; culture review recommended.",
+      "strokeWidth": 1.5,
+      "body": "<path d=\"M12 3.5V2.5\"/><path d=\"M9.5 8 12 4.5 14.5 8\"/><path d=\"M6.5 12 9 8h6l2.5 4\"/><path d=\"M4.5 12h15v3h-15z\"/><circle cx=\"8\" cy=\"19.5\" r=\"1.75\"/><circle cx=\"16\" cy=\"19.5\" r=\"1.75\"/>",
+      "files": {
+        "outline": "/svg/outline/rath-chariot.svg"
+      }
+    },
+    {
       "name": "sal-leaf",
       "odia": "ଶାଳପତ୍ର",
       "category": "nature",
@@ -813,6 +1061,33 @@
       "body": "<path d=\"M12 3C15.8 5.6 18 9 18 12.5C18 16.3 15.3 18.5 12 18.5C8.7 18.5 6 16.3 6 12.5C6 9 8.2 5.6 12 3z\"/><path d=\"M12 8.2V21\"/>",
       "files": {
         "outline": "/svg/outline/sal-leaf.svg"
+      }
+    },
+    {
+      "name": "sambalpuri-ikat",
+      "odia": "ସମ୍ବଲପୁରୀ ଇକତ",
+      "category": "art",
+      "tags": [
+        "sambalpuri",
+        "ikat",
+        "textile",
+        "weave",
+        "sari",
+        "odisha",
+        "ସମ୍ବଲପୁରୀ"
+      ],
+      "aliases": [
+        "sambalpuri"
+      ],
+      "variants": [
+        "outline"
+      ],
+      "since": "0.2.0",
+      "note": "Stepped diamond stands for the blurred ikat motif edge. Odia spelling needs a native check.",
+      "strokeWidth": 1.5,
+      "body": "<path d=\"M10.75 3.5H13.25V6H15.75V8.5H18.25V11H20.75V13H18.25V15.5H15.75V18H13.25V20.5H10.75V18H8.25V15.5H5.75V13H3.25V11H5.75V8.5H8.25V6H10.75z\"/>",
+      "files": {
+        "outline": "/svg/outline/sambalpuri-ikat.svg"
       }
     },
     {

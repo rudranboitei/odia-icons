@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sambalpuri-ikat",
+  "type": "registry:ui",
+  "title": "Sambalpuri Ikat",
+  "description": "ସମ୍ବଲପୁରୀ ଇକତ — sambalpuri, ikat, textile.",
+  "categories": [
+    "art"
+  ],
+  "meta": {
+    "odia": "ସମ୍ବଲପୁରୀ ଇକତ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/sambalpuri-ikat.svg",
+      "type": "registry:file",
+      "target": "components/icons/sambalpuri-ikat.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10.75 3.5H13.25V6H15.75V8.5H18.25V11H20.75V13H18.25V15.5H15.75V18H13.25V20.5H10.75V18H8.25V15.5H5.75V13H3.25V11H5.75V8.5H8.25V6H10.75z\"/></svg>"
+    }
+  ]
+}
