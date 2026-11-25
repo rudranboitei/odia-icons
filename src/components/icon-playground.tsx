@@ -5,7 +5,7 @@ import { IconCheck, IconCopy, IconDownload, IconX } from "@tabler/icons-react"
 import { SITE } from "../data/site"
 import { copyText } from "@/lib/clipboard"
 import { ShikiCode } from "@/components/shiki-code"
-import { Icon, toJsx, toSvg, type IconDef } from "@/lib/icons"
+import { Icon, toComponentJsx, toSvg, type IconDef } from "@/lib/icons"
 import { Corners, MonoButton, Tag } from "./ui-bits"
 
 const STROKE = 1.5 // the whole set is drawn at this weight
@@ -24,9 +24,13 @@ export function IconPlayground({
   const [tab, setTab] = useState<Tab>("SVG")
   const [copied, setCopied] = useState(false)
 
+  const packageName = SITE.install.command.trim().split(/\s+/).pop() ?? SITE.npmPackage
   const svg = useMemo(() => toSvg(def, { size: COPY_SIZE, stroke: STROKE }), [def])
-  const jsx = useMemo(() => toJsx(def, { size: COPY_SIZE, stroke: STROKE }), [def])
-  const cli = `npx shadcn@latest add ${SITE.registryUrl}/${def.name}.json`
+  const jsx = useMemo(
+    () => toComponentJsx(def, { size: COPY_SIZE, stroke: STROKE }, packageName),
+    [def, packageName]
+  )
+  const cli = SITE.install.command
 
   const code = tab === "SVG" ? svg : tab === "JSX" ? jsx : cli
 

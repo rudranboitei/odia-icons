@@ -34,6 +34,16 @@ export const toSvg = (icon: IconDef, o: Opts) =>
 export const toJsx = (icon: IconDef, o: Opts) =>
   `<svg width={${o.size}} height={${o.size}} viewBox="0 0 ${GRID} ${GRID}" fill="none" stroke="currentColor" strokeWidth={${o.stroke}} strokeLinecap="round" strokeLinejoin="round">\n${toJsxBody(els(icon.body, "  "))}\n</svg>`
 
+export const toComponentJsx = (icon: IconDef, o: Opts, packageName: string) => {
+  const name = pascal(icon.name)
+  return `import { ${name} } from "${packageName}"
+
+export default function Example() {
+  return <${name} size={${o.size}} strokeWidth={${o.stroke}} className="text-neutral-900" />
+}
+`
+}
+
 export const toTsx = (icon: IconDef, o: Opts) =>
   `import type { SVGProps } from "react";
 
