@@ -1,0 +1,14 @@
+/* TEAM */
+Project: OdiaIcons
+Site: https://icons.odiaui.xyz
+GitHub: https://github.com/rudranboitei/odia-icons
+Location: Odisha, India
+
+/* THANKS */
+Contributors: https://github.com/rudranboitei/odia-icons/graphs/contributors
+
+/* SITE */
+Standards: HTML5, CSS3, SVG, TypeScript
+Framework: Next.js
+Hosting: Vercel
+License: MIT

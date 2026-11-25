@@ -1,11 +1,15 @@
 {
+  "id": "/",
   "name": "OdiaIcons",
   "short_name": "OdiaIcons",
-  "description": "Odisha's culture, in 24px icons.",
+  "description": "Free, open-source Odisha icons: temples, crafts, music, festivals, food and UI as 24px SVG outline icons.",
+  "lang": "en",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#141210",
   "theme_color": "#E3C6B0",
+  "categories": ["design", "graphics", "productivity"],
   "icons": [
     { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" },
