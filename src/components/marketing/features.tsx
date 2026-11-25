@@ -70,7 +70,7 @@ function CopyVisual() {
         <div className="flex items-center gap-2.5">
           <span className="grid size-6 place-items-center rounded-full bg-neutral-900 text-neutral-900">
             {sample ? (
-              <IconGlyph icon={sample} strokeWidth={1.75} className="size-3.5" />
+              <IconGlyph icon={sample} strokeWidth={1.5} className="size-3.5" />
             ) : (
               <Sparkles className="size-3.5" />
             )}

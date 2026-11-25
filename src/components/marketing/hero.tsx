@@ -9,7 +9,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { ICONS, IconGlyph } from "@/data/icons";
 import { SITE } from "@/data/site";
 import { Icon, icons, iconsByName } from "@/lib/icons";
 
@@ -39,28 +38,28 @@ const EASE = [0.22, 1, 0.36, 1] as const;
  * with `paths`). `Icon` takes the same IconDef that iconsByName returns.
  */
 
-/** The 16 icons shown in the preview, by name (the files in ./icons/outline). */
+/** The 16 Odia icons shown in the preview, by name (the files in ./icons/outline). */
 const PREVIEW_NAMES = [
-  "bell",
-  "boita",
-  "calendar",
-  "chart-bar",
-  "check-circle",
-  "close-circle",
+  "deul-temple",
+  "konark-wheel",
+  "rasagola",
+  "pakhala",
   "deepa",
-  "download",
-  "edit",
-  "elephant",
-  "folder",
-  "home",
-  "kite",
+  "jhoti",
+  "mridanga",
+  "paddy",
+  "palm-tree",
+  "olive-ridley-turtle",
+  "terracotta-pot",
   "lotus",
-  "mail",
   "mango",
+  "elephant",
+  "kite",
+  "swing",
 ] as const;
 
 /** Which tile shows the dark "selected" border. */
-const SELECTED = "deepa";
+const SELECTED = "deul-temple";
 
 function PreviewWindow() {
   // Look each name up; a name that isn't in the registry is skipped, and logged so it isn't silent
@@ -100,7 +99,7 @@ function PreviewWindow() {
       {/* Grid: 16 tiles divide evenly into 4 or 8 columns, so no ragged last row */}
       <div className="p-4 sm:p-5">
         <p className="mb-3 text-left text-sm font-semibold text-neutral-900">
-          All icons
+          Featured icons
         </p>
         <div className="grid grid-cols-4 gap-2 sm:grid-cols-8 sm:gap-3">
           {tiles.map((icon) => (
@@ -168,7 +167,7 @@ export function Hero() {
       icon: Download,
       text: `${SITE.installs} ${hero.badges.installs}`,
     },
-    { icon: LayoutGrid, text: `${ICONS.length} ${hero.badges.icons}` },
+    { icon: LayoutGrid, text: `${icons.length} ${hero.badges.icons}` },
   ].filter(Boolean) as { icon: typeof Star; text: string; fill?: boolean }[];
 
   return (

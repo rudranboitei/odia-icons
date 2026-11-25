@@ -8,7 +8,7 @@ import { ShikiCode } from "@/components/shiki-code"
 import { Icon, toJsx, toSvg, type IconDef } from "@/lib/icons"
 import { Corners, MonoButton, Tag } from "./ui-bits"
 
-const STROKE = 1.75 // the whole set is drawn at this weight
+const STROKE = 1.5 // the whole set is drawn at this weight
 const COPY_SIZE = 24 // size baked into the copied SVG/JSX
 const PREVIEW_SIZE = 96
 const TABS = ["SVG", "JSX", "CLI"] as const
@@ -68,7 +68,7 @@ export function IconPlayground({
         </div>
         {onClose && (
           <MonoButton variant="soft" size="iconSm" onClick={onClose} aria-label="Close">
-            <IconX className="size-4" stroke={1.75} />
+            <IconX className="size-4" stroke={1.5} />
           </MonoButton>
         )}
       </div>

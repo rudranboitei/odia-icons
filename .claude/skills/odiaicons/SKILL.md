@@ -5,7 +5,7 @@ description: Use when adding, editing, auditing or publishing icons in OdiaIcons
 
 # OdiaIcons: ship-quality workflow
 
-OdiaIcons is an open-source Odisha-themed icon library (temples, Pattachitra, Odissi, Jagannath culture, Sambalpuri ikat, festivals, food, wildlife, geography, plus a general UI set). It ships as a React package, a shadcn-style registry and raw SVGs, and is browsed at icons.odiaui.xyz.
+OdiaIcons is an open-source Odisha-themed icon library (temples, crafts, music, festivals, food, wildlife, geography, plus a general UI set). It ships as a React package, a shadcn-style registry and raw SVGs, and is browsed at icons.odiaui.xyz.
 
 Work in **gates**. An icon only moves to the next gate when the current one passes. If a gate fails, fix and retry that gate (max 3 rounds). After 3 failed rounds, simplify the concept instead of adding detail.
 
@@ -21,14 +21,14 @@ Keep this as `style-spec.json` in the repo and read it at the start of every ses
 {
   "viewBox": "0 0 24 24",
   "livePadding": 2,
-  "stroke": 1.75,
+  "stroke": 1.5,
   "linecap": "round",
   "linejoin": "round",
   "color": "currentColor",
   "fill": "none",
   "snap": 0.5,
   "minGap": 1.5,
-  "minDetail": 1.75,
+  "minDetail": 1.5,
   "maxPaths": 8,
   "maxBytes": 2048,
   "variants": ["outline", "solid", "duotone"]
@@ -40,7 +40,7 @@ Rules that follow from it:
 - Outline by default. No gradients, filters, masks, clip-paths, hard-coded colors, ids or transforms.
 - Snap points to 0.5px. Optical balance beats mathematical centering (circles look lighter than squares, so make them slightly larger).
 - Parallel strokes keep at least `minGap` (1.5px) between them. No detail smaller than the stroke width.
-- Stroke is 1.75 at 24px, so it renders about 1.17px at 16px. If details merge at 16px, **simplify, never thicken**.
+- Stroke is 1.5 at 24px, so it renders about 1px at 16px. If details merge at 16px, **simplify, never thicken**.
 - Duotone uses `currentColor` plus one 0.25 opacity layer. Solid has no stroke.
 
 ## G0. Brief
@@ -76,7 +76,7 @@ Use this exact outer structure:
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-     stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+     stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <!-- paths here -->
 </svg>
 ```
@@ -112,7 +112,7 @@ Thresholds:
 - **Below 85** revise. Fix the lowest-scoring criterion first, re-render, re-score.
 
 Auto-fail (score capped at 70 until fixed):
-- Detail smaller than 1.75px or gap under 1.5px.
+- Detail smaller than 1.5px or gap under 1.5px.
 - Strokes touching or overlapping so they thicken.
 - Mixed corner radii or caps inside one icon.
 - Different visual weight from neighbours (looks bolder or lighter).

@@ -44,7 +44,7 @@ export function LegalPage({
           </p>
 
           <span className="mt-7 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-4 py-2 text-[13px] text-neutral-600 backdrop-blur">
-            <IconCalendar aria-hidden className="size-3.5" stroke={1.75} />
+            <IconCalendar aria-hidden className="size-3.5" stroke={1.5} />
             Last updated: {updated}
           </span>
         </div>

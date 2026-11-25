@@ -19,20 +19,20 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-1f1f1f?style=flat-square" alt="MIT License" /></a>
   <img src="https://img.shields.io/badge/icons-37-f3e0c9?style=flat-square&labelColor=1f1f1f" alt="37 icons" />
   <img src="https://img.shields.io/badge/grid-24%C3%9724-1f1f1f?style=flat-square" alt="24x24 grid" />
-  <img src="https://img.shields.io/badge/stroke-1.75px-1f1f1f?style=flat-square" alt="1.75px stroke" />
+  <img src="https://img.shields.io/badge/stroke-1.5px-1f1f1f?style=flat-square" alt="1.5px stroke" />
   <a href="https://github.com/rudranboitei/odia-icons/pulls"><img src="https://img.shields.io/badge/PRs-welcome-1f1f1f?style=flat-square" alt="PRs welcome" /></a>
 </p>
 
 ---
 
-OdiaIcons is a small, carefully crafted icon set that translates Odisha’s visual language into clean, production-ready line icons. Each icon is drawn on a shared 24 × 24 grid, uses `currentColor`, and is designed to feel consistent across product interfaces, websites, and editorial layouts.
+OdiaIcons is a compact, carefully crafted icon set: 19 Odisha motifs plus a matching UI set. Every icon is drawn on a shared 24 × 24 grid, uses `currentColor`, and is designed to feel consistent across product interfaces, websites, and editorial layouts.
 
 Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon browser](https://icons.odiaui.xyz/icons).
 
 ## Highlights
 
-- **Rooted in Odisha** — Motifs inspired by Konark, Kalinga architecture, Pattachitra, Jagannath culture, and local traditions.
-- **Consistent by design** — Every icon follows a 24 × 24 grid, 2px safe padding, 1.75px stroke, round caps, and round joins.
+- **Rooted in Odisha** — Motifs inspired by Konark, Kalinga architecture, Odia crafts, music and local traditions.
+- **Consistent by design** — Every icon follows a 24 × 24 grid, 2px safe padding, 1.5px stroke, round caps, and round joins.
 - **Theme-friendly** — Built with `currentColor`, so icons inherit text color and work naturally in light/dark themes.
 - **Developer-ready exports** — Copy SVG, JSX, React/TSX, import snippet, or data URI from the playground.
 - **Bilingual discovery** — Icon names, tags, and aliases support English and Odia script.
@@ -40,7 +40,7 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 
 ## Icon Set
 
-**37 icons and counting.** Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons).
+**37 icons and counting:** 19 Odisha motifs plus a matching UI set. Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons). A sample:
 
 | Icon | Name | Odia | Category |
 |------|------|------|----------|
@@ -120,7 +120,7 @@ All icons follow the same visual contract to keep the set cohesive:
 | Canvas | 24 × 24 |
 | Safe area | 20 × 20 (2px padding) |
 | Style | Outline |
-| Stroke width | 1.75px |
+| Stroke width | 1.5px |
 | Stroke caps / joins | Round |
 | Color | `currentColor` |
 | Fills | None on root |

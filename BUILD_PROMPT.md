@@ -21,7 +21,7 @@ You are a senior frontend engineer. Build **OdiaIcons**, an open-source, Odisha-
 
 ## 2. React package
 Each icon component:
-- Props: `size` (default 24), `color` (default `currentColor`), `strokeWidth` (default 1.75), `variant` (`outline | solid | duotone`), `absoluteStrokeWidth`, `title`, plus all `SVGProps`.
+- Props: `size` (default 24), `color` (default `currentColor`), `strokeWidth` (default 1.5), `variant` (`outline | solid | duotone`), `absoluteStrokeWidth`, `title`, plus all `SVGProps`.
 - `forwardRef`, `aria-hidden="true"` by default, `role="img"` + `<title>` when `title` is given.
 - Named exports per icon, plus a `createIcon` helper and a dynamic `<Icon name="konark-wheel" />` (lazy) for CMS use.
 - A provider `<OdiaIconsProvider size color strokeWidth>` for global defaults.
@@ -35,7 +35,7 @@ Each icon component:
 - Food (15): rasagola, pakhala, chhena-poda, dalma, khaja, mudhi, ...
 - Nature and geography (20): chilika-lake, bhitarkanika-crocodile, olive-ridley-turtle, simlipal-tiger, mahanadi, hirakud-dam, irrawaddy-dolphin, ...
 - General UI (20+): the usual search, arrow, check, close, menu, download, copy, heart, user, settings, etc. in the same visual style.
-Each follows the 24x24, 1.75px-stroke, round-cap rules in SKILL.md. Include the Odia-script name in every icon's metadata.
+Each follows the 24x24, 1.5px-stroke, round-cap rules in SKILL.md. Include the Odia-script name in every icon's metadata.
 
 ## 4. Website functionality (apps/web)
 Keep the current visual design. Add:

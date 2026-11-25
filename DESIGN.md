@@ -197,7 +197,7 @@ All via `motion/react`.
 From the OdiaIcons contributor spec.
 
 - Canvas **24 × 24**, 2px safe padding (20 × 20 live area).
-- **Outline** style, **1.75px stroke**, round caps and joins, `fill="none"`, `stroke="currentColor"`.
+- **Outline** style, **1.5px stroke**, round caps and joins, `fill="none"`, `stroke="currentColor"`.
 - No hard-coded colours, gradients, filters, masks or clip-paths.
 - Snap points to 0.5px; motifs must stay recognisable at 16px.
 - Variants: `outline` (default), `solid`, `duotone` (`currentColor` + 0.25 opacity layer).

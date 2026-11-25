@@ -42,6 +42,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 import {
+  CATEGORY_ORDER,
   Icon,
   icons,
   searchIcons,
@@ -64,11 +65,17 @@ type CategoryFilter = "all" | IconCategory
 
 const categoryCounts = [
   { id: "all" as const, label: "All", count: icons.length },
-  ...[...new Set(icons.map((icon) => icon.category))].map((id) => ({
-    id,
-    label: id.charAt(0).toUpperCase() + id.slice(1),
-    count: icons.filter((icon) => icon.category === id).length,
-  })),
+  ...CATEGORY_ORDER.flatMap((id) => {
+    const count = icons.filter((icon) => icon.category === id).length
+    if (count === 0) return []
+    return [
+      {
+        id,
+        label: id === "ui" ? "UI" : id.charAt(0).toUpperCase() + id.slice(1),
+        count,
+      },
+    ]
+  }),
 ]
 const categoryList = categoryCounts.filter((c) => c.id !== "all")
 
@@ -109,7 +116,7 @@ const sidebarStats = [
   { label: "Icons", value: String(icons.length) },
   { label: "Categories", value: String(categoryList.length) },
   { label: "Grid", value: "24×24" },
-  { label: "Stroke", value: "1.75" },
+  { label: "Stroke", value: "1.5" },
 ]
 
 const shortcuts = [
@@ -167,7 +174,7 @@ function SidebarContent({
         </Link>
         {onClose && (
           <MonoButton variant="soft" size="icon" onClick={onClose} aria-label="Close menu">
-            <IconX className="size-4" stroke={1.75} />
+            <IconX className="size-4" stroke={1.5} />
           </MonoButton>
         )}
       </div>
@@ -199,7 +206,7 @@ function SidebarContent({
                     }`}
                 >
                   <span className="relative flex">
-                    <NavIcon className="size-4" stroke={1.75} />
+                    <NavIcon className="size-4" stroke={1.5} />
                     {item.active && (
                       <span
                         aria-hidden
@@ -238,7 +245,7 @@ function SidebarContent({
                     : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
                     }`}
                 >
-                  <FolderIcon className="size-4 shrink-0" stroke={1.75} />
+                  <FolderIcon className="size-4 shrink-0" stroke={1.5} />
                   <span className="truncate">{item.label}</span>
                   <span
                     className={`ml-auto text-[11px] ${isActive ? "text-orange-600" : "text-neutral-400"}`}
@@ -277,7 +284,7 @@ function SidebarContent({
           <Corners className="m-1.5 size-2" />
           <div className="flex items-center justify-between">
             <p className="flex items-center gap-1.5 text-[11px] tracking-wide text-neutral-500 uppercase">
-              <IconTerminal2 className="size-3.5" stroke={1.75} />
+              <IconTerminal2 className="size-3.5" stroke={1.5} />
               Install
             </p>
             <Tag tone="orange">v0.1.0</Tag>
@@ -299,7 +306,7 @@ function SidebarContent({
             rel="noopener"
             className={btn("outline", "sm", "mt-1.5 w-full")}
           >
-            <IconBrandGithub className="size-3.5" stroke={1.75} />
+            <IconBrandGithub className="size-3.5" stroke={1.5} />
             Star on GitHub
           </a>
         </div>
@@ -364,7 +371,7 @@ function IconCard({ icon, index, selected, onOpen }: {
         <Icon
           def={icon}
           size={28}
-          stroke={1.75}
+          stroke={1.5}
           absoluteStrokeWidth
           className="text-neutral-800"
         />
@@ -509,11 +516,11 @@ export function IconBrowser() {
                 aria-label="Open menu"
                 className="size-10 lg:hidden"
               >
-                <IconMenu2 className="size-4" stroke={1.75} />
+                <IconMenu2 className="size-4" stroke={1.5} />
               </MonoButton>
 
               <div className="hidden min-w-0 items-center gap-2.5 lg:flex">
-                <IconLayoutGrid className="size-4 text-neutral-500" stroke={1.75} />
+                <IconLayoutGrid className="size-4 text-neutral-500" stroke={1.5} />
                 <span className="text-[15px] font-medium text-neutral-900">Icons</span>
                 <Tag tone="orange">{filtered.length} shown</Tag>
               </div>
@@ -558,7 +565,7 @@ export function IconBrowser() {
                   onClick={copyInstall}
                   className="max-2xl:hidden normal-case"
                 >
-                  <IconTerminal2 className="size-3.5" stroke={1.75} />
+                  <IconTerminal2 className="size-3.5" stroke={1.5} />
                   <ShikiCode code={SITE.install.command} lang="bash" />
                   {copiedInstall ? (
                     <IconCheck className="size-3.5 text-orange-600" />
@@ -574,7 +581,7 @@ export function IconBrowser() {
                   aria-label="GitHub"
                   className={btn("soft", "icon", "max-sm:hidden")}
                 >
-                  <IconBrandGithub className="size-4" stroke={1.75} />
+                  <IconBrandGithub className="size-4" stroke={1.5} />
                 </a>
               </div>
             </div>
@@ -645,7 +652,7 @@ export function IconBrowser() {
 
           <footer className="flex flex-col gap-1 border-t border-black/10 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] text-[11px] text-neutral-400 sm:flex-row sm:items-center sm:justify-between sm:px-4 lg:px-5">
             <span>odiaicons · open source under the MIT licence</span>
-            <span>24 × 24 grid · 1.75px stroke</span>
+            <span>24 × 24 grid · 1.5px stroke</span>
           </footer>
         </div>
 
@@ -657,7 +664,7 @@ export function IconBrowser() {
           className={`sticky top-0 hidden h-dvh w-[340px] shrink-0 flex-col border-l border-black/10 xl:flex ${PANEL_BG}`}
         >
           <div className="flex h-14 shrink-0 items-center gap-2.5 border-b border-black/10 px-4">
-            <IconCode className="size-4 text-neutral-500" stroke={1.75} />
+            <IconCode className="size-4 text-neutral-500" stroke={1.5} />
             <span className="text-[15px] font-medium text-neutral-900">Playground</span>
             {panelIcon && <Tag tone="orange">{panelIcon.category}</Tag>}
           </div>
@@ -723,7 +730,7 @@ export function IconBrowser() {
                       </span>
                       <IconArrowUpRight
                         className="ml-auto size-4 shrink-0 text-neutral-400"
-                        stroke={1.75}
+                        stroke={1.5}
                       />
                     </a>
                   </li>
@@ -887,7 +894,7 @@ export function IconBrowser() {
                       }}
                       className="py-2.5 sm:py-1.5"
                     >
-                      <Icon def={icon} size={16} stroke={1.75} />
+                      <Icon def={icon} size={16} stroke={1.5} />
                       <span className="truncate">{icon.name}</span>
                     </CommandItem>
                   ))}

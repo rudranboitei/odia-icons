@@ -8,7 +8,7 @@ Free, open-source Odisha icons as typed React components. Every icon is drawn
 on a **24 × 24 grid**, uses `currentColor`, and ships as a tree-shakeable named
 export. MIT licensed.
 
-- 37 hand-drawn motifs: temples, Pattachitra, Odissi, festivals and food
+- 37 icons: 19 Odisha motifs plus a matching UI set
 - React 18+
 - TypeScript types included
 - ESM and CJS builds

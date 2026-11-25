@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 /**
  * Demo icon set for the landing page. Follows the OdiaIcons spec:
- * 24x24 viewBox, outline, 1.75 stroke, round caps/joins, currentColor.
+ * 24x24 viewBox, outline, 1.5 stroke, round caps/joins, currentColor.
  */
 export type Category = "architecture" | "culture" | "art" | "festival" | "nature" | "ui";
 
@@ -51,7 +51,7 @@ export const ICONS: IconEntry[] = [
 export function IconGlyph({
   icon,
   className,
-  strokeWidth = 1.75,
+  strokeWidth = 1.5,
 }: {
   icon: IconEntry;
   className?: string;

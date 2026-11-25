@@ -30,7 +30,7 @@ const btn =
 
 export function DeveloperSection() {
   const { developer } = SITE;
-  const snippet = toSvg(iconsByName["deepa"], { size: 32, stroke: 1.75 });
+  const snippet = toSvg(iconsByName["deepa"], { size: 32, stroke: 1.5 });
 
   const [active, setActive] = useState(0);
   const [copied, setCopied] = useState(false);

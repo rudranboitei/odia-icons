@@ -32,7 +32,6 @@ function loadSpec() {
 const SPEC = loadSpec()
 const VIEWBOX = SPEC.viewBox
 const STROKE = String(SPEC.stroke) // "1.5"
-const LEGACY_STROKE = "1.75" // old icons, allowed until they are redone
 const MAX_BYTES = SPEC.maxBytes
 const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 
@@ -54,7 +53,6 @@ function innerBody(svg) {
 
 export async function loadIcons() {
   const errors = []
-  const legacy = []
   const metaDir = path.join(ROOT, "meta")
   const iconsDir = path.join(ROOT, "icons")
 
@@ -149,13 +147,9 @@ export async function loadIcons() {
       }
 
       const stroke = attr(svg, "stroke-width")
-      if (stroke !== STROKE && stroke !== LEGACY_STROKE) {
-        fail(
-          errors,
-          `${label}: stroke-width must be "${STROKE}" (old icons may still use "${LEGACY_STROKE}")`
-        )
+      if (stroke !== STROKE) {
+        fail(errors, `${label}: stroke-width must be "${STROKE}"`)
       }
-      if (stroke === LEGACY_STROKE) legacy.push(name)
 
       if (attr(svg, "stroke") !== "currentColor") {
         fail(errors, `${label}: stroke must be "currentColor"`)
@@ -200,12 +194,6 @@ export async function loadIcons() {
     const error = new Error(`Icon validation failed (${errors.length}):\n${message}`)
     error.errors = errors
     throw error
-  }
-
-  if (legacy.length) {
-    console.warn(
-      `⚠ ${legacy.length} icon(s) still at stroke ${LEGACY_STROKE}, redo at ${STROKE}: ${legacy.join(", ")}`
-    )
   }
 
   return icons.sort((a, b) => a.name.localeCompare(b.name))

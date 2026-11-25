@@ -46,7 +46,7 @@ export type IconDef = {
   contributors: string[]
   since: string
   note: string
-  /** Stroke width this icon was drawn with (new icons 1.5, old ones 1.75). */
+  /** Stroke width this icon was drawn with. */
   strokeWidth: number
   /** Inner SVG markup for the outline variant, drawn on a 24×24 grid. */
   body: string

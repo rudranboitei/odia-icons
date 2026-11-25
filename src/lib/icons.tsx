@@ -1,5 +1,5 @@
 import { forwardRef, type SVGProps } from "react"
-import { icons, iconsByName, type IconDef } from "./icons.generated"
+import { icons, iconsByName, type IconCategory, type IconDef } from "./icons.generated"
 
 export { icons, iconsByName }
 export type { IconCategory, IconDef, IconVariant } from "./icons.generated"
@@ -7,7 +7,7 @@ export type { IconCategory, IconDef, IconVariant } from "./icons.generated"
 export type Opts = { size: number; stroke: number }
 
 export const GRID = 24
-export const DEFAULT_STROKE = 1.75
+export const DEFAULT_STROKE = 1.5
 
 const els = (body: string, pad: string) => {
   const parts = body.match(/<[^>]+>/g) ?? []
@@ -60,7 +60,7 @@ ${toJsxBody(els(icon.body, "      "))}
 `
 
 export const toImport = (icon: IconDef) =>
-  `import { ${pascal(icon.name)} } from "@odiaui/icons-react"\n\n<${pascal(icon.name)} size={24} strokeWidth={1.75} />`
+  `import { ${pascal(icon.name)} } from "@odiaui/icons-react"\n\n<${pascal(icon.name)} size={24} strokeWidth={1.5} />`
 
 // currentColor does not work inside a data URI, so a fixed ink color is used.
 export const toDataUri = (icon: IconDef, o: Opts) =>
@@ -74,15 +74,54 @@ export const formats = [
   { id: "uri", label: "Data URI", run: toDataUri },
 ] as const
 
+/** Cultural icons shown first, in this order, so the set reads as Odia. */
+const FEATURED_ORDER: readonly string[] = [
+  "deul-temple",
+  "konark-wheel",
+  "rasagola",
+  "pakhala",
+]
+
+export const CATEGORY_ORDER: readonly IconCategory[] = [
+  "architecture",
+  "culture",
+  "art",
+  "festival",
+  "food",
+  "nature",
+  "travel",
+  "ui",
+]
+
+function sortIcons(list: IconDef[]): IconDef[] {
+  return [...list].sort((a, b) => {
+    const aFeatured = FEATURED_ORDER.indexOf(a.name)
+    const bFeatured = FEATURED_ORDER.indexOf(b.name)
+    if (aFeatured !== -1 || bFeatured !== -1) {
+      if (aFeatured === -1) return 1
+      if (bFeatured === -1) return -1
+      return aFeatured - bFeatured
+    }
+
+    const aCategory = CATEGORY_ORDER.indexOf(a.category)
+    const bCategory = CATEGORY_ORDER.indexOf(b.category)
+    if (aCategory !== bCategory) return aCategory - bCategory
+
+    return a.name.localeCompare(b.name)
+  })
+}
+
 export function searchIcons(query: string): IconDef[] {
   const q = query.trim().toLowerCase()
-  if (!q) return icons
-  return icons.filter((icon) =>
-    [icon.name, icon.odia, icon.category, ...icon.tags, ...icon.aliases]
-      .join(" ")
-      .toLowerCase()
-      .includes(q)
-  )
+  const matches = q
+    ? icons.filter((icon) =>
+        [icon.name, icon.odia, icon.category, ...icon.tags, ...icon.aliases]
+          .join(" ")
+          .toLowerCase()
+          .includes(q)
+      )
+    : icons
+  return sortIcons(matches)
 }
 
 type IconProps = Omit<

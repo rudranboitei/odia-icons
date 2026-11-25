@@ -48,17 +48,17 @@ export function Footer() {
                 className={linkClass}
               >
                 {link.label}
-                <IconArrowUpRight aria-hidden className="size-3" stroke={1.75} />
+                <IconArrowUpRight aria-hidden className="size-3" stroke={1.5} />
               </a>
             ) : link.href.startsWith("mailto:") ? (
               <a key={link.label} href={link.href} className={linkClass}>
                 {link.label}
-                <IconArrowUpRight aria-hidden className="size-3" stroke={1.75} />
+                <IconArrowUpRight aria-hidden className="size-3" stroke={1.5} />
               </a>
             ) : (
               <Link key={link.label} href={link.href} className={linkClass}>
                 {link.label}
-                <IconArrowUpRight aria-hidden className="size-3" stroke={1.75} />
+                <IconArrowUpRight aria-hidden className="size-3" stroke={1.5} />
               </Link>
             ),
           )}

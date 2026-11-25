@@ -9,7 +9,7 @@ export const SITE = {
   tagline: "Free Odisha icons, open source.",
   /** Meta description: keep it around 150-160 characters. */
   description:
-    "Free, open-source Odisha icons: temples, Pattachitra, Odissi, festivals and food as 24px SVG outline icons. React components, raw SVG and a shadcn registry.",
+    "Free, open-source Odisha icons: temples, crafts, music, festivals, food and UI as 24px SVG outline icons. React, raw SVG and a shadcn registry.",
   github: REPO,
   siteUrl: "https://icons.odiaui.xyz",
   npmPackage: "@odiaui/icons-react",
@@ -28,8 +28,8 @@ export const SITE = {
       "Odia icons",
       "Odisha SVG icons",
       "Konark wheel icon",
-      "Pattachitra icons",
-      "Odissi icons",
+      "Odisha craft icons",
+      "Odisha music icons",
       "Indian icon set",
       "open source icon library",
       "React icons",
@@ -66,22 +66,22 @@ export const SITE = {
     // Keep in sync with the <h1> in hero.tsx
     title: "Free Odisha icons, open-source SVG set.",
     subtitle:
-      "Free, MIT-licensed Odisha icons: temples, Pattachitra, Odissi and festivals drawn as 24 × 24 SVG and React icons. Search in English or Odia (ଓଡ଼ିଆ).",
+      "Free, MIT-licensed Odisha icons: temples, crafts, music, festivals and food drawn as 24 × 24 SVG and React icons. Search in English or Odia (ଓଡ଼ିଆ).",
     stats: [
-      "5 hand-drawn motifs",
+      "37 hand-drawn icons",
       "24 × 24 grid",
       "4 export formats",
       "No attribution needed",
     ],
     wordmark: { lead: "Meet", trail: "Odia" },
     display: { lead: "Icons", accent: "with soul." },
-    lead: "Odisha-inspired 24px outline icons for temples, Pattachitra, Odissi and festivals. Free, open source and searchable in English or ଓଡ଼ିଆ.",
+    lead: "Odisha-inspired 24px outline icons for temples, crafts, music, festivals and food. Free, open source and searchable in English or ଓଡ଼ିଆ.",
     ctas: { install: "Install icons", browse: "Browse icons" },
     badges: {
       github: "Open source on GitHub",
       stars: "stars",
       installs: "installs",
-      icons: "icons in this preview",
+      icons: "icons in the set",
     },
   },
 
@@ -116,7 +116,7 @@ export const SITE = {
     {
       title: "One shared grid",
       description:
-        "Every icon is built on a 24 × 24 grid with 1.75px strokes and rounded caps, so they sit together in any row.",
+        "Every icon is built on a 24 × 24 grid with 1.5px strokes and rounded caps, so they sit together in any row.",
       media: { type: "animation", name: "grid" },
     },
     {
@@ -140,7 +140,7 @@ export const SITE = {
     meta: "Independent · open source · made in Odisha",
     linkLabel: "Star on GitHub",
     stats: [
-      { value: "5", label: "motifs" },
+      { value: "37", label: "icons" },
       { value: "4", label: "formats" },
       { value: "0", label: "dependencies" },
     ],
@@ -177,7 +177,7 @@ export const SITE = {
       "Real SVG and React files you can read, edit and version. No runtime, no wrapper components, no lock-in.",
     bullets: [
       "SVG, JSX, TSX and data URI exports",
-      "24 × 24 grid with 1.75px strokes",
+      "24 × 24 grid with 1.5px strokes",
       "currentColor inherits your theme",
       "Stroke width you can change in one click",
       "Typed React components included",
@@ -187,7 +187,7 @@ export const SITE = {
       fileName: "deepa.svg",
       grid: "24 × 24",
       license: "MIT licensed",
-      spec: "1.75 stroke · round caps",
+      spec: "1.5 stroke · round caps",
     },
   },
 
@@ -200,7 +200,7 @@ export const SITE = {
     items: [
       {
         q: "What is OdiaIcons?",
-        a: "OdiaIcons is a free, open-source set of Odisha-inspired icons: temples, Pattachitra, Odissi, festivals and food, drawn as 24 × 24 outline icons.",
+        a: "OdiaIcons is a free, open-source set of Odisha-inspired icons: temples, crafts, music, festivals, food and a matching UI set, drawn as 24 × 24 outline icons.",
       },
       {
         q: "Are the Odisha icons really free?",
@@ -224,7 +224,7 @@ export const SITE = {
       },
       {
         q: "Do the icons match other sets?",
-        a: "They are drawn on a 24 × 24 grid with 1.75px strokes and round caps, so they sit comfortably next to most line icon sets.",
+        a: "They are drawn on a 24 × 24 grid with 1.5px strokes and round caps, so they sit comfortably next to most line icon sets.",
       },
       {
         q: "Can I contribute an icon?",
@@ -242,7 +242,7 @@ export const SITE = {
     title: "Start using Odisha icons today.",
     accent: "Odisha icons",
     description:
-      "37 Odisha motifs, free under MIT and ready for whatever you're building next.",
+      "37 icons — Odisha motifs plus a matching UI set — free under MIT and ready for whatever you're building next.",
     helper: "No credit card. No sign-up. Just icons.",
   },
 
