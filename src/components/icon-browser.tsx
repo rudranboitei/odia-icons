@@ -145,14 +145,12 @@ function useIsXl() {
 function SidebarContent({
   category,
   onCategory,
-  onSearch,
   copiedInstall,
   onCopyInstall,
   onClose,
 }: {
   category: CategoryFilter
   onCategory: (id: CategoryFilter) => void
-  onSearch: () => void
   copiedInstall: boolean
   onCopyInstall: () => void
   onClose?: () => void
@@ -179,17 +177,7 @@ function SidebarContent({
         )}
       </div>
 
-      <button
-        type="button"
-        onClick={onSearch}
-        className={btn("outline", "md", "w-full text-neutral-900")}
-      >
-        New search
-        <span className="flex gap-1 [@media(hover:none)]:hidden">
-          <Kbd>⌘</Kbd>
-          <Kbd>K</Kbd>
-        </span>
-      </button>
+
 
       <nav className="mt-3" aria-label="Browse">
         <ul className="flex flex-col gap-0.5">
@@ -268,7 +256,7 @@ function SidebarContent({
           {sidebarStats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-xl border border-black/10 bg-white/70 px-2.5 py-2"
+              className="rounded-md border border-black/10 bg-white/70 px-2.5 py-2"
             >
               <p className="text-[10px] tracking-wide text-neutral-400 uppercase">
                 {stat.label}
@@ -280,7 +268,7 @@ function SidebarContent({
           ))}
         </div>
 
-        <div className="relative mt-2.5 rounded-xl border border-black/10 bg-white p-3">
+        <div className="relative mt-2.5 rounded-md border border-black/10 bg-white p-3">
           <Corners className="m-1.5 size-2" />
           <div className="flex items-center justify-between">
             <p className="flex items-center gap-1.5 text-[11px] tracking-wide text-neutral-500 uppercase">
@@ -480,7 +468,6 @@ export function IconBrowser() {
    const sidebarProps = {
     category,
     onCategory: setCategory,
-    onSearch: openSearch,
     copiedInstall,
     onCopyInstall: copyInstall,
   }
@@ -689,18 +676,7 @@ export function IconBrowser() {
             </AnimatePresence>
 
             <div className="border-t border-black/10 px-4 pt-4 pb-2">
-              <div className="flex items-center justify-between">
-                <p className="text-[12px] text-neutral-400">Contribute</p>
-                <a
-                  href={SITE.links.contribute}
-                  target="_blank"
-                  rel="noopener"
-                  className={btn("accent", "sm", "h-8 text-[12px]")}
-                >
-                  <IconPlus className="size-3.5" stroke={2} />
-                  Submit an icon
-                </a>
-              </div>
+              <p className="text-[12px] text-neutral-400">Contribute</p>
 
               <ul className="mt-2 flex flex-col">
                 {contributeRows.map((row) => (

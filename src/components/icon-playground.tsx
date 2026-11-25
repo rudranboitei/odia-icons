@@ -130,7 +130,7 @@ export function IconPlayground({
 
       {/* Code */}
       <div className="px-4 pt-3">
-        <pre className="max-h-56 min-h-[120px] overflow-auto rounded-lg border border-black/10 bg-white p-3 text-[11.5px] leading-relaxed break-all whitespace-pre-wrap text-neutral-800 [scrollbar-width:thin]">
+        <pre className="max-h-56 min-h-[120px] overflow-auto rounded-lg border border-black/10 bg-white p-3 text-[11.5px] leading-relaxed break-all whitespace-pre-wrap text-neutral-800">
           <ShikiCode
             code={code}
             lang={tab === "CLI" ? "bash" : tab === "JSX" ? "jsx" : "xml"}
