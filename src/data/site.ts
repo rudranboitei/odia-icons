@@ -208,7 +208,7 @@ export const SITE = {
       },
       {
         q: "Can I use the icons in a product?",
-        a: "Yes. Apps, websites, packaging, posters, anything. Just don't resell the icons as your own icon set.",
+        a: "Yes. Apps, websites, packaging, posters, anything, including commercial and resold products. If you redistribute the files, keep the MIT licence notice with them.",
       },
       {
         q: "How do I use the icons in React?",
@@ -242,7 +242,7 @@ export const SITE = {
     title: "Start using Odisha icons today.",
     accent: "Odisha icons",
     description:
-      "Five Odisha motifs, free under MIT and ready for whatever you're building next.",
+      "37 Odisha motifs, free under MIT and ready for whatever you're building next.",
     helper: "No credit card. No sign-up. Just icons.",
   },
 

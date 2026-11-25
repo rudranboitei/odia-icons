@@ -9,11 +9,6 @@ import { ArrowRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const NAV = [
-  { label: "Docs", href: "/docs" },
-  { label: "Blog", href: "/blog" },
-] as const;
-
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -73,19 +68,6 @@ export function Header() {
             />
           </Link>
 
-          {/* Desktop nav */}
-          <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
-            {NAV.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="rounded-full px-4 py-2 text-base text-neutral-900 transition-colors hover:bg-black/5"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
           {/* Desktop CTA */}
           <Button
             asChild
@@ -121,19 +103,6 @@ export function Header() {
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="pointer-events-auto absolute inset-x-0 top-full mt-2.5 origin-top rounded-[28px] bg-white/60 p-3 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] ring-1 ring-white/50 backdrop-blur-2xl md:hidden"
             >
-              <nav aria-label="Mobile" className="flex flex-col gap-1 py-2">
-                {NAV.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="rounded-full px-4 py-3 text-center text-base text-neutral-900 transition-colors hover:bg-white/70 active:bg-white"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-
               <Button
                 asChild
                 className="mt-2 h-12 w-full rounded-full bg-neutral-950 text-sm font-medium text-white hover:bg-neutral-800"

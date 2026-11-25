@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 
 import { ICONS, IconGlyph } from "@/data/icons";
+import { pascal } from "@/lib/icons";
 
 /* Same graded photo as the hero: /public/images/hero-bg.webp */
 const BG = "/hero-bg.webp";
@@ -61,6 +62,7 @@ function GridVisual() {
 
 function CopyVisual() {
   const sample = ICONS[0];
+  const sampleName = pascal(sample?.name ?? "deepa");
 
   return (
     <div className="absolute inset-0">
@@ -79,9 +81,9 @@ function CopyVisual() {
         <p className="mt-3 text-[12px] text-neutral-700">Copy as React component</p>
 
         <pre className="mt-2 overflow-hidden font-mono text-[11px] leading-relaxed whitespace-pre text-neutral-500">
-          {`import { Konark } from "odiaicons";
+          {`import { ${sampleName} } from "@odiaui/icons-react";
 
-<Konark size={24} />`}
+<${sampleName} size={24} />`}
         </pre>
 
         <div className="absolute bottom-4 left-4 flex items-center gap-3.5 text-neutral-500">

@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-1f1f1f?style=flat-square" alt="MIT License" /></a>
-  <img src="https://img.shields.io/badge/icons-8-f3e0c9?style=flat-square&labelColor=1f1f1f" alt="8 icons" />
+  <img src="https://img.shields.io/badge/icons-37-f3e0c9?style=flat-square&labelColor=1f1f1f" alt="37 icons" />
   <img src="https://img.shields.io/badge/grid-24%C3%9724-1f1f1f?style=flat-square" alt="24x24 grid" />
   <img src="https://img.shields.io/badge/stroke-1.75px-1f1f1f?style=flat-square" alt="1.75px stroke" />
   <a href="https://github.com/rudranboitei/odia-icons/pulls"><img src="https://img.shields.io/badge/PRs-welcome-1f1f1f?style=flat-square" alt="PRs welcome" /></a>
@@ -38,20 +38,22 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 - **Bilingual discovery** — Icon names, tags, and aliases support English and Odia script.
 - **Open source** — MIT licensed, free for personal and commercial use.
 
-## Current Icon Set
+## Icon Set
+
+**37 icons and counting.** Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons).
 
 | Icon | Name | Odia | Category |
 |------|------|------|----------|
-| Boita | `boita` | ବୋଇତ | Festival |
-| Deepa | `deepa` | ଦୀପ | Festival |
-| Deula | `deula` | ଦେଉଳ | Architecture |
-| Jagannath | `jagannath` | ଜଗନ୍ନାଥ | Culture |
+| Boita | `boita` | ବୋଇତ | Travel |
+| Deepa | `deepa` | ଦୀପ | Culture |
+| Deul Temple | `deul-temple` | ଦେଉଳ | Architecture |
 | Konark Wheel | `konark-wheel` | କୋଣାର୍କ ଚକ | Architecture |
-| Machha | `machha` | ମାଛ | Nature |
-| Padma | `padma` | ପଦ୍ମ | Nature |
-| Rath | `rath` | ରଥ | Festival |
+| Rasagola | `rasagola` | ରସଗୋଲା | Food |
+| Pakhala | `pakhala` | ପଖାଳ | Food |
+| Palm Tree | `palm-tree` | ତାଳଗଛ | Nature |
+| Olive Ridley Turtle | `olive-ridley-turtle` | ସାମୁଦ୍ରିକ କଇଁଛ | Nature |
 
-> The set is growing. Have a motif in mind? [Request an icon](https://github.com/rudranboitei/odia-icons/issues/new).
+> Have a motif in mind? [Request an icon](https://github.com/rudranboitei/odia-icons/issues/new).
 
 ## Getting Started
 

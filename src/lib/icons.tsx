@@ -60,7 +60,7 @@ ${toJsxBody(els(icon.body, "      "))}
 `
 
 export const toImport = (icon: IconDef) =>
-  `import { ${pascal(icon.name)} } from "odiaicons"\n\n<${pascal(icon.name)} size={24} strokeWidth={1.75} />`
+  `import { ${pascal(icon.name)} } from "@odiaui/icons-react"\n\n<${pascal(icon.name)} size={24} strokeWidth={1.75} />`
 
 // currentColor does not work inside a data URI, so a fixed ink color is used.
 export const toDataUri = (icon: IconDef, o: Opts) =>

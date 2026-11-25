@@ -52,13 +52,13 @@ There is no runtime to configure and no provider to wrap your app in.
 Each icon is a component named in PascalCase from its kebab-case name (`konark-wheel` becomes `KonarkWheel`).
 
 ```tsx
-import { KonarkWheel, Deula } from "@odiaui/icons-react"
+import { KonarkWheel, DeulTemple } from "@odiaui/icons-react"
 
 export function Example() {
   return (
     <div className="flex gap-4 text-foreground">
       <KonarkWheel size={32} />
-      <Deula size={24} strokeWidth={2} title="Temple" />
+      <DeulTemple size={24} strokeWidth={2} title="Temple" />
     </div>
   )
 }
@@ -189,7 +189,7 @@ Requesting a motif instead of drawing one: open an issue with the motif, a refer
 
 ## 7. Quick answers
 
-- **Licence:** MIT. Free for personal, commercial and client work; no attribution needed. Do not resell the icons as your own icon set.
+- **Licence:** MIT. Free for personal, commercial and client work, including resale and redistribution. Keep the licence notice with the files.
 - **Dependencies:** none at runtime.
 - **Change colour:** set the parent's `color` / text class.
 - **Change stroke:** `strokeWidth` prop; add `absoluteStrokeWidth` to keep it constant across sizes.

@@ -24,7 +24,7 @@ const SECTIONS = [
     heading: "Icon licence",
     body: [
       "The icon set is released under the MIT licence. You can use the icons in personal, commercial and client projects without paying or crediting us.",
-      "You may not resell, redistribute or publish the icon set as your own icon library. If you bundle the icons into a product, keep the MIT licence notice with the files.",
+      "You can redistribute, bundle or resell the icons, including as part of another icon set, as long as the MIT licence notice is included with the files. The odiaicons name, logo and site design are not covered by the MIT licence and may not be used to imply endorsement.",
     ],
   },
   {
@@ -76,7 +76,7 @@ export default function TermsPage() {
       <LegalPage
         title="Terms at"
         description="The rules are simple: the icons are MIT licensed and free to use. Here are the details for the site, exports and contributions."
-        updated="23 November 2026"
+        updated="25 November 2026"
         sections={[...SECTIONS]}
       />
     </PageShell>
