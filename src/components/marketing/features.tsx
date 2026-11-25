@@ -226,7 +226,7 @@ export function Features() {
           className="flex items-center gap-2 text-sm text-neutral-500"
         >
           <span aria-hidden className="size-2 rounded-full bg-neutral-400" />
-          Introducing odiaicons
+          Why OdiaIcons
         </motion.p>
 
         {/* Heading: bright lead, muted rest */}

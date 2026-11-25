@@ -13,7 +13,7 @@ export const SITE = {
   github: REPO,
   siteUrl: "https://icons.odiaui.xyz",
   npmPackage: "@odiaui/icons-react",
-  registryUrl: "https://icons.odiaui.xyz/r", // TODO: confirm registry path
+  registryUrl: "https://icons.odiaui.xyz/r",
   // Fill these with real numbers, or leave null to hide the badge.
   stars: null as number | null,
   installs: null as string | null,
@@ -45,7 +45,7 @@ export const SITE = {
     github: REPO,
     license: `${REPO}/blob/main/LICENSE`,
     contribute: `${REPO}/issues/new`,
-    email: "mailto:hello@odiaicons.com", // TODO: domain differs from odiaui.xyz, confirm
+    email: "mailto:hello@odiaui.xyz",
     icons: "/icons",
   },
   install: {
@@ -149,7 +149,7 @@ export const SITE = {
   steps: {
     eyebrow: "From grid to production",
     title: "Add Odisha icons to your next build",
-    accent: "Odisha icons",
+    accent: "",
     description: "Three steps between the idea and the shipped interface.",
     items: [
       {
@@ -194,7 +194,7 @@ export const SITE = {
   faq: {
     eyebrow: "Questions, answered",
     title: "Odisha icons, questions answered.",
-    accent: "questions answered.",
+    accent: "",
     description:
       "Licensing, installation, Odia search and how to get your own motif into the set.",
     items: [
@@ -259,7 +259,7 @@ export const SITE = {
       { label: "Contribute", href: `${REPO}/issues/new`, external: true },
       { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
-      { label: "Email", href: "mailto:rdrudra99.work@gmail.com" },
+      { label: "Email", href: "mailto:hello@odiaui.xyz" },
       { label: "Request an icon", href: `${REPO}/issues/new`, external: true },
     ],
   },

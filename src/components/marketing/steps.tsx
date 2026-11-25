@@ -246,8 +246,13 @@ export function Steps() {
           id="steps-title"
           className="mt-3 max-w-[640px] text-[clamp(1.75rem,4.2vw,2.5rem)] leading-[1.15] font-medium tracking-tight text-balance"
         >
-          <span className="text-neutral-900">{steps.title}</span>{" "}
-          <span className="text-neutral-400">{steps.accent}</span>
+          <span className="text-neutral-900">{steps.title}</span>
+          {steps.accent ? (
+            <>
+              {" "}
+              <span className="text-neutral-400">{steps.accent}</span>
+            </>
+          ) : null}
         </h2>
 
         <div ref={ref} className="mt-10 sm:mt-14">

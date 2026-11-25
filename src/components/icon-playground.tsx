@@ -26,8 +26,9 @@ export function IconPlayground({
 
   const svg = useMemo(() => toSvg(def, { size: COPY_SIZE, stroke: STROKE }), [def])
   const jsx = useMemo(() => toJsx(def, { size: COPY_SIZE, stroke: STROKE }), [def])
+  const cli = `npx shadcn@latest add ${SITE.registryUrl}/${def.name}.json`
 
-  const code = tab === "SVG" ? svg : tab === "JSX" ? jsx : SITE.install.command
+  const code = tab === "SVG" ? svg : tab === "JSX" ? jsx : cli
 
   async function onCopy() {
     const ok = await copyText(code)

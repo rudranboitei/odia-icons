@@ -65,7 +65,7 @@ const SECTIONS = [
     id: "contact",
     heading: "Contact",
     body: [
-      "Questions about these terms? Email rdrudra99.work@gmail.com or open an issue in the GitHub repository.",
+      "Questions about these terms? Email hello@odiaui.xyz or open an issue in the GitHub repository.",
     ],
   },
 ] as const

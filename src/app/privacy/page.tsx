@@ -51,7 +51,7 @@ const SECTIONS = [
     id: "your-rights",
     heading: "Your choices",
     body: [
-      "You can ask us to delete any message or personal data you have shared with us. Email rdrudra99.work@gmail.com and we will respond within a reasonable time.",
+      "You can ask us to delete any message or personal data you have shared with us. Email hello@odiaui.xyz and we will respond within a reasonable time.",
       "You can also clear any locally stored preferences through your browser settings.",
     ],
   },
@@ -73,7 +73,7 @@ const SECTIONS = [
     id: "contact",
     heading: "Contact",
     body: [
-      "For privacy questions, email rdrudra99.work@gmail.com. For anything public, open an issue on GitHub.",
+      "For privacy questions, email hello@odiaui.xyz. For anything public, open an issue on GitHub.",
     ],
   },
 ] as const
