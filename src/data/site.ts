@@ -9,7 +9,7 @@ export const SITE = {
   tagline: "Free Odisha icons, open source.",
   /** Meta description: keep it around 150-160 characters. */
   description:
-    "Free, open-source Odisha icons: temples, crafts, music, festivals, food and UI as 24px SVG outline icons. React, raw SVG and a shadcn registry.",
+    "Free, open-source Odisha-inspired SVG icons for React and web.",
   github: REPO,
   siteUrl: "https://icons.odiaui.xyz",
   npmPackage: "@odiaui/icons-react",
