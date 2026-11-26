@@ -1,0 +1,23 @@
+{
+  "name": "bhitarkanika-crocodile",
+  "odia": "ଭିତରକନିକା କୁମ୍ଭୀର",
+  "category": "nature",
+  "tags": [
+    "bhitarkanika",
+    "crocodile",
+    "mangrove",
+    "wildlife",
+    "odisha",
+    "କୁମ୍ଭୀର"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Saltwater crocodile silhouette referencing Bhitarkanika wildlife."
+}

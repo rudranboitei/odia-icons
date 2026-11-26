@@ -2,7 +2,7 @@
 
 import { useId, useState } from "react";
 import { IconArrowUpRight, IconPlus } from "@tabler/icons-react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 
 import { SITE } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -79,7 +79,6 @@ function FaqBox({
 
 export function Faq() {
   const { faq, links } = SITE;
-  const reduce = useReducedMotion() ?? false;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -89,7 +88,7 @@ export function Faq() {
       className="relative scroll-mt-20 bg-[#f6f4f0] px-4 py-16 text-neutral-900 sm:px-6 sm:py-24"
     >
       <motion.div
-        initial={reduce ? false : { opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.5, ease: EASE }}

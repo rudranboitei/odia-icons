@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ananta-vasudeva-temple",
+  "type": "registry:ui",
+  "title": "Ananta Vasudeva Temple",
+  "description": "ଅନନ୍ତ ବାସୁଦେବ ମନ୍ଦିର — ananta, vasudeva, temple.",
+  "categories": [
+    "architecture"
+  ],
+  "meta": {
+    "odia": "ଅନନ୍ତ ବାସୁଦେବ ମନ୍ଦିର",
+    "since": "0.3.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/ananta-vasudeva-temple.svg",
+      "type": "registry:file",
+      "target": "components/icons/ananta-vasudeva-temple.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M3 20h18M5 18h14M7 18V9l5-4 5 4v9\"/><path d=\"M9 18v-6h6v6M10 9h4M12 5V2M5 10l2-2M17 8l2 2M10 12h4\"/>\n</svg>"
+    }
+  ]
+}

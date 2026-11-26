@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sora-painting",
+  "type": "registry:ui",
+  "title": "Sora Painting",
+  "description": "ସଉରା ଚିତ୍ରକଳା — sora, saora, tribal-art.",
+  "categories": [
+    "art"
+  ],
+  "meta": {
+    "odia": "ସଉରା ଚିତ୍ରକଳା",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/sora-painting.svg",
+      "type": "registry:file",
+      "target": "components/icons/sora-painting.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"5\" r=\"1.8\"/><path d=\"M12 7v8m0-6-4-2m4 2 4-2m-4 6-4 4m4-4 4 4M4 21h16m-15-3 2-7 2 7m6 0 2-7 2 7\"/></svg>"
+    }
+  ]
+}

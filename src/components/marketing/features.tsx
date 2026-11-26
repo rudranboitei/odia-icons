@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion, type Variants } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import {
   Bookmark,
   Check,
@@ -185,16 +185,15 @@ const FEATURES = [
 ];
 
 export function Features() {
-  const reduce = useReducedMotion() ?? false;
 
   const container: Variants = {
     hidden: {},
-    show: { transition: { staggerChildren: reduce ? 0 : 0.12 } },
+    show: { transition: { staggerChildren: 0.12 } },
   };
 
   const rise: Variants = {
-    hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 24 },
-    show: { opacity: 1, y: 0, transition: { duration: reduce ? 0.2 : 0.7, ease: EASE } },
+    hidden: { opacity: 0, y: 24 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
   };
 
   return (

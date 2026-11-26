@@ -1,0 +1,23 @@
+{
+  "name": "alert-triangle",
+  "odia": "ଚେତାବନୀ ଚିହ୍ନ",
+  "category": "ui",
+  "tags": [
+    "warning",
+    "alert",
+    "triangle",
+    "error",
+    "interface",
+    "ui"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Warning or caution indicator. Odia label should be reviewed by a native Odia speaker."
+}

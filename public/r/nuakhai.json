@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "nuakhai",
+  "type": "registry:ui",
+  "title": "Nuakhai",
+  "description": "ନୂଆଖାଇ — nuakhai, harvest, rice.",
+  "categories": [
+    "festival"
+  ],
+  "meta": {
+    "odia": "ନୂଆଖାଇ",
+    "since": "0.3.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/nuakhai.svg",
+      "type": "registry:file",
+      "target": "components/icons/nuakhai.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M12 20V5M12 9C8 9 6 7 5 4c4 0 6 2 7 5ZM12 12c4 0 6-2 7-5-4 0-6 2-7 5ZM12 15c-3 0-5-1.5-6-4 3 0 5 1 6 4ZM12 17c3 0 5-1.5 6-4-3 0-5 1-6 4Z\"/><path d=\"M5 21h14l-1.5-4h-11Z\"/>\n</svg>"
+    }
+  ]
+}

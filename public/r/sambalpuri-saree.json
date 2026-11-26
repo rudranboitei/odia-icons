@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sambalpuri-saree",
+  "type": "registry:ui",
+  "title": "Sambalpuri Saree",
+  "description": "ସମ୍ବଲପୁରୀ ଶାଢ଼ୀ — sambalpuri, ikat, textile.",
+  "categories": [
+    "art"
+  ],
+  "meta": {
+    "odia": "ସମ୍ବଲପୁରୀ ଶାଢ଼ୀ",
+    "since": "0.3.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/sambalpuri-saree.svg",
+      "type": "registry:file",
+      "target": "components/icons/sambalpuri-saree.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M4 3h16v18H4Z\"/><path d=\"m4 7 4-4 4 4 4-4 4 4M4 17l4 4 4-4 4 4 4-4\"/><path d=\"m12 7 3 5-3 5-3-5Z\"/><path d=\"M4 12h16\"/>\n</svg>"
+    }
+  ]
+}

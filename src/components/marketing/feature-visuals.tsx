@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type JSX, type ReactNode } from "react";
-import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion, useInView } from "motion/react";
 import { Check, Copy } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -334,7 +334,9 @@ function FreeScene({ active, reduce }: SceneProps) {
 function Frame({ Scene }: { Scene: (p: SceneProps) => JSX.Element }) {
   const ref = useRef<HTMLDivElement>(null);
   const active = useInView(ref, { amount: 0.4 });
-  const reduce = useReducedMotion() ?? false;
+  // Keep the initial render identical on server and client. MotionConfig
+  // applies the OS reduced-motion preference after hydration.
+  const reduce = false;
 
   return (
     <div

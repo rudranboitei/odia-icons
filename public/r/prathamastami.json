@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "prathamastami",
+  "type": "registry:ui",
+  "title": "Prathamastami",
+  "description": "ପ୍ରଥମାଷ୍ଟମୀ — prathamastami, enduri pitha, family.",
+  "categories": [
+    "festival"
+  ],
+  "meta": {
+    "odia": "ପ୍ରଥମାଷ୍ଟମୀ",
+    "since": "0.3.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/prathamastami.svg",
+      "type": "registry:file",
+      "target": "components/icons/prathamastami.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M4 12c0-4 3-7 8-8 5 1 8 4 8 8-2 5-5 8-8 9-3-1-6-4-8-9Z\"/><path d=\"M12 4c-1 4-1 11 0 16M5 12h14M8 8l4 4 4-4M8 16l4-4 4 4\"/>\n</svg>"
+    }
+  ]
+}

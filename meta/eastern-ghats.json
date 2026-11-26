@@ -1,0 +1,23 @@
+{
+  "name": "eastern-ghats",
+  "odia": "ପୂର୍ବଘାଟ",
+  "category": "nature",
+  "tags": [
+    "eastern-ghats",
+    "hills",
+    "mountains",
+    "landscape",
+    "odisha",
+    "ପର୍ବତ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Layered hill silhouette referencing the Eastern Ghats landscape."
+}

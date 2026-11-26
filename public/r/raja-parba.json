@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "raja-parba",
+  "type": "registry:ui",
+  "title": "Raja Parba",
+  "description": "ରଜ ପର୍ବ — raja, raja-parba, swing.",
+  "categories": [
+    "festival"
+  ],
+  "meta": {
+    "odia": "ରଜ ପର୍ବ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/raja-parba.svg",
+      "type": "registry:file",
+      "target": "components/icons/raja-parba.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 4h16M7 4v3m10-3v3M7 7l2.2 9M17 7l-2.2 9M6 16h12l-1.5 3h-9z\"/></svg>"
+    }
+  ]
+}

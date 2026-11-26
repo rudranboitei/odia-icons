@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "inbox",
+  "type": "registry:ui",
+  "title": "Inbox",
+  "description": "ଇନବକ୍ସ — inbox, interface, ui.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଇନବକ୍ସ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/inbox.svg",
+      "type": "registry:file",
+      "target": "components/icons/inbox.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 4h16l2 11v4H2v-4L4 4Z\"/><path d=\"M2 15h6l1.5 2h5L16 15h6\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "filter",
+  "type": "registry:ui",
+  "title": "Filter",
+  "description": "ଫିଲ୍ଟର — filter, interface, ui.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଫିଲ୍ଟର",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/filter.svg",
+      "type": "registry:file",
+      "target": "components/icons/filter.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 5h16l-6.5 7.5v5l-3 1.5v-6.5L4 5Z\"/></svg>"
+    }
+  ]
+}

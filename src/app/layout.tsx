@@ -14,10 +14,7 @@ export const metadata: Metadata = {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: `${SITE.name} – ${SITE.tagline}`,
@@ -25,20 +22,11 @@ export const metadata: Metadata = {
     url: SITE.siteUrl,
     siteName: SITE.name,
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: `${SITE.name} – ${SITE.tagline}`,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name} – ${SITE.tagline}`,
     description: SITE.description,
-    images: ["/twitter-card.png"],
   },
 };
 

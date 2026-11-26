@@ -1,0 +1,23 @@
+{
+  "name": "chandan-yatra",
+  "odia": "ଚନ୍ଦନ ଯାତ୍ରା",
+  "category": "festival",
+  "tags": [
+    "chandan",
+    "yatra",
+    "boat",
+    "festival",
+    "jagannath",
+    "ଯାତ୍ରା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Ceremonial boat and water ripples referencing Chandan Yatra; cultural review recommended."
+}

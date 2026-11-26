@@ -1,0 +1,24 @@
+{
+  "name": "lingaraj-temple",
+  "odia": "ଲିଙ୍ଗରାଜ ମନ୍ଦିର",
+  "category": "architecture",
+  "tags": [
+    "lingaraj",
+    "temple",
+    "bhubaneswar",
+    "kalinga",
+    "ଓଡ଼ିଶା"
+  ],
+  "aliases": [
+    "lingaraja-temple"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Stylised outline inspired by the Lingaraj Temple silhouette; confirm architectural details with a local subject-matter reviewer."
+}

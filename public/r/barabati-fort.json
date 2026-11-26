@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "barabati-fort",
+  "type": "registry:ui",
+  "title": "Barabati Fort",
+  "description": "ବାରବାଟୀ ଦୁର୍ଗ — barabati, fort, cuttack.",
+  "categories": [
+    "architecture"
+  ],
+  "meta": {
+    "odia": "ବାରବାଟୀ ଦୁର୍ଗ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/barabati-fort.svg",
+      "type": "registry:file",
+      "target": "components/icons/barabati-fort.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 20V9h4V6h3v3h4V6h3v3h4v11zM7 13h2v2H7zm8 0h2v2h-2zm-5 7v-4h4v4\"/></svg>"
+    }
+  ]
+}

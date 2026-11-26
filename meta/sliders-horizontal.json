@@ -1,0 +1,23 @@
+{
+  "name": "sliders-horizontal",
+  "odia": "ସମଯୋଜନ",
+  "category": "ui",
+  "tags": [
+    "sliders",
+    "adjustments",
+    "settings",
+    "controls",
+    "interface",
+    "ui"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Horizontal adjustment controls. Odia label should be reviewed by a native Odia speaker."
+}

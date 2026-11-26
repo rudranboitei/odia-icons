@@ -1,0 +1,23 @@
+{
+  "name": "jagannath-symbol",
+  "odia": "ଜଗନ୍ନାଥ",
+  "category": "culture",
+  "tags": [
+    "jagannath",
+    "puri",
+    "deity",
+    "wooden",
+    "tradition",
+    "ଜଗନ୍ନାଥ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "reference-based",
+  "note": "Full-colour 24px vector based on the supplied reference: dark circular face, white eyes with vermilion rings, yellow crown and tilak. Cultural review recommended."
+}

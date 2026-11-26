@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "icons:validate": "node scripts/icons/validate.mjs",
-    "icons:build": "node scripts/icons/build.mjs"
+    "icons:build": "node scripts/icons/build.mjs",
+    "icons:react:generate": "node packages/react/scripts/build.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

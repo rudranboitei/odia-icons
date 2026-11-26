@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ghumura-dance",
+  "type": "registry:ui",
+  "title": "Ghumura Dance",
+  "description": "ଘୁମୁରା ନୃତ୍ୟ — ghumura, dance, kalahandi.",
+  "categories": [
+    "culture"
+  ],
+  "meta": {
+    "odia": "ଘୁମୁରା ନୃତ୍ୟ",
+    "since": "0.3.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/ghumura-dance.svg",
+      "type": "registry:file",
+      "target": "components/icons/ghumura-dance.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M6 6c3-2 9-2 12 0v12c-3 2-9 2-12 0Z\"/><path d=\"M6 6c3 2 9 2 12 0M6 18c3-2 9-2 12 0M12 5v14M4 9l-2 2 2 2M20 9l2 2-2 2\"/><path d=\"M9 3 7 1M15 3l2-2\"/>\n</svg>"
+    }
+  ]
+}

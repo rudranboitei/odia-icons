@@ -1,0 +1,23 @@
+{
+  "name": "eye-off",
+  "odia": "ଲୁଚାନ୍ତୁ",
+  "category": "ui",
+  "tags": [
+    "hide",
+    "hidden",
+    "visibility",
+    "privacy",
+    "interface",
+    "ui"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Visibility-off indicator. Odia label should be reviewed by a native Odia speaker."
+}

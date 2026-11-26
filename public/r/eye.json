@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "eye",
+  "type": "registry:ui",
+  "title": "Eye",
+  "description": "ଦେଖନ୍ତୁ — eye, interface, ui.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଦେଖନ୍ତୁ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/eye.svg",
+      "type": "registry:file",
+      "target": "components/icons/eye.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2.5 12s3.3-6 9.5-6 9.5 6 9.5 6-3.3 6-9.5 6-9.5-6-9.5-6Z\"/><circle cx=\"12\" cy=\"12\" r=\"2.5\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "simlipal-tiger",
+  "odia": "ଶିମିଳିପାଳ ବାଘ",
+  "category": "nature",
+  "tags": [
+    "simlipal",
+    "tiger",
+    "wildlife",
+    "forest",
+    "odisha",
+    "ବାଘ"
+  ],
+  "aliases": [
+    "bengal-tiger"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Stylised tiger face associated with Similipal; not intended as a scientific species identifier."
+}

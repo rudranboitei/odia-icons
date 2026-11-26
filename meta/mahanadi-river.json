@@ -1,0 +1,24 @@
+{
+  "name": "mahanadi-river",
+  "odia": "ମହାନଦୀ",
+  "category": "nature",
+  "tags": [
+    "mahanadi",
+    "river",
+    "water",
+    "odisha",
+    "ମହାନଦୀ"
+  ],
+  "aliases": [
+    "mahanadi-water"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Abstract flowing-river motif representing the Mahanadi."
+}

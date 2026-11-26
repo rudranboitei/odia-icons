@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pipili-applique",
+  "type": "registry:ui",
+  "title": "Pipili Applique",
+  "description": "ପିପିଲି ଚାନ୍ଦୁଆ — pipili, applique, chandua.",
+  "categories": [
+    "art"
+  ],
+  "meta": {
+    "odia": "ପିପିଲି ଚାନ୍ଦୁଆ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/pipili-applique.svg",
+      "type": "registry:file",
+      "target": "components/icons/pipili-applique.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3 21 12 12 21 3 12zM12 6l6 6-6 6-6-6zM12 3v3m9 6h-3m-6 9v-3m-9-6h3\"/></svg>"
+    }
+  ]
+}

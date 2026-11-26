@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dhokra-craft",
+  "type": "registry:ui",
+  "title": "Dhokra Craft",
+  "description": "ଡୋକ୍ରା ଶିଳ୍ପ — dhokra, metal craft, lost wax.",
+  "categories": [
+    "art"
+  ],
+  "meta": {
+    "odia": "ଡୋକ୍ରା ଶିଳ୍ପ",
+    "since": "0.3.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/dhokra-craft.svg",
+      "type": "registry:file",
+      "target": "components/icons/dhokra-craft.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"M9 4c0-2 6-2 6 0v3l2 3v6l-5 3-5-3v-6l2-3Z\"/><path d=\"M8 10h8M7 16h10M5 20h14M10 4h4M12 7v9\"/>\n</svg>"
+    }
+  ]
+}

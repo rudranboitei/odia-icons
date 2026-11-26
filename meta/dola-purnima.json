@@ -1,0 +1,23 @@
+{
+  "name": "dola-purnima",
+  "odia": "ଦୋଳ ପୂର୍ଣ୍ଣିମା",
+  "category": "festival",
+  "tags": [
+    "dola",
+    "purnima",
+    "swing",
+    "festival",
+    "radha krishna",
+    "ଦୋଳ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Decorated swing motif for Dola Purnima; cultural review recommended."
+}

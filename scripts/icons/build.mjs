@@ -46,6 +46,7 @@ export type IconDef = {
   contributors: string[]
   since: string
   note: string
+  status: "needs-review" | "reviewed"
   /** Stroke width this icon was drawn with. */
   strokeWidth: number
   /** Inner SVG markup for the outline variant, drawn on a 24×24 grid. */
@@ -68,6 +69,7 @@ function generatedModule(icons) {
     contributors: ${JSON.stringify(icon.contributors)},
     since: ${JSON.stringify(icon.since)},
     note: ${JSON.stringify(icon.note)},
+    status: ${JSON.stringify(icon.status)},
     strokeWidth: ${strokeOf(icon)},
     body: ${JSON.stringify(body)},
   },`
@@ -121,6 +123,7 @@ function registryItem(icon) {
       odia: icon.odia,
       since: icon.since,
       variants: icon.variantsList,
+      status: icon.status,
     },
     files,
   }
@@ -159,9 +162,18 @@ async function main() {
 
   await writeFile(OUT.sprite, sprite(icons))
 
+  const categoryCounts = Object.fromEntries(
+    [...new Set(icons.map((icon) => icon.category))].sort().map((category) => [
+      category,
+      icons.filter((icon) => icon.category === category).length,
+    ])
+  )
+
   const manifest = {
     name: "odiaicons",
     version: "0.1.0",
+    count: icons.length,
+    categoryCounts,
     grid: 24,
     strokeWidth: 1.5,
     icons: icons.map((icon) => ({
@@ -173,6 +185,7 @@ async function main() {
       variants: icon.variantsList,
       since: icon.since,
       note: icon.note,
+      status: icon.status,
       strokeWidth: strokeOf(icon),
       body: icon.variants.outline?.body ?? "",
       files: Object.fromEntries(

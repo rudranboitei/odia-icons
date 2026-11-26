@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "mudhi",
+  "type": "registry:ui",
+  "title": "Mudhi",
+  "description": "ମୁଢ଼ି — mudhi, puffed-rice, snack.",
+  "categories": [
+    "food"
+  ],
+  "meta": {
+    "odia": "ମୁଢ଼ି",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/mudhi.svg",
+      "type": "registry:file",
+      "target": "components/icons/mudhi.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12h16l-1.5 7h-13zM6 10c1-2 2.2-2 3.2 0s2.2 2 3.2 0 2.2-2 3.2 0 2.2 2 3.2 0M8 19v2m8-2v2\"/></svg>"
+    }
+  ]
+}

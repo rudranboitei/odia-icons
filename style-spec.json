@@ -20,5 +20,15 @@
   ],
   "variants": [
     "outline"
-  ]
+  ],
+  "smallSizeGuidance": {
+    "displaySizes": [
+      16,
+      20,
+      24
+    ],
+    "minimumVisibleGap": 1.25,
+    "minimumFeatureSize": 1.5,
+    "rule": "Keep distinctive silhouettes and avoid micro-details that disappear at 16px. Review every icon at 16px before release."
+  }
 }

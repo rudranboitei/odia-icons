@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "info",
+  "type": "registry:ui",
+  "title": "Info",
+  "description": "ସୂଚନା — info, interface, ui.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ସୂଚନା",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/info.svg",
+      "type": "registry:file",
+      "target": "components/icons/info.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 11v5M12 8h.01\"/></svg>"
+    }
+  ]
+}

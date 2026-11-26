@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "upload",
+  "type": "registry:ui",
+  "title": "Upload",
+  "description": "ଅପଲୋଡ୍ — upload, interface, ui.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଅପଲୋଡ୍",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/upload.svg",
+      "type": "registry:file",
+      "target": "components/icons/upload.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 16V4m-4 4 4-4 4 4\"/><path d=\"M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "khandagiri-cave",
+  "type": "registry:ui",
+  "title": "Khandagiri Cave",
+  "description": "ଖଣ୍ଡଗିରି ଗୁମ୍ଫା — khandagiri, cave, jain.",
+  "categories": [
+    "architecture"
+  ],
+  "meta": {
+    "odia": "ଖଣ୍ଡଗିରି ଗୁମ୍ଫା",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/khandagiri-cave.svg",
+      "type": "registry:file",
+      "target": "components/icons/khandagiri-cave.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 20h18M4.5 20V9.5a7.5 7.5 0 0 1 15 0V20M8 20v-7a4 4 0 0 1 8 0v7M8 9h8\"/></svg>"
+    }
+  ]
+}

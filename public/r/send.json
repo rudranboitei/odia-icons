@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "send",
+  "type": "registry:ui",
+  "title": "Send",
+  "description": "ପଠାନ୍ତୁ — send, interface, ui.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ପଠାନ୍ତୁ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/send.svg",
+      "type": "registry:file",
+      "target": "components/icons/send.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m21 3-7.5 18-3.5-7-7-3.5L21 3Z\"/><path d=\"M10 14 21 3\"/></svg>"
+    }
+  ]
+}

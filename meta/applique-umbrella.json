@@ -1,0 +1,25 @@
+{
+  "name": "applique-umbrella",
+  "odia": "ଚାନ୍ଦୁଆ",
+  "category": "art",
+  "tags": [
+    "pipili",
+    "applique",
+    "umbrella",
+    "textile",
+    "craft",
+    "ଚାନ୍ଦୁଆ"
+  ],
+  "aliases": [
+    "pipili-umbrella"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Simplified applique umbrella motif inspired by Pipili craft."
+}

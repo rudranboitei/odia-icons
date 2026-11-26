@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "poda-pitha",
+  "type": "registry:ui",
+  "title": "Poda Pitha",
+  "description": "ପୋଡ଼ ପିଠା — poda-pitha, cake, raja.",
+  "categories": [
+    "food"
+  ],
+  "meta": {
+    "odia": "ପୋଡ଼ ପିଠା",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/poda-pitha.svg",
+      "type": "registry:file",
+      "target": "components/icons/poda-pitha.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 14.5c0-3.2 3.8-5.8 8.5-5.8s8.5 2.6 8.5 5.8v3h-17zM3.5 14.5c2.8 1.5 5.6 1.5 8.5 0s5.7-1.5 8.5 0M8 9l1-3m3 2.7V5m4 4 1-3\"/></svg>"
+    }
+  ]
+}

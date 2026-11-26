@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "jagannath-symbol",
+  "type": "registry:ui",
+  "title": "Jagannath Symbol",
+  "description": "à¬œà¬—à¬¨à­à¬¨à¬¾à¬¥ — jagannath, puri, deity.",
+  "categories": [
+    "culture"
+  ],
+  "meta": {
+    "odia": "à¬œà¬—à¬¨à­à¬¨à¬¾à¬¥",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/jagannath-symbol.svg",
+      "type": "registry:file",
+      "target": "components/icons/jagannath-symbol.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <circle cx=\"7\" cy=\"14.5\" r=\"3.65\"/>\n  <circle cx=\"17\" cy=\"14.5\" r=\"3.65\"/>\n  <circle cx=\"7\" cy=\"14.5\" r=\"1.45\" fill=\"currentColor\" stroke=\"none\"/>\n  <circle cx=\"17\" cy=\"14.5\" r=\"1.45\" fill=\"currentColor\" stroke=\"none\"/>\n  <path d=\"M9.8 2.6 10.6 7.3 12 8.8 13.4 7.3 14.2 2.6\"/>\n  <path d=\"M10.6 7.3 12 8.8 13.4 7.3\"/>\n  <path d=\"M12 9.8v1.15\"/>\n  <circle cx=\"12\" cy=\"12\" r=\".55\" fill=\"currentColor\" stroke=\"none\"/>\n</svg>"
+    }
+  ]
+}

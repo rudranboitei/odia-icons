@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion, useInView } from "motion/react";
 import { ArrowRight, Check, Copy, Search } from "lucide-react";
 
 import { SITE } from "@/data/site";
@@ -209,14 +209,13 @@ const SCENES = [SceneBrowse, SceneCopy, SceneShip];
 
 export function Steps() {
   const { steps } = SITE;
-  const reduce = useReducedMotion() ?? false;
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { amount: 0.35 });
 
   const [active, setActive] = useState(0);
   const [auto, setAuto] = useState(true);
 
-  const running = auto && inView && !reduce;
+  const running = auto && inView;
 
   useEffect(() => {
     if (!running) return;
@@ -284,8 +283,8 @@ export function Steps() {
                     <motion.span
                       key={`${i}-${running}`}
                       aria-hidden
-                      initial={{ scaleX: auto && !reduce ? 0 : 1 }}
-                      animate={{ scaleX: auto && !reduce ? (running ? 1 : 0) : 1 }}
+                      initial={{ scaleX: auto ? 0 : 1 }}
+                      animate={{ scaleX: auto ? (running ? 1 : 0) : 1 }}
                       transition={{ duration: running ? STEP_MS / 1000 : 0.2, ease: "linear" }}
                       className="absolute inset-x-0 -bottom-px h-0.5 origin-left bg-neutral-900"
                     />
@@ -310,7 +309,7 @@ export function Steps() {
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={active}
-                  initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.02 }}
+                  initial={{ opacity: 0, scale: 1.02 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.35, ease: EASE }}
@@ -340,7 +339,7 @@ export function Steps() {
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={active}
-                  initial={reduce ? { opacity: 0 } : { opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3, ease: EASE }}

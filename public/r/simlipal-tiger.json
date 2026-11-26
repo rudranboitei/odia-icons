@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "simlipal-tiger",
+  "type": "registry:ui",
+  "title": "Simlipal Tiger",
+  "description": "ଶିମିଳିପାଳ ବାଘ — simlipal, tiger, wildlife.",
+  "categories": [
+    "nature"
+  ],
+  "meta": {
+    "odia": "ଶିମିଳିପାଳ ବାଘ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/simlipal-tiger.svg",
+      "type": "registry:file",
+      "target": "components/icons/simlipal-tiger.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 8 3 5l5 1 4-2 4 2 5-1-2 4 1 5-4 4H8l-4-4 1-6Z\"/><path d=\"m8 8 2 3m6-3-2 3M9 15h.01m6 0h.01M10 18l2-1 2 1\"/></svg>"
+    }
+  ]
+}

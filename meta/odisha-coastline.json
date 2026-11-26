@@ -1,0 +1,23 @@
+{
+  "name": "odisha-coastline",
+  "odia": "ଓଡ଼ିଶା ଉପକୂଳ",
+  "category": "travel",
+  "tags": [
+    "odisha",
+    "coastline",
+    "bay of bengal",
+    "beach",
+    "travel",
+    "ସମୁଦ୍ରତଟ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Abstract coastline and wave symbol representing Odisha’s Bay of Bengal coast."
+}

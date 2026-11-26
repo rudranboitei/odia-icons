@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cloud",
+  "type": "registry:ui",
+  "title": "Cloud",
+  "description": "କ୍ଲାଉଡ୍ — cloud, interface, ui.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "କ୍ଲାଉଡ୍",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/cloud.svg",
+      "type": "registry:file",
+      "target": "components/icons/cloud.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 18h10a4 4 0 0 0 .6-8A6 6 0 0 0 6 9a4.5 4.5 0 0 0 1 9Z\"/></svg>"
+    }
+  ]
+}

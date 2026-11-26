@@ -68,7 +68,7 @@ export const SITE = {
     subtitle:
       "Free, MIT-licensed Odisha icons: temples, crafts, music, festivals and food drawn as 24 × 24 SVG and React icons. Search in English or Odia (ଓଡ଼ିଆ).",
     stats: [
-      "37 hand-drawn icons",
+      "88 hand-drawn icons",
       "24 × 24 grid",
       "4 export formats",
       "No attribution needed",
@@ -140,7 +140,7 @@ export const SITE = {
     meta: "Independent · open source · made in Odisha",
     linkLabel: "Star on GitHub",
     stats: [
-      { value: "37", label: "icons" },
+      { value: "88", label: "icons" },
       { value: "4", label: "formats" },
       { value: "0", label: "dependencies" },
     ],
@@ -242,7 +242,7 @@ export const SITE = {
     title: "Start using Odisha icons today.",
     accent: "Odisha icons",
     description:
-      "37 icons — Odisha motifs plus a matching UI set — free under MIT and ready for whatever you're building next.",
+      "88 icons — Odisha-inspired motifs plus a matching UI set — free under MIT and ready for whatever you're building next.",
     helper: "No credit card. No sign-up. Just icons.",
   },
 

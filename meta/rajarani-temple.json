@@ -1,0 +1,23 @@
+{
+  "name": "rajarani-temple",
+  "odia": "ରାଜାରାଣୀ ମନ୍ଦିର",
+  "category": "architecture",
+  "tags": [
+    "rajarani",
+    "temple",
+    "shikhara",
+    "heritage",
+    "bhubaneswar",
+    "ମନ୍ଦିର"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Stylised clustered temple towers inspired by the Rajarani temple profile; cultural review recommended."
+}

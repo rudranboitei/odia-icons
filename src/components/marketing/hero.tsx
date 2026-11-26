@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Instrument_Serif } from "next/font/google";
-import { motion, useReducedMotion, type Variants } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { ArrowRight, Download, LayoutGrid, Search, Star } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -42,20 +42,20 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const PREVIEW_NAMES = [
   "deul-temple",
   "konark-wheel",
-  "rasagola",
+  "jagannath-symbol",
+  "gotipua",
+  "odissi-mudra",
+  "raja-parba",
+  "dhanu-yatra",
+  "poda-pitha",
+  "khaja",
   "pakhala",
-  "deepa",
-  "jhoti",
-  "mridanga",
-  "paddy",
-  "palm-tree",
-  "olive-ridley-turtle",
-  "terracotta-pot",
-  "lotus",
-  "mango",
-  "elephant",
-  "kite",
-  "swing",
+  "pipili-applique",
+  "khandagiri-cave",
+  "hirakud-dam",
+  "bhitarkanika-crocodile",
+  "conch-shell",
+  "sora-painting",
 ] as const;
 
 /** Which tile shows the dark "selected" border. */
@@ -140,20 +140,19 @@ function PreviewWindow() {
 
 export function Hero() {
   const { hero } = SITE;
-  const reduce = useReducedMotion() ?? false;
 
   const container: Variants = {
     hidden: {},
-    show: { transition: { staggerChildren: reduce ? 0 : 0.1, delayChildren: 0.1 } },
+    show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
   };
 
   const rise: Variants = {
-    hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 20, filter: "blur(6px)" },
+    hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
     show: {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: reduce ? 0.2 : 0.7, ease: EASE },
+      transition: { duration: 0.7, ease: EASE },
     },
   };
 
@@ -221,7 +220,7 @@ export function Hero() {
         {/* Headline */}
         <motion.h1
           id="hero-title"
-          initial={reduce ? false : { y: 18 }}
+          initial={{ y: 18 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.8, ease: EASE, delay: 0.1 }}
           className={`${serif.className} mt-5 text-[clamp(2.5rem,8vw,5.5rem)] leading-[0.95] font-normal tracking-[-0.045em] text-[#17130f] sm:mt-7`}
@@ -290,7 +289,7 @@ export function Hero() {
 
         {/* Preview: pinned to the bottom, cropped by the hero edge */}
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: EASE, delay: 0.5 }}
           className="mt-auto w-full max-w-4xl pt-10 sm:pt-14"

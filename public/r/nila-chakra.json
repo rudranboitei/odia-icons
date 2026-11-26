@@ -12,7 +12,8 @@
     "since": "0.2.0",
     "variants": [
       "outline"
-    ]
+    ],
+    "status": "needs-review"
   },
   "files": [
     {

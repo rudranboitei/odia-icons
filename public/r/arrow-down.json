@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrow-down",
+  "type": "registry:ui",
+  "title": "Arrow Down",
+  "description": "ତଳ ତୀର — arrow down, arrow-down, interface.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ତଳ ତୀର",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/arrow-down.svg",
+      "type": "registry:file",
+      "target": "components/icons/arrow-down.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m5 12 7 7 7-7M12 19V5\"/></svg>"
+    }
+  ]
+}

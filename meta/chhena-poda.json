@@ -1,0 +1,25 @@
+{
+  "name": "chhena-poda",
+  "odia": "ଛେନାପୋଡ଼",
+  "category": "food",
+  "tags": [
+    "chhena-poda",
+    "dessert",
+    "cheese",
+    "sweet",
+    "nayagarh",
+    "ଛେନାପୋଡ଼"
+  ],
+  "aliases": [
+    "chenapoda"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Illustrative baked Chhena Poda slice; not a food-label or ingredient claim."
+}

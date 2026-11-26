@@ -8,7 +8,7 @@ Free, open-source Odisha icons as typed React components. Every icon is drawn
 on a **24 × 24 grid**, uses `currentColor`, and ships as a tree-shakeable named
 export. MIT licensed.
 
-- 37 icons: 19 Odisha motifs plus a matching UI set
+- 88 icons: 41 Odisha-inspired icons plus 47 general-purpose UI icons
 - React 18+
 - TypeScript types included
 - ESM and CJS builds
@@ -77,6 +77,8 @@ import { OliveRidleyTurtle } from "@odiaui/icons-react";
 ```
 
 Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons).
+
+> All icons are currently marked `needs-review` in the source metadata. Please review these with native Odia speakers and relevant cultural practitioners before treating them as authoritative.
 
 ## Tree-shaking
 

@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-1f1f1f?style=flat-square" alt="MIT License" /></a>
-  <img src="https://img.shields.io/badge/icons-37-f3e0c9?style=flat-square&labelColor=1f1f1f" alt="37 icons" />
+  <img src="https://img.shields.io/badge/icons-109-f3e0c9?style=flat-square&labelColor=1f1f1f" alt="109 icons" />
   <img src="https://img.shields.io/badge/grid-24%C3%9724-1f1f1f?style=flat-square" alt="24x24 grid" />
   <img src="https://img.shields.io/badge/stroke-1.5px-1f1f1f?style=flat-square" alt="1.5px stroke" />
   <a href="https://github.com/rudranboitei/odia-icons/pulls"><img src="https://img.shields.io/badge/PRs-welcome-1f1f1f?style=flat-square" alt="PRs welcome" /></a>
@@ -25,7 +25,7 @@
 
 ---
 
-OdiaIcons is a compact, carefully crafted icon set: 19 Odisha motifs plus a matching UI set. Every icon is drawn on a shared 24 × 24 grid, uses `currentColor`, and is designed to feel consistent across product interfaces, websites, and editorial layouts.
+OdiaIcons is a compact, carefully crafted icon set: 62 Odisha-inspired icons plus 47 general-purpose UI icons. Every icon is drawn on a shared 24 × 24 grid, uses `currentColor`, and is designed to feel consistent across product interfaces, websites, and editorial layouts.
 
 Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon browser](https://icons.odiaui.xyz/icons).
 
@@ -40,7 +40,7 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 
 ## Icon Set
 
-**37 icons and counting:** 19 Odisha motifs plus a matching UI set. Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons). A sample:
+**109 icons and counting:** 62 Odisha-inspired icons plus 47 general-purpose UI icons. Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons). A sample:
 
 | Icon | Name | Odia | Category |
 |------|------|------|----------|
@@ -52,6 +52,15 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Pakhala | `pakhala` | ପଖାଳ | Food |
 | Palm Tree | `palm-tree` | ତାଳଗଛ | Nature |
 | Olive Ridley Turtle | `olive-ridley-turtle` | ସାମୁଦ୍ରିକ କଇଁଛ | Nature |
+| Lingaraj Temple | `lingaraj-temple` | ଲିଙ୍ଗରାଜ ମନ୍ଦିର | Architecture |
+| Odissi Dancer | `odissi-dancer` | ଓଡ଼ିଶୀ ନୃତ୍ୟ | Culture |
+| Tarakasi | `tarakasi` | ତାରକସି | Art |
+| Bali Yatra | `bali-yatra` | ବାଲିଯାତ୍ରା | Festival |
+| Dalma | `dalma` | ଡାଲମା | Food |
+| Chhena Poda | `chhena-poda` | ଛେନାପୋଡ଼ | Food |
+| Chilika Lake | `chilika-lake` | ଚିଲିକା ହ୍ରଦ | Nature |
+| Database | `database` | ଡାଟାବେସ୍ | UI |
+| Shield Check | `shield-check` | ସୁରକ୍ଷା ଯାଞ୍ଚ | UI |
 
 > Have a motif in mind? [Request an icon](https://github.com/rudranboitei/odia-icons/issues/new).
 
@@ -119,6 +128,8 @@ All icons follow the same visual contract to keep the set cohesive:
 |------|-------|
 | Canvas | 24 × 24 |
 | Safe area | 20 × 20 (2px padding) |
+| Tested display sizes | 16px, 20px, 24px |
+| Small-size legibility | Distinctive silhouette; avoid details that disappear at 16px |
 | Style | Outline |
 | Stroke width | 1.5px |
 | Stroke caps / joins | Round |
@@ -128,6 +139,12 @@ All icons follow the same visual contract to keep the set cohesive:
 | Size budget | Max 2KB per icon source |
 
 For the full authoring workflow, see [`SKILL.md`](./SKILL.md).
+
+> **Metadata review note:** The current release contains 109 icons. Every icon entry is currently marked `needs-review` in `meta/*.json`; native-language and subject-matter review is recommended before treating those labels or depictions as authoritative.
+
+## Recently added Odisha motifs
+
+The 0.2.0 icon expansion adds 21 motifs across Odissi performance, Jagannath tradition, Raja Parba, Dhanu Yatra, Kumar Purnima, Odia foods, Khandagiri-Udayagiri heritage, Pipili applique, Saora art, Bhitarkanika wildlife and the Eastern Ghats. New cultural and religious motifs are marked `needs-review`; specialist review is recommended before treating depictions as authoritative.
 
 ## Contributing
 

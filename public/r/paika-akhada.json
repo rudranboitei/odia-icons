@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "paika-akhada",
+  "type": "registry:ui",
+  "title": "Paika Akhada",
+  "description": "ପାଇକ ଆଖଡ଼ା — paika, akhada, martial art.",
+  "categories": [
+    "culture"
+  ],
+  "meta": {
+    "odia": "ପାଇକ ଆଖଡ଼ା",
+    "since": "0.3.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/paika-akhada.svg",
+      "type": "registry:file",
+      "target": "components/icons/paika-akhada.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n  <path d=\"m5 4 14 16M19 4 5 20\"/><path d=\"M12 7c-3 0-5 2-5 5s2 5 5 5 5-2 5-5-2-5-5-5Z\"/><path d=\"M12 9v6M9 12h6\"/>\n</svg>"
+    }
+  ]
+}

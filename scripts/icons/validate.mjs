@@ -116,6 +116,9 @@ export async function loadIcons() {
     if (typeof meta.note !== "string") {
       fail(errors, `meta/${file}: note must be a string (use "" when empty)`)
     }
+    if (!["needs-review", "reviewed"].includes(meta.status)) {
+      fail(errors, `meta/${file}: status must be "needs-review" or "reviewed"`)
+    }
 
     for (const alias of [meta.name, ...(meta.aliases ?? [])]) {
       if (seen.has(alias)) {

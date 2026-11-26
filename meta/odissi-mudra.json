@@ -1,0 +1,23 @@
+{
+  "name": "odissi-mudra",
+  "odia": "ଓଡ଼ିଶୀ ମୁଦ୍ରା",
+  "category": "culture",
+  "tags": [
+    "odissi",
+    "mudra",
+    "hand",
+    "dance",
+    "gesture",
+    "ମୁଦ୍ରା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Stylised classical dance hand gesture; exact mudra identification requires expert review."
+}

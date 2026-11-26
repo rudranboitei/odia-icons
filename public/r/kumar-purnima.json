@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kumar-purnima",
+  "type": "registry:ui",
+  "title": "Kumar Purnima",
+  "description": "କୁମାର ପୂର୍ଣ୍ଣିମା — kumar-purnima, moon, full-moon.",
+  "categories": [
+    "festival"
+  ],
+  "meta": {
+    "odia": "କୁମାର ପୂର୍ଣ୍ଣିମା",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/kumar-purnima.svg",
+      "type": "registry:file",
+      "target": "components/icons/kumar-purnima.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M15.5 4.5a7.2 7.2 0 0 0 4 9.8M8 16h8m-6.5 3h5\"/></svg>"
+    }
+  ]
+}

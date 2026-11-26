@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dhanu-yatra",
+  "type": "registry:ui",
+  "title": "Dhanu Yatra",
+  "description": "ଧନୁଯାତ୍ରା — dhanu-yatra, bargarh, theatre.",
+  "categories": [
+    "festival"
+  ],
+  "meta": {
+    "odia": "ଧନୁଯାତ୍ରା",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ],
+    "status": "needs-review"
+  },
+  "files": [
+    {
+      "path": "icons/outline/dhanu-yatra.svg",
+      "type": "registry:file",
+      "target": "components/icons/dhanu-yatra.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 4c11 2 14 7 14 8s-3 6-14 8M5 4v16M5 12h14m-4-3 4 3-4 3\"/></svg>"
+    }
+  ]
+}
