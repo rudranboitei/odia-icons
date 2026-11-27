@@ -1,0 +1,23 @@
+{
+  "name": "mukteswar-temple",
+  "odia": "ମୁକ୍ତେଶ୍ୱର ମନ୍ଦିର",
+  "category": "architecture",
+  "tags": [
+    "mukteswar",
+    "temple",
+    "torana",
+    "heritage",
+    "bhubaneswar",
+    "ମନ୍ଦିର"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Distinctive compact Kalinga temple silhouette with an arched torana reference; cultural review recommended."
+}

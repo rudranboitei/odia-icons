@@ -1,0 +1,22 @@
+{
+  "name": "shield-check",
+  "odia": "ସୁରକ୍ଷା ଯାଞ୍ଚ",
+  "category": "ui",
+  "tags": [
+    "shield check",
+    "shield-check",
+    "interface",
+    "ui",
+    "ଉପକରଣ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "General-purpose interface symbol; Odia label is a search aid and should be reviewed by a native Odia speaker."
+}

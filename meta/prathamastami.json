@@ -1,0 +1,22 @@
+{
+  "name": "prathamastami",
+  "odia": "ପ୍ରଥମାଷ୍ଟମୀ",
+  "category": "festival",
+  "tags": [
+    "prathamastami",
+    "enduri pitha",
+    "family",
+    "festival",
+    "odia tradition"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Enduri pitha wrapped in leaf with a tied centre; cultural review recommended."
+}

@@ -1,0 +1,23 @@
+{
+  "name": "pipili-applique",
+  "odia": "ପିପିଲି ଚାନ୍ଦୁଆ",
+  "category": "art",
+  "tags": [
+    "pipili",
+    "applique",
+    "chandua",
+    "craft",
+    "textile",
+    "ପିପିଲି"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Geometric applique textile motif inspired by Pipili chandua craft."
+}

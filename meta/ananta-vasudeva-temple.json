@@ -1,0 +1,23 @@
+{
+  "name": "ananta-vasudeva-temple",
+  "odia": "ଅନନ୍ତ ବାସୁଦେବ ମନ୍ଦିର",
+  "category": "architecture",
+  "tags": [
+    "ananta",
+    "vasudeva",
+    "temple",
+    "bhubaneswar",
+    "heritage",
+    "ମନ୍ଦିର"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Simplified temple gateway and sanctum motif for Ananta Vasudeva Temple; cultural review recommended."
+}

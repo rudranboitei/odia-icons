@@ -1,0 +1,24 @@
+{
+  "name": "odissi-dancer",
+  "odia": "ଓଡ଼ିଶୀ ନୃତ୍ୟ",
+  "category": "culture",
+  "tags": [
+    "odissi",
+    "dance",
+    "classical",
+    "mudra",
+    "ଓଡ଼ିଶୀ"
+  ],
+  "aliases": [
+    "odissi-dance"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Stylised dance figure, not a depiction of a specific performer or canonical pose."
+}

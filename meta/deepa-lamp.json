@@ -1,0 +1,26 @@
+{
+  "name": "deepa-lamp",
+  "odia": "ଦୀପ",
+  "category": "culture",
+  "tags": [
+    "deepa",
+    "diya",
+    "lamp",
+    "light",
+    "festival",
+    "odisha",
+    "ଦୀପ"
+  ],
+  "aliases": [
+    "oil-lamp"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Oil lamp on a small base. Odia spelling needs a native check."
+}

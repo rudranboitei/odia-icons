@@ -1,0 +1,23 @@
+{
+  "name": "odissi-triple-bend",
+  "odia": "ତ୍ରିଭଙ୍ଗୀ",
+  "category": "culture",
+  "tags": [
+    "odissi",
+    "tribhangi",
+    "dance",
+    "classical",
+    "posture",
+    "ନୃତ୍ୟ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Abstract tribhangi posture study inspired by Odissi dance; not a specific performer depiction."
+}

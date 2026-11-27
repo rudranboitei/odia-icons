@@ -1,0 +1,22 @@
+{
+  "name": "share-2",
+  "odia": "ସେୟାର୍",
+  "category": "ui",
+  "tags": [
+    "share 2",
+    "share-2",
+    "interface",
+    "ui",
+    "ଉପକରଣ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "General-purpose interface symbol; Odia label is a search aid and should be reviewed by a native Odia speaker."
+}

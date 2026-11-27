@@ -1,0 +1,23 @@
+{
+  "name": "barabati-fort",
+  "odia": "ବାରବାଟୀ ଦୁର୍ଗ",
+  "category": "architecture",
+  "tags": [
+    "barabati",
+    "fort",
+    "cuttack",
+    "heritage",
+    "architecture",
+    "ବାରବାଟୀ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Fort wall and bastion motif referencing Barabati Fort in Cuttack."
+}

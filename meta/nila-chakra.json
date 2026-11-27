@@ -1,0 +1,27 @@
+{
+  "name": "nila-chakra",
+  "odia": "ନୀଳଚକ୍ର",
+  "category": "architecture",
+  "tags": [
+    "nila chakra",
+    "neela chakra",
+    "jagannath",
+    "puri",
+    "chakra",
+    "flag",
+    "odisha",
+    "ନୀଳଚକ୍ର"
+  ],
+  "aliases": [
+    "neela-chakra"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Sacred symbol on the Puri Jagannath temple: culture review required before release. Differs from konark-wheel (single wheel on a stand with a flag)."
+}

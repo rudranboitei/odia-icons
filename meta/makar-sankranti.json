@@ -1,0 +1,23 @@
+{
+  "name": "makar-sankranti",
+  "odia": "ମକର ସଂକ୍ରାନ୍ତି",
+  "category": "festival",
+  "tags": [
+    "makar",
+    "sankranti",
+    "kite",
+    "harvest",
+    "festival",
+    "ମକର"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Kite motif for seasonal harvest celebrations."
+}

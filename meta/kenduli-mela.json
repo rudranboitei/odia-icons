@@ -1,0 +1,23 @@
+{
+  "name": "kenduli-mela",
+  "odia": "କେନ୍ଦୁଲି ମେଳା",
+  "category": "festival",
+  "tags": [
+    "kenduli",
+    "mela",
+    "baul",
+    "music",
+    "jajpur",
+    "festival"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Single-string folk instrument motif associated with Kenduli music gatherings; cultural review recommended."
+}

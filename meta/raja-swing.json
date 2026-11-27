@@ -1,0 +1,25 @@
+{
+  "name": "raja-swing",
+  "odia": "ରଜ ଦୋଳି",
+  "category": "festival",
+  "tags": [
+    "raja",
+    "raja-parba",
+    "swing",
+    "monsoon",
+    "festival",
+    "ରଜ"
+  ],
+  "aliases": [
+    "raja-festival-swing"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "A swing motif associated with Raja Parba celebrations."
+}

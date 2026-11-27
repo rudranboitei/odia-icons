@@ -1,0 +1,23 @@
+{
+  "name": "gotipua",
+  "odia": "ଗୋଟିପୁଅ",
+  "category": "culture",
+  "tags": [
+    "gotipua",
+    "dance",
+    "acrobatics",
+    "odisha",
+    "performance",
+    "ଗୋଟିପୁଅ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Stylised dancer silhouette, not a specific performer or costume reconstruction."
+}

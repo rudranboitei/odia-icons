@@ -1,0 +1,23 @@
+{
+  "name": "khandagiri-cave",
+  "odia": "ଖଣ୍ଡଗିରି ଗୁମ୍ଫା",
+  "category": "architecture",
+  "tags": [
+    "khandagiri",
+    "cave",
+    "jain",
+    "heritage",
+    "bhubaneswar",
+    "ଗୁମ୍ଫା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Rock-cut cave entrance motif referencing the Khandagiri-Udayagiri complex."
+}

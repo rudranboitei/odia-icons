@@ -1,0 +1,23 @@
+{
+  "name": "chakuli-pitha",
+  "odia": "ଚକୁଳି ପିଠା",
+  "category": "food",
+  "tags": [
+    "chakuli",
+    "pitha",
+    "rice pancake",
+    "odia food",
+    "breakfast",
+    "ପିଠା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Round chakuli pitha with a lightly textured surface; food illustration."
+}

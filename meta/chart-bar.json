@@ -1,0 +1,27 @@
+{
+  "name": "chart-bar",
+  "odia": "ଚାର୍ଟ",
+  "category": "ui",
+  "tags": [
+    "chart",
+    "bar-chart",
+    "analytics",
+    "graph",
+    "stats",
+    "dashboard",
+    "ଚାର୍ଟ"
+  ],
+  "aliases": [
+    "bar-chart",
+    "analytics"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text is a transliteration of the English word; needs a native check."
+}

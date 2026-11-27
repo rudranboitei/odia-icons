@@ -1,0 +1,23 @@
+{
+  "name": "maha-prasad",
+  "odia": "ମହାପ୍ରସାଦ",
+  "category": "food",
+  "tags": [
+    "mahaprasad",
+    "ananda-bazaar",
+    "puri",
+    "offering",
+    "food",
+    "ମହାପ୍ରସାଦ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Offering plate motif associated with Puri Jagannath Temple; cultural review recommended."
+}

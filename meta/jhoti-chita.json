@@ -1,0 +1,23 @@
+{
+  "name": "jhoti-chita",
+  "odia": "ଝୋଟି ଚିତା",
+  "category": "art",
+  "tags": [
+    "jhoti",
+    "chita",
+    "rangoli",
+    "ritual art",
+    "floor art",
+    "ଝୋଟି"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Symmetric rice-paste floor-art motif inspired by Odia Jhoti; cultural review recommended."
+}

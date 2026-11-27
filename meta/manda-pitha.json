@@ -1,0 +1,23 @@
+{
+  "name": "manda-pitha",
+  "odia": "ମଣ୍ଡା ପିଠା",
+  "category": "food",
+  "tags": [
+    "manda",
+    "pitha",
+    "steamed dumpling",
+    "odia food",
+    "rice cake",
+    "ପିଠା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Rounded steamed Manda pitha with pleated crown detail; food illustration."
+}

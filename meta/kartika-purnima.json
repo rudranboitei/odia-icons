@@ -1,0 +1,23 @@
+{
+  "name": "kartika-purnima",
+  "odia": "କାର୍ତ୍ତିକ ପୂର୍ଣ୍ଣିମା",
+  "category": "festival",
+  "tags": [
+    "kartika",
+    "purnima",
+    "boita",
+    "boat",
+    "festival",
+    "bali yatra"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Boita-shaped ceremonial boat with sail, representing Kartika Purnima traditions; cultural review recommended."
+}

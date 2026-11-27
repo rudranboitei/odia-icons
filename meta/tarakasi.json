@@ -1,0 +1,25 @@
+{
+  "name": "tarakasi",
+  "odia": "ତାରକସି",
+  "category": "art",
+  "tags": [
+    "tarakasi",
+    "silver",
+    "filigree",
+    "cuttack",
+    "craft",
+    "ତାରକସି"
+  ],
+  "aliases": [
+    "silver-filigree"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Decorative filigree-inspired motif; verify traditional pattern details with a craft practitioner."
+}

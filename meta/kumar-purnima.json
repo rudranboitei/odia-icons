@@ -1,0 +1,23 @@
+{
+  "name": "kumar-purnima",
+  "odia": "କୁମାର ପୂର୍ଣ୍ଣିମା",
+  "category": "festival",
+  "tags": [
+    "kumar-purnima",
+    "moon",
+    "full-moon",
+    "festival",
+    "odisha",
+    "ପୂର୍ଣ୍ଣିମା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Full moon motif for Kumar Purnima."
+}

@@ -1,0 +1,23 @@
+{
+  "name": "ghumura-dance",
+  "odia": "ଘୁମୁରା ନୃତ୍ୟ",
+  "category": "culture",
+  "tags": [
+    "ghumura",
+    "dance",
+    "kalahandi",
+    "drum",
+    "folk",
+    "ନୃତ୍ୟ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Folk drum with strap and rhythm marks, referencing Ghumura performance; cultural review recommended."
+}

@@ -1,0 +1,23 @@
+{
+  "name": "dhokra-craft",
+  "odia": "ଡୋକ୍ରା ଶିଳ୍ପ",
+  "category": "art",
+  "tags": [
+    "dhokra",
+    "metal craft",
+    "lost wax",
+    "tribal art",
+    "craft",
+    "ହସ୍ତଶିଳ୍ପ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Stylised bell-metal figurine with a flared base, referencing Dhokra craft; cultural review recommended."
+}

@@ -1,0 +1,23 @@
+{
+  "name": "bara-ghuguni",
+  "odia": "ବରା ଘୁଗୁନି",
+  "category": "food",
+  "tags": [
+    "bara-ghuguni",
+    "street-food",
+    "snack",
+    "odisha",
+    "food",
+    "ବରା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "A bowl with bara fritters and ghuguni peas."
+}

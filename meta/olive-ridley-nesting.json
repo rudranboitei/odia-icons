@@ -1,0 +1,23 @@
+{
+  "name": "olive-ridley-nesting",
+  "odia": "ଅଲିଭ୍ ରିଡ୍ଲେ ଅଣ୍ଡାଦାନ",
+  "category": "nature",
+  "tags": [
+    "olive ridley",
+    "turtle",
+    "nesting",
+    "gahirmatha",
+    "coast",
+    "ସମୁଦ୍ର"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Olive Ridley turtle moving toward a simple nesting beach; wildlife symbol."
+}
