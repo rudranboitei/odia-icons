@@ -44,6 +44,7 @@ export const SITE = {
   // ---- Added for the icon browser + playground ----------------------
   links: {
     github: REPO,
+    npm: "https://www.npmjs.com/package/@odiaui/icons-react",
     license: `${REPO}/blob/main/LICENSE`,
     contribute: `${REPO}/issues/new`,
     email: "mailto:hello@odiaui.xyz",

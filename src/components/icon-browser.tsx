@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "motion/react"
 import {
   IconArrowUpRight,
   IconBrandGithub,
+  IconBrandNpm,
   IconCheck,
   IconCode,
   IconCopy,
@@ -50,7 +51,6 @@ import {
   type IconCategory,
   type IconDef,
 } from "@/lib/icons"
-import { GitHubStarButton } from "./github-star-button"
 import { IconPlayground } from "./icon-playground"
 import { btn, Corners, Kbd, MonoButton, Tag } from "./ui-bits"
 
@@ -563,12 +563,29 @@ export function IconBrowser() {
                   )}
                 </MonoButton>
 
-                <GitHubStarButton />
+                <a
+                  href={SITE.links.github}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                  className={btn("soft", "icon")}
+                >
+                  <IconBrandGithub className="size-4" stroke={1.5} />
+                </a>
+                <a
+                  href={SITE.links.npm}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="npm"
+                  className={btn("soft", "icon")}
+                >
+                  <IconBrandNpm className="size-4" stroke={1.5} />
+                </a>
               </div>
             </div>
 
             {/* Category chips (below lg; on lg+ they live in the sidebar) */}
-            <div className="flex items-center gap-2 px-3 pb-2.5 sm:px-4 lg:hidden">
+            <div className="hidden items-center gap-2 px-3 pb-2.5 sm:flex sm:px-4 lg:hidden">
               <div className="-mx-1 flex min-w-0 flex-1 gap-1.5 overflow-x-auto px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {categoryCounts.map((item) => {
                   const isActive = category === item.id
