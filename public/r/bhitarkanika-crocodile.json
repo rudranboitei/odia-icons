@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bhitarkanika-crocodile",
+  "type": "registry:ui",
+  "title": "Bhitarkanika Crocodile",
+  "description": "ଭିତରକନିକା କୁମ୍ଭୀର — bhitarkanika, crocodile, mangrove.",
+  "categories": [
+    "nature"
+  ],
+  "meta": {
+    "odia": "ଭିତରକନିକା କୁମ୍ଭୀର",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/bhitarkanika-crocodile.svg",
+      "type": "registry:file",
+      "target": "components/icons/bhitarkanika-crocodile.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 13c2-2 4-3 7-3h6l5-2v6l-5-1h-6c-3 0-5 1-7 3zM8 10 6 7m5 3V7m4 3 2-3m-10 7-2 3m7-3v3m5-4 2 3\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "bali-yatra",
+  "odia": "ବାଲିଯାତ୍ରା",
+  "category": "festival",
+  "tags": [
+    "bali-yatra",
+    "boat",
+    "maritime",
+    "trade",
+    "cuttack",
+    "ବାଲିଯାତ୍ରା"
+  ],
+  "aliases": [
+    "boita-festival"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Stylised sailing boat for the maritime-trade festival; not a historical vessel reconstruction."
+}

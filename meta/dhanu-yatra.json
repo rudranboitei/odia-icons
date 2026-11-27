@@ -1,0 +1,23 @@
+{
+  "name": "dhanu-yatra",
+  "odia": "ଧନୁଯାତ୍ରା",
+  "category": "festival",
+  "tags": [
+    "dhanu-yatra",
+    "bargarh",
+    "theatre",
+    "krishna",
+    "festival",
+    "ଧନୁଯାତ୍ରା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Theatrical bow motif referencing the open-air Dhanu Yatra tradition in Bargarh."
+}

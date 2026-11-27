@@ -1,0 +1,23 @@
+{
+  "name": "hirakud-dam",
+  "odia": "ହୀରାକୁଦ ବନ୍ଧ",
+  "category": "architecture",
+  "tags": [
+    "hirakud",
+    "dam",
+    "mahanadi",
+    "reservoir",
+    "engineering",
+    "ହୀରାକୁଦ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Spillway and water-line motif for Hirakud Dam."
+}

@@ -1,0 +1,23 @@
+{
+  "name": "satkosia-gorge",
+  "odia": "ସାତକୋଶିଆ ଗଣ୍ଡ",
+  "category": "nature",
+  "tags": [
+    "satkosia",
+    "gorge",
+    "mahanadi",
+    "river",
+    "wildlife",
+    "ପ୍ରକୃତି"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "River winding between steep gorge cliffs; landscape symbol for Satkosia."
+}

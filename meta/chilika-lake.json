@@ -1,0 +1,25 @@
+{
+  "name": "chilika-lake",
+  "odia": "ଚିଲିକା ହ୍ରଦ",
+  "category": "nature",
+  "tags": [
+    "chilika",
+    "lake",
+    "lagoon",
+    "wetland",
+    "odisha",
+    "ଚିଲିକା"
+  ],
+  "aliases": [
+    "chilika-lagoon"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Simplified water-and-shore motif representing Chilika Lagoon."
+}

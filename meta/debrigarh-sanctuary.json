@@ -1,0 +1,23 @@
+{
+  "name": "debrigarh-sanctuary",
+  "odia": "ଦେବ୍ରିଗଡ଼ ଅଭୟାରଣ୍ୟ",
+  "category": "nature",
+  "tags": [
+    "debrigarh",
+    "sanctuary",
+    "wildlife",
+    "forest",
+    "hirakud",
+    "ପ୍ରକୃତି"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Forest canopy with a simple wildlife track, referencing Debrigarh sanctuary."
+}

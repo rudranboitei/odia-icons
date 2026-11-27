@@ -1,0 +1,23 @@
+{
+  "name": "sambalpuri-saree",
+  "odia": "ସମ୍ବଲପୁରୀ ଶାଢ଼ୀ",
+  "category": "art",
+  "tags": [
+    "sambalpuri",
+    "ikat",
+    "textile",
+    "weaving",
+    "saree",
+    "ବୁଣା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Woven textile panel with restrained ikat-inspired diamond geometry; craft review recommended."
+}

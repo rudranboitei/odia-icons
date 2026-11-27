@@ -1,0 +1,23 @@
+{
+  "name": "arisa-pitha",
+  "odia": "ଆରିସା ପିଠା",
+  "category": "food",
+  "tags": [
+    "arisa",
+    "pitha",
+    "rice jaggery",
+    "odia food",
+    "sweet",
+    "ପିଠା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Flattened round Arisa pitha with sesame-like surface marks; food illustration."
+}

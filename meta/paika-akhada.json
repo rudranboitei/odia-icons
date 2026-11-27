@@ -1,0 +1,23 @@
+{
+  "name": "paika-akhada",
+  "odia": "ପାଇକ ଆଖଡ଼ା",
+  "category": "culture",
+  "tags": [
+    "paika",
+    "akhada",
+    "martial art",
+    "warrior",
+    "khurda",
+    "ଯୋଦ୍ଧା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Crossed practice staffs and shield motif for Paika martial tradition; cultural review recommended."
+}

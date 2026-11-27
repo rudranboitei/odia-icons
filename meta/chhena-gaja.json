@@ -1,0 +1,23 @@
+{
+  "name": "chhena-gaja",
+  "odia": "ଛେନା ଗଜା",
+  "category": "food",
+  "tags": [
+    "chhena gaja",
+    "sweet",
+    "cottage cheese",
+    "odia food",
+    "dessert",
+    "ମିଠା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Layered rectangular Chhena Gaja sweet with crisp edges; food illustration."
+}

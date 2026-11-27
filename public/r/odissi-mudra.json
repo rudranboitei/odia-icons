@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "odissi-mudra",
+  "type": "registry:ui",
+  "title": "Odissi Mudra",
+  "description": "ଓଡ଼ିଶୀ ମୁଦ୍ରା — odissi, mudra, hand.",
+  "categories": [
+    "culture"
+  ],
+  "meta": {
+    "odia": "ଓଡ଼ିଶୀ ମୁଦ୍ରା",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/odissi-mudra.svg",
+      "type": "registry:file",
+      "target": "components/icons/odissi-mudra.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 20c-1.5-1.2-2.4-3-2.4-5.2V9.5a1.4 1.4 0 0 1 2.8 0v3.1-7a1.4 1.4 0 0 1 2.8 0v6.2-8a1.4 1.4 0 0 1 2.8 0v8-6.1a1.4 1.4 0 0 1 2.8 0v8.1l1.2-2a1.5 1.5 0 0 1 2.5 1.6l-2.7 5.1c-.8 1.5-2.2 2.5-4 2.5H11c-1.1 0-2.1-.3-3-1z\"/></svg>"
+    }
+  ]
+}

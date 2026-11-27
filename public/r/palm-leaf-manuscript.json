@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "palm-leaf-manuscript",
+  "type": "registry:ui",
+  "title": "Palm Leaf Manuscript",
+  "description": "ତାଳପତ୍ର ପୋଥି — palm leaf, tala patra, manuscript.",
+  "categories": [
+    "culture"
+  ],
+  "meta": {
+    "odia": "ତାଳପତ୍ର ପୋଥି",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/palm-leaf-manuscript.svg",
+      "type": "registry:file",
+      "target": "components/icons/palm-leaf-manuscript.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2.5\" y=\"6.5\" width=\"19\" height=\"11\" rx=\"2\"/><path d=\"M7 4v16M11 12h7\"/></svg>"
+    }
+  ]
+}

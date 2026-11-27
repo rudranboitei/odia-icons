@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "udayagiri-cave",
+  "type": "registry:ui",
+  "title": "Udayagiri Cave",
+  "description": "ଉଦୟଗିରି ଗୁମ୍ଫା — udayagiri, cave, heritage.",
+  "categories": [
+    "architecture"
+  ],
+  "meta": {
+    "odia": "ଉଦୟଗିରି ଗୁମ୍ଫା",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/udayagiri-cave.svg",
+      "type": "registry:file",
+      "target": "components/icons/udayagiri-cave.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2.5 20h19M4 20l2-7 3 2 3-9 3 7 2-2 3 9M9 20v-4a3 3 0 0 1 6 0v4\"/></svg>"
+    }
+  ]
+}

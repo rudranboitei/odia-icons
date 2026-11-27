@@ -1,0 +1,25 @@
+{
+    "name":  "jagannath-symbol",
+    "odia":  "à¬œà¬—à¬¨à­à¬¨à¬¾à¬¥",
+    "category":  "culture",
+    "tags":  [
+                 "jagannath",
+                 "puri",
+                 "deity",
+                 "wooden",
+                 "tradition",
+                 "à¬œà¬—à¬¨à­à¬¨à¬¾à¬¥"
+             ],
+    "aliases":  [
+
+                ],
+    "variants":  [
+                     "outline"
+                 ],
+    "contributors":  [
+                         "rudranboitei"
+                     ],
+    "since":  "0.2.0",
+    "status":  "needs-review",
+    "note":  "Full-colour 24px vector based on the supplied reference: dark circular face, white eyes with vermilion rings, yellow crown and tilak. Cultural review recommended."
+}

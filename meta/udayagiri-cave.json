@@ -1,0 +1,23 @@
+{
+  "name": "udayagiri-cave",
+  "odia": "ଉଦୟଗିରି ଗୁମ୍ଫା",
+  "category": "architecture",
+  "tags": [
+    "udayagiri",
+    "cave",
+    "heritage",
+    "jain",
+    "odisha",
+    "ଉଦୟଗିରି"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Rock-cut cave and hill silhouette referencing Udayagiri."
+}

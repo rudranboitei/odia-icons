@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chakuli-pitha",
+  "type": "registry:ui",
+  "title": "Chakuli Pitha",
+  "description": "ଚକୁଳି ପିଠା — chakuli, pitha, rice pancake.",
+  "categories": [
+    "food"
+  ],
+  "meta": {
+    "odia": "ଚକୁଳି ପିଠା",
+    "since": "0.3.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/chakuli-pitha.svg",
+      "type": "registry:file",
+      "target": "components/icons/chakuli-pitha.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\r\n  <ellipse cx=\"12\" cy=\"13\" rx=\"8.5\" ry=\"5.5\"/><path d=\"M5 12c2-2 12-2 14 0M8 13h.01M11 15h.01M15 12h.01M17 15h.01\"/><path d=\"M4 19h16\"/>\r\n</svg>"
+    }
+  ]
+}

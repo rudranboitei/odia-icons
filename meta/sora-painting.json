@@ -1,0 +1,23 @@
+{
+  "name": "sora-painting",
+  "odia": "ସଉରା ଚିତ୍ରକଳା",
+  "category": "art",
+  "tags": [
+    "sora",
+    "saora",
+    "tribal-art",
+    "painting",
+    "odisha",
+    "ସଉରା"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Geometric human-and-tree motif inspired by Saora wall-painting compositions; cultural review recommended."
+}

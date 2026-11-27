@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "elephant",
+  "type": "registry:ui",
+  "title": "Elephant",
+  "description": "ହାତୀ — elephant, hati, wildlife.",
+  "categories": [
+    "nature"
+  ],
+  "meta": {
+    "odia": "ହାତୀ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/elephant.svg",
+      "type": "registry:file",
+      "target": "components/icons/elephant.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 19.5v-4c0-1.5.8-2.7 2-3.2V10a4.5 4.5 0 0 1 4.5-4.5h5.5A4.5 4.5 0 0 1 20.5 10v9.5h-3.5v-3.5H9.5v3.5z\"/><path d=\"M8.5 10.5v2\"/></svg>"
+    }
+  ]
+}

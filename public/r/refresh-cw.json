@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "refresh-cw",
+  "type": "registry:ui",
+  "title": "Refresh Cw",
+  "description": "ସତେଜ କରନ୍ତୁ — refresh cw, refresh-cw, interface.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ସତେଜ କରନ୍ତୁ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/refresh-cw.svg",
+      "type": "registry:file",
+      "target": "components/icons/refresh-cw.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 7v5h-5M4 17v-5h5\"/><path d=\"M5.5 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.5-3\"/></svg>"
+    }
+  ]
+}

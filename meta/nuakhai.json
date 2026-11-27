@@ -1,0 +1,23 @@
+{
+  "name": "nuakhai",
+  "odia": "ନୂଆଖାଇ",
+  "category": "festival",
+  "tags": [
+    "nuakhai",
+    "harvest",
+    "rice",
+    "western odisha",
+    "festival",
+    "ନୂଆଖାଇ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.3.0",
+  "status": "needs-review",
+  "note": "Harvest festival symbol combining a paddy sheaf and offering bowl; cultural review recommended."
+}

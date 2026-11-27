@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "mahanadi-river",
+  "type": "registry:ui",
+  "title": "Mahanadi River",
+  "description": "ମହାନଦୀ — mahanadi, river, water.",
+  "categories": [
+    "nature"
+  ],
+  "meta": {
+    "odia": "ମହାନଦୀ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/mahanadi-river.svg",
+      "type": "registry:file",
+      "target": "components/icons/mahanadi-river.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 5c4 0 4 4 8 4s4-4 10-4M3 12c4 0 4 4 8 4s4-4 10-4M3 19c4 0 4 2 8 2s4-2 10-2\"/></svg>"
+    }
+  ]
+}

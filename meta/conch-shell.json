@@ -1,0 +1,23 @@
+{
+  "name": "conch-shell",
+  "odia": "ଶଙ୍ଖ",
+  "category": "culture",
+  "tags": [
+    "conch",
+    "shankha",
+    "ritual",
+    "sound",
+    "odisha",
+    "ଶଙ୍ଖ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Simplified conch-shell motif used in Odia ceremonial contexts."
+}

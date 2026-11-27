@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "maha-prasad",
+  "type": "registry:ui",
+  "title": "Maha Prasad",
+  "description": "ମହାପ୍ରସାଦ — mahaprasad, ananda-bazaar, puri.",
+  "categories": [
+    "food"
+  ],
+  "meta": {
+    "odia": "ମହାପ୍ରସାଦ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/maha-prasad.svg",
+      "type": "registry:file",
+      "target": "components/icons/maha-prasad.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 13h18c-.7 4.5-4 7-9 7s-8.3-2.5-9-7zM6 10c1.2-2 2.5-2 3.5 0m1.5-1c1.2-2 2.5-2 3.5 0m1.5 1c1.2-2 2.5-2 3.5 0M12 20v1.5\"/></svg>"
+    }
+  ]
+}

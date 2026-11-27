@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "applique-umbrella",
+  "type": "registry:ui",
+  "title": "Applique Umbrella",
+  "description": "ଚାନ୍ଦୁଆ — pipili, applique, umbrella.",
+  "categories": [
+    "art"
+  ],
+  "meta": {
+    "odia": "ଚାନ୍ଦୁଆ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/applique-umbrella.svg",
+      "type": "registry:file",
+      "target": "components/icons/applique-umbrella.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 12a9 9 0 0 1 18 0H3Z\"/><path d=\"M12 3v9M12 12v6a2 2 0 0 0 4 0M6 12l3-5 3 5 3-5 3 5\"/></svg>"
+    }
+  ]
+}

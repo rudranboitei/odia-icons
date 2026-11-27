@@ -1,0 +1,24 @@
+{
+  "name": "dalma",
+  "odia": "ଡାଲମା",
+  "category": "food",
+  "tags": [
+    "dalma",
+    "lentil",
+    "vegetable",
+    "odia-food",
+    "ଓଡ଼ିଆ ଖାଦ୍ୟ"
+  ],
+  "aliases": [
+    "dalma-bowl"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.2.0",
+  "status": "needs-review",
+  "note": "Illustrative bowl of Dalma; ingredients and regional recipes vary."
+}

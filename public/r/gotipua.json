@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gotipua",
+  "type": "registry:ui",
+  "title": "Gotipua",
+  "description": "ଗୋଟିପୁଅ — gotipua, dance, acrobatics.",
+  "categories": [
+    "culture"
+  ],
+  "meta": {
+    "odia": "ଗୋଟିପୁଅ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/gotipua.svg",
+      "type": "registry:file",
+      "target": "components/icons/gotipua.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"4.2\" r=\"1.8\"/><path d=\"m10 7-3 3-3 1m10-4 3 3 3 1m-10-4 2 4 4 1m-6-1-3 4-3 1m9-4 3 4m-9-1-1 4m10-3 1 3\"/></svg>"
+    }
+  ]
+}
