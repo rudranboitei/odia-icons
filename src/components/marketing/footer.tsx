@@ -9,7 +9,7 @@ export function Footer() {
   const year = footer.year;
 
   const linkClass =
-    "inline-flex items-center gap-1 transition-colors hover:text-neutral-900";
+    "inline-flex items-center gap-1 transition-colors hover:text-white";
 
   return (
     <footer className="relative border-t border-white/10 bg-[#141210] text-[#ffffff]">
@@ -20,7 +20,6 @@ export function Footer() {
             className="inline-flex items-center transition-opacity hover:opacity-80"
             aria-label={`${name} home`}
           >
-            {/* The cream wordmark is made for dark pages; brightness-0 turns it solid black */}
             <Image
               src="/brand/wordmark-cream.svg"
               alt={name}
@@ -76,7 +75,7 @@ export function Footer() {
         aria-hidden
         className="relative mt-2 overflow-hidden px-2 select-none"
       >
-        <div className="w-full text-center font-sans text-[18vw] leading-none whitespace-nowrap text-white/[0.04]">
+        <div className="w-full text-center font-sans text-[18vw] leading-none whitespace-nowrap text-white/[0.08]">
           {footer.wordmark}
         </div>
       </div>

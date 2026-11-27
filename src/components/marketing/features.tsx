@@ -151,7 +151,7 @@ function CustomizeVisual() {
           <br />
           to your brand?
         </span>
-        <span className="ml-auto shrink-0 rounded-full bg-[#f3e0c9] px-3 py-1 text-[11px] font-medium text-[#1a1713]">
+        <span className="ml-auto shrink-0 rounded-full bg-white px-3 py-1 text-[11px] font-medium text-[#1a1713]">
           Apply
         </span>
       </div>
