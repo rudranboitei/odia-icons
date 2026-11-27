@@ -5,7 +5,7 @@ import { IconCheck, IconCopy, IconDownload, IconX } from "@tabler/icons-react"
 import { SITE } from "../data/site"
 import { copyText } from "@/lib/clipboard"
 import { ShikiCode } from "@/components/shiki-code"
-import { Icon, toComponentJsx, toSvg, type IconDef } from "@/lib/icons"
+import { Icon, pascal, toSvg, type IconDef } from "@/lib/icons"
 import { Corners, MonoButton, Tag } from "./ui-bits"
 
 const STROKE = 2 // the whole set is drawn at this weight
@@ -24,13 +24,16 @@ export function IconPlayground({
   const [tab, setTab] = useState<Tab>("SVG")
   const [copied, setCopied] = useState(false)
 
-  const packageName = SITE.install.command.trim().split(/\s+/).pop() ?? SITE.npmPackage
   const svg = useMemo(() => toSvg(def, { size: COPY_SIZE, stroke: STROKE }), [def])
-  const jsx = useMemo(
-    () => toComponentJsx(def, { size: COPY_SIZE, stroke: STROKE }, packageName),
-    [def, packageName]
-  )
-  const cli = SITE.install.command
+  const jsx = useMemo(() => {
+    const name = pascal(def.name)
+    return `import { ${name} } from "${SITE.npmPackage}"
+
+export default function App() {
+  return <${name} size={${COPY_SIZE}} strokeWidth={${STROKE}} />
+}`
+  }, [def.name])
+  const cli = `npx shadcn@latest add ${SITE.registryUrl}/${def.name}.json`
 
   const code = tab === "SVG" ? svg : tab === "JSX" ? jsx : cli
 
@@ -130,7 +133,7 @@ export function IconPlayground({
 
       {/* Code */}
       <div className="px-4 pt-3">
-        <pre className="max-h-56 min-h-[120px] overflow-auto rounded-lg border border-black/10 bg-white p-3 text-[11.5px] leading-relaxed break-all whitespace-pre-wrap text-neutral-800">
+        <pre className="max-h-64 min-h-[140px] overflow-auto rounded-lg border border-black/10 bg-white p-4 text-[13px] leading-6 break-all whitespace-pre-wrap text-neutral-800">
           <ShikiCode
             code={code}
             lang={tab === "CLI" ? "bash" : tab === "JSX" ? "jsx" : "xml"}
