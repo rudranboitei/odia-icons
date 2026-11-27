@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
+import { IconBrandNpm } from "@tabler/icons-react";
 import { ArrowRight, Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { SITE } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -68,16 +70,42 @@ export function Header() {
             />
           </Link>
 
-          {/* Desktop CTA */}
-          <Button
-            asChild
-            className="hidden h-11 rounded-full bg-neutral-950 px-5 text-sm font-medium text-white hover:bg-neutral-800 md:inline-flex"
-          >
-            <Link href="/icons">
-              Browse icons
-              <ArrowRight aria-hidden className="size-4" />
+          {/* Desktop actions */}
+          <div className="hidden items-center gap-1 md:flex">
+            <a
+              href={SITE.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="inline-flex size-10 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:outline-none"
+            >
+              <Image src="/github.svg" alt="" width={20} height={20} className="size-5 invert" />
+            </a>
+            <a
+              href={SITE.links.npm}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="npm"
+              className="inline-flex size-10 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:outline-none"
+            >
+              <IconBrandNpm className="size-5" stroke={1.5} />
+            </a>
+            <Link
+              href="/#install"
+              className="inline-flex h-10 items-center rounded-full px-4 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:outline-none"
+            >
+              Install
             </Link>
-          </Button>
+            <Button
+              asChild
+              className="ml-1 h-10 rounded-full bg-white px-5 text-sm font-medium text-black hover:bg-neutral-200"
+            >
+              <Link href="/icons">
+                Browse icons
+                <ArrowRight aria-hidden className="size-4" />
+              </Link>
+            </Button>
+          </div>
 
           {/* Mobile toggle */}
           <button
@@ -103,15 +131,44 @@ export function Header() {
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="pointer-events-auto absolute inset-x-0 top-full mt-2.5 origin-top rounded-[28px] bg-[#1b1b1b]/95 p-3 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] ring-1 ring-white/10 backdrop-blur-2xl md:hidden"
             >
-              <Button
-                asChild
-                className="mt-2 h-12 w-full rounded-full bg-neutral-950 text-sm font-medium text-white hover:bg-neutral-800"
-              >
-                <Link href="/icons" onClick={() => setOpen(false)}>
-                  Browse icons
-                  <ArrowRight aria-hidden className="size-4" />
+              <div className="flex flex-col gap-2">
+                <Link
+                  href="/#install"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex h-11 items-center justify-center rounded-full px-4 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                >
+                  Install
                 </Link>
-              </Button>
+                <div className="flex items-center justify-center gap-2">
+                  <a
+                    href={SITE.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    className="inline-flex size-11 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                  >
+                    <Image src="/github.svg" alt="" width={20} height={20} className="size-5 invert" />
+                  </a>
+                  <a
+                    href={SITE.links.npm}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="npm"
+                    className="inline-flex size-11 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                  >
+                    <IconBrandNpm className="size-5" stroke={1.5} />
+                  </a>
+                </div>
+                <Button
+                  asChild
+                  className="h-12 w-full rounded-full bg-white text-sm font-medium text-black hover:bg-neutral-200"
+                >
+                  <Link href="/icons" onClick={() => setOpen(false)}>
+                    Browse icons
+                    <ArrowRight aria-hidden className="size-4" />
+                  </Link>
+                </Button>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

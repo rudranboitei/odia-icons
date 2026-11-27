@@ -1,21 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { Instrument_Serif } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import { motion, useReducedMotion, type Variants } from "motion/react";
-import { ArrowRight, Download, LayoutGrid, Search, Star } from "lucide-react";
+import { ArrowUpRight, Download, LayoutGrid, MousePointer2, Star } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { SITE } from "@/data/site";
-import { Icon, ICON_COUNT, iconsByName } from "@/lib/icons";
+import { ICON_COUNT } from "@/lib/icons";
+import { InstallBox } from "./install-box";
 
-/* Serif display face */
-const serif = Instrument_Serif({ subsets: ["latin"], weight: "400" });
+/* Bold, tight sans for the whole hero */
+const sans = Inter_Tight({ subsets: ["latin"], weight: ["500", "700"] });
 
-/* Save hero-bg.webp to /public/images/ */
 const HERO_IMAGE = "/home-bg.jpeg";
 
 /* Must match the background of the section that follows the hero */
@@ -23,112 +19,25 @@ const PAGE_BG = "#141210";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-/* ------------------------------------------------------------------ */
-/* Product preview (cropped + light fade at the bottom)                */
-/* ------------------------------------------------------------------ */
-
-/*
- * Replaces PreviewWindow in your file. Everything else in that file stays.
- *
- * Imports it needs (from your lib, the file you just sent):
- *
- *   import { Icon, ICON_COUNT, iconsByName } from "@/lib/icons";
- *
- * It no longer uses ICONS or IconGlyph, which have a different type (IconEntry,
- * with `paths`). `Icon` takes the same IconDef that iconsByName returns.
- */
-
-/** The icons shown in the preview, by name (the files in ./icons/outline). */
-const PREVIEW_NAMES = [
-  "home",
-  "search",
-  "download",
-  "lock",
-  "message",
-  "bell",
-  "settings",
-  "user",
-] as const;
-
-/** Which tile shows the dark "selected" border. */
-const SELECTED = "home";
-
-function PreviewWindow() {
-  // Look each name up; a name that isn't in the registry is skipped, and logged so it isn't silent
-  const tiles = PREVIEW_NAMES.flatMap((name) => {
-    const icon = iconsByName[name];
-    if (!icon) {
-      console.warn(
-        `PreviewWindow: no icon named "${name}" in the registry. Run "bun run icons:build" and restart the dev server.`
-      );
-      return [];
-    }
-    return [icon];
-  });
-
+/* The toggle switch that stands in for the "o" in "Icons" */
+function ToggleO({ reduce }: { reduce: boolean }) {
   return (
-    <Card
-      aria-hidden="true"
-      className="relative h-[260px] gap-0 overflow-hidden rounded-b-none border-b-0 border-white/10 bg-[#1b1b1b] p-0 shadow-[0_30px_80px_-24px_rgba(0,0,0,0.6)] select-none sm:h-[320px] md:h-[380px]"
-    >
-      {/* Toolbar */}
-      <div className="flex items-center gap-3 border-b border-white/10 px-4 py-3">
-        <div className="flex size-8 items-center justify-center rounded-lg bg-white text-black">
-          <LayoutGrid className="size-4" />
-        </div>
-        <span className="hidden text-sm font-semibold text-white sm:block">
-          odiaicons
-        </span>
-        <div className="ml-2 flex h-8 max-w-xs flex-1 items-center gap-2 rounded-lg border border-white/10 px-3 text-xs text-neutral-400">
-          <Search className="size-3.5 shrink-0" />
-          <span className="truncate">Search icons</span>
-        </div>
-        <span className="ml-auto hidden text-xs text-neutral-400 sm:block">
-          {ICON_COUNT} icons
-        </span>
-      </div>
-
-      {/* Grid: 16 tiles divide evenly into 4 or 8 columns, so no ragged last row */}
-      <div className="p-4 sm:p-5">
-        <p className="mb-3 text-left text-sm font-semibold text-white">
-          Featured icons
-        </p>
-        <div className="grid grid-cols-4 gap-2 sm:grid-cols-8 sm:gap-3">
-          {tiles.map((icon) => (
-            <div
-              key={icon.name}
-              className={`flex aspect-[1/0.85] min-w-0 flex-col items-center justify-center gap-1.5 rounded-xl border px-1 ${icon.name === SELECTED
-                ? "border-white/30 bg-white/10"
-                : "border-white/10"
-                }`}
-            >
-              <Icon
-                def={icon}
-                strokeWidth={2}
-                className="size-6 text-white sm:size-7"
-              />
-              <span className="w-full truncate text-center text-[10px] text-neutral-400 capitalize">
-                {icon.name.replaceAll("-", " ")}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Light fade: dashboard dissolves into the next section */}
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 sm:h-32"
-        style={{
-          background: `linear-gradient(to top, ${PAGE_BG} 0%, ${PAGE_BG}b3 45%, transparent 100%)`,
-        }}
-      />
-    </Card>
+    <span className="relative mx-[0.04em] inline-block h-[0.58em] w-[1.15em] rounded-full bg-black shadow-[0_0.08em_0.25em_rgba(0,0,0,0.6)] ring-1 ring-white/40">
+      {/* Inner hole, so it still reads as an "o" */}
+      <span className="absolute inset-[0.13em] rounded-full bg-black ring-1 ring-white/25" />
+      {/* Knob: slides from right to left once on load */}
+      <motion.span
+        initial={reduce ? false : { x: "0.57em" }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.9, ease: EASE, delay: 0.8 }}
+        className="absolute top-[0.04em] left-[0.04em] block"
+      >
+        {/* Sized on an inner element so "em" matches the headline */}
+        <span className="block size-[0.5em] rounded-full bg-gradient-to-br from-white to-neutral-300 shadow-lg" />
+      </motion.span>
+    </span>
   );
 }
-
-/* ------------------------------------------------------------------ */
-/* Hero                                                               */
-/* ------------------------------------------------------------------ */
 
 export function Hero() {
   const { hero } = SITE;
@@ -166,7 +75,7 @@ export function Hero() {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className="relative isolate flex min-h-svh flex-col items-center overflow-hidden bg-[#141210] px-4 pt-28 sm:px-6 sm:pt-36"
+      className={`${sans.className} relative isolate flex min-h-svh flex-col items-center overflow-hidden bg-[#141210] px-4 pt-28 pb-12 sm:px-6 sm:pt-36`}
     >
       {/* Background image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -177,12 +86,12 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 -z-20 size-full object-cover object-bottom"
       />
 
-      {/* Soft light wash so the headline stays readable on the image */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-black/35 to-transparent" />
+      {/* Dark wash so the headline stays readable on the image */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-black/50 to-black/20" />
 
-      {/* Light bottom fade: blends the hero into the next (light) section */}
+      {/* Bottom fade into the next section */}
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-32 sm:h-48"
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-32 sm:h-48"
         style={{
           background: `linear-gradient(to top, ${PAGE_BG} 0%, ${PAGE_BG}99 40%, transparent 100%)`,
         }}
@@ -192,103 +101,82 @@ export function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center text-center"
+        className="relative mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center text-center"
       >
-        {/* Pill badge */}
-        <motion.div variants={rise}>
-          <Badge
-            asChild
-            variant="outline"
-            className="h-8 gap-2 rounded-full border-white/10 bg-white/10 py-1 pr-3.5 pl-1 text-[13px] font-medium text-neutral-200 shadow-sm backdrop-blur hover:bg-white/15"
-          >
-            <Link href={SITE.links.github} target="_blank" rel="noopener noreferrer">
-              <Badge className="rounded-full bg-white px-2.5 text-[11px] text-[#1a1713] hover:bg-white/90">
-                Open source
-              </Badge>
-              {hero.badges.github}
-            </Link>
-          </Badge>
-        </motion.div>
+        {/* Small uppercase line */}
+        <motion.p
+          variants={rise}
+          className="text-xs font-bold tracking-wide text-neutral-300 uppercase sm:text-sm"
+        >
+          Open source
+        </motion.p>
 
         {/* Headline */}
-        <motion.h1
-          id="hero-title"
-          initial={reduce ? false : { y: 18 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.8, ease: EASE, delay: 0.1 }}
-          className={`${serif.className} mt-5 text-[clamp(2.5rem,8vw,5.5rem)] leading-[0.95] font-normal tracking-[-0.045em] text-[#ffffff] sm:mt-7`}
-        >
-          <span className="block text-balance">Free Odisha Icons</span>
-          <span className="block text-balance">Open-source SVG Set</span>
+        <motion.h1 id="hero-title" variants={rise} className="mt-6 font-bold text-white">
+          <span className="sr-only">Free Odisha Icons, Open-source SVG Set</span>
+
+          <span aria-hidden="true" className="flex flex-col items-center">
+            <span className="flex items-center gap-3 text-[clamp(2rem,6.5vw,4rem)] leading-none tracking-[-0.04em] sm:gap-5">
+              Free Odisha
+              <span className="flex size-[0.85em] items-center justify-center rounded-full bg-black ring-1 ring-white/40">
+                <ArrowUpRight className="size-[0.45em]" strokeWidth={2.5} />
+              </span>
+            </span>
+
+            <span className="block text-[clamp(5rem,22vw,12.5rem)] leading-[0.95] tracking-[-0.05em] whitespace-nowrap">
+              Ic
+              <ToggleO reduce={reduce} />
+              ns
+            </span>
+
+            <span className="mt-2 flex items-center gap-2 text-[clamp(1.5rem,6vw,4rem)] sm:mt-3 leading-none tracking-[-0.04em] whitespace-nowrap sm:gap-4">
+              <MousePointer2 className="size-[0.7em] fill-white" />
+              Open-source SVG Set
+            </span>
+          </span>
         </motion.h1>
 
         {/* Description */}
         <motion.p
           variants={rise}
-          className="mt-5 max-w-xl text-base leading-relaxed text-balance text-neutral-300 sm:mt-6 sm:text-lg"
+          className="mt-7 max-w-md text-sm leading-relaxed font-medium text-balance text-neutral-300 sm:text-base"
         >
           {hero.lead}
         </motion.p>
 
-        {/* CTAs */}
-        <motion.div
-          variants={rise}
-          className="mt-7 flex w-full max-w-xs flex-col items-stretch gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:items-center sm:justify-center"
-        >
-          <Button
-            asChild
-            size="lg"
-            className="h-12 rounded-full bg-black px-6 text-base font-normal text-white ring-1 ring-white/15 hover:bg-neutral-900"
-          >
-            <Link href="#install">
-              {hero.ctas.install}
-              <ArrowRight aria-hidden className="size-4" />
-            </Link>
-          </Button>
+        {/* CTA */}
+        <motion.div variants={rise} className="mt-8 flex w-full max-w-xs flex-col sm:max-w-md">
+          <InstallBox className="w-full" />
+        </motion.div>
 
-          <Button
-            asChild
-            size="lg"
-            variant="secondary"
-            className="h-12 rounded-full bg-white/10 px-6 text-base font-normal text-white shadow-sm ring-1 ring-white/15 backdrop-blur hover:bg-white/15"
+        {/* Underlined link */}
+        <motion.div variants={rise} className="mt-5">
+          <Link
+            href={SITE.links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-bold text-white underline decoration-2 underline-offset-4 hover:text-neutral-300"
           >
-            <Link href="/icons">{hero.ctas.browse}</Link>
-          </Button>
+            {hero.badges.github}
+          </Link>
         </motion.div>
 
         {/* Trust row */}
         <motion.ul
           variants={rise}
-          className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 rounded-full bg-white/10 px-5 py-2 text-[13px] text-neutral-200 ring-1 ring-white/10 backdrop-blur-md sm:mt-8 sm:text-sm"
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] font-medium text-neutral-300"
         >
-          {trust.map((t, i) => (
-            <li key={t.text} className="flex items-center gap-4">
-              {i > 0 && (
-                <Separator
-                  orientation="vertical"
-                  className="hidden h-4 bg-white/20 sm:block"
-                />
-              )}
-              <span className="flex items-center gap-1.5">
-                <t.icon
-                  aria-hidden
-                  className={`size-4 ${t.fill ? "fill-amber-400 text-amber-400" : ""}`}
-                />
-                {t.text}
-              </span>
+          {trust.map((t) => (
+            <li key={t.text} className="flex items-center gap-1.5">
+              <t.icon
+                aria-hidden
+                className={`size-4 ${t.fill ? "fill-white text-white" : ""}`}
+              />
+              {t.text}
             </li>
           ))}
         </motion.ul>
 
-        {/* Preview: pinned to the bottom, cropped by the hero edge */}
-        <motion.div
-          initial={reduce ? false : { opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: EASE, delay: 0.5 }}
-          className="mt-auto w-full max-w-4xl pt-10 sm:pt-14"
-        >
-          <PreviewWindow />
-        </motion.div>
       </motion.div>
     </section>
   );
