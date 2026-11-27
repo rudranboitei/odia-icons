@@ -103,7 +103,7 @@ function Control({
   return (
     <div className="border-l-2 border-black/10 py-4 pl-5 transition-colors duration-300 focus-within:border-neutral-900 hover:border-black/30">
       <div className="flex items-center gap-3">
-        <Icon aria-hidden className="size-5 shrink-0 text-neutral-900" stroke={1.5} />
+        <Icon aria-hidden className="size-5 shrink-0 text-neutral-900" stroke={2} />
         <span className="text-base text-neutral-900 sm:text-lg">{title}</span>
         {value && <span className="ml-auto font-mono text-xs text-neutral-500">{value}</span>}
       </div>

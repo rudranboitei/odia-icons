@@ -73,7 +73,7 @@ export function IconPlayground({
         </div>
         {onClose && (
           <MonoButton variant="soft" size="iconSm" onClick={onClose} aria-label="Close">
-            <IconX className="size-4" stroke={1.5} />
+            <IconX className="size-4" stroke={2} />
           </MonoButton>
         )}
       </div>
