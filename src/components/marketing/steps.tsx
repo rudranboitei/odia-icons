@@ -78,7 +78,7 @@ function Tile({ Icon, label, selected }: { Icon: Motif; label: string; selected?
     <div
       className={cn(
         "flex flex-col items-center gap-1.5 rounded-lg border px-1 py-2.5 sm:py-3",
-        selected ? "border-[#f3e0c9]/50 bg-white/10" : "border-white/10 bg-white/5"
+        selected ? "border-[#ffffff]/50 bg-white/10" : "border-white/10 bg-white/5"
       )}
     >
       <Icon className={cn("size-8 sm:size-9", selected ? "text-[#ffffff]" : "text-neutral-400")} />
@@ -145,7 +145,7 @@ function SceneCopy() {
         <span
           className={cn(
             "ml-auto inline-flex items-center gap-1.5 rounded-md border px-2 py-1 transition-colors duration-300",
-            copied ? "border-[#f3e0c9] bg-[#f3e0c9] text-[#1a1713]" : "border-white/10 text-neutral-300"
+            copied ? "border-[#ffffff] bg-[#ffffff] text-[#1a1713]" : "border-white/10 text-neutral-300"
           )}
         >
           {copied ? <Check aria-hidden className="size-3" strokeWidth={3} /> : <Copy aria-hidden className="size-3" />}
@@ -239,7 +239,7 @@ export function Steps() {
     >
       <Reveal className="mx-auto w-full max-w-[1080px]">
         <p className="flex items-center gap-2 text-sm text-neutral-400">
-          <span aria-hidden className="size-2 rounded-full bg-[#f3e0c9]" />
+          <span aria-hidden className="size-2 rounded-full bg-[#ffffff]" />
           {steps.eyebrow}
         </p>
         <h2
@@ -287,7 +287,7 @@ export function Steps() {
                       initial={{ scaleX: auto && !reduce ? 0 : 1 }}
                       animate={{ scaleX: auto && !reduce ? (running ? 1 : 0) : 1 }}
                       transition={{ duration: running ? STEP_MS / 1000 : 0.2, ease: "linear" }}
-                      className="absolute inset-x-0 -bottom-px h-0.5 origin-left bg-[#f3e0c9]"
+                      className="absolute inset-x-0 -bottom-px h-0.5 origin-left bg-[#ffffff]"
                     />
                   )}
                 </button>

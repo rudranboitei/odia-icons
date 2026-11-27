@@ -58,11 +58,11 @@ import { btn, Corners, Kbd, MonoButton, Tag } from "./ui-bits"
 const EASE = [0.22, 1, 0.36, 1] as const
 
 // Reference palette: cool neutral greys + one orange accent.
-const PAGE_BG = "bg-[#ececec]"
-const PANEL_BG = "bg-[#f5f5f5]"
-const SIDEBAR_BG = "bg-[#efefef]"
+const PAGE_BG = "bg-[#141210]"
+const PANEL_BG = "bg-[#1a1816]"
+const SIDEBAR_BG = "bg-[#171513]"
 const HATCH =
-  "repeating-linear-gradient(135deg, rgba(0,0,0,0.035) 0 1px, transparent 1px 7px)"
+  "repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 7px)"
 
 type CategoryFilter = "all" | IconCategory
 
@@ -162,7 +162,6 @@ function SidebarContent({
     <>
       <div className="mb-3 flex items-center justify-between px-2">
         <Link href="/" onClick={onClose} className="inline-flex w-fit items-center">
-          {/* The cream wordmark is made for dark pages; brightness-0 turns it solid black */}
           <Image
             src="/brand/wordmark-cream.svg"
             alt={SITE.name}
@@ -170,7 +169,7 @@ function SidebarContent({
             height={24}
             priority
             unoptimized
-            className="brightness-0"
+            className="h-6 w-auto"
           />
         </Link>
         {onClose && (
@@ -192,8 +191,8 @@ function SidebarContent({
                   href={item.href}
                   onClick={onClose}
                   className={`flex items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] transition-colors lg:py-1.5 ${item.active
-                    ? "bg-black/[0.07] text-neutral-900"
-                    : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
+                    ? "bg-white/10 text-white"
+                    : "text-neutral-400 hover:bg-white/[0.05] hover:text-white"
                     }`}
                 >
                   <span className="relative flex">
@@ -201,7 +200,7 @@ function SidebarContent({
                     {item.active && (
                       <span
                         aria-hidden
-                        className="absolute -top-1 -right-1 size-1.5 rounded-full bg-orange-600"
+                        className="absolute -top-1 -right-1 size-1.5 rounded-full bg-white"
                       />
                     )}
                   </span>
@@ -231,15 +230,15 @@ function SidebarContent({
                     onClose?.()
                   }}
                   aria-pressed={isActive}
-                  className={`flex w-full cursor-pointer items-center gap-2 rounded-lg px-2.5 py-2 text-left text-[13px] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-black/40 lg:py-1.5 ${isActive
-                    ? "bg-black/[0.07] text-neutral-900"
-                    : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
+                  className={`flex w-full cursor-pointer items-center gap-2 rounded-lg px-2.5 py-2 text-left text-[13px] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-white/30 lg:py-1.5 ${isActive
+                    ? "bg-white/10 text-white"
+                    : "text-neutral-400 hover:bg-white/[0.05] hover:text-white"
                     }`}
                 >
                   <FolderIcon className="size-4 shrink-0" stroke={1.5} />
                   <span className="truncate">{item.label}</span>
                   <span
-                    className={`ml-auto text-[11px] ${isActive ? "text-orange-600" : "text-neutral-400"}`}
+                    className={`ml-auto text-[11px] ${isActive ? "text-white" : "text-neutral-400"}`}
                   >
                     {item.count}
                   </span>
@@ -259,19 +258,19 @@ function SidebarContent({
           {sidebarStats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-md border border-black/10 bg-white/70 px-2.5 py-2"
+              className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-2"
             >
               <p className="text-[10px] tracking-wide text-neutral-400 uppercase">
                 {stat.label}
               </p>
-              <p className="mt-0.5 text-[14px] leading-none font-bold text-neutral-900">
+              <p className="mt-0.5 text-[14px] leading-none font-bold text-white">
                 {stat.value}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="relative mt-2.5 rounded-md border border-black/10 bg-white p-3">
+        <div className="relative mt-2.5 rounded-md border border-white/10 bg-[#1f1d1a] p-3">
           <Corners className="m-1.5 size-2" />
           <div className="flex items-center justify-between">
             <p className="flex items-center gap-1.5 text-[11px] tracking-wide text-neutral-500 uppercase">
@@ -280,7 +279,7 @@ function SidebarContent({
             </p>
             <Tag tone="orange">v0.1.0</Tag>
           </div>
-          <div className="mt-2 rounded-xl border border-black/10 bg-[#f5f5f5] px-2.5 py-2 text-[11px] leading-relaxed break-all text-neutral-800">
+          <div className="mt-2 rounded-xl border border-white/10 bg-[#1a1816] px-2.5 py-2 text-[11px] leading-relaxed break-all text-neutral-200">
             <ShikiCode code={SITE.install.command} lang="bash" />
           </div>
           <MonoButton variant="solid" size="sm" onClick={onCopyInstall} className="mt-2 w-full">
@@ -321,7 +320,7 @@ function SidebarContent({
 
         <div className="mt-3 h-px bg-black/10" />
         <p className="mt-2.5 flex items-center gap-2 px-2 text-[11px] leading-[1.6] text-neutral-400">
-          <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-orange-600" />
+          <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-white" />
           MIT licensed · Made in Odisha, India.
         </p>
       </div>
@@ -349,9 +348,9 @@ function IconCard({ icon, index, selected, onOpen }: {
         aria-label={`Open ${icon.name} icon`}
         aria-pressed={selected}
         whileTap={{ scale: 0.98 }}
-        className={`relative flex h-24 w-full cursor-pointer flex-col items-center justify-center gap-2.5 rounded-xl border px-2 transition-[background-color,border-color] duration-150 focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f5f5] focus-visible:outline-none sm:h-28 sm:gap-3 sm:px-3 ${selected
-          ? "border-orange-600/50 bg-white"
-          : "border-black/10 bg-white/70 hover:border-black/25 hover:bg-white"
+        className={`relative flex h-24 w-full cursor-pointer flex-col items-center justify-center gap-2.5 rounded-xl border px-2 transition-[background-color,border-color] duration-150 focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a1816] focus-visible:outline-none sm:h-28 sm:gap-3 sm:px-3 ${selected
+          ? "border-white/30 bg-[#1f1d1a]"
+          : "border-white/10 bg-white/[0.04] hover:border-white/20 hover:bg-white/[0.07]"
           }`}
       >
         <span
@@ -364,12 +363,12 @@ function IconCard({ icon, index, selected, onOpen }: {
           size={28}
           stroke={2}
           absoluteStrokeWidth
-          className="text-neutral-800"
+          className="text-neutral-100"
         />
         <span
           className={`max-w-full truncate text-[11px] transition-colors ${selected
-            ? "text-orange-700"
-            : "text-neutral-500 group-hover:text-neutral-900"
+            ? "text-neutral-200"
+            : "text-neutral-500 group-hover:text-white"
             }`}
         >
           {icon.name}
@@ -477,26 +476,26 @@ export function IconBrowser() {
 
   return (
     <div
-      className={`min-h-dvh overflow-x-clip  text-neutral-900 ${PAGE_BG}`}
+      className={`min-h-dvh overflow-x-clip  text-white ${PAGE_BG}`}
       style={{ backgroundImage: HATCH }}
     >
       {/* Framed app: grey hatch on both sides + hairlines */}
       <div
-        className={`mx-auto flex min-h-dvh w-full border-x border-black/10 ${PANEL_BG}`}
+        className={`mx-auto flex min-h-dvh w-full border-x border-white/10 ${PANEL_BG}`}
       >
         {/* Sidebar (desktop) */}
         <motion.aside
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: EASE }}
-          className={`sticky top-0 hidden h-dvh w-[240px] shrink-0 flex-col overflow-y-auto border-r border-black/10 px-2.5 py-3 [scrollbar-width:none] lg:flex [&::-webkit-scrollbar]:hidden ${SIDEBAR_BG}`}
+          className={`sticky top-0 hidden h-dvh w-[240px] shrink-0 flex-col overflow-y-auto border-r border-white/10 px-2.5 py-3 [scrollbar-width:none] lg:flex [&::-webkit-scrollbar]:hidden ${SIDEBAR_BG}`}
         >
           <SidebarContent {...sidebarProps} />
         </motion.aside>
 
         {/* Main column */}
         <div className="flex min-w-0 flex-1 flex-col">
-          <header className="sticky top-0 z-40 border-b border-black/10 bg-[#f5f5f5]/90 backdrop-blur-xl">
+          <header className="sticky top-0 z-40 border-b border-white/10 bg-[#1a1816]/90 backdrop-blur-xl">
             <div className="flex h-14 items-center gap-2 px-3 sm:gap-3 sm:px-4 lg:px-5">
               {/* Mobile: menu button opens the drawer */}
               <MonoButton
@@ -511,7 +510,7 @@ export function IconBrowser() {
 
               <div className="hidden min-w-0 items-center gap-2.5 lg:flex">
                 <IconLayoutGrid className="size-4 text-neutral-500" stroke={1.5} />
-                <span className="text-[15px] font-medium text-neutral-900">Icons</span>
+                <span className="text-[15px] font-medium text-white">Icons</span>
                 <Tag tone="orange">{filtered.length} shown</Tag>
               </div>
 
@@ -522,11 +521,11 @@ export function IconBrowser() {
                     type="button"
                     onClick={openSearch}
                     aria-label="Search icons"
-                    className={`flex h-10 w-full cursor-pointer items-center gap-2.5 rounded-full border border-black/10 bg-white pl-4 text-left text-sm outline-none transition-[border-color,box-shadow,background-color] hover:border-black/20 hover:bg-black/[0.01] focus-visible:border-black/20 focus-visible:ring-[3px] focus-visible:ring-black/10 ${query ? "pr-11" : "pr-4 sm:pr-20"}`}
+                    className={`flex h-10 w-full cursor-pointer items-center gap-2.5 rounded-full border border-white/10 bg-white/5 pl-4 text-left text-sm outline-none transition-[border-color,box-shadow,background-color] hover:border-white/20 hover:bg-white/[0.07] focus-visible:border-white/20 focus-visible:ring-[3px] focus-visible:ring-white/20 ${query ? "pr-11" : "pr-4 sm:pr-20"}`}
                   >
                     <IconSearch className="size-4 shrink-0 text-neutral-400" />
                     <span
-                      className={`truncate ${query ? "text-neutral-900" : "text-neutral-500"}`}
+                      className={`truncate ${query ? "text-white" : "text-neutral-500"}`}
                     >
                       {query || `Search ${ICON_COUNT} icons...`}
                     </span>
@@ -558,7 +557,7 @@ export function IconBrowser() {
                   <IconTerminal2 className="size-3.5" stroke={1.5} />
                   <ShikiCode code={SITE.install.command} lang="bash" />
                   {copiedInstall ? (
-                    <IconCheck className="size-3.5 text-orange-600" />
+                    <IconCheck className="size-3.5 text-white" />
                   ) : (
                     <IconCopy className="size-3.5 opacity-50" />
                   )}
@@ -629,9 +628,9 @@ export function IconBrowser() {
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-black/15 px-5 py-16 text-center sm:px-6 sm:py-20"
+                className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-white/15 px-5 py-16 text-center sm:px-6 sm:py-20"
               >
-                <p className="text-[16px] leading-[1.3] font-bold text-neutral-900 sm:text-[18px]">
+                <p className="text-[16px] leading-[1.3] font-bold text-white sm:text-[18px]">
                   No icons match that search.
                 </p>
                 <p className="max-w-sm text-[13px] leading-[1.5] text-neutral-500">
@@ -641,7 +640,7 @@ export function IconBrowser() {
                   href={SITE.links.contribute}
                   target="_blank"
                   rel="noopener"
-                  className="mt-1 text-[13px] font-bold text-orange-600 underline decoration-orange-600/70 underline-offset-[3px] hover:opacity-70"
+                  className="mt-1 text-[13px] font-bold text-white underline decoration-white/50 underline-offset-[3px] hover:opacity-70"
                 >
                   Request an icon →
                 </a>
@@ -649,7 +648,7 @@ export function IconBrowser() {
             )}
           </main>
 
-          <footer className="flex flex-col gap-1 border-t border-black/10 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] text-[11px] text-neutral-400 sm:flex-row sm:items-center sm:justify-between sm:px-4 lg:px-5">
+          <footer className="flex flex-col gap-1 border-t border-white/10 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] text-[11px] text-neutral-400 sm:flex-row sm:items-center sm:justify-between sm:px-4 lg:px-5">
             <span>odiaicons · open source under the MIT licence</span>
             <span>24 × 24 grid · 2px stroke</span>
           </footer>
@@ -660,11 +659,11 @@ export function IconBrowser() {
           initial={{ opacity: 0, x: 16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: EASE, delay: 0.15 }}
-          className={`sticky top-0 hidden h-dvh w-[340px] shrink-0 flex-col border-l border-black/10 xl:flex ${PANEL_BG}`}
+          className={`sticky top-0 hidden h-dvh w-[340px] shrink-0 flex-col border-l border-white/10 xl:flex ${PANEL_BG}`}
         >
-          <div className="flex h-14 shrink-0 items-center gap-2.5 border-b border-black/10 px-4">
+          <div className="flex h-14 shrink-0 items-center gap-2.5 border-b border-white/10 px-4">
             <IconCode className="size-4 text-neutral-500" stroke={1.5} />
-            <span className="text-[15px] font-medium text-neutral-900">Playground</span>
+            <span className="text-[15px] font-medium text-white">Playground</span>
             {panelIcon && <Tag tone="orange">{panelIcon.category}</Tag>}
           </div>
 
@@ -687,19 +686,19 @@ export function IconBrowser() {
               )}
             </AnimatePresence>
 
-            <div className="border-t border-black/10 px-4 pt-4 pb-2">
+            <div className="border-t border-white/10 px-4 pt-4 pb-2">
               <p className="text-[12px] text-neutral-400">Contribute</p>
 
               <ul className="mt-2 flex flex-col">
                 {contributeRows.map((row) => (
-                  <li key={row.title} className="border-t border-black/10 first:border-t-0">
+                  <li key={row.title} className="border-t border-white/10 first:border-t-0">
                     <a
                       href={row.href}
                       target="_blank"
                       rel="noopener"
                       className="group flex items-center gap-3 py-2.5"
                     >
-                      <span className="relative size-9 shrink-0 overflow-hidden rounded-md bg-white">
+                      <span className="relative size-9 shrink-0 overflow-hidden rounded-md bg-[#1f1d1a]">
                         <Image
                           src={row.image}
                           alt=""
@@ -712,7 +711,7 @@ export function IconBrowser() {
                         <span className="block text-[11px] text-neutral-400 uppercase">
                           {row.eyebrow}
                         </span>
-                        <span className="block truncate text-[13px] text-neutral-900 group-hover:text-orange-600">
+                        <span className="block truncate text-[13px] text-white group-hover:text-white">
                           {row.title}
                         </span>
                       </span>
@@ -741,7 +740,7 @@ export function IconBrowser() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"
+              className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"
             />
             <motion.aside
               role="dialog"
@@ -751,7 +750,7 @@ export function IconBrowser() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.3, ease: EASE }}
-              className={`absolute inset-y-0 left-0 flex w-[min(86vw,320px)] flex-col overflow-y-auto overscroll-contain border-r border-black/10 px-3 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]  text-neutral-900 shadow-2xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${SIDEBAR_BG}`}
+              className={`absolute inset-y-0 left-0 flex w-[min(86vw,320px)] flex-col overflow-y-auto overscroll-contain border-r border-white/10 px-3 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]  text-white shadow-2xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${SIDEBAR_BG}`}
             >
               <SidebarContent {...sidebarProps} onClose={() => setMenuOpen(false)} />
             </motion.aside>
@@ -768,9 +767,9 @@ export function IconBrowser() {
         }}
         title="Search icons"
         description="Search icons, jump to a category, or run an action."
-        className="w-[calc(100%-1.5rem)] max-w-xl rounded-2xl border-black/10 bg-[#f5f5f5] text-neutral-900 max-sm:top-[6%] max-sm:translate-y-0 [--background:#f5f5f5] [--foreground:#171717] [--popover:#f5f5f5] [--popover-foreground:#171717] [--muted:#e5e5e5] [--muted-foreground:#737373] [--input:#e5e5e5] [--border:rgba(0,0,0,0.1)]"
+        className="w-[calc(100%-1.5rem)] max-w-xl rounded-2xl border-white/10 bg-[#1a1816] text-white max-sm:top-[6%] max-sm:translate-y-0 [--background:#1a1816] [--foreground:#ffffff] [--popover:#1a1816] [--popover-foreground:#ffffff] [--muted:#2a2724] [--muted-foreground:#a3a3a3] [--input:#2a2724] [--border:rgba(255,255,255,0.1)]"
       >
-        <Command shouldFilter={false} className="bg-transparent text-neutral-900">
+        <Command shouldFilter={false} className="bg-transparent text-white [&_[cmdk-group-heading]]:text-neutral-500 [&_[cmdk-item]]:text-neutral-200 [&_[cmdk-item]_svg]:text-neutral-400">
           {/* text-base on phones stops iOS from zooming the page on focus */}
           <CommandInput
             value={dialogQuery}
@@ -900,7 +899,7 @@ export function IconBrowser() {
           if (!open) setActive(null)
         }}
       >
-        <DialogContent className="max-h-[88dvh] w-[calc(100%-1.5rem)] gap-0 overflow-hidden rounded-2xl border-black/10 bg-[#f5f5f5] p-0 text-neutral-900 sm:max-w-md">
+        <DialogContent className="max-h-[88dvh] w-[calc(100%-1.5rem)] gap-0 overflow-hidden rounded-2xl border-white/10 bg-[#1a1816] p-0 text-white sm:max-w-md">
           <DialogTitle className="sr-only">{active?.name ?? "Icon"}</DialogTitle>
           <DialogDescription className="sr-only">
             Preview the icon, then copy or download it.

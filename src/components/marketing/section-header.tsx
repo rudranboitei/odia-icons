@@ -26,7 +26,7 @@ function GithubLink({ className }: { className?: string }) {
       rel="noopener noreferrer"
       aria-label="GitHub repository"
       className={cn(
-        "inline-flex size-9 items-center justify-center rounded-full text-neutral-900 outline-none hover:bg-black/5 focus-visible:ring-2 focus-visible:ring-black/40",
+        "inline-flex size-9 items-center justify-center rounded-full text-white outline-none hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/30",
         className
       )}
     >
@@ -59,7 +59,7 @@ export function Header() {
   return (
     <header
       id="top"
-      className="sticky top-0 z-40 border-b border-black/10 bg-[#f6f4f0]/90 backdrop-blur-md"
+      className="sticky top-0 z-40 border-b border-white/10 bg-[#141210]/90 backdrop-blur-md"
     >
       {/* Mobile: logo left, menu right. Desktop: one centred group. */}
       <div className="mx-auto flex h-14 w-full max-w-[1080px] items-center justify-between px-4 sm:px-6 md:justify-center md:gap-10">
@@ -68,14 +68,13 @@ export function Header() {
           aria-label={`${name} home`}
           className="inline-flex items-center hover:opacity-80"
         >
-          {/* The cream wordmark is made for dark pages; brightness-0 turns it solid black */}
           <Image
             src="/brand/wordmark-cream.svg"
             alt={name}
             width={112}
             height={28}
             priority
-            className="h-6 w-auto brightness-0"
+            className="h-6 w-auto"
           />
         </Link>
 
@@ -85,7 +84,7 @@ export function Header() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-neutral-600 hover:text-neutral-900"
+              className="text-sm text-neutral-400 hover:text-white"
             >
               {l.label}
             </a>
@@ -101,7 +100,7 @@ export function Header() {
           aria-label="Open menu"
           aria-expanded={open}
           aria-controls="mobile-menu"
-          className="inline-flex size-10 cursor-pointer items-center justify-center rounded-lg text-neutral-900 outline-none hover:bg-black/5 focus-visible:ring-2 focus-visible:ring-black/40 md:hidden"
+          className="inline-flex size-10 cursor-pointer items-center justify-center rounded-lg text-white outline-none hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/30 md:hidden"
         >
           <IconMenu aria-hidden className="size-6" stroke={1.5} />
         </button>
@@ -114,7 +113,7 @@ export function Header() {
           role="dialog"
           aria-modal="true"
           aria-label="Menu"
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#f6f4f0] md:hidden"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#141210] md:hidden"
         >
           <nav aria-label="Mobile" className="flex flex-col items-center gap-1">
             {NAV.map((l) => (
@@ -122,7 +121,7 @@ export function Header() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-1.5 text-[clamp(2rem,9vw,2.75rem)] leading-tight font-medium tracking-tight text-neutral-900 outline-none hover:text-neutral-500 focus-visible:text-neutral-500"
+                className="py-1.5 text-[clamp(2rem,9vw,2.75rem)] leading-tight font-medium tracking-tight text-white outline-none hover:text-neutral-400 focus-visible:text-neutral-400"
               >
                 {l.label}
               </a>
@@ -136,7 +135,7 @@ export function Header() {
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Close menu"
-            className="absolute bottom-8 inline-flex size-11 cursor-pointer items-center justify-center rounded-full border border-black/10 bg-white text-neutral-900 shadow-sm outline-none hover:bg-neutral-50 focus-visible:ring-2 focus-visible:ring-black/40"
+            className="absolute bottom-8 inline-flex size-11 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/10 text-white shadow-sm outline-none hover:bg-white/15 focus-visible:ring-2 focus-visible:ring-white/30"
           >
             <IconX aria-hidden className="size-5" stroke={1.5} />
           </button>

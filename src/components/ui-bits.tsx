@@ -1,13 +1,13 @@
 import * as React from "react"
 
 /**
- * Shared bits for the /icons page. Visual style matches the landing page:
- * rounded-full controls, neutral palette, warm surfaces.
+ * Shared bits for the /icons page. Dark theme: neutral dark surfaces,
+ * white text, orange accent.
  */
 
 /** Orange corner brackets, like the avatar tiles in the reference. */
 export function Corners({ className = "size-2.5" }: { className?: string }) {
-  const base = `pointer-events-none absolute ${className} border-orange-600`
+  const base = `pointer-events-none absolute ${className} border-white/50`
   return (
     <>
       <span aria-hidden className={`${base} top-0 left-0 border-t border-l`} />
@@ -31,8 +31,8 @@ export function Tag({
     <span
       className={`inline-flex items-center rounded-full px-2.5 py-1 text-[11px] leading-none font-medium whitespace-nowrap ${
         tone === "orange"
-          ? "bg-orange-100 text-orange-700"
-          : "bg-black/[0.05] text-neutral-600"
+          ? "bg-white/15 text-neutral-200"
+          : "bg-white/10 text-neutral-300"
       } ${className}`}
     >
       {children}
@@ -42,7 +42,7 @@ export function Tag({
 
 export function Kbd({ children }: { children: React.ReactNode }) {
   return (
-    <kbd className="rounded-md border border-black/10 bg-white px-1.5 py-0.5 text-[10px] font-medium text-neutral-500">
+    <kbd className="rounded-md border border-white/10 bg-white/5 px-1.5 py-0.5 text-[10px] font-medium text-neutral-400">
       {children}
     </kbd>
   )
@@ -52,14 +52,14 @@ type Variant = "solid" | "outline" | "soft" | "accent"
 type Size = "sm" | "md" | "lg" | "icon" | "iconSm"
 
 const BASE =
-  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-medium whitespace-nowrap outline-none transition-[background-color,border-color,color,box-shadow,transform] select-none active:scale-[0.98] focus-visible:ring-[3px] focus-visible:ring-black/10 disabled:pointer-events-none disabled:opacity-50"
+  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-medium whitespace-nowrap outline-none transition-[background-color,border-color,color,box-shadow,transform] select-none active:scale-[0.98] focus-visible:ring-[3px] focus-visible:ring-white/20 disabled:pointer-events-none disabled:opacity-50"
 
 const VARIANTS: Record<Variant, string> = {
-  solid: "bg-neutral-950 text-white hover:bg-neutral-800",
+  solid: "bg-white text-black hover:bg-neutral-200",
   outline:
-    "border border-black/10 bg-white text-neutral-700 hover:bg-black/[0.03] hover:text-neutral-950",
-  soft: "bg-black/[0.05] text-neutral-700 hover:bg-black/[0.08] hover:text-neutral-950",
-  accent: "bg-orange-100 text-orange-700 hover:bg-orange-200",
+    "border border-white/10 bg-transparent text-neutral-200 hover:bg-white/5 hover:text-white",
+  soft: "bg-white/10 text-neutral-300 hover:bg-white/15 hover:text-white",
+  accent: "bg-white/15 text-neutral-200 hover:bg-white/20",
 }
 
 const SIZES: Record<Size, string> = {

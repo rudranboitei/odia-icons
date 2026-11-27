@@ -97,7 +97,7 @@ export function Faq() {
       >
         {/* Eyebrow + two-tone heading */}
         <p className="flex items-center gap-2 text-sm text-neutral-400">
-          <span aria-hidden className="size-2 rounded-full bg-[#f3e0c9]" />
+          <span aria-hidden className="size-2 rounded-full bg-[#ffffff]" />
           {faq.eyebrow ?? "FAQ"}
         </p>
         <h2

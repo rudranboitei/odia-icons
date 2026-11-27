@@ -78,7 +78,7 @@ function Slider({
         thumb
       )}
       style={{
-        backgroundImage: `linear-gradient(to right, #f3e0c9 ${pct}%, rgba(255,255,255,0.15) ${pct}%)`,
+        backgroundImage: `linear-gradient(to right, #ffffff ${pct}%, rgba(255,255,255,0.15) ${pct}%)`,
         backgroundSize: "100% 2px",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -102,7 +102,7 @@ function Control({
   children: ReactNode;
 }) {
   return (
-    <div className="border-l-2 border-white/10 py-4 pl-5 transition-colors duration-300 focus-within:border-[#f3e0c9]/50 hover:border-white/20">
+    <div className="border-l-2 border-white/10 py-4 pl-5 transition-colors duration-300 focus-within:border-[#ffffff]/50 hover:border-white/20">
       <div className="flex items-center gap-3">
         <Icon aria-hidden className="size-5 shrink-0 text-[#ffffff]" stroke={2} />
         <span className="text-base text-[#ffffff] sm:text-lg">{title}</span>
@@ -148,7 +148,7 @@ export function PlaygroundSection() {
     >
       <Reveal className="mx-auto w-full max-w-[1080px]">
         <p className="flex items-center gap-2 text-sm text-neutral-400">
-          <span aria-hidden className="size-2 rounded-full bg-[#f3e0c9]" />
+          <span aria-hidden className="size-2 rounded-full bg-[#ffffff]" />
           {COPY.eyebrow}
         </p>
         <h2 className="mt-3 max-w-[640px] text-[clamp(1.75rem,4.2vw,2.5rem)] leading-[1.15] font-medium tracking-tight text-balance">
@@ -195,7 +195,7 @@ export function PlaygroundSection() {
                         aria-pressed={on}
                         className={cn(
                           "flex cursor-pointer flex-col items-center gap-1 rounded-lg border py-2 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-white/30",
-                          on ? "border-[#f3e0c9]/50 bg-white/10" : "border-white/10 bg-white/5 hover:bg-white/10"
+                          on ? "border-[#ffffff]/50 bg-white/10" : "border-white/10 bg-white/5 hover:bg-white/10"
                         )}
                       >
                         <span
@@ -239,7 +239,7 @@ export function PlaygroundSection() {
                     className={cn(
                       "size-6 cursor-pointer rounded-full border border-white/10 outline-none transition-transform focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141210]",
                       c.value === color &&
-                      "ring-2 ring-[#f3e0c9] ring-offset-2 ring-offset-[#141210]"
+                      "ring-2 ring-[#ffffff] ring-offset-2 ring-offset-[#141210]"
                     )}
                     style={{ backgroundColor: c.value }}
                   />
@@ -267,7 +267,7 @@ export function PlaygroundSection() {
                       >
                         {f}
                         {on && (
-                          <span aria-hidden className="absolute inset-x-0 -bottom-px h-0.5 bg-[#f3e0c9]" />
+                          <span aria-hidden className="absolute inset-x-0 -bottom-px h-0.5 bg-[#ffffff]" />
                         )}
                       </button>
                     );

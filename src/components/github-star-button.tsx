@@ -66,7 +66,7 @@ export function GitHubStarButton({ className = "" }: { className?: string }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className={`inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full bg-black/[0.05] px-3 text-[13px] font-medium text-neutral-700 transition-colors hover:bg-black/[0.08] hover:text-neutral-950 focus-visible:ring-[3px] focus-visible:ring-black/10 focus-visible:outline-none ${className}`}
+      className={`inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full bg-white/10 px-3 text-[13px] font-medium text-neutral-200 transition-colors hover:bg-white/15 hover:text-white focus-visible:ring-[3px] focus-visible:ring-white/20 focus-visible:outline-none ${className}`}
     >
       <GitHubMark className="size-4" />
       {count ? <span aria-hidden="true" className="tabular-nums">{count}</span> : null}

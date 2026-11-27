@@ -56,10 +56,10 @@ export default function App() {
   }
 
   return (
-    <div className="flex w-full min-w-0 flex-col text-neutral-900">
+    <div className="flex w-full min-w-0 flex-col text-white">
       {/* Header row: tile + title, like an inbox item */}
       <div className="flex items-start gap-3 px-4 pt-4 pb-3">
-        <span className="relative flex size-9 shrink-0 items-center justify-center rounded-md bg-black/[0.05] text-neutral-800">
+        <span className="relative flex size-9 shrink-0 items-center justify-center rounded-md bg-white/10 text-neutral-200">
           <Corners />
           <Icon def={def} size={16} stroke={STROKE} absoluteStrokeWidth />
         </span>
@@ -68,7 +68,7 @@ export default function App() {
             Selected icon
           </p>
           <p className="truncate text-[13px] leading-snug">
-            <span className="font-bold text-orange-600 underline decoration-orange-600/70 underline-offset-[3px]">
+            <span className="font-bold text-neutral-200 underline decoration-white/50 underline-offset-[3px]">
               {def.name}
             </span>
           </p>
@@ -82,13 +82,13 @@ export default function App() {
 
       {/* Preview */}
       <div className="px-4">
-        <div className="relative flex h-40 items-center justify-center rounded-xl border border-black/10 bg-white text-neutral-900">
+        <div className="relative flex h-40 items-center justify-center rounded-xl border border-white/10 bg-[#1f1d1a] text-white">
           <div
             aria-hidden
             className="absolute inset-0 rounded-xl opacity-60"
             style={{
               backgroundImage:
-                "linear-gradient(to right, rgba(0,0,0,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.045) 1px, transparent 1px)",
+                "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
               backgroundSize: "16px 16px",
               backgroundPosition: "center",
             }}
@@ -107,12 +107,12 @@ export default function App() {
       {/* Meta tags */}
       <div className="flex flex-wrap items-center gap-1.5 px-4 pt-3">
         <Tag>{def.category}</Tag>
-        <span className="text-[11px] text-neutral-400">/</span>
+        <span className="text-[11px] text-neutral-500">/</span>
         <Tag>24 × 24</Tag>
         <Tag>{STROKE}px</Tag>
       </div>
 
-      <div className="mx-4 mt-4 h-px bg-black/10" />
+      <div className="mx-4 mt-4 h-px bg-white/10" />
 
       {/* Tabs */}
       <div className="flex gap-1.5 px-4 pt-4">
@@ -132,7 +132,7 @@ export default function App() {
 
       {/* Code */}
       <div className="px-4 pt-3">
-        <pre className="max-h-64 min-h-[140px] overflow-auto rounded-lg border border-black/10 bg-white p-4 text-[13px] leading-6 break-all whitespace-pre-wrap text-neutral-800">
+        <pre className="max-h-64 min-h-[140px] overflow-auto rounded-lg border border-white/10 bg-[#141210] p-4 text-[13px] leading-6 break-all whitespace-pre-wrap text-neutral-200">
           <ShikiCode
             code={code}
             lang={tab === "JSX" ? "jsx" : "xml"}
