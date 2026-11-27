@@ -118,7 +118,7 @@ export function PlaygroundSection() {
 
   const [selected, setSelected] = useState(names[0] ?? NAMES[0]);
   const [size, setSize] = useState(48);
-  const [stroke, setStroke] = useState(2);
+  const stroke = 2;
   const [color, setColor] = useState(COLORS[0].value);
   const [format, setFormat] = useState<Format>("React");
   const [copied, setCopied] = useState(false);
@@ -220,15 +220,6 @@ export function PlaygroundSection() {
               description="Crisp from 16 to 72 pixels."
             >
               <Slider label="Size" value={size} min={16} max={72} step={2} onChange={setSize} />
-            </Control>
-
-            <Control
-              Icon={IconBrush}
-              title="Stroke"
-              value={String(stroke)}
-              description="Match the weight of your type."
-            >
-              <Slider label="Stroke" value={stroke} min={1} max={2.5} step={0.25} onChange={setStroke} />
             </Control>
 
             <Control
