@@ -11,7 +11,7 @@ import { Corners, MonoButton, Tag } from "./ui-bits"
 const STROKE = 2 // the whole set is drawn at this weight
 const COPY_SIZE = 24 // size baked into the copied SVG/JSX
 const PREVIEW_SIZE = 96
-const TABS = ["SVG", "JSX", "CLI"] as const
+const TABS = ["SVG", "JSX"] as const
 type Tab = (typeof TABS)[number]
 
 export function IconPlayground({
@@ -33,9 +33,8 @@ export default function App() {
   return <${name} size={${COPY_SIZE}} strokeWidth={${STROKE}} />
 }`
   }, [def.name])
-  const cli = `npx shadcn@latest add ${SITE.registryUrl}/${def.name}.json`
 
-  const code = tab === "SVG" ? svg : tab === "JSX" ? jsx : cli
+  const code = tab === "SVG" ? svg : jsx
 
   async function onCopy() {
     const ok = await copyText(code)
@@ -136,7 +135,7 @@ export default function App() {
         <pre className="max-h-64 min-h-[140px] overflow-auto rounded-lg border border-black/10 bg-white p-4 text-[13px] leading-6 break-all whitespace-pre-wrap text-neutral-800">
           <ShikiCode
             code={code}
-            lang={tab === "CLI" ? "bash" : tab === "JSX" ? "jsx" : "xml"}
+            lang={tab === "JSX" ? "jsx" : "xml"}
           />
         </pre>
       </div>
@@ -149,7 +148,7 @@ export default function App() {
           ) : (
             <IconCopy className="size-3.5" stroke={2} />
           )}
-          {copied ? "Copied" : `Copy ${tab === "CLI" ? "command" : tab}`}
+          {copied ? "Copied" : `Copy ${tab}`}
         </MonoButton>
         <MonoButton variant="outline" onClick={onDownload}>
           <IconDownload className="size-3.5" stroke={2} />
