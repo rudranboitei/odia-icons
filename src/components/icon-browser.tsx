@@ -50,6 +50,7 @@ import {
   type IconCategory,
   type IconDef,
 } from "@/lib/icons"
+import { GitHubStarButton } from "./github-star-button"
 import { IconPlayground } from "./icon-playground"
 import { btn, Corners, Kbd, MonoButton, Tag } from "./ui-bits"
 
@@ -562,15 +563,7 @@ export function IconBrowser() {
                   )}
                 </MonoButton>
 
-                <a
-                  href={SITE.links.github}
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="GitHub"
-                  className={btn("soft", "icon", "max-sm:hidden")}
-                >
-                  <IconBrandGithub className="size-4" stroke={1.5} />
-                </a>
+                <GitHubStarButton />
               </div>
             </div>
 
