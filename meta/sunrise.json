@@ -1,0 +1,27 @@
+{
+  "name": "sunrise",
+  "odia": "ସୂର୍ଯ୍ୟୋଦୟ",
+  "category": "odisha",
+  "tags": [
+    "sunrise",
+    "suryodaya",
+    "dawn",
+    "morning",
+    "konark",
+    "chilika",
+    "ସୂର୍ଯ୍ୟୋଦୟ"
+  ],
+  "aliases": [
+    "dawn",
+    "morning"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

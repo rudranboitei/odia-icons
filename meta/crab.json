@@ -1,0 +1,26 @@
+{
+  "name": "crab",
+  "odia": "କଙ୍କଡ଼ା",
+  "category": "odisha",
+  "tags": [
+    "crab",
+    "kankada",
+    "seafood",
+    "chilika",
+    "food",
+    "coast",
+    "କଙ୍କଡ଼ା"
+  ],
+  "aliases": [
+    "kankada"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

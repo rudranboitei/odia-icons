@@ -1,0 +1,26 @@
+{
+  "name": "coconut",
+  "odia": "ନଡ଼ିଆ",
+  "category": "odisha",
+  "tags": [
+    "coconut",
+    "nadia",
+    "puja",
+    "offering",
+    "food",
+    "tropical",
+    "ନଡ଼ିଆ"
+  ],
+  "aliases": [
+    "nadia"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

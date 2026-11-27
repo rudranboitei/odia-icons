@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rain",
+  "type": "registry:ui",
+  "title": "Rain",
+  "description": "ବର୍ଷା — rain, barsha, monsoon.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "ବର୍ଷା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/rain.svg",
+      "type": "registry:file",
+      "target": "components/icons/rain.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 14a4 4 0 0 1-.5-8A5.5 5.5 0 0 1 17.5 7a3.5 3.5 0 0 1-.5 7zM8.5 17.5l-1 2.5M12.5 17.5l-1 2.5M16.5 17.5l-1 2.5\"/></svg>"
+    }
+  ]
+}

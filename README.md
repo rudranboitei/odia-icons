@@ -18,7 +18,7 @@
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-1f1f1f?style=flat-square" alt="MIT License" /></a>
 <!-- icon-count-badge:start -->
-  <img src="https://img.shields.io/badge/icons-179-f3e0c9?style=flat-square&labelColor=1f1f1f" alt="179 icons" />
+  <img src="https://img.shields.io/badge/icons-206-f3e0c9?style=flat-square&labelColor=1f1f1f" alt="206 icons" />
 <!-- icon-count-badge:end -->
   <img src="https://img.shields.io/badge/grid-24%C3%9724-1f1f1f?style=flat-square" alt="24x24 grid" />
   <img src="https://img.shields.io/badge/stroke-2px-1f1f1f?style=flat-square" alt="2px stroke" />
@@ -27,7 +27,7 @@
 
 ---
 
-OdiaIcons is a compact, carefully crafted icon set. The current release is a focused 179-icon set, drawn with Odisha in mind; the Odia motif set is being redrawn in the same style. Every icon is drawn on a shared 24 × 24 grid, uses `currentColor`, and is designed to feel consistent across product interfaces, websites, and editorial layouts.
+OdiaIcons is a compact, carefully crafted icon set. The current release is a focused 206-icon set, drawn with Odisha in mind; the Odia motif set is being redrawn in the same style. Every icon is drawn on a shared 24 × 24 grid, uses `currentColor`, and is designed to feel consistent across product interfaces, websites, and editorial layouts.
 
 Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon browser](https://icons.odiaui.xyz/icons).
 
@@ -43,7 +43,7 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 <!-- icon-set:start -->
 ## Icon Set
 
-**179 icons and counting:** a focused set. Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons).
+**206 icons and counting:** a focused set. Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons).
 
 | Icon | Name | Odia | Category |
 |------|------|------|----------|
@@ -52,6 +52,7 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Alert Triangle | `alert-triangle` | ଚେତାବନୀ | UI |
 | Align Center | `align-center` | ମଧ୍ୟ ସଜାଣି | UI |
 | Align Left | `align-left` | ବାମ ସଜାଣି | UI |
+| Anchor | `anchor` | ଲଙ୍ଗର | Odisha |
 | Archive | `archive` | ଅଭିଲେଖାଗାର | UI |
 | Arrow Down | `arrow-down` | ତଳ ତୀର | UI |
 | Arrow Left | `arrow-left` | ବାମ ତୀର | UI |
@@ -60,6 +61,8 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Arrow Up Right | `arrow-up-right` | ଉପର-ଡାହାଣ ତୀର | UI |
 | At Sign | `at-sign` | ଆଟ୍ | Social |
 | Bag | `bag` | ଝୋଲା | UI |
+| Bamboo | `bamboo` | ବାଉଁଶ | Odisha |
+| Basket | `basket` | ଡାଲା | Odisha |
 | Battery | `battery` | ବ୍ୟାଟେରୀ | UI |
 | Bell | `bell` | ଘଣ୍ଟି | UI |
 | Bell Off | `bell-off` | ନୀରବ | UI |
@@ -91,10 +94,12 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Clock | `clock` | ଘଡ଼ି | UI |
 | Close | `close` | ବନ୍ଦ | UI |
 | Cloud | `cloud` | ମେଘ | Nature |
+| Coconut | `coconut` | ନଡ଼ିଆ | Odisha |
 | Code | `code` | କୋଡ୍ | Development |
 | Command | `command` | କମାଣ୍ଡ | Development |
 | Copy | `copy` | ନକଲ | UI |
 | Cpu | `cpu` | ସିପିୟୁ | Development |
+| Crab | `crab` | କଙ୍କଡ଼ା | Odisha |
 | Crop | `crop` | କଟା | Web |
 | Database | `database` | ଡାଟାବେସ୍ | Development |
 | Diya | `diya` | ଦୀପ | Odisha |
@@ -103,16 +108,20 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | External Link | `external-link` | ବାହାର ଲିଙ୍କ | UI |
 | Eye | `eye` | ଆଖି | UI |
 | Eye Off | `eye-off` | ଲୁଚାନ୍ତୁ | UI |
+| Fan | `fan` | ତାଳପଖା | Odisha |
 | File | `file` | ଫାଇଲ୍ | UI |
 | File Plus | `file-plus` | ନୂଆ ଫାଇଲ୍ | UI |
 | File Text | `file-text` | ଲେଖା ଫାଇଲ୍ | UI |
 | Filter | `filter` | ଫିଲ୍ଟର | UI |
 | Fish | `fish` | ମାଛ | Odisha |
 | Flag | `flag` | ପତାକା | UI |
+| Flower | `flower` | ଫୁଲ | Odisha |
 | Folder | `folder` | ଫୋଲ୍ଡର୍ | UI |
 | Fullscreen | `fullscreen` | ପୂର୍ଣ୍ଣ ପରଦା | Web |
+| Garland | `garland` | ମାଳା | Odisha |
 | Gateway | `gateway` | ଫାଟକ | Odisha |
 | Gauge | `gauge` | ଗତି | Web |
+| Ghanta | `ghanta` | ଘଣ୍ଟ | Odisha |
 | Gift | `gift` | ଉପହାର | UI |
 | Git Branch | `git-branch` | ଶାଖା | Development |
 | Git Commit | `git-commit` | କମିଟ୍ | Development |
@@ -122,20 +131,25 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Hashtag | `hashtag` | ହ୍ୟାସଟ୍ୟାଗ୍ | Social |
 | Heart | `heart` | ହୃଦୟ | UI |
 | Help | `help` | ସାହାଯ୍ୟ | UI |
+| Hills | `hills` | ପାହାଡ଼ | Odisha |
 | History | `history` | ଇତିହାସ | UI |
 | Home | `home` | ଘର | UI |
+| Hut | `hut` | କୁଡ଼ିଆ | Odisha |
 | Image | `image` | ଛବି | UI |
 | Inbox | `inbox` | ଇନବକ୍ସ | UI |
 | Info | `info` | ସୂଚନା | UI |
 | Italic | `italic` | ତେରଛା | UI |
 | Kalasa | `kalasa` | କଳସ | Odisha |
 | Key | `key` | ଚାବି | Development |
+| Kite | `kite` | ଘୁଡ଼ି | Odisha |
 | Konark Wheel | `konark-wheel` | କୋଣାର୍କ ଚକ | Odisha |
+| Kulhad | `kulhad` | ଖୁରି | Odisha |
 | Laptop | `laptop` | ଲାପଟପ୍ | Web |
 | Layers | `layers` | ସ୍ତର | Development |
 | Layout Grid | `layout-grid` | ଗ୍ରିଡ୍ | Web |
 | Leaf | `leaf` | ପତ୍ର | Nature |
 | Lifebuoy | `lifebuoy` | ସହାୟତା | UI |
+| Lighthouse | `lighthouse` | ଆଲୋକସ୍ତମ୍ଭ | Odisha |
 | Link | `link` | ଲିଙ୍କ୍ | UI |
 | List | `list` | ତାଲିକା | UI |
 | Loader | `loader` | ଲୋଡ୍ | UI |
@@ -143,6 +157,7 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Logout | `logout` | ଲଗଆଉଟ୍ | UI |
 | Lotus | `lotus` | ପଦ୍ମ | Odisha |
 | Mail | `mail` | ଚିଠି | UI |
+| Mango | `mango` | ଆମ୍ବ | Odisha |
 | Manuscript | `manuscript` | ତାଳପତ୍ର | Odisha |
 | Map Pin | `map-pin` | ସ୍ଥାନ | UI |
 | Mardala | `mardala` | ମର୍ଦ୍ଦଳ | Odisha |
@@ -162,8 +177,10 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Navigation | `navigation` | ଦିଗ | UI |
 | Newspaper | `newspaper` | ଖବରକାଗଜ | Social |
 | Note | `note` | ଟିପ୍ପଣୀ | UI |
+| Oar | `oar` | ଦାଉ | Odisha |
 | Package | `package` | ପ୍ୟାକେଜ୍ | Development |
 | Paddy | `paddy` | ଧାନ | Odisha |
+| Pakhala | `pakhala` | ପଖାଳ | Odisha |
 | Palette | `palette` | ରଙ୍ଗ | Web |
 | Palm Tree | `palm-tree` | ତାଳଗଛ | Odisha |
 | Paperclip | `paperclip` | କ୍ଲିପ୍ | UI |
@@ -178,6 +195,9 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Power | `power` | ଶକ୍ତି | UI |
 | Print | `print` | ପ୍ରିଣ୍ଟ | UI |
 | Qr Code | `qr-code` | କ୍ୟୁଆର୍ କୋଡ୍ | Web |
+| Quill | `quill` | କଲମ | Odisha |
+| Rain | `rain` | ବର୍ଷା | Odisha |
+| Rangoli | `rangoli` | ଝୋଟି | Odisha |
 | Rath | `rath` | ରଥ | Odisha |
 | Refresh | `refresh` | ସତେଜ | UI |
 | Repost | `repost` | ପୁନଃପ୍ରକାଶ | Social |
@@ -192,6 +212,7 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Shankha | `shankha` | ଶଙ୍ଖ | Odisha |
 | Share | `share` | ବାଣ୍ଟ | UI |
 | Shield | `shield` | ସୁରକ୍ଷା | Development |
+| Ship | `ship` | ଜାହାଜ | Odisha |
 | Sidebar | `sidebar` | ସାଇଡବାର୍ | Web |
 | Sliders | `sliders` | ନିୟନ୍ତ୍ରଣ | UI |
 | Smile | `smile` | ହସ | UI |
@@ -199,7 +220,9 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Sparkles | `sparkles` | ଚମକ | UI |
 | Square Minus | `square-minus` | ବିୟୋଗ | UI |
 | Star | `star` | ତାରା | UI |
+| Stupa | `stupa` | ସ୍ତୂପ | Odisha |
 | Sun | `sun` | ସୂର୍ଯ୍ୟ | Nature |
+| Sunrise | `sunrise` | ସୂର୍ଯ୍ୟୋଦୟ | Odisha |
 | Sweet | `sweet` | ମିଠା | Odisha |
 | Table | `table` | ସାରଣୀ | Web |
 | Tag | `tag` | ଟ୍ୟାଗ୍ | UI |
@@ -210,7 +233,10 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Toggle | `toggle` | ଟୋଗଲ୍ | Web |
 | Translate | `translate` | ଅନୁବାଦ | UI |
 | Trash | `trash` | ଅଳିଆ | UI |
+| Tree | `tree` | ଗଛ | Odisha |
+| Turtle | `turtle` | କଇଁଛ | Odisha |
 | Type | `type` | ଅକ୍ଷର | Web |
+| Umbrella | `umbrella` | ଛତା | Odisha |
 | Underline | `underline` | ରେଖାଙ୍କିତ | UI |
 | Undo | `undo` | ପଛକୁ | UI |
 | Unlock | `unlock` | ଖୋଲା | UI |
@@ -221,6 +247,7 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Video | `video` | ଭିଡିଓ | Social |
 | Volume | `volume` | ଧ୍ୱନି | UI |
 | Wallet | `wallet` | ପର୍ସ | UI |
+| Waterfall | `waterfall` | ଜଳପ୍ରପାତ | Odisha |
 | Waves | `waves` | ଢେଉ | Odisha |
 | Wifi | `wifi` | ୱାଇଫାଇ | UI |
 | X Circle | `x-circle` | ତ୍ରୁଟି | UI |

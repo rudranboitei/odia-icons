@@ -1,0 +1,27 @@
+{
+  "name": "oar",
+  "odia": "ଦାଉ",
+  "category": "odisha",
+  "tags": [
+    "oar",
+    "dau",
+    "paddle",
+    "boat",
+    "row",
+    "chilika",
+    "ଦାଉ"
+  ],
+  "aliases": [
+    "paddle",
+    "dau"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

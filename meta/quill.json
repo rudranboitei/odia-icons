@@ -1,0 +1,27 @@
+{
+  "name": "quill",
+  "odia": "କଲମ",
+  "category": "odisha",
+  "tags": [
+    "quill",
+    "kalama",
+    "pen",
+    "write",
+    "literature",
+    "odia",
+    "କଲମ"
+  ],
+  "aliases": [
+    "pen",
+    "kalama"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

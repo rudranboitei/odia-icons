@@ -1,0 +1,26 @@
+{
+  "name": "ghanta",
+  "odia": "ଘଣ୍ଟ",
+  "category": "odisha",
+  "tags": [
+    "ghanta",
+    "bell",
+    "temple-bell",
+    "puja",
+    "ritual",
+    "sound",
+    "ଘଣ୍ଟ"
+  ],
+  "aliases": [
+    "temple-bell"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

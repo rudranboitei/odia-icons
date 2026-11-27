@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "quill",
+  "type": "registry:ui",
+  "title": "Quill",
+  "description": "କଲମ — quill, kalama, pen.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "କଲମ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/quill.svg",
+      "type": "registry:file",
+      "target": "components/icons/quill.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 4C13 4 8.5 7.5 8 14.5c0 .8 0 1.6.2 2.5C15 16.5 20 12 20 4zM20 4L6 18M6 18l-2 2.5\"/></svg>"
+    }
+  ]
+}

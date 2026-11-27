@@ -1,0 +1,27 @@
+{
+  "name": "rangoli",
+  "odia": "ଝୋଟି",
+  "category": "odisha",
+  "tags": [
+    "rangoli",
+    "jhoti",
+    "alpana",
+    "floor-art",
+    "festival",
+    "pattern",
+    "ଝୋଟି"
+  ],
+  "aliases": [
+    "jhoti",
+    "alpana"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,27 @@
+{
+  "name": "waterfall",
+  "odia": "ଜଳପ୍ରପାତ",
+  "category": "odisha",
+  "tags": [
+    "waterfall",
+    "jalaprapata",
+    "falls",
+    "river",
+    "nature",
+    "water",
+    "ଜଳପ୍ରପାତ"
+  ],
+  "aliases": [
+    "falls",
+    "jalaprapata"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

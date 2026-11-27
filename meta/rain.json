@@ -1,0 +1,27 @@
+{
+  "name": "rain",
+  "odia": "ବର୍ଷା",
+  "category": "odisha",
+  "tags": [
+    "rain",
+    "barsha",
+    "monsoon",
+    "cloud",
+    "weather",
+    "storm",
+    "ବର୍ଷା"
+  ],
+  "aliases": [
+    "monsoon",
+    "barsha"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

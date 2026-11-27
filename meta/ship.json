@@ -1,0 +1,27 @@
+{
+  "name": "ship",
+  "odia": "ଜାହାଜ",
+  "category": "odisha",
+  "tags": [
+    "ship",
+    "jahaja",
+    "port",
+    "paradip",
+    "sea",
+    "cargo",
+    "ଜାହାଜ"
+  ],
+  "aliases": [
+    "port",
+    "jahaja"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

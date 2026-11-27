@@ -1,0 +1,27 @@
+{
+  "name": "turtle",
+  "odia": "କଇଁଛ",
+  "category": "odisha",
+  "tags": [
+    "turtle",
+    "kainchha",
+    "olive-ridley",
+    "gahirmatha",
+    "beach",
+    "wildlife",
+    "କଇଁଛ"
+  ],
+  "aliases": [
+    "olive-ridley",
+    "tortoise"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

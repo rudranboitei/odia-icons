@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "basket",
+  "type": "registry:ui",
+  "title": "Basket",
+  "description": "ଡାଲା — basket, dala, tokari.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "ଡାଲା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/basket.svg",
+      "type": "registry:file",
+      "target": "components/icons/basket.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4.5 10h15l-1.5 8.5a2 2 0 0 1-2 1.5H8a2 2 0 0 1-2-1.5zM8 10c0-4 8-4 8 0M9 13.5v4M12 13.5v4M15 13.5v4\"/></svg>"
+    }
+  ]
+}

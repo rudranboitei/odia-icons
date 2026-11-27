@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sunrise",
+  "type": "registry:ui",
+  "title": "Sunrise",
+  "description": "ସୂର୍ଯ୍ୟୋଦୟ — sunrise, suryodaya, dawn.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "ସୂର୍ଯ୍ୟୋଦୟ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/sunrise.svg",
+      "type": "registry:file",
+      "target": "components/icons/sunrise.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 18.5h18M7 18.5a5 5 0 0 1 10 0M12 6v2.5M4.5 11l1.8 1.5M19.5 11l-1.8 1.5M7 21.5h10\"/></svg>"
+    }
+  ]
+}

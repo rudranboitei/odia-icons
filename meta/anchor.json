@@ -1,0 +1,27 @@
+{
+  "name": "anchor",
+  "odia": "ଲଙ୍ଗର",
+  "category": "odisha",
+  "tags": [
+    "anchor",
+    "langara",
+    "port",
+    "harbour",
+    "sea",
+    "ship",
+    "ଲଙ୍ଗର"
+  ],
+  "aliases": [
+    "harbour",
+    "langara"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

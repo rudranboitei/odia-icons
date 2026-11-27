@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stupa",
+  "type": "registry:ui",
+  "title": "Stupa",
+  "description": "ସ୍ତୂପ — stupa, dhauli, peace-pagoda.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "ସ୍ତୂପ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/stupa.svg",
+      "type": "registry:file",
+      "target": "components/icons/stupa.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20.5h16M6 18.5a6 6 0 0 1 12 0M10 12.5h4v-3M9.5 9.5h5M10.3 7.5h3.4M11 5.5h2\"/></svg>"
+    }
+  ]
+}

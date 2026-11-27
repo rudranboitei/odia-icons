@@ -1,0 +1,27 @@
+{
+  "name": "hut",
+  "odia": "କୁଡ଼ିଆ",
+  "category": "odisha",
+  "tags": [
+    "hut",
+    "kudia",
+    "village",
+    "home",
+    "rural",
+    "thatch",
+    "କୁଡ଼ିଆ"
+  ],
+  "aliases": [
+    "village",
+    "kudia"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

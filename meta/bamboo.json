@@ -1,0 +1,26 @@
+{
+  "name": "bamboo",
+  "odia": "ବାଉଁଶ",
+  "category": "odisha",
+  "tags": [
+    "bamboo",
+    "baunsha",
+    "craft",
+    "forest",
+    "plant",
+    "green",
+    "ବାଉଁଶ"
+  ],
+  "aliases": [
+    "baunsha"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

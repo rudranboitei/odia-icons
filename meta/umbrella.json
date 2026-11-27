@@ -1,0 +1,27 @@
+{
+  "name": "umbrella",
+  "odia": "ଛତା",
+  "category": "odisha",
+  "tags": [
+    "umbrella",
+    "chhata",
+    "chhatri",
+    "rain",
+    "shade",
+    "festival",
+    "ଛତା"
+  ],
+  "aliases": [
+    "chhata",
+    "chhatri"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

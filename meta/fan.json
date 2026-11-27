@@ -1,0 +1,27 @@
+{
+  "name": "fan",
+  "odia": "ତାଳପଖା",
+  "category": "odisha",
+  "tags": [
+    "fan",
+    "talapakha",
+    "palm-fan",
+    "handicraft",
+    "summer",
+    "village",
+    "ତାଳପଖା"
+  ],
+  "aliases": [
+    "palm-fan",
+    "talapakha"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

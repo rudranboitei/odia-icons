@@ -1,0 +1,27 @@
+{
+  "name": "flower",
+  "odia": "ଫୁଲ",
+  "category": "odisha",
+  "tags": [
+    "flower",
+    "phula",
+    "marigold",
+    "puja",
+    "garden",
+    "bloom",
+    "ଫୁଲ"
+  ],
+  "aliases": [
+    "marigold",
+    "phula"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,27 @@
+{
+  "name": "basket",
+  "odia": "ଡାଲା",
+  "category": "odisha",
+  "tags": [
+    "basket",
+    "dala",
+    "tokari",
+    "weave",
+    "craft",
+    "village",
+    "ଡାଲା"
+  ],
+  "aliases": [
+    "tokari",
+    "weave"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}
