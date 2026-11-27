@@ -16,6 +16,7 @@ import { SITE } from "@/data/site";
 import { copyText } from "@/lib/clipboard";
 import { cn } from "@/lib/utils";
 import { iconsByName, toSvg } from "@/lib/icons";
+import { ShikiCode } from "@/components/shiki-code";
 import { Reveal } from "./reveal";
 
 /* Copy for this section lives here so you don't need to touch SITE data. */
@@ -25,17 +26,17 @@ const COPY = {
   accent: "— size, stroke and colour in one click.",
 };
 
-const BG = "/hero-bg.webp";
+const BG = "/home-bg.jpeg";
 const BG_POS = "52% 72%";
 
 const NAMES = ["home", "search", "message", "lock", "bell"];
 
 const COLORS = [
-  { name: "Ink", value: "#171717" },
+  { name: "White", value: "#ffffff" },
   { name: "Terracotta", value: "#b4693b" },
   { name: "Forest", value: "#2f6b4f" },
-  { name: "Indigo", value: "#3b4cb4" },
-  { name: "Crimson", value: "#b4333b" },
+  { name: "Indigo", value: "#8b93e6" },
+  { name: "Crimson", value: "#e06b6b" },
 ];
 
 const FORMATS = ["React", "SVG"] as const;
@@ -45,7 +46,7 @@ const pascal = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 /* Hairline slider with a filled track and a small round thumb. */
 const thumb =
-  "[&::-webkit-slider-thumb]:size-3.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-neutral-900 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-sm [&::-webkit-slider-runnable-track]:h-0.5 [&::-webkit-slider-thumb]:-mt-[6px] [&::-moz-range-thumb]:size-3.5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border [&::-moz-range-thumb]:border-neutral-900 [&::-moz-range-thumb]:bg-white";
+  "[&::-webkit-slider-thumb]:size-3.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-neutral-900 [&::-webkit-slider-thumb]:bg-[#1f1d1a] [&::-webkit-slider-thumb]:shadow-sm [&::-webkit-slider-runnable-track]:h-0.5 [&::-webkit-slider-thumb]:-mt-[6px] [&::-moz-range-thumb]:size-3.5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border [&::-moz-range-thumb]:border-neutral-900 [&::-moz-range-thumb]:bg-[#1f1d1a]";
 
 function Slider({
   label,
@@ -73,11 +74,11 @@ function Slider({
       value={value}
       onChange={(e) => onChange(Number(e.target.value))}
       className={cn(
-        "block h-3.5 w-full cursor-pointer appearance-none rounded-full bg-transparent outline-none focus-visible:ring-2 focus-visible:ring-black/40",
+        "block h-3.5 w-full cursor-pointer appearance-none rounded-full bg-transparent outline-none focus-visible:ring-2 focus-visible:ring-white/30",
         thumb
       )}
       style={{
-        backgroundImage: `linear-gradient(to right, #171717 ${pct}%, rgba(0,0,0,0.15) ${pct}%)`,
+        backgroundImage: `linear-gradient(to right, #f3e0c9 ${pct}%, rgba(255,255,255,0.15) ${pct}%)`,
         backgroundSize: "100% 2px",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -101,13 +102,13 @@ function Control({
   children: ReactNode;
 }) {
   return (
-    <div className="border-l-2 border-black/10 py-4 pl-5 transition-colors duration-300 focus-within:border-neutral-900 hover:border-black/30">
+    <div className="border-l-2 border-white/10 py-4 pl-5 transition-colors duration-300 focus-within:border-[#f3e0c9]/50 hover:border-white/20">
       <div className="flex items-center gap-3">
-        <Icon aria-hidden className="size-5 shrink-0 text-neutral-900" stroke={2} />
-        <span className="text-base text-neutral-900 sm:text-lg">{title}</span>
-        {value && <span className="ml-auto font-mono text-xs text-neutral-500">{value}</span>}
+        <Icon aria-hidden className="size-5 shrink-0 text-[#ffffff]" stroke={2} />
+        <span className="text-base text-[#ffffff] sm:text-lg">{title}</span>
+        {value && <span className="ml-auto font-mono text-xs text-neutral-400">{value}</span>}
       </div>
-      <p className="mt-1 pl-8 text-sm leading-snug text-neutral-500">{description}</p>
+      <p className="mt-1 pl-8 text-sm leading-snug text-neutral-400">{description}</p>
       <div className="mt-3 pl-8">{children}</div>
     </div>
   );
@@ -143,21 +144,21 @@ export function PlaygroundSection() {
   return (
     <section
       id="playground"
-      className="scroll-mt-20 bg-[#f6f4f0] px-4 py-16 text-neutral-900 sm:px-6 sm:py-24"
+      className="scroll-mt-20 bg-[#141210] px-4 py-16 text-[#ffffff] sm:px-6 sm:py-24"
     >
       <Reveal className="mx-auto w-full max-w-[1080px]">
-        <p className="flex items-center gap-2 text-sm text-neutral-500">
-          <span aria-hidden className="size-2 rounded-full bg-neutral-400" />
+        <p className="flex items-center gap-2 text-sm text-neutral-400">
+          <span aria-hidden className="size-2 rounded-full bg-[#f3e0c9]" />
           {COPY.eyebrow}
         </p>
         <h2 className="mt-3 max-w-[640px] text-[clamp(1.75rem,4.2vw,2.5rem)] leading-[1.15] font-medium tracking-tight text-balance">
-          <span className="text-neutral-900">{COPY.title}</span>{" "}
+          <span className="text-[#ffffff]">{COPY.title}</span>{" "}
           <span className="text-neutral-400">{COPY.accent}</span>
         </h2>
 
         <div className="mt-10 grid items-center gap-8 sm:mt-14 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:gap-0">
           {/* Live preview on your background image */}
-          <div className="relative aspect-[1.1/1] w-full overflow-hidden rounded-[4px] bg-neutral-200 sm:aspect-[1.3/1]">
+          <div className="relative aspect-[1.1/1] w-full overflow-hidden rounded-[4px] bg-neutral-800 sm:aspect-[1.3/1]">
             <Image
               src={BG}
               alt=""
@@ -167,12 +168,12 @@ export function PlaygroundSection() {
               className="scale-[1.9] object-cover"
               style={{ objectPosition: BG_POS, transformOrigin: BG_POS }}
             />
-            <div className="absolute inset-0 bg-white/10" />
+            <div className="absolute inset-0 bg-[#1f1d1a]/10" />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/15" />
 
             <div className="absolute inset-0 grid place-items-center p-4 sm:p-6">
-              <div className="w-full max-w-sm overflow-hidden rounded-xl border border-white/60 bg-white/85 shadow-[0_24px_50px_-20px_rgba(70,40,15,0.35)] backdrop-blur-md">
-                <div className="grid h-36 place-items-center border-b border-black/10 sm:h-44" aria-live="polite">
+              <div className="w-full max-w-sm overflow-hidden rounded-xl border border-white/10 bg-[#1f1d1a]/90 shadow-[0_24px_50px_-20px_rgba(0,0,0,0.5)] backdrop-blur-md">
+                <div className="grid h-36 place-items-center border-b border-white/10 sm:h-44" aria-live="polite">
                   <span
                     aria-label={`${component} icon preview`}
                     role="img"
@@ -193,16 +194,16 @@ export function PlaygroundSection() {
                         aria-label={pascal(n)}
                         aria-pressed={on}
                         className={cn(
-                          "flex cursor-pointer flex-col items-center gap-1 rounded-lg border py-2 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-black/40",
-                          on ? "border-neutral-900 bg-white" : "border-black/10 bg-white/60 hover:bg-white"
+                          "flex cursor-pointer flex-col items-center gap-1 rounded-lg border py-2 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-white/30",
+                          on ? "border-[#f3e0c9]/50 bg-white/10" : "border-white/10 bg-white/5 hover:bg-white/10"
                         )}
                       >
                         <span
                           className="inline-flex"
-                          style={{ color: on ? color : "#525252" }}
+                          style={{ color: on ? color : "#a3a3a3" }}
                           dangerouslySetInnerHTML={{ __html: svg(n, 22) }}
                         />
-                        <span className="text-[9px] text-neutral-500 sm:text-[10px]">{pascal(n)}</span>
+                        <span className="text-[9px] text-neutral-400 sm:text-[10px]">{pascal(n)}</span>
                       </button>
                     );
                   })}
@@ -236,9 +237,9 @@ export function PlaygroundSection() {
                     aria-label={c.name}
                     aria-pressed={c.value === color}
                     className={cn(
-                      "size-6 cursor-pointer rounded-full border border-black/10 outline-none transition-transform focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f6f4f0]",
+                      "size-6 cursor-pointer rounded-full border border-white/10 outline-none transition-transform focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141210]",
                       c.value === color &&
-                      "ring-2 ring-neutral-900 ring-offset-2 ring-offset-[#f6f4f0]"
+                      "ring-2 ring-[#f3e0c9] ring-offset-2 ring-offset-[#141210]"
                     )}
                     style={{ backgroundColor: c.value }}
                   />
@@ -247,8 +248,8 @@ export function PlaygroundSection() {
             </Control>
 
             {/* Output: underline tabs + square icon button */}
-            <div className="mt-4 overflow-hidden rounded-xl border border-black/10 bg-white">
-              <div className="flex items-center justify-between border-b border-black/10 pr-2 pl-1">
+            <div className="mt-4 overflow-hidden rounded-xl border border-white/10 bg-[#1f1d1a]">
+              <div className="flex items-center justify-between border-b border-white/10 pr-2 pl-1">
                 <div role="tablist" aria-label="Output format" className="flex">
                   {FORMATS.map((f) => {
                     const on = f === format;
@@ -260,13 +261,13 @@ export function PlaygroundSection() {
                         aria-selected={on}
                         onClick={() => setFormat(f)}
                         className={cn(
-                          "relative cursor-pointer px-3 py-2.5 text-sm outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-black/40",
-                          on ? "text-neutral-900" : "text-neutral-500 hover:text-neutral-800"
+                          "relative cursor-pointer px-3 py-2.5 text-sm outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-white/30",
+                          on ? "text-[#ffffff]" : "text-neutral-400 hover:text-neutral-200"
                         )}
                       >
                         {f}
                         {on && (
-                          <span aria-hidden className="absolute inset-x-0 -bottom-px h-0.5 bg-neutral-900" />
+                          <span aria-hidden className="absolute inset-x-0 -bottom-px h-0.5 bg-[#f3e0c9]" />
                         )}
                       </button>
                     );
@@ -276,19 +277,19 @@ export function PlaygroundSection() {
                   type="button"
                   onClick={copy}
                   aria-label={copied ? "Copied" : "Copy"}
-                  className="inline-flex size-8 cursor-pointer items-center justify-center rounded-lg border border-black/10 bg-white text-neutral-600 outline-none transition-colors hover:bg-neutral-50 hover:text-neutral-900 focus-visible:ring-2 focus-visible:ring-black/40"
+                  className="inline-flex size-8 cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-[#1f1d1a] text-neutral-300 outline-none transition-colors hover:bg-white/5 hover:text-[#ffffff] focus-visible:ring-2 focus-visible:ring-white/30"
                 >
                   {copied ? <IconCheck aria-hidden className="size-4" /> : <IconCopy aria-hidden className="size-4" />}
                 </button>
               </div>
-              <pre className="m-0 max-h-36 overflow-hidden p-3 font-mono text-[11px] leading-relaxed break-all whitespace-pre-wrap text-neutral-700 sm:text-xs">
-                {output}
+              <pre className="m-0 max-h-36 overflow-auto p-3 font-mono text-[12px] leading-relaxed break-all whitespace-pre-wrap text-neutral-300 sm:text-[13px]">
+                <ShikiCode code={output} lang={format === "React" ? "jsx" : "xml"} />
               </pre>
             </div>
 
             <Link
               href={SITE.links.icons}
-              className="group/cta mt-6 inline-flex h-10 items-center gap-2 rounded-full border border-black/10 bg-white px-5 text-sm font-medium text-neutral-900 shadow-sm transition-colors hover:bg-neutral-50 focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:outline-none"
+              className="group/cta mt-6 inline-flex h-10 items-center gap-2 rounded-full border border-white/10 bg-[#1f1d1a] px-5 text-sm font-medium text-[#ffffff] shadow-sm transition-colors hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               Browse all Odisha icons
               <IconArrowRight

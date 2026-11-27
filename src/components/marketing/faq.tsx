@@ -31,8 +31,8 @@ function FaqBox({
   return (
     <div
       className={cn(
-        "rounded-sm border bg-white transition-colors duration-300",
-        open ? "border-black/30" : "border-black/10 hover:border-black/20"
+        "rounded-sm border bg-[#1f1d1a] transition-colors duration-300",
+        open ? "border-white/25" : "border-white/10 hover:border-white/20"
       )}
     >
       <h3>
@@ -42,9 +42,9 @@ function FaqBox({
           aria-expanded={open}
           aria-controls={panelId}
           onClick={onToggle}
-          className="flex min-h-12 w-full cursor-pointer items-center justify-between gap-4 px-4 py-3.5 text-left outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f6f4f0]"
+          className="flex min-h-12 w-full cursor-pointer items-center justify-between gap-4 px-4 py-3.5 text-left outline-none focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141210]"
         >
-          <span className="text-[15px] leading-snug text-neutral-900">{item.q}</span>
+          <span className="text-[15px] leading-snug text-[#ffffff]">{item.q}</span>
           <IconPlus
             aria-hidden
             stroke={1.5}
@@ -68,7 +68,7 @@ function FaqBox({
         )}
       >
         <div className="min-h-0 overflow-hidden">
-          <p className="max-w-[26rem] px-4 pb-4 text-[15px] leading-relaxed text-neutral-500">
+          <p className="max-w-[26rem] px-4 pb-4 text-[15px] leading-relaxed text-neutral-400">
             {item.a}
           </p>
         </div>
@@ -86,7 +86,7 @@ export function Faq() {
     <section
       id="faq"
       aria-labelledby="faq-title"
-      className="relative scroll-mt-20 bg-[#f6f4f0] px-4 py-16 text-neutral-900 sm:px-6 sm:py-24"
+      className="relative scroll-mt-20 bg-[#141210] px-4 py-16 text-[#ffffff] sm:px-6 sm:py-24"
     >
       <motion.div
         initial={reduce ? false : { opacity: 0, y: 16 }}
@@ -96,24 +96,24 @@ export function Faq() {
         className="mx-auto w-full max-w-[1080px]"
       >
         {/* Eyebrow + two-tone heading */}
-        <p className="flex items-center gap-2 text-sm text-neutral-500">
-          <span aria-hidden className="size-2 rounded-full bg-neutral-400" />
+        <p className="flex items-center gap-2 text-sm text-neutral-400">
+          <span aria-hidden className="size-2 rounded-full bg-[#f3e0c9]" />
           {faq.eyebrow ?? "FAQ"}
         </p>
         <h2
           id="faq-title"
           className="mt-3 max-w-[640px] text-[clamp(1.75rem,4.2vw,2.5rem)] leading-[1.15] font-medium tracking-tight text-balance"
         >
-          <span className="text-neutral-900">{faq.title}</span>
+          <span className="text-[#ffffff]">{faq.title}</span>
           {faq.accent && (
             <>
               {" "}
-              <span className="text-neutral-400">{faq.accent}</span>
+              <span className="text-neutral-500">{faq.accent}</span>
             </>
           )}
         </h2>
         {faq.description && (
-          <p className="mt-4 max-w-md text-base leading-relaxed text-neutral-500">
+          <p className="mt-4 max-w-md text-base leading-relaxed text-neutral-400">
             {faq.description}
           </p>
         )}

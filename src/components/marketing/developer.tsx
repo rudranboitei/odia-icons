@@ -20,7 +20,7 @@ import { InstallBox } from "./install-box";
 import { Reveal } from "./reveal";
 import { ShikiCode } from "@/components/shiki-code";
 
-const BG = "/hero-bg.webp";
+const BG = "/home-bg.jpeg";
 const BG_POS = ["14% 64%", "52% 72%", "90% 68%"];
 const STEP_ICONS = [IconPackage, IconCode, IconCheck];
 

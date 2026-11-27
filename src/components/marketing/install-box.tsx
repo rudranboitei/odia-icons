@@ -41,7 +41,7 @@ export function InstallBox({
           className="min-w-0 flex-1 truncate text-left font-mono text-sm text-foreground"
         />
         <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>
-          <Button size="sm" onClick={copy} className="cursor-pointer">
+          <Button size="sm" onClick={copy} className="cursor-pointer bg-white text-black hover:bg-neutral-200">
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
                 key={copied ? "copied" : "copy"}

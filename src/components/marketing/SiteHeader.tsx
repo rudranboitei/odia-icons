@@ -43,11 +43,11 @@ export function Header() {
           className={cn(
             "pointer-events-auto flex h-16 items-center justify-between rounded-full transition-all duration-300 md:h-[70px]",
             /* mobile: always a glass pill */
-            " pr-2 pl-5 ring-1 ring-white/50 backdrop-blur-xl",
+            " pr-2 pl-5 ring-1 ring-white/15 bg-black/30 backdrop-blur-xl",
             open && "",
             /* desktop: transparent at top, pill after scroll */
             scrolled
-              ? " md:pr-2 md:pl-6 md:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.2)] md:ring-black/5"
+              ? " md:pr-2 md:pl-6 md:bg-[#1b1b1b]/90 md:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)] md:ring-white/10"
               : "md:bg-transparent md:px-0 md:shadow-none md:ring-transparent md:backdrop-blur-none",
           )}
         >
@@ -59,7 +59,7 @@ export function Header() {
             className="flex shrink-0 items-center rounded-full focus-visible:ring-2 focus-visible:ring-black/60 focus-visible:outline-none"
           >
             <Image
-              src="/brand/wordmark-dark.svg"
+              src="/brand/wordmark-cream.svg"
               alt="odiaicons"
               width={120}
               height={28}
@@ -86,7 +86,7 @@ export function Header() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
-            className="flex size-12 items-center justify-center rounded-full text-neutral-900 transition-colors hover:bg-black/5 focus-visible:ring-2 focus-visible:ring-black/60 focus-visible:outline-none md:hidden"
+            className="flex size-12 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:outline-none md:hidden"
           >
             {open ? <X aria-hidden className="size-6" /> : <Menu aria-hidden className="size-6" />}
           </button>
@@ -101,7 +101,7 @@ export function Header() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.98 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="pointer-events-auto absolute inset-x-0 top-full mt-2.5 origin-top rounded-[28px] bg-white/60 p-3 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] ring-1 ring-white/50 backdrop-blur-2xl md:hidden"
+              className="pointer-events-auto absolute inset-x-0 top-full mt-2.5 origin-top rounded-[28px] bg-[#1b1b1b]/95 p-3 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] ring-1 ring-white/10 backdrop-blur-2xl md:hidden"
             >
               <Button
                 asChild

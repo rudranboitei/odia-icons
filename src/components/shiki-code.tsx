@@ -5,7 +5,7 @@ import type { Highlighter } from "shiki"
 import { cn } from "@/lib/utils"
 
 /** One place to change the theme. It must be the same in both spots below. */
-const THEME = "github-light"
+const THEME = "github-dark"
 
 let highlighterPromise: Promise<Highlighter> | null = null
 
@@ -21,7 +21,7 @@ function getHighlighter() {
   return highlighterPromise
 }
 
-/** Syntax highlighting powered by Shiki, using the GitHub Light theme. */
+/** Syntax highlighting powered by Shiki, using the GitHub Dark theme. */
 export function ShikiCode({
   code,
   lang,

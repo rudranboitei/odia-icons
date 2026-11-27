@@ -14,7 +14,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 /** Time each tab stays on screen while the section autoplays. */
 const STEP_MS = 6500;
 
-const BG = "/hero-bg.webp";
+const BG = "/home-bg.jpeg";
 const BG_POS = ["14% 64%", "52% 72%", "90% 68%"];
 
 /* ------------------------------------------------------------------ */
@@ -64,7 +64,7 @@ function Card({ children, className }: { children: ReactNode; className?: string
   return (
     <div
       className={cn(
-        "w-full max-w-[22rem] rounded-xl border border-black/10 bg-white p-3 shadow-sm sm:max-w-sm sm:p-4",
+        "w-full max-w-[22rem] rounded-xl border border-white/10 bg-[#1f1d1a] p-3 shadow-sm sm:max-w-sm sm:p-4",
         className
       )}
     >
@@ -78,11 +78,11 @@ function Tile({ Icon, label, selected }: { Icon: Motif; label: string; selected?
     <div
       className={cn(
         "flex flex-col items-center gap-1.5 rounded-lg border px-1 py-2.5 sm:py-3",
-        selected ? "border-neutral-900 bg-neutral-50" : "border-black/10 bg-white"
+        selected ? "border-[#f3e0c9]/50 bg-white/10" : "border-white/10 bg-white/5"
       )}
     >
-      <Icon className={cn("size-8 sm:size-9", selected ? "text-neutral-900" : "text-neutral-600")} />
-      <span className="text-[10px] text-neutral-500 sm:text-xs">{label}</span>
+      <Icon className={cn("size-8 sm:size-9", selected ? "text-[#ffffff]" : "text-neutral-400")} />
+      <span className="text-[10px] text-neutral-400 sm:text-xs">{label}</span>
     </div>
   );
 }
@@ -95,7 +95,7 @@ function Tile({ Icon, label, selected }: { Icon: Motif; label: string; selected?
 function SceneBrowse() {
   return (
     <Card>
-      <div className="flex h-9 items-center gap-2 rounded-lg border border-black/10 px-3 text-xs text-neutral-500">
+      <div className="flex h-9 items-center gap-2 rounded-lg border border-white/10 px-3 text-xs text-neutral-400">
         <Search aria-hidden className="size-3.5 shrink-0" />
         <span className="truncate">{SITE.explorer.searchPlaceholder}</span>
       </div>
@@ -103,13 +103,13 @@ function SceneBrowse() {
         {ICONS.map(({ Icon, label }, i) => (
           <Tile key={label} Icon={Icon} label={label} selected={i === 0} />
         ))}
-        <div className="flex flex-col items-center justify-center gap-1 rounded-lg border border-dashed border-black/15 text-neutral-400">
+        <div className="flex flex-col items-center justify-center gap-1 rounded-lg border border-dashed border-white/15 text-neutral-500">
           <span className="text-lg leading-none">+</span>
           <span className="text-[10px] sm:text-xs">More</span>
         </div>
       </div>
-      <div className="mt-3 flex items-center justify-between text-[11px] text-neutral-500">
-        <span className="font-medium text-neutral-800">{ICONS[0].label}</span>
+      <div className="mt-3 flex items-center justify-between text-[11px] text-neutral-400">
+        <span className="font-medium text-[#ffffff]">{ICONS[0].label}</span>
         <span className="font-mono">24 × 24 · 2 stroke</span>
       </div>
     </Card>
@@ -136,7 +136,7 @@ function SceneCopy() {
             key={t}
             className={cn(
               "rounded-md px-2 py-1",
-              t === "React" ? "bg-neutral-100 text-neutral-900" : "text-neutral-500"
+              t === "React" ? "bg-white/10 text-[#ffffff]" : "text-neutral-500"
             )}
           >
             {t}
@@ -145,7 +145,7 @@ function SceneCopy() {
         <span
           className={cn(
             "ml-auto inline-flex items-center gap-1.5 rounded-md border px-2 py-1 transition-colors duration-300",
-            copied ? "border-neutral-900 bg-neutral-900 text-white" : "border-black/10 text-neutral-700"
+            copied ? "border-[#f3e0c9] bg-[#f3e0c9] text-[#1a1713]" : "border-white/10 text-neutral-300"
           )}
         >
           {copied ? <Check aria-hidden className="size-3" strokeWidth={3} /> : <Copy aria-hidden className="size-3" />}
@@ -153,7 +153,7 @@ function SceneCopy() {
         </span>
       </div>
 
-      <pre className="mt-3 overflow-hidden rounded-lg bg-neutral-100 p-3 font-mono text-[11px] leading-relaxed whitespace-pre-wrap text-neutral-800 sm:text-xs">
+      <pre className="mt-3 overflow-hidden rounded-lg bg-black/30 p-3 font-mono text-[11px] leading-relaxed whitespace-pre-wrap text-neutral-200 sm:text-xs">
         <code>
           <span className="text-neutral-500">$ npm install {SITE.npmPackage}</span>
           {"\n\n"}
@@ -179,21 +179,21 @@ function SceneShip() {
         className="w-full max-w-[22rem] sm:max-w-sm"
       >
         <Card>
-          <p className="text-[11px] font-semibold text-neutral-900">Explore Odisha</p>
+          <p className="text-[11px] font-semibold text-[#ffffff]">Explore Odisha</p>
           <div className="mt-3 grid grid-cols-5 gap-1.5">
             {ICONS.map(({ Icon, label }) => (
               <div key={label} className="flex flex-col items-center gap-1">
-                <div className="grid size-11 place-items-center rounded-xl border border-black/10 bg-neutral-50 sm:size-12">
-                  <Icon className="size-6 text-neutral-800 sm:size-7" />
+                <div className="grid size-11 place-items-center rounded-xl border border-white/10 bg-white/5 sm:size-12">
+                  <Icon className="size-6 text-[#ffffff] sm:size-7" />
                 </div>
-                <span className="text-[9px] text-neutral-500 sm:text-[10px]">{label}</span>
+                <span className="text-[9px] text-neutral-400 sm:text-[10px]">{label}</span>
               </div>
             ))}
           </div>
         </Card>
       </motion.div>
 
-      <span className="absolute bottom-0 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-black/10 bg-white px-3 py-1 text-[11px] whitespace-nowrap text-neutral-800 shadow-sm sm:bottom-1">
+      <span className="absolute bottom-0 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-white/10 bg-[#1f1d1a] px-3 py-1 text-[11px] whitespace-nowrap text-neutral-200 shadow-sm sm:bottom-1">
         <Check aria-hidden className="size-3" strokeWidth={3} />
         No attribution needed
       </span>
@@ -235,22 +235,22 @@ export function Steps() {
   return (
     <section
       aria-labelledby="steps-title"
-      className="bg-[#f6f4f0] px-4 py-16 text-neutral-900 sm:px-6 sm:py-24"
+      className="bg-[#141210] px-4 py-16 text-[#ffffff] sm:px-6 sm:py-24"
     >
       <Reveal className="mx-auto w-full max-w-[1080px]">
-        <p className="flex items-center gap-2 text-sm text-neutral-500">
-          <span aria-hidden className="size-2 rounded-full bg-neutral-400" />
+        <p className="flex items-center gap-2 text-sm text-neutral-400">
+          <span aria-hidden className="size-2 rounded-full bg-[#f3e0c9]" />
           {steps.eyebrow}
         </p>
         <h2
           id="steps-title"
           className="mt-3 max-w-[640px] text-[clamp(1.75rem,4.2vw,2.5rem)] leading-[1.15] font-medium tracking-tight text-balance"
         >
-          <span className="text-neutral-900">{steps.title}</span>
+          <span className="text-[#ffffff]">{steps.title}</span>
           {steps.accent ? (
             <>
               {" "}
-              <span className="text-neutral-400">{steps.accent}</span>
+              <span className="text-neutral-500">{steps.accent}</span>
             </>
           ) : null}
         </h2>
@@ -260,7 +260,7 @@ export function Steps() {
           <div
             role="tablist"
             aria-label={steps.title}
-            className="flex gap-1 overflow-x-auto border-b border-black/10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex gap-1 overflow-x-auto border-b border-white/10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {steps.items.map((s, i) => {
               const on = i === active;
@@ -275,8 +275,8 @@ export function Steps() {
                   tabIndex={on ? 0 : -1}
                   onClick={() => select(i)}
                   className={cn(
-                    "relative shrink-0 cursor-pointer px-3 py-3 text-[15px] whitespace-nowrap outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-black/40",
-                    on ? "text-neutral-900" : "text-neutral-500 hover:text-neutral-800"
+                    "relative shrink-0 cursor-pointer px-3 py-3 text-[15px] whitespace-nowrap outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-white/30",
+                    on ? "text-[#ffffff]" : "text-neutral-500 hover:text-neutral-300"
                   )}
                 >
                   {s.title}
@@ -287,7 +287,7 @@ export function Steps() {
                       initial={{ scaleX: auto && !reduce ? 0 : 1 }}
                       animate={{ scaleX: auto && !reduce ? (running ? 1 : 0) : 1 }}
                       transition={{ duration: running ? STEP_MS / 1000 : 0.2, ease: "linear" }}
-                      className="absolute inset-x-0 -bottom-px h-0.5 origin-left bg-neutral-900"
+                      className="absolute inset-x-0 -bottom-px h-0.5 origin-left bg-[#f3e0c9]"
                     />
                   )}
                 </button>
@@ -305,7 +305,7 @@ export function Steps() {
             {/* Image + scene */}
             <div
               aria-hidden
-              className="relative aspect-[1.1/1] w-full overflow-hidden rounded-[4px] bg-neutral-200 sm:aspect-[1.3/1]"
+              className="relative aspect-[1.1/1] w-full overflow-hidden rounded-[4px] bg-neutral-800 sm:aspect-[1.3/1]"
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
@@ -327,7 +327,7 @@ export function Steps() {
                       transformOrigin: BG_POS[active % BG_POS.length],
                     }}
                   />
-                  <div className="absolute inset-0 bg-white/10" />
+                  <div className="absolute inset-0 bg-black/25" />
                   <div className="absolute inset-0 grid place-items-center p-4 sm:p-6">
                     <Scene />
                   </div>
@@ -345,13 +345,13 @@ export function Steps() {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3, ease: EASE }}
                 >
-                  <p className="text-sm text-neutral-500">{item.title}</p>
-                  <p className="mt-3 max-w-[22rem] text-xl leading-snug text-neutral-900 sm:text-[22px]">
+                  <p className="text-sm text-neutral-400">{item.title}</p>
+                  <p className="mt-3 max-w-[22rem] text-xl leading-snug text-[#ffffff] sm:text-[22px]">
                     {item.description}
                   </p>
                   <Link
                     href={SITE.links.icons}
-                    className="group/cta mt-6 inline-flex h-10 items-center gap-2 rounded-full border border-black/10 bg-white px-5 text-sm font-medium text-neutral-900 shadow-sm transition-colors hover:bg-neutral-50 focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:outline-none"
+                    className="group/cta mt-6 inline-flex h-10 items-center gap-2 rounded-full border border-white/10 bg-black px-5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-neutral-900 focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:outline-none"
                   >
                     Browse all Odisha icons
                     <ArrowRight
