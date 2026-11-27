@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kenduli-mela",
+  "type": "registry:ui",
+  "title": "Kenduli Mela",
+  "description": "କେନ୍ଦୁଲି ମେଳା — kenduli, mela, baul.",
+  "categories": [
+    "festival"
+  ],
+  "meta": {
+    "odia": "କେନ୍ଦୁଲି ମେଳା",
+    "since": "0.3.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/kenduli-mela.svg",
+      "type": "registry:file",
+      "target": "components/icons/kenduli-mela.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\r\n  <path d=\"M12 3v17M9 20h6M10 7h4M8 11h8M9 15h6\"/><path d=\"M12 3c-2-2-4 0-3 2 1 2 5 2 6 0 1-2-1-4-3-2Z\"/><path d=\"M5 9 3 7M19 9l2-2\"/>\r\n</svg>"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kartika-purnima",
+  "type": "registry:ui",
+  "title": "Kartika Purnima",
+  "description": "କାର୍ତ୍ତିକ ପୂର୍ଣ୍ଣିମା — kartika, purnima, boita.",
+  "categories": [
+    "festival"
+  ],
+  "meta": {
+    "odia": "କାର୍ତ୍ତିକ ପୂର୍ଣ୍ଣିମା",
+    "since": "0.3.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/kartika-purnima.svg",
+      "type": "registry:file",
+      "target": "components/icons/kartika-purnima.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\r\n  <path d=\"M3 16h18l-2 4H6Z\"/><path d=\"M12 16V3M12 4l6 8h-6M10 7 6 12h4\"/><path d=\"M5 22c2-1 4-1 6 0s4 1 7 0\"/>\r\n</svg>"
+    }
+  ]
+}

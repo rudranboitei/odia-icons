@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chilika-lake",
+  "type": "registry:ui",
+  "title": "Chilika Lake",
+  "description": "ଚିଲିକା ହ୍ରଦ — chilika, lake, lagoon.",
+  "categories": [
+    "nature"
+  ],
+  "meta": {
+    "odia": "ଚିଲିକା ହ୍ରଦ",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/chilika-lake.svg",
+      "type": "registry:file",
+      "target": "components/icons/chilika-lake.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0\"/><path d=\"M4 13c3-4 6-6 9-6 2 0 4 1 7 4M13 7l2-3 2 3\"/></svg>"
+    }
+  ]
+}

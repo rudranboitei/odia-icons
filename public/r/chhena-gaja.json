@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chhena-gaja",
+  "type": "registry:ui",
+  "title": "Chhena Gaja",
+  "description": "ଛେନା ଗଜା — chhena gaja, sweet, cottage cheese.",
+  "categories": [
+    "food"
+  ],
+  "meta": {
+    "odia": "ଛେନା ଗଜା",
+    "since": "0.3.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/chhena-gaja.svg",
+      "type": "registry:file",
+      "target": "components/icons/chhena-gaja.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\r\n  <path d=\"M5 8 18 5l2 3-13 3Z\"/><path d=\"m5 12 13-3 2 3-13 3Z\"/><path d=\"m5 16 13-3 2 3-13 3Z\"/><path d=\"M5 8v8M18 5l2 11\"/>\r\n</svg>"
+    }
+  ]
+}

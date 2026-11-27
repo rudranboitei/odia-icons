@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rajarani-temple",
+  "type": "registry:ui",
+  "title": "Rajarani Temple",
+  "description": "ରାଜାରାଣୀ ମନ୍ଦିର — rajarani, temple, shikhara.",
+  "categories": [
+    "architecture"
+  ],
+  "meta": {
+    "odia": "ରାଜାରାଣୀ ମନ୍ଦିର",
+    "since": "0.3.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/rajarani-temple.svg",
+      "type": "registry:file",
+      "target": "components/icons/rajarani-temple.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\r\n  <path d=\"M3 20h18M5 18h14M7 18V9l2-2 1-4 2-2 2 2 1 4 2 2v9\"/><path d=\"M9 18v-5h6v5M8 9h8M10 7h4M12 2v16M5 11l2-2M17 9l2 2\"/>\r\n</svg>"
+    }
+  ]
+}

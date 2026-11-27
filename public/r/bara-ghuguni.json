@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bara-ghuguni",
+  "type": "registry:ui",
+  "title": "Bara Ghuguni",
+  "description": "ବରା ଘୁଗୁନି — bara-ghuguni, street-food, snack.",
+  "categories": [
+    "food"
+  ],
+  "meta": {
+    "odia": "ବରା ଘୁଗୁନି",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/bara-ghuguni.svg",
+      "type": "registry:file",
+      "target": "components/icons/bara-ghuguni.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12h16l-1.5 7h-13zM3 12c1.8-3 4.8-4.5 9-4.5s7.2 1.5 9 4.5\"/><circle cx=\"9\" cy=\"10\" r=\"1.2\"/><circle cx=\"14.5\" cy=\"9.5\" r=\"1.2\"/><path d=\"M8 19v2m8-2v2\"/></svg>"
+    }
+  ]
+}

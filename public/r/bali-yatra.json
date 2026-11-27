@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bali-yatra",
+  "type": "registry:ui",
+  "title": "Bali Yatra",
+  "description": "ବାଲିଯାତ୍ରା — bali-yatra, boat, maritime.",
+  "categories": [
+    "festival"
+  ],
+  "meta": {
+    "odia": "ବାଲିଯାତ୍ରା",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/bali-yatra.svg",
+      "type": "registry:file",
+      "target": "components/icons/bali-yatra.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 15h18l-3 4H7l-4-4Z\"/><path d=\"M12 15V4M12 5l5 8h-5M12 7 7 13h5\"/><path d=\"M5 21c2 1 4 1 6 0s4-1 6 0 3 1 5 0\"/></svg>"
+    }
+  ]
+}

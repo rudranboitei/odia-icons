@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "boita",
+  "type": "registry:ui",
+  "title": "Boita",
+  "description": "ବୋଇତ — boita, boat, ship.",
+  "categories": [
+    "travel"
+  ],
+  "meta": {
+    "odia": "ବୋଇତ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/boita.svg",
+      "type": "registry:file",
+      "target": "components/icons/boita.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 15.5h17c-.8 3-3.2 5-6 5h-5c-2.8 0-5.2-2-6-5z\"/><path d=\"M12 15.5V3.5\"/><path d=\"M12 4.5l5.5 9.5H12\"/></svg>"
+    }
+  ]
+}

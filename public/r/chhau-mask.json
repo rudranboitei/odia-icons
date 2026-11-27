@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chhau-mask",
+  "type": "registry:ui",
+  "title": "Chhau Mask",
+  "description": "ଛଉ ମୁଖା — chhau, mask, mayurbhanj.",
+  "categories": [
+    "art"
+  ],
+  "meta": {
+    "odia": "ଛଉ ମୁଖା",
+    "since": "0.2.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/chhau-mask.svg",
+      "type": "registry:file",
+      "target": "components/icons/chhau-mask.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 21.5c-4.3-2.2-7-5.5-7-9.5V9h14v3c0 4-2.7 7.3-7 9.5z\"/><path d=\"M5 9L6 4.5l3 2.5 3-3.5 3 3.5 3-2.5 1 4.5\"/><path d=\"M8 12.5h2.5M13.5 12.5H16M10 17h4\"/></svg>"
+    }
+  ]
+}
