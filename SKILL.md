@@ -40,7 +40,7 @@ npm install @odiaui/icons-react    # or: pnpm add / yarn add / bun add
 Single icon, no package, via the shadcn-style registry:
 
 ```bash
-npx shadcn add https://icons.odiaui.xyz/r/konark-wheel.json
+npx shadcn add https://icons.odiaui.xyz/r/home.json
 ```
 
 There is no runtime to configure and no provider to wrap your app in.
@@ -49,16 +49,16 @@ There is no runtime to configure and no provider to wrap your app in.
 
 ## 2. Use in React
 
-Each icon is a component named in PascalCase from its kebab-case name (`konark-wheel` becomes `KonarkWheel`).
+Each icon is a component named in PascalCase from its kebab-case name (`home` becomes `Home`).
 
 ```tsx
-import { KonarkWheel, DeulTemple } from "@odiaui/icons-react"
+import { Home, Search } from "@odiaui/icons-react"
 
 export function Example() {
   return (
     <div className="flex gap-4 text-foreground">
-      <KonarkWheel size={32} />
-      <DeulTemple size={24} strokeWidth={2} title="Temple" />
+      <Home size={32} />
+      <Search size={24} strokeWidth={2} title="Search" />
     </div>
   )
 }
@@ -70,7 +70,7 @@ export function Example() {
 |---|---|---|
 | `size` | `24` | Width and height in px |
 | `color` | `currentColor` | Inherits text colour; prefer styling with `className` / `text-*` |
-| `strokeWidth` | `1.5` | Spec stroke. 1 to 2.5 all look fine |
+| `strokeWidth` | `2` | Spec stroke. 1.5 to 2.5 all look fine |
 | `absoluteStrokeWidth` | `false` | Keep stroke thickness constant when `size` changes |
 | `variant` | `"outline"` | `"outline"`, `"solid"` or `"duotone"` where the icon provides it |
 | `title` | none | Adds an accessible name |
@@ -86,7 +86,7 @@ export function Example() {
 
 ```html
 <svg viewBox="0 0 24 24" width="24" height="24" fill="none"
-     stroke="currentColor" stroke-width="1.5"
+     stroke="currentColor" stroke-width="2"
      stroke-linecap="round" stroke-linejoin="round">
   <!-- paths -->
 </svg>
@@ -104,7 +104,7 @@ Icons carry an English name, an Odia-script name, a category and tags.
 - **Categories:** `culture`, `architecture`, `art`, `festival`, `food`, `nature`, `travel`, `ui`.
 - **Machine-readable list:** the build publishes an `icons.json` manifest (name, odia, category, tags, path data). Read that to look icons up in code instead of guessing names.
 
-Examples of names in the current set: `deul-temple`, `konark-wheel`, `rasagola`, `pakhala`, `deepa`, `jhoti`, `mridanga`, `boita`, `palm-tree`, `olive-ridley-turtle`, `terracotta-pot`.
+Examples of names in the current set: `home`, `search`, `message`, `user`, `lock`, `download`, `bell`, `settings`, `heart`, `mail`.
 
 Never fabricate an icon name. If you cannot find a match in the manifest or the website, tell the user and suggest requesting the motif (see section 6).
 
@@ -114,7 +114,7 @@ Never fabricate an icon name. If you cannot find a match in the manifest or the 
 
 - **Colour:** icons use `currentColor`. Colour them with the parent's text colour (`text-primary`, `text-muted-foreground`), not hard-coded hex.
 - **Sizes:** 16 for dense UI, 20 to 24 for buttons and nav, 32 to 48 for cards and features, 64 and up for hero art. Motifs are designed to stay readable at 16px.
-- **Stroke:** keep the default 1.5 so icons match each other. If you change it, change it everywhere in that view.
+- **Stroke:** keep the default 2 so icons match each other. If you change it, change it everywhere in that view.
 - **Mixing sets:** they sit comfortably beside most line icon sets (24px grid, round caps and joins). Do not mix with filled sets in the same row.
 - **Dark and light:** works in both because colour is inherited.
 - **Sensitive symbols:** religious and cultural symbols (Jagannath, Mahaprasad and similar) carry a `note` in their metadata. Use them respectfully and in fitting contexts, not as decoration for unrelated content.
@@ -126,7 +126,7 @@ Never fabricate an icon name. If you cannot find a match in the manifest or the 
 Hard constraints for any icon added or edited:
 
 - **Canvas:** 24 × 24 viewBox, 2px safe padding (20 × 20 live area).
-- **Style:** outline, 1.5px stroke, round caps, round joins, no fills (except the `solid` variant).
+- **Style:** outline, 2px stroke, round caps, round joins, no fills (except the `solid` variant).
 - `stroke="currentColor"` and `fill="none"`. No hard-coded colours, gradients, filters, masks or clip-paths.
 - Snap points to 0.5px; keep optical alignment to the 24px grid.
 - Cultural motifs must stay recognisable at 16px. Simplify; do not decorate.
@@ -147,12 +147,12 @@ meta/<name>.json
 
 ```json
 {
-  "name": "konark-wheel",
-  "odia": "କୋଣାର୍କ ଚକ",
-  "category": "architecture",
-  "tags": ["konark", "chakra", "sun temple", "ଚକ"],
-  "aliases": ["sun-wheel"],
-  "variants": ["outline", "solid"],
+  "name": "home",
+  "odia": "ଘର",
+  "category": "ui",
+  "tags": ["home", "house", "main", "start", "ଘର"],
+  "aliases": ["house"],
+  "variants": ["outline"],
   "contributors": ["github-handle"],
   "since": "0.1.0",
   "note": ""

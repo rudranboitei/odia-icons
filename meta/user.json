@@ -8,7 +8,6 @@
     "profile",
     "account",
     "avatar",
-    "dashboard",
     "ବ୍ୟବହାରକାରୀ"
   ],
   "aliases": [
@@ -23,5 +22,5 @@
   ],
   "since": "0.1.0",
   "status": "needs-review",
-  "note": "Odia text is a guess (or a transliteration) and needs a native check."
+  "note": "Odia text needs a native check."
 }

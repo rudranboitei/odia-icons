@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "flag",
+  "type": "registry:ui",
+  "title": "Flag",
+  "description": "ପତାକା — flag, pataka, report.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ପତାକା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/flag.svg",
+      "type": "registry:file",
+      "target": "components/icons/flag.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5.5 21V4.5M5.5 5h12.5l-2.5 4 2.5 4H5.5\"/></svg>"
+    }
+  ]
+}

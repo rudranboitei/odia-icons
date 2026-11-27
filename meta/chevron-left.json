@@ -1,0 +1,25 @@
+{
+  "name": "chevron-left",
+  "odia": "ବାମକୁ",
+  "category": "ui",
+  "tags": [
+    "chevron",
+    "left",
+    "previous",
+    "back",
+    "caret",
+    "ବାମକୁ"
+  ],
+  "aliases": [
+    "caret-left"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

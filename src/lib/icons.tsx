@@ -1,13 +1,19 @@
 import { forwardRef, type SVGProps } from "react"
-import { icons, iconsByName, type IconCategory, type IconDef } from "./icons.generated"
+import {
+  ICON_COUNT,
+  icons,
+  iconsByName,
+  type IconCategory,
+  type IconDef,
+} from "./icons.generated"
 
-export { icons, iconsByName }
+export { ICON_COUNT, icons, iconsByName }
 export type { IconCategory, IconDef, IconVariant } from "./icons.generated"
 
 export type Opts = { size: number; stroke: number }
 
 export const GRID = 24
-export const DEFAULT_STROKE = 1.5
+export const DEFAULT_STROKE = 2
 
 const els = (body: string, pad: string) => {
   const parts = body.match(/<[^>]+>/g) ?? []
@@ -70,7 +76,7 @@ ${toJsxBody(els(icon.body, "      "))}
 `
 
 export const toImport = (icon: IconDef) =>
-  `import { ${pascal(icon.name)} } from "@odiaui/icons-react"\n\n<${pascal(icon.name)} size={24} strokeWidth={1.5} />`
+  `import { ${pascal(icon.name)} } from "@odiaui/icons-react"\n\n<${pascal(icon.name)} size={24} strokeWidth={2} />`
 
 // currentColor does not work inside a data URI, so a fixed ink color is used.
 export const toDataUri = (icon: IconDef, o: Opts) =>
@@ -84,12 +90,12 @@ export const formats = [
   { id: "uri", label: "Data URI", run: toDataUri },
 ] as const
 
-/** Cultural icons shown first, in this order, so the set reads as Odia. */
+/** Pinned icons shown first, in this order. */
 const FEATURED_ORDER: readonly string[] = [
-  "deul-temple",
-  "konark-wheel",
-  "rasagola",
-  "pakhala",
+  "home",
+  "search",
+  "message",
+  "user",
 ]
 
 export const CATEGORY_ORDER: readonly IconCategory[] = [

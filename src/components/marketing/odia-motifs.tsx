@@ -3,7 +3,7 @@
 import type { JSX, SVGProps } from "react";
 
 /**
- * Custom Odisha motifs, drawn on a 48 × 48 grid with a 1.5 stroke.
+ * Custom Odisha motifs, drawn on a 48 × 48 grid with a 2 stroke.
  * Main lines use `currentColor`; detail lines use the theme's `primary`
  * colour, so each motif has two tones without extra props.
  */
@@ -14,7 +14,7 @@ const base = {
   viewBox: "0 0 48 48",
   fill: "none",
   stroke: "currentColor",
-  strokeWidth: 1.5,
+  strokeWidth: 2,
   strokeLinecap: "round",
   strokeLinejoin: "round",
   "aria-hidden": true,

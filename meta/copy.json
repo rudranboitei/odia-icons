@@ -1,0 +1,24 @@
+{
+  "name": "copy",
+  "odia": "ନକଲ",
+  "category": "ui",
+  "tags": [
+    "copy",
+    "duplicate",
+    "clone",
+    "clipboard",
+    "ନକଲ"
+  ],
+  "aliases": [
+    "duplicate"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

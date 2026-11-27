@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cart",
+  "type": "registry:ui",
+  "title": "Cart",
+  "description": "ଟୋକେଇ — cart, basket, shop.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଟୋକେଇ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/cart.svg",
+      "type": "registry:file",
+      "target": "components/icons/cart.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 4h2l2 10.5h10.5a1 1 0 0 0 1-.8L20.5 7H6.2M9 19.5h.01M17 19.5h.01\"/></svg>"
+    }
+  ]
+}

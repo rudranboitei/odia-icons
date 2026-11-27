@@ -1,0 +1,25 @@
+{
+  "name": "phone",
+  "odia": "ଫୋନ୍",
+  "category": "ui",
+  "tags": [
+    "phone",
+    "mobile",
+    "device",
+    "call",
+    "smartphone",
+    "ଫୋନ୍"
+  ],
+  "aliases": [
+    "mobile"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

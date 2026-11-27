@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gift",
+  "type": "registry:ui",
+  "title": "Gift",
+  "description": "ଉପହାର — gift, present, reward.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଉପହାର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/gift.svg",
+      "type": "registry:file",
+      "target": "components/icons/gift.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12.5V18a2.5 2.5 0 0 0 2.5 2.5h9A2.5 2.5 0 0 0 19 18v-5.5\"/><rect x=\"3.5\" y=\"8.5\" width=\"17\" height=\"4\" rx=\"1.5\"/><path d=\"M12 8.5v12M12 8.5H8.5a2.25 2.25 0 1 1 0-4.5C10.5 4 12 6 12 8.5zM12 8.5h3.5a2.25 2.25 0 1 0 0-4.5C13.5 4 12 6 12 8.5z\"/></svg>"
+    }
+  ]
+}

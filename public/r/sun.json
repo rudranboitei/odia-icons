@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sun",
+  "type": "registry:ui",
+  "title": "Sun",
+  "description": "ସୂର୍ଯ୍ୟ — sun, light, day.",
+  "categories": [
+    "nature"
+  ],
+  "meta": {
+    "odia": "ସୂର୍ଯ୍ୟ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/sun.svg",
+      "type": "registry:file",
+      "target": "components/icons/sun.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 3v1.5M12 19.5V21M3 12h1.5M19.5 12H21M5.6 5.6l1 1M17.4 17.4l1 1M5.6 18.4l1-1M17.4 6.6l1-1\"/></svg>"
+    }
+  ]
+}

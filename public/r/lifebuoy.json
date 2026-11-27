@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lifebuoy",
+  "type": "registry:ui",
+  "title": "Lifebuoy",
+  "description": "ସହାୟତା — lifebuoy, support, help.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ସହାୟତା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/lifebuoy.svg",
+      "type": "registry:file",
+      "target": "components/icons/lifebuoy.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><path d=\"M5.6 5.6l3.9 3.9M18.4 5.6l-3.9 3.9M5.6 18.4l3.9-3.9M18.4 18.4l-3.9-3.9\"/></svg>"
+    }
+  ]
+}

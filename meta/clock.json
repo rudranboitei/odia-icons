@@ -1,0 +1,25 @@
+{
+  "name": "clock",
+  "odia": "ଘଡ଼ି",
+  "category": "ui",
+  "tags": [
+    "clock",
+    "time",
+    "ghadi",
+    "watch",
+    "schedule",
+    "ଘଡ଼ି"
+  ],
+  "aliases": [
+    "time"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

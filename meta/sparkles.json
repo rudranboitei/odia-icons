@@ -1,0 +1,26 @@
+{
+  "name": "sparkles",
+  "odia": "ଚମକ",
+  "category": "ui",
+  "tags": [
+    "sparkles",
+    "magic",
+    "ai",
+    "new",
+    "shine",
+    "ଚମକ"
+  ],
+  "aliases": [
+    "magic",
+    "ai"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

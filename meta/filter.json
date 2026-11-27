@@ -1,0 +1,25 @@
+{
+  "name": "filter",
+  "odia": "ଫିଲ୍ଟର",
+  "category": "ui",
+  "tags": [
+    "filter",
+    "funnel",
+    "sort",
+    "refine",
+    "narrow",
+    "ଫିଲ୍ଟର"
+  ],
+  "aliases": [
+    "funnel"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

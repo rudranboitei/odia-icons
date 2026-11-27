@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "moon",
+  "type": "registry:ui",
+  "title": "Moon",
+  "description": "ଚନ୍ଦ୍ର — moon, night, dark.",
+  "categories": [
+    "nature"
+  ],
+  "meta": {
+    "odia": "ଚନ୍ଦ୍ର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/moon.svg",
+      "type": "registry:file",
+      "target": "components/icons/moon.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 14A8.5 8.5 0 0 1 10 4a8.5 8.5 0 1 0 10 10z\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "sliders",
+  "odia": "ନିୟନ୍ତ୍ରଣ",
+  "category": "ui",
+  "tags": [
+    "sliders",
+    "controls",
+    "adjust",
+    "tune",
+    "equalizer",
+    "ନିୟନ୍ତ୍ରଣ"
+  ],
+  "aliases": [
+    "controls"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

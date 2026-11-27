@@ -1,0 +1,25 @@
+{
+  "name": "volume",
+  "odia": "ଧ୍ୱନି",
+  "category": "ui",
+  "tags": [
+    "volume",
+    "sound",
+    "speaker",
+    "audio",
+    "loud",
+    "ଧ୍ୱନି"
+  ],
+  "aliases": [
+    "speaker"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

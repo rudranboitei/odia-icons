@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "book",
+  "type": "registry:ui",
+  "title": "Book",
+  "description": "ବହି — book, read, library.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ବହି",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/book.svg",
+      "type": "registry:file",
+      "target": "components/icons/book.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 6.5C10 5 7 4.5 4.5 4.5V18c2.5 0 5.5.5 7.5 2 2-1.5 5-2 7.5-2V4.5C17 4.5 14 5 12 6.5zM12 6.5V20\"/></svg>"
+    }
+  ]
+}

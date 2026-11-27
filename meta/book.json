@@ -1,0 +1,25 @@
+{
+  "name": "book",
+  "odia": "ବହି",
+  "category": "ui",
+  "tags": [
+    "book",
+    "read",
+    "library",
+    "bahi",
+    "docs",
+    "ବହି"
+  ],
+  "aliases": [
+    "read"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

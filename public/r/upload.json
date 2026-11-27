@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "upload",
+  "type": "registry:ui",
+  "title": "Upload",
+  "description": "ଅପଲୋଡ୍ — upload, send, arrow.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଅପଲୋଡ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/upload.svg",
+      "type": "registry:file",
+      "target": "components/icons/upload.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 15V5M7.5 9L12 4.5 16.5 9M4.5 15v2.5a3 3 0 0 0 3 3h9a3 3 0 0 0 3-3V15\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "note",
+  "odia": "ଟିପ୍ପଣୀ",
+  "category": "ui",
+  "tags": [
+    "note",
+    "memo",
+    "text",
+    "list",
+    "card",
+    "ଟିପ୍ପଣୀ"
+  ],
+  "aliases": [
+    "memo"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

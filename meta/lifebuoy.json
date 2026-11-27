@@ -1,0 +1,25 @@
+{
+  "name": "lifebuoy",
+  "odia": "ସହାୟତା",
+  "category": "ui",
+  "tags": [
+    "lifebuoy",
+    "support",
+    "help",
+    "rescue",
+    "assist",
+    "ସହାୟତା"
+  ],
+  "aliases": [
+    "support"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

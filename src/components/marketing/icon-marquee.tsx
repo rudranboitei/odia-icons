@@ -43,7 +43,7 @@ function MarqueeRow({
                   <Icon
                     def={icon}
                     size={44}
-                    stroke={1.4}
+                    stroke={2}
                     className="text-foreground"
                   />
                   <span className="text-[13px] leading-[1.2] font-medium capitalize tracking-[-0.03em] text-muted-foreground">

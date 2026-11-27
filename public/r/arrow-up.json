@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrow-up",
+  "type": "registry:ui",
+  "title": "Arrow Up",
+  "description": "ଉପର ତୀର — arrow, up, top.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଉପର ତୀର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/arrow-up.svg",
+      "type": "registry:file",
+      "target": "components/icons/arrow-up.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 19V5M6 11l6-6 6 6\"/></svg>"
+    }
+  ]
+}

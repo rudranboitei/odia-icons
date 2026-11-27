@@ -1,0 +1,25 @@
+{
+  "name": "mic",
+  "odia": "ମାଇକ୍",
+  "category": "ui",
+  "tags": [
+    "mic",
+    "microphone",
+    "voice",
+    "record",
+    "audio",
+    "ମାଇକ୍"
+  ],
+  "aliases": [
+    "microphone"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

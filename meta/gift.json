@@ -1,0 +1,25 @@
+{
+  "name": "gift",
+  "odia": "ଉପହାର",
+  "category": "ui",
+  "tags": [
+    "gift",
+    "present",
+    "reward",
+    "surprise",
+    "birthday",
+    "ଉପହାର"
+  ],
+  "aliases": [
+    "present"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

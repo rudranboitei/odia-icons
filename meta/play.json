@@ -1,0 +1,25 @@
+{
+  "name": "play",
+  "odia": "ଚଲାନ୍ତୁ",
+  "category": "ui",
+  "tags": [
+    "play",
+    "start",
+    "video",
+    "media",
+    "run",
+    "ଚଲାନ୍ତୁ"
+  ],
+  "aliases": [
+    "start"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

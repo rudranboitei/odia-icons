@@ -22,7 +22,7 @@ function WallCard({ icon, tall }: { icon: IconEntry; tall: boolean }) {
         tall ? "aspect-[3/4]" : "aspect-square"
       }`}
     >
-      <IconGlyph icon={icon} className="size-1/3 text-white/70" strokeWidth={1.5} />
+      <IconGlyph icon={icon} className="size-1/3 text-white/70" strokeWidth={2} />
       <span className="font-mono text-[10px] tracking-wide text-white/40">
         {icon.name}
       </span>

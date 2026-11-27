@@ -1,0 +1,26 @@
+{
+  "name": "close",
+  "odia": "ବନ୍ଦ",
+  "category": "ui",
+  "tags": [
+    "close",
+    "x",
+    "cancel",
+    "dismiss",
+    "remove",
+    "ବନ୍ଦ"
+  ],
+  "aliases": [
+    "x",
+    "cancel"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

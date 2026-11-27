@@ -1,0 +1,25 @@
+{
+  "name": "wifi",
+  "odia": "ୱାଇଫାଇ",
+  "category": "ui",
+  "tags": [
+    "wifi",
+    "wireless",
+    "network",
+    "internet",
+    "signal",
+    "ୱାଇଫାଇ"
+  ],
+  "aliases": [
+    "wireless"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

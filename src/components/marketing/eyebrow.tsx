@@ -4,7 +4,7 @@ import { Icon, iconsByName, type IconDef } from "@/lib/icons";
 // Small pill with an icon — the eyebrow used above every section headline.
 export function Eyebrow({
   children,
-  icon = iconsByName["deepa"],
+  icon = iconsByName["home"],
 }: {
   children: ReactNode;
   icon?: IconDef;

@@ -1,0 +1,25 @@
+{
+  "name": "chevron-down",
+  "odia": "ତଳକୁ",
+  "category": "ui",
+  "tags": [
+    "chevron",
+    "down",
+    "expand",
+    "dropdown",
+    "caret",
+    "ତଳକୁ"
+  ],
+  "aliases": [
+    "caret-down"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

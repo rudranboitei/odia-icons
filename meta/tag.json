@@ -1,0 +1,25 @@
+{
+  "name": "tag",
+  "odia": "ଟ୍ୟାଗ୍",
+  "category": "ui",
+  "tags": [
+    "tag",
+    "label",
+    "price",
+    "category",
+    "sale",
+    "ଟ୍ୟାଗ୍"
+  ],
+  "aliases": [
+    "label"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

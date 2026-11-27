@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "clock",
+  "type": "registry:ui",
+  "title": "Clock",
+  "description": "ଘଡ଼ି — clock, time, ghadi.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଘଡ଼ି",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/clock.svg",
+      "type": "registry:file",
+      "target": "components/icons/clock.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7.5V12l3 2\"/></svg>"
+    }
+  ]
+}

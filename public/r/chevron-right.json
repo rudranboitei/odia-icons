@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chevron-right",
+  "type": "registry:ui",
+  "title": "Chevron Right",
+  "description": "ଡାହାଣକୁ — chevron, right, next.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଡାହାଣକୁ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/chevron-right.svg",
+      "type": "registry:file",
+      "target": "components/icons/chevron-right.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 6l6 6-6 6\"/></svg>"
+    }
+  ]
+}

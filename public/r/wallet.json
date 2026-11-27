@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wallet",
+  "type": "registry:ui",
+  "title": "Wallet",
+  "description": "ପର୍ସ — wallet, money, payment.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ପର୍ସ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/wallet.svg",
+      "type": "registry:file",
+      "target": "components/icons/wallet.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3.5\" y=\"6.5\" width=\"17\" height=\"13\" rx=\"4\"/><path d=\"M20.5 11.5H17a2 2 0 0 0 0 4h3.5M17 13.5h.01\"/></svg>"
+    }
+  ]
+}

@@ -164,7 +164,7 @@ export interface ${componentName}Props extends React.SVGProps<SVGSVGElement> {
 export const ${componentName} = React.forwardRef<
   SVGSVGElement,
   ${componentName}Props
->(({ size = 24, strokeWidth = 1.5, ...props }, ref) => (
+>(({ size = 24, strokeWidth = 2, ...props }, ref) => (
   <svg
     ref={ref}
     xmlns="http://www.w3.org/2000/svg"
@@ -257,6 +257,16 @@ async function main() {
     `${indexLines.join("\n")}\n`,
     "utf8",
   );
+
+  const readmePath = path.join(packageRoot, "README.md");
+  const readme = await readFile(readmePath, "utf8");
+  const syncedReadme = readme.replace(
+    /- \d+ icons/g,
+    `- ${components.size} icons`,
+  );
+  if (syncedReadme !== readme) {
+    await writeFile(readmePath, syncedReadme, "utf8");
+  }
 
   console.log(
     `Generated ${components.size} icon components in ${path.relative(

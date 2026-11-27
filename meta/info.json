@@ -1,0 +1,25 @@
+{
+  "name": "info",
+  "odia": "ସୂଚନା",
+  "category": "ui",
+  "tags": [
+    "info",
+    "information",
+    "about",
+    "details",
+    "help",
+    "ସୂଚନା"
+  ],
+  "aliases": [
+    "information"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

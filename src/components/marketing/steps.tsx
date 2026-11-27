@@ -49,11 +49,11 @@ function makeIcon(name: string): Motif {
 }
 
 const ICONS: { Icon: Motif; label: string }[] = [
-  { Icon: makeIcon("deepa"), label: "Deepa" },
-  { Icon: makeIcon("calendar"), label: "Calendar" },
   { Icon: makeIcon("home"), label: "Home" },
-  { Icon: makeIcon("mail"), label: "Mail" },
-  { Icon: makeIcon("pakhala"), label: "Pakhala" },
+  { Icon: makeIcon("search"), label: "Search" },
+  { Icon: makeIcon("message"), label: "Message" },
+  { Icon: makeIcon("lock"), label: "Lock" },
+  { Icon: makeIcon("bell"), label: "Bell" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -110,7 +110,7 @@ function SceneBrowse() {
       </div>
       <div className="mt-3 flex items-center justify-between text-[11px] text-neutral-500">
         <span className="font-medium text-neutral-800">{ICONS[0].label}</span>
-        <span className="font-mono">24 × 24 · 1.5 stroke</span>
+        <span className="font-mono">24 × 24 · 2 stroke</span>
       </div>
     </Card>
   );

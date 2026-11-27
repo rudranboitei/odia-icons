@@ -1,0 +1,23 @@
+{
+  "name": "arrow-up",
+  "odia": "ଉପର ତୀର",
+  "category": "ui",
+  "tags": [
+    "arrow",
+    "up",
+    "top",
+    "increase",
+    "direction",
+    "ଉପର ତୀର"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "refresh",
+  "type": "registry:ui",
+  "title": "Refresh",
+  "description": "ସତେଜ — refresh, reload, sync.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ସତେଜ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/refresh.svg",
+      "type": "registry:file",
+      "target": "components/icons/refresh.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 12a8 8 0 1 1-2.5-5.8M20 4v4h-4\"/></svg>"
+    }
+  ]
+}

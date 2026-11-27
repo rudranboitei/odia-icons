@@ -8,7 +8,6 @@
     "arrow",
     "import",
     "tray",
-    "dashboard",
     "ଡାଉନଲୋଡ୍"
   ],
   "aliases": [],
@@ -20,5 +19,5 @@
   ],
   "since": "0.1.0",
   "status": "needs-review",
-  "note": "Odia text is a transliteration of the English word; needs a native check."
+  "note": "Odia text needs a native check."
 }

@@ -1,19 +1,17 @@
 {
   "name": "settings",
-  "odia": "ସେଟିଂସ",
+  "odia": "ସେଟିଂ",
   "category": "ui",
   "tags": [
     "settings",
-    "gear",
+    "setting",
+    "config",
     "preferences",
     "options",
-    "config",
-    "dashboard",
-    "ସେଟିଂସ"
+    "ସେଟିଂ"
   ],
   "aliases": [
-    "gear",
-    "preferences"
+    "config"
   ],
   "variants": [
     "outline"
@@ -23,5 +21,5 @@
   ],
   "since": "0.1.0",
   "status": "needs-review",
-  "note": "Odia text is a guess (or a transliteration) and needs a native check."
+  "note": "Odia text needs a native check."
 }

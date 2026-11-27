@@ -28,7 +28,7 @@ const COPY = {
 const BG = "/hero-bg.webp";
 const BG_POS = "52% 72%";
 
-const NAMES = ["deepa", "calendar", "home", "mail", "pakhala"];
+const NAMES = ["home", "search", "message", "lock", "bell"];
 
 const COLORS = [
   { name: "Ink", value: "#171717" },
@@ -118,7 +118,7 @@ export function PlaygroundSection() {
 
   const [selected, setSelected] = useState(names[0] ?? NAMES[0]);
   const [size, setSize] = useState(48);
-  const [stroke, setStroke] = useState(1.5);
+  const [stroke, setStroke] = useState(2);
   const [color, setColor] = useState(COLORS[0].value);
   const [format, setFormat] = useState<Format>("React");
   const [copied, setCopied] = useState(false);

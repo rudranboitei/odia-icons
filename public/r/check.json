@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "check",
+  "type": "registry:ui",
+  "title": "Check",
+  "description": "ଠିକ୍ — check, tick, done.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଠିକ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/check.svg",
+      "type": "registry:file",
+      "target": "components/icons/check.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>"
+    }
+  ]
+}

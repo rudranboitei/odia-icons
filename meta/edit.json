@@ -7,8 +7,7 @@
     "pencil",
     "write",
     "modify",
-    "update",
-    "dashboard",
+    "compose",
     "ସମ୍ପାଦନ"
   ],
   "aliases": [
@@ -22,5 +21,5 @@
   ],
   "since": "0.1.0",
   "status": "needs-review",
-  "note": "Odia text is a guess and needs a native check."
+  "note": "Odia text needs a native check."
 }

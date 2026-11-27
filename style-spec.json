@@ -1,18 +1,53 @@
 {
-  "version": 2,
+  "version": 3,
   "viewBox": "0 0 24 24",
   "livePadding": 2,
-  "stroke": 1.5,
+  "stroke": 2,
   "linecap": "round",
   "linejoin": "round",
   "color": "currentColor",
   "fill": "none",
-  "cornerRadius": 2,
   "snap": 0.5,
-  "minGap": 1.25,
+  "minGap": 1.0,
+  "targetGap": 1.25,
   "minDetail": 1.5,
-  "maxPaths": 8,
-  "maxBytes": 2048,
+  "cornerRadius": {
+    "container": 3,
+    "innerMin": 1.5
+  },
+  "accentFill": {
+    "allowed": true,
+    "maxPerIcon": 1,
+    "maxSize": 6,
+    "note": "One small solid glyph inside a container icon (map pin, search lens), or tiny solid shapes like loader petals. Never a filled outer silhouette."
+  },
+  "complexity": {
+    "simple": {
+      "maxPaths": 5,
+      "maxBytes": 1024,
+      "use": "UI and general icons"
+    },
+    "standard": {
+      "maxPaths": 8,
+      "maxBytes": 2048,
+      "use": "single-object culture icons (diya, lotus, shankha)"
+    },
+    "complex": {
+      "maxPaths": 12,
+      "maxBytes": 2560,
+      "use": "temples, elephant, faces with ornament"
+    }
+  },
+  "plinth": {
+    "y": 20.5,
+    "x1": 3,
+    "x2": 21,
+    "use": "temples and architecture sit on a full-width rounded baseline"
+  },
+  "containerShape": {
+    "name": "kalasha-dome",
+    "use": "UI container with a small ogee bump on top centre (share, dots, menu). Plain rounded squares are used for neutral UI like copy."
+  },
   "displaySizes": [
     16,
     20,
@@ -20,5 +55,31 @@
   ],
   "variants": [
     "outline"
-  ]
+  ],
+  "measured": {
+    "source": "reference sheet of 20 icons (raster, white on black)",
+    "strokeToLongAxis": {
+      "median": 0.067,
+      "range": [
+        0.055,
+        0.079
+      ]
+    },
+    "strokeAt20UnitSpan": {
+      "median": 1.33,
+      "range": [
+        1.1,
+        1.6
+      ]
+    },
+    "tightestGapInStrokes": {
+      "median": 0.6,
+      "range": [
+        0.25,
+        1.5
+      ]
+    },
+    "typicalGapInStrokes": 1.0,
+    "note": "Reference is an AI-rendered raster, so stroke varies 8 to 10px. Values are ranges, not exact. The library uses 2 so the set reads clearly at 16px and stays consistent across the clean batch."
+  }
 }

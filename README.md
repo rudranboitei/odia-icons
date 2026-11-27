@@ -17,43 +17,111 @@
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-1f1f1f?style=flat-square" alt="MIT License" /></a>
-  <img src="https://img.shields.io/badge/icons-37-f3e0c9?style=flat-square&labelColor=1f1f1f" alt="37 icons" />
+<!-- icon-count-badge:start -->
+  <img src="https://img.shields.io/badge/icons-72-f3e0c9?style=flat-square&labelColor=1f1f1f" alt="72 icons" />
+<!-- icon-count-badge:end -->
   <img src="https://img.shields.io/badge/grid-24%C3%9724-1f1f1f?style=flat-square" alt="24x24 grid" />
-  <img src="https://img.shields.io/badge/stroke-1.5px-1f1f1f?style=flat-square" alt="1.5px stroke" />
+  <img src="https://img.shields.io/badge/stroke-2px-1f1f1f?style=flat-square" alt="2px stroke" />
   <a href="https://github.com/rudranboitei/odia-icons/pulls"><img src="https://img.shields.io/badge/PRs-welcome-1f1f1f?style=flat-square" alt="PRs welcome" /></a>
 </p>
 
 ---
 
-OdiaIcons is a compact, carefully crafted icon set: 19 Odisha motifs plus a matching UI set. Every icon is drawn on a shared 24 × 24 grid, uses `currentColor`, and is designed to feel consistent across product interfaces, websites, and editorial layouts.
+OdiaIcons is a compact, carefully crafted icon set. The current release is a focused 72-icon set, drawn with Odisha in mind; the Odia motif set is being redrawn in the same style. Every icon is drawn on a shared 24 × 24 grid, uses `currentColor`, and is designed to feel consistent across product interfaces, websites, and editorial layouts.
 
 Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon browser](https://icons.odiaui.xyz/icons).
 
 ## Highlights
 
-- **Rooted in Odisha** — Motifs inspired by Konark, Kalinga architecture, Odia crafts, music and local traditions.
-- **Consistent by design** — Every icon follows a 24 × 24 grid, 2px safe padding, 1.5px stroke, round caps, and round joins.
+- **Rooted in Odisha** — Designed in Odisha. The first release is a starter set, with Odia motifs returning in the same style.
+- **Consistent by design** — Every icon follows a 24 × 24 grid, 2px safe padding, 2px stroke, round caps, and round joins.
 - **Theme-friendly** — Built with `currentColor`, so icons inherit text color and work naturally in light/dark themes.
 - **Developer-ready exports** — Copy SVG, JSX, React/TSX, import snippet, or data URI from the playground.
 - **Bilingual discovery** — Icon names, tags, and aliases support English and Odia script.
 - **Open source** — MIT licensed, free for personal and commercial use.
 
+<!-- icon-set:start -->
 ## Icon Set
 
-**37 icons and counting:** 19 Odisha motifs plus a matching UI set. Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons). A sample:
+**72 icons and counting:** a focused set. Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons).
 
 | Icon | Name | Odia | Category |
 |------|------|------|----------|
-| Boita | `boita` | ବୋଇତ | Travel |
-| Deepa | `deepa` | ଦୀପ | Culture |
-| Deul Temple | `deul-temple` | ଦେଉଳ | Architecture |
-| Konark Wheel | `konark-wheel` | କୋଣାର୍କ ଚକ | Architecture |
-| Rasagola | `rasagola` | ରସଗୋଲା | Food |
-| Pakhala | `pakhala` | ପଖାଳ | Food |
-| Palm Tree | `palm-tree` | ତାଳଗଛ | Nature |
-| Olive Ridley Turtle | `olive-ridley-turtle` | ସାମୁଦ୍ରିକ କଇଁଛ | Nature |
+| Arrow Left | `arrow-left` | ବାମ ତୀର | UI |
+| Arrow Right | `arrow-right` | ତୀର | UI |
+| Arrow Up | `arrow-up` | ଉପର ତୀର | UI |
+| Bag | `bag` | ଝୋଲା | UI |
+| Bell | `bell` | ଘଣ୍ଟି | UI |
+| Bolt | `bolt` | ବିଜୁଳି | Nature |
+| Book | `book` | ବହି | UI |
+| Bookmark | `bookmark` | ବୁକମାର୍କ | UI |
+| Briefcase | `briefcase` | ବ୍ରିଫକେସ୍ | UI |
+| Calendar | `calendar` | କ୍ୟାଲେଣ୍ଡର | UI |
+| Camera | `camera` | କ୍ୟାମେରା | UI |
+| Card | `card` | କାର୍ଡ | UI |
+| Cart | `cart` | ଟୋକେଇ | UI |
+| Check | `check` | ଠିକ୍ | UI |
+| Chevron Down | `chevron-down` | ତଳକୁ | UI |
+| Chevron Left | `chevron-left` | ବାମକୁ | UI |
+| Chevron Right | `chevron-right` | ଡାହାଣକୁ | UI |
+| Chevron Up | `chevron-up` | ଉପରକୁ | UI |
+| Clock | `clock` | ଘଡ଼ି | UI |
+| Close | `close` | ବନ୍ଦ | UI |
+| Cloud | `cloud` | ମେଘ | Nature |
+| Copy | `copy` | ନକଲ | UI |
+| Download | `download` | ଡାଉନଲୋଡ୍ | UI |
+| Edit | `edit` | ସମ୍ପାଦନ | UI |
+| External Link | `external-link` | ବାହାର ଲିଙ୍କ | UI |
+| Eye | `eye` | ଆଖି | UI |
+| File | `file` | ଫାଇଲ୍ | UI |
+| Filter | `filter` | ଫିଲ୍ଟର | UI |
+| Flag | `flag` | ପତାକା | UI |
+| Folder | `folder` | ଫୋଲ୍ଡର୍ | UI |
+| Gift | `gift` | ଉପହାର | UI |
+| Globe | `globe` | ଦୁନିଆ | UI |
+| Heart | `heart` | ହୃଦୟ | UI |
+| Help | `help` | ସାହାଯ୍ୟ | UI |
+| Home | `home` | ଘର | UI |
+| Image | `image` | ଛବି | UI |
+| Info | `info` | ସୂଚନା | UI |
+| Leaf | `leaf` | ପତ୍ର | Nature |
+| Lifebuoy | `lifebuoy` | ସହାୟତା | UI |
+| Link | `link` | ଲିଙ୍କ୍ | UI |
+| Lock | `lock` | ତାଲା | UI |
+| Logout | `logout` | ଲଗଆଉଟ୍ | UI |
+| Mail | `mail` | ଚିଠି | UI |
+| Map Pin | `map-pin` | ସ୍ଥାନ | UI |
+| Menu | `menu` | ମେନୁ | UI |
+| Message | `message` | ବାର୍ତ୍ତା | UI |
+| Mic | `mic` | ମାଇକ୍ | UI |
+| Moon | `moon` | ଚନ୍ଦ୍ର | Nature |
+| Music | `music` | ସଙ୍ଗୀତ | UI |
+| Note | `note` | ଟିପ୍ପଣୀ | UI |
+| Pause | `pause` | ବିରତି | UI |
+| Phone | `phone` | ଫୋନ୍ | UI |
+| Play | `play` | ଚଲାନ୍ତୁ | UI |
+| Plus | `plus` | ଯୋଗ | UI |
+| Refresh | `refresh` | ସତେଜ | UI |
+| Search | `search` | ଖୋଜ | UI |
+| Settings | `settings` | ସେଟିଂ | UI |
+| Share | `share` | ବାଣ୍ଟ | UI |
+| Sliders | `sliders` | ନିୟନ୍ତ୍ରଣ | UI |
+| Smile | `smile` | ହସ | UI |
+| Sparkles | `sparkles` | ଚମକ | UI |
+| Square Minus | `square-minus` | ବିୟୋଗ | UI |
+| Star | `star` | ତାରା | UI |
+| Sun | `sun` | ସୂର୍ଯ୍ୟ | Nature |
+| Tag | `tag` | ଟ୍ୟାଗ୍ | UI |
+| Trash | `trash` | ଅଳିଆ | UI |
+| Undo | `undo` | ପଛକୁ | UI |
+| Upload | `upload` | ଅପଲୋଡ୍ | UI |
+| User | `user` | ବ୍ୟବହାରକାରୀ | UI |
+| Volume | `volume` | ଧ୍ୱନି | UI |
+| Wallet | `wallet` | ପର୍ସ | UI |
+| Wifi | `wifi` | ୱାଇଫାଇ | UI |
 
 > Have a motif in mind? [Request an icon](https://github.com/rudranboitei/odia-icons/issues/new).
+<!-- icon-set:end -->
 
 ## Getting Started
 
@@ -120,7 +188,7 @@ All icons follow the same visual contract to keep the set cohesive:
 | Canvas | 24 × 24 |
 | Safe area | 20 × 20 (2px padding) |
 | Style | Outline |
-| Stroke width | 1.5px |
+| Stroke width | 2px |
 | Stroke caps / joins | Round |
 | Color | `currentColor` |
 | Fills | None on root |
@@ -145,11 +213,11 @@ Contributions are welcome — new icons, metadata improvements, bug fixes, and d
 
 ```json
 {
-  "name": "konark-wheel",
-  "odia": "କୋଣାର୍କ ଚକ",
-  "category": "architecture",
-  "tags": ["konark", "chakra", "sun temple", "wheel", "odisha"],
-  "aliases": ["sun-wheel", "konark-chakra", "chakra"],
+  "name": "home",
+  "odia": "ଘର",
+  "category": "ui",
+  "tags": ["home", "house", "main", "start", "ଘର"],
+  "aliases": ["house"],
   "variants": ["outline"],
   "contributors": ["your-github-handle"],
   "since": "0.1.0",

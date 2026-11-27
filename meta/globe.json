@@ -1,0 +1,25 @@
+{
+  "name": "globe",
+  "odia": "ଦୁନିଆ",
+  "category": "ui",
+  "tags": [
+    "globe",
+    "world",
+    "web",
+    "language",
+    "earth",
+    "ଦୁନିଆ"
+  ],
+  "aliases": [
+    "world"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

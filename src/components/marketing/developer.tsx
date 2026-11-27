@@ -30,7 +30,7 @@ const btn =
 
 export function DeveloperSection() {
   const { developer } = SITE;
-  const snippet = toSvg(iconsByName["deepa"], { size: 32, stroke: 1.5 });
+  const snippet = toSvg(iconsByName["home"], { size: 32, stroke: 2 });
 
   const [active, setActive] = useState(0);
   const [copied, setCopied] = useState(false);
@@ -46,7 +46,7 @@ export function DeveloperSection() {
     const url = URL.createObjectURL(new Blob([snippet], { type: "image/svg+xml" }));
     const a = document.createElement("a");
     a.href = url;
-    a.download = "deepa.svg";
+    a.download = "home.svg";
     a.click();
     URL.revokeObjectURL(url);
   }

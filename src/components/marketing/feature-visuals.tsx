@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/rea
 import { Check, Copy } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { Icon, iconsByName } from "@/lib/icons";
 import { Deepa } from "./odia-motifs";
 
 /**
@@ -164,7 +165,7 @@ function GridScene({ active, reduce }: SceneProps) {
         24 × 24
       </span>
       <span className="absolute right-3 bottom-3 rounded-full border border-white/10 bg-background/70 px-2.5 py-1 font-mono text-[10px] text-foreground/85 backdrop-blur sm:right-4 sm:bottom-4 sm:text-[11px]">
-        1.5 stroke · round caps
+        2 stroke · round caps
       </span>
     </div>
   );
@@ -175,10 +176,10 @@ function GridScene({ active, reduce }: SceneProps) {
 /* ------------------------------------------------------------------ */
 
 const FORMATS = [
-  { id: "SVG", file: "deepa.svg", code: ['<svg viewBox="0 0 24 24"', '  stroke="currentColor">', '  <path d="M3.5 13h17…" />'] },
-  { id: "JSX", file: "deepa.jsx", code: ['<svg viewBox="0 0 24 24"', "  strokeWidth={1.5}>", '  <path d="M3.5 13h17…" />'] },
-  { id: "TSX", file: "Deepa.tsx", code: ["export function Deepa(", "  p: SVGProps<SVGSVGElement>", ") { return <svg {...p}>…"] },
-  { id: "Data URI", file: "deepa.txt", code: ['url("data:image/svg+xml,', "  %3Csvg viewBox='0 0 24 24'", '  %3E%3Cpath d=…")'] },
+  { id: "SVG", file: "home.svg", code: ['<svg viewBox="0 0 24 24"', '  stroke="currentColor">', '  <path d="M3.5 11.5L12 4l8.5 7.5" />'] },
+  { id: "JSX", file: "home.jsx", code: ['<svg viewBox="0 0 24 24"', "  strokeWidth={2}>", '  <path d="M3.5 11.5L12 4l8.5 7.5" />'] },
+  { id: "TSX", file: "Home.tsx", code: ["export function Home(", "  p: SVGProps<SVGSVGElement>", ") { return <svg {...p}>…"] },
+  { id: "Data URI", file: "home.txt", code: ['url("data:image/svg+xml,', "  %3Csvg viewBox='0 0 24 24'", '  %3E%3Cpath d=…")'] },
 ] as const;
 
 function CopyScene({ active, reduce }: SceneProps) {
@@ -243,7 +244,7 @@ function CopyScene({ active, reduce }: SceneProps) {
 
         <div className="mt-2.5 flex items-center gap-2">
           <span className="grid size-8 place-items-center rounded-lg border border-white/10 bg-white/[0.04]">
-            <Deepa className="size-6 text-foreground" />
+            <Icon def={iconsByName["home"]} size={24} stroke={2} className="size-6 text-foreground" />
           </span>
           <span className="font-mono text-[11px] text-muted-foreground">{f.file}</span>
           <span

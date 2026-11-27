@@ -1,0 +1,25 @@
+{
+  "name": "bookmark",
+  "odia": "ବୁକମାର୍କ",
+  "category": "ui",
+  "tags": [
+    "bookmark",
+    "save",
+    "saved",
+    "read-later",
+    "flag",
+    "ବୁକମାର୍କ"
+  ],
+  "aliases": [
+    "save"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

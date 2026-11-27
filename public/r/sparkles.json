@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sparkles",
+  "type": "registry:ui",
+  "title": "Sparkles",
+  "description": "ଚମକ — sparkles, magic, ai.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଚମକ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/sparkles.svg",
+      "type": "registry:file",
+      "target": "components/icons/sparkles.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11 3.5l1.8 5.2 5.2 1.8-5.2 1.8L11 17.5l-1.8-5.2L4 10.5l5.2-1.8zM19 16v4M17 18h4\"/></svg>"
+    }
+  ]
+}

@@ -1,12 +1,25 @@
 {
   "name": "calendar",
-  "odia": "ପଞ୍ଜିକା",
+  "odia": "କ୍ୟାଲେଣ୍ଡର",
   "category": "ui",
-  "tags": ["calendar", "date", "schedule", "event", "month", "dashboard", "ପଞ୍ଜିକା"],
-  "aliases": [],
-  "variants": ["outline"],
-  "contributors": ["rudranboitei"],
+  "tags": [
+    "calendar",
+    "date",
+    "schedule",
+    "event",
+    "month",
+    "କ୍ୟାଲେଣ୍ଡର"
+  ],
+  "aliases": [
+    "date"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
   "since": "0.1.0",
   "status": "needs-review",
-  "note": "Odia spelling needs a native check."
+  "note": "Odia text needs a native check."
 }

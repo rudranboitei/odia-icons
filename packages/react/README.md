@@ -8,7 +8,7 @@ Free, open-source Odisha icons as typed React components. Every icon is drawn
 on a **24 × 24 grid**, uses `currentColor`, and ships as a tree-shakeable named
 export. MIT licensed.
 
-- 37 icons: 19 Odisha motifs plus a matching UI set
+- 72 icons, drawn with Odisha in mind
 - React 18+
 - TypeScript types included
 - ESM and CJS builds
@@ -35,10 +35,10 @@ bun add @odiaui/icons-react
 ## Usage
 
 ```tsx
-import { Deepa } from "@odiaui/icons-react";
+import { Home } from "@odiaui/icons-react";
 
 export function Example() {
-  return <Deepa size={32} className="text-orange-600" />;
+  return <Home size={32} className="text-orange-600" />;
 }
 ```
 
@@ -46,17 +46,17 @@ Colour comes from `currentColor`, so Tailwind text utilities, CSS `color`, or a
 `color` prop all work:
 
 ```tsx
-<Deepa size={24} color="#ea580c" />
+<Home size={24} color="#ea580c" />
 ```
 
 Every component forwards its ref to the underlying `<svg>`:
 
 ```tsx
 import { useRef } from "react";
-import { Lotus } from "@odiaui/icons-react";
+import { Search } from "@odiaui/icons-react";
 
 const ref = useRef<SVGSVGElement>(null);
-<Lotus ref={ref} size={40} aria-label="Lotus" />;
+<Search ref={ref} size={40} aria-label="Search" />;
 ```
 
 ## Props
@@ -66,14 +66,14 @@ const ref = useRef<SVGSVGElement>(null);
 | `size`        | `number \| string`                     | `24`                     | Width and height of the icon.                                      |
 | `className`   | `string`                               | —                        | CSS classes applied to the `<svg>`.                                |
 | `color`       | `string`                               | `currentColor` inherited | Sets the icon colour. The icon strokes use `currentColor`.          |
-| `strokeWidth` | `number \| string`                     | `1.5`                    | Stroke width.                                                      |
+| `strokeWidth` | `number \| string`                     | `2`                      | Stroke width.                                                      |
 | `...props`    | `React.SVGProps<SVGSVGElement>`        | —                        | Any valid SVG attribute, event handler or accessibility prop.      |
 
 Component names are the PascalCase form of the SVG filename. For example,
-`olive-ridley-turtle.svg` becomes `OliveRidleyTurtle`:
+`home.svg` becomes `Home`:
 
 ```tsx
-import { OliveRidleyTurtle } from "@odiaui/icons-react";
+import { Home } from "@odiaui/icons-react";
 ```
 
 Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons).

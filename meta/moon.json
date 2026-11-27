@@ -1,0 +1,25 @@
+{
+  "name": "moon",
+  "odia": "ଚନ୍ଦ୍ର",
+  "category": "nature",
+  "tags": [
+    "moon",
+    "night",
+    "dark",
+    "sleep",
+    "chandra",
+    "ଚନ୍ଦ୍ର"
+  ],
+  "aliases": [
+    "dark-mode"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

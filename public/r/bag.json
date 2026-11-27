@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bag",
+  "type": "registry:ui",
+  "title": "Bag",
+  "description": "ଝୋଲା — bag, shopping, tote.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଝୋଲା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/bag.svg",
+      "type": "registry:file",
+      "target": "components/icons/bag.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5.5 8h13l1 10.5a2 2 0 0 1-2 2.2H6.5a2 2 0 0 1-2-2.2z\"/><path d=\"M9 8V7a3 3 0 0 1 6 0v1\"/></svg>"
+    }
+  ]
+}

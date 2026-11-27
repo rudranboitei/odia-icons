@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "square-minus",
+  "type": "registry:ui",
+  "title": "Square Minus",
+  "description": "ବିୟୋଗ — minus, remove, subtract.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ବିୟୋଗ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/square-minus.svg",
+      "type": "registry:file",
+      "target": "components/icons/square-minus.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"5\"/><path d=\"M8.5 12h7\"/></svg>"
+    }
+  ]
+}

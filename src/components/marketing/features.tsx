@@ -49,7 +49,7 @@ function GridVisual() {
       <Line />
       <div className={`${glass} flex w-[72%] items-center gap-2.5 px-3.5 py-2.5 text-[13px]`}>
         <PenTool aria-hidden className="size-4 text-neutral-500" />
-        Rounded 1.5px stroke
+        Rounded 2px stroke
       </div>
       <Line />
       <div className={`${glass} flex items-center gap-2 px-3.5 py-2 text-[13px]`}>
@@ -62,7 +62,7 @@ function GridVisual() {
 
 function CopyVisual() {
   const sample = ICONS[0];
-  const sampleName = pascal(sample?.name ?? "deepa");
+  const sampleName = pascal(sample?.name ?? "home");
 
   return (
     <div className="absolute inset-0">
@@ -70,7 +70,7 @@ function CopyVisual() {
         <div className="flex items-center gap-2.5">
           <span className="grid size-6 place-items-center rounded-full bg-neutral-900 text-neutral-900">
             {sample ? (
-              <IconGlyph icon={sample} strokeWidth={1.5} className="size-3.5" />
+              <IconGlyph icon={sample} strokeWidth={2} className="size-3.5" />
             ) : (
               <Sparkles className="size-3.5" />
             )}
@@ -141,7 +141,7 @@ function CustomizeVisual() {
       >
         <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-black/5">
           {sample ? (
-            <IconGlyph icon={sample} strokeWidth={1.5} className="size-5 text-neutral-900" />
+            <IconGlyph icon={sample} strokeWidth={2} className="size-5 text-neutral-900" />
           ) : (
             <Sparkles className="size-4" />
           )}
@@ -235,7 +235,7 @@ export function Features() {
           variants={rise}
           className="mt-3 max-w-[640px] text-[clamp(1.75rem,4.2vw,2.5rem)] leading-[1.15] font-medium tracking-tight text-balance"
         >
-          <span className="text-neutral-900">Odisha&apos;s heritage, drawn as icons</span>{" "}
+          <span className="text-neutral-900">A sharper icon set, drawn with care</span>{" "}
           <span className="text-neutral-400">
             — consistent, customizable and free for every project you build.
           </span>

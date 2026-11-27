@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "volume",
+  "type": "registry:ui",
+  "title": "Volume",
+  "description": "ଧ୍ୱନି — volume, sound, speaker.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଧ୍ୱନି",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/volume.svg",
+      "type": "registry:file",
+      "target": "components/icons/volume.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4.5 9.5v5h3L12 18.5v-13L7.5 9.5z\"/><path d=\"M15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11\"/></svg>"
+    }
+  ]
+}

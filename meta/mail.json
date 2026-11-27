@@ -6,14 +6,12 @@
     "mail",
     "email",
     "letter",
+    "inbox",
     "message",
-    "chithi",
-    "dashboard",
     "ଚିଠି"
   ],
   "aliases": [
-    "email",
-    "letter"
+    "email"
   ],
   "variants": [
     "outline"
@@ -23,5 +21,5 @@
   ],
   "since": "0.1.0",
   "status": "needs-review",
-  "note": "Odia text is a guess (or a transliteration) and needs a native check."
+  "note": "Odia text needs a native check."
 }

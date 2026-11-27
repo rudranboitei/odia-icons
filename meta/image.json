@@ -1,0 +1,26 @@
+{
+  "name": "image",
+  "odia": "ଛବି",
+  "category": "ui",
+  "tags": [
+    "image",
+    "photo",
+    "picture",
+    "gallery",
+    "media",
+    "ଛବି"
+  ],
+  "aliases": [
+    "photo",
+    "picture"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

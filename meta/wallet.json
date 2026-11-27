@@ -1,0 +1,25 @@
+{
+  "name": "wallet",
+  "odia": "ପର୍ସ",
+  "category": "ui",
+  "tags": [
+    "wallet",
+    "money",
+    "payment",
+    "purse",
+    "finance",
+    "ପର୍ସ"
+  ],
+  "aliases": [
+    "purse"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

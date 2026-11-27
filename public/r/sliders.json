@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sliders",
+  "type": "registry:ui",
+  "title": "Sliders",
+  "description": "ନିୟନ୍ତ୍ରଣ — sliders, controls, adjust.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ନିୟନ୍ତ୍ରଣ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/sliders.svg",
+      "type": "registry:file",
+      "target": "components/icons/sliders.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 8h9M17 8h3M4 16h3M11 16h9\"/><circle cx=\"15\" cy=\"8\" r=\"2\"/><circle cx=\"9\" cy=\"16\" r=\"2\"/></svg>"
+    }
+  ]
+}

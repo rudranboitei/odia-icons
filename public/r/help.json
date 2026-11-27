@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "help",
+  "type": "registry:ui",
+  "title": "Help",
+  "description": "ସାହାଯ୍ୟ — help, question, faq.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ସାହାଯ୍ୟ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/help.svg",
+      "type": "registry:file",
+      "target": "components/icons/help.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9.5 9.7a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1.9-1.1 1.6M12 17h.01\"/></svg>"
+    }
+  ]
+}

@@ -44,6 +44,7 @@ import {
 import {
   CATEGORY_ORDER,
   Icon,
+  ICON_COUNT,
   icons,
   searchIcons,
   type IconCategory,
@@ -64,7 +65,7 @@ const HATCH =
 type CategoryFilter = "all" | IconCategory
 
 const categoryCounts = [
-  { id: "all" as const, label: "All", count: icons.length },
+  { id: "all" as const, label: "All", count: ICON_COUNT },
   ...CATEGORY_ORDER.flatMap((id) => {
     const count = icons.filter((icon) => icon.category === id).length
     if (count === 0) return []
@@ -113,10 +114,10 @@ const contributeRows = [
 ]
 
 const sidebarStats = [
-  { label: "Icons", value: String(icons.length) },
+  { label: "Icons", value: String(ICON_COUNT) },
   { label: "Categories", value: String(categoryList.length) },
   { label: "Grid", value: "24×24" },
-  { label: "Stroke", value: "1.5" },
+  { label: "Stroke", value: "2" },
 ]
 
 const shortcuts = [
@@ -359,7 +360,7 @@ function IconCard({ icon, index, selected, onOpen }: {
         <Icon
           def={icon}
           size={28}
-          stroke={1.5}
+          stroke={2}
           absoluteStrokeWidth
           className="text-neutral-800"
         />
@@ -479,7 +480,7 @@ export function IconBrowser() {
     >
       {/* Framed app: grey hatch on both sides + hairlines */}
       <div
-        className={`mx-auto flex min-h-dvh w-full max-w-[1600px] border-x border-black/10 ${PANEL_BG}`}
+        className={`mx-auto flex min-h-dvh w-full w-full border-x border-black/10 ${PANEL_BG}`}
       >
         {/* Sidebar (desktop) */}
         <motion.aside
@@ -525,7 +526,7 @@ export function IconBrowser() {
                     <span
                       className={`truncate ${query ? "text-neutral-900" : "text-neutral-500"}`}
                     >
-                      {query || `Search ${icons.length} icons...`}
+                      {query || `Search ${ICON_COUNT} icons...`}
                     </span>
                   </button>
                   {query ? (
@@ -639,7 +640,7 @@ export function IconBrowser() {
 
           <footer className="flex flex-col gap-1 border-t border-black/10 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] text-[11px] text-neutral-400 sm:flex-row sm:items-center sm:justify-between sm:px-4 lg:px-5">
             <span>odiaicons · open source under the MIT licence</span>
-            <span>24 × 24 grid · 1.5px stroke</span>
+            <span>24 × 24 grid · 2px stroke</span>
           </footer>
         </div>
 
@@ -706,7 +707,7 @@ export function IconBrowser() {
                       </span>
                       <IconArrowUpRight
                         className="ml-auto size-4 shrink-0 text-neutral-400"
-                        stroke={1.5}
+                        stroke={2}
                       />
                     </a>
                   </li>
@@ -870,7 +871,7 @@ export function IconBrowser() {
                       }}
                       className="py-2.5 sm:py-1.5"
                     >
-                      <Icon def={icon} size={16} stroke={1.5} />
+                      <Icon def={icon} size={16} stroke={2} />
                       <span className="truncate">{icon.name}</span>
                     </CommandItem>
                   ))}

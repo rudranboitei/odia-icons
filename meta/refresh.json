@@ -1,0 +1,25 @@
+{
+  "name": "refresh",
+  "odia": "ସତେଜ",
+  "category": "ui",
+  "tags": [
+    "refresh",
+    "reload",
+    "sync",
+    "repeat",
+    "update",
+    "ସତେଜ"
+  ],
+  "aliases": [
+    "reload"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -21,7 +21,7 @@ export const CATEGORIES = [
 export const VARIANTS = ["outline", "solid", "duotone"]
 
 // Limits come from style-spec.json (repo root) when it exists.
-const DEFAULT_SPEC = { viewBox: "0 0 24 24", stroke: 1.5, maxBytes: 2048 }
+const DEFAULT_SPEC = { viewBox: "0 0 24 24", stroke: 2, maxBytes: 2048 }
 
 function loadSpec() {
   const file = path.join(ROOT, "style-spec.json")
@@ -31,7 +31,7 @@ function loadSpec() {
 
 const SPEC = loadSpec()
 const VIEWBOX = SPEC.viewBox
-const STROKE = String(SPEC.stroke) // "1.5"
+const STROKE = String(SPEC.stroke) // "2"
 const MAX_BYTES = SPEC.maxBytes
 const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 

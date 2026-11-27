@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { SITE } from "@/data/site";
-import { Icon, icons, iconsByName } from "@/lib/icons";
+import { Icon, ICON_COUNT, iconsByName } from "@/lib/icons";
 
 /* Serif display face */
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400" });
@@ -32,34 +32,26 @@ const EASE = [0.22, 1, 0.36, 1] as const;
  *
  * Imports it needs (from your lib, the file you just sent):
  *
- *   import { Icon, icons, iconsByName } from "@/lib/icons";
+ *   import { Icon, ICON_COUNT, iconsByName } from "@/lib/icons";
  *
  * It no longer uses ICONS or IconGlyph, which have a different type (IconEntry,
  * with `paths`). `Icon` takes the same IconDef that iconsByName returns.
  */
 
-/** The 16 Odia icons shown in the preview, by name (the files in ./icons/outline). */
+/** The icons shown in the preview, by name (the files in ./icons/outline). */
 const PREVIEW_NAMES = [
-  "deul-temple",
-  "konark-wheel",
-  "rasagola",
-  "pakhala",
-  "deepa",
-  "jhoti",
-  "mridanga",
-  "paddy",
-  "palm-tree",
-  "olive-ridley-turtle",
-  "terracotta-pot",
-  "lotus",
-  "mango",
-  "elephant",
-  "kite",
-  "swing",
+  "home",
+  "search",
+  "download",
+  "lock",
+  "message",
+  "bell",
+  "settings",
+  "user",
 ] as const;
 
 /** Which tile shows the dark "selected" border. */
-const SELECTED = "deul-temple";
+const SELECTED = "home";
 
 function PreviewWindow() {
   // Look each name up; a name that isn't in the registry is skipped, and logged so it isn't silent
@@ -92,7 +84,7 @@ function PreviewWindow() {
           <span className="truncate">Search icons</span>
         </div>
         <span className="ml-auto hidden text-xs text-neutral-500 sm:block">
-          {icons.length} icons
+          {ICON_COUNT} icons
         </span>
       </div>
 
@@ -112,7 +104,7 @@ function PreviewWindow() {
             >
               <Icon
                 def={icon}
-                strokeWidth={1.5}
+                strokeWidth={2}
                 className="size-6 text-neutral-900 sm:size-7"
               />
               <span className="w-full truncate text-center text-[10px] text-neutral-500 capitalize">
@@ -167,7 +159,7 @@ export function Hero() {
       icon: Download,
       text: `${SITE.installs} ${hero.badges.installs}`,
     },
-    { icon: LayoutGrid, text: `${icons.length} ${hero.badges.icons}` },
+    { icon: LayoutGrid, text: `${ICON_COUNT} ${hero.badges.icons}` },
   ].filter(Boolean) as { icon: typeof Star; text: string; fill?: boolean }[];
 
   return (

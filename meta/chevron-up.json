@@ -1,0 +1,25 @@
+{
+  "name": "chevron-up",
+  "odia": "ଉପରକୁ",
+  "category": "ui",
+  "tags": [
+    "chevron",
+    "up",
+    "collapse",
+    "caret",
+    "expand",
+    "ଉପରକୁ"
+  ],
+  "aliases": [
+    "caret-up"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

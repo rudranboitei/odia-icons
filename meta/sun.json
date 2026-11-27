@@ -1,0 +1,25 @@
+{
+  "name": "sun",
+  "odia": "ସୂର୍ଯ୍ୟ",
+  "category": "nature",
+  "tags": [
+    "sun",
+    "light",
+    "day",
+    "brightness",
+    "weather",
+    "ସୂର୍ଯ୍ୟ"
+  ],
+  "aliases": [
+    "light-mode"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

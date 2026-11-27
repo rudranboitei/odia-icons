@@ -1,0 +1,25 @@
+{
+  "name": "cart",
+  "odia": "ଟୋକେଇ",
+  "category": "ui",
+  "tags": [
+    "cart",
+    "basket",
+    "shop",
+    "buy",
+    "store",
+    "ଟୋକେଇ"
+  ],
+  "aliases": [
+    "basket"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bookmark",
+  "type": "registry:ui",
+  "title": "Bookmark",
+  "description": "ବୁକମାର୍କ — bookmark, save, saved.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ବୁକମାର୍କ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/bookmark.svg",
+      "type": "registry:file",
+      "target": "components/icons/bookmark.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7.5 4h9A2.5 2.5 0 0 1 19 6.5V20l-7-4.5L5 20V6.5A2.5 2.5 0 0 1 7.5 4z\"/></svg>"
+    }
+  ]
+}

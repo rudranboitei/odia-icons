@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "file",
+  "type": "registry:ui",
+  "title": "File",
+  "description": "ଫାଇଲ୍ — file, document, page.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଫାଇଲ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/file.svg",
+      "type": "registry:file",
+      "target": "components/icons/file.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 3.5h10a2.5 2.5 0 0 1 2.5 2.5v12a2.5 2.5 0 0 1-2.5 2.5h-7L4.5 15V6A2.5 2.5 0 0 1 7 3.5z\"/><path d=\"M4.5 15H8a2 2 0 0 1 2 2v3.5\"/></svg>"
+    }
+  ]
+}

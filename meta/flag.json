@@ -1,0 +1,25 @@
+{
+  "name": "flag",
+  "odia": "ପତାକା",
+  "category": "ui",
+  "tags": [
+    "flag",
+    "pataka",
+    "report",
+    "mark",
+    "milestone",
+    "ପତାକା"
+  ],
+  "aliases": [
+    "report"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

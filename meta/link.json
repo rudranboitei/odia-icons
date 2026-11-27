@@ -1,0 +1,25 @@
+{
+  "name": "link",
+  "odia": "ଲିଙ୍କ୍",
+  "category": "ui",
+  "tags": [
+    "link",
+    "url",
+    "chain",
+    "attach",
+    "connect",
+    "ଲିଙ୍କ୍"
+  ],
+  "aliases": [
+    "url"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}
