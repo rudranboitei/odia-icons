@@ -91,7 +91,7 @@ export function Header() {
               <IconBrandNpm className="size-5" stroke={1.5} />
             </a>
             <Link
-              href="/#install"
+              href="/installation"
               className="inline-flex h-10 items-center rounded-full px-4 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:outline-none"
             >
               Install
@@ -133,7 +133,7 @@ export function Header() {
             >
               <div className="flex flex-col gap-2">
                 <Link
-                  href="/#install"
+                  href="/installation"
                   onClick={() => setOpen(false)}
                   className="inline-flex h-11 items-center justify-center rounded-full px-4 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
                 >
