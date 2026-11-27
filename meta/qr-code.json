@@ -1,0 +1,26 @@
+{
+  "name": "qr-code",
+  "odia": "କ୍ୟୁଆର୍ କୋଡ୍",
+  "category": "web",
+  "tags": [
+    "qr",
+    "qr-code",
+    "scan",
+    "barcode",
+    "code",
+    "କ୍ୟୁଆର୍ କୋଡ୍"
+  ],
+  "aliases": [
+    "qr",
+    "scan"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,27 @@
+{
+  "name": "konark-wheel",
+  "odia": "କୋଣାର୍କ ଚକ",
+  "category": "odisha",
+  "tags": [
+    "konark",
+    "wheel",
+    "chakra",
+    "sun-temple",
+    "heritage",
+    "chaka",
+    "କୋଣାର୍କ ଚକ"
+  ],
+  "aliases": [
+    "chakra",
+    "wheel"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

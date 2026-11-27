@@ -1,0 +1,25 @@
+{
+  "name": "list",
+  "odia": "ତାଲିକା",
+  "category": "ui",
+  "tags": [
+    "list",
+    "bullets",
+    "items",
+    "menu",
+    "rows",
+    "ତାଲିକା"
+  ],
+  "aliases": [
+    "bullets"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

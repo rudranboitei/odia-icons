@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "power",
+  "type": "registry:ui",
+  "title": "Power",
+  "description": "ଶକ୍ତି — power, on-off, shutdown.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଶକ୍ତି",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/power.svg",
+      "type": "registry:file",
+      "target": "components/icons/power.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3.5v8M7 6.8a7.5 7.5 0 1 0 10 0\"/></svg>"
+    }
+  ]
+}

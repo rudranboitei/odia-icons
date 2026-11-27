@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "file-plus",
+  "type": "registry:ui",
+  "title": "File Plus",
+  "description": "ନୂଆ ଫାଇଲ୍ — file, plus, new.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ନୂଆ ଫାଇଲ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/file-plus.svg",
+      "type": "registry:file",
+      "target": "components/icons/file-plus.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 3.5H8A2.5 2.5 0 0 0 5.5 6v12A2.5 2.5 0 0 0 8 20.5h8a2.5 2.5 0 0 0 2.5-2.5V8zM14 3.5V8h4.5M12 12v5M9.5 14.5h5\"/></svg>"
+    }
+  ]
+}

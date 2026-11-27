@@ -1,0 +1,25 @@
+{
+  "name": "video",
+  "odia": "ଭିଡିଓ",
+  "category": "social",
+  "tags": [
+    "video",
+    "film",
+    "movie",
+    "record",
+    "stream",
+    "ଭିଡିଓ"
+  ],
+  "aliases": [
+    "film"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

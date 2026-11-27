@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "git-commit",
+  "type": "registry:ui",
+  "title": "Git Commit",
+  "description": "କମିଟ୍ — git, commit, save.",
+  "categories": [
+    "development"
+  ],
+  "meta": {
+    "odia": "କମିଟ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/git-commit.svg",
+      "type": "registry:file",
+      "target": "components/icons/git-commit.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><path d=\"M3 12h5.5M15.5 12H21\"/></svg>"
+    }
+  ]
+}

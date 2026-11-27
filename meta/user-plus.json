@@ -1,0 +1,26 @@
+{
+  "name": "user-plus",
+  "odia": "ବ୍ୟବହାରକାରୀ ଯୋଡ଼ନ୍ତୁ",
+  "category": "social",
+  "tags": [
+    "user-plus",
+    "add-user",
+    "invite",
+    "follow",
+    "signup",
+    "ବ୍ୟବହାରକାରୀ ଯୋଡ଼ନ୍ତୁ"
+  ],
+  "aliases": [
+    "follow",
+    "invite"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

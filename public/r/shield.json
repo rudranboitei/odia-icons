@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shield",
+  "type": "registry:ui",
+  "title": "Shield",
+  "description": "ସୁରକ୍ଷା — shield, security, protect.",
+  "categories": [
+    "development"
+  ],
+  "meta": {
+    "odia": "ସୁରକ୍ଷା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/shield.svg",
+      "type": "registry:file",
+      "target": "components/icons/shield.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3.5l7 2.5v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z\"/><path d=\"M9 12l2.2 2.2L15.5 10\"/></svg>"
+    }
+  ]
+}

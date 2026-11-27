@@ -1,0 +1,25 @@
+{
+  "name": "file-plus",
+  "odia": "ନୂଆ ଫାଇଲ୍",
+  "category": "ui",
+  "tags": [
+    "file",
+    "plus",
+    "new",
+    "create",
+    "add",
+    "ନୂଆ ଫାଇଲ୍"
+  ],
+  "aliases": [
+    "new-file"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "archive",
+  "type": "registry:ui",
+  "title": "Archive",
+  "description": "ଅଭିଲେଖାଗାର — archive, box, store.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଅଭିଲେଖାଗାର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/archive.svg",
+      "type": "registry:file",
+      "target": "components/icons/archive.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3.5\" y=\"4\" width=\"17\" height=\"5\" rx=\"2\"/><path d=\"M5 9v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V9M10 13h4\"/></svg>"
+    }
+  ]
+}

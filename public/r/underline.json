@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "underline",
+  "type": "registry:ui",
+  "title": "Underline",
+  "description": "ରେଖାଙ୍କିତ — underline, text, format.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ରେଖାଙ୍କିତ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/underline.svg",
+      "type": "registry:file",
+      "target": "components/icons/underline.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6.5 4.5v7a5.5 5.5 0 0 0 11 0v-7M4.5 20.5h15\"/></svg>"
+    }
+  ]
+}

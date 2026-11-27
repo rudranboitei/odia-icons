@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrow-up-right",
+  "type": "registry:ui",
+  "title": "Arrow Up Right",
+  "description": "ଉପର-ଡାହାଣ ତୀର — arrow, up-right, diagonal.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଉପର-ଡାହାଣ ତୀର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/arrow-up-right.svg",
+      "type": "registry:file",
+      "target": "components/icons/arrow-up-right.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17L17 7M8.5 7H17v8.5\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "key",
+  "odia": "ଚାବି",
+  "category": "development",
+  "tags": [
+    "key",
+    "auth",
+    "password",
+    "access",
+    "api-key",
+    "ଚାବି"
+  ],
+  "aliases": [
+    "api-key",
+    "auth"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

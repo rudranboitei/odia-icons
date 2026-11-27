@@ -1,0 +1,25 @@
+{
+  "name": "megaphone",
+  "odia": "ଘୋଷଣା",
+  "category": "social",
+  "tags": [
+    "megaphone",
+    "announce",
+    "campaign",
+    "marketing",
+    "promote",
+    "ଘୋଷଣା"
+  ],
+  "aliases": [
+    "announce"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

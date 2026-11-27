@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "eye-off",
+  "type": "registry:ui",
+  "title": "Eye Off",
+  "description": "ଲୁଚାନ୍ତୁ — eye-off, hide, hidden.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଲୁଚାନ୍ତୁ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/eye-off.svg",
+      "type": "registry:file",
+      "target": "components/icons/eye-off.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 4l16 16M10.6 6.2A9.5 9.5 0 0 1 12 6c4.5 0 7.5 3.5 8.5 6a11 11 0 0 1-2.2 3.2M6.6 7.7A11 11 0 0 0 3.5 12c1 2.5 4 6 8.5 6a9 9 0 0 0 3-.5M9.9 10a3 3 0 0 0 4.1 4.1\"/></svg>"
+    }
+  ]
+}

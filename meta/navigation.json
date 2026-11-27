@@ -1,0 +1,25 @@
+{
+  "name": "navigation",
+  "odia": "ଦିଗ",
+  "category": "ui",
+  "tags": [
+    "navigation",
+    "direction",
+    "locate",
+    "gps",
+    "compass",
+    "ଦିଗ"
+  ],
+  "aliases": [
+    "locate"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

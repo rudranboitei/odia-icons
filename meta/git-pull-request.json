@@ -1,0 +1,26 @@
+{
+  "name": "git-pull-request",
+  "odia": "ପୁଲ୍ ରିକ୍ୱେଷ୍ଟ",
+  "category": "development",
+  "tags": [
+    "git",
+    "pull-request",
+    "pr",
+    "review",
+    "merge",
+    "ପୁଲ୍ ରିକ୍ୱେଷ୍ଟ"
+  ],
+  "aliases": [
+    "pr",
+    "pull-request"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

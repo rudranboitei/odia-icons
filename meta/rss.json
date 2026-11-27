@@ -1,0 +1,25 @@
+{
+  "name": "rss",
+  "odia": "ଫିଡ୍",
+  "category": "social",
+  "tags": [
+    "rss",
+    "feed",
+    "subscribe",
+    "blog",
+    "syndication",
+    "ଫିଡ୍"
+  ],
+  "aliases": [
+    "feed"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

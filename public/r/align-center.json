@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "align-center",
+  "type": "registry:ui",
+  "title": "Align Center",
+  "description": "ମଧ୍ୟ ସଜାଣି — align, center, text.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ମଧ୍ୟ ସଜାଣି",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/align-center.svg",
+      "type": "registry:file",
+      "target": "components/icons/align-center.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 6.5h16M7 12h10M5.5 17.5h13\"/></svg>"
+    }
+  ]
+}

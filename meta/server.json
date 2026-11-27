@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "odia": "ସର୍ଭର",
+  "category": "development",
+  "tags": [
+    "server",
+    "host",
+    "backend",
+    "rack",
+    "infrastructure",
+    "ସର୍ଭର"
+  ],
+  "aliases": [
+    "host"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

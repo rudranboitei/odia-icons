@@ -1,0 +1,25 @@
+{
+  "name": "toggle",
+  "odia": "ଟୋଗଲ୍",
+  "category": "web",
+  "tags": [
+    "toggle",
+    "switch",
+    "on-off",
+    "setting",
+    "control",
+    "ଟୋଗଲ୍"
+  ],
+  "aliases": [
+    "switch"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

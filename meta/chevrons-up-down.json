@@ -1,0 +1,25 @@
+{
+  "name": "chevrons-up-down",
+  "odia": "ଉପର ତଳ",
+  "category": "ui",
+  "tags": [
+    "chevrons",
+    "select",
+    "dropdown",
+    "expand",
+    "up-down",
+    "ଉପର ତଳ"
+  ],
+  "aliases": [
+    "select"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

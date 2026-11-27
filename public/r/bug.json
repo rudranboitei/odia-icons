@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bug",
+  "type": "registry:ui",
+  "title": "Bug",
+  "description": "ବଗ୍ — bug, debug, issue.",
+  "categories": [
+    "development"
+  ],
+  "meta": {
+    "odia": "ବଗ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/bug.svg",
+      "type": "registry:file",
+      "target": "components/icons/bug.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 8.5a4 4 0 0 1 4 4V15a4 4 0 0 1-8 0v-2.5a4 4 0 0 1 4-4zM9 8.5V7a3 3 0 0 1 6 0v1.5M4 12.5h4M16 12.5h4M5 18l3-1.5M19 18l-3-1.5M5 7.5l3 1.5M19 7.5l-3 1.5\"/></svg>"
+    }
+  ]
+}

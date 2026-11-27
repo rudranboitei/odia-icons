@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "newspaper",
+  "type": "registry:ui",
+  "title": "Newspaper",
+  "description": "ଖବରକାଗଜ — newspaper, news, article.",
+  "categories": [
+    "social"
+  ],
+  "meta": {
+    "odia": "ଖବରକାଗଜ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/newspaper.svg",
+      "type": "registry:file",
+      "target": "components/icons/newspaper.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3.5\" y=\"4.5\" width=\"17\" height=\"15\" rx=\"4\"/><path d=\"M7.5 9h9M7.5 12.5h9M7.5 16h5\"/></svg>"
+    }
+  ]
+}

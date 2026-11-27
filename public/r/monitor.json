@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "monitor",
+  "type": "registry:ui",
+  "title": "Monitor",
+  "description": "ମନିଟର — monitor, desktop, screen.",
+  "categories": [
+    "web"
+  ],
+  "meta": {
+    "odia": "ମନିଟର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/monitor.svg",
+      "type": "registry:file",
+      "target": "components/icons/monitor.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3.5\" y=\"4.5\" width=\"17\" height=\"12\" rx=\"3.5\"/><path d=\"M9 20.5h6M12 16.5v4\"/></svg>"
+    }
+  ]
+}

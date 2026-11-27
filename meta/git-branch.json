@@ -1,0 +1,25 @@
+{
+  "name": "git-branch",
+  "odia": "ଶାଖା",
+  "category": "development",
+  "tags": [
+    "git",
+    "branch",
+    "fork",
+    "version",
+    "vcs",
+    "ଶାଖା"
+  ],
+  "aliases": [
+    "branch"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

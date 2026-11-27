@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "print",
+  "type": "registry:ui",
+  "title": "Print",
+  "description": "ପ୍ରିଣ୍ଟ — print, printer, paper.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ପ୍ରିଣ୍ଟ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/print.svg",
+      "type": "registry:file",
+      "target": "components/icons/print.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3.5\" y=\"8\" width=\"17\" height=\"9\" rx=\"3\"/><path d=\"M7.5 8V3.5h9V8M7.5 14h9v6.5h-9z\"/></svg>"
+    }
+  ]
+}

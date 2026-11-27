@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "manuscript",
+  "type": "registry:ui",
+  "title": "Manuscript",
+  "description": "ତାଳପତ୍ର — manuscript, palm-leaf, talapatra.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "ତାଳପତ୍ର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/manuscript.svg",
+      "type": "registry:file",
+      "target": "components/icons/manuscript.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2.5\" y=\"6.5\" width=\"19\" height=\"11\" rx=\"3\"/><path d=\"M6.5 3.5v17M10.5 9.5h8M10.5 12h8M10.5 14.5h5\"/></svg>"
+    }
+  ]
+}

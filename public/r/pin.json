@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pin",
+  "type": "registry:ui",
+  "title": "Pin",
+  "description": "ପିନ୍ — pin, pushpin, attach.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ପିନ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/pin.svg",
+      "type": "registry:file",
+      "target": "components/icons/pin.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 4.5h6l-.8 5.2 3 3.3H6.8l3-3.3zM12 13v7\"/></svg>"
+    }
+  ]
+}

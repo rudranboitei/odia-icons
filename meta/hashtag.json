@@ -1,0 +1,25 @@
+{
+  "name": "hashtag",
+  "odia": "ହ୍ୟାସଟ୍ୟାଗ୍",
+  "category": "social",
+  "tags": [
+    "hashtag",
+    "hash",
+    "topic",
+    "number",
+    "trending",
+    "ହ୍ୟାସଟ୍ୟାଗ୍"
+  ],
+  "aliases": [
+    "hash"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

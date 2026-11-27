@@ -1,0 +1,27 @@
+{
+  "name": "paddy",
+  "odia": "ଧାନ",
+  "category": "odisha",
+  "tags": [
+    "paddy",
+    "dhana",
+    "rice",
+    "grain",
+    "farm",
+    "harvest",
+    "ଧାନ"
+  ],
+  "aliases": [
+    "rice",
+    "grain"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

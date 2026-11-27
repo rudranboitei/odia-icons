@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "timer",
+  "type": "registry:ui",
+  "title": "Timer",
+  "description": "ଟାଇମର — timer, stopwatch, countdown.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଟାଇମର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/timer.svg",
+      "type": "registry:file",
+      "target": "components/icons/timer.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"13.5\" r=\"7.5\"/><path d=\"M12 9.5v4l2.5 1.5M9.5 3.5h5\"/></svg>"
+    }
+  ]
+}

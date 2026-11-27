@@ -1,0 +1,26 @@
+{
+  "name": "terminal",
+  "odia": "ଟର୍ମିନାଲ୍",
+  "category": "development",
+  "tags": [
+    "terminal",
+    "console",
+    "cli",
+    "shell",
+    "command-line",
+    "ଟର୍ମିନାଲ୍"
+  ],
+  "aliases": [
+    "console",
+    "cli"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gateway",
+  "type": "registry:ui",
+  "title": "Gateway",
+  "description": "ଫାଟକ — gateway, phatak, gate.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "ଫାଟକ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/gateway.svg",
+      "type": "registry:file",
+      "target": "components/icons/gateway.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 20.5V8M18 20.5V8M3.5 8h17M6 8c0-3 2.7-4.5 6-4.5s6 1.5 6 4.5M6 13.5h12M3.5 20.5h17\"/></svg>"
+    }
+  ]
+}

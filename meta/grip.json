@@ -1,0 +1,25 @@
+{
+  "name": "grip",
+  "odia": "ଧରନ୍ତୁ",
+  "category": "ui",
+  "tags": [
+    "grip",
+    "drag-handle",
+    "reorder",
+    "handle",
+    "dots",
+    "ଧରନ୍ତୁ"
+  ],
+  "aliases": [
+    "drag-handle"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fish",
+  "type": "registry:ui",
+  "title": "Fish",
+  "description": "ମାଛ — fish, machha, seafood.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "ମାଛ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/fish.svg",
+      "type": "registry:file",
+      "target": "components/icons/fish.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2.5 12c2.5-3.5 6-5.5 9.5-5.5s6 2 7.5 5.5c-1.5 3.5-4 5.5-7.5 5.5S5 15.5 2.5 12zM19.5 12l2.5-3.5v7zM8 11h.01\"/></svg>"
+    }
+  ]
+}

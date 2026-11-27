@@ -1,0 +1,25 @@
+{
+  "name": "scissors",
+  "odia": "କଞ୍ଚି",
+  "category": "ui",
+  "tags": [
+    "scissors",
+    "cut",
+    "trim",
+    "clip",
+    "snip",
+    "କଞ୍ଚି"
+  ],
+  "aliases": [
+    "cut"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

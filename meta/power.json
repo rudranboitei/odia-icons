@@ -1,0 +1,25 @@
+{
+  "name": "power",
+  "odia": "ଶକ୍ତି",
+  "category": "ui",
+  "tags": [
+    "power",
+    "on-off",
+    "shutdown",
+    "start",
+    "switch",
+    "ଶକ୍ତି"
+  ],
+  "aliases": [
+    "shutdown"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

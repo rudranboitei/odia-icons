@@ -1,0 +1,25 @@
+{
+  "name": "braces",
+  "odia": "ବନ୍ଧନୀ",
+  "category": "development",
+  "tags": [
+    "braces",
+    "json",
+    "object",
+    "curly",
+    "data",
+    "ବନ୍ଧନୀ"
+  ],
+  "aliases": [
+    "json"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

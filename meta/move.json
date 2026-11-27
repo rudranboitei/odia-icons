@@ -1,0 +1,25 @@
+{
+  "name": "move",
+  "odia": "ଘୁଞ୍ଚାନ୍ତୁ",
+  "category": "ui",
+  "tags": [
+    "move",
+    "drag",
+    "pan",
+    "reposition",
+    "arrows",
+    "ଘୁଞ୍ଚାନ୍ତୁ"
+  ],
+  "aliases": [
+    "pan"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

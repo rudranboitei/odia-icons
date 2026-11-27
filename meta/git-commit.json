@@ -1,0 +1,25 @@
+{
+  "name": "git-commit",
+  "odia": "କମିଟ୍",
+  "category": "development",
+  "tags": [
+    "git",
+    "commit",
+    "save",
+    "checkpoint",
+    "version",
+    "କମିଟ୍"
+  ],
+  "aliases": [
+    "commit"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

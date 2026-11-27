@@ -1,0 +1,25 @@
+{
+  "name": "chevrons-right",
+  "odia": "ଆଗକୁ",
+  "category": "ui",
+  "tags": [
+    "chevrons",
+    "forward",
+    "skip",
+    "next",
+    "double",
+    "ଆଗକୁ"
+  ],
+  "aliases": [
+    "skip-forward"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

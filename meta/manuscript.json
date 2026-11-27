@@ -1,0 +1,27 @@
+{
+  "name": "manuscript",
+  "odia": "ତାଳପତ୍ର",
+  "category": "odisha",
+  "tags": [
+    "manuscript",
+    "palm-leaf",
+    "talapatra",
+    "scroll",
+    "script",
+    "odia",
+    "ତାଳପତ୍ର"
+  ],
+  "aliases": [
+    "palm-leaf",
+    "talapatra"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

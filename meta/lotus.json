@@ -1,0 +1,26 @@
+{
+  "name": "lotus",
+  "odia": "ପଦ୍ମ",
+  "category": "odisha",
+  "tags": [
+    "lotus",
+    "padma",
+    "flower",
+    "bloom",
+    "sacred",
+    "purity",
+    "ପଦ୍ମ"
+  ],
+  "aliases": [
+    "padma"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

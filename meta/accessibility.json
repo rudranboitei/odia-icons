@@ -1,0 +1,25 @@
+{
+  "name": "accessibility",
+  "odia": "ସୁଗମ୍ୟତା",
+  "category": "web",
+  "tags": [
+    "accessibility",
+    "a11y",
+    "inclusive",
+    "wcag",
+    "universal",
+    "ସୁଗମ୍ୟତା"
+  ],
+  "aliases": [
+    "a11y"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

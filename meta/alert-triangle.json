@@ -1,0 +1,25 @@
+{
+  "name": "alert-triangle",
+  "odia": "ଚେତାବନୀ",
+  "category": "ui",
+  "tags": [
+    "alert",
+    "triangle",
+    "warning",
+    "caution",
+    "danger",
+    "ଚେତାବନୀ"
+  ],
+  "aliases": [
+    "caution"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

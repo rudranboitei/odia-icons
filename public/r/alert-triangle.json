@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-triangle",
+  "type": "registry:ui",
+  "title": "Alert Triangle",
+  "description": "ଚେତାବନୀ — alert, triangle, warning.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଚେତାବନୀ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/alert-triangle.svg",
+      "type": "registry:file",
+      "target": "components/icons/alert-triangle.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10.3 4.6L3.3 17a2 2 0 0 0 1.7 3h14a2 2 0 0 0 1.7-3L13.7 4.6a2 2 0 0 0-3.4 0z\"/><path d=\"M12 9.5v4M12 17h.01\"/></svg>"
+    }
+  ]
+}

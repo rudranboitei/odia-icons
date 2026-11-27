@@ -1,0 +1,25 @@
+{
+  "name": "browser",
+  "odia": "ବ୍ରାଉଜର",
+  "category": "web",
+  "tags": [
+    "browser",
+    "window",
+    "web",
+    "page",
+    "app",
+    "ବ୍ରାଉଜର"
+  ],
+  "aliases": [
+    "window"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

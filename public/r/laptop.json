@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "laptop",
+  "type": "registry:ui",
+  "title": "Laptop",
+  "description": "ଲାପଟପ୍ — laptop, computer, notebook.",
+  "categories": [
+    "web"
+  ],
+  "meta": {
+    "odia": "ଲାପଟପ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/laptop.svg",
+      "type": "registry:file",
+      "target": "components/icons/laptop.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5.5 17V8A2.5 2.5 0 0 1 8 5.5h8A2.5 2.5 0 0 1 18.5 8v9M3 19.5h18\"/></svg>"
+    }
+  ]
+}

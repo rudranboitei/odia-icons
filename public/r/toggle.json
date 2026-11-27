@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "type": "registry:ui",
+  "title": "Toggle",
+  "description": "ଟୋଗଲ୍ — toggle, switch, on-off.",
+  "categories": [
+    "web"
+  ],
+  "meta": {
+    "odia": "ଟୋଗଲ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/toggle.svg",
+      "type": "registry:file",
+      "target": "components/icons/toggle.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2.5\" y=\"7\" width=\"19\" height=\"10\" rx=\"5\"/><circle cx=\"16\" cy=\"12\" r=\"2.5\"/></svg>"
+    }
+  ]
+}

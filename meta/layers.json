@@ -1,0 +1,25 @@
+{
+  "name": "layers",
+  "odia": "ସ୍ତର",
+  "category": "development",
+  "tags": [
+    "layers",
+    "stack",
+    "levels",
+    "tech-stack",
+    "arrange",
+    "ସ୍ତର"
+  ],
+  "aliases": [
+    "stack"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

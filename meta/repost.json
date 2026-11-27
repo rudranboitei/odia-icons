@@ -1,0 +1,25 @@
+{
+  "name": "repost",
+  "odia": "ପୁନଃପ୍ରକାଶ",
+  "category": "social",
+  "tags": [
+    "repost",
+    "retweet",
+    "reshare",
+    "repeat",
+    "loop",
+    "ପୁନଃପ୍ରକାଶ"
+  ],
+  "aliases": [
+    "retweet"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

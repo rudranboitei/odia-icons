@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scissors",
+  "type": "registry:ui",
+  "title": "Scissors",
+  "description": "କଞ୍ଚି — scissors, cut, trim.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "କଞ୍ଚି",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/scissors.svg",
+      "type": "registry:file",
+      "target": "components/icons/scissors.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"6\" cy=\"6\" r=\"2.5\"/><circle cx=\"6\" cy=\"18\" r=\"2.5\"/><path d=\"M7.8 7.8L20 18.5M7.8 16.2L20 5.5\"/></svg>"
+    }
+  ]
+}

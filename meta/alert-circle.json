@@ -1,0 +1,25 @@
+{
+  "name": "alert-circle",
+  "odia": "ସତର୍କତା",
+  "category": "ui",
+  "tags": [
+    "alert",
+    "warning",
+    "error",
+    "notice",
+    "attention",
+    "ସତର୍କତା"
+  ],
+  "aliases": [
+    "warning"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

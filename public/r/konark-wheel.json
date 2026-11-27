@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "konark-wheel",
+  "type": "registry:ui",
+  "title": "Konark Wheel",
+  "description": "କୋଣାର୍କ ଚକ — konark, wheel, chakra.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "କୋଣାର୍କ ଚକ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/konark-wheel.svg",
+      "type": "registry:file",
+      "target": "components/icons/konark-wheel.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"8.5\"/><circle cx=\"12\" cy=\"12\" r=\"1.5\"/><path d=\"M12 3.5v7M12 13.5v7M3.5 12h7M13.5 12h7M6 6l4.9 4.9M13.1 13.1L18 18M18 6l-4.9 4.9M10.9 13.1L6 18\"/></svg>"
+    }
+  ]
+}

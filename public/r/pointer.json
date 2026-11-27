@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pointer",
+  "type": "registry:ui",
+  "title": "Pointer",
+  "description": "ପଏଣ୍ଟର — pointer, cursor, click.",
+  "categories": [
+    "web"
+  ],
+  "meta": {
+    "odia": "ପଏଣ୍ଟର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/pointer.svg",
+      "type": "registry:file",
+      "target": "components/icons/pointer.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 4l5.5 15 2.3-6.2L19 10.5z\"/></svg>"
+    }
+  ]
+}

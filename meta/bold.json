@@ -1,0 +1,25 @@
+{
+  "name": "bold",
+  "odia": "ମୋଟା",
+  "category": "ui",
+  "tags": [
+    "bold",
+    "text",
+    "format",
+    "strong",
+    "weight",
+    "ମୋଟା"
+  ],
+  "aliases": [
+    "strong"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

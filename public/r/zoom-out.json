@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "zoom-out",
+  "type": "registry:ui",
+  "title": "Zoom Out",
+  "description": "ଛୋଟ କରନ୍ତୁ — zoom-out, shrink, reduce.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଛୋଟ କରନ୍ତୁ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/zoom-out.svg",
+      "type": "registry:file",
+      "target": "components/icons/zoom-out.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"M20 20l-4.9-4.9M8 10.5h5\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "layout-grid",
+  "type": "registry:ui",
+  "title": "Layout Grid",
+  "description": "ଗ୍ରିଡ୍ — grid, layout, dashboard.",
+  "categories": [
+    "web"
+  ],
+  "meta": {
+    "odia": "ଗ୍ରିଡ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/layout-grid.svg",
+      "type": "registry:file",
+      "target": "components/icons/layout-grid.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"4\" width=\"7\" height=\"7\" rx=\"2.5\"/><rect x=\"13\" y=\"4\" width=\"7\" height=\"7\" rx=\"2.5\"/><rect x=\"4\" y=\"13\" width=\"7\" height=\"7\" rx=\"2.5\"/><rect x=\"13\" y=\"13\" width=\"7\" height=\"7\" rx=\"2.5\"/></svg>"
+    }
+  ]
+}

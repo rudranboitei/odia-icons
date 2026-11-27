@@ -1,0 +1,25 @@
+{
+  "name": "pointer",
+  "odia": "ପଏଣ୍ଟର",
+  "category": "web",
+  "tags": [
+    "pointer",
+    "cursor",
+    "click",
+    "select",
+    "mouse",
+    "ପଏଣ୍ଟର"
+  ],
+  "aliases": [
+    "cursor"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

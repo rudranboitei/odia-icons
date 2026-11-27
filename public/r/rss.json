@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rss",
+  "type": "registry:ui",
+  "title": "Rss",
+  "description": "ଫିଡ୍ — rss, feed, subscribe.",
+  "categories": [
+    "social"
+  ],
+  "meta": {
+    "odia": "ଫିଡ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/rss.svg",
+      "type": "registry:file",
+      "target": "components/icons/rss.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 5a14 14 0 0 1 14 14M5 11a8 8 0 0 1 8 8M5.5 19h.01\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "laptop",
+  "odia": "ଲାପଟପ୍",
+  "category": "web",
+  "tags": [
+    "laptop",
+    "computer",
+    "notebook",
+    "device",
+    "responsive",
+    "ଲାପଟପ୍"
+  ],
+  "aliases": [
+    "computer"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

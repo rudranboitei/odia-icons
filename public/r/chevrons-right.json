@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chevrons-right",
+  "type": "registry:ui",
+  "title": "Chevrons Right",
+  "description": "ଆଗକୁ — chevrons, forward, skip.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଆଗକୁ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/chevrons-right.svg",
+      "type": "registry:file",
+      "target": "components/icons/chevrons-right.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 6l6 6-6 6M13 6l6 6-6 6\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "zoom-in",
+  "odia": "ବଡ଼ କରନ୍ତୁ",
+  "category": "ui",
+  "tags": [
+    "zoom-in",
+    "magnify",
+    "enlarge",
+    "search",
+    "bigger",
+    "ବଡ଼ କରନ୍ତୁ"
+  ],
+  "aliases": [
+    "magnify"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

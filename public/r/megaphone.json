@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "megaphone",
+  "type": "registry:ui",
+  "title": "Megaphone",
+  "description": "ଘୋଷଣା — megaphone, announce, campaign.",
+  "categories": [
+    "social"
+  ],
+  "meta": {
+    "odia": "ଘୋଷଣା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/megaphone.svg",
+      "type": "registry:file",
+      "target": "components/icons/megaphone.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 10v4a1 1 0 0 0 1 1h2l8 4.5v-15L7 9H5a1 1 0 0 0-1 1zM19 9.5a4 4 0 0 1 0 5\"/></svg>"
+    }
+  ]
+}

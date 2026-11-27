@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chevrons-up-down",
+  "type": "registry:ui",
+  "title": "Chevrons Up Down",
+  "description": "ଉପର ତଳ — chevrons, select, dropdown.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଉପର ତଳ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/chevrons-up-down.svg",
+      "type": "registry:file",
+      "target": "components/icons/chevrons-up-down.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 9l4-4 4 4M8 15l4 4 4-4\"/></svg>"
+    }
+  ]
+}

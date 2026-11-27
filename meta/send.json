@@ -1,0 +1,25 @@
+{
+  "name": "send",
+  "odia": "ପଠାନ୍ତୁ",
+  "category": "social",
+  "tags": [
+    "send",
+    "paper-plane",
+    "submit",
+    "message",
+    "dispatch",
+    "ପଠାନ୍ତୁ"
+  ],
+  "aliases": [
+    "paper-plane"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

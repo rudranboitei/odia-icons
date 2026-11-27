@@ -1,0 +1,26 @@
+{
+  "name": "sidebar",
+  "odia": "ସାଇଡବାର୍",
+  "category": "web",
+  "tags": [
+    "sidebar",
+    "panel",
+    "layout",
+    "navigation",
+    "drawer",
+    "ସାଇଡବାର୍"
+  ],
+  "aliases": [
+    "panel",
+    "drawer"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,25 @@
+{
+  "name": "table",
+  "odia": "ସାରଣୀ",
+  "category": "web",
+  "tags": [
+    "table",
+    "rows",
+    "columns",
+    "spreadsheet",
+    "data",
+    "ସାରଣୀ"
+  ],
+  "aliases": [
+    "spreadsheet"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

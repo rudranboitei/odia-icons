@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "history",
+  "type": "registry:ui",
+  "title": "History",
+  "description": "ଇତିହାସ — history, recent, past.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଇତିହାସ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/history.svg",
+      "type": "registry:file",
+      "target": "components/icons/history.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 12a8.5 8.5 0 1 0 8.5-8.5 9 9 0 0 0-6.2 2.5L3.5 8.5M3.5 3.5v5h5M12 8v4l2.5 2\"/></svg>"
+    }
+  ]
+}

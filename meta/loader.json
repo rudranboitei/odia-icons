@@ -1,0 +1,25 @@
+{
+  "name": "loader",
+  "odia": "ଲୋଡ୍",
+  "category": "ui",
+  "tags": [
+    "loader",
+    "loading",
+    "spinner",
+    "wait",
+    "progress",
+    "ଲୋଡ୍"
+  ],
+  "aliases": [
+    "spinner"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

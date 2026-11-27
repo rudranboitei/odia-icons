@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "mardala",
+  "type": "registry:ui",
+  "title": "Mardala",
+  "description": "ମର୍ଦ୍ଦଳ — mardala, drum, percussion.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "ମର୍ଦ୍ଦଳ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/mardala.svg",
+      "type": "registry:file",
+      "target": "components/icons/mardala.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 12c0-3 1-5 2.5-5.5h12c1.5.5 2.5 2.5 2.5 5.5s-1 5-2.5 5.5H6C4.5 17 3.5 15 3.5 12zM8.5 6.5v11M12 6.5v11M15.5 6.5v11\"/></svg>"
+    }
+  ]
+}

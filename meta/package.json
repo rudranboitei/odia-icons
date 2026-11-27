@@ -1,0 +1,26 @@
+{
+  "name": "package",
+  "odia": "ପ୍ୟାକେଜ୍",
+  "category": "development",
+  "tags": [
+    "package",
+    "npm",
+    "module",
+    "box",
+    "dependency",
+    "ପ୍ୟାକେଜ୍"
+  ],
+  "aliases": [
+    "box",
+    "module"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

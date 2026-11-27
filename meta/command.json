@@ -1,0 +1,26 @@
+{
+  "name": "command",
+  "odia": "କମାଣ୍ଡ",
+  "category": "development",
+  "tags": [
+    "command",
+    "cmd",
+    "shortcut",
+    "keyboard",
+    "mac",
+    "କମାଣ୍ଡ"
+  ],
+  "aliases": [
+    "cmd",
+    "shortcut"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

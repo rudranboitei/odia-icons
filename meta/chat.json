@@ -1,0 +1,25 @@
+{
+  "name": "chat",
+  "odia": "ଆଲୋଚନା",
+  "category": "social",
+  "tags": [
+    "chat",
+    "comment",
+    "conversation",
+    "reply",
+    "discuss",
+    "ଆଲୋଚନା"
+  ],
+  "aliases": [
+    "comment"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

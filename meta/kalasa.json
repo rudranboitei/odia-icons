@@ -1,0 +1,26 @@
+{
+  "name": "kalasa",
+  "odia": "କଳସ",
+  "category": "odisha",
+  "tags": [
+    "kalasa",
+    "pot",
+    "pitcher",
+    "puja",
+    "ritual",
+    "auspicious",
+    "କଳସ"
+  ],
+  "aliases": [
+    "pot"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

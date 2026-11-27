@@ -1,0 +1,25 @@
+{
+  "name": "italic",
+  "odia": "ତେରଛା",
+  "category": "ui",
+  "tags": [
+    "italic",
+    "text",
+    "format",
+    "slant",
+    "emphasis",
+    "ତେରଛା"
+  ],
+  "aliases": [
+    "emphasis"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "boat",
+  "type": "registry:ui",
+  "title": "Boat",
+  "description": "ଡଙ୍ଗା — boat, donga, chilika.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "ଡଙ୍ଗା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/boat.svg",
+      "type": "registry:file",
+      "target": "components/icons/boat.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 15h17l-2.5 4.5H6zM12 15V4.5M12 5.5l5 8H12\"/></svg>"
+    }
+  ]
+}

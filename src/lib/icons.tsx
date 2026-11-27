@@ -106,6 +106,10 @@ export const CATEGORY_ORDER: readonly IconCategory[] = [
   "food",
   "nature",
   "travel",
+  "odisha",
+  "social",
+  "development",
+  "web",
   "ui",
 ]
 

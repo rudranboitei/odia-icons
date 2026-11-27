@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "paddy",
+  "type": "registry:ui",
+  "title": "Paddy",
+  "description": "ଧାନ — paddy, dhana, rice.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "ଧାନ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/paddy.svg",
+      "type": "registry:file",
+      "target": "components/icons/paddy.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 21V4.5M12 8.5l-3.5-3M12 8.5l3.5-3M12 13l-3.5-3M12 13l3.5-3M12 17.5l-3.5-3M12 17.5l3.5-3\"/></svg>"
+    }
+  ]
+}

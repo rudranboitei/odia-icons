@@ -1,0 +1,25 @@
+{
+  "name": "plus-circle",
+  "odia": "ଯୋଡ଼ନ୍ତୁ",
+  "category": "ui",
+  "tags": [
+    "plus",
+    "add",
+    "new",
+    "create",
+    "circle",
+    "ଯୋଡ଼ନ୍ତୁ"
+  ],
+  "aliases": [
+    "add-circle"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

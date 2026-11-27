@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fullscreen",
+  "type": "registry:ui",
+  "title": "Fullscreen",
+  "description": "ପୂର୍ଣ୍ଣ ପରଦା — fullscreen, expand, maximize.",
+  "categories": [
+    "web"
+  ],
+  "meta": {
+    "odia": "ପୂର୍ଣ୍ଣ ପରଦା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/fullscreen.svg",
+      "type": "registry:file",
+      "target": "components/icons/fullscreen.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 9V6a2 2 0 0 1 2-2h3M15 4h3a2 2 0 0 1 2 2v3M20 15v3a2 2 0 0 1-2 2h-3M9 20H6a2 2 0 0 1-2-2v-3\"/></svg>"
+    }
+  ]
+}

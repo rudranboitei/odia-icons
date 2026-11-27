@@ -1,0 +1,25 @@
+{
+  "name": "pin",
+  "odia": "ପିନ୍",
+  "category": "ui",
+  "tags": [
+    "pin",
+    "pushpin",
+    "attach",
+    "sticky",
+    "fix",
+    "ପିନ୍"
+  ],
+  "aliases": [
+    "pushpin"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

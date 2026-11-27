@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "align-left",
+  "type": "registry:ui",
+  "title": "Align Left",
+  "description": "ବାମ ସଜାଣି — align, left, text.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ବାମ ସଜାଣି",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/align-left.svg",
+      "type": "registry:file",
+      "target": "components/icons/align-left.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 6.5h16M4 12h10M4 17.5h13\"/></svg>"
+    }
+  ]
+}

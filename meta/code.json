@@ -1,0 +1,25 @@
+{
+  "name": "code",
+  "odia": "କୋଡ୍",
+  "category": "development",
+  "tags": [
+    "code",
+    "develop",
+    "programming",
+    "brackets",
+    "source",
+    "କୋଡ୍"
+  ],
+  "aliases": [
+    "dev"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

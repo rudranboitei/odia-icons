@@ -349,7 +349,7 @@ function IconCard({ icon, index, selected, onOpen }: {
         aria-label={`Open ${icon.name} icon`}
         aria-pressed={selected}
         whileTap={{ scale: 0.98 }}
-        className={`relative flex h-24 w-full cursor-pointer flex-col items-center justify-center gap-2.5 rounded-xl border px-2 transition-[background-color,border-color] duration-150 focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f5f5] focus-visible:outline-none sm:h-28 sm:gap-3 sm:px-3 ${selected
+        className={`relative flex aspect-square w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border px-2 transition-[background-color,border-color] duration-150 focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f5f5] focus-visible:outline-none sm:gap-2.5 sm:px-3 ${selected
           ? "border-orange-600/50 bg-white"
           : "border-black/10 bg-white/70 hover:border-black/25 hover:bg-white"
           }`}
@@ -489,7 +489,7 @@ export function IconBrowser() {
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: EASE }}
-          className={`sticky top-0 hidden h-dvh w-[240px] shrink-0 flex-col overflow-y-auto border-r border-black/10 px-2.5 py-3 [scrollbar-width:none] lg:flex [&::-webkit-scrollbar]:hidden ${SIDEBAR_BG}`}
+          className={`sticky top-0 hidden h-dvh w-[340px] shrink-0 flex-col overflow-y-auto border-r border-black/10 px-2.5 py-3 [scrollbar-width:none] lg:flex [&::-webkit-scrollbar]:hidden ${SIDEBAR_BG}`}
         >
           <SidebarContent {...sidebarProps} />
         </motion.aside>
@@ -606,7 +606,7 @@ export function IconBrowser() {
           <main className="flex-1 px-3 py-3 sm:px-4 sm:py-4 lg:px-5">
             <h1 className="sr-only">Icons</h1>
             {filtered.length > 0 ? (
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-2.5 lg:grid-cols-4 2xl:grid-cols-5">
+              <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-2.5 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8">
                 {filtered.map((icon, index) => (
                   <IconCard
                     key={icon.name}

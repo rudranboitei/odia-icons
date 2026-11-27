@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "battery",
+  "type": "registry:ui",
+  "title": "Battery",
+  "description": "ବ୍ୟାଟେରୀ — battery, power, charge.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ବ୍ୟାଟେରୀ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/battery.svg",
+      "type": "registry:file",
+      "target": "components/icons/battery.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2.5\" y=\"8\" width=\"17\" height=\"8\" rx=\"3\"/><path d=\"M21.5 11v2M6 12h6\"/></svg>"
+    }
+  ]
+}

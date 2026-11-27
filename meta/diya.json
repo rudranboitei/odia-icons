@@ -1,0 +1,27 @@
+{
+  "name": "diya",
+  "odia": "ଦୀପ",
+  "category": "odisha",
+  "tags": [
+    "diya",
+    "deepa",
+    "lamp",
+    "flame",
+    "festival",
+    "light",
+    "ଦୀପ"
+  ],
+  "aliases": [
+    "lamp",
+    "deepa"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

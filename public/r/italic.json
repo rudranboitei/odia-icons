@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "italic",
+  "type": "registry:ui",
+  "title": "Italic",
+  "description": "ତେରଛା — italic, text, format.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ତେରଛା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/italic.svg",
+      "type": "registry:file",
+      "target": "components/icons/italic.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 4.5h8M6 19.5h8M15 4.5L9 19.5\"/></svg>"
+    }
+  ]
+}

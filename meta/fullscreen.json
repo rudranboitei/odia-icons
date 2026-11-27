@@ -1,0 +1,26 @@
+{
+  "name": "fullscreen",
+  "odia": "ପୂର୍ଣ୍ଣ ପରଦା",
+  "category": "web",
+  "tags": [
+    "fullscreen",
+    "expand",
+    "maximize",
+    "enlarge",
+    "zoom",
+    "ପୂର୍ଣ୍ଣ ପରଦା"
+  ],
+  "aliases": [
+    "maximize",
+    "expand"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

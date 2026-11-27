@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "list",
+  "type": "registry:ui",
+  "title": "List",
+  "description": "ତାଲିକା — list, bullets, items.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ତାଲିକା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/list.svg",
+      "type": "registry:file",
+      "target": "components/icons/list.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 6.5h11.5M9 12h11.5M9 17.5h11.5M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01\"/></svg>"
+    }
+  ]
+}

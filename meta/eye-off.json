@@ -1,0 +1,25 @@
+{
+  "name": "eye-off",
+  "odia": "ଲୁଚାନ୍ତୁ",
+  "category": "ui",
+  "tags": [
+    "eye-off",
+    "hide",
+    "hidden",
+    "invisible",
+    "private",
+    "ଲୁଚାନ୍ତୁ"
+  ],
+  "aliases": [
+    "hide"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -16,6 +16,10 @@ export const CATEGORIES = [
   "food",
   "nature",
   "travel",
+  "odisha",
+  "social",
+  "development",
+  "web",
   "ui",
 ]
 export const VARIANTS = ["outline", "solid", "duotone"]

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kalasa",
+  "type": "registry:ui",
+  "title": "Kalasa",
+  "description": "କଳସ — kalasa, pot, pitcher.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "କଳସ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/kalasa.svg",
+      "type": "registry:file",
+      "target": "components/icons/kalasa.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8.5 10.5h7M9.5 10.5c-3 1.2-4.5 4-4.5 6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4c0-2-1.5-4.8-4.5-6\"/><circle cx=\"12\" cy=\"7\" r=\"2\"/><path d=\"M10.2 7.5C8.5 7.5 6.8 6.5 6 4.5c2 0 3.5 1 4.2 3zM13.8 7.5c1.7 0 3.4-1 4.2-3-2 0-3.5 1-4.2 3z\"/></svg>"
+    }
+  ]
+}

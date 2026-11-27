@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "code",
+  "type": "registry:ui",
+  "title": "Code",
+  "description": "କୋଡ୍ — code, develop, programming.",
+  "categories": [
+    "development"
+  ],
+  "meta": {
+    "odia": "କୋଡ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/code.svg",
+      "type": "registry:file",
+      "target": "components/icons/code.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8.5 7l-5 5 5 5M15.5 7l5 5-5 5\"/></svg>"
+    }
+  ]
+}

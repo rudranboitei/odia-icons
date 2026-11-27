@@ -1,0 +1,25 @@
+{
+  "name": "zoom-out",
+  "odia": "ଛୋଟ କରନ୍ତୁ",
+  "category": "ui",
+  "tags": [
+    "zoom-out",
+    "shrink",
+    "reduce",
+    "search",
+    "smaller",
+    "ଛୋଟ କରନ୍ତୁ"
+  ],
+  "aliases": [
+    "shrink"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

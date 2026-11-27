@@ -1,0 +1,26 @@
+{
+  "name": "gauge",
+  "odia": "ଗତି",
+  "category": "web",
+  "tags": [
+    "gauge",
+    "speed",
+    "performance",
+    "meter",
+    "lighthouse",
+    "ଗତି"
+  ],
+  "aliases": [
+    "speed",
+    "performance"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

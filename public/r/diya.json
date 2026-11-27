@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "diya",
+  "type": "registry:ui",
+  "title": "Diya",
+  "description": "ଦୀପ — diya, deepa, lamp.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "ଦୀପ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/diya.svg",
+      "type": "registry:file",
+      "target": "components/icons/diya.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 13.5h16c0 3.5-3.5 6-8 6s-8-2.5-8-6zM12 4c2 2 2.5 3.5 2.5 5a2.5 2.5 0 0 1-5 0c0-1.5.5-3 2.5-5z\"/></svg>"
+    }
+  ]
+}

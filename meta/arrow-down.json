@@ -1,0 +1,23 @@
+{
+  "name": "arrow-down",
+  "odia": "ତଳ ତୀର",
+  "category": "ui",
+  "tags": [
+    "arrow",
+    "down",
+    "bottom",
+    "decrease",
+    "direction",
+    "ତଳ ତୀର"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

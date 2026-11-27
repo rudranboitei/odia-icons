@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-circle",
+  "type": "registry:ui",
+  "title": "Alert Circle",
+  "description": "ସତର୍କତା — alert, warning, error.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ସତର୍କତା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/alert-circle.svg",
+      "type": "registry:file",
+      "target": "components/icons/alert-circle.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7.5v5.5M12 16.5h.01\"/></svg>"
+    }
+  ]
+}

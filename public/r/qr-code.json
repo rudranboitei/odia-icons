@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "qr-code",
+  "type": "registry:ui",
+  "title": "Qr Code",
+  "description": "କ୍ୟୁଆର୍ କୋଡ୍ — qr, qr-code, scan.",
+  "categories": [
+    "web"
+  ],
+  "meta": {
+    "odia": "କ୍ୟୁଆର୍ କୋଡ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/qr-code.svg",
+      "type": "registry:file",
+      "target": "components/icons/qr-code.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3.5\" y=\"3.5\" width=\"6\" height=\"6\" rx=\"1.5\"/><rect x=\"14.5\" y=\"3.5\" width=\"6\" height=\"6\" rx=\"1.5\"/><rect x=\"3.5\" y=\"14.5\" width=\"6\" height=\"6\" rx=\"1.5\"/><path d=\"M14.5 14.5h3v3M20.5 14.5v.01M14.5 20.5v.01M17.5 20.5h3\"/></svg>"
+    }
+  ]
+}

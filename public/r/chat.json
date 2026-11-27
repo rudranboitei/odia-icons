@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chat",
+  "type": "registry:ui",
+  "title": "Chat",
+  "description": "ଆଲୋଚନା — chat, comment, conversation.",
+  "categories": [
+    "social"
+  ],
+  "meta": {
+    "odia": "ଆଲୋଚନା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/chat.svg",
+      "type": "registry:file",
+      "target": "components/icons/chat.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5.5 4.5h13a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H11l-4.5 4v-4h-1a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z\"/><path d=\"M8.5 10.5h.01M12 10.5h.01M15.5 10.5h.01\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bot",
+  "type": "registry:ui",
+  "title": "Bot",
+  "description": "ରୋବଟ୍ — bot, robot, ai.",
+  "categories": [
+    "development"
+  ],
+  "meta": {
+    "odia": "ରୋବଟ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/bot.svg",
+      "type": "registry:file",
+      "target": "components/icons/bot.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4.5\" y=\"8\" width=\"15\" height=\"11\" rx=\"4\"/><path d=\"M12 8V4.5M9 13.5h.01M15 13.5h.01M9.5 16.5h5\"/></svg>"
+    }
+  ]
+}

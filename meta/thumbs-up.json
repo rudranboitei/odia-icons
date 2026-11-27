@@ -1,0 +1,25 @@
+{
+  "name": "thumbs-up",
+  "odia": "ପସନ୍ଦ",
+  "category": "social",
+  "tags": [
+    "thumbs-up",
+    "like",
+    "approve",
+    "vote",
+    "good",
+    "ପସନ୍ଦ"
+  ],
+  "aliases": [
+    "like"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

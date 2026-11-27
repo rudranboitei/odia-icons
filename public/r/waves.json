@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "waves",
+  "type": "registry:ui",
+  "title": "Waves",
+  "description": "ଢେଉ — waves, dheu, sea.",
+  "categories": [
+    "odisha"
+  ],
+  "meta": {
+    "odia": "ଢେଉ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/waves.svg",
+      "type": "registry:file",
+      "target": "components/icons/waves.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 8c2.3-2 4.2-2 6 0s3.7 2 6 0 3.7-2 6 0M3 13c2.3-2 4.2-2 6 0s3.7 2 6 0 3.7-2 6 0M3 18c2.3-2 4.2-2 6 0s3.7 2 6 0 3.7-2 6 0\"/></svg>"
+    }
+  ]
+}

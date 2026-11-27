@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "more-horizontal",
+  "type": "registry:ui",
+  "title": "More Horizontal",
+  "description": "ଅଧିକ — more, menu, options.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଅଧିକ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/more-horizontal.svg",
+      "type": "registry:file",
+      "target": "components/icons/more-horizontal.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 12h.01M12 12h.01M18 12h.01\"/></svg>"
+    }
+  ]
+}

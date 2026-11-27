@@ -1,0 +1,26 @@
+{
+  "name": "layout-grid",
+  "odia": "ଗ୍ରିଡ୍",
+  "category": "web",
+  "tags": [
+    "grid",
+    "layout",
+    "dashboard",
+    "tiles",
+    "components",
+    "ଗ୍ରିଡ୍"
+  ],
+  "aliases": [
+    "grid",
+    "dashboard"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

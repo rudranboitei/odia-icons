@@ -1,0 +1,23 @@
+{
+  "name": "underline",
+  "odia": "ରେଖାଙ୍କିତ",
+  "category": "ui",
+  "tags": [
+    "underline",
+    "text",
+    "format",
+    "line",
+    "under",
+    "ରେଖାଙ୍କିତ"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,26 @@
+{
+  "name": "users",
+  "odia": "ଲୋକମାନେ",
+  "category": "social",
+  "tags": [
+    "users",
+    "people",
+    "team",
+    "group",
+    "community",
+    "ଲୋକମାନେ"
+  ],
+  "aliases": [
+    "team",
+    "group"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

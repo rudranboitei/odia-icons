@@ -1,0 +1,25 @@
+{
+  "name": "x-circle",
+  "odia": "ତ୍ରୁଟି",
+  "category": "ui",
+  "tags": [
+    "close",
+    "error",
+    "fail",
+    "cancel",
+    "remove",
+    "ତ୍ରୁଟି"
+  ],
+  "aliases": [
+    "error"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

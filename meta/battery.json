@@ -1,0 +1,25 @@
+{
+  "name": "battery",
+  "odia": "ବ୍ୟାଟେରୀ",
+  "category": "ui",
+  "tags": [
+    "battery",
+    "power",
+    "charge",
+    "energy",
+    "device",
+    "ବ୍ୟାଟେରୀ"
+  ],
+  "aliases": [
+    "charge"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

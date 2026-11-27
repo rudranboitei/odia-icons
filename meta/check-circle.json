@@ -1,0 +1,26 @@
+{
+  "name": "check-circle",
+  "odia": "ସଫଳ",
+  "category": "ui",
+  "tags": [
+    "check",
+    "success",
+    "done",
+    "complete",
+    "verified",
+    "ସଫଳ"
+  ],
+  "aliases": [
+    "success",
+    "done"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

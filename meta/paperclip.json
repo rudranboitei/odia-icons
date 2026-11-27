@@ -1,0 +1,25 @@
+{
+  "name": "paperclip",
+  "odia": "କ୍ଲିପ୍",
+  "category": "ui",
+  "tags": [
+    "paperclip",
+    "attach",
+    "attachment",
+    "file",
+    "clip",
+    "କ୍ଲିପ୍"
+  ],
+  "aliases": [
+    "attach"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

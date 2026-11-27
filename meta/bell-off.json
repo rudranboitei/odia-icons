@@ -1,0 +1,25 @@
+{
+  "name": "bell-off",
+  "odia": "ନୀରବ",
+  "category": "ui",
+  "tags": [
+    "bell-off",
+    "mute",
+    "silent",
+    "notifications",
+    "quiet",
+    "ନୀରବ"
+  ],
+  "aliases": [
+    "mute"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,25 @@
+{
+  "name": "file-text",
+  "odia": "ଲେଖା ଫାଇଲ୍",
+  "category": "ui",
+  "tags": [
+    "file",
+    "text",
+    "document",
+    "page",
+    "doc",
+    "ଲେଖା ଫାଇଲ୍"
+  ],
+  "aliases": [
+    "document"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

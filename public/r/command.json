@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command",
+  "type": "registry:ui",
+  "title": "Command",
+  "description": "କମାଣ୍ଡ — command, cmd, shortcut.",
+  "categories": [
+    "development"
+  ],
+  "meta": {
+    "odia": "କମାଣ୍ଡ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/command.svg",
+      "type": "registry:file",
+      "target": "components/icons/command.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 9h6v6H9zM9 9V6.5A2.5 2.5 0 1 0 6.5 9H9M15 9V6.5A2.5 2.5 0 1 1 17.5 9H15M15 15h2.5a2.5 2.5 0 1 1-2.5 2.5V15M9 15H6.5A2.5 2.5 0 1 0 9 17.5V15\"/></svg>"
+    }
+  ]
+}

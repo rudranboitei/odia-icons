@@ -1,0 +1,27 @@
+{
+  "name": "rath",
+  "odia": "ରଥ",
+  "category": "odisha",
+  "tags": [
+    "rath",
+    "chariot",
+    "yatra",
+    "festival",
+    "puri",
+    "heritage",
+    "ରଥ"
+  ],
+  "aliases": [
+    "chariot",
+    "ratha"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

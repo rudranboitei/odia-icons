@@ -1,0 +1,25 @@
+{
+  "name": "inbox",
+  "odia": "ଇନବକ୍ସ",
+  "category": "ui",
+  "tags": [
+    "inbox",
+    "tray",
+    "messages",
+    "receive",
+    "mail",
+    "ଇନବକ୍ସ"
+  ],
+  "aliases": [
+    "tray"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

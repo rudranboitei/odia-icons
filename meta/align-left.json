@@ -1,0 +1,23 @@
+{
+  "name": "align-left",
+  "odia": "ବାମ ସଜାଣି",
+  "category": "ui",
+  "tags": [
+    "align",
+    "left",
+    "text",
+    "format",
+    "paragraph",
+    "ବାମ ସଜାଣି"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

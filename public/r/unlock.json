@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "unlock",
+  "type": "registry:ui",
+  "title": "Unlock",
+  "description": "ଖୋଲା — unlock, open, access.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଖୋଲା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/unlock.svg",
+      "type": "registry:file",
+      "target": "components/icons/unlock.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"5\" y=\"10.5\" width=\"14\" height=\"10\" rx=\"3.5\"/><path d=\"M8 10.5V8a4 4 0 0 1 7.5-1.9M12 15v2\"/></svg>"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "cpu",
+  "odia": "ସିପିୟୁ",
+  "category": "development",
+  "tags": [
+    "cpu",
+    "chip",
+    "processor",
+    "hardware",
+    "compute",
+    "ସିପିୟୁ"
+  ],
+  "aliases": [
+    "chip",
+    "processor"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,25 @@
+{
+  "name": "bug",
+  "odia": "ବଗ୍",
+  "category": "development",
+  "tags": [
+    "bug",
+    "debug",
+    "issue",
+    "error",
+    "insect",
+    "ବଗ୍"
+  ],
+  "aliases": [
+    "debug"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}
