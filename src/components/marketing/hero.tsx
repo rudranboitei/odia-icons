@@ -90,12 +90,10 @@ function IconReveal({ on, reduce }: { on: boolean; reduce: boolean }) {
 /* The toggle switch that stands in for the "o" in "Icons". Click, tap, swipe or use the keyboard. */
 function ToggleO({
   on,
-  touched,
   onChange,
   reduce,
 }: {
   on: boolean;
-  touched: boolean;
   onChange: (next: boolean) => void;
   reduce: boolean;
 }) {
@@ -127,9 +125,6 @@ function ToggleO({
     onChange(!on);
   };
 
-  /* Until someone uses it, the knob leans over a few times as a hint */
-  const nudge = !touched && !reduce;
-
   return (
     <button
       type="button"
@@ -147,14 +142,8 @@ function ToggleO({
       {/* Knob: only its position animates, which keeps the movement smooth */}
       <motion.span
         initial={false}
-        animate={{ x: on ? "0.57em" : nudge ? ["0em", "0.08em", "0em"] : "0em" }}
-        transition={
-          reduce
-            ? { duration: 0 }
-            : nudge
-              ? { duration: 1.1, ease: "easeInOut", delay: 1.5, repeat: 2, repeatDelay: 1.8 }
-              : { duration: 0.55, ease: SMOOTH }
-        }
+        animate={{ x: on ? "0.57em" : "0em" }}
+        transition={reduce ? { duration: 0 } : { duration: 0.55, ease: SMOOTH }}
         className="absolute top-[0.04em] left-[0.04em] block will-change-transform"
       >
         {/* Sized on an inner element so "em" matches the headline */}
@@ -167,13 +156,7 @@ function ToggleO({
 export function Hero() {
   const { hero } = SITE;
   const reduce = useReducedMotion() ?? false;
-  const [iconsOn, setIconsOn] = useState(false);
-  const [touched, setTouched] = useState(false);
-
-  const toggleIcons = (next: boolean) => {
-    setTouched(true);
-    setIconsOn(next);
-  };
+  const [iconsOn, setIconsOn] = useState(true);
 
   const container: Variants = {
     hidden: {},
@@ -251,7 +234,7 @@ export function Hero() {
 
             <span className="block text-[clamp(5rem,min(23vw,23svh),14rem)] leading-[0.95] tracking-[-0.05em] whitespace-nowrap">
               <span aria-hidden="true">Ic</span>
-              <ToggleO on={iconsOn} touched={touched} onChange={toggleIcons} reduce={reduce} />
+              <ToggleO on={iconsOn} onChange={setIconsOn} reduce={reduce} />
               <span aria-hidden="true">ns</span>
             </span>
 
