@@ -4,11 +4,12 @@ import { useRef, useState, type CSSProperties, type PointerEvent } from "react";
 import Link from "next/link";
 import { Inter_Tight } from "next/font/google";
 import { AnimatePresence, motion, useReducedMotion, type Variants } from "motion/react";
-import { Download, MousePointer2, Star } from "lucide-react";
+import { Download, Pointer, Star } from "@odiaui/icons-react";
 
 import { SITE } from "@/data/site";
 import { Icon, iconsByName } from "@/lib/icons";
 import { InstallBox } from "./install-box";
+import { HeroLines } from "./hero-lines";
 
 /* Bold, tight sans for the whole hero */
 const sans = Inter_Tight({ subsets: ["latin"], weight: ["500", "700"] });
@@ -20,20 +21,26 @@ const PAGE_BG = "#141210";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-
 /*
  * Icons that appear when the toggle is on, mirrored on both sides.
  * Large screens: x and y are percentages of the headline area, beside the title.
+ * These are the same points the lines in hero-lines.tsx pass through.
  * Smaller screens have no room there, so they form an arc above it: mx across, my upwards.
+ *
+ * line: which line the icon sits on, so it appears when that line reaches it.
+ * near: bigger tile, brighter glyph. Far icons are smaller and softer, for depth.
  */
 const REVEAL = [
-  { name: "home", x: 16, y: 12, mx: 25, my: "-5rem", size: "size-6 lg:size-10", opacity: 0.75 },
-  { name: "search", x: 8, y: 50, mx: 8, my: "-4rem", size: "size-6 lg:size-10", opacity: 0.45 },
-  { name: "download", x: 4, y: 92, mx: 42, my: "-5.5rem", size: "size-6 lg:size-7", opacity: 0.6 },
-  { name: "bell", x: 84, y: 12, mx: 75, my: "-5rem", size: "size-6 lg:size-10", opacity: 0.75 },
-  { name: "user", x: 92, y: 50, mx: 92, my: "-4rem", size: "size-6 lg:size-10", opacity: 0.45 },
-  { name: "settings", x: 96, y: 92, mx: 58, my: "-5.5rem", size: "size-6 lg:size-7", opacity: 0.6 },
+  { name: "home", x: 16, y: 12, mx: 25, my: "-5rem", line: 0, near: true },
+  { name: "search", x: 8, y: 50, mx: 8, my: "-4rem", line: 1, near: true },
+  { name: "download", x: 4, y: 92, mx: 42, my: "-5.5rem", line: 2, near: false },
+  { name: "bell", x: 84, y: 12, mx: 75, my: "-5rem", line: 0, near: true },
+  { name: "user", x: 92, y: 50, mx: 92, my: "-4rem", line: 1, near: true },
+  { name: "settings", x: 96, y: 92, mx: 58, my: "-5.5rem", line: 2, near: false },
 ];
+
+/* Must match DRAW_DELAY, DRAW_STEP and DRAW_TIME in hero-lines.tsx: the icon lands as the line reaches it */
+const iconDelay = (line: number) => 0.1 + line * 0.07 + 0.55;
 
 /* Soft start and soft landing for the knob */
 const SMOOTH = [0.65, 0, 0.35, 1] as const;
@@ -41,31 +48,47 @@ const SMOOTH = [0.65, 0, 0.35, 1] as const;
 /** How far a finger or mouse must move to count as a swipe, in pixels */
 const SWIPE = 12;
 
+/*
+ * Glass tile. Layers, from the back:
+ * 1. frosted blur of whatever is behind (the photo and the line passing under it)
+ * 2. a faint diagonal tint, lighter at the top left like light hitting a pane
+ * 3. a bright rim on the top edge and a soft one on the bottom (inset shadows)
+ * 4. a drop shadow so it lifts off the photo
+ */
+const GLASS =
+  "relative grid place-items-center overflow-hidden border border-white/20 " +
+  "bg-gradient-to-br from-white/25 via-white/10 to-white/5 backdrop-blur-xl backdrop-saturate-150 " +
+  "shadow-[inset_0_1px_0_rgba(255,255,255,0.55),inset_0_-1px_0_rgba(255,255,255,0.08),0_12px_32px_-8px_rgba(0,0,0,0.55)]";
+
 function IconReveal({ on, reduce }: { on: boolean; reduce: boolean }) {
   return (
-    <span aria-hidden="true" className="pointer-events-none absolute inset-0">
+    <div aria-hidden="true" className="pointer-events-none absolute inset-0">
       <AnimatePresence>
         {on &&
           REVEAL.map((item, i) => {
             const icon = iconsByName[item.name];
             if (!icon) return null;
-            /* Each icon drifts a short way outwards from the headline */
+
+            /*
+             * No blur filter here on purpose: a filter or partial opacity on a parent
+             * stops backdrop-blur from seeing the photo, and the glass would turn flat.
+             */
             const hidden = reduce
               ? { opacity: 0 }
-              : { opacity: 0, x: item.x < 50 ? 24 : -24, scale: 0.85, filter: "blur(8px)" };
+              : { opacity: 0, x: item.x < 50 ? 24 : -24, scale: 0.8 };
 
             return (
-              <motion.span
+              <motion.div
                 key={item.name}
                 initial={hidden}
-                animate={{ opacity: item.opacity, x: 0, scale: 1, filter: "blur(0px)" }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
                 exit={{ ...hidden, transition: { duration: reduce ? 0.2 : 0.3, ease: "easeIn" } }}
                 transition={
                   reduce
                     ? { duration: 0.2 }
-                    : { duration: 0.7, ease: EASE, delay: 0.15 + (i % 3) * 0.07 }
+                    : { duration: 0.7, ease: EASE, delay: iconDelay(item.line) }
                 }
-                className="absolute top-[var(--my)] left-[var(--mx)] text-white lg:top-[var(--y)] lg:left-[var(--x)]"
+                className="absolute top-[var(--my)] left-[var(--mx)] lg:top-[var(--y)] lg:left-[var(--x)]"
                 style={
                   {
                     "--x": `${item.x}%`,
@@ -75,15 +98,39 @@ function IconReveal({ on, reduce }: { on: boolean; reduce: boolean }) {
                   } as CSSProperties
                 }
               >
-                {/* Centred on its point; kept separate from the animated transform */}
-                <span className="block -translate-x-1/2 -translate-y-1/2">
-                  <Icon def={icon} strokeWidth={1.5} className={item.size} />
-                </span>
-              </motion.span>
+                {/* Centred exactly on its point, kept separate from the animated transform */}
+                <div className="-translate-x-1/2 -translate-y-1/2">
+                  {/* Gentle float, offset per icon so they never move together */}
+                  <motion.div
+                    animate={reduce ? undefined : { y: [0, -5, 0] }}
+                    transition={{
+                      duration: 4 + (i % 3) * 0.8,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.4,
+                    }}
+                    className={`${GLASS} ${item.near
+                        ? "size-11 rounded-2xl lg:size-[4.5rem] lg:rounded-3xl"
+                        : "size-10 rounded-xl lg:size-14 lg:rounded-2xl"
+                      }`}
+                  >
+                    {/* Specular highlight across the top half */}
+                    <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/25 to-transparent" />
+                    <Icon
+                      def={icon}
+                      strokeWidth={1.5}
+                      className={`relative drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)] ${item.near
+                          ? "size-5 text-white lg:size-8"
+                          : "size-5 text-white/80 lg:size-6"
+                        }`}
+                    />
+                  </motion.div>
+                </div>
+              </motion.div>
             );
           })}
       </AnimatePresence>
-    </span>
+    </div>
   );
 }
 
@@ -218,31 +265,42 @@ export function Hero() {
         animate="show"
         className="relative mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center text-center"
       >
-        {/* Headline */}
-        <motion.h1 id="hero-title" variants={rise} className="relative w-full font-bold text-white">
-          <span className="sr-only">Free Odisha Icons, Open-source SVG Set</span>
-
+        {/*
+          Headline area. The lines and glass icons live beside the h1, not inside it:
+          the h1 animates a blur filter, and a filter on a parent would flatten the glass.
+          Their percentages are relative to this box, which is the same size as the h1.
+        */}
+        <div className="relative w-full">
+          <HeroLines on={iconsOn} reduce={reduce} />
           <IconReveal on={iconsOn} reduce={reduce} />
 
-          <span className="flex flex-col items-center">
-            <span aria-hidden="true" className="relative block text-[clamp(2rem,min(8.5vw,7.5svh),4.5rem)] leading-none tracking-[-0.04em] whitespace-nowrap">
-              Free Odisha
-              <MousePointer2
-                className="absolute top-1/2 left-full ml-2 size-[0.7em] -translate-y-1/2 fill-white sm:ml-4"
-              />
-            </span>
+          <motion.h1 id="hero-title" variants={rise} className="relative w-full font-bold text-white">
+            <span className="sr-only">Free Odisha Icons, Open-source SVG Set</span>
 
-            <span className="block text-[clamp(5rem,min(23vw,23svh),14rem)] leading-[0.95] tracking-[-0.05em] whitespace-nowrap">
-              <span aria-hidden="true">Ic</span>
-              <ToggleO on={iconsOn} onChange={setIconsOn} reduce={reduce} />
-              <span aria-hidden="true">ns</span>
-            </span>
+            <span className="flex flex-col items-center">
+              <span
+                aria-hidden="true"
+                className="relative block text-[clamp(2rem,min(8.5vw,7.5svh),4.5rem)] leading-none tracking-[-0.04em] whitespace-nowrap"
+              >
+                Free Odisha
+                <Pointer className="absolute top-1/2 left-full ml-2 size-[0.7em] -translate-y-1/2 fill-white sm:ml-4" />
+              </span>
 
-            <span aria-hidden="true" className="mt-3 block text-[clamp(1.25rem,min(6vw,4.8svh),2.75rem)] leading-none font-medium tracking-[-0.03em] whitespace-nowrap text-neutral-300 sm:mt-4">
-              Open-source SVG Set
+              <span className="block text-[clamp(5rem,min(23vw,23svh),14rem)] leading-[0.95] tracking-[-0.05em] whitespace-nowrap">
+                <span aria-hidden="true">Ic</span>
+                <ToggleO on={iconsOn} onChange={setIconsOn} reduce={reduce} />
+                <span aria-hidden="true">ns</span>
+              </span>
+
+              <span
+                aria-hidden="true"
+                className="mt-3 block text-[clamp(1.25rem,min(6vw,4.8svh),2.75rem)] leading-none font-medium tracking-[-0.03em] whitespace-nowrap text-neutral-300 sm:mt-4"
+              >
+                Open-source SVG Set
+              </span>
             </span>
-          </span>
-        </motion.h1>
+          </motion.h1>
+        </div>
 
         {/* Description */}
         <motion.p
@@ -286,7 +344,6 @@ export function Hero() {
             ))}
           </motion.ul>
         )}
-
       </motion.div>
     </section>
   );

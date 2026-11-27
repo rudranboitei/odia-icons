@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type JSX, type ReactNode } from "react";
 import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react";
-import { Check, Copy } from "lucide-react";
+import { Check, Copy } from "@odiaui/icons-react";
 
 import { cn } from "@/lib/utils";
 import { Icon, iconsByName } from "@/lib/icons";

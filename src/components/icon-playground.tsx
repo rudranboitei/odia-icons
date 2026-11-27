@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { IconCheck, IconCopy, IconDownload, IconX } from "@tabler/icons-react"
+import { Check, Close, Copy, Download } from "@odiaui/icons-react"
 import { SITE } from "../data/site"
 import { copyText } from "@/lib/clipboard"
 import { ShikiCode } from "@/components/shiki-code"
@@ -75,7 +75,7 @@ export default function App() {
         </div>
         {onClose && (
           <MonoButton variant="soft" size="iconSm" onClick={onClose} aria-label="Close">
-            <IconX className="size-4" stroke={2} />
+            <Close className="size-4" stroke="2" />
           </MonoButton>
         )}
       </div>
@@ -144,14 +144,14 @@ export default function App() {
       <div className="flex items-center gap-2 px-4 pt-3 pb-4">
         <MonoButton variant="solid" onClick={onCopy} className="flex-1">
           {copied ? (
-            <IconCheck className="size-3.5" stroke={2.25} />
+            <Check className="size-3.5" stroke="2.25" />
           ) : (
-            <IconCopy className="size-3.5" stroke={2} />
+            <Copy className="size-3.5" stroke="2" />
           )}
           {copied ? "Copied" : `Copy ${tab}`}
         </MonoButton>
         <MonoButton variant="outline" onClick={onDownload}>
-          <IconDownload className="size-3.5" stroke={2} />
+          <Download className="size-3.5" stroke="2" />
           SVG
         </MonoButton>
       </div>

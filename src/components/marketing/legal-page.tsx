@@ -1,5 +1,5 @@
 import { Instrument_Serif } from "next/font/google"
-import { IconCalendar } from "@tabler/icons-react"
+import { Calendar } from "@odiaui/icons-react"
 
 import { SITE } from "@/data/site"
 
@@ -44,7 +44,7 @@ export function LegalPage({
           </p>
 
           <span className="mt-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-[13px] text-neutral-400 backdrop-blur">
-            <IconCalendar aria-hidden className="size-3.5" stroke={1.5} />
+            <Calendar aria-hidden className="size-3.5" />
             Last updated: {updated}
           </span>
         </div>

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react";
-import { ArrowRight, Check, Copy, Search } from "lucide-react";
+import { ArrowRight, Check, Copy, Search } from "@odiaui/icons-react";
 
 import { SITE } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -235,7 +235,7 @@ export function Steps() {
   return (
     <section
       aria-labelledby="steps-title"
-      className="bg-[#141210] px-4 py-16 text-[#ffffff] sm:px-6 sm:py-24"
+      className="bg-[#141210] px-4 py-20 text-[#ffffff] sm:px-6 sm:py-28"
     >
       <Reveal className="mx-auto w-full max-w-[1080px]">
         <p className="flex items-center gap-2 text-sm text-neutral-400">

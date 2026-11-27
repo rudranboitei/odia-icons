@@ -1,27 +1,40 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useState, type SVGProps } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { AnimatePresence, motion } from "motion/react"
 import {
-  IconArrowUpRight,
-  IconBrandGithub,
-  IconBrandNpm,
-  IconCheck,
-  IconCode,
-  IconCopy,
-  IconFilter,
-  IconFolder,
-  IconFolderOpen,
-  IconLayoutGrid,
-  IconMenu2,
-  IconPlus,
-  IconScale,
-  IconSearch,
-  IconTerminal2,
-  IconX,
-} from "@tabler/icons-react"
+  ArrowUpRight,
+  Check,
+  Code,
+  Copy,
+  FileText,
+  Filter,
+  Folder,
+  LayoutGrid,
+  Menu,
+  Plus,
+  Search,
+  Terminal,
+  Close,
+} from "@odiaui/icons-react"
+
+function GithubIcon({ className = "", ...props }: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" className={className} {...props}>
+      <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+    </svg>
+  )
+}
+
+function NpmIcon({ className = "", ...props }: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className} {...props}>
+      <path d="M1 8h22v7H11v2H7v-2H1V8zm1 6h2v-4h1v4h2V9H2v5zm5 0h1v1h2V9H7v5zm3-4v3h1v-3h-1zm3 4h2v-4h1v4h1v-4h1v4h2V9h-7v5z" />
+    </svg>
+  )
+}
 import { SITE } from "../data/site"
 import { copyText } from "@/lib/clipboard"
 import { ShikiCode } from "@/components/shiki-code"
@@ -83,9 +96,9 @@ const categoryCounts = [
 const categoryList = categoryCounts.filter((c) => c.id !== "all")
 
 const browseItems = [
-  { label: "Icons", href: "/icons", icon: IconLayoutGrid, active: true },
-  { label: "Installation", href: "/#install", icon: IconTerminal2 },
-  { label: "Developers", href: "/#developers", icon: IconCode },
+  { label: "Icons", href: "/icons", icon: LayoutGrid, active: true },
+  { label: "Installation", href: "/#install", icon: Terminal },
+  { label: "Developers", href: "/#developers", icon: Code },
 ]
 
 const resourceItems = [
@@ -174,7 +187,7 @@ function SidebarContent({
         </Link>
         {onClose && (
           <MonoButton variant="soft" size="icon" onClick={onClose} aria-label="Close menu">
-            <IconX className="size-4" stroke={1.5} />
+            <Close className="size-4" stroke="1.5" />
           </MonoButton>
         )}
       </div>
@@ -196,7 +209,7 @@ function SidebarContent({
                     }`}
                 >
                   <span className="relative flex">
-                    <NavIcon className="size-4" stroke={1.5} />
+                    <NavIcon className="size-4" stroke="1.5" />
                     {item.active && (
                       <span
                         aria-hidden
@@ -220,7 +233,7 @@ function SidebarContent({
         <ul className="mt-1.5 flex flex-col gap-0.5">
           {categoryCounts.map((item) => {
             const isActive = category === item.id
-            const FolderIcon = isActive ? IconFolderOpen : IconFolder
+            const FolderIcon = isActive ? Folder : Folder
             return (
               <li key={item.id}>
                 <button
@@ -235,7 +248,7 @@ function SidebarContent({
                     : "text-neutral-400 hover:bg-white/[0.05] hover:text-white"
                     }`}
                 >
-                  <FolderIcon className="size-4 shrink-0" stroke={1.5} />
+                  <FolderIcon className="size-4 shrink-0" stroke="1.5" />
                   <span className="truncate">{item.label}</span>
                   <span
                     className={`ml-auto text-[11px] ${isActive ? "text-white" : "text-neutral-400"}`}
@@ -274,7 +287,7 @@ function SidebarContent({
           <Corners className="m-1.5 size-2" />
           <div className="flex items-center justify-between">
             <p className="flex items-center gap-1.5 text-[11px] tracking-wide text-neutral-500 uppercase">
-              <IconTerminal2 className="size-3.5" stroke={1.5} />
+              <Terminal className="size-3.5" stroke="1.5" />
               Install
             </p>
             <Tag tone="orange">v0.1.0</Tag>
@@ -285,9 +298,9 @@ function SidebarContent({
           <MonoButton variant="solid" size="sm" onClick={onCopyInstall} className="mt-2 w-full">
             {copiedInstall ? "Copied" : "Copy command"}
             {copiedInstall ? (
-              <IconCheck className="size-3.5" stroke={2.25} />
+              <Check className="size-3.5" stroke="2.25" />
             ) : (
-              <IconCopy className="size-3.5" stroke={2} />
+              <Copy className="size-3.5" stroke="2" />
             )}
           </MonoButton>
           <a
@@ -296,7 +309,7 @@ function SidebarContent({
             rel="noopener"
             className={btn("outline", "sm", "mt-1.5 w-full")}
           >
-            <IconBrandGithub className="size-3.5" stroke={1.5} />
+            <GithubIcon className="size-3.5" stroke="1.5" />
             Star on GitHub
           </a>
         </div>
@@ -505,11 +518,11 @@ export function IconBrowser() {
                 aria-label="Open menu"
                 className="size-10 lg:hidden"
               >
-                <IconMenu2 className="size-4" stroke={1.5} />
+                <Menu className="size-4" stroke="1.5" />
               </MonoButton>
 
               <div className="hidden min-w-0 items-center gap-2.5 lg:flex">
-                <IconLayoutGrid className="size-4 text-neutral-500" stroke={1.5} />
+                <LayoutGrid className="size-4 text-neutral-500" stroke="1.5" />
                 <span className="text-[15px] font-medium text-white">Icons</span>
                 <Tag tone="orange">{filtered.length} shown</Tag>
               </div>
@@ -523,7 +536,7 @@ export function IconBrowser() {
                     aria-label="Search icons"
                     className={`flex h-10 w-full cursor-pointer items-center gap-2.5 rounded-full border border-white/10 bg-white/5 pl-4 text-left text-sm outline-none transition-[border-color,box-shadow,background-color] hover:border-white/20 hover:bg-white/[0.07] focus-visible:border-white/20 focus-visible:ring-[3px] focus-visible:ring-white/20 ${query ? "pr-11" : "pr-4 sm:pr-20"}`}
                   >
-                    <IconSearch className="size-4 shrink-0 text-neutral-400" />
+                    <Search className="size-4 shrink-0 text-neutral-400" />
                     <span
                       className={`truncate ${query ? "text-white" : "text-neutral-500"}`}
                     >
@@ -538,7 +551,7 @@ export function IconBrowser() {
                       aria-label="Clear search"
                       className="absolute top-1/2 right-1.5 -translate-y-1/2"
                     >
-                      <IconX className="size-3.5" />
+                      <Close className="size-3.5" />
                     </MonoButton>
                   ) : (
                     <span className="pointer-events-none absolute top-1/2 right-2.5 hidden -translate-y-1/2 gap-1 sm:flex [@media(hover:none)]:hidden">
@@ -554,12 +567,12 @@ export function IconBrowser() {
                   onClick={copyInstall}
                   className="max-2xl:hidden normal-case"
                 >
-                  <IconTerminal2 className="size-3.5" stroke={1.5} />
+                  <Terminal className="size-3.5" stroke="1.5" />
                   <ShikiCode code={SITE.install.command} lang="bash" />
                   {copiedInstall ? (
-                    <IconCheck className="size-3.5 text-white" />
+                    <Check className="size-3.5 text-white" />
                   ) : (
-                    <IconCopy className="size-3.5 opacity-50" />
+                    <Copy className="size-3.5 opacity-50" />
                   )}
                 </MonoButton>
 
@@ -570,7 +583,7 @@ export function IconBrowser() {
                   aria-label="GitHub"
                   className={btn("soft", "icon")}
                 >
-                  <IconBrandGithub className="size-4" stroke={1.5} />
+                  <GithubIcon className="size-4" stroke="1.5" />
                 </a>
                 <a
                   href={SITE.links.npm}
@@ -579,7 +592,7 @@ export function IconBrowser() {
                   aria-label="npm"
                   className={btn("soft", "icon")}
                 >
-                  <IconBrandNpm className="size-4" stroke={1.5} />
+                  <NpmIcon className="size-4" stroke="1.5" />
                 </a>
               </div>
             </div>
@@ -662,7 +675,7 @@ export function IconBrowser() {
           className={`sticky top-0 hidden h-dvh w-[340px] shrink-0 flex-col border-l border-white/10 xl:flex ${PANEL_BG}`}
         >
           <div className="flex h-14 shrink-0 items-center gap-2.5 border-b border-white/10 px-4">
-            <IconCode className="size-4 text-neutral-500" stroke={1.5} />
+            <Code className="size-4 text-neutral-500" stroke="1.5" />
             <span className="text-[15px] font-medium text-white">Playground</span>
             {panelIcon && <Tag tone="orange">{panelIcon.category}</Tag>}
           </div>
@@ -715,9 +728,9 @@ export function IconBrowser() {
                           {row.title}
                         </span>
                       </span>
-                      <IconArrowUpRight
+                      <ArrowUpRight
                         className="ml-auto size-4 shrink-0 text-neutral-400"
-                        stroke={2}
+                        stroke="2"
                       />
                     </a>
                   </li>
@@ -792,7 +805,7 @@ export function IconBrowser() {
                     }}
                     className="py-2.5 sm:py-1.5"
                   >
-                    <IconFilter />
+                    <Filter />
                     <span>
                       Show {dialogResults.length} result
                       {dialogResults.length === 1 ? "" : "s"} in the grid
@@ -817,7 +830,7 @@ export function IconBrowser() {
                       }}
                       className="py-2.5 sm:py-1.5"
                     >
-                      <IconFolder />
+                      <Folder />
                       <span>{item.label}</span>
                       <CommandShortcut>{item.count}</CommandShortcut>
                     </CommandItem>
@@ -833,7 +846,7 @@ export function IconBrowser() {
                     }}
                     className="py-2.5 sm:py-1.5"
                   >
-                    <IconTerminal2 />
+                    <Terminal />
                     <span>Copy install command</span>
                   </CommandItem>
                   <CommandItem
@@ -841,7 +854,7 @@ export function IconBrowser() {
                     onSelect={() => openExternal(SITE.links.contribute)}
                     className="py-2.5 sm:py-1.5"
                   >
-                    <IconPlus />
+                    <Plus />
                     <span>Submit an icon</span>
                   </CommandItem>
                   <CommandItem
@@ -849,7 +862,7 @@ export function IconBrowser() {
                     onSelect={() => openExternal(SITE.links.github)}
                     className="py-2.5 sm:py-1.5"
                   >
-                    <IconBrandGithub />
+                    <GithubIcon />
                     <span>Open GitHub</span>
                   </CommandItem>
                   <CommandItem
@@ -857,7 +870,7 @@ export function IconBrowser() {
                     onSelect={() => openExternal(SITE.links.license)}
                     className="py-2.5 sm:py-1.5"
                   >
-                    <IconScale />
+                    <FileText />
                     <span>View licence</span>
                   </CommandItem>
                 </CommandGroup>

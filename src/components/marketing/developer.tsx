@@ -4,13 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  IconCheck,
-  IconCode,
-  IconCopy,
-  IconDownload,
-  IconExternalLink,
-  IconPackage,
-} from "@tabler/icons-react";
+  Check,
+  Code,
+  Copy,
+  Download,
+  ExternalLink,
+  Package,
+} from "@odiaui/icons-react";
 
 import { SITE } from "@/data/site";
 import { copyText } from "@/lib/clipboard";
@@ -22,7 +22,7 @@ import { ShikiCode } from "@/components/shiki-code";
 
 const BG = "/home-bg.jpeg";
 const BG_POS = ["14% 64%", "52% 72%", "90% 68%"];
-const STEP_ICONS = [IconPackage, IconCode, IconCheck];
+const STEP_ICONS = [Package, Code, Check];
 
 /** Small square icon button under the glass card. */
 const btn =
@@ -54,7 +54,7 @@ export function DeveloperSection() {
   return (
     <section
       id="developers"
-      className="scroll-mt-20 bg-[#141210] px-4 py-16 text-white sm:px-6 sm:py-24"
+      className="scroll-mt-20 bg-[#141210] px-4 py-20 text-white sm:px-6 sm:py-28"
     >
       <Reveal className="mx-auto w-full max-w-[1080px]">
         {/* Eyebrow + two-tone heading */}
@@ -109,13 +109,13 @@ export function DeveloperSection() {
 
               <div className="flex items-center gap-2">
                 <button type="button" onClick={copy} aria-label={copied ? "Copied" : "Copy SVG"} className={btn}>
-                  {copied ? <IconCheck aria-hidden className="size-4" /> : <IconCopy aria-hidden className="size-4" />}
+                  {copied ? <Check aria-hidden className="size-4" /> : <Copy aria-hidden className="size-4" />}
                 </button>
                 <button type="button" onClick={download} aria-label="Download SVG" className={btn}>
-                  <IconDownload aria-hidden className="size-4" />
+                  <Download aria-hidden className="size-4" />
                 </button>
                 <Link href={SITE.links.icons} aria-label="Browse all icons" className={btn}>
-                  <IconExternalLink aria-hidden className="size-4" />
+                  <ExternalLink aria-hidden className="size-4" />
                 </Link>
               </div>
             </div>

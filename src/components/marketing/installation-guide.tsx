@@ -3,7 +3,7 @@
 import { useState, type ReactNode } from "react"
 import Link from "next/link"
 import { Instrument_Serif } from "next/font/google"
-import { IconCheck, IconCopy, IconPackage } from "@tabler/icons-react"
+import { Check, Copy, Package } from "@odiaui/icons-react"
 
 import { ShikiCode } from "@/components/shiki-code"
 import { SITE } from "@/data/site"
@@ -96,9 +96,9 @@ function CodeBlock({
           className="flex h-8 cursor-pointer items-center gap-1.5 rounded-lg px-2.5 text-[13px] text-neutral-400 transition-colors hover:bg-white/10 hover:text-white"
         >
           {copied ? (
-            <IconCheck aria-hidden className="size-3.5" />
+            <Check aria-hidden className="size-3.5" />
           ) : (
-            <IconCopy aria-hidden className="size-3.5" />
+            <Copy aria-hidden className="size-3.5" />
           )}
           {copied ? "Copied" : "Copy"}
         </button>
@@ -181,7 +181,7 @@ export function InstallationGuide() {
           </p>
 
           <span className="mt-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-[13px] text-neutral-400 backdrop-blur">
-            <IconPackage aria-hidden className="size-3.5" stroke={1.5} />
+            <Package aria-hidden className="size-3.5" stroke="1.5" />
             {ICON_COUNT} icons · MIT licensed
           </span>
         </div>

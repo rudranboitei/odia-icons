@@ -5,15 +5,15 @@ import { motion, useReducedMotion, type Variants } from "motion/react";
 import {
   Bookmark,
   Check,
-  Code2,
+  Code,
   Copy,
   Download,
-  Grid3x3,
-  PenTool,
+  LayoutGrid,
+  Edit,
   Palette,
-  Ruler,
+  Sliders,
   Sparkles,
-} from "lucide-react";
+} from "@odiaui/icons-react";
 
 import { ICONS, IconGlyph } from "@/data/icons";
 import { pascal } from "@/lib/icons";
@@ -43,12 +43,12 @@ function GridVisual() {
       </div>
       <Line />
       <div className={`${glass} flex w-[72%] items-center gap-2.5 px-3.5 py-2.5 text-[13px]`}>
-        <Grid3x3 aria-hidden className="size-4 text-neutral-300" />
+        <LayoutGrid aria-hidden className="size-4 text-neutral-300" />
         Consistent geometry
       </div>
       <Line />
       <div className={`${glass} flex w-[72%] items-center gap-2.5 px-3.5 py-2.5 text-[13px]`}>
-        <PenTool aria-hidden className="size-4 text-neutral-300" />
+        <Edit aria-hidden className="size-4 text-neutral-300" />
         Rounded 2px stroke
       </div>
       <Line />
@@ -89,7 +89,7 @@ function CopyVisual() {
         <div className="absolute bottom-4 left-4 flex items-center gap-3.5 text-neutral-400">
           <Copy aria-hidden className="size-3.5" />
           <Download aria-hidden className="size-3.5" />
-          <Code2 aria-hidden className="size-3.5" />
+          <Code aria-hidden className="size-3.5" />
           <Bookmark aria-hidden className="size-3.5" />
         </div>
       </div>
@@ -106,7 +106,7 @@ function CustomizeVisual() {
     tag,
     className,
   }: {
-    icon: typeof Ruler;
+    icon: typeof Sliders;
     text: string;
     tag: string;
     className: string;
@@ -125,7 +125,7 @@ function CustomizeVisual() {
   return (
     <div className="absolute inset-0">
       <Row
-        icon={Ruler}
+        icon={Sliders}
         text="Size 24px"
         tag="Resize"
         className="inset-x-[17%] top-[24%] scale-[0.94] opacity-60"

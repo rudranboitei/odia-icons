@@ -1,11 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type SVGProps } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
-import { IconBrandNpm } from "@tabler/icons-react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, Close, Menu } from "@odiaui/icons-react";
+
+function NpmIcon({ className = "", ...props }: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className} {...props}>
+      <path d="M1 8h22v7H11v2H7v-2H1V8zm1 6h2v-4h1v4h2V9H2v5zm5 0h1v1h2V9H7v5zm3-4v3h1v-3h-1zm3 4h2v-4h1v4h1v-4h1v4h2V9h-7v5z" />
+    </svg>
+  );
+}
 
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/data/site";
@@ -88,7 +95,7 @@ export function Header() {
               aria-label="npm"
               className="inline-flex size-10 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:outline-none"
             >
-              <IconBrandNpm className="size-5" stroke={1.5} />
+              <NpmIcon className="size-5" />
             </a>
             <Link
               href="/installation"
@@ -116,7 +123,7 @@ export function Header() {
             onClick={() => setOpen((v) => !v)}
             className="flex size-12 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:outline-none md:hidden"
           >
-            {open ? <X aria-hidden className="size-6" /> : <Menu aria-hidden className="size-6" />}
+            {open ? <Close aria-hidden className="size-6" /> : <Menu aria-hidden className="size-6" />}
           </button>
         </div>
 
@@ -156,7 +163,7 @@ export function Header() {
                     aria-label="npm"
                     className="inline-flex size-11 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-white"
                   >
-                    <IconBrandNpm className="size-5" stroke={1.5} />
+                    <NpmIcon className="size-5" />
                   </a>
                 </div>
                 <Button

@@ -3,14 +3,25 @@
 import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  IconArrowRight,
-  IconArrowsDiagonal,
-  IconBrush,
-  IconCheck,
-  IconCopy,
-  IconPalette,
-} from "@tabler/icons-react";
+import { ArrowRight, Check, Copy, Palette } from "@odiaui/icons-react";
+import type { SVGProps } from "react";
+
+function ArrowsDiagonal(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M16 4h4v4M14 10l6-6M8 20H4v-4M10 14l-6 6" />
+    </svg>
+  );
+}
+
+function Brush(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M18 3l3 3-12 12-4 1 1-4L18 3zM14 7l3 3" />
+      <path d="M3 21c1-4 4-5 7-4" />
+    </svg>
+  );
+}
 
 import { SITE } from "@/data/site";
 import { copyText } from "@/lib/clipboard";
@@ -95,7 +106,7 @@ function Control({
   description,
   children,
 }: {
-  Icon: typeof IconBrush;
+  Icon: (props: SVGProps<SVGSVGElement>) => ReactNode;
   title: string;
   value?: string;
   description: string;
@@ -104,7 +115,7 @@ function Control({
   return (
     <div className="border-l-2 border-white/10 py-4 pl-5 transition-colors duration-300 focus-within:border-[#ffffff]/50 hover:border-white/20">
       <div className="flex items-center gap-3">
-        <Icon aria-hidden className="size-5 shrink-0 text-[#ffffff]" stroke={2} />
+        <Icon aria-hidden className="size-5 shrink-0 text-[#ffffff]" stroke="2" />
         <span className="text-base text-[#ffffff] sm:text-lg">{title}</span>
         {value && <span className="ml-auto font-mono text-xs text-neutral-400">{value}</span>}
       </div>
@@ -144,7 +155,7 @@ export function PlaygroundSection() {
   return (
     <section
       id="playground"
-      className="scroll-mt-20 bg-[#141210] px-4 py-16 text-[#ffffff] sm:px-6 sm:py-24"
+      className="scroll-mt-20 bg-[#141210] px-4 py-20 text-[#ffffff] sm:px-6 sm:py-28"
     >
       <Reveal className="mx-auto w-full max-w-[1080px]">
         <p className="flex items-center gap-2 text-sm text-neutral-400">
@@ -215,7 +226,7 @@ export function PlaygroundSection() {
           {/* Controls, in the same list style as "How it works" */}
           <div className="min-w-0 md:pl-16 lg:pl-24">
             <Control
-              Icon={IconArrowsDiagonal}
+              Icon={ArrowsDiagonal}
               title="Size"
               value={`${size}px`}
               description="Crisp from 16 to 72 pixels."
@@ -224,7 +235,7 @@ export function PlaygroundSection() {
             </Control>
 
             <Control
-              Icon={IconPalette}
+              Icon={Palette}
               title="Colour"
               description="Inherits currentColor, or pick your own."
             >
@@ -279,7 +290,7 @@ export function PlaygroundSection() {
                   aria-label={copied ? "Copied" : "Copy"}
                   className="inline-flex size-8 cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-[#1f1d1a] text-neutral-300 outline-none transition-colors hover:bg-white/5 hover:text-[#ffffff] focus-visible:ring-2 focus-visible:ring-white/30"
                 >
-                  {copied ? <IconCheck aria-hidden className="size-4" /> : <IconCopy aria-hidden className="size-4" />}
+                  {copied ? <Check aria-hidden className="size-4" /> : <Copy aria-hidden className="size-4" />}
                 </button>
               </div>
               <pre className="m-0 max-h-36 overflow-auto p-3 font-mono text-[12px] leading-relaxed break-all whitespace-pre-wrap text-neutral-300 sm:text-[13px]">
@@ -292,7 +303,7 @@ export function PlaygroundSection() {
               className="group/cta mt-6 inline-flex h-10 items-center gap-2 rounded-full border border-white/10 bg-[#1f1d1a] px-5 text-sm font-medium text-[#ffffff] shadow-sm transition-colors hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               Browse all Odisha icons
-              <IconArrowRight
+              <ArrowRight
                 aria-hidden
                 className="size-4 transition-transform duration-300 group-hover/cta:translate-x-0.5"
               />

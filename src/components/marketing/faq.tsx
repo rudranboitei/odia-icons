@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { IconArrowUpRight, IconPlus } from "@tabler/icons-react";
+import { ArrowUpRight, Plus } from "@odiaui/icons-react";
 import { motion, useReducedMotion } from "motion/react";
 
 import { SITE } from "@/data/site";
@@ -45,11 +45,10 @@ function FaqBox({
           className="flex min-h-12 w-full cursor-pointer items-center justify-between gap-4 px-4 py-3.5 text-left outline-none focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141210]"
         >
           <span className="text-[15px] leading-snug text-[#ffffff]">{item.q}</span>
-          <IconPlus
+          <Plus
             aria-hidden
-            stroke={1.5}
             className={cn(
-              "size-[18px] shrink-0 text-neutral-700 transition-transform duration-300 ease-out motion-reduce:transition-none",
+              "size-[18px] shrink-0 text-neutral-400 transition-transform duration-300 ease-out motion-reduce:transition-none",
               open && "rotate-45"
             )}
           />
@@ -86,7 +85,7 @@ export function Faq() {
     <section
       id="faq"
       aria-labelledby="faq-title"
-      className="relative scroll-mt-20 bg-[#141210] px-4 py-16 text-[#ffffff] sm:px-6 sm:py-24"
+      className="relative scroll-mt-20 bg-[#141210] px-4 py-20 text-[#ffffff] sm:px-6 sm:py-28"
     >
       <motion.div
         initial={reduce ? false : { opacity: 0, y: 16 }}
@@ -139,10 +138,10 @@ export function Faq() {
             className="group/link inline-flex h-10 items-center gap-1 rounded-full border border-black/10 bg-white px-5 text-sm font-medium text-neutral-900 shadow-sm transition-colors hover:bg-neutral-50 focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:outline-none"
           >
             {faq.more.linkLabel}
-            <IconArrowUpRight
+            <ArrowUpRight
               aria-hidden
               className="size-3.5 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-              stroke={1.5}
+              stroke="1.5"
             />
           </a>
         </div>

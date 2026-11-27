@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { IconCheck, IconCopy } from "@tabler/icons-react";
+import { Check, Copy } from "@odiaui/icons-react";
 
 import { SITE } from "@/data/site";
 import { copyText } from "@/lib/clipboard";
@@ -51,9 +51,9 @@ export function InstallBox({
                 transition={{ duration: 0.15 }}
               >
                 {copied ? (
-                  <IconCheck aria-hidden className="size-3.5" />
+                  <Check aria-hidden className="size-3.5" />
                 ) : (
-                  <IconCopy aria-hidden className="size-3.5" />
+                  <Copy aria-hidden className="size-3.5" />
                 )}
               </motion.span>
             </AnimatePresence>

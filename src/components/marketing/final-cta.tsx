@@ -15,7 +15,7 @@ export function FinalCta() {
   return (
     <section
       id="install"
-      className="relative scroll-mt-20 bg-[#141210] px-4 py-16 text-white sm:px-6 sm:py-24"
+      className="relative scroll-mt-20 bg-[#141210] px-4 py-20 text-white sm:px-6 sm:py-28"
     >
       <Reveal className="mx-auto w-full max-w-[1080px]">
         <div className="relative isolate flex min-h-[24rem] items-center overflow-hidden rounded-[4px] bg-neutral-800 sm:min-h-[27rem]">
