@@ -110,6 +110,10 @@ export const CATEGORY_ORDER: readonly IconCategory[] = [
   "social",
   "development",
   "web",
+  "brand",
+  "ai",
+  "business",
+  "education",
   "ui",
 ]
 

@@ -1,0 +1,26 @@
+{
+  "name": "grid-3x3",
+  "odia": "ଜାଲି",
+  "category": "ui",
+  "tags": [
+    "grid",
+    "3x3",
+    "table",
+    "layout",
+    "cells",
+    "matrix",
+    "ଜାଲି"
+  ],
+  "aliases": [
+    "matrix"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-bar",
+  "type": "registry:ui",
+  "title": "Chart Bar",
+  "description": "ବାର୍ ଚାର୍ଟ — chart, bar, analytics.",
+  "categories": [
+    "business"
+  ],
+  "meta": {
+    "odia": "ବାର୍ ଚାର୍ଟ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/chart-bar.svg",
+      "type": "registry:file",
+      "target": "components/icons/chart-bar.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"11\" width=\"4\" height=\"9.5\" rx=\"1.5\"/><rect x=\"10\" y=\"4\" width=\"4\" height=\"16.5\" rx=\"1.5\"/><rect x=\"16\" y=\"8\" width=\"4\" height=\"12.5\" rx=\"1.5\"/></svg>"
+    }
+  ]
+}

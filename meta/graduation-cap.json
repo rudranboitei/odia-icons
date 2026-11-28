@@ -1,0 +1,27 @@
+{
+  "name": "graduation-cap",
+  "odia": "ଶିକ୍ଷା",
+  "category": "education",
+  "tags": [
+    "graduation",
+    "cap",
+    "education",
+    "learn",
+    "school",
+    "degree",
+    "ଶିକ୍ଷା"
+  ],
+  "aliases": [
+    "education",
+    "school"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -20,6 +20,10 @@ export const CATEGORIES = [
   "social",
   "development",
   "web",
+  "brand",
+  "ai",
+  "business",
+  "education",
   "ui",
 ]
 export const VARIANTS = ["outline", "solid", "duotone"]

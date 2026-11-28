@@ -1,0 +1,27 @@
+{
+  "name": "wand",
+  "odia": "ଯାଦୁ ବାଡ଼ି",
+  "category": "ai",
+  "tags": [
+    "wand",
+    "magic",
+    "generate",
+    "auto",
+    "ai",
+    "enhance",
+    "ଯାଦୁ ବାଡ଼ି"
+  ],
+  "aliases": [
+    "magic-wand",
+    "generate"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

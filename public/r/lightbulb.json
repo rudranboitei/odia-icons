@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lightbulb",
+  "type": "registry:ui",
+  "title": "Lightbulb",
+  "description": "ଧାରଣା — lightbulb, idea, tip.",
+  "categories": [
+    "ai"
+  ],
+  "meta": {
+    "odia": "ଧାରଣା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/lightbulb.svg",
+      "type": "registry:file",
+      "target": "components/icons/lightbulb.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3.5a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V17h5v-.6c0-.8.4-1.5 1-2A6 6 0 0 0 12 3.5zM10 20.5h4\"/></svg>"
+    }
+  ]
+}

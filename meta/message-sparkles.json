@@ -1,0 +1,27 @@
+{
+  "name": "message-sparkles",
+  "odia": "ଏଆଇ ବାର୍ତ୍ତା",
+  "category": "ai",
+  "tags": [
+    "message",
+    "chat",
+    "ai",
+    "assistant",
+    "prompt",
+    "sparkles",
+    "ଏଆଇ ବାର୍ତ୍ତା"
+  ],
+  "aliases": [
+    "ai-chat",
+    "prompt"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

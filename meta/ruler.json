@@ -1,0 +1,26 @@
+{
+  "name": "ruler",
+  "odia": "ମାପନୀ",
+  "category": "web",
+  "tags": [
+    "ruler",
+    "measure",
+    "scale",
+    "size",
+    "length",
+    "dimension",
+    "ମାପନୀ"
+  ],
+  "aliases": [
+    "measure"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

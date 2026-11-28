@@ -1,0 +1,27 @@
+{
+  "name": "rupee",
+  "odia": "ଟଙ୍କା",
+  "category": "business",
+  "tags": [
+    "rupee",
+    "inr",
+    "money",
+    "currency",
+    "price",
+    "india",
+    "ଟଙ୍କା"
+  ],
+  "aliases": [
+    "inr",
+    "money"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

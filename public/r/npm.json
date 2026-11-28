@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "npm",
+  "type": "registry:ui",
+  "title": "Npm",
+  "description": "ଏନପିଏମ୍ — npm, package, node.",
+  "categories": [
+    "brand"
+  ],
+  "meta": {
+    "odia": "ଏନପିଏମ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/npm.svg",
+      "type": "registry:file",
+      "target": "components/icons/npm.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"4\"/><path d=\"M8.5 16v-6.5M8.5 12.5a3.5 3.5 0 0 1 7 0V16\"/></svg>"
+    }
+  ]
+}

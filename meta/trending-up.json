@@ -1,0 +1,27 @@
+{
+  "name": "trending-up",
+  "odia": "ବୃଦ୍ଧି",
+  "category": "business",
+  "tags": [
+    "trending",
+    "growth",
+    "up",
+    "increase",
+    "profit",
+    "rise",
+    "ବୃଦ୍ଧି"
+  ],
+  "aliases": [
+    "growth",
+    "rise"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

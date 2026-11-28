@@ -1,0 +1,27 @@
+{
+  "name": "trophy",
+  "odia": "ପୁରସ୍କାର",
+  "category": "education",
+  "tags": [
+    "trophy",
+    "award",
+    "winner",
+    "prize",
+    "achievement",
+    "cup",
+    "ପୁରସ୍କାର"
+  ],
+  "aliases": [
+    "award",
+    "prize"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

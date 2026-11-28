@@ -1,0 +1,27 @@
+{
+  "name": "arrows-diagonal",
+  "odia": "ବିସ୍ତାର",
+  "category": "ui",
+  "tags": [
+    "arrows",
+    "diagonal",
+    "resize",
+    "expand",
+    "scale",
+    "fullscreen",
+    "ବିସ୍ତାର"
+  ],
+  "aliases": [
+    "resize",
+    "expand-diagonal"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

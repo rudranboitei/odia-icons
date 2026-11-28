@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-cursor",
+  "type": "registry:ui",
+  "title": "Text Cursor",
+  "description": "କର୍ସର — cursor, text, input.",
+  "categories": [
+    "ai"
+  ],
+  "meta": {
+    "odia": "କର୍ସର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/text-cursor.svg",
+      "type": "registry:file",
+      "target": "components/icons/text-cursor.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 4.5h6M9 19.5h6M12 4.5v15\"/></svg>"
+    }
+  ]
+}

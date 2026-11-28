@@ -1,0 +1,27 @@
+{
+  "name": "chart-bar",
+  "odia": "ବାର୍ ଚାର୍ଟ",
+  "category": "business",
+  "tags": [
+    "chart",
+    "bar",
+    "analytics",
+    "stats",
+    "report",
+    "graph",
+    "ବାର୍ ଚାର୍ଟ"
+  ],
+  "aliases": [
+    "bars",
+    "analytics"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,27 @@
+{
+  "name": "pie-chart",
+  "odia": "ପାଇ ଚାର୍ଟ",
+  "category": "business",
+  "tags": [
+    "pie",
+    "chart",
+    "share",
+    "segment",
+    "analytics",
+    "report",
+    "ପାଇ ଚାର୍ଟ"
+  ],
+  "aliases": [
+    "pie",
+    "segments"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

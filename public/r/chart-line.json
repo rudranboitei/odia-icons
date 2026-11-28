@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-line",
+  "type": "registry:ui",
+  "title": "Chart Line",
+  "description": "ରେଖା ଚାର୍ଟ — chart, line, analytics.",
+  "categories": [
+    "business"
+  ],
+  "meta": {
+    "odia": "ରେଖା ଚାର୍ଟ",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/chart-line.svg",
+      "type": "registry:file",
+      "target": "components/icons/chart-line.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 3.5v15a2 2 0 0 0 2 2h15M7.5 15l4-4.5 3 3L20 7.5\"/></svg>"
+    }
+  ]
+}

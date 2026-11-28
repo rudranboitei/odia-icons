@@ -1,0 +1,27 @@
+{
+  "name": "github",
+  "odia": "ଗିଟହବ୍",
+  "category": "brand",
+  "tags": [
+    "github",
+    "git",
+    "code",
+    "repository",
+    "source",
+    "open-source",
+    "ଗିଟହବ୍"
+  ],
+  "aliases": [
+    "octocat",
+    "repo"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

@@ -1,0 +1,27 @@
+{
+  "name": "calculator",
+  "odia": "ଗଣକ",
+  "category": "business",
+  "tags": [
+    "calculator",
+    "math",
+    "calculate",
+    "numbers",
+    "accounts",
+    "sum",
+    "ଗଣକ"
+  ],
+  "aliases": [
+    "calc",
+    "math"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

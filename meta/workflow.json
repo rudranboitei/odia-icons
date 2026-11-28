@@ -1,0 +1,27 @@
+{
+  "name": "workflow",
+  "odia": "କାର୍ଯ୍ୟଧାରା",
+  "category": "ai",
+  "tags": [
+    "workflow",
+    "flow",
+    "automation",
+    "pipeline",
+    "steps",
+    "process",
+    "କାର୍ଯ୍ୟଧାରା"
+  ],
+  "aliases": [
+    "pipeline",
+    "automation"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

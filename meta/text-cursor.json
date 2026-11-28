@@ -1,0 +1,27 @@
+{
+  "name": "text-cursor",
+  "odia": "କର୍ସର",
+  "category": "ai",
+  "tags": [
+    "cursor",
+    "text",
+    "input",
+    "caret",
+    "type",
+    "field",
+    "କର୍ସର"
+  ],
+  "aliases": [
+    "caret",
+    "input"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

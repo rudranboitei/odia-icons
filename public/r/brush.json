@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "brush",
+  "type": "registry:ui",
+  "title": "Brush",
+  "description": "ବ୍ରଶ୍ — brush, paint, stroke.",
+  "categories": [
+    "web"
+  ],
+  "meta": {
+    "odia": "ବ୍ରଶ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/brush.svg",
+      "type": "registry:file",
+      "target": "components/icons/brush.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 4l-8.5 8.5M9 13a3.5 3.5 0 0 0-3.5 3.5c0 1.7-.8 2.7-1.5 3.5 3.5.5 7-.5 7-3.5a3.5 3.5 0 0 0-2-3.5zM11.5 12.5l1.5 1.5\"/></svg>"
+    }
+  ]
+}

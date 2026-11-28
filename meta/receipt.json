@@ -1,0 +1,27 @@
+{
+  "name": "receipt",
+  "odia": "ରସିଦ",
+  "category": "business",
+  "tags": [
+    "receipt",
+    "bill",
+    "invoice",
+    "payment",
+    "purchase",
+    "slip",
+    "ରସିଦ"
+  ],
+  "aliases": [
+    "bill",
+    "invoice"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

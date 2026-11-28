@@ -1,0 +1,26 @@
+{
+  "name": "chart-line",
+  "odia": "ରେଖା ଚାର୍ଟ",
+  "category": "business",
+  "tags": [
+    "chart",
+    "line",
+    "analytics",
+    "trend",
+    "graph",
+    "report",
+    "ରେଖା ଚାର୍ଟ"
+  ],
+  "aliases": [
+    "line-graph"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

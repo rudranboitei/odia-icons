@@ -1,0 +1,27 @@
+{
+  "name": "store",
+  "odia": "ଦୋକାନ",
+  "category": "business",
+  "tags": [
+    "store",
+    "shop",
+    "dokana",
+    "market",
+    "retail",
+    "business",
+    "ଦୋକାନ"
+  ],
+  "aliases": [
+    "shop",
+    "market"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

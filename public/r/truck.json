@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "truck",
+  "type": "registry:ui",
+  "title": "Truck",
+  "description": "ଟ୍ରକ୍ — truck, delivery, shipping.",
+  "categories": [
+    "business"
+  ],
+  "meta": {
+    "odia": "ଟ୍ରକ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/truck.svg",
+      "type": "registry:file",
+      "target": "components/icons/truck.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 7.5a2 2 0 0 1 2-2h8V16h-10zM13.5 9h4l3 3.5V16h-7\"/><circle cx=\"7.5\" cy=\"17.5\" r=\"2\"/><circle cx=\"16.5\" cy=\"17.5\" r=\"2\"/></svg>"
+    }
+  ]
+}

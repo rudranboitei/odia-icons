@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pen-tool",
+  "type": "registry:ui",
+  "title": "Pen Tool",
+  "description": "ପେନ୍ ଟୁଲ୍ — pen, tool, vector.",
+  "categories": [
+    "web"
+  ],
+  "meta": {
+    "odia": "ପେନ୍ ଟୁଲ୍",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/pen-tool.svg",
+      "type": "registry:file",
+      "target": "components/icons/pen-tool.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3.5l5.5 8-2 6h-7l-2-6zM12 10V3.5M8 20.5h8\"/><circle cx=\"12\" cy=\"11.5\" r=\"1.5\"/></svg>"
+    }
+  ]
+}

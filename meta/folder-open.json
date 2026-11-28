@@ -1,0 +1,26 @@
+{
+  "name": "folder-open",
+  "odia": "ଖୋଲା ଫୋଲ୍ଡର୍",
+  "category": "ui",
+  "tags": [
+    "folder",
+    "open",
+    "directory",
+    "files",
+    "browse",
+    "documents",
+    "ଖୋଲା ଫୋଲ୍ଡର୍"
+  ],
+  "aliases": [
+    "open-folder"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

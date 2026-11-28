@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "graduation-cap",
+  "type": "registry:ui",
+  "title": "Graduation Cap",
+  "description": "ଶିକ୍ଷା — graduation, cap, education.",
+  "categories": [
+    "education"
+  ],
+  "meta": {
+    "odia": "ଶିକ୍ଷା",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/graduation-cap.svg",
+      "type": "registry:file",
+      "target": "components/icons/graduation-cap.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 4.5L2.5 9.5 12 14.5l9.5-5zM6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5M21.5 9.5V15\"/></svg>"
+    }
+  ]
+}

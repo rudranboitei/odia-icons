@@ -1,0 +1,27 @@
+{
+  "name": "pen-tool",
+  "odia": "ପେନ୍ ଟୁଲ୍",
+  "category": "web",
+  "tags": [
+    "pen",
+    "tool",
+    "vector",
+    "nib",
+    "design",
+    "path",
+    "ପେନ୍ ଟୁଲ୍"
+  ],
+  "aliases": [
+    "vector",
+    "nib"
+  ],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}

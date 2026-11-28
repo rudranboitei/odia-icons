@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "trending-up",
+  "type": "registry:ui",
+  "title": "Trending Up",
+  "description": "ବୃଦ୍ଧି — trending, growth, up.",
+  "categories": [
+    "business"
+  ],
+  "meta": {
+    "odia": "ବୃଦ୍ଧି",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/trending-up.svg",
+      "type": "registry:file",
+      "target": "components/icons/trending-up.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 17l6-6 4 4 7-7.5M15.5 7.5h5v5\"/></svg>"
+    }
+  ]
+}
