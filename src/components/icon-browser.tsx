@@ -649,7 +649,7 @@ export function IconBrowser() {
                   No icons match that search.
                 </p>
                 <p className="max-w-sm text-[13px] leading-[1.5] text-neutral-500">
-                  Try another word, or request the motif you need.
+                  Try a name, category, shape, function, or related keyword like “settings”, “arrow”, or “temple”.
                 </p>
                 <a
                   href={SITE.links.contribute}
@@ -790,7 +790,7 @@ export function IconBrowser() {
           <CommandInput
             value={dialogQuery}
             onValueChange={setDialogQuery}
-            placeholder="Type an icon, category or command..."
+            placeholder="Search by name, meaning, category, or Odia..."
             className="text-base sm:text-sm"
           />
           <CommandList className="max-h-[min(420px,60dvh)]">
