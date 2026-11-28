@@ -68,7 +68,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#34383A",
+  themeColor: "#141210",
 };
 
 const jsonLd = {
