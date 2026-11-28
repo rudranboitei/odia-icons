@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
+    "@next/third-parties": "^16.4.6",
     "@odiaui/icons-react": "./packages/react",
     "@radix-ui/react-slot": "^1.5.0",
     "class-variance-authority": "^0.7.1",

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 import { MotionProvider } from "@/components/motion-provider";
 import { SITE } from "@/data/site";
@@ -62,6 +63,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="dark">
+      <GoogleTagManager gtmId="GTM-W7DMS5LX" />
       <body
         className={`h-full antialiased ${geistSans.variable} ${jetbrainsMono.variable}`}
         suppressHydrationWarning
