@@ -77,7 +77,7 @@ export const SITE = {
     ],
     wordmark: { lead: "Meet", trail: "Odia" },
     display: { lead: "Icons", accent: "with soul." },
-    lead: `A focused ${ICON_COUNT}-icon set on a 24px grid, made with Odisha in mind. Free, open source and searchable in English or ଓଡ଼ିଆ.`,
+    lead: `A focused ${ICON_COUNT}-icon set inspired by Odisha, drawn on a 24px grid. Free, open source, and searchable in English or ଓଡ଼ିଆ for React and the web.`,
     ctas: { install: "Install icons", browse: "Browse icons" },
     badges: {
       github: "Open source on GitHub",
@@ -241,9 +241,9 @@ export const SITE = {
 
   finalCta: {
     eyebrow: "Free to copy, remix and ship",
-    title: "Start using the icons today.",
-    accent: "the icons",
-    description: `${ICON_COUNT} icons — a focused set drawn with Odisha in mind — free under MIT and ready for whatever you're building next.`,
+    title: "Start building with OdiaIcons.",
+    accent: "",
+    description: `${ICON_COUNT} open-source icons on a 24 × 24 grid, inspired by Odisha. Free under MIT and ready for your next project.`,
     helper: "No credit card. No sign-up. Just icons.",
   },
 

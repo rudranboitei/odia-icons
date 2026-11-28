@@ -8,6 +8,7 @@ import { Download, MousePointer, Star } from "@odiaui/icons-react";
 
 import { SITE } from "@/data/site";
 import { Icon, iconsByName } from "@/lib/icons";
+import { ICON_COUNT } from "@/lib/icons.generated";
 import { InstallBox } from "./install-box";
 import { HeroLines } from "./hero-lines";
 
@@ -251,7 +252,7 @@ export function Hero() {
           <IconReveal on={iconsOn} reduce={reduce} />
 
           <motion.h1 id="hero-title" variants={rise} className="relative w-full font-bold text-white">
-            <span className="sr-only">Free Odisha Icons, Open-source SVG Set</span>
+            <span className="sr-only">{SITE.seo.title}</span>
 
             <span className="flex flex-col items-center">
               <span
@@ -291,8 +292,13 @@ export function Hero() {
           <InstallBox className="w-full" />
         </motion.div>
 
-        {/* Underlined link */}
-        <motion.div variants={rise} className="mt-5">
+        <motion.div variants={rise} className="mt-5 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href={SITE.links.icons}
+            className="inline-flex h-10 items-center gap-2 rounded-full bg-white px-5 text-sm font-medium text-black transition-colors hover:bg-neutral-200"
+          >
+            Browse all {ICON_COUNT} icons
+          </Link>
           <Link
             href={SITE.links.github}
             target="_blank"
@@ -302,6 +308,22 @@ export function Hero() {
             {hero.badges.github}
           </Link>
         </motion.div>
+
+        <motion.ul
+          variants={rise}
+          className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[13px] font-medium text-neutral-400"
+          aria-label="Library details"
+        >
+          <li>{ICON_COUNT} icons</li>
+          <li aria-hidden="true" className="text-neutral-600">·</li>
+          <li>24×24 grid</li>
+          <li aria-hidden="true" className="text-neutral-600">·</li>
+          <li>2px stroke</li>
+          <li aria-hidden="true" className="text-neutral-600">·</li>
+          <li>MIT licensed</li>
+          <li aria-hidden="true" className="text-neutral-600">·</li>
+          <li>{SITE.npmPackage}</li>
+        </motion.ul>
 
         {/* Stars and installs, shown only when there is data */}
         {trust.length > 0 && (

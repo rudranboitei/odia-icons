@@ -9,6 +9,20 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   reactCompiler: true,
+  async redirects() {
+    return [
+      {
+        source: "/docs",
+        destination: "/installation",
+        permanent: true,
+      },
+      {
+        source: "/documentation",
+        destination: "/installation",
+        permanent: true,
+      },
+    ];
+  },
   turbopack: {
     rules: {
       "*.css": {

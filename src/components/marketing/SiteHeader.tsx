@@ -171,7 +171,7 @@ export function Header() {
                   className="h-12 w-full rounded-full bg-white text-sm font-medium text-black hover:bg-neutral-200"
                 >
                   <Link href="/icons" onClick={() => setOpen(false)}>
-                    Browse icons
+                    Browse all icons
                     <ArrowRight aria-hidden className="size-4" />
                   </Link>
                 </Button>
