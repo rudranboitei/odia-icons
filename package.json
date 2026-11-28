@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/icons/build.mjs && next build",
+    "build": "bun run --cwd packages/react build && node scripts/icons/build.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "icons:validate": "node scripts/icons/validate.mjs",
@@ -37,6 +37,7 @@
     "eslint-config-next": "16.4.6",
     "shadcn": "^4.23.0",
     "tailwindcss": "4.3.3",
+    "tsup": "^8.5.0",
     "typescript": "^5"
   },
   "packageManager": "bun@1.4.4",
