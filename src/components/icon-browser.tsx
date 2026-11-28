@@ -99,7 +99,7 @@ const categoryList = categoryCounts.filter((c) => c.id !== "all")
 
 const browseItems = [
   { label: "Icons", href: "/icons", icon: LayoutGrid, active: true },
-  { label: "Installation", href: "/#install", icon: Terminal },
+  { label: "Installation", href: "/installation", icon: Terminal },
   { label: "Developers", href: "/#developers", icon: Code },
 ]
 

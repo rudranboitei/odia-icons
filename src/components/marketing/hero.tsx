@@ -14,11 +14,6 @@ import { HeroLines } from "./hero-lines";
 /* Bold, tight sans for the whole hero */
 const sans = Inter_Tight({ subsets: ["latin"], weight: ["500", "700"] });
 
-const HERO_IMAGE = "/home-bg.jpeg";
-
-/* Must match the background of the section that follows the hero */
-const PAGE_BG = "#141210";
-
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 /*
@@ -110,8 +105,8 @@ function IconReveal({ on, reduce }: { on: boolean; reduce: boolean }) {
                       delay: i * 0.4,
                     }}
                     className={`${GLASS} ${item.near
-                        ? "size-11 rounded-2xl lg:size-[4.5rem] lg:rounded-3xl"
-                        : "size-10 rounded-xl lg:size-14 lg:rounded-2xl"
+                      ? "size-11 rounded-2xl lg:size-[4.5rem] lg:rounded-3xl"
+                      : "size-10 rounded-xl lg:size-14 lg:rounded-2xl"
                       }`}
                   >
                     {/* Specular highlight across the top half */}
@@ -120,8 +115,8 @@ function IconReveal({ on, reduce }: { on: boolean; reduce: boolean }) {
                       def={icon}
                       strokeWidth={1.5}
                       className={`relative drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)] ${item.near
-                          ? "size-5 text-white lg:size-8"
-                          : "size-5 text-white/80 lg:size-6"
+                        ? "size-5 text-white lg:size-8"
+                        : "size-5 text-white/80 lg:size-6"
                         }`}
                     />
                   </motion.div>
@@ -238,26 +233,7 @@ export function Hero() {
       aria-labelledby="hero-title"
       className={`${sans.className} relative isolate flex min-h-svh flex-col items-center overflow-hidden bg-[#141210] px-4 pt-28 pb-16 sm:px-6`}
     >
-      {/* Background image */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={HERO_IMAGE}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-20 size-full object-cover object-bottom"
-      />
 
-      {/* Dark wash, strongest behind the headline, so the text stands out from the sky */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-black/75 via-black/60 to-black/25" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_45%_at_50%_42%,rgba(0,0,0,0.45),transparent_100%)]" />
-
-      {/* Bottom fade into the next section */}
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-32 sm:h-48"
-        style={{
-          background: `linear-gradient(to top, ${PAGE_BG} 0%, ${PAGE_BG}99 40%, transparent 100%)`,
-        }}
-      />
 
       <motion.div
         variants={container}
