@@ -75,7 +75,7 @@ export default function App() {
         </div>
         {onClose && (
           <MonoButton variant="soft" size="iconSm" onClick={onClose} aria-label="Close">
-            <Close className="size-4" stroke="2" />
+            <Close className="size-4" strokeWidth={2} />
           </MonoButton>
         )}
       </div>
@@ -144,14 +144,14 @@ export default function App() {
       <div className="flex items-center gap-2 px-4 pt-3 pb-4">
         <MonoButton variant="solid" onClick={onCopy} className="flex-1">
           {copied ? (
-            <Check className="size-3.5" stroke="2.25" />
+            <Check className="size-3.5" strokeWidth={2.25} />
           ) : (
-            <Copy className="size-3.5" stroke="2" />
+            <Copy className="size-3.5" strokeWidth={2} />
           )}
           {copied ? "Copied" : `Copy ${tab}`}
         </MonoButton>
         <MonoButton variant="outline" onClick={onDownload}>
-          <Download className="size-3.5" stroke="2" />
+          <Download className="size-3.5" strokeWidth={2} />
           SVG
         </MonoButton>
       </div>

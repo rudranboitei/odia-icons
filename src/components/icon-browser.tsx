@@ -5,16 +5,18 @@ import Image from "next/image"
 import Link from "next/link"
 import { AnimatePresence, motion } from "motion/react"
 import {
+  ArrowRight,
   ArrowUpRight,
   Check,
   Code,
   Copy,
-  FileText,
   Filter,
   Folder,
+  FolderOpen,
   LayoutGrid,
   Menu,
   Plus,
+  Scale,
   Search,
   Terminal,
   Close,
@@ -187,7 +189,7 @@ function SidebarContent({
         </Link>
         {onClose && (
           <MonoButton variant="soft" size="icon" onClick={onClose} aria-label="Close menu">
-            <Close className="size-4" stroke="1.5" />
+            <Close className="size-4" strokeWidth={1.5} />
           </MonoButton>
         )}
       </div>
@@ -209,7 +211,7 @@ function SidebarContent({
                     }`}
                 >
                   <span className="relative flex">
-                    <NavIcon className="size-4" stroke="1.5" />
+                    <NavIcon className="size-4" strokeWidth={1.5} />
                     {item.active && (
                       <span
                         aria-hidden
@@ -233,7 +235,7 @@ function SidebarContent({
         <ul className="mt-1.5 flex flex-col gap-0.5">
           {categoryCounts.map((item) => {
             const isActive = category === item.id
-            const FolderIcon = isActive ? Folder : Folder
+            const FolderIcon = isActive ? FolderOpen : Folder
             return (
               <li key={item.id}>
                 <button
@@ -248,7 +250,7 @@ function SidebarContent({
                     : "text-neutral-400 hover:bg-white/[0.05] hover:text-white"
                     }`}
                 >
-                  <FolderIcon className="size-4 shrink-0" stroke="1.5" />
+                  <FolderIcon className="size-4 shrink-0" strokeWidth={1.5} />
                   <span className="truncate">{item.label}</span>
                   <span
                     className={`ml-auto text-[11px] ${isActive ? "text-white" : "text-neutral-400"}`}
@@ -287,7 +289,7 @@ function SidebarContent({
           <Corners className="m-1.5 size-2" />
           <div className="flex items-center justify-between">
             <p className="flex items-center gap-1.5 text-[11px] tracking-wide text-neutral-500 uppercase">
-              <Terminal className="size-3.5" stroke="1.5" />
+              <Terminal className="size-3.5" strokeWidth={1.5} />
               Install
             </p>
             <Tag tone="orange">v0.1.0</Tag>
@@ -298,9 +300,9 @@ function SidebarContent({
           <MonoButton variant="solid" size="sm" onClick={onCopyInstall} className="mt-2 w-full">
             {copiedInstall ? "Copied" : "Copy command"}
             {copiedInstall ? (
-              <Check className="size-3.5" stroke="2.25" />
+              <Check className="size-3.5" strokeWidth={2.25} />
             ) : (
-              <Copy className="size-3.5" stroke="2" />
+              <Copy className="size-3.5" strokeWidth={2} />
             )}
           </MonoButton>
           <a
@@ -309,7 +311,7 @@ function SidebarContent({
             rel="noopener"
             className={btn("outline", "sm", "mt-1.5 w-full")}
           >
-            <GithubIcon className="size-3.5" stroke="1.5" />
+            <GithubIcon className="size-3.5" />
             Star on GitHub
           </a>
         </div>
@@ -518,11 +520,11 @@ export function IconBrowser() {
                 aria-label="Open menu"
                 className="size-10 lg:hidden"
               >
-                <Menu className="size-4" stroke="1.5" />
+                <Menu className="size-4" strokeWidth={1.5} />
               </MonoButton>
 
               <div className="hidden min-w-0 items-center gap-2.5 lg:flex">
-                <LayoutGrid className="size-4 text-neutral-500" stroke="1.5" />
+                <LayoutGrid className="size-4 text-neutral-500" strokeWidth={1.5} />
                 <span className="text-[15px] font-medium text-white">Icons</span>
                 <Tag tone="orange">{filtered.length} shown</Tag>
               </div>
@@ -567,7 +569,7 @@ export function IconBrowser() {
                   onClick={copyInstall}
                   className="max-2xl:hidden normal-case"
                 >
-                  <Terminal className="size-3.5" stroke="1.5" />
+                  <Terminal className="size-3.5" strokeWidth={1.5} />
                   <ShikiCode code={SITE.install.command} lang="bash" />
                   {copiedInstall ? (
                     <Check className="size-3.5 text-white" />
@@ -583,7 +585,7 @@ export function IconBrowser() {
                   aria-label="GitHub"
                   className={btn("soft", "icon")}
                 >
-                  <GithubIcon className="size-4" stroke="1.5" />
+                  <GithubIcon className="size-4" />
                 </a>
                 <a
                   href={SITE.links.npm}
@@ -592,7 +594,7 @@ export function IconBrowser() {
                   aria-label="npm"
                   className={btn("soft", "icon")}
                 >
-                  <NpmIcon className="size-4" stroke="1.5" />
+                  <NpmIcon className="size-4" />
                 </a>
               </div>
             </div>
@@ -653,9 +655,10 @@ export function IconBrowser() {
                   href={SITE.links.contribute}
                   target="_blank"
                   rel="noopener"
-                  className="mt-1 text-[13px] font-bold text-white underline decoration-white/50 underline-offset-[3px] hover:opacity-70"
+                  className="mt-1 inline-flex items-center gap-1 text-[13px] font-bold text-white underline decoration-white/50 underline-offset-[3px] hover:opacity-70"
                 >
-                  Request an icon →
+                  Request an icon
+                  <ArrowRight aria-hidden className="size-3.5" />
                 </a>
               </motion.div>
             )}
@@ -675,7 +678,7 @@ export function IconBrowser() {
           className={`sticky top-0 hidden h-dvh w-[340px] shrink-0 flex-col border-l border-white/10 xl:flex ${PANEL_BG}`}
         >
           <div className="flex h-14 shrink-0 items-center gap-2.5 border-b border-white/10 px-4">
-            <Code className="size-4 text-neutral-500" stroke="1.5" />
+            <Code className="size-4 text-neutral-500" strokeWidth={1.5} />
             <span className="text-[15px] font-medium text-white">Playground</span>
             {panelIcon && <Tag tone="orange">{panelIcon.category}</Tag>}
           </div>
@@ -730,7 +733,7 @@ export function IconBrowser() {
                       </span>
                       <ArrowUpRight
                         className="ml-auto size-4 shrink-0 text-neutral-400"
-                        stroke="2"
+                        strokeWidth={2}
                       />
                     </a>
                   </li>
@@ -870,7 +873,7 @@ export function IconBrowser() {
                     onSelect={() => openExternal(SITE.links.license)}
                     className="py-2.5 sm:py-1.5"
                   >
-                    <FileText />
+                    <Scale />
                     <span>View licence</span>
                   </CommandItem>
                 </CommandGroup>

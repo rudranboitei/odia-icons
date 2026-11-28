@@ -181,7 +181,7 @@ export function InstallationGuide() {
           </p>
 
           <span className="mt-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-[13px] text-neutral-400 backdrop-blur">
-            <Package aria-hidden className="size-3.5" stroke="1.5" />
+            <Package aria-hidden className="size-3.5" strokeWidth={1.5} />
             {ICON_COUNT} icons · MIT licensed
           </span>
         </div>

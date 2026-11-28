@@ -141,7 +141,7 @@ export function Faq() {
             <ArrowUpRight
               aria-hidden
               className="size-3.5 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-              stroke="1.5"
+              strokeWidth={1.5}
             />
           </a>
         </div>

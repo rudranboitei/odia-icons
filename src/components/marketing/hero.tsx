@@ -4,7 +4,7 @@ import { useRef, useState, type CSSProperties, type PointerEvent } from "react";
 import Link from "next/link";
 import { Inter_Tight } from "next/font/google";
 import { AnimatePresence, motion, useReducedMotion, type Variants } from "motion/react";
-import { Download, Pointer, Star } from "@odiaui/icons-react";
+import { Download, MousePointer, Star } from "@odiaui/icons-react";
 
 import { SITE } from "@/data/site";
 import { Icon, iconsByName } from "@/lib/icons";
@@ -283,7 +283,7 @@ export function Hero() {
                 className="relative block text-[clamp(2rem,min(8.5vw,7.5svh),4.5rem)] leading-none tracking-[-0.04em] whitespace-nowrap"
               >
                 Free Odisha
-                <Pointer className="absolute top-1/2 left-full ml-2 size-[0.7em] -translate-y-1/2 fill-white sm:ml-4" />
+                <MousePointer className="absolute top-1/2 left-full ml-2 size-[0.7em] -translate-y-1/2 fill-white sm:ml-4" />
               </span>
 
               <span className="block text-[clamp(5rem,min(23vw,23svh),14rem)] leading-[0.95] tracking-[-0.05em] whitespace-nowrap">

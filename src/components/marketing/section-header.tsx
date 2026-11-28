@@ -110,7 +110,7 @@ export function Header() {
           aria-controls="mobile-menu"
           className="inline-flex size-10 cursor-pointer items-center justify-center rounded-lg text-white outline-none hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/30 md:hidden"
         >
-          <Menu aria-hidden className="size-6" stroke="1.5" />
+          <Menu aria-hidden className="size-6" strokeWidth={1.5} />
         </button>
       </div>
 
@@ -145,7 +145,7 @@ export function Header() {
             aria-label="Close menu"
             className="absolute bottom-8 inline-flex size-11 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/10 text-white shadow-sm outline-none hover:bg-white/15 focus-visible:ring-2 focus-visible:ring-white/30"
           >
-            <Close aria-hidden className="size-5" stroke="1.5" />
+            <Close aria-hidden className="size-5" strokeWidth={1.5} />
           </button>
         </div>
       )}

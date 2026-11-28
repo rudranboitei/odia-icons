@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react";
-import { ArrowRight, Check, Copy, Search } from "@odiaui/icons-react";
+import { ArrowRight, Check, Copy, Plus, Search } from "@odiaui/icons-react";
 
 import { SITE } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -104,7 +104,7 @@ function SceneBrowse() {
           <Tile key={label} Icon={Icon} label={label} selected={i === 0} />
         ))}
         <div className="flex flex-col items-center justify-center gap-1 rounded-lg border border-dashed border-white/15 text-neutral-500">
-          <span className="text-lg leading-none">+</span>
+          <Plus aria-hidden className="size-5" />
           <span className="text-[10px] sm:text-xs">More</span>
         </div>
       </div>

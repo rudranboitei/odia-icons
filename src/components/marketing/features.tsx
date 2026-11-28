@@ -8,10 +8,10 @@ import {
   Code,
   Copy,
   Download,
-  LayoutGrid,
-  Edit,
+  Grid3x3,
   Palette,
-  Sliders,
+  PenTool,
+  Ruler,
   Sparkles,
 } from "@odiaui/icons-react";
 
@@ -43,12 +43,12 @@ function GridVisual() {
       </div>
       <Line />
       <div className={`${glass} flex w-[72%] items-center gap-2.5 px-3.5 py-2.5 text-[13px]`}>
-        <LayoutGrid aria-hidden className="size-4 text-neutral-300" />
+        <Grid3x3 aria-hidden className="size-4 text-neutral-300" />
         Consistent geometry
       </div>
       <Line />
       <div className={`${glass} flex w-[72%] items-center gap-2.5 px-3.5 py-2.5 text-[13px]`}>
-        <Edit aria-hidden className="size-4 text-neutral-300" />
+        <PenTool aria-hidden className="size-4 text-neutral-300" />
         Rounded 2px stroke
       </div>
       <Line />
@@ -106,7 +106,7 @@ function CustomizeVisual() {
     tag,
     className,
   }: {
-    icon: typeof Sliders;
+    icon: typeof Ruler;
     text: string;
     tag: string;
     className: string;
@@ -125,7 +125,7 @@ function CustomizeVisual() {
   return (
     <div className="absolute inset-0">
       <Row
-        icon={Sliders}
+        icon={Ruler}
         text="Size 24px"
         tag="Resize"
         className="inset-x-[17%] top-[24%] scale-[0.94] opacity-60"
