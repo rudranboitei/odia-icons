@@ -2,6 +2,9 @@
   "name": "odia-icon",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "packages/react"
+  ],
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

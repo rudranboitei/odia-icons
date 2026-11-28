@@ -34,6 +34,18 @@
         "typescript": "^5",
       },
     },
+    "packages/react": {
+      "name": "@odiaui/icons-react",
+      "version": "0.3.0",
+      "devDependencies": {
+        "@types/react": "^19.0.0",
+        "tsup": "^8.5.0",
+        "typescript": "^5.6.0",
+      },
+      "peerDependencies": {
+        "react": ">=18",
+      },
+    },
   },
   "trustedDependencies": [
     "sharp",
@@ -296,7 +308,7 @@
 
     "@nolyfill/is-core-module": ["@nolyfill/is-core-module@1.0.39", "", {}, "sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA=="],
 
-    "@odiaui/icons-react": ["@odiaui/icons-react@file:packages/react", { "devDependencies": { "@types/react": "^19.0.0", "tsup": "^8.5.0", "typescript": "^5.6.0" }, "peerDependencies": { "react": ">=18" } }],
+    "@odiaui/icons-react": ["@odiaui/icons-react@workspace:packages/react"],
 
     "@radix-ui/primitive": ["@radix-ui/primitive@1.2.0", "", {}, "sha512-KABY+VMIRPJL+Vyzv/335FEhXXD/xDv8BMb1kl48/aXJZMH0LtHCTx5ga5RnxaEP3nZHtmTLf1P9vanmFX46bw=="],
 
