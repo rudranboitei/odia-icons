@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrow-down-right",
+  "type": "registry:ui",
+  "title": "Arrow Down Right",
+  "description": "ତଳ-ଡାହାଣ ତୀର — arrow, down-right, diagonal.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ତଳ-ଡାହାଣ ତୀର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/arrow-down-right.svg",
+      "type": "registry:file",
+      "target": "components/icons/arrow-down-right.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6.31 4.49L6.31 6.49A4 4 0 0 0 7.49 9.31L17.69 19.51\"/><path d=\"M11.09 19.51L17.69 19.51L17.69 12.91\"/></svg>"
+    }
+  ]
+}

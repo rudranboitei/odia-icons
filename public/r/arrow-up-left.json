@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrow-up-left",
+  "type": "registry:ui",
+  "title": "Arrow Up Left",
+  "description": "ଉପର-ବାମ ତୀର — arrow, up-left, diagonal.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ଉପର-ବାମ ତୀର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/arrow-up-left.svg",
+      "type": "registry:file",
+      "target": "components/icons/arrow-up-left.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17.69 19.51L17.69 17.51A4 4 0 0 0 16.51 14.69L6.31 4.49\"/><path d=\"M12.91 4.49L6.31 4.49L6.31 11.09\"/></svg>"
+    }
+  ]
+}

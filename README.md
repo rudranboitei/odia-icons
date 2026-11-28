@@ -18,7 +18,7 @@
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-1f1f1f?style=flat-square" alt="MIT License" /></a>
 <!-- icon-count-badge:start -->
-  <img src="https://img.shields.io/badge/icons-237-f3e0c9?style=flat-square&labelColor=1f1f1f" alt="237 icons" />
+  <img src="https://img.shields.io/badge/icons-240-f3e0c9?style=flat-square&labelColor=1f1f1f" alt="240 icons" />
 <!-- icon-count-badge:end -->
   <img src="https://img.shields.io/badge/grid-24%C3%9724-1f1f1f?style=flat-square" alt="24x24 grid" />
   <img src="https://img.shields.io/badge/stroke-2px-1f1f1f?style=flat-square" alt="2px stroke" />
@@ -27,7 +27,7 @@
 
 ---
 
-OdiaIcons is a compact, carefully crafted icon set. The current release is a focused 237-icon set, drawn with Odisha in mind; the Odia motif set is being redrawn in the same style. Every icon is drawn on a shared 24 × 24 grid, uses `currentColor`, and is designed to feel consistent across product interfaces, websites, and editorial layouts.
+OdiaIcons is a compact, carefully crafted icon set. The current release is a focused 240-icon set, drawn with Odisha in mind; the Odia motif set is being redrawn in the same style. Every icon is drawn on a shared 24 × 24 grid, uses `currentColor`, and is designed to feel consistent across product interfaces, websites, and editorial layouts.
 
 Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon browser](https://icons.odiaui.xyz/icons).
 
@@ -43,7 +43,7 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 <!-- icon-set:start -->
 ## Icon Set
 
-**237 icons and counting:** a focused set. Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons).
+**240 icons and counting:** a focused set. Browse the full set at [icons.odiaui.xyz/icons](https://icons.odiaui.xyz/icons).
 
 | Icon | Name | Odia | Category |
 |------|------|------|----------|
@@ -55,9 +55,12 @@ Search and discover icons in **English** or **ଓଡ଼ିଆ** on the [icon bro
 | Anchor | `anchor` | ଲଙ୍ଗର | Odisha |
 | Archive | `archive` | ଅଭିଲେଖାଗାର | UI |
 | Arrow Down | `arrow-down` | ତଳ ତୀର | UI |
+| Arrow Down Left | `arrow-down-left` | ତଳ-ବାମ ତୀର | UI |
+| Arrow Down Right | `arrow-down-right` | ତଳ-ଡାହାଣ ତୀର | UI |
 | Arrow Left | `arrow-left` | ବାମ ତୀର | UI |
 | Arrow Right | `arrow-right` | ତୀର | UI |
 | Arrow Up | `arrow-up` | ଉପର ତୀର | UI |
+| Arrow Up Left | `arrow-up-left` | ଉପର-ବାମ ତୀର | UI |
 | Arrow Up Right | `arrow-up-right` | ଉପର-ଡାହାଣ ତୀର | UI |
 | Arrows Diagonal | `arrows-diagonal` | ବିସ୍ତାର | UI |
 | At Sign | `at-sign` | ଆଟ୍ | Social |

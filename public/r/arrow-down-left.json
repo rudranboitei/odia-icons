@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrow-down-left",
+  "type": "registry:ui",
+  "title": "Arrow Down Left",
+  "description": "ତଳ-ବାମ ତୀର — arrow, down-left, diagonal.",
+  "categories": [
+    "ui"
+  ],
+  "meta": {
+    "odia": "ତଳ-ବାମ ତୀର",
+    "since": "0.1.0",
+    "variants": [
+      "outline"
+    ]
+  },
+  "files": [
+    {
+      "path": "icons/outline/arrow-down-left.svg",
+      "type": "registry:file",
+      "target": "components/icons/arrow-down-left.svg",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17.69 4.49L17.69 6.49A4 4 0 0 1 16.51 9.31L6.31 19.51\"/><path d=\"M12.91 19.51L6.31 19.51L6.31 12.91\"/></svg>"
+    }
+  ]
+}

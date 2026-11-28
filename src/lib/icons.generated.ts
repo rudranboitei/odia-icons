@@ -37,7 +37,7 @@ export type IconDef = {
 }
 
 /** Total number of icons in the set. Generated from icons/ and meta/. */
-export const ICON_COUNT = 237
+export const ICON_COUNT = 240
 
 export const icons: IconDef[] = [
   {
@@ -142,7 +142,33 @@ export const icons: IconDef[] = [
     since: "0.1.0",
     note: "Odia text needs a native check.",
     strokeWidth: 2,
-    body: "<path d=\"M12 5v14M6 13l6 6 6-6\"/>",
+    body: "<path d=\"M5.5 4.5L7.5 4.5A6.5 6.5 0 0 1 14 11L14 19.5\"/><path d=\"M18.5 15L14 19.5L9.5 15\"/>",
+  },
+  {
+    name: "arrow-down-left",
+    odia: "ତଳ-ବାମ ତୀର",
+    category: "ui",
+    tags: ["arrow","down-left","diagonal","direction","ତଳ-ବାମ ତୀର"],
+    aliases: [],
+    variants: ["outline"],
+    contributors: ["rudranboitei"],
+    since: "0.1.0",
+    note: "Odia text needs a native check.",
+    strokeWidth: 2,
+    body: "<path d=\"M17.69 4.49L17.69 6.49A4 4 0 0 1 16.51 9.31L6.31 19.51\"/><path d=\"M12.91 19.51L6.31 19.51L6.31 12.91\"/>",
+  },
+  {
+    name: "arrow-down-right",
+    odia: "ତଳ-ଡାହାଣ ତୀର",
+    category: "ui",
+    tags: ["arrow","down-right","diagonal","direction","ତଳ-ଡାହାଣ ତୀର"],
+    aliases: [],
+    variants: ["outline"],
+    contributors: ["rudranboitei"],
+    since: "0.1.0",
+    note: "Odia text needs a native check.",
+    strokeWidth: 2,
+    body: "<path d=\"M6.31 4.49L6.31 6.49A4 4 0 0 0 7.49 9.31L17.69 19.51\"/><path d=\"M11.09 19.51L17.69 19.51L17.69 12.91\"/>",
   },
   {
     name: "arrow-left",
@@ -155,7 +181,7 @@ export const icons: IconDef[] = [
     since: "0.1.0",
     note: "Odia text needs a native check.",
     strokeWidth: 2,
-    body: "<path d=\"M19 12H5M11 6l-6 6 6 6\"/>",
+    body: "<path d=\"M19.5 5.5L19.5 7.5A6.5 6.5 0 0 1 13 14L4.5 14\"/><path d=\"M9 18.5L4.5 14L9 9.5\"/>",
   },
   {
     name: "arrow-right",
@@ -168,7 +194,7 @@ export const icons: IconDef[] = [
     since: "0.1.0",
     note: "Odia text needs a native check.",
     strokeWidth: 2,
-    body: "<path d=\"M5 12h14M13 6l6 6-6 6\"/>",
+    body: "<path d=\"M4.5 18.5L4.5 16.5A6.5 6.5 0 0 1 11 10L19.5 10\"/><path d=\"M15 5.5L19.5 10L15 14.5\"/>",
   },
   {
     name: "arrow-up",
@@ -181,7 +207,20 @@ export const icons: IconDef[] = [
     since: "0.1.0",
     note: "Odia text needs a native check.",
     strokeWidth: 2,
-    body: "<path d=\"M12 19V5M6 11l6-6 6 6\"/>",
+    body: "<path d=\"M18.5 19.5L16.5 19.5A6.5 6.5 0 0 1 10 13L10 4.5\"/><path d=\"M5.5 9L10 4.5L14.5 9\"/>",
+  },
+  {
+    name: "arrow-up-left",
+    odia: "ଉପର-ବାମ ତୀର",
+    category: "ui",
+    tags: ["arrow","up-left","diagonal","direction","ଉପର-ବାମ ତୀର"],
+    aliases: [],
+    variants: ["outline"],
+    contributors: ["rudranboitei"],
+    since: "0.1.0",
+    note: "Odia text needs a native check.",
+    strokeWidth: 2,
+    body: "<path d=\"M17.69 19.51L17.69 17.51A4 4 0 0 0 16.51 14.69L6.31 4.49\"/><path d=\"M12.91 4.49L6.31 4.49L6.31 11.09\"/>",
   },
   {
     name: "arrow-up-right",
@@ -194,7 +233,7 @@ export const icons: IconDef[] = [
     since: "0.1.0",
     note: "Odia text needs a native check.",
     strokeWidth: 2,
-    body: "<path d=\"M7 17L17 7M8.5 7H17v8.5\"/>",
+    body: "<path d=\"M6.31 19.51L6.31 17.51A4 4 0 0 1 7.49 14.69L17.69 4.49\"/><path d=\"M11.09 4.49L17.69 4.49L17.69 11.09\"/>",
   },
   {
     name: "arrows-diagonal",
@@ -1182,7 +1221,7 @@ export const icons: IconDef[] = [
     since: "0.1.0",
     note: "Odia text needs a native check.",
     strokeWidth: 2,
-    body: "<path d=\"M6 4.5c1.6 0 2.8.6 3.6 1.4a8.5 8.5 0 0 1 4.8 0c.8-.8 2-1.4 3.6-1.4.6 1.6.6 3 .1 4.2 1 1 1.4 2.3 1.4 3.8 0 4.2-3 6-7.5 6S4.5 16.7 4.5 12.5c0-1.5.4-2.8 1.4-3.8C5.4 7.5 5.4 6.1 6 4.5zM8.5 14.5h.01M15.5 14.5h.01M10.5 17.5h3\"/>",
+    body: "<path d=\"M9 21v-2.8c0-.9-.3-1.6-.8-2.2C5.5 15.8 3.5 13.9 3.5 10.5a5.2 5.2 0 0 1 1.3-3.5C4.4 5.8 4.4 4.7 5 3.6c0 0 1.2-.1 3.5 1.5a11 11 0 0 1 7 0c2.3-1.6 3.5-1.5 3.5-1.5.6 1.1.6 2.2.2 3.4a5.2 5.2 0 0 1 1.3 3.5c0 3.4-2 5.3-4.7 5.5-.5.6-.8 1.3-.8 2.2V21M9 19.2c-3.2 1-4.2-1.6-5.5-2.2\"/>",
   },
   {
     name: "globe",

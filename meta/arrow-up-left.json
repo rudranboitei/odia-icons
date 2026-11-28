@@ -1,0 +1,22 @@
+{
+  "name": "arrow-up-left",
+  "odia": "ଉପର-ବାମ ତୀର",
+  "category": "ui",
+  "tags": [
+    "arrow",
+    "up-left",
+    "diagonal",
+    "direction",
+    "ଉପର-ବାମ ତୀର"
+  ],
+  "aliases": [],
+  "variants": [
+    "outline"
+  ],
+  "contributors": [
+    "rudranboitei"
+  ],
+  "since": "0.1.0",
+  "status": "needs-review",
+  "note": "Odia text needs a native check."
+}
